@@ -60,7 +60,7 @@ The "contact" object has the following attributes:
 ## Archive content
 
 The full source code (without the required archives) is available here:
-[firstapplication.zip](/learn/archives/examples/firstApplication/${restlet-version-minor}/firstapplication.zip "firstapplication.zip")
+[firstapplication.zip](/technical-resources/restlet-framework/archives/examples/firstApplication/${restlet-version-minor}/firstapplication.zip "firstapplication.zip")
 (application/zip, 1.0 MB)
 
 It contains the full source code of three Eclipse projects with:
