@@ -806,40 +806,41 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 		            request.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
 		            next.handle(request, response);
 
-		            // Get the Access-Control-Allow-* headers
-		            getLogger().info("After next.handle");
-
-		            
 		            // Memorize Access-Control-Allow-* headers to reinject in the response
 		            Series<Header> resHeaders = (Series<Header>) response.getAttributes().get(HeaderConstants.ATTRIBUTE_HEADERS);
-					String acaHeaders = resHeaders.getValues("Access-Control-Allow-Headers");
-					String acaMethods= resHeaders.getValues("Access-Control-Allow-Methods");
-					String acaOrigin = resHeaders.getValues("Access-Control-Allow-Origin");
+		            Series<Header> newHeaders = new Series<Header>(Header.class);
+		            for (Header h : resHeaders) {
+		            	getLogger().info("Header:" + h.getName() + ": " + h.getValue());
+		            	if (h.getName().startsWith("Access-Control-Allow")) {
+		            		newHeaders.add(h.getName(), h.getValue());
+						}
+					}
 					
 		            // Allow for response rewriting and clean the headers
 		            response.setEntity(rewrite(response.getEntity()));
 		            response.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
 		            request.setResourceRef(resourceRef);
-					response.setLocationRef((Reference) null);
 					
 					// Reinject Access-Control-Allow-* headers
-					Series<Header> newHeaders = new Series<Header>(Header.class);
-					if (acaHeaders != null && !acaHeaders.isEmpty()) {
-						
-						newHeaders.add("Access-Control-Allow-Headers", acaHeaders);
-					}
-					
-		            if (acaMethods != null && !acaMethods.isEmpty()) {
-						
-						newHeaders.add("Access-Control-Allow-Methods", acaMethods);
-					}
-					
-		            if (acaOrigin != null && !acaOrigin.isEmpty()) {
-						
-						newHeaders.add("Access-Control-Allow-Origin", acaOrigin);
-					}
-					
 		            response.getAttributes().put(HeaderConstants.ATTRIBUTE_HEADERS, newHeaders);
+		            
+		            // In case of redirection, we may have to rewrite the redirect URI
+		            if (response.getLocationRef() != null) {
+		                Template rt = new Template(this.targetTemplate);
+		                rt.setLogger(getLogger());
+		                int matched = rt.parse(response.getLocationRef().toString(),
+		                        request);
+		
+		                if (matched > 0) {
+		                    String remainingPart = (String) request.getAttributes()
+		                            .get("rr");
+		
+		                    if (remainingPart != null) {
+		                        response.setLocationRef(baseRef.toString()
+		                                + remainingPart);
+		                    }
+		                }
+		            }
 				}
 
 			}
