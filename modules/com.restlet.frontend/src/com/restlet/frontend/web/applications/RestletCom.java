@@ -32,6 +32,8 @@ import org.restlet.data.Protocol;
 import org.restlet.data.Reference;
 import org.restlet.engine.Engine;
 import org.restlet.engine.application.Encoder;
+import org.restlet.engine.header.Header;
+import org.restlet.engine.header.HeaderConstants;
 import org.restlet.ext.atom.Entry;
 import org.restlet.ext.atom.Feed;
 import org.restlet.representation.Representation;
@@ -783,7 +785,65 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 	private TemplateRoute redirect(Router router, String from, String to,
 			int mode) {
 		TemplateRoute route = router.attach(from, new Redirector(getContext(),
-				to, mode));
+				to, mode) {
+			protected void serverRedirect(Restlet next, Reference targetRef,
+					Request request, Response response) {
+				if (next == null) {
+		            getLogger().warning(
+		                    "No next Restlet provided for server redirection to "
+		                            + targetRef);
+		        } else {
+		            // Save the base URI if it exists as we might need it for
+		            // redirections
+		            Reference resourceRef = request.getResourceRef();
+		            Reference baseRef = resourceRef.getBaseRef();
+
+		            // Reset the protocol and let the dispatcher handle the protocol
+		            request.setProtocol(null);
+		            
+		            // Update the request to cleanly go to the target URI
+		            request.setResourceRef(targetRef);
+		            request.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
+		            next.handle(request, response);
+
+		            // Get the Access-Control-Allow-* headers
+		            getLogger().info("After next.handle");
+
+		            
+		            // Memorize Access-Control-Allow-* headers to reinject in the response
+		            Series<Header> resHeaders = (Series<Header>) response.getAttributes().get(HeaderConstants.ATTRIBUTE_HEADERS);
+					String acaHeaders = resHeaders.getValues("Access-Control-Allow-Headers");
+					String acaMethods= resHeaders.getValues("Access-Control-Allow-Methods");
+					String acaOrigin = resHeaders.getValues("Access-Control-Allow-Origin");
+					
+		            // Allow for response rewriting and clean the headers
+		            response.setEntity(rewrite(response.getEntity()));
+		            response.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
+		            request.setResourceRef(resourceRef);
+					response.setLocationRef((Reference) null);
+					
+					// Reinject Access-Control-Allow-* headers
+					Series<Header> newHeaders = new Series<Header>(Header.class);
+					if (acaHeaders != null && !acaHeaders.isEmpty()) {
+						
+						newHeaders.add("Access-Control-Allow-Headers", acaHeaders);
+					}
+					
+		            if (acaMethods != null && !acaMethods.isEmpty()) {
+						
+						newHeaders.add("Access-Control-Allow-Methods", acaMethods);
+					}
+					
+		            if (acaOrigin != null && !acaOrigin.isEmpty()) {
+						
+						newHeaders.add("Access-Control-Allow-Origin", acaOrigin);
+					}
+					
+		            response.getAttributes().put(HeaderConstants.ATTRIBUTE_HEADERS, newHeaders);
+				}
+
+			}
+		});
 		if (to.contains("{rr}")) {
 			route.setMatchingMode(Template.MODE_STARTS_WITH);
 		}
