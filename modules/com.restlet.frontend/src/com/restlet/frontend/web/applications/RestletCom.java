@@ -810,7 +810,6 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 		            Series<Header> resHeaders = (Series<Header>) response.getAttributes().get(HeaderConstants.ATTRIBUTE_HEADERS);
 		            Series<Header> newHeaders = new Series<Header>(Header.class);
 		            for (Header h : resHeaders) {
-		            	getLogger().info("Header:" + h.getName() + ": " + h.getValue());
 		            	if (h.getName().startsWith("Access-Control-Allow")) {
 		            		newHeaders.add(h.getName(), h.getValue());
 						}
