@@ -81,8 +81,7 @@ representations.
 ContactResource is an interface annotated with Restlet annotations:
 
 
-```
-~~~~ {.brush: .java}
+```java
 public interface ContactResource {
     @Get
     public Contact retrieve();
@@ -93,7 +92,6 @@ public interface ContactResource {
     @Delete
     public void remove();
 }
-~~~~
 ```
 
 
@@ -121,7 +119,6 @@ The server-side resource implements the annotated interface.
 
 
 ```
-~~~~ {.brush: .java}
 /**
  * The server side implementation of the Restlet resource.
  */
@@ -143,7 +140,6 @@ public class ContactServerResource extends ServerResource implements ContactReso
         ContactServerResource.contact = contact;
     }
 }
-~~~~
 ```
 
 
