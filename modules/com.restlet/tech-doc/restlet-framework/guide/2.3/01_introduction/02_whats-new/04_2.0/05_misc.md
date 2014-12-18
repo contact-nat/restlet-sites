@@ -28,8 +28,7 @@ Eclipse Public License 1.0 is an additional licensing option offered
 # OAuth extension
 
 The OAuth extension available in Restlet 1.1 has been moved to the
-[Restlet
-Incubator](/learn/guide/2.0#/257-restlet.html?branch=main "Restlet Incubator")
+Restlet Incubator
 as it would require too much work to get aligned with the new Restlet
 security and resource APIs in version 2.0. Note that this is temporary
 and we definitely want to reintroduce this feature in Restlet 2.1.
