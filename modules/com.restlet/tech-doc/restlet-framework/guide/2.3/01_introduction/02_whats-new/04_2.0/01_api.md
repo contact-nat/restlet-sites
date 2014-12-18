@@ -85,7 +85,7 @@ in our developers wiki at the beginning of this year, taking into
 account all the enhancement requests, issues and feed-back made by our
 community. Here is the overall architecture:
 
-![](../../../core/resource/hierarchy.png)
+![](images/hierarchy.png)
 
 The new design uses three foundation classes (UniformResource,
 ClientResource and ServerResource) which support just four annotations
