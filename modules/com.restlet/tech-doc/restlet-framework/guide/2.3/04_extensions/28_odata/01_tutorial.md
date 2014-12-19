@@ -92,7 +92,9 @@ the whole set of Java classes with correct types.
 Just note the URI of the target service, and specify the directory where
 you would like to generate the code:
 
+```
     java -jar org.restlet.ext.odata.jar http://restlet.cloudapp.net/TestAssociationOneToOne.svc/ ~/workspace/testADO
+```
 
 Please note that this feature requires the use of the core Restlet, and
 additional dependencies such as Atom (used by OData services for all
@@ -111,9 +113,11 @@ You can also used the full command line that includes the list of
 required archives for the class path argument (nb: take care of the OS
 specific classpath separator) and the name of the main class:
 
+```
     java -cp org.restlet.jar:org.restlet.ext.xml.jar:org.restlet.ext.atom.jar:org.restlet.ext.freemarker.jar:org.restlet.ext.odata.jar:org.freemarker.jar org.restlet.ext.odata.Generator
      http://restlet.cloudapp.net/TestAssociationOneToOne.svc/
      ~/workspace/testADO
+```
 
 This will generate the following java classes and directory:
 
@@ -190,6 +194,7 @@ use the generated classes.
 The code below gets the whole set of Cafe entities and displays some of
 their properties. It will display this kind of output on the console:
 
+```
     id: 1
     name: Le Café Louis
     id: 2
@@ -202,6 +207,7 @@ their properties. It will display this kind of output on the console:
         System.out.println(“id: ” + Cafe.getID());
         System.out.println(“name: ” + Cafe.getName());
     }
+```
 
 ## Retrieve the set of “Cafe” entities.
 
@@ -216,15 +222,18 @@ over the iterator and access to each “Cafe” instance.
 
 Here is the content of the HTTP request:
 
+```
     GET /TestAssociationOneToOne.svc/Cafes HTTP/1.1
     Host: restlet.cloudapp.net
     User-Agent: Noelios-Restlet/2.0snapshot
     Accept: */*
     Connection: close
+```
 
 And here is the response of the server including both response headers
 and entity:
 
+```
     HTTP/1.1 200 OK
     Cache-Control: no-cache
     Content-Type: application/atom+xml;charset=utf-8
@@ -294,6 +303,7 @@ Getting the set of defined “Item” is quite similar:
         System.out.println(“id: ” + Item.getID());
         System.out.println(“desc.: ” + Item.getDescription());
     }
+```
 
 ## Retrieve the set of “Item” entities.
 
@@ -307,6 +317,7 @@ say, the one which identifier is equal to “1”. As for the set of
 entities, you just have to create a new query, with a new parameter. The
 code below should produce this output:
 
+```
     id: 1  
     name: Le Café Louis
 
@@ -315,6 +326,7 @@ code below should produce this output:
     Cafe Cafe = query.iterator().next();
     System.out.println(“id: ” + Cafe.getID());
     System.out.println(“name: ” + Cafe.getName());
+```
 
 ## Retrieve the “Cafe” by its identifier.
 
@@ -332,6 +344,7 @@ Let's complete the current list of entities and add a new one. This
 process is quite simple and just requires you to firstly create and
 complete the new entity, then invoke the “addEntity” method as follow.
 
+```
     Cafe Cafe = new Cafe();
     Cafe.setID("3");
     Cafe.setZipCode(12345);
@@ -339,6 +352,7 @@ complete the new entity, then invoke the “addEntity” method as follow.
     Cafe.setCity("Paris");
 
     service.addEntity(Cafe);
+```
 
 ## Add a new Cafe
 
@@ -349,6 +363,7 @@ POST request to the corresponding entity set resource. For example,
 adding a new Café sends a POST request to the “/Cafes” resource. Here is
 the sample content of such generated request:
 
+```
     POST /TestAssociationOneToOne.svc/Cafes HTTP/1.1
     Host: restlet.cloudapp.net
     User-Agent: Noelios-Restlet/2.0snapshot
@@ -369,6 +384,7 @@ the sample content of such generated request:
     </entry>
 
     0
+```
 
 Before using this feature, ensure that you provide a correctly
 identified object, especially, don’t try to add an entity with a null
@@ -382,12 +398,14 @@ of its properties. The sample code below illustrates this with the “Nom”
 property. It simply uses the “updateEntity” method. You can check that
 the value has really been taken into account by making a new query.
 
+```
     Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
 
     Cafe Cafe = query.iterator().next();
     Cafe.setNom("Bar des sports");
 
     service.updateEntity(Cafe);
+```
 
 ## Update a Cafe
 
@@ -399,10 +417,12 @@ Let's finish the tour of the basic operations with the deletion of an
 entity. You just need to wall the deleteEntity method as shown just
 below.
 
+```
     Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
     Cafe Cafe = query.iterator().next();
 
     service.deleteEntity(Cafe);
+```
 
 ## Delete a Cafe.
 
@@ -419,6 +439,7 @@ Item property was always null. By default, associations are not
 expanded, but they can be. If you run the following code, you will get
 this kind of trace at the console.
 
+```
     Cafe
     id: 1
     name: Le Café Louis
@@ -435,6 +456,7 @@ this kind of trace at the console.
     System.out.println("Item");
     System.out.println(“id: ” + Cafe.getItem().getID());
     System.out.println(“Description: ” + Cafe.getItem().getDescription());
+```
 
 ## Retrieve a “Cafe” by its identifier, with the associated Item in one request.
 
@@ -457,6 +479,7 @@ attribute. For example, once applied to the set of all Items provided by
 our sample OData service, the following code should display at the
 console this king of trace:
 
+```
     id: 2   
     description: Pâté
     id: 1
@@ -468,6 +491,7 @@ console this king of trace:
         System.out.println(“id: ” + Item.getID());
         System.out.println(“description: ” + Item.getDescription());
     }
+```
 
 ### Order a set of entities
 
@@ -490,6 +514,7 @@ Let's illustrate its use by limiting the set of Cafe objects to the one
 list of current Cafes, the following code will produce this display on
 the console:
 
+```
     id: 1  
     nom: Le Café Louis
 
@@ -499,6 +524,7 @@ the console:
         System.out.println(“id: ” + Cafe.getID());
         System.out.println(“nom: ” + Cafe.getNom());
     }
+```
 
 ### Filter a set of entities
 
@@ -512,6 +538,7 @@ Let's say you want to omit the first “Cafe” of the list, just call the
 “skip” method as shown in the sample code below. It should display this
 kind of trace at the console.
 
+```
     id: 2  
     name: Le Petit Marly
 
@@ -521,6 +548,7 @@ kind of trace at the console.
         System.out.println(“id: ” + Cafe.getID());
         System.out.println(“name: ” + Cafe.getName());
     }
+```
 
 ### Skip the first entity
 
@@ -530,6 +558,7 @@ Just as the “skip” method, “top” takes a number parameter which
 represents the maximum number of results that the query will return. Its
 use is very simple as shown below:
 
+```
     id: 1
     name: Le Café Louis
 
@@ -539,6 +568,7 @@ use is very simple as shown below:
         System.out.println(“id: ” + Cafe.getID());
         System.out.println(“name: ” + Cafe.getName());
     }
+```
 
 ### Limit the number of returned entities.
 
@@ -559,6 +589,7 @@ that these entities are only populated with the selected properties.\
  For example, the following code will only get the name of the Cafe
 entities:
 
+```
     id: null
     name: Le Café Louis
 
@@ -568,12 +599,14 @@ entities:
         System.out.println(“id: ” + Cafe.getID());
         System.out.println(“name: ” + Cafe.getName());
     }
+```
 
 ## Limit the number of returned properties
 
 This applies also to associated entities, as far as the association is
 expanded:
 
+```
     id: null
     name: Le Café Louis
     Item
@@ -589,6 +622,7 @@ expanded:
         System.out.println(“id: ” + Cafe.getItem().getID());
         System.out.println(“Description: ” + Cafe.getItem().getDescription());
     }
+```
 
 ## Limit the number of returned properties
 
@@ -620,9 +654,11 @@ segment (set the parameter to "false", this is the value by default).
 The following sample code illustrates how to get the count using the
 *inlinecount* query parameter.
 
+```
     Query<Cafe> query = service.createCafeQuery("/Cafes").inlineCount(true);
 
     System.out.println("Number of entities: " + query.getCount());
+```
 
 ## Get the number of Cafes
 
@@ -671,6 +707,7 @@ all communications with the target service. This is generally done once,
 after the instantiation of the service. Here is an illustration of how
 to set the credentials:
 
+```
     service.setCredentials(
             new ChallengeResponse(ChallengeScheme.HTTP_BASIC,
                             "login",
@@ -683,6 +720,7 @@ to set the credentials:
         System.out.println(“id: ” + Cafe.getID());
         System.out.println(“nname: ” + Cafe.getName());
     }
+```
 
 ## Add credentials to access a secured service.
 

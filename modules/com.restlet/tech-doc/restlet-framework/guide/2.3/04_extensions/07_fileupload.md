@@ -48,8 +48,7 @@ MyResource instance is to parse the request, get the file, save it on
 disk and send back its content as plain text to the client.
 
 Here is the content of the MyResource\#accept method:
-```
-~~~~ {.brush: .java}
+```java
     @Post
     public Representation accept(Representation entity) throws Exception {
         Representation rep = null;
@@ -113,7 +112,6 @@ Here is the content of the MyResource\#accept method:
 
         return rep;
     }
-~~~~
 ```
 Before running this example, please add the following jars to the
 classpath:

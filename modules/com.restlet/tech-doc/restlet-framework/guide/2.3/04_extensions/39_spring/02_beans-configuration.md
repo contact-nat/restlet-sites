@@ -9,8 +9,8 @@ Application) and pass it by reference to the constructor method.
 
 Spring provides two mechanism to achieve this: either using the
 PropertyPathFactoryBean class to create a context bean such as:
-```
-~~~~ {.brush: .java}
+
+```java
 <!-- Restlet Component bean -->
 <bean id="component" class="org.restlet.ext.spring.SpringComponent">
     ...
@@ -24,12 +24,12 @@ PropertyPathFactoryBean class to create a context bean such as:
     <constructor-arg ref="component.context" />
     ...
 </bean>
-~~~~
 ```
+
 The second mechanism is based on the Spring utilities schema and is
 actually more compact:
-```
-~~~~ {.brush: .java}
+
+```java
 <!-- Restlet Component bean -->
 <bean id="component" class="org.restlet.ext.spring.SpringComponent">
     ...
@@ -42,12 +42,12 @@ actually more compact:
     </constructor-arg>
     ...
 </bean>
-~~~~
 ```
+
 You also have to make sure that the util namespace is properly declared
 in your XML configuration header. Here is a snippet for Spring 2.5:
-```
-~~~~ {.brush: .java}
+
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -59,8 +59,8 @@ http://www.springframework.org/schema/util http://www.springframework.org/schema
 <!-- Add you <bean/> definitions here -->
 
 </beans>
-~~~~
 ```
+
 This utilities mechanism is quite powerful and flexible, for more
 information [check this
 page](http://static.springframework.org/spring/docs/2.5.x/reference/xsd-config.html#xsd-config-body-schemas-util-property-path).
