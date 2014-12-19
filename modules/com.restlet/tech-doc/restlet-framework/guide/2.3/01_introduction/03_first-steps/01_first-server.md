@@ -9,8 +9,7 @@ and return a simple string representation "hello, world" as plain text.
 Note that the FirstServerResource class extends the base
 org.restlet.resource.ServerResource class provided by the Restlet API:
 
-```
-~~~~ {.brush: .java}
+```java
 public class FirstServerResource extends ServerResource {  
 
    public static void main(String[] args) throws Exception {  
@@ -24,7 +23,6 @@ public class FirstServerResource extends ServerResource {
    }
 
 }  
-~~~~
 ```
 
 If you run this code and launch your server, you can open a Web browser

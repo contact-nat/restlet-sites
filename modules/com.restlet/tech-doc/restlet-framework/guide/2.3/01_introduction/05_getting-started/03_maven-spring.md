@@ -22,6 +22,7 @@ project structure. We define the name of the artifact and the group
 some skeleton java source files. We will delete the App and AppTest
 source files since we will be creating our own classes.
 
+```
      mvn archetype:create -DgroupId=com.mycompany.basecamp -DartifactId=restlet-basecamp
 
     restlet-basecamp/
@@ -41,6 +42,7 @@ source files since we will be creating our own classes.
     restlet-basecamp/src/test/java/com/mycompany/restlet
     restlet-basecamp/src/test/java/com/mycompany/restlet/basecamp
     restlet-basecamp/src/test/java/com/mycompany/restlet/basecamp/AppTest.java
+```
 
 ## Step 2: Configure the POM
 
@@ -51,6 +53,7 @@ particular the Spring and Servlet extension packages.  It also defines
 the Jetty plugin since we will be running this web service in an
 embedded Jetty server.
 
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -116,6 +119,7 @@ embedded Jetty server.
         <basecamp.server.contextpath>basecamp</basecamp.server.contextpath>
       </properties>
     </project>
+```
 
 ## Step 3: Create the BaseCampResource
 
@@ -124,6 +128,7 @@ extends ServerResource and responds to the HTTP GET method. Note the use
 of annotations, which is part of  the Restlet Framework.  For the
 purpose of this document we will only define this simple resource.
 
+```
     package com.mycompany.restlet.basecamp.resource.demo;
 
     import org.restlet.resource.Get;
@@ -136,6 +141,7 @@ purpose of this document we will only define this simple resource.
         return "Hello World!";
       }
     }
+```
 
 ## Step 4: Create the BaseCampApplication
 
@@ -144,12 +150,14 @@ BaseCampApplication, which extends the core framework class. It's not
 really required for this example but if you need to override base class
 behaviour this is how you would go about it.
 
+```
     package com.mycompany.restlet.basecamp.application;
 
     import org.restlet.Application;
 
     public class BaseCampApplication extends Application {
     }
+```
 
 ## Step 5: Sprinkle Some Spring
 
@@ -170,6 +178,7 @@ various components.
 
 <!-- -->
 
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
     <beans>
@@ -187,6 +196,7 @@ various components.
       <!-- Define all the routes -->
       <bean name="/hello" class="com.mycompany.restlet.basecamp.resource.demo.BaseCampResource" scope="prototype" autowire="byName" />
     </beans>
+```
 
 ## Step 6: Set up the web.xml
 
@@ -195,6 +205,7 @@ The important parts are the **context-param** entries. One points to the
 the SpringComponent class instance in our application context and the
 other points to the location of the application context file.
 
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app id="restlet-basecamp" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
@@ -225,12 +236,14 @@ other points to the location of the application context file.
       </servlet-mapping>
 
     </web-app>
+```
 
 ## Step 7: Build It
 
 To create the war file execute '**mvn package'** in your shell. The war
 file will in the **target** subdirectory.
 
+```
     jima:restlet-basecamp jima$ mvn package
 
     [INFO] ------------------------------------------------------------------------
@@ -275,6 +288,7 @@ file will in the **target** subdirectory.
     [INFO] Finished at: Tue Nov 09 21:30:38 EST 2010
     [INFO] Final Memory: 18M/81M
     [INFO] ------------------------------------------------------------------------
+```
 
 ## Step 8: Run It
 
@@ -283,6 +297,7 @@ To run the web service in an embedded jetty server simple execute 
 then run it up inside a jetty servlet container. The web service will be
 available on **localhost:8080** with a root context of '**/basecamp**'
 
+```
     jima:restlet-basecamp jima$ mvn jetty:run-war
 
     [INFO] [jetty:run-war {execution: default-cli}]
@@ -294,6 +309,7 @@ available on **localhost:8080** with a root context of '**/basecamp**'
     [INFO] Starting jetty 6.1.25 ...
     [INFO] Started Jetty Server
     [INFO] Starting scanner at interval of 10 seconds.
+```
 
 If you now go to your web browser and enter the following URL the
 service, which you have just created, should respond with 'Hello World!'
@@ -306,8 +322,10 @@ Accessing the resource via a browser
 Finally, if you go back to the console, where you started the server you
 should see some logging similar to what is displayed below
 
+```
     Nov 9, 2010 9:34:31 PM org.restlet.engine.log.LogFilter afterHandle
     INFO: 2010-11-09    21:34:31    0:0:0:0:0:0:0:1%0   -   0:0:0:0:0:0:0:1%0   8080    GET /basecamp/hello -   200 12  0   57  http://localhost:8080   Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.2 Safari/533.18.5 -
+```
 
 ## Step 9: Deploy It
 
@@ -321,6 +339,7 @@ the web service respectively.
 An minimal configured tomcat maven plugin is shown below but you should
 consult the documentation for the finer details.
 
+```
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>tomcat-maven-plugin</artifactId>
@@ -331,6 +350,7 @@ consult the documentation for the finer details.
               <path>${basecamp.server.contextpath}</path>
             </configuration>
           </plugin>
+```
 
 # Resources
 

@@ -118,7 +118,7 @@ See also the "readme.txt" file located in the sources file. It list also all nec
 The server-side resource implements the annotated interface.
 
 
-```
+```java
 /**
  * The server side implementation of the Restlet resource.
  */
@@ -146,8 +146,7 @@ public class ContactServerResource extends ServerResource implements ContactReso
 This resource is then exposed by the server application:
 
 
-```
-~~~~ {.brush: .java}
+```java
     @Override
     public Restlet createInboundRoot() {
         Router router = new Router(getContext());
@@ -158,7 +157,6 @@ This resource is then exposed by the server application:
 
         return router;
     }
-~~~~
 ```
 
 
@@ -172,8 +170,7 @@ an interface that inherits on a specific interface (delivered by the GWT
 edition of the Restlet Framework):  
 
 
-```
-~~~~ {.brush: .java}
+```java
 public interface ContactResourceProxy extends ClientProxy {
     @Get
     public void retrieve(Result<Contact> callback);
@@ -184,7 +181,6 @@ public interface ContactResourceProxy extends ClientProxy {
     @Delete
     public void remove(Result<Void> callback);
 }
-~~~~
 ```
 
 
@@ -202,8 +198,7 @@ Then, the following code allows you to request and handle the Contact
 resource:
 
 
-```
-~~~~ {.brush: .java}
+```java
 ContactResourceProxy contactResource = GWT.create(ContactResourceProxy.class);
 
 // Set up the contact resource
@@ -223,7 +218,6 @@ contactResource.retrieve(new Result<Contact>() {
         cTbAge.setText(Integer.toString(contact.getAge()));
     }
 });
-~~~~
 ```
 
 
@@ -237,8 +231,7 @@ In order to update the contact, simply complete your contact object and
 invoke the "store" method as specified by the proxy interface:
 
 
-```
-~~~~ {.brush: .java}
+```java
 contactResource.store(contact, new Result<Void>() {
     public void onFailure(Throwable caught) {
         // Handle the error
@@ -252,7 +245,6 @@ contactResource.store(contact, new Result<Void>() {
         closeButton.setFocus(true);
     }
 });
-~~~~
 ```
 
 
@@ -268,8 +260,7 @@ serialization process. No additional interface is required except the
 ContactResource interface furnished by the server.
 
 
-```
-~~~~ {.brush: .java}
+```java
 // Initialize the resource proxy.
 ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
 // Workaround for GAE servers to prevent chunk encoding
@@ -279,18 +270,15 @@ ContactResource resource = cr.wrap(ContactResource.class);
 
 // Get the remote contact
 Contact contact = resource.retrieve();
-~~~~
 ```
 
 
 In order to update the contact, simply use this instruction:
 
 
-```
-~~~~ {.brush: .java}
+```java
 // Update the remote contact
 resource.store(contact);
-~~~~
 ```
 
 
@@ -312,8 +300,7 @@ The same code used on the Android application allows you to get the full
 Contact object:
 
 
-```
-~~~~ {.brush: .java}
+```java
 ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
 // Get the Contact object
 ContactResource resource = cr.wrap(ContactResource.class);
@@ -324,7 +311,6 @@ if (contact != null) {
     System.out.println(" lastname: " + contact.getLastName());
     System.out.println("     nage: " + contact.getAge());
 }
-~~~~
 ```
 
 
@@ -341,10 +327,8 @@ JSON representation by setting the client preferences when retrieving
 the resource's representation:
 
 
-```
-~~~~ {.brush: .java}
+```java
 cr.get(MediaType.APPLICATION_JSON).write(System.out);
-~~~~
 ```
 
 

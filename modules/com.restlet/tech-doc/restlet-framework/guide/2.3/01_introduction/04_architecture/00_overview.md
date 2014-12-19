@@ -60,6 +60,7 @@ VirtualHost (see the Component.hosts property for details). In a later
 example, we will also introduce the usage of the Application class. Note
 that for now you don't see any access log displayed in the console. 
 
+```
     public static void main(String[] args) throws Exception {
         // Create a new Restlet component and add a HTTP server connector to it
         Component component = new Component();  
@@ -78,12 +79,15 @@ that for now you don't see any access log displayed in the console. 
                 + getReference().getBaseRef() + '\n' + "Remaining part: "
                 + getReference().getRemainingPart();  
     }
+```
 
 Now let's test it by entering
 http://localhost:8182/trace/abc/def?param=123 in a Web browser. Here is
 the result that you will get:
 
+```
     Resource URI  : http://localhost:8182/trace/abc/def?param=123
     Root URI      : http://localhost:8182/trace
     Routed part   : http://localhost:8182/trace
     Remaining part: /abc/def?param=123
+```
