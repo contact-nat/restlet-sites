@@ -52,8 +52,7 @@ Here is the grammar for this parameter:
 ```
 
 Here are some valid values:
-```
-~~~~ {.brush: .java}
+```java
     // Returns a representation in the "text/xml" media type
     @Get("xml")
     String toString();
@@ -77,7 +76,6 @@ Here are some valid values:
 
     // Alternative variants
     @Put("xml+ascii | json+utf8 : json")
-~~~~
 ```
 >**Note** the importance of registering the proper extension names via the
 MetadataService in order to use additional extension names.
@@ -87,8 +85,7 @@ MetadataService in order to use additional extension names.
 Here is how a sample resource would look like with the refactored API.
 Note that both extension names and full MIME type would be supported.
 Extensions can be updated via the MetadataService.
-```
-~~~~ {.brush: .java}
+```java
     import java.io.InputStream;
 
     import org.restlet.ext.atom.Feed;
@@ -136,5 +133,4 @@ Extensions can be updated via the MetadataService.
         }
 
     }
-~~~~
 ```

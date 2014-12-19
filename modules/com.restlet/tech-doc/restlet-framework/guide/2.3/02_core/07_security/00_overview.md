@@ -38,8 +38,7 @@ the Servlet API, the concept is similar to the
 [Filter](http://java.sun.com/j2ee/1.4/docs/api/javax/servlet/Filter.html)
 interface. See below how we would modify the previous example to secure
 the access to the Directory:
-```
-~~~~ {.brush: .java}
+```java
     @Override
     public Restlet createInboundRoot() {
         // Create a simple password verifier
@@ -58,7 +57,6 @@ the access to the Directory:
 
         return guard;
     }
-~~~~
 ```
 ![](images/guard.png)
 
@@ -69,8 +67,7 @@ ChallengeAuthenticator) and the Authorizer abstract classes. Here we
 simply hard-coded a single user and password couple. In order to test,
 let's use the client-side Restlet API:
 
-```
-~~~~ {.brush: .java}
+```java
     public static void main(String[] args) {
         // Prepare the request
         ClientResource resource = new ClientResource("http://localhost:8182/");
@@ -97,7 +94,6 @@ let's use the client-side Restlet API:
             }
         }
     }
-~~~~
 ```
 You can change the user ID or password sent by this test client in order
 to check the response returned by the server. Remember to launch the

@@ -25,8 +25,7 @@ automatically updated with the value of the URI template variables!
 ![](images/hierarchy.png)
 
 See the implementation code below. In a real application, you will probably want to create separate subclasses instead of the anonymous ones we use here:
-```
-~~~~ {.brush: .java}
+```java
     // Create a root router
     Router router = new Router(getContext());
 
@@ -85,7 +84,6 @@ See the implementation code below. In a real application, you will probably want
     router.attach("/users/{user}", account);
     router.attach("/users/{user}/orders", orders);
     router.attach("/users/{user}/orders/{order}", order);
-~~~~
 ```
 Note that the routing assumes that your request contains an absolute
 target URI that identifies a target resource. During the request
