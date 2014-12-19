@@ -10,7 +10,9 @@ class](http://java.sun.com/j2se/1.5.0/docs/api/java/util/logging/LogManager.html
 For example, to indicate the location of your logging properties file,
 you should add the following parameter to your JVM:
 
+```
     -Djava.util.logging.config.file="/home/myApp/config/myLogging.properties"
+```
 
 When developing your Restlet code, you should always use the current
 context to get a logger. This will ensure the proper naming and
@@ -128,6 +130,7 @@ As a starting point for your own logging properties file, here is the
 one we use on our Restlet base Web server. Feel free to copy and paste
 as needed.
 
+```
     # ================================
     # ==                            ==
     # ==   Web Logging Properties   ==
@@ -144,10 +147,12 @@ as needed.
     # the root Logger (the Logger named ""). Each class name must be for a Handler class which has a default constructor.
     # Note that these Handlers may be created lazily, when they are first used.
     handlers=java.util.logging.FileHandler
+```
 
 In this first section, we declare one default handler that will receive
 the log records. It is a file handler that will be configured below.
 
+```
     # ------------------
     # Loggers properties
     # ------------------
@@ -160,6 +165,7 @@ the log records. It is a file handler that will be configured below.
     com.noelios.web.WebComponent.www.level=INFO
     com.noelios.web.WebComponent.www.handlers=com.noelios.restlet.util.AccessLogFileHandler
     com.noelios.web.WebComponent.www.useParentHandlers=false
+```
 
 In this second section, we indicate that by default we are only
 interested in log records with a WARNING level. We also configure the
@@ -171,12 +177,15 @@ We also configured a logger for the WWW access log of our Restlet
 component. For information, our Component subclass has this code in its
 constructor:
 
+```
     getLogService().setLoggerName("com.noelios.web.WebComponent.www");
+```
 
 Also note that we use a specific handler for this logger, the
 AccessLogFileHandler which is provided in the NRE. It can be easily
 configurer to produce Apache-style HTTP log files.
 
+```
     # -------------------------
     # ConsoleHandler properties
     # -------------------------
@@ -192,10 +201,12 @@ configurer to produce Apache-style HTTP log files.
 
     # The name of the character set encoding to use (defaults to the default platform encoding).
     # java.util.logging.ConsoleHandler.encoding=
+```
 
 In the section above we have disabled the default ConsoleHandler
 configuration as we don't use it on our server-side application.
 
+```
     # ------------------------------
     # General FileHandler properties
     # ------------------------------
@@ -231,10 +242,12 @@ configuration as we don't use it on our server-side application.
 
     # Specifies whether the FileHandler should append onto any existing files (defaults to false).
     # java.util.logging.FileHandler.append=
+```
 
 Here we specify the file size limit, the number of rotation files (100)
 and the file name template.
 
+```
     # -------------------------
     # LogFileHandler properties
     # -------------------------
@@ -269,6 +282,7 @@ and the file name template.
 
     # Specifies whether the FileHandler should append onto any existing files (defaults to false).
     # org.restlet.util.AccessLogFileHandler.append=
+```
 
 This is similar to the previous section, but specific to our
 AccessLogFileHandler log handler. This let's us use a specific log
@@ -289,8 +303,10 @@ This bridge is [provided by the SLF4J
 project](http://www.slf4j.org/legacy.html).
 Once it is installed, you will just need to add these lines of code:
 
+```
      import org.slf4j.bridge.SLF4JBridgeHandler;
      SLF4JBridgeHandler.install();
+```
 
 Then, you can drop the JAR from SLF4J corresponding to the target
 logging mechanism. For details, you can check [this
@@ -303,10 +319,12 @@ Commons Logging to SLF4J and keep all log consistent.
 In addition, if you want to disable the usual console outputs, you could
 add those lines:
 
+```
     java.util.logging.Logger rootLogger = LogManager.getLogMan​ager().getLogger(​"");
     Handler[] handlers = rootLogger.getHandlers();
     rootLogger.removeHan​dler(handlers[0]);
     SLF4JBridgeHandler.install();
+```
 
 ## Restlet LoggerFacade for SLF4J
 
@@ -321,7 +339,9 @@ A special subclass for SLF4J is even provided in the
 "org.restlet.ext.slf4j" extension. In order to install it, you need to
 add this system property
 
+```
     org.restlet.engine.loggerFacadeClass=org.restlet.ext.slf4j.Slf4jLoggerFacade
+```
 
 You can set this property on the command line with the "-D" prefix, or
 programmatically with the System\#setProperty() method.

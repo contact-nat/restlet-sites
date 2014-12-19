@@ -31,8 +31,7 @@ sure you download the edition for GAE) to your "/war/WEB-INF/lib/"
 directory and to your project build path.
 
 Here is the Restlet resource to create:
-```
-~~~~ {.brush: .java}
+```java
 package firstSteps;
 
 import org.restlet.resource.Get;
@@ -50,11 +49,9 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-~~~~
 ```
 Now here is the parent application:
-```
-~~~~ {.brush: .java}
+```java
 package firstSteps;
 
 import org.restlet.Application;
@@ -78,11 +75,9 @@ public class FirstStepsApplication extends Application {
         return router;
     }
 }
-~~~~
 ```
 Finally, here is the Servlet configuration file:
-```
-~~~~ {.brush: .java}
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
@@ -106,7 +101,6 @@ Finally, here is the Servlet configuration file:
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
-~~~~
 ```
 For more information on Restlet, please check our [documentation
 pages](javadocs://jse/).
