@@ -1,3 +1,12 @@
+v3.2.0
+
+Restlet Framework documentation: migration to adopt our new look and feel
+
+- Updated YML files (with short title for ToC and long title for page display)
+- Added introduction text on welcome page
+- Placed all images in "images" files to follow APISpark and Restlet Studio structure
+- Added "hidden" files in ToC
+
 v3.1.0
 
 - Reviewed tutorials and interactive assistants
