@@ -36,6 +36,7 @@ instructions to get a simple Restlet project working with OSGi:
 
 <!-- -->
 
+```
     public class Activator implements BundleActivator {
 
         private Server server;
@@ -56,6 +57,7 @@ instructions to get a simple Restlet project working with OSGi:
         }
 
     }
+```
 
 1.  Open the Run Configurations dialog
 2.  Create a new configuration under the "OSGi framework" tree node
@@ -71,8 +73,7 @@ Now, let's look at a more complete example, leveraging the Jetty
 connector and attaching Resources to a Router. For this we will reuse
 the Part12 example of the Restlet tutorial.
 
-1.  Create a new "Plug-in Project", name it
-    "[OsgiUsageTest2](/learn/guide/2.1#/239-restlet/version/default/part/AttachmentData/data "OsgiUsageTest2")
+1.  Create a new "Plug-in Project", name it  "[OsgiUsageTest2](/learn/guide/2.1#/239-restlet/version/default/part/AttachmentData/data "OsgiUsageTest2")
     (application/zip, 6.5 kB)"
     and press "Next \>"
 2.  Select the checkbox to generate an Activator and press "Finish"
@@ -84,6 +85,7 @@ the Part12 example of the Restlet tutorial.
 
 <!-- -->
 
+```
     import org.osgi.framework.BundleActivator;
     import org.osgi.framework.BundleContext;
     import org.restlet.Application;
@@ -112,6 +114,7 @@ the Part12 example of the Restlet tutorial.
         }
 
     }
+```
 
 For the rest of the source code, copy and paste from the regular Restlet
 tutorial available in the "org.restlet.example.tutorial" package the
@@ -163,7 +166,9 @@ OSGi container proposed by Dave Fogel:
 ​1) You will need the eclipse equinox osgi jar file (from some recent
 version of eclipse, in the plugins folder, in this case 3.5M5):
 
+```
 org.eclipse.osgi\_3.5.0.v20090127-1630.jar
+```
 
 ​2) Download the FileInstall bundle by Peter Kriens, which will monitor
 a directory and automatically install bundles it finds there. (for a
@@ -175,12 +180,14 @@ longer description you can see
 ​3) you then create the following directory structure (Note substitute
 your actual equinox bundle version for "3.X.X"):
 
+```
 my\_equinox/\
      org.eclipse.osgi\_3.X.X.jar\
      fileinstall-1.3.4.jar\
      load/\
          configuration/ \
              config.ini
+```
 
 "load/" is an empty dir, where you will later put the bundles you wish
 to test.
@@ -188,17 +195,21 @@ to test.
 "config.ini" should be a text file with the following lines in it (but
 not indented):
 
+```
     osgi.bundles=fileinstall-1.3.4.jar@start \
      eclipse.ignoreApp=true
+```
 
 ​4) run equinox from the command line (make sure to "cd" to the
 "my\_equinox" directory first):
 
+```
     java -jar org.eclipse.osgi\_3.X.X.jar -console
 
     (or)
 
     java -jar org.eclipse.osgi\_3.X.X.jar -console 7777 &
+```
 
 This will start up equinox with a command-line console. if you run the
 first version above, you will enter the console directly. This can be
@@ -207,20 +218,26 @@ the 2nd version will launch equinox in a new process and tell it to
 listen on port 7777 for telnet connections. To connect to the running
 osgi console, you then type:
 
+```
     telnet locahost 7777
+```
 
 ​5) type "help" in the osgi console for a list of commands. To quickly
 check the status of all installed bundles, type (where "osgi\>" is the
 osgi command prompt):
 
+```
     osgi\> ss
+```
 
 "ss" stands for "short status", and in this case you should see
 something like:
 
+```
     id State Bundle \
      0 ACTIVE org.eclipse.osgi\_3.X.X \
      1 ACTIVE biz.aQute.fileinstall\_1.3.4
+```
 
 ​6) copy any bundles you want to install to the "load/" directory. The
 FileInstall bundle will automatically attempt to load and start these
@@ -244,24 +261,29 @@ container. You must be sure that the bundle providing the connector is
 already loaded when trying to add the client connector. Otherwise I'll
 see something like that in the trace:
 
+```
     Internal Connector Error (1002) - No available client connector supports the
     requiredprotocol: 'HTTPS'. Please add the JAR of a matching connector to your
     classpath.
+```
 
 In this case, before adding your client connector, you need to check the
 loaded bundles and before executing your REST request, the registered
 client connector. \
  Here is the code to see all registered client connectors:
 
+```
     List<ConnectorHelper<Client>> clients = Engine.getInstance().getRegisteredClients();
     System.out.println("Connectors - "+clients.size());
     for(ConnectorHelper<Client> connectorHelper : clients) {   
         System.out.println("connector = "+connectorHelper.getClass());
     }
+```
 
 You can use OSGi bundle listeners to see if necessary bundles are
 loaded. Here is a sample of code:
 
+```
     // Checking the bundle loading in the future
     bundleContext.addBundleListener(new BundleListener() {
         public void bundleChanged(BundleEvent event) {
@@ -281,6 +303,7 @@ loaded. Here is a sample of code:
             registerClientConnector();
         }
     }
+```
 
 The registerClientConnector method simply does something like that:
 component.getClients().add(Protocol.HTTPS);.

@@ -31,7 +31,7 @@ This example needs to be updated for Restlet Framework 2.1. Help welcome
 It's very clean from its name that it works as db4o function simpler.Its
 generalOperate method handles general operation with db4o:
 
-Note:This class works as only non-concurrent model,because it doesn't
+>**Note:**This class works as only non-concurrent model,because it doesn't
 work as [client/server
 model](http://developer.db4o.com/resources/api/db4o-java/com/db4o/Db4o.html).If
 you have requirement,you should modify it in concurrent(client/server)
@@ -183,9 +183,9 @@ It's a restful Micoblog Server which serves static files and
 resource(MicroblogResource) and exposes some services(static html and
 Microblog):
 
-***Note:******I used TunnelService replacing custom finder,'cause I
+>**Note:** I used TunnelService replacing custom finder,'cause I
 think TunnelService is easy for using.But I'd discuss how to using
-custom finder to implement same function.***
+custom finder to implement same function.
 
 >         package com.bjinfotech.restlet.practice.demo.microblog;
 >
@@ -243,276 +243,276 @@ custom finder to implement same function.***
 This is a JavaScript file used in microblog.html file,it call functions
 which was exposed in server side:
 
->         var SAVE_MODEL=1;
->         var UPDATE_MODEL=2;
->
->         function switchEditorModel(model){
->             switch(model){
->                 case SAVE_MODEL:
->                     Element.show('save_button');
->                     Element.hide('update_button');
->                     Element.hide('remove_button');
->                     Element.hide('new_button');
->                     break;
->                 case UPDATE_MODEL:
->                     Element.hide('save_button');
->                     Element.show('update_button');
->                     Element.show('remove_button');
->                     Element.show('new_button');
->                     break;
->             }
->         }
->
->         ...
->
->         Event.observe(
->             'save_button',
->             'click',
->             function(){
->                 var formObj=Form.serialize('edit_form',true);
->                 var xmlHttp = new Ajax.Request(
->                     "/restful/blog?method=PUT",
->                     {
->                         method: 'post',
->                         parameters: 'json='+encodeURIComponent(Object.toJSON(formObj)),
->                         onComplete: function(transport){
->                             var retObj=transport.responseText.evalJSON();
->                             if (retObj.subject){
->                                 alert('ok,"'+retObj.subject+'" was saved!');
->                                 refreshBloglist();
->                                 switchEditorModel(UPDATE_MODEL);
->                             }
->                         }
->                     }
->                 );
->             },
->             false
->         );
->
->         ...
->
->         function refreshBloglist(){
->             var xmlHttp = new Ajax.Request(
->                 "/restful/blog",
->                 {
->                     method: 'get',
->                     parameters: '',
->                     onComplete: function(transport){
->                         var retObjs=transport.responseText.evalJSON();
->                         if (retObjs.length && retObjs.length>0){
->                             var listRepr='<ul>\n';
->                             retObjs.each(function(obj,index){
->                                 if (index<retobjs.length-1 ) listrepr+="
->         <li>"><a href="javascript:load(\''+obj.subject+'\');">'+obj.subject+'</a>\n';
->                             });
->                             listRepr+="<\ul>\n";
->                             $('blogList').innerHTML=listRepr;
->                         }
->                         else{
->                             $('blogList').innerHTML='Here is empty';
->                         }
->                     }
->                 }
->             );
->         }
->         function load(subject){
->             var xmlHttp = new Ajax.Request(
->                     "/restful/blog",
->                     {
->                         method: 'get',
->                         parameters: 'subject='+encodeURIComponent(subject),
->                         onComplete: function(transport){
->                             var retObj=transport.responseText.evalJSON();
->                             if (retObj.subject){
->                                 $('subject').value=retObj.subject;
->                                 $('content').value=retObj.content;
->                                 $('tags').value=retObj.tags;
->                                 alert('ok,"'+retObj.subject+'" was loaded!');
->                                 switchEditorModel(UPDATE_MODEL);
->                             }
->                         }
->                     }
->                 );
->         }
+         var SAVE_MODEL=1;
+         var UPDATE_MODEL=2;
+
+         function switchEditorModel(model){
+             switch(model){
+                 case SAVE_MODEL:
+                     Element.show('save_button');
+                     Element.hide('update_button');
+                     Element.hide('remove_button');
+                     Element.hide('new_button');
+                     break;
+                 case UPDATE_MODEL:
+                     Element.hide('save_button');
+                     Element.show('update_button');
+                     Element.show('remove_button');
+                     Element.show('new_button');
+                     break;
+             }
+         }
+
+         ...
+
+         Event.observe(
+             'save_button',
+             'click',
+             function(){
+                 var formObj=Form.serialize('edit_form',true);
+                 var xmlHttp = new Ajax.Request(
+                     "/restful/blog?method=PUT",
+                     {
+                         method: 'post',
+                         parameters: 'json='+encodeURIComponent(Object.toJSON(formObj)),
+                         onComplete: function(transport){
+                             var retObj=transport.responseText.evalJSON();
+                             if (retObj.subject){
+                                 alert('ok,"'+retObj.subject+'" was saved!');
+                                 refreshBloglist();
+                                 switchEditorModel(UPDATE_MODEL);
+                             }
+                         }
+                     }
+                 );
+             },
+             false
+         );
+
+         ...
+
+         function refreshBloglist(){
+             var xmlHttp = new Ajax.Request(
+                 "/restful/blog",
+                 {
+                     method: 'get',
+                     parameters: '',
+                     onComplete: function(transport){
+                         var retObjs=transport.responseText.evalJSON();
+                         if (retObjs.length && retObjs.length>0){
+                             var listRepr='<ul>\n';
+                             retObjs.each(function(obj,index){
+                                 if (index<retobjs.length-1 ) listrepr+="
+         <li>"><a href="javascript:load(\''+obj.subject+'\');">'+obj.subject+'</a>\n';
+                             });
+                             listRepr+="<\ul>\n";
+                             $('blogList').innerHTML=listRepr;
+                         }
+                         else{
+                             $('blogList').innerHTML='Here is empty';
+                         }
+                     }
+                 }
+             );
+         }
+         function load(subject){
+             var xmlHttp = new Ajax.Request(
+                     "/restful/blog",
+                     {
+                         method: 'get',
+                         parameters: 'subject='+encodeURIComponent(subject),
+                         onComplete: function(transport){
+                             var retObj=transport.responseText.evalJSON();
+                             if (retObj.subject){
+                                 $('subject').value=retObj.subject;
+                                 $('content').value=retObj.content;
+                                 $('tags').value=retObj.tags;
+                                 alert('ok,"'+retObj.subject+'" was loaded!');
+                                 switchEditorModel(UPDATE_MODEL);
+                             }
+                         }
+                     }
+                 );
+         }
 
 ## MicroblogResource.Class
 
->         package com.bjinfotech.restlet.practice.demo.microblog;
->
->         import java.util.List;
->         import java.util.logging.Logger;
->
->         import org.restlet.Context;
->         import org.restlet.data.CharacterSet;
->         import org.restlet.data.Form;
->         import org.restlet.data.Language;
->         import org.restlet.data.MediaType;
->         import org.restlet.data.Request;
->         import org.restlet.data.Response;
->         import org.restlet.resource.Representation;
->         import org.restlet.resource.Resource;
->         import org.restlet.resource.ResourceException;
->         import org.restlet.resource.StringRepresentation;
->         import org.restlet.resource.Variant;
->         import org.restlet.data.Status;
->         import com.bjinfotech.util.JSONSimpler;
->         import com.bjinfotech.util.Utils;
->
->         public class MicroblogResource extends Resource {
->             Logger log=Logger.getLogger(MicroblogResource.class.getSimpleName());
->             //MicroblogPersistenceManager
->             MicroblogPersistenceManager micoblogPM=new MicroblogPersistenceManager();
->             //StringRepresentation constant
->             final StringRepresentation NO_FOUND_REPR=new StringRepresentation("No found!");
->             final StringRepresentation ERR_REPR=new StringRepresentation("something wrong!");
->             //json param name in request
->             final String JSON_PARAM="json";
->
->             public MicroblogResource(
->                     Context context,
->                     Request request,
->                     Response response) {
->                 super(context, request, response);
->                 this.getVariants().add(new Variant(MediaType.TEXT_PLAIN));
->                 //it's important,please don't forget it.
->                 this.setAvailable(true);
->                 this.setModifiable(true);
->                 this.setNegotiateContent(true);
->             }
->             @Override
->             /**
->              * representing after calling default get handle
->              * @param variant
->              */
->             public Representation represent(Variant variant) throws ResourceException{
->                 log.info("representing after calling default get handle...");
->                 Representation result = null;
->                 if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
->                     //find "subject" param in request,"subject" param is tranformed from web client.it means load one blog with special subject
->                     String subject=getRequest().getResourceRef().getQueryAsForm().getFirstValue("subject");
->                     log.info("subject:"+subject);
->                     //handle query
->                     if (subject!=null && subject.length()>0){
->                         //find blog with special subject
->                         Microblog example=new Microblog();
->                         example.setSubject(subject);
->                         List queryRet=micoblogPM.query(example);
->                         //return result in JSON format StringRepresentation
->                         if (queryRet!=null && queryRet.size()>0){
->                             result=new StringRepresentation(
->                                     JSONSimpler.serializeFromBean(queryRet.get(0)),
->                                     MediaType.APPLICATION_JSON,
->                                     Language.ALL,
->                                     CharacterSet.UTF_8
->                                 );
->                         }
->                         else{
->                             result=NO_FOUND_REPR;
->                         }
->                     }
->                     else{
->                         //return blog list in JSON format StringRepresentation
->                         result=new StringRepresentation(
->                                 JSONSimpler.serializeFromBeanList(micoblogPM.list()),
->                                 MediaType.APPLICATION_JSON,
->                                 Language.ALL,
->                                 CharacterSet.UTF_8
->                             );
->                     }
->                 }
->                 return result;
->             }
->             /**
->              * call MicroblogPersistenceManager's method excluding query and list,just save/update/delete.
->              * @param method method name
->              * @param jsonParamVal json param value coming from request
->              * @return
->              */
->             protected StringRepresentation callMethod(String method,String jsonParamVal){
->                 //transform json format string to Microblog object
->                 Microblog microblog=(Microblog)JSONSimpler.deserializeToBean(jsonParamVal,Microblog.class);
->                 if (microblog!=null){
->                     //call method and gain json format string as responseText
->                     String responseText=Utils.callMethodAndGainResponseJSONStr(
->                             micoblogPM,
->                             method,
->                             jsonParamVal,
->                             Microblog.class);
->                     log.info("response:"+responseText);
->                     //return json StringRepresentation
->                     return new StringRepresentation(
->                             responseText,
->                             MediaType.APPLICATION_JSON,
->                             Language.ALL,
->                             CharacterSet.UTF_8
->                     );
->                 }
->                 else{
->                     return ERR_REPR;
->                 }
->             }
->             @Override
->             /**
->              * handling post in high level
->              * @param entity
->              */
->             public void acceptRepresentation(Representation entity) throws ResourceException{
->                 log.info("handling post in high level...");
->                 super.acceptRepresentation(entity);
->                 getResponse().setStatus(Status.SUCCESS_OK);
->                 Form f = new Form(entity);
->                 String jsonParamVal=f.getValues(JSON_PARAM);
->                 log.info("json param:"+jsonParamVal);
->                 //call update and set response
->                 getResponse().setEntity(callMethod("update",jsonParamVal));
->             }
->             @Override
->             /**
->              * handling put in high level
->              * @param entity
->              */
->             public void storeRepresentation(Representation entity) throws ResourceException{
->                 log.info("handling put in high level...");
->                 super.storeRepresentation(entity);
->                 getResponse().setStatus(Status.SUCCESS_CREATED);
->                 Form f = new Form(entity);
->                 String jsonParamVal=f.getValues(JSON_PARAM);
->                 log.info("json param:"+jsonParamVal);
->                 //call save and set response
->                 getResponse().setEntity(callMethod("save",jsonParamVal));
->             }
->             @Override
->             /**
->              * handling delete in high level
->              * @param entity
->              */
->             public void removeRepresentations() throws ResourceException{
->                 log.info("handling delete in high level...");
->                 super.removeRepresentations();
->                 getResponse().setStatus(Status.SUCCESS_OK);
->                 Form f = getRequest().getEntityAsForm();
->                 String jsonParamVal=f.getValues(JSON_PARAM);
->                 log.info("json param:"+jsonParamVal);
->                 //call delete and set response
->                 getResponse().setEntity(callMethod("delete",jsonParamVal));
->             }
->         }
+         package com.bjinfotech.restlet.practice.demo.microblog;
+
+         import java.util.List;
+         import java.util.logging.Logger;
+
+         import org.restlet.Context;
+         import org.restlet.data.CharacterSet;
+         import org.restlet.data.Form;
+         import org.restlet.data.Language;
+         import org.restlet.data.MediaType;
+         import org.restlet.data.Request;
+         import org.restlet.data.Response;
+         import org.restlet.resource.Representation;
+         import org.restlet.resource.Resource;
+         import org.restlet.resource.ResourceException;
+         import org.restlet.resource.StringRepresentation;
+         import org.restlet.resource.Variant;
+         import org.restlet.data.Status;
+         import com.bjinfotech.util.JSONSimpler;
+         import com.bjinfotech.util.Utils;
+
+         public class MicroblogResource extends Resource {
+             Logger log=Logger.getLogger(MicroblogResource.class.getSimpleName());
+             //MicroblogPersistenceManager
+             MicroblogPersistenceManager micoblogPM=new MicroblogPersistenceManager();
+             //StringRepresentation constant
+             final StringRepresentation NO_FOUND_REPR=new StringRepresentation("No found!");
+             final StringRepresentation ERR_REPR=new StringRepresentation("something wrong!");
+             //json param name in request
+             final String JSON_PARAM="json";
+
+             public MicroblogResource(
+                     Context context,
+                     Request request,
+                     Response response) {
+                 super(context, request, response);
+                 this.getVariants().add(new Variant(MediaType.TEXT_PLAIN));
+                 //it's important,please don't forget it.
+                 this.setAvailable(true);
+                 this.setModifiable(true);
+                 this.setNegotiateContent(true);
+             }
+             @Override
+             /**
+              * representing after calling default get handle
+              * @param variant
+              */
+             public Representation represent(Variant variant) throws ResourceException{
+                 log.info("representing after calling default get handle...");
+                 Representation result = null;
+                 if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
+                     //find "subject" param in request,"subject" param is tranformed from web client.it means load one blog with special subject
+                     String subject=getRequest().getResourceRef().getQueryAsForm().getFirstValue("subject");
+                     log.info("subject:"+subject);
+                     //handle query
+                     if (subject!=null && subject.length()>0){
+                         //find blog with special subject
+                         Microblog example=new Microblog();
+                         example.setSubject(subject);
+                         List queryRet=micoblogPM.query(example);
+                         //return result in JSON format StringRepresentation
+                         if (queryRet!=null && queryRet.size()>0){
+                             result=new StringRepresentation(
+                                     JSONSimpler.serializeFromBean(queryRet.get(0)),
+                                     MediaType.APPLICATION_JSON,
+                                     Language.ALL,
+                                     CharacterSet.UTF_8
+                                 );
+                         }
+                         else{
+                             result=NO_FOUND_REPR;
+                         }
+                     }
+                     else{
+                         //return blog list in JSON format StringRepresentation
+                         result=new StringRepresentation(
+                                 JSONSimpler.serializeFromBeanList(micoblogPM.list()),
+                                 MediaType.APPLICATION_JSON,
+                                 Language.ALL,
+                                 CharacterSet.UTF_8
+                             );
+                     }
+                 }
+                 return result;
+             }
+            /**
+              * call MicroblogPersistenceManager's method excluding query and list,just save/update/delete.
+              * @param method method name
+              * @param jsonParamVal json param value coming from request
+              * @return
+              */
+             protected StringRepresentation callMethod(String method,String jsonParamVal){
+                 //transform json format string to Microblog object
+                 Microblog microblog=(Microblog)JSONSimpler.deserializeToBean(jsonParamVal,Microblog.class);
+                 if (microblog!=null){
+                     //call method and gain json format string as responseText
+                     String responseText=Utils.callMethodAndGainResponseJSONStr(
+                             micoblogPM,
+                             method,
+                             jsonParamVal,
+                             Microblog.class);
+                     log.info("response:"+responseText);
+                     //return json StringRepresentation
+                     return new StringRepresentation(
+                             responseText,
+                             MediaType.APPLICATION_JSON,
+                             Language.ALL,
+                             CharacterSet.UTF_8
+                     );
+                 }
+                 else{
+                     return ERR_REPR;
+                 }
+             }
+             @Override
+             /**
+              * handling post in high level
+              * @param entity
+              */
+             public void acceptRepresentation(Representation entity) throws ResourceException{
+                 log.info("handling post in high level...");
+                 super.acceptRepresentation(entity);
+                 getResponse().setStatus(Status.SUCCESS_OK);
+                 Form f = new Form(entity);
+                 String jsonParamVal=f.getValues(JSON_PARAM);
+                 log.info("json param:"+jsonParamVal);
+                 //call update and set response
+                 getResponse().setEntity(callMethod("update",jsonParamVal));
+             }
+             @Override
+             /**
+              * handling put in high level
+              * @param entity
+              */
+             public void storeRepresentation(Representation entity) throws ResourceException{
+                 log.info("handling put in high level...");
+                 super.storeRepresentation(entity);
+                 getResponse().setStatus(Status.SUCCESS_CREATED);
+                 Form f = new Form(entity);
+                 String jsonParamVal=f.getValues(JSON_PARAM);
+                 log.info("json param:"+jsonParamVal);
+                 //call save and set response
+                 getResponse().setEntity(callMethod("save",jsonParamVal));
+             }
+             @Override
+             /**
+              * handling delete in high level
+              * @param entity
+              */
+             public void removeRepresentations() throws ResourceException{
+                 log.info("handling delete in high level...");
+                 super.removeRepresentations();
+                 getResponse().setStatus(Status.SUCCESS_OK);
+                 Form f = getRequest().getEntityAsForm();
+                 String jsonParamVal=f.getValues(JSON_PARAM);
+                 log.info("json param:"+jsonParamVal);
+                 //call delete and set response
+                 getResponse().setEntity(callMethod("delete",jsonParamVal));
+             }
+         }
 
 ## Microblog.Class
 
-> package com.bjinfotech.restlet.practice.demo.microblog;
->
-> public class Microblog {\
->      private String subject;\
->      private String content;\
->      private String tags;
->
->     public String getSubject() {\
->          return subject;\
->      }\
->      ...
->
-> }
+```
+package com.bjinfotech.restlet.practice.demo.microblog;
+
+public class Microblog {\
+   private String subject;\
+   private String content;\
+   private String tags;
+   public String getSubject() {\
+       return subject;\
+   }\
+   ...
+}
+```
 
 # Running Application
 
@@ -542,58 +542,58 @@ all!
 
 In Application:
 
->         ...
->         Router router = new Router(getContext());
->         //It's very easy!
->         router.setFinderClass(PrototypeFinder.class);
->         ...
+         ...
+         Router router = new Router(getContext());
+         //It's very easy!
+         router.setFinderClass(PrototypeFinder.class);
+         ...
 
 Custom Finder:
 
->         public class PrototypeFinder extends Finder {
->                public  PrototypeFinder(Context context, Class
->         targetClass) {
->                        super(context, targetClass);
->                }
->
->                public void handle(Request request, Response response) {
->                        //get  "_method" param value
->                        Parameter p = request.getEntityAsForm().getFirst("_method");
->                        //reset requst method accoring "_method" param value
->                        request.setMethod(null != p ? Method.valueOf(p.getValue()) :
->         request.getMethod());
->                        super.handle(request, response);
->                }
->         }
+         public class PrototypeFinder extends Finder {
+                public  PrototypeFinder(Context context, Class
+         targetClass) {
+                        super(context, targetClass);
+                }
+
+                public void handle(Request request, Response response) {
+                        //get  "_method" param value
+                        Parameter p = request.getEntityAsForm().getFirst("_method");
+                        //reset requst method accoring "_method" param value
+                        request.setMethod(null != p ? Method.valueOf(p.getValue()) :
+         request.getMethod());
+                        super.handle(request, response);
+                }
+         }
 
 javascript snippet in web page:
 
->         ...
->
->
->         function callJSON() {
->                new Ajax.Request('/ajax', {
->                        parameters: 'name=PUT', method: 'put', putBody: "PUT BODY",
->                        onComplete: function (transport) {
->                                alert(transport.responseText);
->                        }
->                });
->                new Ajax.Request('/ajax', {
->                        parameters: 'name=POST', method: 'post',
->                        onComplete: function (transport) {
->                                alert(transport.responseText);
->                        }
->                });
->                new Ajax.Request('/ajax', {
->                        parameters: 'name=DELETE', method: 'delete',
->                        onComplete: function (transport) {
->                                alert(transport.responseText);
->                        }
->                });
->         }
->
->
->         ...
+         ...
+
+
+         function callJSON() {
+                new Ajax.Request('/ajax', {
+                        parameters: 'name=PUT', method: 'put', putBody: "PUT BODY",
+                        onComplete: function (transport) {
+                                alert(transport.responseText);
+                        }
+                });
+                new Ajax.Request('/ajax', {
+                        parameters: 'name=POST', method: 'post',
+                        onComplete: function (transport) {
+                                alert(transport.responseText);
+                        }
+                });
+                new Ajax.Request('/ajax', {
+                        parameters: 'name=DELETE', method: 'delete',
+                        onComplete: function (transport) {
+                                alert(transport.responseText);
+                        }
+                });
+         }
+
+
+         ...
 
 # Thanks
 
