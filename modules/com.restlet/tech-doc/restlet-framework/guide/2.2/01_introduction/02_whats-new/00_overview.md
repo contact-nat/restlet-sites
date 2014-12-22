@@ -1,4 +1,4 @@
-- [In version 2.2](technical-resources/restlet-framework/guide/introduction/whats-new/2.2/overview "What's new in version 2.2")
-- [In version 2.1](technical-resources/restlet-framework/guide/introduction/whats-new/2.1/overview "What's new in version 2.2")
-- [In version 2.0](technical-resources/restlet-framework/guide/introduction/whats-new/2.0/overview "What's new in version 2.2")
-- [In version 1.1](technical-resources/restlet-framework/guide/introduction/whats-new/1.1/overview "What's new in version 2.2")
+- [In version 2.2](./2.2/overview "What's new in version 2.2")
+- [In version 2.1](./2.1/overview "What's new in version 2.2")
+- [In version 2.0](./whats-new/2.0/overview "What's new in version 2.2")
+- [In version 1.1](./whats-new/1.1/overview "What's new in version 2.2")

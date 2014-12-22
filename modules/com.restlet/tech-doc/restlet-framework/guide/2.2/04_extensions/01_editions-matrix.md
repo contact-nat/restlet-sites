@@ -1,14 +1,14 @@
 # Introduction
 
 This table presents the list of extensions provided by the [various
-editions of the Restlet Framework](technical-resources/restlet-framework/guide/2.2/editions/overview "Part III - Restlet Editions").
+editions of the Restlet Framework](../editions/overview "Part III - Restlet Editions").
 
 The core module including both the Restlet API and the Restlet Engine is
 shipped by all editions.
 
 # Extensions availability
 
-Extensions|[Android](technical-resources/restlet-framework/guide/2.2/editions/android/overview "Android")|[GAE](technical-resources/restlet-framework/guide/2.2/editions/gae "GAE")|[GWT](technical-resources/restlet-framework/guide/2.2/editions/gwt/overview "GWT")|[JEE](technical-resources/restlet-framework/guide/2.2/editions/jee/overview "JEE")|[JSE](technical-resources/restlet-framework/guide/2.2/editions/jse/overview "JSE")|[OSGi](technical-resources/restlet-framework/guide/2.2/editions/osgi "OSGi")|Description
+Extensions|[Android](../editions/android/overview "Android")|[GAE](../editions/gae "GAE")|[GWT](../editions/gwt/overview "GWT")|[JEE](../editions/jee/overview "JEE")|[JSE](../editions/jse/overview "JSE")|[OSGi](../editions/osgi "OSGi")|Description
 --------- |  ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | -
 [org.restlet.ext.atom](./atom "atom")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the Atom syndication and the AtomPub (Atom Publication Protocol) standards in their 1.0 version.
 [org.restlet.ext.crypto](./crypto "crypto")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for cryptography.

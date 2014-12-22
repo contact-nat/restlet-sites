@@ -5,8 +5,8 @@ based blog demonstrating the usage of AJAX in Restlet. Before we step
 in,we should review some knowledge if you never know or forget it:
 
 -   [What's RESTful](http://www.xfront.com/REST-Web-Services.html)[?](http://www.xfront.com/REST-Web-Services.html)
--   [What's Restlet Framework?](technical-resources/restlet-framework/guide/2.2/introduction/features "Features")
--   [How to use Restlet Framework?](technical-resources/restlet-framework/guide/2.2/introduction/first-steps/overview "First steps")
+-   [What's Restlet Framework?](../introduction/features "Features")
+-   [How to use Restlet Framework?](../introduction/first-steps/overview "First steps")
 -   [How to use db4o to simplify persistence?](http://db4o.com/about/productinformation/resources/db4o-6.3-tutorial-java.pdf)
 -   [How to use JSON in Prototype.js?](http://www.prototypejs.org/learn/json)
 

@@ -96,19 +96,19 @@ just set it:
 
 Extension | Version | Protocols | Asynchronous | Comment
 --------- | ------- | --------- | ------------ | ---------
-[Internal](technical-resources/restlet-framework/guide/2.2/core/engine/internal-connectors "Internal connectors") | 2.2 | HTTP, HTTPS, RIAP | No | Recommended for development and lightweight deployments
-[Jetty](technical-resources/restlet-framework/guide/2.2/extensions/jetty "Eclipse Jetty extension") | 8.1 | HTTP, HTTPS, AJP | No | Recommended for robust and scalable deployments
-[NIO](technical-resources/restlet-framework/guide/2.2/extensions/nio "NIO extension") | 2.2 | HTTP, HTTPS | Yes | Fully asynchronous, preview mode
-[Simple](technical-resources/restlet-framework/guide/2.2/extensions/simple "Simple Framework extension") | 5.1 | HTTP, HTTPS | No | Recommended for lightweight and scalable deployments
-[Servlet](technical-resources/restlet-framework/guide/2.2/extensions/servlet "Servlet extension") | 3.0 | HTTP, HTTPS, AJP | No | Recommended for deployments inside Java EE servers
+[Internal](../engine/internal-connectors "Internal connectors") | 2.2 | HTTP, HTTPS, RIAP | No | Recommended for development and lightweight deployments
+[Jetty](../../extensions/jetty "Eclipse Jetty extension") | 8.1 | HTTP, HTTPS, AJP | No | Recommended for robust and scalable deployments
+[NIO](../../extensions/nio "NIO extension") | 2.2 | HTTP, HTTPS | Yes | Fully asynchronous, preview mode
+[Simple](../../extensions/simple "Simple Framework extension") | 5.1 | HTTP, HTTPS | No | Recommended for lightweight and scalable deployments
+[Servlet](../../extensions/servlet "Servlet extension") | 3.0 | HTTP, HTTPS, AJP | No | Recommended for deployments inside Java EE servers
 
 ## Client connectors
 
 Extension | Version | Protocols | Asynchronous | Proxy | Comment
 --------- | ------- | --------- | ------------ | ----- | -------
-[Internal](technical-resources/restlet-framework/guide/2.2/core/engine/internal-connectors "Internal connectors") | 2.2 | CLAP, FILE, FTP, HTTP, HTTPS, RIAP | No | Yes | Recommended for development and lightweight deployments
-[Apache HTTP Client](technical-resources/restlet-framework/guide/2.2/extensions/httpclient "Apache HTTP Client extension") | 4.3 | HTTP, HTTPS | No | Yes | Recommended for robust and scalable deployments
-[JavaMail](technical-resources/restlet-framework/guide/2.2/extensions/javamail "JavaMail extension") | 1.4 | SMTP, SMTPS, POP, POPS | No |  No | Stable
-[JDBC](technical-resources/restlet-framework/guide/2.2/extensions/jdbc "JDBC extension") | 3.0 | JDBC | No | No | Stable
-[Lucene Solr](technical-resources/restlet-framework/guide/2.2/extensions/lucene "Lucene extension") | 4.6 | SOLR | No | No | Stable
-[NIO](technical-resources/restlet-framework/guide/2.2/extensions/nio "NIO extension") | 2.2 | HTTP, HTTPS | Yes | Yes | Fully asynchronous, preview mode
+[Internal](../core/engine/internal-connectors "Internal connectors") | 2.2 | CLAP, FILE, FTP, HTTP, HTTPS, RIAP | No | Yes | Recommended for development and lightweight deployments
+[Apache HTTP Client](../../extensions/httpclient "Apache HTTP Client extension") | 4.3 | HTTP, HTTPS | No | Yes | Recommended for robust and scalable deployments
+[JavaMail](../../extensions/javamail "JavaMail extension") | 1.4 | SMTP, SMTPS, POP, POPS | No |  No | Stable
+[JDBC](../../extensions/jdbc "JDBC extension") | 3.0 | JDBC | No | No | Stable
+[Lucene Solr](../../extensions/lucene "Lucene extension") | 4.6 | SOLR | No | No | Stable
+[NIO](../../extensions/nio "NIO extension") | 2.2 | HTTP, HTTPS | Yes | Yes | Fully asynchronous, preview mode

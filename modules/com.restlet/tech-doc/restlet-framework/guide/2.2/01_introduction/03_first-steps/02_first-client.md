@@ -45,5 +45,5 @@ resource.get().write(System.out);
 ```
 
 After those first two steps, [let's now develop a more complete Restlet
-application](technical-resources/restlet-framework/guide/introduction/first-steps/first-application "First application"),
+application](./first-steps/first-application "First application"),
 taking advantage of the various editions of the Restlet Framework.

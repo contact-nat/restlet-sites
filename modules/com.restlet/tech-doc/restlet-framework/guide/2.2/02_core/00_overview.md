@@ -4,7 +4,7 @@ This chapter presents the Restlet API. It is a small set of packages,
 with classes, interfaces and enumerations that together provide a
 framework. This framework will guide you on the path to RESTful design
 and development. But be aware that you still need to understand REST in
-order to fully take advantage of the [Restlet features](technical-resources/restlet-framework/2.2/introduction/features).
+order to fully take advantage of the [Restlet features](../introduction/features).
 For this purpose, [we recommend the book "RESTful Web Services"](http://restlet.com/learn/books)
 from O'Reilly. We even wrote a part of it covering Restlet usage.
 

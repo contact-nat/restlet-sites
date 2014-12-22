@@ -1,7 +1,7 @@
 # Introduction
 
 This table presents the list of extensions provided by the [various
-editions of the Restlet Framework](technical-resources/restlet-framework/guide/2.3/editions/overview "Part III - Restlet Editions").
+editions of the Restlet Framework](../editions/overview "Part III - Restlet Editions").
 
 The core module including both the Restlet API and the Restlet Engine is
 shipped by all editions.

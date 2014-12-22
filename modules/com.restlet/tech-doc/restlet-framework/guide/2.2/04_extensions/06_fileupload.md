@@ -49,7 +49,7 @@ disk and send back its content as plain text to the client.
 
 Here is the content of the MyResource\#accept method:
 
-~~~~ {.brush: .java}
+```java
     @Post
     public Representation accept(Representation entity) throws Exception {
         Representation rep = null;
@@ -113,7 +113,7 @@ Here is the content of the MyResource\#accept method:
 
         return rep;
     }
-~~~~
+```
 
 Before running this example, please add the following jars to the
 classpath:
@@ -127,5 +127,5 @@ classpath:
 # Links
 
 -   [Apache FileUpload library](http://commons.apache.org/fileupload/)
--   [Server connectors](technical-resources/restlet-framework/guide/2.2/core/base/connectors/overview)
+-   [Server connectors](../core/base/connectors/overview)
 -   [Sample code of FileUpload extension (zip file)](/learn/guide/2.1#/42-restlet.html "Usage example of FileUpload extension")
