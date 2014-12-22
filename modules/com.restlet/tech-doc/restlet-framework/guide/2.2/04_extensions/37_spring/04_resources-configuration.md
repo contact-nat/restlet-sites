@@ -15,7 +15,8 @@ values but, in the Spring component life cycle, is invoked after Spring
 sets the properties. An obvious workaround is to refine the init method
 like so:
 
-~~~~ {.brush: .java}
+
+```brush: .java
     @Override
     public void init(Context context, Request request, Response response) {
         final ResourcePropertyHolder backup = new ResourcePropertyHolder(); 
@@ -23,7 +24,8 @@ like so:
         super.init(context, request, response);
         BeanUtils.copyProperties(backup, this);
     }
-~~~~
+
+```
 
 # Configuration of representation templates
 
@@ -36,7 +38,8 @@ representation factory, which then instantiates the template with the
 data model and returns the resulting representation. (The Freemarker
 configuration is also handled by Spring.)
 
-~~~~ {.brush: .java}
+
+```java
 <bean id="resource" class="helloworldrestlet.HelloWorldResource"
     scope="prototype">
     <property name="available" value="true" />
@@ -77,12 +80,14 @@ configuration is also handled by Spring.)
         <bean class="freemarker.template.DefaultObjectWrapper" />
     </property>
 </bean>
-~~~~
+
+```
 
 When using this approach, the ServerResources themselves become very
 simple, for example:
 
-~~~~ {.brush: .java}
+
+```java
 public class HelloWorldResource extends ConfigurableRestletResource {
     @Override
     public Representation get(Variant variant) {
@@ -90,7 +95,8 @@ public class HelloWorldResource extends ConfigurableRestletResource {
     return createTemplateRepresentation(variant.getMediaType(), dataModel);
     }
 }
-~~~~
+
+```
 
 A working proof-of-concept for this approach is available through
 Subversion at

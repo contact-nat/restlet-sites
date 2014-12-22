@@ -30,7 +30,8 @@ First, we show the configuration of the Restlet Component and top-level
 Router beans. The top-level Router is necessary only if an non-root
 context path is required for standalone deployment.
 
-~~~~ {.brush: .java}
+
+```java
 <bean id="top" class="org.restlet.ext.spring.SpringComponent">
     <property name="server">
         <bean class="org.restlet.ext.spring.SpringServer">
@@ -48,14 +49,16 @@ context path is required for standalone deployment.
         </map>
     </property>
 </bean>
-~~~~
+
+```
 
 As a result, the main method has become very simple. It loads a Spring
 context based on two configuration metadata files, one for the preceding
 top-level beans, and one for the application-specific beans shown below.
 It then starts up the top-level Restlet Component.
 
-~~~~ {.brush: .java}
+
+```java
     public static void main(String... args) throws Exception {
     // load the Spring application context
     ApplicationContext springContext = new ClassPathXmlApplicationContext(
@@ -64,7 +67,7 @@ It then starts up the top-level Restlet Component.
     // obtain the Restlet component from the Spring context and start it
     ((Component) springContext.getBean("top")).start();
     }
-~~~~
+```
 
 Next, we look at the configuration of the application-specific Router.
 We use a SpringRouter for this purpose, which is configured using a map
@@ -78,7 +81,8 @@ pattern. We use Spring's nested properties to drill into the
 configuration of the URI pattern along with Spring's mechanism for
 accessing a static field in a class.
 
-~~~~ {.brush: .java}
+
+```java
 <bean id="root" class="org.restlet.ext.spring.SpringRouter">
     <property name="attachments">
         <map>
@@ -111,7 +115,8 @@ accessing a static field in a class.
 
 <bean id="org.restlet.util.Variable.TYPE_URI_ALL"
     class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
-~~~~
+
+```
 
 Unlike the preceding singleton beans, we define the ServerResources as
 prototype beans so that they get instantiated separately for each
@@ -120,20 +125,23 @@ request. All of the Resource beans depend on the
 ObjectContainer and are configured analogously, so we show only
 UserResource here.
 
-~~~~ {.brush: .java}
+
+```java
 <bean id="userResource"
     class="org.restlet.example.book.rest.ch7.spring.UserResource"
     scope="prototype">
     <property name="container" ref="db4oContainer" />
 </bean>
-~~~~
+
+```
 
 Using the
 [db4o](http://www.db4o.com/)
 [Spring Module](http://community.versant.com/Projects/html/projectspaces/db4o-spring.html),
 configuring the ObjectContainer is straightforward.
 
-~~~~ {.brush: .java}
+
+```java
 <bean id="db4oContainer"
     class="org.springmodules.db4o.ObjectContainerFactoryBean">
     <property name="configuration" ref="db4oConfiguration" />
@@ -145,7 +153,8 @@ configuring the ObjectContainer is straightforward.
     <property name="updateDepth" value="2" />
     <property name="configurationCreationMode" value="NEW" />
 </bean>
-~~~~
+
+```
 
 As mentioned above, we added the following elements to each
 application-specific Resource:
@@ -159,15 +168,16 @@ application-specific Resource:
 
 The following code fragment summarizes these changes.
 
-~~~~ {.brush: .java}
+
+```java
 public class UserResource extends ServerResource {
 
     private ObjectContainer container;
-    
+
     // other instance variables
 
     public UserResource() { }
-    
+
     @Override
     public void init(Context context, Request request, Response response) {
         super.init(context, request, response);
@@ -182,12 +192,12 @@ public class UserResource extends ServerResource {
     public ObjectContainer getContainer() {
         return container;
     }
-    
+
     public void setContainer(ObjectContainer container) {
         this.container = container;
     }
 
     // other methods
 }
-~~~~
 
+```

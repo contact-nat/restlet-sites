@@ -80,8 +80,7 @@ representations.
 
 ContactResource is an interface annotated with Restlet annotations:
 
-```
-~~~~ {.brush: .java}
+```java
 public interface ContactResource {
     @Get
     public Contact retrieve();
@@ -92,7 +91,6 @@ public interface ContactResource {
     @Delete
     public void remove();
 }
-~~~~
 ```
 
 It represents the contract passed between the client and the server.
@@ -117,8 +115,7 @@ See also the "readme.txt" file located in the sources file. It list also all nec
 
 The server-side resource implements the annotated interface.
 
-```
-~~~~ {.brush: .java}
+```java
 /**
  * The server side implementation of the Restlet resource.
  */
@@ -140,13 +137,11 @@ public class ContactServerResource extends ServerResource implements ContactReso
         ContactServerResource.contact = contact;
     }
 }
-~~~~
 ```
 
 This resource is then exposed by the server application:
 
-```
-~~~~ {.brush: .java}
+```java
     @Override
     public Restlet createInboundRoot() {
         Router router = new Router(getContext());
@@ -157,7 +152,6 @@ This resource is then exposed by the server application:
 
         return router;
     }
-~~~~
 ```
 
 # <a name="gwt-client"></a>GWT client
@@ -169,8 +163,7 @@ In order to get the Contact object, a proxy class is required. This is
 an interface that inherits on a specific interface (delivered by the GWT
 edition of the Restlet Framework):
 
-```
-~~~~ {.brush: .java}
+```java
 public interface ContactResourceProxy extends ClientProxy {
     @Get
     public void retrieve(Result<Contact> callback);
@@ -181,7 +174,6 @@ public interface ContactResourceProxy extends ClientProxy {
     @Delete
     public void remove(Result<Void> callback);
 }
-~~~~
 ```
 
 This interface looks like the ContactResource interface, expect that it
@@ -197,8 +189,7 @@ GWT-RPC code base to GWT-REST with Restlet.
 Then, the following code allows you to request and handle the Contact
 resource:
 
-```
-~~~~ {.brush: .java}
+```java
 ContactResourceProxy contactResource = GWT.create(ContactResourceProxy.class);
 
 // Set up the contact resource
@@ -218,7 +209,6 @@ contactResource.retrieve(new Result<Contact>() {
         cTbAge.setText(Integer.toString(contact.getAge()));
     }
 });
-~~~~
 ```
 
 Here is a screenshot of the GWT client page once the user has clicked on
@@ -230,8 +220,7 @@ the GET button.
 In order to update the contact, simply complete your contact object and
 invoke the "store" method as specified by the proxy interface:
 
-```
-~~~~ {.brush: .java}
+```java
 contactResource.store(contact, new Result<Void>() {
     public void onFailure(Throwable caught) {
         // Handle the error
@@ -245,7 +234,6 @@ contactResource.store(contact, new Result<Void>() {
         closeButton.setFocus(true);
     }
 });
-~~~~
 ```
 
 # <a name="android-client"></a>Android client
@@ -259,8 +247,7 @@ Android client (in both directions) using the standard Java
 serialization process. No additional interface is required except the
 ContactResource interface furnished by the server.
 
-```
-~~~~ {.brush: .java}
+```java
 // Initialize the resource proxy.
 ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
 // Workaround for GAE servers to prevent chunk encoding
@@ -270,16 +257,13 @@ ContactResource resource = cr.wrap(ContactResource.class);
 
 // Get the remote contact
 Contact contact = resource.retrieve();
-~~~~
 ```
 
 In order to update the contact, simply use this instruction:
 
-```
-~~~~ {.brush: .java}
+```java
 // Update the remote contact
 resource.store(contact);
-~~~~
 ```
 
 The internal HTTP client has been rewritten using the java.nio.package.
@@ -299,8 +283,7 @@ Here is a screenshot of the Android user interface.
 The same code used on the Android application allows you to get the full
 Contact object:
 
-```
-~~~~ {.brush: .java}
+```java
 ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
 // Get the Contact object
 ContactResource resource = cr.wrap(ContactResource.class);
@@ -311,7 +294,6 @@ if (contact != null) {
     System.out.println(" lastname: " + contact.getLastName());
     System.out.println("     nage: " + contact.getAge());
 }
-~~~~
 ```
 
   This code produces the following ouput on the console:
@@ -326,10 +308,8 @@ In case the Contact class is not available, you can still retrieve a
 JSON representation by setting the client preferences when retrieving
 the resource's representation:
 
-```
-~~~~ {.brush: .java}
+```java
 cr.get(MediaType.APPLICATION_JSON).write(System.out);
-~~~~
 ```
 
 which produces the following output:

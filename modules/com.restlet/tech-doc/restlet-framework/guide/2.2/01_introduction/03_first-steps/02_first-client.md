@@ -16,11 +16,9 @@ to use and configure them.
 Here we will retrieve the representation of an existing resource and
 output it in the JVM console:
 
-```
-~~~~ {.brush: .java}
+```java
 // Outputting the content of a Web page  
 new ClientResource("http://restlet.com").get().write(System.out);  
-~~~~
 ```
 
 If you are running your client behind a proxy, please [check this
@@ -31,8 +29,7 @@ doesn't support proxies at the moment.
 The next example sets some preferences in your client call, like a
 referrer URI:
 
-```
-~~~~ {.brush: .java}
+```java
 // Create the client resource  
 ClientResource resource = new ClientResource("http://restlet.com");
 
@@ -41,7 +38,6 @@ resource.setReferrerRef("http://www.mysite.org");
 
 // Write the response entity on the console
 resource.get().write(System.out);  
-~~~~
 ```
 
 After those first two steps, [let's now develop a more complete Restlet

@@ -33,8 +33,8 @@ ${restlet-version-minor}](http://restlet.com/downloads/current).
 Let's start with the core of a REST application: the Resource. Here is
 the code of the single resource defined by the sample application.
 Copy/paste the code in your "HelloWorldResource" class.
-```
-~~~~ {.brush: .java}
+
+```java
 package firstSteps;
 
 import org.restlet.resource.Get;
@@ -51,12 +51,12 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-~~~~
 ```
+
 Then, create the sample application. Let's call it
 "FirstStepsApplication" and copy/paste the following code:
-```
-~~~~ {.brush: .java}
+
+```java
 package firstSteps;
 
 import org.restlet.Application;
@@ -80,8 +80,8 @@ public class FirstStepsApplication extends Application {
     }
 
 }
-~~~~
 ```
+
 ## <a name="run-in-a-servlet-container"></a>Run in a Servlet container
 
 Let's now deploy this Restlet application inside your favorite Servlet
@@ -94,8 +94,8 @@ in. Add the archives listed below into the directory of librairies
 -   org.restlet.ext.servlet.jar
 
 Then, update the "web.xml" configuration file as follow:
-```
-~~~~ {.brush: .java}
+
+```java
 <?xml version="1.0" encoding="UTF-8"?>  
 <web-app id="WebApp_ID" version="2.4"  
             xmlns="http://java.sun.com/xml/ns/j2ee"  
@@ -121,17 +121,17 @@ Then, update the "web.xml" configuration file as follow:
       <url-pattern>/*</url-pattern>  
    </servlet-mapping>  
 </web-app>  
-~~~~
 ```
+
 Finally, package the whole as a WAR file called for example
 "firstStepsServlet.war" and deploy it inside your Servlet container.
 Once you have launched the Servlet container, open your favorite web
 browser, and enter the following URL:
-```
-~~~~ {.brush: .java}
+
+```java
 http://<your server name>:<its port number>/firstStepsServlet/hello
-~~~~
 ```
+
 The server will happily welcome you with the expected "hello, world"
 message. You can find the WAR file (packaged with archives taken from
 Restlet Framework 2.0 Milestone 5) in the "First steps application"
@@ -146,8 +146,8 @@ can also be run as a standalone Java application using a single
 Create also a main class, copy/paste the following code wich aims at
 defining a new HTTP server listening on port 8182 and delegating all
 requests to the "FirstStepsApplication".
-```
-~~~~ {.brush: .java}
+
+```java
 public static void main(String[] args) throws Exception {  
     // Create a new Component.  
     Component component = new Component();  
@@ -162,8 +162,8 @@ public static void main(String[] args) throws Exception {
     // Start the component.  
     component.start();  
 }      
-~~~~
 ```
+
 Once you have launched the main class, if you can open your favorite web
 browser, and gently type the following URL:
 http://localhost:8182/firstSteps/hello, the server will happily welcome

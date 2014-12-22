@@ -48,15 +48,14 @@ server resource which is (A/) properly annotated, and (B/) having a
 compatible return type. the case (A/) is easy to understand, let's focus
 on case (B/). This may happen when you server resource use annotation
 with media type parameters:
-```
-~~~~ {.brush: .java}
+
+```java
 public class MyResource extends ServerResource {
    @Get("html")
    public String toHtml() {
       return "<html><body>hello, world</body></html>";
    }
 }
-~~~~
 ```
 In this case, the client requires a JSON representation but the server
 resource is not able to generate it.

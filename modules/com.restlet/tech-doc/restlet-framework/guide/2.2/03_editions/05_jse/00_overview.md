@@ -35,8 +35,8 @@ add org.restlet.jar in your Build path.
 Let's start with the core of a REST application: the Resource. Here is
 the code of the single resource defined by the sample application.
 Copy/paste the code in your "HelloWorldResource" class.
-```
-~~~~ {.brush: .java}
+
+```java
 package firstSteps;
 
 import org.restlet.resource.Get;
@@ -53,12 +53,12 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-~~~~
 ```
+
 Then, create the sample application. Let's call it
 "FirstStepsApplication" and copy/paste the following code:
-```
-~~~~ {.brush: .java}
+
+```java
 package firstSteps;
 
 import org.restlet.Application;
@@ -82,8 +82,8 @@ public class FirstStepsApplication extends Application {
     }
 
 }
-~~~~
 ```
+
 ## <a name="run-as-a-standalone-java-application"></a>Run as a standalone Java application
 
 A Restlet application can run inside a regular Java virtual machine or
@@ -94,8 +94,8 @@ associate a HTTP server connector.
 Create also a main class, copy/paste the following code which aims at
 defining a new HTTP server listening on port 8182 and delegating all
 requests to the "FirstStepsApplication".
-```
-~~~~ {.brush: .java}
+
+```java
 public static void main(String[] args) throws Exception {  
     // Create a new Component.  
     Component component = new Component();  
@@ -110,7 +110,6 @@ public static void main(String[] args) throws Exception {
     // Start the component.  
     component.start();  
 }      
-~~~~
 ```
 Once you have launched the main class, if you can open your favorite web
 browser, and gently type the following URL:
