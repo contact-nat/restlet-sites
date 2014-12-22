@@ -96,13 +96,55 @@ just set it:
 
 ### Server connectors
 
-Extension | Version | Protocols | Asynchronous | Comment
---------- | ------- | --------- | ------------ | ---------
-[Internal](technical-resources/restlet-framework/guide/2.3/core/engine/internal-connectors "Internal connectors") | 2.2 | HTTP, HTTPS, RIAP | No | Recommended for development and lightweight deployments
-[Jetty](technical-resources/restlet-framework/guide/2.3/extensions/jetty "Eclipse Jetty extension") | 8.1 | HTTP, HTTPS, AJP | No | Recommended for robust and scalable deployments
-[NIO](technical-resources/restlet-framework/guide/2.3/extensions/nio "NIO extension") | 2.2 | HTTP, HTTPS | Yes | Fully asynchronous, preview mode
-[Simple](technical-resources/restlet-framework/guide/2.3/extensions/simple "Simple Framework extension") | 5.1 | HTTP, HTTPS | No | Recommended for lightweight and scalable deployments
-[Servlet](technical-resources/restlet-framework/guide/2.3/extensions/servlet "Servlet extension") | 3.0 | HTTP, HTTPS, AJP | No | Recommended for deployments inside Java EE servers
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">Extension</th>
+    <th class="tg-031e">Version</th>
+    <th class="tg-031e">Protocols</th>
+    <th class="tg-031e">Asynchronous</th>
+    <th class="tg-031e">Comment</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">[Internal](technical-resources/restlet-framework/guide/2.3/core/engine/internal-connectors "Internal connectors")</td>
+    <td class="tg-031e">2.2</td>
+    <td class="tg-031e">HTTP, HTTPS, RIAP</td>
+    <td class="tg-031e">No</td>
+    <td class="tg-031e">Recommended for development and lightweight deployments</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">[Jetty](technical-resources/restlet-framework/guide/2.3/extensions/jetty "Eclipse Jetty extension")</td>
+    <td class="tg-031e">8.1</td>
+    <td class="tg-031e">HTTP, HTTPS, AJP</td>
+    <td class="tg-031e">No</td>
+    <td class="tg-031e">Recommended for robust and scalable deployments</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">[NIO](technical-resources/restlet-framework/guide/2.3/extensions/nio "NIO extension")</td>
+    <td class="tg-031e">2.2</td>
+    <td class="tg-031e">HTTP, HTTPS</td>
+    <td class="tg-031e">Yes</td>
+    <td class="tg-031e">Fully asynchronous, preview mode</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">[Simple](technical-resources/restlet-framework/guide/2.3/extensions/simple "Simple Framework extension")</td>
+    <td class="tg-031e">5.1</td>
+    <td class="tg-031e">HTTP, HTTPS</td>
+    <td class="tg-031e">No</td>
+    <td class="tg-031e">Recommended for lightweight and scalable deployments</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">[Servlet](technical-resources/restlet-framework/guide/2.3/extensions/servlet "Servlet extension")</td>
+    <td class="tg-031e">3.0</td>
+    <td class="tg-031e">HTTP, HTTPS, AJP</td>
+    <td class="tg-031e">No</td>
+    <td class="tg-031e">Recommended for deployments inside Java EE servers</td>
+  </tr>
+</table>
 
 ### Client connectors
 
