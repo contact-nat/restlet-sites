@@ -1,3 +1,10 @@
+v3.2.1
+
+Restlet Framework documentation enhancements:
+
+- Fixed code blocks display
+- Fixed internal links (relative paths)
+
 v3.2.0
 
 Restlet Framework documentation: migration to adopt our new look and feel

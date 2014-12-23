@@ -8,4 +8,4 @@ Restlet Framework helps Java developers build better web APIs that follow the RE
 et après les liens vers les contenus de la doc, tutos, javadoc...
 -->
 
-Last update: December 16th 2014, 6:45pm
+Last update: December 23rd 2014, 11:00am
