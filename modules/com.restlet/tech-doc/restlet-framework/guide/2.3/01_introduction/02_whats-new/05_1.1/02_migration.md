@@ -176,7 +176,8 @@ existing code
 -   Application is now concrete and has a setRoot() method.
 -   Filter.beforeHandle() and doHandle() methods can now indicate if the
     processing should continue normal, go to the afterHandle() method
-    directly or stop immediately. **IMPORTANT NOTE**: as it isn't
+    directly or stop immediately.
+    >**IMPORTANT NOTE**: as it isn't
     possible to add a return parameter to an existing method, the change
     can break existing filters. In this case, you just need to return
     the "CONTINUE" constant from your method and use "int" as a return
