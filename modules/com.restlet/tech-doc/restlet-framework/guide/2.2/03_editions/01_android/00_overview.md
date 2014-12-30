@@ -49,6 +49,7 @@ import org.restlet.ext.jackson.JacksonConverter;
 
 Engine.getInstance().getRegisteredConverters().add(new JacksonConverter());
 ```
+
 Here is another example for the Apache HTTP Client:
 
 ```java

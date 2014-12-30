@@ -40,6 +40,7 @@ autodiscovery.
 The workaround consist of manually registering those additional
 connectors and converter in the Restlet engine. Here is an example for
 the Jackson converter:
+
 ```java
 import org.restlet.engine.Engine;
 import org.restlet.ext.jackson.JacksonConverter;
@@ -48,7 +49,9 @@ import org.restlet.ext.jackson.JacksonConverter;
 
 Engine.getInstance().getRegisteredConverters().add(new JacksonConverter());
 ```
+
 Here is another example for the Apache HTTP Client:
+
 ```java
 import org.restlet.engine.Engine;
 import org.restlet.ext.httpclient.HttpClientHelper;
