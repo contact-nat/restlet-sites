@@ -17,12 +17,6 @@ toc:
   - dir: 02_whats-new
     id: whats-new
     items:
-    - file: 00_overview.md
-      id: overview
-      link_url: /01_introduction/02_whats-new/00_overview.md
-      long-title: Overview
-      title: Overview
-      url: /introduction/whats-new/overview
     - file: 01_2.3.md
       id: '2.3'
       link_url: /01_introduction/02_whats-new/01_2.3.md
