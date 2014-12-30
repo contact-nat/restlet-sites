@@ -23,7 +23,7 @@ If you have any doubt, go to the **Messages** tab which reports the last actions
 
 ![Messages tab](images/messages-section.jpg "Messages tab")
 
-Jump to the [Test your web API](technical-resources/apispark/guide/create/test "Test your web API") section of our online documentation for further information.
+Jump to the [Check your messages](technical-resources/apispark/guide/create/test03 "Test your web API") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
