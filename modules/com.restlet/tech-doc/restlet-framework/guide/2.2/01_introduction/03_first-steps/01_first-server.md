@@ -4,7 +4,7 @@ Let's first see how the Restlet Framework can listen to client requests
 and reply to them. We will use the internal Restlet HTTP server
 connector (even though it is possible to switch to others such as the
 one based on
-[Jetty](../../extensions/jetty/00_overview.md "Eclipse Jetty extension"))
+[Jetty](../../extensions/jetty/overview "Eclipse Jetty extension"))
 and return a simple string representation "hello, world" as plain text.
 Note that the FirstServerResource class extends the base
 org.restlet.resource.ServerResource class provided by the Restlet API:
