@@ -19,7 +19,7 @@ applications lists the current contacts registered in the address book.
 For those who provide a FOAF URI, a click on their entry in the list
 invokes the FOAF service illustrated below. This service is built on top
 of Restlet and its recently added [RDF
-extension](../../extensions/rdf.md).
+extension](../../extensions/rdf).
 It retrieves the FOAF representation, parses it and displays the friends
 of your contact in the GUI. The user can then add some of those friends
 as new local contacts.
