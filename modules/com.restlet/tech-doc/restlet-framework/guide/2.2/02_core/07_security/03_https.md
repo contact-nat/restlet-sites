@@ -208,8 +208,7 @@ Note that the default password for the cacerts keystore file is
 ​2. Add the following Java VM arguments to your Java client command
 line:
 
--Djavax.net.ssl.trustStore=C:\\\\somedir\\\\serverX.jks[\
-](http://somedir//serverX.jks)-Djavax.net.ssl.trustStoreType=JKS\
+-Djavax.net.ssl.trustStore=C:\\\\somedir\\\\serverX.jks -Djavax.net.ssl.trustStoreType=JKS\
  -Djavax.net.ssl.trustStorePassword=password
 
 These arguments tell the Java VM where to find your certificate.

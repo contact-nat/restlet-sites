@@ -37,7 +37,7 @@ technologies, in this case Java with the dedicated extension of the
 Restlet framework. The rest of the article shows how to start with this
 extension and illustrates its simplicity of use.
 
-The OGDI service is located at this URI “http://ogdi.cloudapp.net/v1/dc”
+The OGDI service is located at this URI "http://ogdi.cloudapp.net/v1/dc"
 and exposes about 60 kinds of public data gathered in entity sets. Here
 are samples of such data:
 
