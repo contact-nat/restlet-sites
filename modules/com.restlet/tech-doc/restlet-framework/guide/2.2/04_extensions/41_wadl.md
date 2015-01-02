@@ -13,8 +13,6 @@ For additional details, please consult the
 
 # Usage example
 
-This sample code is an extension of the ["firstResource" sample
-application](javadocs://firstResource).
 The source code is available in the "org.restlet.example" extension,
 more precisely in the "org.restlet.ext.wadl" package.
 
