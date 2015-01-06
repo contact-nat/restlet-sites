@@ -137,29 +137,13 @@ generated from the metadata of the target OData service. Actually, the
 Generator class extracts a few elements of the metadata such as the
 schema and the entities as follow.
 
-WCF concept
-
-Java concept
-
-Entity
-
-Class
-
-Entity name
-
-Class name
-
-Enclosing schema namespace
-
-Package name
-
-Entity property
-
-Member variable with getter and setter
-
-EDM data type
-
-Java primitive types and classes
+WCF concept | Java concept
+----------- | ------------
+Entity | Class
+Entity name | Class name
+Enclosing schema namespace | Package name
+Entity property | Member variable with getter and setter
+EDM data type | Java primitive types and classes
 
 ##### Transformation table from WCF concepts to Java equivalent concepts
 
