@@ -133,15 +133,6 @@
 	<macrodef name="generate-guide" description="Generate the source code for a specific user guide version.">
 		<attribute name="version" />
 		<sequential>
-			<!-- generate version related properties -->
-			<ant antfile="${tmpl}/config/generate-config.xml" target="generate-config" inheritAll="false">
-				<property name="restlet.version" value="@{version}" />
-				<property name="tmpl" value="${tmpl}" />
-				<property name="temp" value="${temp}" />
-				<property name="file.model" value="${temp}/model.@{version}.properties" />
-			</ant>
-			<!-- parse the files according to this version properties -->
-			<replace dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" replacefilterfile="${temp}/model.@{version}.properties" />
 			<!-- deal with the "javadocs" links -->
 			<replaceregexp match="javadocs://(.\..)/(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
@@ -157,55 +148,6 @@
 			<replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
 			</replaceregexp>
-			<!-- generate the Table of content -->
-			<mkdir dir="${temp}/toc" />
-			<exec executable="sh" osfamily="unix">
-				<arg value="${tmpl}/md/unixtotoc.sh" />
-				<arg value="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" />
-				<arg value="${temp}/toc/toc.@{version}.xml" />
-				<arg value="${tmpl}/md/userguidetoc.tmpl" />
-			</exec>
-			<!-- list all user guide's entries properties -->
-			<fmpp sourceFile="${tmpl}/md/nodes.ftl" outputFile="${temp}/toc/toc.@{version}.properties" quiet="reallyQuiet">
-				<data expandProperties="yes">
-	                toc: xml(${temp}/toc/toc.@{version}.xml)
-                    version: @{version}
-				</data>
-			</fmpp>
-			<!-- flatten all user guide's entries -->
-			<fmpp sourceFile="${tmpl}/md/flatnodes.ftl" outputFile="${temp}/toc/flattoc.@{version}.properties" quiet="reallyQuiet">
-				<data expandProperties="yes">
-	                toc: xml(${temp}/toc/toc.@{version}.xml)
-                    version: @{version}
-				</data>
-			</fmpp>
-			<!-- generate navigation properties -->
-			<fmpp sourceFile="${tmpl}/md/tocnav.ftl" outputFile="${temp}/toc/tocnav.@{version}.properties" quiet="reallyQuiet">
-				<data expandProperties="yes">
-	                flatnodes: slicedText(${temp}/toc/flattoc.@{version}.properties)
-	                nodes: properties(${temp}/toc/toc.@{version}.properties)
-					version: @{version}
-	            </data>
-			</fmpp>
-			<!-- shift templates according to the current version -->
-			<copy file="${tmpl}/md/userguide.tmpl" tofile="${temp}/toc/userguide.@{version}.tmpl">
-				<filterchain>
-					<replacestring from="@version@" to="@{version}" />
-				</filterchain>
-			</copy>
-			<!-- enhance table of content's links -->
-			<replaceregexp file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" match="index.md" replace="" byline="true" />
-			<replaceregexp file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" match=".md" replace="" byline="true" />
-			<!-- cope with marked down files and add decoration -->
-			<exec executable="sh" osfamily="unix">
-				<arg value="${tmpl}/md/unixtohtml.sh" />
-				<arg value="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" />
-				<arg value="${temp}/toc/userguide.@{version}.tmpl" />
-			</exec>
-			<!-- complete properties with this version''s set of properties, before we cope with the wwhole page decoration -->
-			<concat append="true" destfile="${temp}/toc/toc.properties">
-				<filelist files="${temp}/toc/toc.@{version}.properties,${temp}/toc/tocnav.@{version}.properties" />
-			</concat>
 		</sequential>
 	</macrodef>
 
@@ -316,14 +258,15 @@
 			<fileset dir="../modules/com.restlet/" />
 		</copy>
 
-		<!-- this is a Web page, but also a template that can be inserted from "/download/current" or "/download/past" -->
-		<generate-file source="discover/firststeps.md" target="discover/firststeps.ftl" raw="raw" />
+		<generate-guide version="2.2" />
+		<generate-guide version="2.3" />
 		<replaceregexp match="javadocs://(.\..)/(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
 			<fileset dir="${temp}/owr" includes="**/*" />
 		</replaceregexp>
 		<replaceregexp match="javadocs://(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/${stable.restlet-version-minor}/\1" byline="true">
 			<fileset dir="${temp}/owr" includes="**/*" />
 		</replaceregexp>
+
 
 		<fmpp sourceRoot="${temp}/owr" outputRoot="${temp}/${restlet-com}" modes="ignore(**/.svn,**/Thumbs.db)" quiet="reallyQuiet">
 			<data expandProperties="yes">
@@ -347,9 +290,6 @@
 		</fmpp>
 		<copy todir="${temp}/${restlet-com}/tech-doc/">
 			<fileset dir="${temp}/owr/tech-doc" />
-		</copy>
-		<copy todir="${temp}/${restlet-com}/download/">
-			<fileset dir="../modules/com.restlet/download/" includes="*.ftl" />
 		</copy>
 		<delete dir="${temp}/owr" />
 	</target>
