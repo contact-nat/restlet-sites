@@ -937,6 +937,77 @@ toc:
     long-title: WADL extension
     title: WADL
     url: /extensions/wadl
+  - dir: 44_xdb
+    id: xdb
+    items:
+    - file: 00_overview.md
+      id: overview
+      link_url: /04_extensions/44_xdb/00_overview.md
+      long-title: Overview
+      title: Overview
+      url: /extensions/xdb/overview
+    - file: 01_Introduction.md
+      id: Introduction
+      link_url: /04_extensions/44_xdb/01_Introduction.md
+      long-title: Oracle XDB Restlet Adapter - Architecture - Introduction
+      title: Architecture - Introduction
+      url: /extensions/xdb/Introduction
+    - file: 02_installing.md
+      id: installing
+      link_url: /04_extensions/44_xdb/02_installing.md
+      long-title: Oracle XDB Restlet Adapter - Installing
+      title: Installing
+      url: /extensions/xdb/installing
+    - file: 03_testing.md
+      id: testing
+      link_url: /04_extensions/44_xdb/03_testing.md
+      long-title: Oracle XDB Restlet Adapter - Testing
+      title: Testing
+      url: /extensions/xdb/testing
+    - file: 04_faq.md
+      id: faq
+      link_url: /04_extensions/44_xdb/04_faq.md
+      long-title: Oracle XDB Restlet Adapter - FAQ
+      title: FAQ
+      url: /extensions/xdb/faq
+    - file: 05_others.md
+      id: others
+      link_url: /04_extensions/44_xdb/05_others.md
+      long-title: Oracle XDB Restlet Adapter - Others
+      title: Future plans - Known caveats
+      url: /extensions/xdb/others
+    - file: 06_xdbRepresentation.md
+      id: xdbRepresentation
+      link_url: /04_extensions/44_xdb/06_xdbRepresentation.md
+      long-title: Oracle XDB Restlet Adapter - XdbRepresentation
+      title: XdbRepresentation
+      url: /extensions/xdb/xdbRepresentation
+    - file: 07_lucene-maven.md
+      id: lucene-maven
+      link_url: /04_extensions/44_xdb/07_lucene-maven.md
+      long-title: XMLDB Restet Adapter/Lucene/Maven
+      title: Introduction, download, compiling and installing
+      url: /extensions/xdb/lucene-maven
+    - file: 08_lucene-maven-running.md
+      id: lucene-maven-running
+      link_url: /04_extensions/44_xdb/08_lucene-maven-running.md
+      long-title: XMLDB Restet Adapter/Lucene/Maven - Running/Testing
+      title: Running and testing
+      url: /extensions/xdb/lucene-maven-running
+    - file: 09_lucene-maven-services.md
+      id: lucene-maven-services
+      link_url: /04_extensions/44_xdb/09_lucene-maven-services.md
+      long-title: XMLDB Restet Adapter/Lucene/Maven - Services implemented
+      title: Implemented services
+      url: /extensions/xdb/lucene-maven-services
+    - file: 10_lucene-maven-todo.md
+      id: lucene-maven-todo
+      link_url: /04_extensions/44_xdb/10_lucene-maven-todo.md
+      long-title: XMLDB Restet Adapter/Lucene/Maven - Todo List
+      title: Todo List
+      url: /extensions/xdb/lucene-maven-todo
+    long-title: Oracle XDB Restlet Adapter
+    title: XDB
   - file: 45_xml.md
     id: xml
     link_url: /04_extensions/45_xml.md
