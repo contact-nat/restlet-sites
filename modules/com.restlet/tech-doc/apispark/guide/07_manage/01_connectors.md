@@ -1,12 +1,12 @@
 
 APISpark can bring additional features to your existing web API hosted outside of APISpark with the *Connector* cell.
 
-# Enhanced your web API
+# Enhance your web API
 
 With a *Connector*, you can add to your API:
-* Authenticated access
-* Fine-grained access control
-* Rate-limitation (quotas) to your API users
+* Authenticated access  
+* Fine-grained access control  
+* Rate-limitation (quotas) to your API users  
 * IP filtering
 
 # How does a connector work?
