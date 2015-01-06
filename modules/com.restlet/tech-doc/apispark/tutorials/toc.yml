@@ -49,6 +49,12 @@ toc:
     long-title: Document an existing Restlet web API
     title: Document a Restlet API
     url: /apis-for-vendors/document-restlet-api
+  - file: 04_manage-api.md
+    id: manage-api
+    link_url: /02_apis-for-vendors/04_manage-api.md
+    long-title: Manage an existing web API
+    title: Manage a web API
+    url: /apis-for-vendors/manage-api
   long-title: API management for SaaS vendors
   title: APIs for Vendors
 
