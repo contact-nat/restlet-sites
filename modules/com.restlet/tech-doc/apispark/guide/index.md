@@ -33,4 +33,3 @@ Here is a list of the different step-by-step tutorials we have at your disposal:
 -->
 
 
-Last update: December 11th 2014, 10:50am

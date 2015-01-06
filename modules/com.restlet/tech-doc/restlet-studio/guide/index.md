@@ -9,4 +9,4 @@ This documentation covers all of these topics in detail in order to help you def
 
 To help you start with Restlet Studio, we recommend that you browse through the different sections of this User Guide and find the information you need. Simply click on one of the topics in the menu on the left, or directly start by crafting your API from scratch.
 
-Last update: December 11th 2014, 10:50am
+

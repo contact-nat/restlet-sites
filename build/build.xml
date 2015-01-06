@@ -29,6 +29,7 @@
 	<property name="docs" location="docs" />
 	<property name="src" location="../modules/com.restlet.frontend/src" />
 	<property name="lib" location="../librairies" />
+	<property name="mods" location="../modules" />
 
 	<property name="www" value="www" />
 	<property name="restlet-com" value="${www}/restlet-com" />
@@ -148,6 +149,15 @@
 			<replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
 			</replaceregexp>
+			<!-- Add the last update date to the guide -->
+			<exec executable="git" outputproperty="git.revision.date">
+			    <arg value="log" />
+			    <arg value="-n1" />
+			    <arg value="--date=rfc" />
+			    <arg value="--format=Last update: %ad" />
+			    <arg value="${mods}/com.restlet/tech-doc/restlet-framework/guide/@{version}" />
+			</exec>
+			<echo file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" append="true">${git.revision.date}</echo>
 		</sequential>
 	</macrodef>
 
@@ -258,6 +268,23 @@
 			<fileset dir="../modules/com.restlet/" />
 		</copy>
 
+		<!-- Add the last update date to the guides -->
+		<exec executable="git" outputproperty="apispark.guide.revision.date">
+			<arg value="log" />
+			<arg value="-n1" />
+			<arg value="--date=rfc" />
+			<arg value="--format=Last update: %ad" />
+			<arg value="${mods}/com.restlet/tech-doc/apispark/guide" />
+		</exec>
+		<echo file="${temp}/owr/tech-doc/apispark/guide/index.md" append="true">${apispark.guide.revision.date}</echo>
+		<exec executable="git" outputproperty="studio.guide.revision.date">
+			<arg value="log" />
+			<arg value="-n1" />
+			<arg value="--date=rfc" />
+			<arg value="--format=Last update: %ad" />
+			<arg value="${mods}/com.restlet/tech-doc/restlet-studio/guide" />
+		</exec>
+		<echo file="${temp}/owr/tech-doc/restlet-studio/guide/index.md" append="true">${studio.guide.revision.date}</echo>
 		<generate-guide version="2.2" />
 		<generate-guide version="2.3" />
 		<replaceregexp match="javadocs://(.\..)/(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
