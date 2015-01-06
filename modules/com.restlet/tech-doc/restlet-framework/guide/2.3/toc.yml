@@ -342,6 +342,12 @@ toc:
       long-title: Pluggable authenticators
       title: Pluggable authenticators
       url: /core/security/pluggable-authenticators
+    - file: 05_ntml-authentication.md
+      id: ntml-authentication
+      link_url: /02_core/07_security/05_ntml-authentication.md
+      long-title: NTML authentication
+      title: NTML authentication
+      url: /core/security/ntml-authentication
     long-title: Security package
     title: Security package
   - dir: 08_services
@@ -931,12 +937,6 @@ toc:
     long-title: WADL extension
     title: WADL
     url: /extensions/wadl
-  - file: 44_xdb.md
-    id: xdb
-    link_url: /04_extensions/44_xdb.md
-    long-title: Oracle XDB Restlet Adapter
-    title: XDB
-    url: /extensions/xdb
   - file: 45_xml.md
     id: xml
     link_url: /04_extensions/45_xml.md
