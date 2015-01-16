@@ -44,11 +44,10 @@ file select control ("fileToUpload") is referenced by the resource.
 
 Every Resource instance handles the POST request in method "accept"
 which accepts the posted entity as single parameter. The aim of the
-MyResource instance is to parse the request, get the file, save it on
-disk and send back its content as plain text to the client.
+MyResource instance is to parse the request, get the file and send 
+back its content as plain text to the client.
 
 Here is the content of the MyResource\#accept method:
-
 
 ```java
 @Post
