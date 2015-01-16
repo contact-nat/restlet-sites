@@ -314,9 +314,3 @@ component.getClients().add(Protocol.HTTPS);.
 
 -   David Fogel - Detailed instruction [in this
     mail](http://restlet.tigris.org/ds/viewMessage.do?dsForumId=4447&dsMessageId=1344544)
--   Wolfgang Werner - [Building web services on Equinox and Restlet
-    \#1](http://blog.wolfgang-werner.net/building-on-equinox-and-restlet-1/)
--   Wolfgang Werner - [Building web services on Equinox and Restlet
-    \#2](http://blog.wolfgang-werner.net/building-web-services-on-equinox-and-restlet-2/)
--   Wolfgang Werner - [Building web services on Equinox and Restlet
-    \#3](http://blog.wolfgang-werner.net/building-web-services-on-equinox-and-restlet-3/)
