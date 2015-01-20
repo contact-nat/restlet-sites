@@ -7,7 +7,7 @@ them.
 
 -   [Android](./android/overview "Restlet edition for Android")
 -   [Google App Engine](./gae "Restlet edition for Google App Engine")
--   [Google Web Toolkit](./editions/gwt/overview "Restlet edition for Google Web Toolkit")
--   [Java EE](./editions/jee/overview "Restlet edition for Java EE")
--   [Java SE](./editions/jse/overview "Restlet edition for Java SE")
--   [OSGi](./editions/osgi "Restlet edition for Java SE")
+-   [Google Web Toolkit](./gwt/overview "Restlet edition for Google Web Toolkit")
+-   [Java EE](./jee/overview "Restlet edition for Java EE")
+-   [Java SE](./jse/overview "Restlet edition for Java SE")
+-   [OSGi](./osgi "Restlet edition for Java SE")
