@@ -167,9 +167,11 @@ Enter your modifications in the input area underneath and click **Send**. The up
 | html error code | html error name | actions / remedies |
 | :---: | :---: |---|
 | **400** | Bad Request | Make sure the syntax you are using is valid. When using POSTMAN Chrome Extension to invoke your API, you may have entered your content in the address instead of entering it in the input area underneath the Headers. |
+| **401** | Unauthorized | Make sure you entered the right credentials. |
+| **403** | Forbidden | Make sure the method you are using is allowed or make sure you entered credentials (access is not public). |
 | **405** | Method Not Allowed | Make sure the method you are using is allowed: open your API's Overview, in the Resources section, click on the resource you call e.g. contacts. The methods available are listed below the resource name.
 | **415** | Unsupported Media Type | When using POSTMAN Chrome Extension to invoke your API, you may have forgotten to set the Content Type Header to application/json.
-| **422** | Unprocessable Entity | Make sure that the data you POST refer to the representation's properties and not to the column names they are mapping.
+| **422** | Unprocessable Entity | Make sure that the data you POST refer to the representation's properties and not to the column names they are mapping. Also make sure you use the right value type (string, integer) in your POST.
 | **500** | Internal Server Error | Before invoking your API, make sure you call the last version of your API and Data Store. You need to (re)deploy your API and the Data Stores (or/and File Stores) associated.
 -->
 
@@ -191,6 +193,16 @@ Enter your modifications in the input area underneath and click **Send**. The up
     <td class="tg-031e">Make sure the syntax you are using is valid. When using POSTMAN Chrome Extension to invoke your API, you may have entered your content in the address instead of entering it in the input area underneath the Headers.</td>
   </tr>
   <tr>
+    <td class="tg-s6z2">401</td>
+    <td class="tg-s6z2">Unauthorized</td>
+    <td class="tg-031e">Make sure you entered the right credentials.</td>
+  </tr>
+  <tr>
+    <td class="tg-s6z2">403</td>
+    <td class="tg-s6z2">Forbidden</td>
+    <td class="tg-031e">Make sure the method you are using is allowed or make sure you entered credentials (access is not public).</td>
+  </tr>
+  <tr>
     <td class="tg-s6z2">405</td>
     <td class="tg-s6z2">Method Not Allowed</td>
     <td class="tg-031e">Make sure the method you are using is allowed: open your API's Overview, in the Resources section, click on the resource you call e.g. contacts. The methods available are listed below the resource name.</td>
@@ -203,7 +215,7 @@ Enter your modifications in the input area underneath and click **Send**. The up
   <tr>
     <td class="tg-s6z2">422</td>
     <td class="tg-s6z2">Unprocessable Entity</td>
-    <td class="tg-031e">Make sure that the data you POST refer to the representation's properties and not to the column names they are mapping.</td>
+    <td class="tg-031e">Make sure that the data you POST refer to the representation's properties and not to the column names they are mapping. Also make sure you use the right value type (string, integer) in your POST.</td>
   </tr>
   <tr>
     <td class="tg-s6z2">500</td>

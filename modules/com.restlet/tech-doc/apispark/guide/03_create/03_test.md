@@ -22,7 +22,7 @@ The web API's **Messages** tab displays messages pertaining to different aspects
 
 This is a great place to go to when testing your API.
 
-![Messages](images/messages.png "Messages")
+![Messages](images/messages.jpg "Messages")
 
 ## Messages
 

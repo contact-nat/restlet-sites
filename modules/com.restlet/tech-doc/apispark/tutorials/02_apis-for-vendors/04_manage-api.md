@@ -15,6 +15,8 @@ Create a new Connector. Click on **+ Web API**, select the "Connector" **Type** 
 
 Click on the **Add** button to create the new web API Connector. You will be taken to the new web API Connector's **Overview** page.
 
+In the **Endpoints** section, click on the **Add** button to add an Endpoint to your Connector.
+
 # 2. Configure the authentication feature
 
 ## 2.1. Enable the authentication feature
@@ -34,9 +36,9 @@ To add new consumers to your API, create new members from the **Members** tab.
 
 Members of your web API Connector will be able to consume it once it has been deployed. A set of credentials will be auto-generated for each of them.
 
-Each member of the Connector can use his APISpark credentials to consume the API. To get your credentials, go to your Account page by clicking on your name on top right of your screen and selecting **My Account**.
+Each member of the Connector can use his/her credentials to consume the API. To get yours, go to the **Overview** page of the Connector and open the Endpoint you want to invoke.
 
-![User credentials](images/user-credentials.png "User credentials")
+![Connector credentials](images/connector-credentials.jpg "Connector credentials")
 
 You can now **Deploy** your web API Connector.
 
