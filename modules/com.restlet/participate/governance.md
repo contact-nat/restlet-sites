@@ -71,7 +71,7 @@ is the [Restlet](http://restlet.com/) company.
 
 # Roadmap
 
-Our [roadmap is equally open](http://restlet.com/learn/roadmap) and
+Our [roadmap is equally open](https://github.com/restlet/restlet-framework-java/wiki) and
 based on our [online issue
 tracker](http://restlet.com/participate/contribute). All users are
 allowed to enter new issues or comment on existing one. The overall

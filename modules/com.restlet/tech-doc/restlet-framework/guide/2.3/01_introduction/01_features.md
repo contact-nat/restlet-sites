@@ -104,6 +104,6 @@ Restlet was an attempt to build a better Servlet API, aligned with the true Web 
 Is something important for you missing? Maybe we are already working on
 it or are planning to do so.
 
-We suggest that you have a look at [our public roadmap](http://restlet.com/learn/roadmap) or at our [issue tracker on GitHub](https://github.com/restlet/restlet-framework-java/issues).
+We suggest that you have a look at [our public roadmap](https://github.com/restlet/restlet-framework-java/wiki) or at our [issue tracker on GitHub](https://github.com/restlet/restlet-framework-java/issues).
 
 Feel free to create some new ones if needed!
