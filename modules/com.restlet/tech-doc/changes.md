@@ -1,3 +1,12 @@
+v3.2.2
+
+APISpark 2B new features:
+
+- http error codes improvements
+- Analytics per Member
+- Added Connector Endpoint credentials
+- Updated screenshots due to UI changes
+
 v3.2.1
 
 Restlet Framework documentation enhancements:
