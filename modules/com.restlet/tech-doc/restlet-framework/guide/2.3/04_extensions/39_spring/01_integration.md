@@ -2,9 +2,7 @@
 
 During the development of the 1.0 version of the Restlet API, several
 users attempted to integrate Restlet with Spring. They were especially
-trying to use the XML-based bean wiring feature of Spring. This resulted
-in several examples available on the [community
-Wiki](http://wiki.restlet.org/).
+trying to use the XML-based bean wiring feature of Spring.
 
 In order to facilitate this integration, two dedicated Spring extension
 were added to the Restlet. It allows us to provide several integration

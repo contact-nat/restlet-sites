@@ -9,8 +9,7 @@ The [Maven](http://maven.apache.org/)
 support appeared to be important for many Restlet users. The initial
 response was to automatically generate the POM files for each module JAR
 shipped within the Restlet distribution. This enabled users to upload
-those JAR files to a local Maven repository, using a script like the one
-available in the Wiki.
+those JAR files to a local Maven repository.
 
 But, this was clearly not easy enough and forced users to download the
 full distribution for each new version released, instead of just

@@ -142,16 +142,6 @@ virtual hosts.
               "http://restlet.org{rr}", true));
        getHosts().add(host);
 
-       // ----------------
-       // wiki.restlet.org
-       // ----------------
-       host = new VirtualHost(getContext());
-       host.setHostDomain("wiki.restlet.org");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach("/", new RedirectApplication(getContext(),
-              "http://wiki.java.net/bin/view/Javawsxml/Restlet{rr}", false));
-       getHosts().add(host);
-
        // ------------------
        // search.restlet.org
        // ------------------
