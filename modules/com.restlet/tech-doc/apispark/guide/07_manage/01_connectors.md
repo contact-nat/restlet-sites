@@ -25,8 +25,8 @@ In the **Create a web API** window, select **Connector** from the **Type** drop-
 
 ![Create a connector](images/create-connector.jpg "Create a connector")
 
-A Connector has the same properties as a [web API](technical-resources/apispark/guide/create/overview "Web API") except that a connector is not hosted by the APISpark plateform.
+A Connector has the same properties as a [web API](/technical-resources/apispark/guide/create/overview "Web API") except that a connector is not hosted by the APISpark plateform.
 
-With a Connector you can also document your web API as with a [Descriptor](technical-resources/apispark/guide/document/overview "Descriptor").
+With a Connector you can also document your web API as with a [Descriptor](/technical-resources/apispark/guide/document/overview "Descriptor").
 
-Once you have created a Connector, you can [configure it and install the Remote Agent](technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System, and that's all. Your web API has new features inside without writing a line of code!
+Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System, and that's all. Your web API has new features inside without writing a line of code!

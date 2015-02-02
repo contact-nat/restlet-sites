@@ -23,7 +23,7 @@ If you have any doubt, go to the **Messages** tab which reports the last actions
 
 ![Messages tab](images/messages-section.jpg "Messages tab")
 
-Jump to the [Check your messages](technical-resources/apispark/guide/create/test03 "Test your web API") section of our online documentation for further information.
+Jump to the [Check your messages](/technical-resources/apispark/guide/create/test03 "Test your web API") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
@@ -32,13 +32,13 @@ Jump to the [Check your messages](technical-resources/apispark/guide/create/test
 ## Deploying your API
 When you deploy a cell, APISpark generates source code, compiles and deploys it in the cloud so that it will be executed in the APISpark runtime environment. As long as you have not deployed your data stores and web APIs, they are not available to store data or receive HTTP requests.
 
-Jump to the [Cell deployment](technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") section of our online documentation for further information.
+Jump to the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") section of our online documentation for further information.
 
 ## Publishing your API
 When you publish your API, you specify that it is in a stable state and is available to be used by end users or imported by other cells: you bring it into production.
 A Published cell (APIs, data stores, etc.) cannot undergo structural modifications or be deleted as this could break clients or other cells using it.
 
-Jump to the [Cell lifecycle](technical-resources/apispark/guide/explore/lifecycle "Cell lifecycle") section of our online documentation for further information.
+Jump to the [Cell lifecycle](/technical-resources/apispark/guide/explore/lifecycle "Cell lifecycle") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
@@ -68,7 +68,7 @@ Click the **Download** button.
 
 ![Generate client SDKs](images/generate-sdks.jpg "Generate client SDKs")
 
-Jump to the [Generate custom client SDKs](technical-resources/apispark/guide/publish/publish/client-sdk "Generate custom client SDKs") section of our user guide for further information.
+Jump to the [Generate custom client SDKs](/technical-resources/apispark/guide/publish/publish/client-sdk "Generate custom client SDKs") section of our user guide for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 

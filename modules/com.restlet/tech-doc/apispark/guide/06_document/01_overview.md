@@ -5,15 +5,15 @@ APISpark can enhance the way you document an existing web API hosted outside the
 
 APISpark can help you document an existing API in the following ways:
 
-* Automatically generate [*documentation*](technical-resources/apispark/guide/document/get-documentation "Generate documentation")
-* Automatically generate [*client SDKs* and *server skeletons*](technical-resources/apispark/guide/document/get-documentation "Generate client SDKs and server skeletons")
-* Automatically generate [*standard API definitions*](technical-resources/apispark/guide/publish/publish/api-definition "Standard API definition") (RAML, Swagger) for third party integration
+* Automatically generate [*documentation*](/technical-resources/apispark/guide/document/get-documentation "Generate documentation")
+* Automatically generate [*client SDKs* and *server skeletons*](/technical-resources/apispark/guide/document/get-documentation "Generate client SDKs and server skeletons")
+* Automatically generate [*standard API definitions*](/technical-resources/apispark/guide/publish/publish/api-definition "Standard API definition") (RAML, Swagger) for third party integration
 
 # The web API Descriptor
 
 A web API *Descriptor* is an APISpark cell that documents a web API. Many features are then accessible via the Descriptor.
 
-You may [create a web API Descriptor](technical-resources/apispark/guide/document/create-descriptor "create a web API Descriptor") by introspecting existing code (Restlet framework, JAX-RS) or by importing an existing web API definition in the Swagger format, or manually.
+You may [create a web API Descriptor](/technical-resources/apispark/guide/document/create-descriptor "create a web API Descriptor") by introspecting existing code (Restlet framework, JAX-RS) or by importing an existing web API definition in the Swagger format, or manually.
 
 
 Similarly, an APISpark Descriptor can be automatically translated to the Swagger or RAML formats.

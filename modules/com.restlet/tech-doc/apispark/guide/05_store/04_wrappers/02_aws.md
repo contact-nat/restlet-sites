@@ -34,4 +34,4 @@ If your bucket contains several root folders, associated folders are created for
 
 Click on the **Deploy** button.
 
-Once your File Store has been deployed, you can simply export it as a new web API via the actions button or import it from an existing web API. For more details on how to do this, please check out our [tutorials](technical-resources/apispark/tutorials "tutorials").
+Once your File Store has been deployed, you can simply export it as a new web API via the actions button or import it from an existing web API. For more details on how to do this, please check out our [tutorials](/technical-resources/apispark/tutorials "tutorials").

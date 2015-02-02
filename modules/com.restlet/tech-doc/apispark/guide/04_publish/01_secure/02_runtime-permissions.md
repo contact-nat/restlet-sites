@@ -35,4 +35,4 @@ An API's **Overview** page contains rich documentation for consumers of the API,
 
 In combination with opening your API to *anyone*, you might want to make a part of your API's **Overview** publicly accessible, even to users that do not have an APISpark account.
 
-To see how to make your API public, please visit the [Documentation page](technical-resources/apispark/guide/publish/publish/documentation "Documentation").
+To see how to make your API public, please visit the [Documentation page](/technical-resources/apispark/guide/publish/publish/documentation "Documentation").

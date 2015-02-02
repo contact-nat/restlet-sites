@@ -21,4 +21,4 @@ To view a representation's **Variants**, select the representation from the **Re
 
 ![Variants](images/variants.jpg "Variants")
 
->**Note:** When you want to POST a new entry via [Postman](technical-resources/apispark/guide/create/test "Postman") tool for example, you can use the **Sample** text area content to make sure you are using the appropriate syntax.
+>**Note:** When you want to POST a new entry via [Postman](/technical-resources/apispark/guide/create/test "Postman") tool for example, you can use the **Sample** text area content to make sure you are using the appropriate syntax.

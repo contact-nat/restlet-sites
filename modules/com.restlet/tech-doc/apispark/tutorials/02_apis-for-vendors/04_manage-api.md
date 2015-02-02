@@ -1,6 +1,6 @@
 # Introduction
 
-APISpark provides a tool to manage an existing web API hosted outside of APISpark. To get a full overview of the management features available, take a look at the [related documentation](technical-resources/apispark/guide/manage/connectors).
+APISpark provides a tool to manage an existing web API hosted outside of APISpark. To get a full overview of the management features available, take a look at the [related documentation](/technical-resources/apispark/guide/manage/connectors).
 
 In this scenario, we will add authenticated access to an existing web API via the APISpark tool. If you do not have a running web API, you can use our sample API hosted on APISpark.
 

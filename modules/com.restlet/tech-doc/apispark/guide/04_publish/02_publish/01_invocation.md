@@ -5,7 +5,7 @@ APISpark web APIs are either *public* or *private*. This affects the way you acc
 
 ## Access a private API
 
-In order to browse a private web API's documentation and get your access tokens, you need to be a member of the API. To see how to create web API members, please visit the [User Groups](technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
+In order to browse a private web API's documentation and get your access tokens, you need to be a member of the API. To see how to create web API members, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
 
 Navigate to the API's overview. If you are a member of the API, it will appear in your **Dashboard**.
 
@@ -15,7 +15,7 @@ Select an Endpoint in the left panel. The central panel displays your access tok
 
 ## Access a public API
 
-Public web APIs can be browsed by anyone, without authentication. A public API is not necessarily open to anyone at runtime. This is configured from the [User Groups](technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
+Public web APIs can be browsed by anyone, without authentication. A public API is not necessarily open to anyone at runtime. This is configured from the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
 
 ## Basic authentication access tokens
 
@@ -27,7 +27,7 @@ In order to invoke an API, you must belong to one of the API's consumer groups w
 
 However, some APIs are open to anyone without authentication.
 
-To see how to configure a web API's runtime permissions, including opening an API to *anyone*, please visit the [User Groups](technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
+To see how to configure a web API's runtime permissions, including opening an API to *anyone*, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
 
 ## Making HTTP calls
 

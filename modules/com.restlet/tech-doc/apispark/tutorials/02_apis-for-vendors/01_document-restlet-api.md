@@ -103,7 +103,7 @@ Next, you have to add additional options according to the action you want to tak
 
 ## Upload your API definition to APISpark
 
-For the first time, you have to choose if you want to create a [*Descriptor*](technical-resources/apispark/guide/document/overview "Descriptor") with `--create-descriptor` or a [*Connector*](technical-resources/apispark/guide/manage/connectors "Connector") cell with `--create-connector`. If you do not kwow yet, choose the *Descriptor* since you will be able to convert it in a *Connector* later.
+For the first time, you have to choose if you want to create a [*Descriptor*](/technical-resources/apispark/guide/document/overview "Descriptor") with `--create-descriptor` or a [*Connector*](/technical-resources/apispark/guide/manage/connectors "Connector") cell with `--create-connector`. If you do not kwow yet, choose the *Descriptor* since you will be able to convert it in a *Connector* later.
 
 Last things to do is to indicate the class of your Restlet Application (example `org.restlet.example.contact.api.ContactsApplication`).
 
