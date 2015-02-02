@@ -18,4 +18,4 @@ Click on the **Help** menu and select **Chrome install**.
 
 ![Chrome install](images/install-in-chrome.jpg "Chrome install")
 
-You can also launch Restlet Studio from your [web browser](technical-resources/restlet-studio/guide/get-started/web-browser "web browser") without signing in.
+You can also launch Restlet Studio from your [web browser](/technical-resources/restlet-studio/guide/get-started/web-browser "web browser") without signing in.
