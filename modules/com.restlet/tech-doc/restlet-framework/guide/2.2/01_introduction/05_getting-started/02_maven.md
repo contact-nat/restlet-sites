@@ -73,7 +73,7 @@ Just after the \</profiles\> add the following:
 
 The following table lists the available artifacts and their group and
 artifact ids. With the introduction of the
-[editions](../../editions "Part III - Restlet Editions")
+[editions](../../editions/overview "Part III - Restlet Editions")
 for the Restlet framework, it is necessary to make a distinction between
 an extension for a given edition and the same extension for another
 extension simply because the code of the extension may change between
