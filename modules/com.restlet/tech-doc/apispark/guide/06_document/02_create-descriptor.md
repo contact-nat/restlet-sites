@@ -44,8 +44,8 @@ The Restlet code introspector is designed to generate a web API Descriptor by in
 
 The introspector supports two types of Java implementations: those based on the Restlet Framework, and those based on JAX-RS. In both, Swagger annotations are supported.
 
-For more information on how to introspect a Restlet Framework application, jump to our [Document an existing Restlet web API](technical-resources/apispark/tutorials/api-for-vendors/document-restlet-api "Document an existing Restlet web API") tutorial.
+For more information on how to introspect a Restlet Framework application, jump to our [Document an existing Restlet web API](/technical-resources/apispark/tutorials/api-for-vendors/document-restlet-api "Document an existing Restlet web API") tutorial.
 
-For more information on how to instrospect a JAX-RS application, jump to our [Document an existing JAX-RS web API](technical-resources/apispark/tutorials/api-for-vendors/document-jax-rs-api "Document an existing JAX-RS web API") tutorial.
+For more information on how to instrospect a JAX-RS application, jump to our [Document an existing JAX-RS web API](/technical-resources/apispark/tutorials/api-for-vendors/document-jax-rs-api "Document an existing JAX-RS web API") tutorial.
 
-After introspecting your JAX-RS code, you can work on your [Descriptor](technical-resources/apispark/guide/document/get-documentation "Descriptor").
+After introspecting your JAX-RS code, you can work on your [Descriptor](/technical-resources/apispark/guide/document/get-documentation "Descriptor").

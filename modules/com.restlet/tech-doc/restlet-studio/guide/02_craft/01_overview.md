@@ -1,4 +1,4 @@
-Restlet Studio allows you to craft your APIs from scratch from its design view. You can visually edit the [endpoints](technical-resources/restlet-studio/guide/craft/endpoints "endpoints"), [resources](technical-resources/restlet-studio/guide/craft/resources "resources"), methods and [representations](technical-resources/restlet-studio/guide/craft/representations "representations") of your API. You can also classify your resources and representations by creating sections.
+Restlet Studio allows you to craft your APIs from scratch from its design view. You can visually edit the [endpoints](/technical-resources/restlet-studio/guide/craft/endpoints "endpoints"), [resources](/technical-resources/restlet-studio/guide/craft/resources "resources"), methods and [representations](/technical-resources/restlet-studio/guide/craft/representations "representations") of your API. You can also classify your resources and representations by creating sections.
 
 # Create a new API definition
 

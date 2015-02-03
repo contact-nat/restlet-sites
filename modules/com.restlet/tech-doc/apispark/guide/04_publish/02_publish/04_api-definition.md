@@ -2,7 +2,7 @@ In the API ecosystem, there are several formats that allow you to describe an AP
 
 The RAML and Swagger formats are more likely to be used to get the definition of an API.
 
-With APISpark you can export your web API (or your [Descriptor](technical-resources/apispark/guide/document/overview "Descriptor") or [Connector](technical-resources/apispark/guide/manage/connectors "Connector") cells) to those *standard* API definition languages.
+With APISpark you can export your web API (or your [Descriptor](/technical-resources/apispark/guide/document/overview "Descriptor") or [Connector](/technical-resources/apispark/guide/manage/connectors "Connector") cells) to those *standard* API definition languages.
 
 # Export to a standard API definition language
 
@@ -59,7 +59,7 @@ http://petstore.swagger.wordnik.com" target="_blank">Swagger UI demo</a>.
 
 ![Swagger URL](images/swagger-url.jpg "Swagger URL")
 
-> **Note:** Your API documentation must be public as seen on the [Documentation](technical-resources/apispark/guide/publish/publish/documentation "Documentation") page.
+> **Note:** Your API documentation must be public as seen on the [Documentation](/technical-resources/apispark/guide/publish/publish/documentation "Documentation") page.
 
 The screenshot below is an example of what the Swagger UI looks like.  
 

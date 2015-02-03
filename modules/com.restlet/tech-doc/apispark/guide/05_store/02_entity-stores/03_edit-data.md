@@ -2,7 +2,7 @@
 
 The data browser is a useful tool that lets you preview and edit data stored in an Entity Store.
 
-In order to use the data browser, the Entity Store must be deployed first (see [Entity Store deployment](technical-resources/apispark/guide/store/entity-stores/deploy "Entity Store deployment")).
+In order to use the data browser, the Entity Store must be deployed first (see [Entity Store deployment](/technical-resources/apispark/guide/store/entity-stores/deploy "Entity Store deployment")).
 
 If updates are made to the Entity Store's data model, the Entity Store will need to be redeployed in order for the data browser to update itself.
 
@@ -12,7 +12,7 @@ The data browser lets you view existing data, add new entries, update existing e
 
 ![Add](images/editdata.png "Add")
 
-Depending on the primary key policy you chose for a given entity, the value primary key field will or will not be user-defined (see Primary key policy in [Model data section](technical-resources/apispark/guide/store/entity-stores/model-data "Model data section")).
+Depending on the primary key policy you chose for a given entity, the value primary key field will or will not be user-defined (see Primary key policy in [Model data section](/technical-resources/apispark/guide/store/entity-stores/model-data "Model data section")).
 
 ### Editing multiple cardinality properties
 

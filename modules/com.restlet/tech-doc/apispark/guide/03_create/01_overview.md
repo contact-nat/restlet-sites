@@ -7,7 +7,7 @@ In this section we look at different ways to automatically create a web API from
 
 # Export a Web API from a Data Store
 
-You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](technical-resources/apispark/guide/store/entity-stores/model-data "Entity Store") or the [File Store](technical-resources/apispark/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
+You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](/technical-resources/apispark/guide/store/entity-stores/model-data "Entity Store") or the [File Store](/technical-resources/apispark/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
 
 The API export process can be launched from the Data Store **Overview**. Click on the action arrow and select **Export web API**.
 
@@ -59,7 +59,7 @@ If you update your Data Store, you can update the API's corresponding resources 
 
 ### Switch imported Entity Store version
 
-If you create a new version of an Entity Store that is imported by a Web API (see [Versioning](technical-resources/apispark/guide/explore/versioning "Versioning")), you can update the Web API's **Import** to switch to the new version of the Entity Store.
+If you create a new version of an Entity Store that is imported by a Web API (see [Versioning](/technical-resources/apispark/guide/explore/versioning "Versioning")), you can update the Web API's **Import** to switch to the new version of the Entity Store.
 
 To switch the version of an imported Entity Store, open the importing Web API. Open the **Settings** tab, and select the imported Entity Store from the **Imports** section in the left panel.
 

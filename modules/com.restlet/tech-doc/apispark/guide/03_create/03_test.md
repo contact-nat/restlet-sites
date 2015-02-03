@@ -2,8 +2,8 @@
 
 In order to test and debug a web API, a certain number of requirements must be met.
 
-The API must be deployed. Please visit the [Cell deployment](technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page if you do not know how to deploy an API.  
-You need access credentials if the API if not open to *Anyone*. Please visit the [Invocation](technical-resources/apispark/guide/publish/publish/invocation "Invocation") page if you do not know how to obtain and view your API access credentials.
+The API must be deployed. Please visit the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page if you do not know how to deploy an API.  
+You need access credentials if the API if not open to *Anyone*. Please visit the [Invocation](/technical-resources/apispark/guide/publish/publish/invocation "Invocation") page if you do not know how to obtain and view your API access credentials.
 
 # Invoke a Web API with POSTMAN
 

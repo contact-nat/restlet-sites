@@ -11,7 +11,7 @@ A member can have one of five roles on a cell.
 
 For team-based collaboration, members should be given either of the roles *Owner*, *Manager*, *Operator*, or *Developer*.
 
-*User* is a special role designed for web API members who are consumers of your API. For more information about managing your API consumption, please visit the [User Groups](technical-resources/apispark/guide/publish/secure/user-groups "User Groups") page.
+*User* is a special role designed for web API members who are consumers of your API. For more information about managing your API consumption, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User Groups") page.
 
 Depending on the role given to a member, s/he will have different permissions in the APISpark console.
 

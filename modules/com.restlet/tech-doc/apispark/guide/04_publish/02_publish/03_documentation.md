@@ -7,7 +7,7 @@ APISpark is very flexible in this regard and provides three different ways to do
 * Download your API's documentation
 * Get the Swagger definition of your API
 
-APISpark will also provide automatic documentation for existing APIs that are not hosted by APISpark. In this case, please visit the [APISpark Descriptors](technical-resources/apispark/guide/document/overview "APISpark Descriptors") section.
+APISpark will also provide automatic documentation for existing APIs that are not hosted by APISpark. In this case, please visit the [APISpark Descriptors](/technical-resources/apispark/guide/document/overview "APISpark Descriptors") section.
 
 # Make your API documentation public
 
@@ -56,4 +56,4 @@ The screenshot below is an example of what the Swagger UI looks like.
 
 ![Swagger](images/swagger-ui.jpg "Swagger")
 
-For details on how to use swagger UI with your API, go to the [third party application integration](technical-resources/apispark/guide/publish/publish/api-definition "third party application integration") page.
+For details on how to use swagger UI with your API, go to the [third party application integration](/technical-resources/apispark/guide/publish/publish/api-definition "third party application integration") page.

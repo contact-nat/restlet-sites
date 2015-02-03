@@ -15,7 +15,7 @@ Select the features you want to enable.
 
 The **Authentication** module uses the access settings defined in the **Members** tab.
 
-For more information, jump to our [User Groups](technical-resources/apispark/guide/publish/secure/user-groups "User Groups") section.
+For more information, jump to our [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User Groups") section.
 
 ## Authorization module
 
@@ -29,19 +29,19 @@ To go to the **Security** tab, navigate to the **Overview** tab and select a met
 
 ![Security tab](images/method-security.jpg "Security tab")
 
-Go to the [Runtime Permissions](technical-resources/apispark/guide/publish/secure/runtime-permissions "Runtime Permissions") section to discover how to configure the access.
+Go to the [Runtime Permissions](/technical-resources/apispark/guide/publish/secure/runtime-permissions "Runtime Permissions") section to discover how to configure the access.
 
 ## Firewall module
 
 With the **Firewall** module, you can add *Rate Limitation* or *IP Filtering* to your web API.
 
-Please go through the [Firewall settings](technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall Settings") page to add such rules.
+Please go through the [Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall Settings") page to add such rules.
 
 ## Activate your settings
 
 Once you have completed your settings, you need to deploy your *Connector* configuration to activate them.
 
-Click on the **Deploy** button to deploy your cell. Please go to the [Cell deployment](technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page for further information.
+Click on the **Deploy** button to deploy your cell. Please go to the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page for further information.
 
 # Install your Remote Agent
 

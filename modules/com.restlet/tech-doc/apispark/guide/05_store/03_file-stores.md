@@ -27,7 +27,7 @@ To create a new folder, click on the **Add** button from the File Store **Overvi
 
 To deploy a File Store, click on the **Deploy** button. Messages will inform you of the progress and completion of the process.
 
-Once you have deployed your File Store, you can [Export an API](technical-resources/apispark/guide/create/overview "Export an API").
+Once you have deployed your File Store, you can [Export an API](/technical-resources/apispark/guide/create/overview "Export an API").
 
 # Upload files
 
