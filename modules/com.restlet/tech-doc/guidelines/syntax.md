@@ -113,7 +113,7 @@ Internal link:
 
 Prefix with `technical-resources/apispark/guide/` and use file system structure (without the number prefix or file extension) to generate the URL.
 
-Example: [Export an API](technical-resources/apispark/guide/store/entity-stores/overview "Export an API")
+Example: [Export an API](/technical-resources/apispark/guide/store/entity-stores/overview "Export an API")
 
 Email
 - Email : <info@reslet.com>

@@ -1,6 +1,6 @@
 # Introduction
 
-As we mentioned in the [introduction](technical-resources/restlet-framework/guide/2.2/introduction/overview "Part I - Introduction"),
+As we mentioned in the [introduction](/technical-resources/restlet-framework/guide/2.2/introduction/overview "Part I - Introduction"),
 the Restlet Framework is at the same time a client and a server
 framework. For example, you can easily work with remote resources using
 its HTTP client connector.
@@ -9,7 +9,7 @@ A connector in REST is a software element that enables the communication
 between components, typically by implementing one side of a network
 protocol. Restlet provides several implementations of client connectors
 based on existing open-source projects. The
-[connectors](technical-resources/restlet-framework/guide/2.2/core/base/connectors/overview "Connectors")
+[connectors](/technical-resources/restlet-framework/guide/2.2/core/base/connectors/overview "Connectors")
 section lists all available client and server connectors and explain how
 to use and configure them.
 
@@ -45,5 +45,5 @@ resource.get().write(System.out);
 
 
 After those first two steps, [let's now develop a more complete Restlet
-application](technical-resources/restlet-framework/guide/2.2/introduction/first-stpes/first-application "First application"),
+application](/technical-resources/restlet-framework/guide/2.2/introduction/first-stpes/first-application "First application"),
 taking advantage of the various editions of the Restlet Framework.

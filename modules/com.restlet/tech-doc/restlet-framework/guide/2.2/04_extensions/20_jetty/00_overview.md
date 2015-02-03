@@ -26,7 +26,7 @@ For additional details, please consult the
 
 # Usage example
 
-Please consult [connector configuration documentation](technical-resources/restlet-framework/guide/2.2/core/base/connectors/overview)
+Please consult [connector configuration documentation](/technical-resources/restlet-framework/guide/2.2/core/base/connectors/overview)
 
 ## HTTPS
 

@@ -12,5 +12,5 @@ those additional connectors, authenticators and so on.
 # Internal connectors
 
 In addition to supporting the Restlet API, the Reslet Engine includes a set
-of [internal connectors](technical-resources/restlet-framework/guide/2.3/core/engine/internal-connectors/overview) that can be further extended or replaced through
+of [internal connectors](/technical-resources/restlet-framework/guide/2.3/core/engine/internal-connectors/overview) that can be further extended or replaced through
 extensions.

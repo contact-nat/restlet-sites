@@ -36,7 +36,7 @@ Updated to leverage the recent Jetty 7.0 version now hosted at Eclipse.
 
 # Lucene extension
 
-In addition, a [Lucene extension](technical-resources/restlet-framework/guide/2.2/extensions/lucene)has been created to host the Solr client connector contributed by Rémi Dewitte who will lead this extension. There is also a TikaRepresentation available to leverage Lucene Tika subproject when extracting metadata from representations.
+In addition, a [Lucene extension](/technical-resources/restlet-framework/guide/2.2/extensions/lucene)has been created to host the Solr client connector contributed by Rémi Dewitte who will lead this extension. There is also a TikaRepresentation available to leverage Lucene Tika subproject when extracting metadata from representations.
 
 # Net extension
 
