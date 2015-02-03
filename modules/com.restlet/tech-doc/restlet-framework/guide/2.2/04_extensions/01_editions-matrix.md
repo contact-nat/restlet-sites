@@ -9,7 +9,7 @@ shipped by all editions.
 # Extensions availability
 
 Extensions|[Android](../editions/android/overview "Android")|[GAE](../editions/gae "GAE")|[GWT](../editions/gwt/overview "GWT")|[JEE](../editions/jee/overview "JEE")|[JSE](../editions/jse/overview "JSE")|[OSGi](../editions/osgi "OSGi")|Description
---------- |  ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | -
+----------| ------------------------------------------------|----------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------|-----------
 [org.restlet.ext.atom](./atom "atom")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the Atom syndication and the AtomPub (Atom Publication Protocol) standards in their 1.0 version.
 [org.restlet.ext.crypto](./crypto "crypto")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for cryptography.
 [org.restlet.ext.e4](./e4 "e4")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the WADL specification.
