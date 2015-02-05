@@ -176,7 +176,7 @@ application" files.
 ## <a name="conclusion"></a>Conclusion
 
 We hope you that enjoyed these first steps and encourage you to check
-[the equivalent page in the Java SE edition](../jse/ "Restlet edition for Java SE")
+[the equivalent page in the Java SE edition](../jse/overview "Restlet edition for Java SE")
 for standalone deployments of the same application. This can also be a
 convenient way to develop and test your Restlet application before
 actually deploying it in a Java EE application server.

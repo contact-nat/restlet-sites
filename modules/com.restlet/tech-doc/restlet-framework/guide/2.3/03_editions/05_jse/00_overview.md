@@ -134,7 +134,7 @@ file.
 
 We hope you that enjoyed these first steps and encourage you to check
 [the equivalent page in the Java EE
-edition](../jee/ "Restlet edition for Java EE")
+edition](../jee/overview "Restlet edition for Java EE")
 for deployments of the same application in Servlet containers. This can
 also be a convenient way to deploy your Restlet application in an
 existing Java EE application server available in your organization.
