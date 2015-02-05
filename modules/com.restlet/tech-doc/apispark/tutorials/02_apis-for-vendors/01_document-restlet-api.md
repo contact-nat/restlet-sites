@@ -1,11 +1,11 @@
 # Introduction
 
-APISpark provides a tool that allows you to extract the web API definition of your Restlet application and import it in APISpark to provide documentation and tooling.
+The Restlet Framework provides a tool that extracts the web API definition of your Restlet (or Jax-rs) application and imports it in APISpark to provide documentation and tooling such as generation of client kits, etc.
 
-With this tool, you will be able to create a new APISpark cell from your Restlet Application and edit it within APISpark.
+With this tool, you will be able to create a new APISpark cell and edit it within APISpark.
 By running the tool again, you will be able to synchronize web API changes initiated from your API's code.
 
-For this tutorial, we provide you with a Restlet sample API description that will allow you to test the Descriptor feature. The API provided contains companies and contacts. It is fully operational: it can be invoked and you can add new contacts and companies.
+For this tutorial, we provide you with a Restlet sample API in order to test the Descriptor feature. This fully operational API handles companies and contacts: it can be invoked to add, read, update and delete contacts and companies.
 
 # Requirements
 
@@ -15,19 +15,22 @@ To follow this tutorial, you will need:
 *   20 minutes of your time,
 
 # 1. Retrieve your credentials
-Sign in to APISpark (if you have not done it yet) and retrieve your credentials in the **My account** page.  
+Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.
 Click on your username on top right of the screen and select **My account**. You will find your **Username** and **Secret key** in the **Tokens** section.
 
 # 2. Retrieve Restlet sample API
-We provide you with a Restlet sample API description that will allow you to test the Descriptor feature. If you have your own Restlet API, feel free to use it.  
+We provide you with a Restlet sample API description that allows you to test the Descriptor feature. If you have your own Restlet API, feel free to use it.  
+
 - Install git (if you have not done it yet) to launch a git clone in command line ;  
 or
-- Launch the command from your development environment. If you are working on Windows, you can use e.g. git shell or git bash.  
+- Launch the command from your development environment. If you are working on Windows, you can use e.g. git shell or git bash.
+
 ```git clone https://github.com/restlet/restlet-sample-descriptor.git```
 
 # 3. Launch introspection
 Run the introspection code to export the API documentation to APISpark with Maven.  
-Install Maven (if you have not done it yet) to launch introspection in command line from restlet-sample-descriptor directory.
+Install Maven (if you have not done it yet) to launch introspection in command line from the `restlet-sample-descriptor` directory.
+
 ```mvn test -Pexport-to-apispark -Dapispark.username=<your username> -Dapispark.secretkey=<your secret key>```
 
 >**Note:** Working on Windows, avoid using git shell or git bash for this operation.
@@ -37,8 +40,8 @@ The main method is located in the ```org.restlet.example.contact.api.ExportToApi
 Once introspection is completed successfully a similar message displays:
 
 ```
-Your Web API descriptor's id is: 5694
-Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/5694/versions/1/overview
+Your Web API descriptor's id is: 123456
+Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/123456/versions/1/overview
 ```
 
 In your <a href="https://apispark.restlet.com/dashboard" target="_blank">APISpark Dashboard</a>, you can see the new **Descriptor** cell created.
@@ -51,9 +54,9 @@ You can customize it either:
 or
 - directly from the code  
 
-Here are key places to customize the documentation:  
+Here are key places to customize the documentation from the code:
 
-- You can customize part of the documentation from the ```ContactsApplication``` class.
+- general characteristics fof the API from the ```ContactsApplication``` class.
 - *Resources* are described by their interface in the ```org.restlet.example.contact.api.resource``` package.
 - *Exceptions* are serialized in the ```org.restlet.example.contact.api.core.exception``` package.
 
