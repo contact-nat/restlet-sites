@@ -19,7 +19,7 @@ to the project, by filing a bug or enhancement reports, by submitting
 documentation or code improvements or by helping other users or
 developers in the mailing lists. Every contribution is valuable to the
 community and we give credit back to our team by listing all the
-contributors on [our team page](http://restlet.com/participate/team).
+contributors on [our team page](/company/#meetup).
 
 Let's get started and again: welcome to the Restlet Team !
 
