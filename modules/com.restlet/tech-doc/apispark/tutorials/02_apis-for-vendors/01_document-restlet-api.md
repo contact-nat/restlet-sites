@@ -1,124 +1,153 @@
 # Introduction
 
-APISpark provides a tool that allows you to extract the web API definition of your Restlet application and import it in APISpark to provide documentation and tooling.
+The Restlet Framework provides a tool that extracts the web API definition of your Restlet (or Jax-rs) application and imports it in APISpark to provide documentation and tooling such as generation of client kits, etc.
 
-You can also initialize your web API from a JAX-RS application or from a Swagger definition.
-
-With this tool, you will be able to create a new APISpark cell from your Restlet Application and edit it within APISpark.
+With this tool, you will be able to create a new APISpark cell and edit it within APISpark.
 By running the tool again, you will be able to synchronize web API changes initiated from your API's code.
 
-In these scenarios we will leverage the Introspector tool by loading a web API definition into APISpark, updating this definition revision after a code change and create a new major version of your definition to prepare an upgrade.
+For this tutorial, we provide you with a Restlet sample API in order to test the Descriptor feature. This fully operational API handles companies and contacts: it can be invoked to add, read, update and delete contacts and companies.
 
-# Launch process
+# Requirements
 
-First you need to install the *Introspector* tool either from the <a href="http://rest-let.com/products/restlet-framework/" target="_blank">Restlet Framework site</a> or from a Maven project if you are familiar with Maven.
+To follow this tutorial, you will need:
 
-You need to download the version 2.3 of Restlet Framework.
+*   a web browser,
+*   20 minutes of your time,
 
-## Install from the Restlet site
+# 1. Retrieve your credentials
+Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.
+Click on your username on top right of the screen and select **My account**. You will find your **Username** and **Secret key** in the **Tokens** section.
 
-Open the <a href="http://rest-let.com/products/restlet-framework/" target="_blank">Restlet Framework site</a> and select the version 2.3 of the JSE edition of the Restlet Framework.
+# 2. Retrieve Restlet sample API
+We provide you with a Restlet sample API description that allows you to test the Descriptor feature. If you have your own Restlet API, feel free to use it.  
 
-![Restlet site](images/restlet-site-download.jpg)
+- Install git (if you have not done it yet) to launch a git clone in command line ;  
+or
+- Launch the command from your development environment. If you are working on Windows, you can use e.g. git shell or git bash.
 
-Once extracted, you can run the Java Introspector Tool from the command line below, using your APISpark credentials.
+```git clone https://github.com/restlet/restlet-sample-descriptor.git```
 
-```shell
-java -cp "/path/to/your/lib/*:/path/to/restlet/lib/*:/path/to/restlet/lib/*/*" org.restlet.ext.apispark.Introspector --username 55955e02-0e99-47f8 --password 6f3ee88e-8405-44c8
---create-descriptor org.restlet.example.contact.api.ContactsApplication
-```
-From the command line, you have to configure the classpath with your application classes and dependencies, and with the Restlet Framework dependencies.
+# 3. Launch introspection
+Run the introspection code to export the API documentation to APISpark with Maven.  
+Install Maven (if you have not done it yet) to launch introspection in command line from the `restlet-sample-descriptor` directory.
 
-You will find the description of the different options used in the paragraphs below.
+```mvn test -Pexport-to-apispark -Dapispark.username=<your username> -Dapispark.secretkey=<your secret key>```
 
-An easier way to configure your classpath is to let Maven manage the dependencies.
+>**Note:** Working on Windows, avoid using git shell or git bash for this operation.
 
-## Install with Maven
+The main method is located in the ```org.restlet.example.contact.api.ExportToApispark``` class which source is indicated here in ```./src/test/java/org/restlet/example/contact/api/ExportToApispark.java```. In order to set your credentials, you can either edit the source code, or use the ```apispark.username``` and ```apispark.secretkey``` system properties.
 
-In order to use the Introspector tool from Maven, you need to add the following elements to your `pom.xml` or in a new one.
-
-<!-- TODO or download [this one](images/pom.xml) -->
-
-```xml
-<project>
-    <properties>
-        <restlet-version>2.3</restlet-version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.restlet.jse</groupId>
-            <artifactId>org.restlet</artifactId>
-            <version>&#36;{restlet-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.restlet.jse</groupId>
-            <artifactId>org.restlet.ext.jackson</artifactId>
-            <version>&#36;{restlet-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.restlet.jse</groupId>
-            <artifactId>org.restlet.ext.apispark</artifactId>
-            <version>&#36;{restlet-version}</version>
-        </dependency>
-    </dependencies>
-
-    <repositories>
-        <repository>
-            <id>maven-restlet</id>
-            <name>Public online Restlet repository</name>
-            <url>http://maven.restlet.com</url>
-        </repository>
-    </repositories>
-</project>
-```
-
-# Run the Instrospector tool
-
-In order to upload your API definition to APISpark, you need to use your credentials.
-
-## Retrieve your credentials
-
-You can find your credentials in your **Account** page. To navigate to the **Account** page, make sure you are signed in, then click on your username on top right of your screen and select **My account**.
-
-![Account page](images/myaccount.jpg)
-
-Your username and secret key are displayed in the **Tokens** section.
-
-## Introspector usage
-
-Different options are available from the Introspector. To have the exhaustive list of these options, add `--help` to the command line as shown below.
-
-```shell
-java org.restlet.ext.apispark.Introspector --help
-```
-
-The Introspector requires your credentials attributes, so add the `-u` (or `--username`) and the `-p` (or `--password`) options to each command.
-
-```shell
-java org.restlet.ext.apispark.Introspector --username 55955e02-0e99-47f8 --password 6f3ee88e-8405-44c8 [options]
-```
-
-Next, you have to add additional options according to the action you want to take.
-
-## Upload your API definition to APISpark
-
-For the first time, you have to choose if you want to create a [*Descriptor*](/technical-resources/apispark/guide/document/overview "Descriptor") with `--create-descriptor` or a [*Connector*](/technical-resources/apispark/guide/manage/connectors "Connector") cell with `--create-connector`. If you do not kwow yet, choose the *Descriptor* since you will be able to convert it in a *Connector* later.
-
-Last things to do is to indicate the class of your Restlet Application (example `org.restlet.example.contact.api.ContactsApplication`).
-
-Then, you can run the command.
-
-```shell
-java org.restlet.ext.apispark.Introspector --username 55955e02-0e99-47f8 --password 6f3ee88e-8405-44c8 --create-descriptor org.restlet.example.contact.api.ContactsApplication
-```
-
-If the process succeeds, you will see the following logs in the console:
+Once introspection is completed successfully a similar message displays:
 
 ```
-Instrospection complete
-Your Web API descriptor's id is: 18
-Your Web API documentation is accessible at this URL: https://apispark.com/apis/18/versions/1/overview
+Your Web API descriptor's id is: 123456
+Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/123456/versions/1/overview
 ```
 
-That's it. Your API definition is available on APISPark.
+In your <a href="https://apispark.restlet.com/dashboard" target="_blank">APISpark Dashboard</a>, you can see the new **Descriptor** cell created.
+
+# 4. Customize API documentation
+Once you have imported our sample API documentation in your APISpark Dashboard, feel free to customize it: the application, its resources, methods and beans.
+
+You can customize it either:
+- from the APISpark console  
+or
+- directly from the code  
+
+Here are key places to customize the documentation from the code:
+
+- general characteristics fof the API from the ```ContactsApplication``` class.
+- *Resources* are described by their interface in the ```org.restlet.example.contact.api.resource``` package.
+- *Exceptions* are serialized in the ```org.restlet.example.contact.api.core.exception``` package.
+
+## Customize the Application
+In the constructor: ```setName``` and ```setDescription```
+
+## Customize Resources
+
+### thanks to Restlet Framework
+In the constructor: ```setName``` and ```setDescription```
+
+### thanks to Swagger annotations
+Use the ```@Api``` annotation either on the annotated interface, or in the implementation class:
+```@Api(value = "Companies", description = "Company list resource")```
+
+## Customize Methods thanks to Swagger annotations
+Use the ```@ApiOperation``` annotation:
+```@ApiOperation(value = "list the companies", tags = "company")```
+
+Use the ```@ApiResponses``` annotation, only for online Swagger documentation. Status and representation are deduced from the signature of the method:  
+
+```
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "the added company"),
+            @ApiResponse(code = 422, message = "company not valid", response = BadEntityException.class)
+    })
+```
+
+## Customize a bean, thanks to Jackson annotations in order to control serialization/documentation (only if you leverage the Jackson extension)
+
+Use the ```@JsonInclude(JsonInclude.Include.NON_EMPTY)``` annotation to exclude empty or null attributes (cf class ```BadEntityException```).
+
+Use the ```@JsonRootName``` annotation: it defines the name of the root element of the Json (cf class ```CompanyList```).
+
+Use the ```@JsonProperty``` annotation: the name of the property in the serialized representation (cf class ```Company```).
+
+Use the ```@JacksonXmlRootElement``` annotation: in the XML representation, it sets the name of the root element.
+
+Use the ```@JacksonXmlElementWrapper``` annotation: in the XML representation, the "tags" attribute is wrapped inside a "tags" element (cf class ```CompanyList```).
+
+Use the ```@JacksonXmlProperty``` annotation: in the XML representation, any "Tag" element is marked as "tag" instead of "tags" (cf class ```CompanyList```).
+Customize a bean thanks to Swagger annotations in order to control the documentation of the bean
+Use the ```@ApiModelProperty``` annotation: the description of the annotated field.
+
+# 5. Test your API
+You can then test your API for your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.
+Here is a list of sample commands available:
+
+## List of companies in distinct formats
+
+```
+curl http://localhost:8000/companies  
+curl http://localhost:8000/companies -H 'accept: application/xml'  
+curl http://localhost:8000/companies -H 'accept: application/x-yaml'  
+curl http://localhost:8000/companies?media=yaml'
+```
+
+## Representation of a company in distinct formats
+
+```
+curl http://localhost:8000/companies/1  
+curl http://localhost:8000/companies/1?media=xml'  
+curl http://localhost:8000/companies/1 -H 'accept: application/x-yaml'
+```
+
+## List of contacts in distinct formats
+
+```
+curl http://localhost:8000/contacts  
+curl http://localhost:8000/contacts?media=xml'  
+curl http://localhost:8000/contacts -H 'accept: application/x-yaml'
+```
+
+## Representation of a contact in distinct formats
+
+```
+curl http://localhost:8000/contacts/1  
+curl http://localhost:8000/contacts/1 -H 'accept: application/xml'  
+curl http://localhost:8000/contacts/1?media=yaml'
+```
+
+## Swagger 1 documentation, available in Swagger UI
+
+```
+curl http://localhost:8000/api-docs  
+curl http://localhost:8000/api-docs/companies  
+curl http://localhost:8000/api-docs/contacts
+```
+
+## Swagger 2.0 documentation, available in Swagger UI
+
+```
+curl http://localhost:8000/swagger.json
+```
