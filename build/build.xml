@@ -135,10 +135,10 @@
 		<attribute name="version" />
 		<sequential>
 			<!-- deal with the "javadocs" links -->
-			<replaceregexp match="javadocs://(.\..)/(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
+			<replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
 			</replaceregexp>
-			<replaceregexp match="javadocs://(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
+			<replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
 			</replaceregexp>
 			<!-- deal with the "source" links -->
@@ -287,10 +287,10 @@
 		<echo file="${temp}/owr/tech-doc/restlet-studio/guide/index.md" append="true">${studio.guide.revision.date}</echo>
 		<generate-guide version="2.2" />
 		<generate-guide version="2.3" />
-		<replaceregexp match="javadocs://(.\..)/(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
+		<replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
 			<fileset dir="${temp}/owr" includes="**/*" />
 		</replaceregexp>
-		<replaceregexp match="javadocs://(.*)" replace="http://restlet.org/technical-resources/restlet-framework/javadocs/${stable.restlet-version-minor}/\1" byline="true">
+		<replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/${stable.restlet-version-minor}/\1" byline="true">
 			<fileset dir="${temp}/owr" includes="**/*" />
 		</replaceregexp>
 
