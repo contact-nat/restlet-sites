@@ -35,7 +35,7 @@ ChallengeAuthenticator filter. Filters are specialized Restlets that can
 pre-process a call before invoking and attached Restlet or post-process
 a call after the attached Restlet returns it. If you are familiar with
 the Servlet API, the concept is similar to the
-[Filter](http://java.sun.com/j2ee/1.4/docs/api/javax/servlet/Filter.html)
+[Filter](http://docs.oracle.com/javaee/7/api/javax/servlet/Filter.html)
 interface. See below how we would modify the previous example to secure
 the access to the Directory:
 
