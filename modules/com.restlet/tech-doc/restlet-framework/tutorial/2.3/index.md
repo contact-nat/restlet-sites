@@ -34,14 +34,14 @@ between the JDBC API and concrete JDBC drivers.
 ## <a name="part02">2. Retrieving the content of a Web page</a>
 
 As we mentioned in the [introduction
-paper](/learn/guide/2.3/introduction/), the Restlet framework is at the
+paper](/technical-resources/restlet-framework/guide/2.3/introduction/overview), the Restlet framework is at the
 same time a client and a server framework. For example, Restlet can
 easily work with remote resources using its HTTP client connector. A
 connector in REST is a software element that enables the communication
 between components, typically by implementing one side of a network
 protocol. Restlet provides several implementations of client connectors
 based on existing open-source projects. The
-[connectors](/learn/guide/2.3/core/base/connectors/) section lists all
+[connectors](/technical-resources/restlet-framework/guide/2.3/core/base/connectors) section lists all
 available client and server connectors and explain how to use and
 configure them.
 
@@ -51,7 +51,7 @@ it in the JVM console:
 ~~~~ {.java:nocontrols:nogutter}
 // Outputting the content of a Web page
 new ClientResource("http://restlet.com").get().write(System.out);
-   
+
 ~~~~
 
 Note that the example above uses a simplified way to issue calls via the
@@ -70,7 +70,7 @@ resource.setReferrerRef("http://www.mysite.org");
 
 // Write the response entity on the console
 resource.get().write(System.out);
-   
+
 ~~~~
 
 ## <a name="part03">3. Listening to Web browsers</a>
@@ -96,7 +96,7 @@ public class Part03 extends ServerResource {
     }
 
 }
-   
+
 ~~~~
 
 If you run this code and launch your server, you can open a Web browser
@@ -180,7 +180,7 @@ public String toString() {
             + getReference().getBaseRef() + '\n' + "Remaining part: "
             + getReference().getRemainingPart();
 }
-   
+
 ~~~~
 
 Now let's test it by entering
@@ -191,7 +191,7 @@ is the result that you will get:
     Root URI      : http://localhost:8182/trace
     Routed part   : http://localhost:8182/trace
     Remaining part: /abc/def?param=123
-       
+
 
 ## <a name="part06">6. Serving static files</a>
 
@@ -221,7 +221,7 @@ Application application = new Application() {
 // Attach the application to the component and start it
 component.getDefaultHost().attach(application);
 component.start();
-   
+
 ~~~~
 
 In order to run this example, you need to specify a valid value for
@@ -252,7 +252,7 @@ configuration file by setting a system property like:
 ~~~~ {.java:nocontrols:nogutter}
 System.setProperty("java.util.logging.config.file",
         "/your/path/logging.config");
-   
+
 ~~~~
 
 For details on the configuration file format, please check the [JDK's
@@ -323,7 +323,7 @@ directory.setListingAllowed(true);
 guard.setNext(directory);
 
 return guard;
-   
+
 ~~~~
 
 ![](images/tutorial09)
@@ -361,7 +361,7 @@ if (resource.getStatus().isSuccess()) {
     System.out.println("An unexpected status was returned: "
             + resource.getStatus());
 }
-   
+
 ~~~~
 
 You can change the user ID or password sent by this test client in order
@@ -408,7 +408,7 @@ extractor.extractQuery("keywords", "kwd", true);
 
 // Attach the extractor to the router
 router.attach("/search", extractor);
-   
+
 ~~~~
 
 Note that the Redirector needs three parameters only. The first is the
@@ -507,7 +507,7 @@ Restlet order = new Restlet(getContext()) {
 router.attach("/users/{user}", account);
 router.attach("/users/{user}/orders", orders);
 router.attach("/users/{user}/orders/{order}", order);
-   
+
 ~~~~
 
 Note that the routing assumes that your request contains an absolute
@@ -541,11 +541,11 @@ So far, we introduced features that go beyond the traditional Servlet
 API and introduced our support for REST that justify our Restlet name!
 If haven't done so already, you can learn more about the REST
 architecture style and the best practices to follow when applying it to
-a Web application. There is a related [FAQ entry](/discover/faq#04) that
+a Web application. There is a related [FAQ entry](/technical-resources/restlet-framework/guide/2.3/appendices/faq#how-to-use-restlet-in-an-applet) that
 will give you some starting pointers. If you have some experience with a
 traditional MVC framework, you can read more about the relationship to
 Restlet in this other [FAQ
-entry](/learn/guide/2.3/appendices/faq#how-do-i-implement-the-traditional-mvc-pattern).
+entry](/technical-resources/restlet-framework/guide/2.3/appendices/faq#how-do-i-implement-the-traditional-mvc-pattern).
 
 To summarize, a request contains an URI that identifies the target
 resource that is the subject of the call. This information is stored in
@@ -579,7 +579,7 @@ Router router = new Router(getContext());
 router.attach("/users/{user}", UserResource.class);
 router.attach("/users/{user}/orders", OrdersResource.class);
 router.attach("/users/{user}/orders/{order}", OrderResource.class);
-   
+
 ~~~~
 
 We will finally review one of the resource classes, the UserResource
@@ -608,7 +608,7 @@ public class UserResource extends ServerResource {
         return "Account of user \"" + this.userName + "\"";
     }
 }
-   
+
 ~~~~
 
 You can have a look at the rest of the code in the tutorial package and
@@ -632,13 +632,13 @@ Now, here is the hierarchy with the core Representation classes:
 ![](images/representations)
 
 Beside this tutorial, your best source of information will be the
-Javadocs available for the [Restlet API](/learn/javadocs/2.3/jse/api/),
-the [Restlet Extensions](/learn/javadocs/2.3/jse/ext/) and the [Restlet
-engine](/learn/javadocs/2.3/jse/engine/). Have also a look at the
-[connectors](/learn/guide/2.3/core/base/connectors/) section that lists
+Javadocs available for the [Restlet API](/technical-resources/restlet-framework/javadocs/2.3/jse/api/),
+the [Restlet Extensions](/technical-resources/restlet-framework/javadocs/2.3/jse/ext/) and the [Restlet
+engine](/technical-resources/restlet-framework/javadocs/2.3/jse/engine/). Have also a look at the
+[connectors](/technical-resources/restlet-framework/guide/2.3/core/base/connectors) section that lists
 all available client and server connectors and explain how to use and
 configure them, and the
-[integrations](/learn/guide/2.3/extensions/editions-matrix) section for
+[integrations](/technical-resources/restlet-framework/guide/2.3/extensions/editions-matrix) section for
 a list of all available extensions providing pluggable features such as
 integration with servlet containers, generation of dynamic
 representations, etc. You can also post your questions and help others
