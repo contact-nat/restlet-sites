@@ -58,4 +58,4 @@ The **My plan** tab also provides management of your **Payment Method**.
 
 You can create several domains on your account.
 
-For more information, jump to the [custom domains](/technical resources/apispark/guide/create/edit/endpoints/#custom-domains "custom domains") section of our online documentation.
+For more information, jump to the [custom domains](/technical-resources/apispark/guide/create/edit/endpoints#custom-domains "custom domains") section of our online documentation.
