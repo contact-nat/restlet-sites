@@ -3,10 +3,10 @@
 By default, Restlet relies on JDK's logging API (JULI) to log records
 about its activity. For a complete documentation on this standard API,
 you can check the [related JDK
-documentation](http://java.sun.com/j2se/1.5.0/docs/guide/logging/index.html).
+documentation](http://docs.oracle.com/javase/6/docs/technotes/guides/logging/).
 For additional configuration details, you should also read the [Javadocs
 of the LogManager
-class](http://java.sun.com/j2se/1.5.0/docs/api/java/util/logging/LogManager.html).
+class](http://docs.oracle.com/javase/6/docs/api/java/util/logging/LogManager.html).
 For example, to indicate the location of your logging properties file,
 you should add the following parameter to your JVM:
 

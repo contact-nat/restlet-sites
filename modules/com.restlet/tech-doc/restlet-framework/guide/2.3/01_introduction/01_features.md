@@ -51,8 +51,8 @@ Restlet was an attempt to build a better Servlet API, aligned with the true Web 
 - [AJP](http://tomcat.apache.org/connectors-doc/) server connector available to let you plug behind an Apache HTTP server or Microsoft IIS. It is based on Jetty's connector.
 - Multiple client HTTP connectors available, based on either [Apache HTTP Client](http://jakarta.apache.org/commons/httpclient/) or on an NIO-based extension (preview).
 - Compact internal HTTP client and server for development and light deployments based on HTTPUrlConnection class. No external dependency needed.
-- Client SMTP, SMTPS, POP v3 and POPS v3 connectors are provided based on [JavaMail](http://java.sun.com/products/javamail/) and a custom email XML format.
-- Client JDBC connector based on the JDBC API, a custom request XML format and the JDBC [WebRowSet interface](http://java.sun.com/j2se/1.5.0/docs/api/javax/sql/rowset/WebRowSet.html) for XML responses.
+- Client SMTP, SMTPS, POP v3 and POPS v3 connectors are provided based on [JavaMail](http://www.oracle.com/technetwork/java/javamail/index.html) and a custom email XML format.
+- Client JDBC connector based on the JDBC API, a custom request XML format and the JDBC [WebRowSet interface](http://docs.oracle.com/javase/7/docs/api/javax/sql/rowset/WebRowSet.html) for XML responses.
 - Client FILE connector supports GET, PUT and DELETE methods on files and directories. In addition, it is able to return directory listings.
 - Client CLAP connector to access to the Classloader resources.
 - Client and server [RIAP connectors](../core/base/connectors/overview) to access to the Restlet internal resources, directly inside the JVM, relatively to the current application or virtual host or component.

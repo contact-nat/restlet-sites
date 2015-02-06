@@ -21,7 +21,7 @@ The list of supported specific parameters is available in the javadocs:
 Here is the list of dependencies of this connector:
 
 -   [Jetty](http://www.eclipse.org/jetty/)
--   [Java Servlet](http://java.sun.com/products/servlet/)
+-   [Java Servlet](http://www.oracle.com/technetwork/java/javaee/servlet/index.html)
 
 For additional details, please consult the
 [Javadocs](javadocs://jse/ext/org/restlet/ext/jetty/package-summary.html).

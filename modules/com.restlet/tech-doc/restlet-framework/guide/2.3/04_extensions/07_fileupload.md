@@ -18,7 +18,7 @@ For additional details, please consult the
 
 Here is the list of dependencies for this extension:
 
--   [Java Servlet](http://java.sun.com/products/servlet/)
+-   [Java Servlet](http://www.oracle.com/technetwork/java/javaee/servlet/index.html)
 -   [Apache Commons FileUpload](http://jakarta.apache.org/commons/fileupload/)
 
 # Usage example

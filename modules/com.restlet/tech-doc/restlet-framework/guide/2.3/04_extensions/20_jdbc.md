@@ -1,7 +1,7 @@
 # Introduction
 
 This connector is a client to a JDBC database. It is based on the [JDBC
-API](http://java.sun.com/products/jdbc/)
+API](http://www.oracle.com/technetwork/java/javase/jdbc/index.html)
 developed by Sun Microsystems and shipped with the JDK. Database
 connections are optionally pooled using Apache Commons DBCP. In this
 case, a different connection pool is created for each unique combination

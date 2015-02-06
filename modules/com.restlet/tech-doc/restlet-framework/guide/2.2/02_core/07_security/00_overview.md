@@ -275,7 +275,7 @@ in a way that is common to all three types of HTTPS server connectors
     is an SslContextFactory that supports a basic set of parameters, and
     will default to the values specified in the `javax.net.ssl.*` system
     properties (see [JSSE Reference
-    guide](http://java.sun.com/j2se/1.5.0/docs/guide/security/jsse/JSSERefGuide.html#SystemProps)).\
+    guide](http://docs.oracle.com/javase/6/docs/technotes/guides/security/jsse/JSSERefGuide.html#SystemProps)).\
      There can in fact be several values of sslContextFactory (since
     there can be several values for parameters), in which case the first
     one constructed and initialized successfully will be used.
