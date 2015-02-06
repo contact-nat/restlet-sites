@@ -9,7 +9,7 @@ Apache-like logs or even custom ones. By taking advantage of the logging
 facility built in the JDK, the logger can be configured like any
 standard JDK log to filter messages, reformat them or specify where to
 send them. Rotation of logs is also supported; see the
-[java.util.logging](http://java.sun.com/j2se/1.5.0/docs/api/java/util/logging/package-summary.html)
+[java.util.logging](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/logging/package-summary.html)
 package for details.
 
 Note that you can customize the logger name given to the
@@ -20,7 +20,7 @@ configuration file by setting a system property like:
     System.setProperty("java.util.logging.config.file", "/your/path/logging.config"); 
 
 For details on the configuration file format, please check the [JDK's
-LogManager](http://java.sun.com/j2se/1.5.0/docs/api/index.html?java/util/logging/LogManager.html)
+LogManager](http://docs.oracle.com/javase/6/docs/api/index.html?java/util/logging/LogManager.html)
 class. You can also have a look at the [Restlet ${restlet-version-minor} logging
 documentation](/technical-resources/restlet-framework/guide/2.2/editions/jse/logging).
 
