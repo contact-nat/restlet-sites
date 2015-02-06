@@ -5,7 +5,7 @@ These two types of cells are built to work together, and APISpark provides tools
 
 In this section we look at different ways to automatically create a web API from existing Data Stores.
 
-# Export a Web API from a Data Store
+# Export a web API from a Data Store
 
 You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](/technical-resources/apispark/guide/store/entity-stores/model-data "Entity Store") or the [File Store](/technical-resources/apispark/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
 
