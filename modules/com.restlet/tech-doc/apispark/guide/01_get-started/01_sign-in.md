@@ -58,18 +58,4 @@ The **My plan** tab also provides management of your **Payment Method**.
 
 You can create several domains on your account.
 
-Click on the **Add** button to add a new domain.
-
-<!--
-
-UPDATE SCREENSHOT
-
-![Domain creation](images/domain-creation.jpg "Domain creation")
-
-### DNS Aliasing
-
-![Select domain type](images/select-domain-type.jpg "Select domain type")
-
-### DNS Delegation
-
--->
+For more information, jump to the [custom domains](/technical resources/apispark/guide/create/edit/endpoints#custom-domains "custom domains") section of our online documentation.

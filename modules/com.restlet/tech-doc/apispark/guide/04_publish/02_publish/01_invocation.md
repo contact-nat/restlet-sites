@@ -212,6 +212,11 @@ In this request, in which the `$depth` parameter is set to 2, Organizations are 
   ]
 }
 ```
+## Parametering cache information validity
+
+As an API is invoked, APISpark adds information in the HTTP header. The validity period of these data can be set from your API's **Settings** tab. You can thus increase the data conservation period and avoid performing requests on data you already collected.
+
+![response caching](images/response-caching.jpg "response caching")
 
 # HTTP response codes
 

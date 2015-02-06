@@ -3,13 +3,42 @@ A web API has a set of **Representations** that are used as input and output typ
 
 A **Representation** has a **Name** and a **Description** (optional), and is composed of **Properties** which hold values.
 
-To edit a web API's **Representations**, navigate to the Web API's **Overview**. The API's representations are listed in the **Representations** section in the left panel.
+To edit a web API's **Representations**, navigate to the web API's **Overview**. The API's representations are listed in the **Representations** section in the left panel.
 
 Once you have select a **Representation**, you can view its properties.
 
-Representation properties have a **Name**, **Datatype**, and cardinality (**Min occurs** and **Max occurs**).
+Representation properties have a **Name**, **Description**, **Datatype** and  belong to a section.
 
 ![Representations](images/representations.jpg "Representations")
+
+## Representation properties
+
+Representations are composed of properties. A Representation property has a number of different attributes that can be set.
+
+![Representation properties](images/representation-properties.jpg "Representation properties")
+
+You can modify the following attributes for an existing Representation property.
+
+### Name
+
+The property's name.
+
+### Hidden
+
+Select this checkbox so that the Representation properties are not included into client kits or when the API is invoked. You may want to include only part of your properties.
+
+### Sample value
+
+A sample value can be provided in this field. It will be suggested to the user when s/he adds a record.
+
+
+## Representation formatting
+
+From the **Settings** tab, you can determine whether you want your API to return all values, all values except null values or all values except null and empty values.
+
+Navigate to the **Settings** tab and select the appropriate formatting from the drop-down menu.
+
+![Representation formatting](images/representation-formatting.jpg "Representation formatting")
 
 # Variants
 

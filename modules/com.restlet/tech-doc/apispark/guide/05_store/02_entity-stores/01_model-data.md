@@ -58,39 +58,37 @@ You can rename the primary key property, and choose between two primitive data t
 
 Entities are composed of properties. An entity property has a number of different attributes that can be set.
 
-To add a property to an Entity, click on **+ Add a property**.
+To add a property to an Entity, click on the **+** button.
 
-![Add property](images/add-property.jpg "Add property")
+![Add property + button](images/add-property-plus-button.jpg "Add property + button")
 
 You are then invited to specify the following **attributes** for the new property.
+
+![Add property](images/add-property.jpg "Add property")
 
 ### Name
 
 The property's name.
 
-### Type
+### Datatype
 
 The property's type. There are two main categories of types: primitive and relations. We'll cover relations in the next section. All possible types for a property are listed in the **Datatype** drop-down menu.
 
 The primitive types available in the Entity Store are *String*, *Integer*, *Date*, *Boolean*, *Double*, *Long*, and *Float*.
 
-### Min occurs and Max occurs
+### Optional
 
-These fields contain the minimum and maximum cardinalities of the property.
+Deselect this checkbox to specify the property as a mandatory field.
 
-These values are used to determine if a property should be stored as a list.
+### Repeating
 
-By default, both min and max occurs are set to 1.
-
-### Nullable
-
-This checkbox allows you to make the property mandatory (not nullable) or not. Deselect the **Nullable** checkbox to make it mandatory.
+Select this checkbox to specify the property as a collection (a list rather than a simple value).
 
 ### Default value
 
 A property’s default value is assigned if a null value is provided upon creation of a data element. To assign a default value, deselect the **Default value** checkbox and enter a value in the field that displays.
 
-### Sample
+### Sample value
 
 A sample value can be provided in this field. It will be suggested to the user when s/he adds a record.
 

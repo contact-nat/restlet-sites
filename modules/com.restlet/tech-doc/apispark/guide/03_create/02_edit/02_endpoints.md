@@ -15,7 +15,7 @@ To add new endpoints, click on the **Add** button of the **Endpoints** section.
 
 You will be prompted to select a **Domain** and a **Protocol** for you new **Endpoint**.
 
-# Custom domains
+# <a name="custom-domains"></a>Custom domains
 
 By default, your web API responds to traffic sent to its default "apispark.net" endpoint.
 
