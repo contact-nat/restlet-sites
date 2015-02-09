@@ -3,7 +3,9 @@
 The Restlet Framework provides a tool that extracts the web API definition of your Restlet (or Jax-rs) application and imports it in APISpark to provide documentation and tooling such as generation of client kits, etc.
 
 With this tool, you will be able to create a new APISpark cell and edit it within APISpark.
-By running the tool again, you will be able to synchronize web API changes initiated from your API's code.
+
+<!--By running the tool again, you will be able to synchronize web API changes initiated from your API's code.
+-->
 
 For this tutorial, we provide you with a Restlet sample API in order to test the Descriptor feature. This fully operational API handles companies and contacts: it can be invoked to add, read, update and delete contacts and companies.
 
@@ -11,8 +13,10 @@ For this tutorial, we provide you with a Restlet sample API in order to test the
 
 To follow this tutorial, you will need:
 
-*   a web browser,
-*   20 minutes of your time,
+* a web browser,
+* Maven,
+* Git,  
+* 20 minutes of your time,
 
 # 1. Retrieve your credentials
 Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.
@@ -51,7 +55,7 @@ Once you have imported our sample API documentation in your APISpark Dashboard, 
 
 You can customize it either:
 - from the APISpark console  
-or
+or  
 - directly from the code  
 
 Here are key places to customize the documentation from the code:
@@ -72,7 +76,9 @@ In the constructor: ```setName``` and ```setDescription```
 Use the ```@Api``` annotation either on the annotated interface, or in the implementation class:
 ```@Api(value = "Companies", description = "Company list resource")```
 
-## Customize Methods thanks to Swagger annotations
+## Customize Methods
+
+### thanks to Swagger annotations
 Use the ```@ApiOperation``` annotation:
 ```@ApiOperation(value = "list the companies", tags = "company")```
 
@@ -85,7 +91,11 @@ Use the ```@ApiResponses``` annotation, only for online Swagger documentation. S
     })
 ```
 
-## Customize a bean, thanks to Jackson annotations in order to control serialization/documentation (only if you leverage the Jackson extension)
+## Customize Beans
+
+### thanks to Jackson annotations
+
+You can customize a bean with Jackson annotations in order to control serialization/documentation (only if you leverage the Jackson extension).
 
 Use the ```@JsonInclude(JsonInclude.Include.NON_EMPTY)``` annotation to exclude empty or null attributes (cf class ```BadEntityException```).
 
@@ -102,7 +112,7 @@ Customize a bean thanks to Swagger annotations in order to control the documenta
 Use the ```@ApiModelProperty``` annotation: the description of the annotated field.
 
 # 5. Test your API
-You can then test your API for your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.
+You can then test your API from your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.  
 Here is a list of sample commands available:
 
 ## List of companies in distinct formats
