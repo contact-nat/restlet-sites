@@ -1,3 +1,22 @@
+v3.2.3
+
+Documented APISpark 3A new features:
+
+- Sign in / sign up process
+- Properties formatting
+- response cache parametering
+- UI changes
+- Connector changes (credentials, etc.)
+
+Tutorials
+
+- Integrated Descriptor tutorial and interactive assistant
+- Updated tutorials order to be the same as interactive assistants order
+
+Restlet Framework
+
+- Fixed broken links
+
 v3.2.2
 
 APISpark 2B new features:
