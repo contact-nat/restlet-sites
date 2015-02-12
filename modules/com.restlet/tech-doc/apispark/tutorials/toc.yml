@@ -1,60 +1,50 @@
 toc:
-- dir: 01_apis-for-publishers
-  id: apis-for-publishers
-  items:
-  - file: 01_create-web-api.md
-    id: create-web-api
-    link_url: /01_apis-for-publishers/01_create-web-api.md
-    long-title: Create a web API from scratch
-    title: Create a web API
-    url: /apis-for-publishers/create-web-api
-  - file: 02_turn-spreadsheet-to-api.md
-    id: turn-spreadsheet-to-api
-    link_url: /01_apis-for-publishers/02_turn-spreadsheet-to-api.md
-    long-title: Turn a Google Spreadsheet into a web API
-    title: Turn a Gsheet into a web API
-    url: /apis-for-publishers/turn-spreadsheet-to-api
-  - file: 03_expose-sql-via-api.md
-    id: expose-sql-via-api
-    link_url: /01_apis-for-publishers/03_expose-sql-via-api.md
-    long-title: Expose an SQL database via a web API
-    title: Expose an SQL DB via a web API
-    url: /apis-for-publishers/expose-sql-via-api
-  - file: 07_github.md
-    id: github
-    link_url: /01_apis-for-publishers/07_github.md
-    long-title: Create a wrapper for a GitHub repository
-    title: Create a GitHub wrapper
-    url: /apis-for-publishers/github
-  - file: 08_parse.md
-    id: parse
-    link_url: /01_apis-for-publishers/08_parse.md
-    long-title: Turn your Parse Backend into a web API
-    title: Create a Parse wrapper
-    url: /apis-for-publishers/parse
-  - file: 09_firebase.md
-    id: firebase
-    link_url: /01_apis-for-publishers/09_firebase.md
-    long-title: Turn your Firebase backend into a web API
-    title: Create a Firebase wrapper
-    url: /apis-for-publishers/firebase
-  long-title: web API solution for site/app/data publishers
-  title: APIs for Publishers
-- dir: 02_apis-for-vendors
-  id: apis-for-vendors
-  items:
-  - file: 01_document-restlet-api.md
-    id: document-restlet-api
-    link_url: /02_apis-for-vendors/01_document-restlet-api.md
-    long-title: Document an existing Restlet web API
-    title: Document a Restlet API
-    url: /apis-for-vendors/document-restlet-api
-  - file: 04_manage-api.md
-    id: manage-api
-    link_url: /02_apis-for-vendors/04_manage-api.md
-    long-title: Manage an existing web API
-    title: Manage a web API
-    url: /apis-for-vendors/manage-api
-  long-title: API management for SaaS vendors
-  title: APIs for Vendors
+- file: 01_create-web-api.md
+  id: create-web-api
+  link_url: /01_create-web-api.md
+  long-title: Create your first API
+  title: First API from scratch
+  url: /create-web-api
+- file: 02_expose-sql-via-api.md
+  id: expose-sql-via-api
+  link_url: /02_expose-sql-via-api.md
+  long-title: Expose data from a SQL database as an API
+  title: SQL database to API
+  url: /expose-sql-via-api
+- file: 03_turn-spreadsheet-to-api.md
+  id: turn-spreadsheet-to-api
+  link_url: /03_turn-spreadsheet-to-api.md
+  long-title: Expose data from a Google Spreadsheet as an API
+  title: Google Spreadsheet to API
+  url: /turn-spreadsheet-to-api
+- file: 04_manage-api.md
+  id: manage-api
+  link_url: /04_manage-api.md
+  long-title: Protect access to an existing API hosted outside APISpark
+  title: Management of an existing API
+  url: /manage-api
+- file: 05_document-restlet-api.md
+  id: document-restlet-api
+  link_url: /05_document-restlet-api.md
+  long-title: Create documentation & client SDKs from an API definition
+  title: Documentation for an existing API
+  url: /document-restlet-api
+- file: 06_parse.md
+  id: parse
+  link_url: /06_parse.md
+  long-title: Expose data from a Parse mobile backend as an API
+  title: Parse backend to API
+  url: /parse
+- file: 07_firebase.md
+  id: firebase
+  link_url: /07_firebase.md
+  long-title: Expose data from a firebase real-time backend as an API
+  title: Firebase backend to API
+  url: /firebase
+- file: 08_github.md
+  id: github
+  link_url: /08_github.md
+  long-title: Expose files from a GitHub repository as an API
+  title: GitHub repository to API
+  url: /github
 
