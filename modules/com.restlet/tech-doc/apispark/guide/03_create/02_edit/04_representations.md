@@ -17,11 +17,11 @@ Representations are composed of properties. A Representation property has a numb
 
 ![Representation properties](images/representation-properties.jpg "Representation properties")
 
-You can modify the following attributes for an existing Representation property.
+You can modify the following attributes for an existing Representation property. The remaining attributes will be modified from the Entity Store instead of the API.
 
 ### Name
 
-The property's name.
+The property's name. You cannot edit the property's name of an API published version. To be able do edit it, you will need to revert to a draft version.
 
 ### Hidden
 

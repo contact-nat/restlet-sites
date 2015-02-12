@@ -28,4 +28,4 @@ Click the **Restore** button.
 
 ![Restore revision](images/restore.jpg "Restore revision")
 
-> **Note:** at this time, revisions are only available for full web API cells.
+> **Note:** As you restore a revision, you also restore the members that are associated to this revision.

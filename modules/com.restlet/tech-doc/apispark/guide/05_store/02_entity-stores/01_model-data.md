@@ -25,6 +25,7 @@ An Entity Store is composed of entities, which represent types of objects and th
 
 
 ## Create an entity
+
 In the **Entities** section, click on the **Add** button.  
 Give the new entity a name (required) and a description (optional).
 
@@ -34,11 +35,11 @@ Give the new entity a name (required) and a description (optional).
 
 Entities are listed in the **Entities** section on the left of the **Overview**.
 
-Selecting an entity from the list opens the Overview. The Overview displays configuration information for the entity, and lists the entity's properties.
+Click on an entity from the list to display its properties underneath. Configuration information for the entity displays in the central page
 
 ![Overview tab](images/overview-tab.jpg "Overview tab")
 
-The entity's name and description can be updated from this screen.
+The entity's **Name** and **Description** can be updated from this screen.
 
 ### Primary key policy
 

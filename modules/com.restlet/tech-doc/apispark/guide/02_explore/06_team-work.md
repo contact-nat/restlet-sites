@@ -40,6 +40,8 @@ To manage the members of a cell, navigate to the cell's **Members** tab.
 
 From here, you can add, delete members, and attribute roles to members.
 
+>**Note:** When you create a new cell [revision](/technical-resources/apispark/guide/explore/revisions "revision"), it is created with the same members as the former revision. But if you restore an old revision, then you restore it with the members that were associated to this old revision (you loose the members changes you made).
+
 To add a member to a cell:
 
 From the web API **Overview** page, click on the **Members** tab.  
