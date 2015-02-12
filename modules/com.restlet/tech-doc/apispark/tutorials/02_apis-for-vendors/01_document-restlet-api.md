@@ -53,7 +53,7 @@ In your <a href="https://apispark.restlet.com/dashboard" target="_blank">APISpar
 # 4. Customize API documentation
 Once you have imported our sample API documentation in your APISpark Dashboard, feel free to customize it: the application, its resources, methods and beans.
 
-You can customize it either:
+You can customize it either:  
 - from the APISpark console  
 or  
 - directly from the code  
