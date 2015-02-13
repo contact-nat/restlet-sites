@@ -1,4 +1,4 @@
-v3.2.3
+v3.2.3 & 3.2.4
 
 Documented APISpark 3A new features (except Connectors):
 
