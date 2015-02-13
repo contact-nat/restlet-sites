@@ -1,0 +1,55 @@
+toc:
+- dir: 00_apispark-tutorials
+  id: apispark-tutorials
+  items:
+  - file: 01_create-web-api.md
+    id: create-web-api
+    link_url: /00_apispark-tutorials/01_create-web-api.md
+    long-title: Create your first API
+    title: First API from scratch
+    url: /apispark-tutorials/create-web-api
+  - file: 02_expose-sql-via-api.md
+    id: expose-sql-via-api
+    link_url: /00_apispark-tutorials/02_expose-sql-via-api.md
+    long-title: Expose data from a SQL database as an API
+    title: SQL database to API
+    url: /apispark-tutorials/expose-sql-via-api
+  - file: 03_turn-spreadsheet-to-api.md
+    id: turn-spreadsheet-to-api
+    link_url: /00_apispark-tutorials/03_turn-spreadsheet-to-api.md
+    long-title: Expose data from a Google Spreadsheet as an API
+    title: Google Spreadsheet to API
+    url: /apispark-tutorials/turn-spreadsheet-to-api
+  - file: 04_manage-api.md
+    id: manage-api
+    link_url: /00_apispark-tutorials/04_manage-api.md
+    long-title: Protect access to an existing API hosted outside APISpark
+    title: Management of an existing API
+    url: /apispark-tutorials/manage-api
+  - file: 05_document-restlet-api.md
+    id: document-restlet-api
+    link_url: /00_apispark-tutorials/05_document-restlet-api.md
+    long-title: Create documentation & client SDKs from an API definition
+    title: Documentation for an existing API
+    url: /apispark-tutorials/document-restlet-api
+  - file: 06_parse.md
+    id: parse
+    link_url: /00_apispark-tutorials/06_parse.md
+    long-title: Expose data from a Parse mobile backend as an API
+    title: Parse backend to API
+    url: /apispark-tutorials/parse
+  - file: 07_firebase.md
+    id: firebase
+    link_url: /00_apispark-tutorials/07_firebase.md
+    long-title: Expose data from a firebase real-time backend as an API
+    title: Firebase backend to API
+    url: /apispark-tutorials/firebase
+  - file: 08_github.md
+    id: github
+    link_url: /00_apispark-tutorials/08_github.md
+    long-title: Expose files from a GitHub repository as an API
+    title: GitHub repository to API
+    url: /apispark-tutorials/github
+  long-title: APISpark Tutorials
+  title: APISpark Tutorials
+
