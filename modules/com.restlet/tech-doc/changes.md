@@ -1,21 +1,27 @@
 v3.2.3
 
-Documented APISpark 3A new features:
+Documented APISpark 3A new features (except Connectors):
 
 - Sign in / sign up process
 - Properties formatting
 - response cache parametering
 - UI changes
-- Connector changes (credentials, etc.)
+- Revisions tab
 
 Tutorials
 
-- Integrated Descriptor tutorial and interactive assistant
+- Integrated new Descriptor tutorial and interactive assistant
 - Updated tutorials order to be the same as interactive assistants order
 
 Restlet Framework
 
 - Fixed broken links
+
+Restlet Studio
+
+- Web API tab renamed into Design tab
+- Sample API loaded at launch
+- Changes in the left column and Design tab are displayed in the RAML and Swagger tabs
 
 v3.2.2
 
