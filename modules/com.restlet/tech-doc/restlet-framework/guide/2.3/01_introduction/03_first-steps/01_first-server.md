@@ -37,9 +37,8 @@ domain name if it has one defined.
 So far, we have mostly showed you the highest level of abstraction in
 the Restlet API, with the ServerResource classes. But as we move
 forward, you will discover that this class is supported by a broad Java
-API,
-[mapping](/technical-resources/restlet-framework/guide/2.2/core/http-headers-mapping "Mapping HTTP headers")
+API, [mapping](../../core/http-headers-mapping "Mapping HTTP headers")
 all REST and HTTP concepts to a set of Java classes, interfaces and
 annotations.
 
-[Let's now illustrate how to use this API on the client-side](/technical-resources/restlet-framework/guide/2.3/introduction/first-steps/first-client "First client").
+[Let's now illustrate how to use this API on the client-side](./first-client "First client").

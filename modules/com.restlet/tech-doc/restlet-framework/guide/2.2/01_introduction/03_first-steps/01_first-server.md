@@ -42,4 +42,4 @@ API,
 all REST and HTTP concepts to a set of Java classes, interfaces and
 annotations.
 
-[Let's now illustrate how to use this API on the client-side](./first-steps/first-client "First client").
+[Let's now illustrate how to use this API on the client-side](./first-client "First client").
