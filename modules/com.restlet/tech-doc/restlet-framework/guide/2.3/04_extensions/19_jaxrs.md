@@ -175,7 +175,7 @@ the Application and sets the Guard and the RoleChecker (if needed).
 
 For details to run this Application in a Servet Container take a look at
 [Restlet
-FAQ](/technical-resources/restlet-framework/guide/2.3/appendices/faq "FAQ").
+FAQ](guide:///appendices/faq "FAQ").
 
 You could use this subclass also in the example above:
 

@@ -1,10 +1,10 @@
 # Table of contents
 
 1.  Introduction
-2.  [Integration modes](/technical-resources/restlet-framework/guide/2.3/extensions/spring/integration "Spring extension - Integration modes")
-3.  [Configuring Restlet beans](/technical-resources/restlet-framework/guide/2.3/extensions/spring/beans-configuration "Spring extension - Configuring Restlet beans")
-4.  [A complete example](/technical-resources/restlet-framework/guide/2.3/extensions/spring/example "Spring extension - A complete example")
-5.  [Configuration of Restlet Resources in Spring](/technical-resources/restlet-framework/guide/2.3/extensions/spring/resources-configuration "Spring extension - Configuration of Restlet resources")
+2.  [Integration modes](guide:///extensions/spring/integration "Spring extension - Integration modes")
+3.  [Configuring Restlet beans](guide:///extensions/spring/beans-configuration "Spring extension - Configuring Restlet beans")
+4.  [A complete example](guide:///extensions/spring/example "Spring extension - A complete example")
+5.  [Configuration of Restlet Resources in Spring](guide:///extensions/spring/resources-configuration "Spring extension - Configuration of Restlet resources")
 
 # Introduction
 

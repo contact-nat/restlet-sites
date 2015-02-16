@@ -1,7 +1,7 @@
 # Introduction
 
 For a short introduction on the usage of client resource, you should
-read the [first client](/technical-resources/restlet-framework/guide/2.3/introduction/first-steps/first-client "First client") page.
+read the [first client](guide:///introduction/first-steps/first-client "First client") page.
 
 # Automatic conversion
 
