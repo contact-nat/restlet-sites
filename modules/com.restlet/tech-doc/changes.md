@@ -1,3 +1,11 @@
+v3.2.6
+
+Added Connectors in APISpark 3A new features
+
+v3.2.5
+
+Modified Tutorials structure so that they can display while we are waiting for Unomena's Update.
+
 v3.2.3 & 3.2.4
 
 Documented APISpark 3A new features (except Connectors):
