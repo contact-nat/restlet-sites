@@ -37,7 +37,13 @@ With the **Firewall** module, you can add *Rate Limitation* or *IP Filtering* to
 
 Please go through the [Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall Settings") page to add such rules.
 
-## Activate your settings
+## Analytics module
+
+If you enable the **Analytics** module, you activate the **Analytics** tab. This tab allows you to measure your API consumption.
+
+![Analytics tab](images/analytics-tab.jpg "Analytics tab")
+
+# Activate your settings
 
 Once you have completed your settings, you need to deploy your *Connector* configuration to activate them.
 
