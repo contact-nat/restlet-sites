@@ -166,6 +166,41 @@
 	</macrodef>
 
 
+	<macrodef name="generate-guide-pdf" description="Generate the source code for a specific user guide version.">
+		<attribute name="version" />
+		<sequential>
+			<!-- deal with the "guide" links -->
+			<replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "javadocs" links -->
+			<replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "source" links -->
+			<replaceregexp match="github://(.\..)/(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/\1/modules/\2" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "source" links -->
+			<replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- Add the last update date to the guide -->
+			<exec executable="git" outputproperty="git.revision.date">
+			    <arg value="log" />
+			    <arg value="-n1" />
+			    <arg value="--date=rfc" />
+			    <arg value="--format=Last update: %ad" />
+			    <arg value="${mods}/com.restlet/tech-doc/restlet-framework/guide/@{version}" />
+			</exec>
+			<echo file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" append="true">${git.revision.date}</echo>
+		</sequential>
+	</macrodef>
+
+
 	<macrodef name="generate-tutorial" description="Generate the source code for a specific tutorial version.">
 		<attribute name="version" />
 		<sequential>

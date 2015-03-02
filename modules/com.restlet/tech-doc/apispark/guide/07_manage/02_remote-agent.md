@@ -21,7 +21,7 @@ For more information, jump to our [User Groups](/technical-resources/apispark/gu
 
 If you enable the **Authorization** module, you activate the **Default Permissions** page and the **Security** section.
 
-You will find the **Default Persmissions** page in the **Security** section of the **Settings** tab.
+You will find the **Default Permissions** page in the **Security** section of the **Settings** tab.
 
 ![Security tab](images/default-permission.jpg "Security tab")
 
