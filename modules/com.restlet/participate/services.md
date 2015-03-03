@@ -36,7 +36,7 @@ for additional details.
 
 #APISpark plans
 
-For [APISpark](https://apispark.com), our all-in-one cloud platform
+For [APISpark](https://apispark.restlet.com), our all-in-one cloud platform
 (PaaS) for web APIs, we offer monthly subscription plans that let you
 create, host, manage and use web APIs.
 

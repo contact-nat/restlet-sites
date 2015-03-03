@@ -32,7 +32,7 @@ support of NTLM authentication leverages the Apache "HttpClient" extension.
 
 This library does not provide a direct support of the the NTLM authentication
 scheme (see
-[here](http://hc.apache.org/httpcomponents-client/ntlm.html)).
+[here](https://hc.apache.org/httpcomponents-client-ga/ntlm.html)).
 However, it explains how to leverage the Samba JCIFS library as an NTML Engine.
 Basically, the following steps are required:
 

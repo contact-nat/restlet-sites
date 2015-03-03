@@ -10,7 +10,7 @@ shipped by all editions.
 
 Extensions|[Android](../editions/android "Android")|[GAE](../editions/gae "GAE")|[GWT](../editions/gwt "GWT")|[JEE](../editions/jee "JEE")|[JSE](../editions/jse "JSE")|[OSGi](../editions/osgi "OSGi")|Description
 ----------| ------------------------------------------------|----------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------|-----------
-[org.restlet.ext.apispark](./apispark "apispark")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Injection of web API contract into the [APISpark platform](https://apispark.com).
+[org.restlet.ext.apispark](./apispark "apispark")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Injection of web API contract into the [APISpark platform](https://apispark.restlet.com).
 [org.restlet.ext.atom](./atom "atom")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the Atom syndication and the AtomPub (Atom Publication Protocol) standards in their 1.0 version.
 [org.restlet.ext.crypto](./crypto "crypto")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for cryptography.
 [org.restlet.ext.e4](./e4 "e4")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the WADL specification.

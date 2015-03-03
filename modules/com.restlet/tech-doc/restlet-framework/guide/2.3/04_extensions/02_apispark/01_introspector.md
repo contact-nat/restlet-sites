@@ -1,7 +1,7 @@
 # Introduction
 
 The Introspector tool is made to import the contract of your Web API in
-the [APISpark](https://apispark.com/) full-stack PaaS for Web APIs.
+the [APISpark](https://apispark.restlet.com/) full-stack PaaS for Web APIs.
 
 It will allow you to:
 
@@ -9,7 +9,7 @@ It will allow you to:
 -   Display and edit this description within APISpark
 -   Synchronize Web API changes initiated from your API's code or Swagger
 
-In these scenarios we'll leverage the Introspector tool by loading a Web API definition into APISpark with the three types of inputs available. You can find a complete example of documentation generated via this tool [here](https://apispark.com/apis/1427/versions/1/overview/), the description fields weren't retrieved from the Restlet Framework code, they were added manually in APISpark.
+In these scenarios we'll leverage the Introspector tool by loading a Web API definition into APISpark with the three types of inputs available. You can find a complete example of documentation generated via this tool [here](https://apispark.restlet.com/apis/1427/versions/1/overview/), the description fields weren't retrieved from the Restlet Framework code, they were added manually in APISpark.
 
 # Launch process
 
@@ -124,7 +124,7 @@ Your packaged Web API:
 
 ## APISpark tokens
 
-The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.com/account/overview) under the tab "tokens". You will need to [sign up](https://apispark.com/signin) first.
+The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.restlet.com/account/overview) under the tab "tokens". You will need to [sign up](https://apispark.restlet.com/signin) first.
 
 ![apispark tokens](images/apisparkTokens.png)
 
@@ -136,7 +136,7 @@ Here is the result, we get from the Introspector:
 ~~~~
 Process successfully achieved.
 Your Web API contract's id is: 246
-Your Web API documentation is accessible at this URL: https://apispark.com/apis/246/versions/1
+Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/246/versions/1
 ~~~~
 
 ![injected overview](images/injectedOverview.png)
@@ -147,7 +147,7 @@ Your Web API documentation is accessible at this URL: https://apispark.com/apis/
 You need to add a parameter -d giving the id of the definition, hosted on APISpark, that you want to update. You can find the parameter -d in two ways.
 
 -   It will be in the response body when you first use the extension on your API.
--   If you did not write it down then you can go to your dashboard, click on the Web API Contract you want to update and get it from the URL. The URL should look like this: https://apispark.com/apis/[definition_id]/version/1/
+-   If you did not write it down then you can go to your dashboard, click on the Web API Contract you want to update and get it from the URL. The URL should look like this: https://apispark.restlet.com/apis/[definition_id]/version/1/
 
 
 ## Debug the Web API introspection

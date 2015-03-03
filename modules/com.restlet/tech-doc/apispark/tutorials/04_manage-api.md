@@ -46,7 +46,7 @@ You can now **Deploy** your web API Connector.
 
 ## 3.1. Launch your web API
 
-If you have a web API running, make sure it is running. Otherwise just make GET calls on this URL:
+If you have a web API running, make sure it is running. Otherwise just make GET calls on this sample web API:
 
 [https://rsreferenceapi.apispark.net/v1/contacts/](https://rsreferenceapi.apispark.net/v1/contacts/)
 
@@ -56,7 +56,7 @@ The agent is available for download from the **Remote agent** page: click on the
 
 ![Download the agent](images/download-agent.png "Download the agent")
 
-You will download a zip file containing the jar and a configuration file. To learn how to configure the agent, please take a look at this [specific documentation](https://restlet.com/technical-resources/apispark/guide/manage/remote-agent) in the section **Configure the Agent**.
+You will download a zip file containing the jar and an empty configuration file. To learn how to configure the agent, please take a look at this [specific documentation](https://restlet.com/technical-resources/apispark/guide/manage/remote-agent) in the section **Configure the Agent**.
 
 Once your agent is configured, launch it with the following command line:
 
@@ -66,7 +66,7 @@ java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.
 
 # 4. Invoke the web API
 
-Now that your environment is all set, try to call `http://localhost:8000` with and without providing valid credentials.
+Now that your environment is all set, call the agent (e.g. send GET calls to `http://localhost:8000/contacts/`) with and without providing valid credentials.
 
 ## 4.1. Calling the API with invalid credentials
 
