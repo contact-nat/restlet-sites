@@ -268,11 +268,6 @@ Constant Delay Offset (in milliseconds): 300
 ```
 
 
-** Graph Results
-
-![Click to enlarge](http://wiki.restlet.org/docs_2.1/136-restlet/version/default/part/ImageData/data)
-
-
 Test plan used with Users SOAP example:
 
 ```
@@ -310,9 +305,4 @@ Constant Delay Offset (in milliseconds): 300
 </env:Envelope>
 
 ```
-
-
-** Graph Results
-
-![Click to enlarge](http://wiki.restlet.org/docs_2.1/137-restlet/version/default/part/ImageData/data)
 
