@@ -1,7 +1,7 @@
 # Introduction
 
 The Introspector tool is made to import the contract of your Web API in
-the [APISpark](https://apispark.com/) full-stack PaaS for Web APIs.
+the <a href="https://apispark.restlet.com/" target="_blank">APISpark</a> full-stack PaaS for web APIs.
 
 It will allow you to:
 
@@ -124,7 +124,7 @@ Your packaged Web API:
 
 ## APISpark tokens
 
-The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.com/account/overview) under the tab "tokens". You will need to [sign up](https://apispark.com/signin) first.
+The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.com/account/overview) under the tab "tokens". You will need to <a href="https://apispark.restlet.com/signin" target="_blank">sign up</a> first.
 
 ![apispark tokens](images/apisparkTokens.png)
 
