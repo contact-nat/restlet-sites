@@ -125,7 +125,10 @@ java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
 By default the *Agent* runs on port 8000. You could change the port with the `-p` option as shown below:
 
 ```
-java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar -p 3000
+java -jar\
+  -DapiSparkServiceConfig=/path/to/agent.properties\
+  apispark-agent.jar\
+  -p 3000
 ```
 
 ## Use HTTPS
@@ -168,7 +171,14 @@ Just add the following command line parameters:
 Here is the full command line of the agent:
 
 ```shell
-java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar --https --sslKeyPassword password --sslKeyStorePassword password --sslKeyStorePath /path/to/server-keystore.jks --sslKeyStoreType JKS
+java -jar\
+  -DapiSparkServiceConfig=/path/to/agent.properties\
+  apispark-agent.jar\
+  --https\
+  --sslKeyPassword password\
+  --sslKeyStorePassword password\
+  --sslKeyStorePath /path/to/server-keystore.jks\
+  --sslKeyStoreType JKS
 ```
 
 
