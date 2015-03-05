@@ -19,9 +19,9 @@ For more information, jump to our [User Groups](/technical-resources/apispark/gu
 
 ## Authorization module
 
-If you enable the **Authorization** module, you activate the **Default Permissions** page and the **Security** section.
+By enabling the **Authorization** module, you activate the **Default Permissions** page and the **Security** section.
 
-You will find the **Default Persmissions** page in the **Security** section of the **Settings** tab.
+You will find the **Default Permissions** page in the **Security** section of the **Settings** tab.
 
 ![Security tab](images/default-permission.jpg "Security tab")
 
@@ -69,13 +69,13 @@ The Agent retrieves its settings from APISpark and you need to configure the Age
 
 The Remote Agent is configured from a properties file which is included in the downloaded file. This file looks like this:
 
-```properties
+```ini
 agent.login=67b60a5d-c2b8-43a3-97b8-084d6ce60e10
 agent.password=5dcf7dc2-a2c4-44f5-b753-c26abea2c8b5
 agent.cellId=154
 agent.cellVersion=1
 reverseProxy.enabled=true
-reverseProxy.targetUrl=http://localhost:8080
+reverseProxy.targetUrl=https://192.168.10.130:8080
 ```
 
 To fill-in this configuration file, go to the **Settings** tab and select **Remote Agent** in the **Connector** section.
@@ -87,6 +87,7 @@ On this page you will find the value of the property keys `agent.login`, `agent.
 The `reverseProxy.targetUrl` key should be set to the URL of your web API.
 
 Let's have a look at a full configuration example:
+
 
 * Before you install the agent:
 
@@ -100,9 +101,9 @@ Let's have a look at a full configuration example:
 
   The agent should redirect the incoming request to your local web API on `https://192.168.10.130:8080`.
 
-  The agent configuration is:
+  Therefore the agent configuration is:
 
-  ```properties
+  ```ini
   reverseProxy.targetUrl=https://192.168.10.130:8080
   ```
 
@@ -119,16 +120,65 @@ java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
   > Note:
   > The agent requires a Java runtime environment 1.7 (or above).
 
-### Change the port
+## Change the port
 
 By default the *Agent* runs on port 8000. You could change the port with the `-p` option as shown below:
 
 ```
-java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar -p 3000
+java -jar\
+  -DapiSparkServiceConfig=/path/to/agent.properties\
+  apispark-agent.jar\
+  -p 3000
 ```
 
-### Use HTTPS
+## Use HTTPS
 
 You could also run the Agent with the `HTTPS` protocol instead of `HTTP` with the `--https` option .
 
 Use `--help` to have the full list of options.
+
+### Sample case using a self signed certificate
+
+1. Generation of a self signed certificate into a keystore called `server-keystore.jks`
+
+Achieve this step using `keytool`.
+
+```shell
+keytool -genkey\
+ -v\
+ -alias serverX\
+ -dname "CN=**serverX**,OU=IT,O=JPC,C=GB"\
+ -keypass password\
+ -keystore server-keystore.jks\
+ -storepass password\
+ -keyalg "RSA"\
+ -sigalg "MD5withRSA"\
+ -keysize 2048\
+ -validity 3650
+```
+
+  > Note:
+  > The keystore is protected by a password.
+
+2. Configure the agent to leveraging HTTPS and use this keystore
+
+Just add the following command line parameters:
+
+```
+--https --sslKeyPassword password --sslKeyStorePassword password --sslKeyStorePath /path/to/server-keystore.jks --sslKeyStoreType JKS
+```
+
+Here is the full command line of the agent:
+
+```shell
+java -jar\
+  -DapiSparkServiceConfig=/path/to/agent.properties\
+  apispark-agent.jar\
+  --https\
+  --sslKeyPassword password\
+  --sslKeyStorePassword password\
+  --sslKeyStorePath /path/to/server-keystore.jks\
+  --sslKeyStoreType JKS
+```
+
+

@@ -3,7 +3,8 @@ APISpark can bring additional features to your existing web API hosted outside o
 
 # Enhance your web API
 
-With a *Connector*, you can add to your API:
+With a *Connector*, you can add and configure the following features to your API:
+
 * Authenticated access  
 * Fine-grained access control  
 * Rate-limitation (quotas) to your API users  
@@ -11,9 +12,11 @@ With a *Connector*, you can add to your API:
 
 # How does a connector work?
 
-To enable these features, you should add an APISpark Remote Agent in front of your API.
+A connector is splitted into two parts: a *Connector Cell* and a *APISpark Agent*.
 
-This agent acts as a Reverse Proxy and adds the features you have enabled in the APISpark console on the incoming requests of your API.
+The Connector Cell is defined in the APISpark console and holds the configuration of the desired features.
+
+The APISpark Agent is set in front of your API, accesses this configuration, acts as a Reverse Proxy and provides the features you have enabled in the APISpark console on the incoming requests of your API.
 
 ![APISPark remote agent](images/apispark-remote-agent.jpg "APISPark remote agent")
 

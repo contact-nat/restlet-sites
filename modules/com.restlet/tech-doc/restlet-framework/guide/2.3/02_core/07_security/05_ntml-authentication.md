@@ -9,6 +9,7 @@ referenced each the client connector will issue a request. According to the JDK5
 javadocs, just proceed as follow:
 
 
+```java
 // Create your own authenticator
 Authenticator a = new Authenticator() {
 &nbsp;&nbsp;&nbsp; public PasswordAuthentication getPasswordAuthentication() {
@@ -17,7 +18,7 @@ Authenticator a = new Authenticator() {
 };
 // Sets the default Authenticator
 Authenticator.setDefault(a);
-
+```
 
 ## Authenticate with NTML all requests performed via the internal HTTP client connector.
 
@@ -32,7 +33,7 @@ support of NTLM authentication leverages the Apache "HttpClient" extension.
 
 This library does not provide a direct support of the the NTLM authentication
 scheme (see
-[here](http://hc.apache.org/httpcomponents-client/ntlm.html)).
+[here](https://hc.apache.org/httpcomponents-client-ga/ntlm.html)).
 However, it explains how to leverage the Samba JCIFS library as an NTML Engine.
 Basically, the following steps are required:
 

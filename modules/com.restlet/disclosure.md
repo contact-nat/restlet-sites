@@ -20,7 +20,7 @@ If you follow these guidelines when reporting an issue to us, we commit to:
 ## Scope
 
 Web sites:
-* https://apispark.com/
+* https://apispark.restlet.com/
 * https://apispark.net/
 * http://restlet.com/ 
 
