@@ -22,6 +22,8 @@ In this tutorial example, we create an SQL table named **T_ADDRESS** with the fo
 <li>**POSTCODE** (varchar): postcode</li>
 <li>**CITY** (varchar): city</li>
 
+>**Note:** The currently supported column types are the following: INT, INTEGER, MEDIUMINT, DATE, DATETIME, TIMESTAMP, TIME, BIGINT, BOOLEAN, DECIMAL, DOUBLE, FLOAT, NUMERIC, SMALLINT, TINYINT and VARCHAR.
+
 Connect the database engine using the MySQL console:
 
 <pre>$ mysql -u root -p</pre>
@@ -54,8 +56,8 @@ GRANT ALL PRIVILEGES on apispark.T_CONTACT TO 'username'@'%';
 FLUSH PRIVILEGES;
 </pre>
 
->**Note:** you can grant privileges on all tables by replacing T_ADDRESS by \* and
-on all databases by replacing apispark by \*.
+>**Note:** you can grant privileges on all tables by replacing T_ADDRESS by \* and on all databases by replacing apispark by \*.
+
 
 # 2. Create an SQL Wrapper
 
