@@ -46,4 +46,10 @@ To restore a backup, select a backup from the **Backups** list in the left panel
 
 > **Note**: restoring a backup will overwrite any existing data stored in you Entity Store. We recommend creating a backup of your current Entity Store before restoring a previous backup.
 
-![Restore a backup](images/restoreabackup.png "Restore a backup")
+![Restore a backup](images/restore-a-backup.jpg "Restore a backup")
+
+## Download a backup
+
+To download a backup, select a backup from the **Backups** list in the left panel, and click on the **Download** button. You will download your backup in csv format.
+
+![Download a backup](images/download-a-backup.jpg "Download a backup")
