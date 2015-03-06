@@ -1,3 +1,8 @@
+v3.2.7
+
+Integrated new APISpark tutorials structure
+Fixed Restlet Framework broken links
+
 v3.2.6
 
 Added Connectors in APISpark 3A new features
