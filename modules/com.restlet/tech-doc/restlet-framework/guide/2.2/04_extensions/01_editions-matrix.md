@@ -28,14 +28,14 @@ Extensions|[Android](../editions/android/overview "Android")|[GAE](../editions/g
 [org.restlet.ext.jaxb](./jaxb "jaxb")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Java XML Binding.
 [org.restlet.ext.jaxrs](./jaxrs "jaxrs")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Implementation of JAX-RS (JSR-311)
 [org.restlet.ext.jdbc](./jdbc "jdbc")|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Java DataBase Connectivity (JDBC).
-[org.restlet.ext.jetty](./jetty "jetty")|&nbsp;|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|Integration with Jetty.
+[org.restlet.ext.jetty](./jetty/overview "jetty")|&nbsp;|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|Integration with Jetty.
 [org.restlet.ext.jibx](./jibx "jibx")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with JiBX.
 [org.restlet.ext.json](./json "json")|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for JSON representations.
 [org.restlet.ext.jsslutils](./jsslutils "jsslutils")|![](images/puce.png)|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Utilities to provide additional SSL support.
 [org.restlet.ext.lucene](./lucene "lucene")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Apache Lucene, Solr and Tika sub-projects.
 [org.restlet.ext.nio](./nio "nio")|![](images/puce.png)|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with java.nio package.
 [org.restlet.ext.oauth](./oauth "oauth")|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for OAuth HTTP authentication.
-[org.restlet.ext.odata](./odata "odata")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with OData services.
+[org.restlet.ext.odata](./odata/overview "odata")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with OData services.
 [org.restlet.ext.openid](./openid "openid")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for OpenID authentication.
 [org.restlet.ext.osgi](./osgi "osgi")|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|Support for the OSGi specification.
 [org.restlet.ext.rdf](./rdf "rdf")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the RDF parsing and generation.
@@ -50,6 +50,6 @@ Extensions|[Android](../editions/android/overview "Android")|[GAE](../editions/g
 [org.restlet.ext.thymeleaf](./thymeleaf "thymeleaf")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Thymeleaf.
 [org.restlet.ext.velocity](./velocity "velocity")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Apache Velocity.
 [org.restlet.ext.wadl](./wadl "wadl")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the WADL specification.
-[org.restlet.ext.xdb](./xdb "xdb")|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|Integration within OracleJVM via the Oracle XML DB feature.
+[org.restlet.ext.xdb](./xdb/overview "xdb")|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|Integration within OracleJVM via the Oracle XML DB feature.
 [org.restlet.ext.xml](./xml "xml")|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the XML documents.
 [org.restlet.ext.xstream](./xstream "xstream")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with XStream.

@@ -112,14 +112,14 @@ artifactId | Description
 [org.restlet.ext.jaxb](../../extensions/jaxb "jaxb")|Integration with Java XML Binding.
 [org.restlet.ext.jaxrs](../../extensions/jaxrs "jaxrs")|Implementation of JAX-RS (JSR-311)
 [org.restlet.ext.jdbc](../../extensions/jdbc "jdbc")|Integration with Java DataBase Connectivity (JDBC).
-[org.restlet.ext.jetty](../../extensions/jetty "jetty")|Integration with Jetty.
+[org.restlet.ext.jetty](../../extensions/jetty/overview "jetty")|Integration with Jetty.
 [org.restlet.ext.jibx](../../extensions/jibx "jibx")|Integration with JiBX.
 [org.restlet.ext.json](../../extensions/json "json")|Support for JSON representations.
 [org.restlet.ext.jsslutils](../../extensions/jsslutils "jsslutils")|Utilities to provide additional SSL support.
 [org.restlet.ext.lucene](../../extensions/lucene "lucene")|Integration with Apache Lucene, Solr and Tika sub-projects.
 [org.restlet.ext.nio](../../extensions/nio "nio")|Integration with java.nio package.
 [org.restlet.ext.oauth](../../extensions/oauth "oauth")|Support for OAuth HTTP authentication.
-[org.restlet.ext.odata](../../extensions/odata "odata")|Integration with OData services.
+[org.restlet.ext.odata](../../extensions/odata/overview "odata")|Integration with OData services.
 [org.restlet.ext.openid](../../extensions/openid "openid")|Support for OpenID authentication.
 [org.restlet.ext.osgi](../../extensions/osgi "osgi")|Support for the OSGi specification.
 [org.restlet.ext.rdf](../../extensions/rdf "rdf")|Support for the RDF parsing and generation.
@@ -134,7 +134,7 @@ artifactId | Description
 [org.restlet.ext.thymeleaf](../../extensions/thymeleaf "thymeleaf")|Integration with Thymeleaf.
 [org.restlet.ext.velocity](../../extensions/velocity "velocity")|Integration with Apache Velocity.
 [org.restlet.ext.wadl](../../extensions/wadl "wadl")|Support for the WADL specification.
-[org.restlet.ext.xdb](../../extensions/xdb "xdb")|Integration within OracleJVM via the Oracle XML DB feature.
+[org.restlet.ext.xdb](../../extensions/xdb/overview "xdb")|Integration within OracleJVM via the Oracle XML DB feature.
 [org.restlet.ext.xml](../../extensions/xml "xml")|Support for the XML documents.
 [org.restlet.ext.xstream](../../extensions/xstream "xstream")|Integration with XStream.
 org.restlet.test | Test module
