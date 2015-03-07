@@ -25,7 +25,7 @@ For details on how to setup each wrapper, please navigate to the appropriate sub
 
 The **Google Spreadsheet Wrapper** Entity Store lets you wrap your spreadsheets to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
-For more information jump to our [Turn a Google Spreadsheet into a web API](/technical-resources/apispark/tutorials/apispark-tutorials/turn-spreadsheet-to-api "Turn a Google Spreadsheet into a web API") tutorial.
+For more information jump to our [Turn a Google Spreadsheet into a web API](/technical-resources/apispark/tutorials/turn-spreadsheet-to-api "Turn a Google Spreadsheet into a web API") tutorial.
 
 ## SQL database Wrapper
 
@@ -33,7 +33,7 @@ SQL is a language for defining and manipulating data structures stored in relati
 
 The **SQL Wrapper** Entity Store lets you wrap an SQL database to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
-For more information jump to our [Expose an SQL database via a web API](/technical-resources/apispark/tutorials/apispark-tutorials/expose-sql-via-api "Expose an SQL database via a web API") tutorial.
+For more information jump to our [Expose an SQL database via a web API](/technical-resources/apispark/tutorials/expose-sql-via-api "Expose an SQL database via a web API") tutorial.
 
 ## Parse Wrapper
 
@@ -41,7 +41,7 @@ For more information jump to our [Expose an SQL database via a web API](/technic
 
 The **Parse** Entity Store lets you wrap a Parse backend to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
-For more information jump to our [Turn your Parse backend into a web API](/technical-resources/apispark/tutorials/apispark-tutorials/parse "Turn your Parse backend into a web API") tutorial.
+For more information jump to our [Turn your Parse backend into a web API](/technical-resources/apispark/tutorials/parse "Turn your Parse backend into a web API") tutorial.
 
 ## Firebase Wrapper
 
@@ -49,7 +49,7 @@ For more information jump to our [Turn your Parse backend into a web API](/techn
 
 The **Firebase** Entity Store lets you wrap a Firebase backend to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
-For more information jump to our [Turn your Firebase backend into a web API](/technical-resources/apispark/tutorials/apispark-tutorials/firebase "Turn your Firebase backend into a web API") tutorial.
+For more information jump to our [Turn your Firebase backend into a web API](/technical-resources/apispark/tutorials/firebase "Turn your Firebase backend into a web API") tutorial.
 
 ## Amazon Wrapper
 

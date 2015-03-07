@@ -94,7 +94,7 @@ a full view of the list of extensions and the editions that ship them. 
 
 artifactId | Description
 ---------- | ------------
-[org.restlet](../../core "restlet") | Restlet API
+[org.restlet](guide:///core/overview "restlet") | Restlet API
 [org.restlet.ext.atom](../../extensions/atom "atom")|Support for the Atom syndication and the AtomPub (Atom Publication Protocol) standards in their 1.0 version.
 [org.restlet.ext.crypto](../../extensions/crypto "crypto")|Support for cryptography.
 [org.restlet.ext.e4](../../extensions/e4 "e4")|Support for the WADL specification.
@@ -112,14 +112,14 @@ artifactId | Description
 [org.restlet.ext.jaxb](../../extensions/jaxb "jaxb")|Integration with Java XML Binding.
 [org.restlet.ext.jaxrs](../../extensions/jaxrs "jaxrs")|Implementation of JAX-RS (JSR-311)
 [org.restlet.ext.jdbc](../../extensions/jdbc "jdbc")|Integration with Java DataBase Connectivity (JDBC).
-[org.restlet.ext.jetty](../../extensions/jetty "jetty")|Integration with Jetty.
+[org.restlet.ext.jetty](guide:///extensions/jetty/overview "jetty")|Integration with Jetty.
 [org.restlet.ext.jibx](../../extensions/jibx "jibx")|Integration with JiBX.
 [org.restlet.ext.json](../../extensions/json "json")|Support for JSON representations.
 [org.restlet.ext.jsslutils](../../extensions/jsslutils "jsslutils")|Utilities to provide additional SSL support.
 [org.restlet.ext.lucene](../../extensions/lucene "lucene")|Integration with Apache Lucene, Solr and Tika sub-projects.
 [org.restlet.ext.nio](../../extensions/nio "nio")|Integration with java.nio package.
 [org.restlet.ext.oauth](../../extensions/oauth "oauth")|Support for OAuth HTTP authentication.
-[org.restlet.ext.odata](../../extensions/odata "odata")|Integration with OData services.
+[org.restlet.ext.odata](guide:///extensions/odata/overview "odata")|Integration with OData services.
 [org.restlet.ext.openid](../../extensions/openid "openid")|Support for OpenID authentication.
 [org.restlet.ext.osgi](../../extensions/osgi "osgi")|Support for the OSGi specification.
 [org.restlet.ext.rdf](../../extensions/rdf "rdf")|Support for the RDF parsing and generation.
@@ -129,12 +129,12 @@ artifactId | Description
 [org.restlet.ext.simple](../../extensions/simple "simple")|Integration with Simple framework.
 [org.restlet.ext.sip](../../extensions/sip "sip")|Support for Session Initiation Protocol (SIP).
 [org.restlet.ext.slf4j](../../extensions/slf4j "slf4j")|Support for the SLF4J logging bridge.
-[org.restlet.ext.spring](../../extensions/spring "spring")|Integration with Spring Framework.
+[org.restlet.ext.spring](guide:///extensions/spring/overview "spring")|Integration with Spring Framework.
 [org.restlet.ext.swagger](../../extensions/swagger "swagger")|Integration with Simple framework.
 [org.restlet.ext.thymeleaf](../../extensions/thymeleaf "thymeleaf")|Integration with Thymeleaf.
 [org.restlet.ext.velocity](../../extensions/velocity "velocity")|Integration with Apache Velocity.
 [org.restlet.ext.wadl](../../extensions/wadl "wadl")|Support for the WADL specification.
-[org.restlet.ext.xdb](../../extensions/xdb "xdb")|Integration within OracleJVM via the Oracle XML DB feature.
+[org.restlet.ext.xdb](guide:///extensions/xdb/overview "xdb")|Integration within OracleJVM via the Oracle XML DB feature.
 [org.restlet.ext.xml](../../extensions/xml "xml")|Support for the XML documents.
 [org.restlet.ext.xstream](../../extensions/xstream "xstream")|Integration with XStream.
 org.restlet.test | Test module

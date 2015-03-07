@@ -1073,12 +1073,12 @@ toc:
     long-title: Prototype.js integration
     title: Prototype.js integration
     url: /appendices/prototype-js-integration
-  - file: 08_rest-ful-web-services-book.md
-    id: rest-ful-web-services-book
-    link_url: /05_appendices/08_rest-ful-web-services-book.md
-    long-title: RESTful Web Services book
-    title: RESTful Web Services book
-    url: /appendices/rest-ful-web-services-book
+  - file: 08_recommended-books.md
+    id: recommended-books
+    link_url: /05_appendices/08_recommended-books.md
+    long-title: List of recommended books
+    title: List of recommended books
+    url: /appendices/recommended-books
   long-title: Appendices
   title: Appendices
 

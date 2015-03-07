@@ -44,7 +44,7 @@ Copy both your **Application ID** and your **REST API key**.
 
 ## 2.1 Add a new Parse Wrapper Entity Store
 
-If you have not already done so, [sign in](https://apispark.restlet.com/signin) to your APISpark account and open your **Dashboard**.
+If you have not already done so, <a href="https://apispark.restlet.com/signin" target="_blank">sign in</a> to your APISpark account and open your **Dashboard**.
 
 Create a new Parse Wrapper Entity Store. Click on **+ Entity Store**, select the "Full stack" **Type** and enter the **Name** "myParseApp".
 

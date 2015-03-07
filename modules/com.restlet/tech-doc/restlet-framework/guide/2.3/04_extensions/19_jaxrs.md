@@ -11,7 +11,7 @@ To run this example, you need the Restlet libraries. Download a ${restlet-versio
 version from
 [restlet.com/downloads/](http://restlet.com/downloads/current).
 (For a general Restlet example take a look at [the first steps
-examples](../introduction/first-steps/ "First steps")).
+examples](guide:///introduction/first-steps/overview "First steps")).
 
 Now create a new Java Project, and add the following jars (resp.
 projects) to the classpath (right click on project, Properties, Java

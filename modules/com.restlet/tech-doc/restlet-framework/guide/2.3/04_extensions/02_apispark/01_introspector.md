@@ -1,7 +1,8 @@
 # Introduction
 
 The Introspector tool is made to import the contract of your Web API in
-the [APISpark](https://apispark.restlet.com/) full-stack PaaS for Web APIs.
+
+the <a href="https://apispark.restlet.com/" target="_blank">APISpark</a> full-stack PaaS for web APIs.
 
 It will allow you to:
 
@@ -82,49 +83,49 @@ You can use the following pom.xml to get the dependencies required for the Intro
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>16.0.1</version>
-				
+
 		</dependency>
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.0</version>
-				
+
 		</dependency>
 		<dependency>
 			<groupId>org.raml</groupId>
 			<artifactId>raml-parser</artifactId>
 			<version>0.8.7</version>
-				
+
 		</dependency>
 		<dependency>
 			<groupId>com.wordnik</groupId>
 			<artifactId>swagger-annotations</artifactId>
 			<version>1.3.10</version>
-				
+
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet.lib.swagger-models</artifactId>
 			<version>1.5.0-SNAPSHOT</version>
-				
+
 		</dependency>
 		<dependency>
 			<groupId>org.raml</groupId>
 			<artifactId>raml-parser</artifactId>
 			<version>0.8.7</version>
-				
+
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet</artifactId>
 			<version>2.3.1</version>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet.ext.jackson</artifactId>
 			<version>2.3.1</version>
-			
+
 		</dependency>
 	</dependencies>
 </project>
@@ -163,7 +164,7 @@ Your packaged Web API:
 
 ## APISpark tokens
 
-The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.restlet.com/account/overview) under the tab "tokens". You will need to [sign up](https://apispark.restlet.com/signin) first.
+The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.restlet.com/account/overview) under the tab "tokens". You will need to <a href="https://apispark.restlet.com/signin" target="_blank">sign up</a> first.
 
 ![apispark tokens](images/apisparkTokens.png)
 

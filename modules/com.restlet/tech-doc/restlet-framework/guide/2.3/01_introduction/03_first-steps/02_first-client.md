@@ -9,7 +9,7 @@ A connector in REST is a software element that enables the communication
 between components, typically by implementing one side of a network
 protocol. Restlet provides several implementations of client connectors
 based on existing open-source projects. The
-[connectors](guide:///core/base/connectors/overview "Connectors")
+[connectors](guide:///core/base/connectors "Connectors")
 section lists all available client and server connectors and explain how
 to use and configure them.
 
