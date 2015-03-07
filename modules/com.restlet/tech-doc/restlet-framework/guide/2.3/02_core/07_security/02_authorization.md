@@ -6,7 +6,7 @@ We identified four approaches to authorization in a Restlet application.
 When we mentionned LDAP as a permission store, it could be replaced by a
 static file or by any sort of database.
 
-You can find the sources of the code shown [here](../../archives/examples/authorization/${restlet-version-minor}/sources.zip).
+You can find the sources of the code shown [here](/technical-resources/restlet-framework/archives/examples/authorization/${restlet-version-minor}/sources.zip).
 
 # Coarse-grained authorization
 
