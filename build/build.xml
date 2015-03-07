@@ -153,6 +153,9 @@
 			<replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
 			</replaceregexp>
+			<replaceregexp match="\$\{restlet-version-minor\}" replace="@{version}" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
 			<!-- Add the last update date to the guide -->
 			<exec executable="git" outputproperty="git.revision.date">
 			    <arg value="log" />

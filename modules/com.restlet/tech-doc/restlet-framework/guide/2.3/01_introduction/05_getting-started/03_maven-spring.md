@@ -356,5 +356,5 @@ consult the documentation for the finer details.
 
 This archive contains all the source code described in this document.
 
-[restlet-basecamp](./restlet-basecamp.zip "restlet-basecamp")
+[restlet-basecamp](/technical-resources/restlet-framework/archives/examples/maven-spring/${restlet-version-minor}/restlet-basecamp.zip "restlet-basecamp")
 (application/zip, 8.4 kB)
