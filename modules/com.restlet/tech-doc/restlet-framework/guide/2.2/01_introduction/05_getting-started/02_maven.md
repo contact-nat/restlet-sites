@@ -94,7 +94,7 @@ a full view of the list of extensions and the editions that ship them. 
 
 artifactId | Description
 ---------- | ------------
-[org.restlet](../../core "restlet") | Restlet API
+[org.restlet](../../core/overview "restlet") | Restlet API
 [org.restlet.ext.atom](../../extensions/atom "atom")|Support for the Atom syndication and the AtomPub (Atom Publication Protocol) standards in their 1.0 version.
 [org.restlet.ext.crypto](../../extensions/crypto "crypto")|Support for cryptography.
 [org.restlet.ext.e4](../../extensions/e4 "e4")|Support for the WADL specification.
@@ -129,7 +129,7 @@ artifactId | Description
 [org.restlet.ext.simple](../../extensions/simple "simple")|Integration with Simple framework.
 [org.restlet.ext.sip](../../extensions/sip "sip")|Support for Session Initiation Protocol (SIP).
 [org.restlet.ext.slf4j](../../extensions/slf4j "slf4j")|Support for the SLF4J logging bridge.
-[org.restlet.ext.spring](../../extensions/spring "spring")|Integration with Spring Framework.
+[org.restlet.ext.spring](../../extensions/spring/overview "spring")|Integration with Spring Framework.
 [org.restlet.ext.swagger](../../extensions/swagger "swagger")|Integration with Simple framework.
 [org.restlet.ext.thymeleaf](../../extensions/thymeleaf "thymeleaf")|Integration with Thymeleaf.
 [org.restlet.ext.velocity](../../extensions/velocity "velocity")|Integration with Apache Velocity.

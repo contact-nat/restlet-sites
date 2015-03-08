@@ -34,7 +34,7 @@ most of them by the connector's ClientHelper or ServerHelper subclasses.
 The list of all parameters are available in the javadocs. Pleaser refer
 to the rest of this document for references to these documentation. Here
 are the [commons
-parameters](javadocs://jse/engine/org/restlet/engine/connector/BaseHelper.html)
+parameters](javadocs://jse/engine/org/restlet/engine/connector/ServerHelper.html)
 dedicated to internal connectors.
 
 ### Server connectors
@@ -44,7 +44,7 @@ parameters](javadocs://jse/engine/org/restlet/engine/adapter/HttpServerHelper.ht
 dedicated to non-internal HTTP server connectors.
 
 Here are the [commons
-parameters](javadocs://jse/engine/org/restlet/engine/connector/ServerConnectionHelper.html)
+parameters](javadocs://jse/engine/org/restlet/engine/connector/ServerHelper.html)
 dedicated to internal HTTP server connectors.
 
 Here is a sample code showing how to set such a parameter on a
@@ -61,7 +61,7 @@ component's server connector.
 Here are the [commons parameters](javadocs://jse/engine/org/restlet/engine/adapter/HttpClientHelper.html)
 dedicated to non-internal HTTP client connectors.
 
-Here are the [commons parameters](javadocs://jse/engine/org/restlet/engine/connector/ClientConnectionHelper.html)
+Here are the [commons parameters](javadocs://jse/engine/org/restlet/engine/connector/ClientHelper.html)
 dedicated to internal HTTP client connectors.
 
 Here is a sample code showing how to set such a parameter.

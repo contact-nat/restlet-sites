@@ -72,11 +72,11 @@ project. Did you reference the archive of the right Restlet extension
 (such as the Jackson extension) and the archives of its library
 dependencies?
 
-# <a name="how-to-trace-the-internal-client-and-server-connectors"></a>How to trace the internal client and server connectors?
+# <a name="how-to-trace-the-internal-client-and-server-connectors"></a>How to trace the nio client and server connectors?
 
 These connectors are configured via the parameter called "tracing" of
 their context (see the
-[javadocs](javadocs://jse/engine/org/restlet/engine/connector/BaseHelper.html)).
+[javadocs](javadocs://jse/ext/org/restlet/ext/nio/BaseHelper.html)).
 
 Here is a sample code that illustrates how to configure the HTTP  server
 connector of a Component:
