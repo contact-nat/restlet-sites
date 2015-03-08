@@ -6,7 +6,7 @@ that rely on
 [jSSLutils](http://code.google.com/p/jsslutils/).
 
 For additional details, please consult the
-[Javadocs](javadocs://jse/ext/org/restlet/ext/ssl/package-summary.html).
+[Javadocs](javadocs://jse/ext/org/restlet/ext/jsslutils/package-summary.html).
 
 # Description
 
@@ -37,7 +37,7 @@ configuration, it provides a way to set up certificate revocation lists
         <client protocol="FILE" />
 
         <server protocol="HTTPS" port="8183">
-            <parameter name="sslContextFactory" value="org.restlet.ext.ssl.PkixSslContextFactory" />
+            <parameter name="sslContextFactory" value="org.restlet.engine.ssl.DefaultSslContextFactory" />
             <parameter name="keystorePath" value="/path/to/keystore.p12" />
             <parameter name="keystoreType" value="PKCS12" />
             <parameter name="keystorePassword" value="testtest" />
@@ -47,7 +47,7 @@ configuration, it provides a way to set up certificate revocation lists
             <parameter name="truststorePassword" value="testtest" />
             <parameter name="crlUrl" value="file:///path/to/crl.crl" />
             <parameter name="wantClientAuthentication" value="true" />
-        </server>
+        SslConte</server>
 
         <defaultHost>
             <attach uriPattern="" targetClass="org.restlet.example.tutorial.Part12" />
@@ -73,7 +73,7 @@ SslContextFactory, but is often used in conjunction with it.
        "host1.example.org", 8083);
     Series<Parameter> param1 = server1.getContext().getParameters();
 
-    param1.add("sslContextFactory","org.restlet.ext.ssl.PkixSslContextFactory");
+    param1.add("sslContextFactory","org.restlet.engine.ssl.PkixSslContextFactory");
     param1.add("keystorePath","/path/to/keystore1.p12");
     param1.add("keystorePassword","...");
     param1.add("keystoreType","PKCS12");
@@ -83,7 +83,7 @@ SslContextFactory, but is often used in conjunction with it.
        "host2.example.com", 8083);
     Series<Parameter> param2 = server2.getContext().getParameters();
 
-    param2.add("sslContextFactory","org.restlet.ext.ssl.PkixSslContextFactory");
+    param2.add("sslContextFactory","org.restlet.engine.ssl.PkixSslContextFactory");
     param2.add("keystorePath","/path/to/keystore2.p12");
     //...
 
