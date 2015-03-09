@@ -145,7 +145,7 @@ MergeFactor:500;FormatCols:line(0000);ExtraCols:line "line"');
 * Testing with JMeter plugin for Maven
 
 
-Download and install [JMeter Maven Plugin](http://wiki.apache.org/jakarta-jmeter/JMeterMavenPlugin) following this guide at http://wiki.apache.org/jakarta-jmeter/JMeterMavenPlugin
+Download and install [JMeter Maven Plugin](http://wiki.apache.org/jmeter/JMeterMavenPlugin) following this guide at http://wiki.apache.org/jmeter/JMeterMavenPlugin
 Install required libraries from JMeter distribution
 
 

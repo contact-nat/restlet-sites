@@ -2,9 +2,9 @@
 
 
 This document and his related project aims to show how to implement REST Web Services inside Oracle JVM.
-To show it, the idea is to implement some services which interacts with [Lucene Domain Index for Oracle](http://docs.google.com/View?docid=ddgw7sjp_54fgj9kg, this domain index provides to Oracle
-[free text searching facilities](http://marceloochoa.blogspot.com/2007/09/running-lucene-inside-your-oracle-jvm.html using
-[Apache Lucene library](http://lucene.apache.org/java/docs/index.html.
+To show it, the idea is to implement some services which interacts with [Lucene Domain Index for Oracle](http://docs.google.com/View?docid=ddgw7sjp_54fgj9kg), this domain index provides to Oracle
+[free text searching facilities](http://marceloochoa.blogspot.com/2007/09/running-lucene-inside-your-oracle-jvm.html) using
+[Apache Lucene library](http://lucene.apache.org/java/docs/index.html).
 To re-use some ideas and specification we use [Lucene WS API Document]http://dev.lucene-ws.net/wiki/API).
 
 
