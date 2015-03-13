@@ -1,3 +1,7 @@
+v3.2.10
+
+Updated list of recommended books for Restlet Framework
+
 v3.2.9
 
 Fixed Restlet Framework broken links and ToC
