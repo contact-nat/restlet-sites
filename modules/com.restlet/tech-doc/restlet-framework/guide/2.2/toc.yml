@@ -489,6 +489,59 @@ toc:
     long-title: Restlet edition for Google App Engine
     title: Google App Engine
     url: /editions/gae
+  - dir: 03_gwt
+    id: gwt
+    items:
+    - file: 00_overview.md
+      id: overview
+      link_url: /03_editions/03_gwt/00_overview.md
+      long-title: Overview
+      title: Overview
+      url: /editions/gwt/overview
+    - file: 01_architecture.md
+      id: architecture
+      link_url: /03_editions/03_gwt/01_architecture.md
+      long-title: Architecture flexibility
+      title: Architecture
+      url: /editions/gwt/architecture
+    - file: 03_examples.md
+      id: examples
+      link_url: /03_editions/03_gwt/03_examples.md
+      long-title: Examples
+      title: Examples
+      url: /editions/gwt/examples
+    - file: 04_json.md
+      id: json
+      link_url: /03_editions/03_gwt/04_json.md
+      long-title: Working with JSON
+      title: JSON
+      url: /editions/gwt/json
+    - file: 05_server-code-invocation.md
+      id: server-code-invocation
+      link_url: /03_editions/03_gwt/05_server-code-invocation.md
+      long-title: Invoking server side code
+      title: Server Code Invocation
+      url: /editions/gwt/server-code-invocation
+    - file: 06_setup.md
+      id: setup
+      link_url: /03_editions/03_gwt/06_setup.md
+      long-title: Setting up a project
+      title: Setup
+      url: /editions/gwt/setup
+    - file: 07_tips.md
+      id: tips
+      link_url: /03_editions/03_gwt/07_tips.md
+      long-title: Tips and tricks
+      title: Tips
+      url: /editions/gwt/tips
+    - file: 08_xml.md
+      id: xml
+      link_url: /03_editions/03_gwt/08_xml.md
+      long-title: Working with XML
+      title: XML
+      url: /editions/gwt/xml
+    long-title: Restlet edition for Google Web Toolkit
+    title: Google Web Toolkit
   - dir: 04_jee
     id: jee
     items:
@@ -846,12 +899,12 @@ toc:
       long-title: Overview
       title: Overview
       url: /extensions/xdb/overview
-    - file: 01_Introduction.md
-      id: Introduction
-      link_url: /04_extensions/42_xdb/01_Introduction.md
+    - file: 01_introduction.md
+      id: introduction
+      link_url: /04_extensions/42_xdb/01_introduction.md
       long-title: Oracle XDB Restlet Adapter - Architecture - Introduction
       title: Architecture - Introduction
-      url: /extensions/xdb/Introduction
+      url: /extensions/xdb/introduction
     - file: 02_installing.md
       id: installing
       link_url: /04_extensions/42_xdb/02_installing.md

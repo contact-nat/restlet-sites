@@ -748,23 +748,12 @@ toc:
     long-title: JDBC extension
     title: JDBC
     url: /extensions/jdbc
-  - dir: 21_jetty
+  - file: 21_jetty.md
     id: jetty
-    items:
-    - file: 00_overview.md
-      id: overview
-      link_url: /04_extensions/21_jetty/00_overview.md
-      long-title: Overview
-      title: Overview
-      url: /extensions/jetty/overview
-    - file: 01_ajp.md
-      id: ajp
-      link_url: /04_extensions/21_jetty/01_ajp.md
-      long-title: Supporting AJP with Jetty
-      title: AJP
-      url: /extensions/jetty/ajp
+    link_url: /04_extensions/21_jetty.md
     long-title: Eclipse Jetty extension
     title: Jetty
+    url: /extensions/jetty
   - file: 22_jibx.md
     id: jibx
     link_url: /04_extensions/22_jibx.md
@@ -946,12 +935,12 @@ toc:
       long-title: Overview
       title: Overview
       url: /extensions/xdb/overview
-    - file: 01_Introduction.md
-      id: Introduction
-      link_url: /04_extensions/44_xdb/01_Introduction.md
+    - file: 01_introduction.md
+      id: introduction
+      link_url: /04_extensions/44_xdb/01_introduction.md
       long-title: Oracle XDB Restlet Adapter - Architecture - Introduction
       title: Architecture - Introduction
-      url: /extensions/xdb/Introduction
+      url: /extensions/xdb/introduction
     - file: 02_installing.md
       id: installing
       link_url: /04_extensions/44_xdb/02_installing.md

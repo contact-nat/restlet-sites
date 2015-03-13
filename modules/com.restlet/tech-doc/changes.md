@@ -1,3 +1,19 @@
+v3.2.11
+
+Updated clickable images in list of recommended books for Restlet Framework
+
+v3.2.10
+
+Updated list of recommended books for Restlet Framework
+
+v3.2.9
+
+Fixed Restlet Framework broken links and ToC
+
+v3.2.8
+
+Fixed Restlet Framework broken links
+
 v3.2.7
 
 Integrated new APISpark tutorials structure
