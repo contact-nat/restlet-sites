@@ -112,7 +112,7 @@ artifactId | Description
 [org.restlet.ext.jaxb](../../extensions/jaxb "jaxb")|Integration with Java XML Binding.
 [org.restlet.ext.jaxrs](../../extensions/jaxrs "jaxrs")|Implementation of JAX-RS (JSR-311)
 [org.restlet.ext.jdbc](../../extensions/jdbc "jdbc")|Integration with Java DataBase Connectivity (JDBC).
-[org.restlet.ext.jetty](guide:///extensions/jetty/overview "jetty")|Integration with Jetty.
+[org.restlet.ext.jetty](guide:///extensions/jetty "jetty")|Integration with Jetty.
 [org.restlet.ext.jibx](../../extensions/jibx "jibx")|Integration with JiBX.
 [org.restlet.ext.json](../../extensions/json "json")|Support for JSON representations.
 [org.restlet.ext.jsslutils](../../extensions/jsslutils "jsslutils")|Utilities to provide additional SSL support.

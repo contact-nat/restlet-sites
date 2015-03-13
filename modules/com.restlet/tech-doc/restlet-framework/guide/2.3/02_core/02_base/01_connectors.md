@@ -99,7 +99,7 @@ just set it:
 Extension | Version | Protocols | Asynchronous | Comment
 --------- | ------- | --------- | ------------ | ---------
 [Internal](guide:///core/engine/internal-connectors/overview "Internal connectors") | 2.2 | HTTP, HTTPS, RIAP | No | Recommended for development and lightweight deployments
-[Jetty](guide:///extensions/jetty/overview "Eclipse Jetty extension") | 8.1 | HTTP, HTTPS, AJP | No | Recommended for robust and scalable deployments
+[Jetty](guide:///extensions/jetty "Eclipse Jetty extension") | 8.1 | HTTP, HTTPS | No | Recommended for robust and scalable deployments
 [NIO](guide:///extensions/nio "NIO extension") | 2.2 | HTTP, HTTPS | Yes | Fully asynchronous, preview mode
 [Simple](guide:///extensions/simple "Simple Framework extension") | 5.1 | HTTP, HTTPS | No | Recommended for lightweight and scalable deployments
 [Servlet](guide:///extensions/servlet "Servlet extension") | 3.0 | HTTP, HTTPS, AJP | No | Recommended for deployments inside Java EE servers

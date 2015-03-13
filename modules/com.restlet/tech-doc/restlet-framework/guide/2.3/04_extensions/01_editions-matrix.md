@@ -29,7 +29,7 @@ Extensions|[Android](guide:///editions/android/overview "Android")|[GAE](guide:/
 [org.restlet.ext.jaxb](./jaxb "jaxb")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Java XML Binding.
 [org.restlet.ext.jaxrs](./jaxrs "jaxrs")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Implementation of JAX-RS (JSR-311)
 [org.restlet.ext.jdbc](./jdbc "jdbc")|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Java DataBase Connectivity (JDBC).
-[org.restlet.ext.jetty](guide:///extensions/jetty/overview "jetty")|&nbsp;|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|Integration with Jetty.
+[org.restlet.ext.jetty](guide:///extensions/jetty "jetty")|&nbsp;|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|Integration with Jetty.
 [org.restlet.ext.jibx](./jibx "jibx")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with JiBX.
 [org.restlet.ext.json](./json "json")|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for JSON representations.
 [org.restlet.ext.jsslutils](./jsslutils "jsslutils")|![](images/puce.png)|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Utilities to provide additional SSL support.
