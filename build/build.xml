@@ -135,7 +135,7 @@
 		<attribute name="version" />
 		<sequential>
 			<!-- deal with the "guide" links -->
-			<replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" byline="true">
+			<replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" flags="g">
 				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
 			</replaceregexp>
 			<!-- deal with the "javadocs" links -->
