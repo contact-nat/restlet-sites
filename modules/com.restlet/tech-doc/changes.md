@@ -1,3 +1,7 @@
+v3.2.11
+
+Updated clickable images in list of recommended books for Restlet Framework
+
 v3.2.10
 
 Updated list of recommended books for Restlet Framework
