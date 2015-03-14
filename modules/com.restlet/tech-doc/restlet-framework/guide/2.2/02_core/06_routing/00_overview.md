@@ -1,13 +1,11 @@
 # Introduction
 
-The **org.restlet.routing** package contains classes related to call
-routing.
+The **org.restlet.routing** package contains classes related to call routing.
 
 Another advantage of the Restlet Framework is the built-in support for
 [cool URIs](http://www.w3.org/Provider/Style/URI).
 A good description of the importance of proper URI design is given by
-Jacob Nielsen in his
-[AlertBox](http://www.useit.com/alertbox/990321.html).
+Jacob Nielsen in his [AlertBox](http://www.useit.com/alertbox/990321.html).
 This document aims at showing the several configuration options of the
 routing process. From a high level point of view, routing is mainly
 based on the Router, Route, Template and Variable classes.
@@ -157,10 +155,9 @@ If you want to route URIs according to some values located in the query
 part of the URI, and since those values have no determined place within
 the query, you cannot rely on the URI template based routing feature
 which is more or less based on regular expressions.\
- In this case you have to define your own router (with the "CUSTOM"
+ In this case you have to define your own router (with the "MODE_CUSTOM"
 routing mode). A sample implementation is available
-[here](/learn/guide/2.1#/211-restlet/version/default/part/AttachmentData/data "queryRouter")
-(application/zip, 1.8 kB).
+[here](/technical-resources/restlet-framework/archives/examples/router/${restlet-version-minor}/queryRouter.zip "queryRouter")(application/zip, 3.6 kB).
 
 ## Matching of template variables
 

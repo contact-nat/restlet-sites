@@ -6,9 +6,7 @@ and debugging in Hosted Mode, provides a basic Restlet-powered server,
 and demonstrates how the compiled GWT application can be bundled into an
 executable server JAR.
 
-Download [Restlet GWT -- Simple
-Example](/learn/guide/2.1#/298-restlet/version/default/part/AttachmentData/data "testGwtRestlet-2.0")
-(application/force-download, 3.0 MB)
+Download [Restlet GWT -- Simple Example](/learn/guide/2.1#/298-restlet/version/default/part/AttachmentData/data "testGwtRestlet-2.0") (application/force-download, 3.0 MB)
 
 This is a simple example demonstrating some basic patterns for using
 Restlet and GWT.  It produces an executable JAR file which depends only

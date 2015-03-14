@@ -16,14 +16,10 @@ When you need to secure the access to some Restlets, several options are
 available. A common way is to rely on cookies to identify clients (or
 client sessions) and to check a given user ID or session ID against your
 application state to determine if access should be granted. Restlets
-natively support cookies via the
-[Cookie](javadocs://jse/api/org/restlet/data/Cookie.html)
-and
-[CookieSetting](javadocs://jse/api/org/restlet/data/CookieSetting.html)
-objects accessible from a
-[Request](javadocs://jse/api/org/restlet/Request.html)
-or a
-[Response](javadocs://jse/api/org/restlet/Response.html).
+natively support cookies via the [Cookie](javadocs://jse/api/org/restlet/data/Cookie.html)
+and [CookieSetting](javadocs://jse/api/org/restlet/data/CookieSetting.html)
+objects accessible from a [Request](javadocs://jse/api/org/restlet/Request.html)
+or a [Response](javadocs://jse/api/org/restlet/Response.html).
 
 There is another way based on the standard HTTP authentication
 mechanism. By default, the Restlet Engine accepts credentials sent and
@@ -85,7 +81,7 @@ let's use the client-side Restlet API:
             // Output the response entity on the JVM console
             resource.getResponseEntity().write(System.out);
         } catch (Exception e) {
-            if (resource.getStatus().equals(Status.CLIENT_ERROR_UNAUTHORIZED)) {
+            if (Status.CLIENT_ERROR_UNAUTHORIZED.equals(resource.getStatus())) {
                 // Unauthorized access
                 System.out
                         .println("Access unauthorized by the server, check your credentials");
@@ -110,8 +106,7 @@ default.
 # Restlet API
 
 The Restlet API in version ${restlet-version-minor} has fully refactored its security model
-([see specifications
-here](/participate#/172-restlet/212-restlet.html)).
+([see specifications here](/participate#/172-restlet/212-restlet.html)).
 It is based on some properties of the ClientInfo class: user and roles.
 This model relies on Java security principals in a way similar to JAAS.
 But Restlet security API and JAAS are distinct, and some bridges are
@@ -156,8 +151,7 @@ following schemes are supported:
 
 -   HTTP\_BASIC (client and server) with the core module
 -   HTTP\_DIGEST (client and server) with the crypto extension
--   Amazon S3, shared\_key and shared\_key\_lite (client) with the
-    crypto extension
+-   Amazon S3, shared\_key and shared\_key\_lite (client) with the crypto extension
 -   SMTP (client) with the core module
 
 ## ChallengeRequest
@@ -274,8 +268,7 @@ in a way that is common to all three types of HTTPS server connectors
     [org.restlet.engine.security.DefaultSslContextFactory](javadocs://jse/engine/org/restlet/engine/ssl/DefaultSslContextFactory.html#init%28org.restlet.util.Series%29)
     is an SslContextFactory that supports a basic set of parameters, and
     will default to the values specified in the `javax.net.ssl.*` system
-    properties (see [JSSE Reference
-    guide](http://docs.oracle.com/javase/6/docs/technotes/guides/security/jsse/JSSERefGuide.html#SystemProps)).\
+    properties (see [JSSE Reference guide](http://docs.oracle.com/javase/6/docs/technotes/guides/security/jsse/JSSERefGuide.html#SystemProps)).\
      There can in fact be several values of sslContextFactory (since
     there can be several values for parameters), in which case the first
     one constructed and initialized successfully will be used.
@@ -300,9 +293,8 @@ the login/password couples but this can be customized by overriding the
 From an org.restlet.data.Request, the login/password can be retrieved
 using these methods:
 
- - Request.getChallengeResponse().getIdentifier() : String    // LOGIN\
-  - Request.getChallengeResponse().getSecret() : String        //
-PASSWORD
+ - Request.getChallengeResponse().getIdentifier() : String // LOGIN
+ - Request.getChallengeResponse().getSecret() : String     //PASSWORD
 
 The HTTP server connectors currently only support HTTP BASIC
 authentication (the most widely used).
@@ -344,8 +336,7 @@ SSL certificate authentication all work this way; once the user agent
 time it asks the server to perform an operation.
 
 However, this convenience comes at a price: a class of vulnerabilities
-known as
-"[XSRF](http://en.wikipedia.org/wiki/XSRF)"
+known as "[XSRF](http://en.wikipedia.org/wiki/XSRF)"
 -- cross site request forgery.  If a malicious site (http://badsite)
 embeds a GET reference to a URI on a target site, for example, by simply
 adding an \<img src='http://targetsite/delete/targetaccount"/\>, when
@@ -401,6 +392,4 @@ the cookies from being used by script in all modern browsers.
 
 # Sample code
 
-[Security
-sample](/learn/guide/2.1#/307-restlet/version/default/part/AttachmentData/data/Security%20sample.zip "Security sample")
-(application/zip, 2.9 kB)
+[Security sample](/technical-resources/restlet-framework/archives/examples/authentication/${restlet-version-minor}/sample.zip "Security sample") (application/zip, 2.9 kB)

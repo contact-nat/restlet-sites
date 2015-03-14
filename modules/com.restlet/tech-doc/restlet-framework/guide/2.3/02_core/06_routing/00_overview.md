@@ -157,10 +157,9 @@ If you want to route URIs according to some values located in the query
 part of the URI, and since those values have no determined place within
 the query, you cannot rely on the URI template based routing feature
 which is more or less based on regular expressions.\
- In this case you have to define your own router (with the "CUSTOM"
+ In this case you have to define your own router (with the "MODE_CUSTOM"
 routing mode). A sample implementation is available
-[here](/learn/guide/2.1#/211-restlet/version/default/part/AttachmentData/data "queryRouter")
-(application/zip, 1.8 kB).
+[here](/technical-resources/restlet-framework/archives/examples/router/${restlet-version-minor}/queryRouter.zip "queryRouter")(application/zip, 3.6 kB).
 
 ## Matching of template variables
 

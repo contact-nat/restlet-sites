@@ -126,8 +126,7 @@ make sure that the classpath is correct and that no other program is currently
 using the port 8182.
 
 You can find the sources of this sample application in the
-"[FirstStepsStandalone](/learn/guide/2.1#/371-restlet/version/default/part/AttachmentData/data "firstStepsStandalone")
-(application/zip, 1.4 kB)"
+"[FirstStepsStandalone](/technical-resources/restlet-framework/archives/examples/firstSteps/firstStepsStandalone.zip "firstStepsStandalone") (application/zip, 1.4 kB)"
 file.
 
 ## Conclusion

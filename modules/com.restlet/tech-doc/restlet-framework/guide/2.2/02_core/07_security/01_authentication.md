@@ -15,8 +15,7 @@ Here is a very simple code illustrating a component that guards its
 applications with the BASIC authentication scheme.
 
 The whole code can be downloaded
-[here](/learn/guide/2.1#/177-restlet/version/default/part/AttachmentData/data "testHttpBasic")
-(application/force-download, 1.2 kB).
+[here](/technical-resources/restlet-framework/archives/examples/authentication/${restlet-version-minor}/sample.zip "testHttpBasic") (application/force-download, 1.2 kB).
 
 ## Description of the server side
 
@@ -116,8 +115,7 @@ Here is a very simple code illustrating a component that guards its
 applications with the DIGEST authentication scheme.
 
 The whole code can be downloaded
-[here](/learn/guide/2.1#/176-restlet/version/default/part/AttachmentData/data "Sample code illustrating Digest authentication")
-(application/force-download, 1.6 kB).
+[here](/technical-resources/restlet-framework/archives/examples/authentication/${restlet-version-minor}/httpDigestSample.zip "Sample code illustrating Digest authentication") (application/force-download, 1.6 kB).
 
 ## Description of the server side
 

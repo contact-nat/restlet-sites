@@ -1,9 +1,7 @@
 # Introduction
 
-This extension leverages the [Apache FileUpload
-library](http://commons.apache.org/fileupload/)
-to provide a robust, high-performance, Web-based file upload in Restlet
-server-side applications.
+This extension leverages the [Apache FileUpload library](http://commons.apache.org/fileupload/)
+to provide a robust, high-performance, Web-based file upload in Restlet server-side applications.
 
 # Description
 
@@ -113,4 +111,4 @@ classpath:
 
 -   [Apache FileUpload library](http://commons.apache.org/fileupload/)
 -   [Server connectors](guide:///core/base/connectors)
--   [Sample code of FileUpload extension (zip file)](/learn/guide/2.1#/42-restlet.html "Usage example of FileUpload extension")
+-   [Sample code of FileUpload extension (zip file)](/technical-resources/restlet-framework/archives/examples/fileupload/${restlet-version-minor}/sample.zip "Usage example of FileUpload extension")
