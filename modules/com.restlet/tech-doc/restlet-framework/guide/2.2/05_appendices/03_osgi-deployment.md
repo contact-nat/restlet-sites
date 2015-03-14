@@ -2,12 +2,10 @@
 
 This page will explain you how to run your Restlet application in an
 OSGi environment such as Eclipse Equinox or Apache Felix. For additional
-coverage of OSGi and Restlet, we recommend you to also read [this
-developer's page](/participate#/172-restlet/124-restlet.html).
+coverage of OSGi and Restlet, we recommend you to also read [this developer's page](/participate#/172-restlet/124-restlet.html).
 
 Since Restlet 2.1 RC2, a new edition of Restlet Framework for OSGi
-environements is available as well as an [Eclipse update
-site](http://restlet.com/downloads/current?distribution=p2&release=stable&edition=osgi).
+environements is available as well as an [Eclipse update site](http://restlet.com/downloads/current?distribution=p2&release=stable&edition=osgi).
 
 # Simple example
 
@@ -71,14 +69,12 @@ connector and attaching Resources to a Router. For this we will reuse
 the Part12 example of the Restlet tutorial.
 
 1.  Create a new "Plug-in Project", name it
-    "[OsgiUsageTest2](/learn/guide/2.1#/239-restlet/version/default/part/AttachmentData/data "OsgiUsageTest2")
-    (application/zip, 6.5 kB)"
+    "[OsgiUsageTest2](/technical-resources/restlet-framework/archives/examples/osgi/${restlet-version-minor}/org.restlet.example.osgi.test.zip "OsgiUsageTest2") (application/zip, 7 kB)"
     and press "Next \>"
 2.  Select the checkbox to generate an Activator and press "Finish"
 3.  In the Dependencies tab of the manifest editor, import the following
-    packages: org.restlet, org.restlet.data, org.restlet.representation,
-    org.restlet.resource, org.restlet.security, org.restlet.service,
-    org.restlet.util
+    packages:  org.restlet, org.restlet.data, org.restlet.resource, org.restlet.routing, org.restlet.util
+
 4.  Open the "Activator" class generated and type the code below:
 
 <!-- -->
@@ -99,7 +95,7 @@ the Part12 example of the Restlet tutorial.
             component.getServers().add(Protocol.HTTP, 8182);
 
             // Create an application
-            final Application application = new Test12();
+            final Application application = new Part12_ServerResources();
 
             // Attach the application to the component and start it
             component.getDefaultHost().attachDefault(application);
@@ -116,7 +112,7 @@ For the rest of the source code, copy and paste from the regular Restlet
 tutorial available in the "org.restlet.example.tutorial" package the
 following classes:
 
--   Test12
+-   Part12_ServerResources
 -   OrderResource
 -   OrdersResource
 -   UserResource
@@ -139,20 +135,15 @@ If you prefer not to rely on start level to select the actual connector
 to be used, you can specify the connector helper class to use in the
 Server/Client constructors:
 
--   Client(Context context, List\<Protocol\> protocols, String
-    helperClass)
--   Server(Context context, List\<Protocol\> protocols, String address,
-    int port, Restlet target, String helperClass)
+-   Client(Context context, List\<Protocol\> protocols, String helperClass)
+-   Server(Context context, List\<Protocol\> protocols, String address, int port, Restlet target, String helperClass)
 
 Otherwise, it is possible to manually register connectors with the
 engine, for example:
 
--   Engine.getInstance().getRegisteredClients().add(new
-    HttpServerHelper(null));
+-   Engine.getInstance().getRegisteredClients().add(new HttpServerHelper(null));
 
-An archive of this test project is [available
-here](/learn/guide/2.1#/239-restlet/version/default/part/AttachmentData/data "OsgiUsageTest2")
-(application/zip, 6.5 kB).
+An archive of this test project is [available here](/learn/guide/2.1#/239-restlet/version/default/part/AttachmentData/data "OsgiUsageTest2") (application/zip, 6.5 kB).
 
 # Standalone Equinox deployment
 
@@ -288,5 +279,4 @@ component.getClients().add(Protocol.HTTPS);.
 
 ## Standalone Equinox
 
--   David Fogel - Detailed instruction [in this
-    mail](http://restlet.tigris.org/ds/viewMessage.do?dsForumId=4447&dsMessageId=1344544)
+-   David Fogel - Detailed instruction [in this mail](http://restlet.tigris.org/ds/viewMessage.do?dsForumId=4447&dsMessageId=1344544)
