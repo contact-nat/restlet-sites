@@ -6,7 +6,7 @@ that rely on
 [jSSLutils](http://code.google.com/p/jsslutils/).
 
 For additional details, please consult the
-[Javadocs](javadocs://jse/ext/org/restlet/ext/ssl/package-summary.html).
+[Javadocs](javadocs://jse/ext/org/restlet/ext/jsslutils/package-summary.html).
 
 # Description
 

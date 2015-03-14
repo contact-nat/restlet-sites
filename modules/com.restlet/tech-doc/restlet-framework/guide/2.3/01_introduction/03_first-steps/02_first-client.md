@@ -24,7 +24,7 @@ new ClientResource("http://restlet.com").get().write(System.out);
 
 
 If you are running your client behind a proxy, please [check this
-page](../../core/base/connectors/overview) to
+page](guide:///core/base/connectors/overview) to
 pick an HTTP client that can be configured. The internal HTTP client
 doesn't support proxies at the moment.
 

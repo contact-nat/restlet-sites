@@ -224,7 +224,7 @@ In addition to the internal authentication helpers, additional schemes
 can be supported using pluggable extensions. Currently, there is an
 org.restlet.ext.crypto extension available for:
 
--   HTTP Digest
+-   HTTP Digestjavadocs://jse/engine/org/restlet/engine/ssl/SslContextFactory.html
 -   HTTP Amazon S3 (client)
 -   HTTP Azure SharedKey
 
@@ -257,7 +257,7 @@ In addition to the parameters that are similar but specific to [each
 type of HTTPS server
 connector](../base/connectors#05),
 it is possible to configure the SSL connectors using an
-[SslContextFactory](javadocs://jse/ext/org/restlet/ext/ssl/SslContextFactory.html),
+[SslContextFactory](javadocs://jse/engine/org/restlet/engine/ssl/SslContextFactory.html),
 in a way that is common to all three types of HTTPS server connectors
 (Simple, Jetty and Grizzly). Configuring SSL is done in this order:
 

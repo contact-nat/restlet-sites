@@ -106,7 +106,7 @@ Extension | Version | Protocols | Asynchronous | Comment
 
 Extension | Version | Protocols | Asynchronous | Proxy | Comment
 --------- | ------- | --------- | ------------ | ----- | -------
-[Internal](../core/engine/internal-connectors "Internal connectors") | 2.2 | CLAP, FILE, FTP, HTTP, HTTPS, RIAP | No | Yes | Recommended for development and lightweight deployments
+[Internal](../engine/internal-connectors "Internal connectors") | 2.2 | CLAP, FILE, FTP, HTTP, HTTPS, RIAP | No | Yes | Recommended for development and lightweight deployments
 [Apache HTTP Client](../../extensions/httpclient "Apache HTTP Client extension") | 4.3 | HTTP, HTTPS | No | Yes | Recommended for robust and scalable deployments
 [JavaMail](../../extensions/javamail "JavaMail extension") | 1.4 | SMTP, SMTPS, POP, POPS | No |  No | Stable
 [JDBC](../../extensions/jdbc "JDBC extension") | 3.0 | JDBC | No | No | Stable
