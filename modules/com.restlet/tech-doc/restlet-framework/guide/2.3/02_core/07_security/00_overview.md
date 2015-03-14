@@ -257,7 +257,7 @@ In addition to the parameters that are similar but specific to [each
 type of HTTPS server
 connector](../base/connectors#05),
 it is possible to configure the SSL connectors using an
-[SslContextFactory](javadocs://jse/engine/org/restlet/engine/ssl/SslContextFactory.html),
+[SslContextFactory](javadocs://jse/engine/org/restlet/engine/ssl/SslContextFactory.html	),
 in a way that is common to all three types of HTTPS server connectors
 (Simple, Jetty and Grizzly). Configuring SSL is done in this order:
 
@@ -401,6 +401,4 @@ the cookies from being used by script in all modern browsers.
 
 # Sample code
 
-[Security
-sample](/learn/guide/2.1#/307-restlet/version/default/part/AttachmentData/data/Security%20sample.zip "Security sample")
-(application/zip, 2.9 kB)
+[Security sample](/technical-resources/restlet-framework/archives/examples/authentication/${restlet-version-minor}/sample.zip "Security sample") (application/zip, 2.9 kB)
