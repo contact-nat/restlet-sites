@@ -68,9 +68,7 @@ Now, let's look at a more complete example, leveraging the Jetty
 connector and attaching Resources to a Router. For this we will reuse
 the Part12 example of the Restlet tutorial.
 
-1.  Create a new "Plug-in Project", name it
-    "[OsgiUsageTest2](/technical-resources/restlet-framework/archives/examples/osgi/${restlet-version-minor}/org.restlet.example.osgi.test.zip "OsgiUsageTest2") (application/zip, 7 kB)"
-    and press "Next \>"
+1.  Create a new "Plug-in Project", name it "OsgiUsageTest2" and press "Next \>"
 2.  Select the checkbox to generate an Activator and press "Finish"
 3.  In the Dependencies tab of the manifest editor, import the following
     packages:  org.restlet, org.restlet.data, org.restlet.resource, org.restlet.routing, org.restlet.util
@@ -143,7 +141,7 @@ engine, for example:
 
 -   Engine.getInstance().getRegisteredClients().add(new HttpServerHelper(null));
 
-An archive of this test project is [available here](/learn/guide/2.1#/239-restlet/version/default/part/AttachmentData/data "OsgiUsageTest2") (application/zip, 6.5 kB).
+An archive of this test project is [available here](/technical-resources/restlet-framework/archives/examples/osgi/${restlet-version-minor}/org.restlet.example.osgi.test.zip "OsgiUsageTest2") (application/zip, 7 kB).
 
 # Standalone Equinox deployment
 
