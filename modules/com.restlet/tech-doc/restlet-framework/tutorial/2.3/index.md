@@ -90,7 +90,7 @@ public class Part03 extends ServerResource {
         new Server(Protocol.HTTP, 8182, Part03.class).start();
     }
 
-    @Get
+    @Get("txt")
     public String toString() {
         return "hello, world";
     }
@@ -172,7 +172,7 @@ public static void main(String[] args) throws Exception {
     component.start();
 }
 
-@Get
+@Get("txt")
 public String toString() {
     // Print the requested URI path
     return "Resource URI  : " + getReference() + '\n' + "Root URI      : "
@@ -603,7 +603,7 @@ public class UserResource extends ServerResource {
         this.user = null; // Could be a lookup to a domain object.
     }
 
-    @Get
+    @Get("txt")
     public String toString() {
         return "Account of user \"" + this.userName + "\"";
     }

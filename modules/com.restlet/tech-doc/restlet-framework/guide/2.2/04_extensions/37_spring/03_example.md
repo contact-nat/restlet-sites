@@ -1,15 +1,12 @@
 # Introduction
 
 This example is a Spring-enabled but otherwise functionally equivalent
-version of the [bookmarks
-example](http://examples.oreilly.com/9780596529260/)
-from chapter 7 of [RESTful Web
-Services](http://www.oreilly.com/catalog/9780596529260/)
+version of the [bookmarks example](http://examples.oreilly.com/9780596529260/)
+from chapter 7 of [RESTful Web Services](http://www.oreilly.com/catalog/9780596529260/)
 by Richardson and Ruby. The complete code for this version is available
 through CVS from :pserver:anonymous@cvs.cs.luc.edu:/root/laufer/433,
 module BookmarksRestletSpring. Project dependencies are managed using
-[Apache
-Maven](http://maven.apache.org/),
+[Apache Maven](http://maven.apache.org/),
 and the example illustrates standalone and servlet-container deployment.
 
 In a nutshell, Spring handles the configuration of the top-level Restlet
