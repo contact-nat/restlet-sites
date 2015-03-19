@@ -88,6 +88,10 @@ or
 - directly from the code  
 
 <!--
+
+INCLUDE THIS IN APISPARK USER GUIDE - INTROSPECTOR PAGE
+
+
 Here are key places to customize the documentation from the code:
 
 - general characteristics fof the API from the ```ContactsApplication``` class.
