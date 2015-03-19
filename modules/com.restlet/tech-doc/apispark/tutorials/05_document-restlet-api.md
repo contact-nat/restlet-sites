@@ -1,6 +1,6 @@
 # Introduction
 
-The Restlet Framework provides a tool that extracts the web API definition of your Restlet (or Jax-rs) application and imports it in APISpark to provide documentation and tooling such as generation of client kits, etc.
+The Restlet Framework provides a tool that extracts the web API definition of your Restlet (or JAX-RS) application and imports it in APISpark to provide documentation and tooling such as generation of client kits.
 
 With this tool, you will be able to create a new APISpark cell and edit it within APISpark.
 
@@ -16,20 +16,28 @@ To follow this tutorial, you will need:
 * a web browser,
 * Maven,
 * Git,  
-* 20 minutes of your time,
+* 20 minutes of your time.
 
-# 1. Retrieve your credentials
-Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.
-Click on your username on top right of the screen and select **My account**. You will find your **Username** and **Secret key** in the **Tokens** section.
+# 1. Retrieve Restlet sample API
+We provide you with a <a href="https://github.com/restlet/restlet-sample-descriptor" target="_blank">Restlet sample API description</a> that allows you to test the Descriptor feature. If you have your own Restlet API, feel free to use it.  
 
-# 2. Retrieve Restlet sample API
-We provide you with a Restlet sample API description that allows you to test the Descriptor feature. If you have your own Restlet API, feel free to use it.  
-
-- Install git (if you have not done it yet) to launch a git clone in command line ;  
+- Install git (if you have not done it yet) to launch a git clone in command line;  
 or
 - Launch the command from your development environment. If you are working on Windows, you can use e.g. git shell or git bash.
 
 ```git clone https://github.com/restlet/restlet-sample-descriptor.git```
+
+# 2. Retrieve your credentials
+Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.  
+Click on your username on top right of the screen and select **My account**.
+
+![Find my credentials](images/find-my-credentials.jpg "Find my credentials")
+
+You will find your **Username** and **Secret key** in the **Tokens** section.  
+
+![My credentials](images/my-credentials.jpg "My credentials")
+
+We will need these credentials to fill in the parameters at introspection launch.
 
 # 3. Launch introspection
 Run the introspection code to export the API documentation to APISpark with Maven.  
@@ -50,6 +58,27 @@ Your Web API documentation is accessible at this URL: https://apispark.restlet.c
 
 In your <a href="https://apispark.restlet.com/dashboard" target="_blank">APISpark Dashboard</a>, you can see the new **Descriptor** cell created.
 
+![New Descriptor in Dashboard](images/descriptor-cell-in-dashboard.jpg "New Descriptor in Dashboard")
+
+<!--Change Proposal for Launch Introspection part:
+
+a) Compile your own code (your Maven project will retrieve all the dependencies including the introspector's)
+
+b) Launch introspection with the following parameters:
+
+- your username (-u)
+- your password (-p)
+- the name of your own class
+
+java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u {your username} -p {your password} {your class}
+
+e.g. java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.restlet.api.MyContacts
+
+>**Note:** The "org.restlet.ext.apispark.Introspector" class is the entry point.
+
+-->
+
+
 # 4. Customize API documentation
 Once you have imported our sample API documentation in your APISpark Dashboard, feel free to customize it: the application, its resources, methods and beans.
 
@@ -58,6 +87,7 @@ You can customize it either:
 or  
 - directly from the code  
 
+<!--
 Here are key places to customize the documentation from the code:
 
 - general characteristics fof the API from the ```ContactsApplication``` class.
@@ -111,8 +141,10 @@ Use the ```@JacksonXmlProperty``` annotation: in the XML representation, any "Ta
 Customize a bean thanks to Swagger annotations in order to control the documentation of the bean
 Use the ```@ApiModelProperty``` annotation: the description of the annotated field.
 
-# 5. Test your API
-You can then test your API from your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.  
+
+
+
+
 Here is a list of sample commands available:
 
 ## List of companies in distinct formats
@@ -161,3 +193,17 @@ curl http://localhost:8000/api-docs/contacts
 ```
 curl http://localhost:8000/swagger.json
 ```
+-->
+
+<!-- Test your API
+You can then test your API from your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.
+-->
+
+# 5. Share your documentation
+If you want to share your documentation with other members or even with your API users, you can make your Descriptor cell public.
+
+From your **Dashboard**, open your **Descriptor** cell. Select the **Public** checkbox and click the **Save** button.
+
+![Make your Descriptor public](images/make-descriptor-public.jpg "Make your Descriptor public")
+
+You can then communicate the following link to your API users: https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview
