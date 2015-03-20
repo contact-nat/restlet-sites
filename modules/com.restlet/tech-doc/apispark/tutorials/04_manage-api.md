@@ -42,7 +42,7 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 You can now **Deploy** your web API Connector.
 
-# 3. Plug the agent to your web API
+# 3. Plug the agent to the web API
 
 ## 3.1. Launch your web API
 
