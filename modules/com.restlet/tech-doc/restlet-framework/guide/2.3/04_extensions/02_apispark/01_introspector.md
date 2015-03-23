@@ -1,8 +1,6 @@
 # Introduction
 
-The Introspector tool is made to import the contract of your Web API in
-
-the <a href="https://apispark.restlet.com/" target="_blank">APISpark</a> full-stack PaaS for web APIs.
+The Introspector tool is made to import the contract of your Web API in the <a href="https://apispark.restlet.com/" target="_blank">APISpark</a> full-stack PaaS for web APIs.
 
 It will allow you to:
 
@@ -164,9 +162,9 @@ Your packaged Web API:
 
 ## APISpark tokens
 
-The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.restlet.com/account/overview) under the tab "tokens". You will need to <a href="https://apispark.restlet.com/signin" target="_blank">sign up</a> first.
+The parameters -u and -p are mandatory, they correspond to your APISpark user name and secret key. You can get those [here](https://apispark.restlet.com/account/overview) under the **My account** tab in the **Tokens** secion. You will need to <a href="https://apispark.restlet.com/signin" target="_blank">sign up</a> first.
 
-![apispark tokens](images/apisparkTokens.png)
+![apispark tokens](images/apispark-tokens.jpg)
 
 ## Load Web API definition into APISpark (first call)
 
@@ -174,12 +172,11 @@ Here is the result, we get from the Introspector:
 
 
 ~~~~
-Process successfully achieved.
-Your Web API contract's id is: 246
-Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/246/versions/1
+Your Web API descriptor's id is: 123456
+Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/123456/versions/1/overview
 ~~~~
 
-![injected overview](images/injectedOverview.png)
+![Descriptor in APISpark](images/descriptor-in-apispark.jpg "Descriptor in APISpark")
 
 ## Update your Web API definition (Subsequent calls)
 
