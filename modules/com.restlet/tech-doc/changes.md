@@ -1,3 +1,10 @@
+v3.2.13
+
+APISpark
+- Updated Descriptor Tutorial (steps order, content, screenshots)
+- Updated Descriptor User Guide
+- Changed "get-documentation" into "download and share documentation" (updated ToC)
+
 v3.2.12
 
 Updated broken links, added sample code and zip files for Restlet Framework

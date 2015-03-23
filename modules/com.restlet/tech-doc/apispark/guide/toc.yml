@@ -267,12 +267,12 @@ toc:
     long-title: Create and edit your API Descriptor
     title: Create Descriptor
     url: /document/create-descriptor
-  - file: 03_get-documentation.md
-    id: get-documentation
-    link_url: /06_document/03_get-documentation.md
-    long-title: Get Documentation and Client SDKs
-    title: Get Documentation
-    url: /document/get-documentation
+  - file: 03_download-documentation.md
+    id: download-documentation
+    link_url: /06_document/03_download-documentation.md
+    long-title: Download and Share Documentation
+    title: Download & Share documentation
+    url: /document/download-documentation
   long-title: Document existing web APIs through APISpark Descriptors
   title: Document web APIs
 - dir: 07_manage
