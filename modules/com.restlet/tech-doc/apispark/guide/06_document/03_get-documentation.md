@@ -15,8 +15,7 @@ Once you have created your Descriptor cell, you can give an access to it to your
 
 Navigate to the **Members** tab, and click on the **Add** button.
 
-<!--add screenshot when bug fixed
--->
+![Add a member to your Descriptor](images/add-member.jpg "Add a member to your Descriptor")
 
 For more information on Team work, jump to our [Team work](/technical-resources/apispark/guide/explore/team-work "Team work") section of the User Guide.
 
@@ -26,8 +25,7 @@ To share you Descriptor cell to anyone, you can also make it public.
 
 Navigate to the **Overview** tab and select the **Public** checkbox.
 
-<!--add screenshot when bug fixed
--->
+![Make your Descriptor public](images/make-descriptor-public.jpg "Make your Descriptor public")
 
 # Download your web API Descriptor
 
@@ -39,8 +37,7 @@ To do this, navigate to the **Downloads** tab of your Descriptor and click on th
 
 You will be prompted to select a **Name** and **Type** (format) for your new downloadable documentation.
 
-<!--add screenshot when bug fixed
--->
+![Add documentation for download](images/add-documentation.jpg "Add documentation for download")
 
 Once the desired types of documentation have been added to the **Documentations** section, you will need to generate the downloads for your Descriptor.
 
@@ -48,8 +45,7 @@ Once the desired types of documentation have been added to the **Documentations*
 
 To generate the downloads for your Descriptor, open the API's **Overview**, click on the drop-down action button and select **Generate downloads**.
 
-<!--add screenshot when bug fixed
--->
+![Generate downloads](images/generate-downloads.jpg "Generate downloads")
 
 Your documentation can now be downloaded from the **Downloads** tab in the **Documentations** section by selecting a type of documentation from the list and clicking on the **Download** button.
 
