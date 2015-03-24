@@ -8,21 +8,27 @@ toc:
     long-title: Sign-in to APISpark
     title: Sign-in
     url: /get-started/sign-in
-  - file: 02_discover-console.md
+  - file: 02_quickstart-wizard.md
+    id: quickstart-wizard
+    link_url: /01_get-started/02_quickstart-wizard.md
+    long-title: Use Quickstart wizard
+    title: Quickstart wizard
+    url: /get-started/quickstart-wizard
+  - file: 03_discover-console.md
     id: discover-console
-    link_url: /01_get-started/02_discover-console.md
+    link_url: /01_get-started/03_discover-console.md
     long-title: Discover APISpark console
     title: Discover the console
     url: /get-started/discover-console
-  - file: 03_interactive-assistants.md
+  - file: 04_interactive-assistants.md
     id: interactive-assistants
-    link_url: /01_get-started/03_interactive-assistants.md
+    link_url: /01_get-started/04_interactive-assistants.md
     long-title: Use interactive assistants
     title: Interactive assistants
     url: /get-started/interactive-assistants
-  - file: 04_subscribe.md
+  - file: 05_subscribe.md
     id: subscribe
-    link_url: /01_get-started/04_subscribe.md
+    link_url: /01_get-started/05_subscribe.md
     long-title: Subscribe to a plan
     title: Subscribe to a plan
     url: /get-started/subscribe
