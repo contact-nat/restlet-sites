@@ -10,19 +10,9 @@ If updates are made to the Entity Store's data model, the Entity Store will need
 
 The data browser lets you view existing data, add new entries, update existing entries, and delete entries.
 
-![Add](images/editdata.png "Add")
+![Add](images/edit-data.jpg "Add")
 
 Depending on the primary key policy you chose for a given entity, the value primary key field will or will not be user-defined (see Primary key policy in [Model data section](/technical-resources/apispark/guide/store/entity-stores/model-data "Model data section")).
-
-### Editing multiple cardinality properties
-
-The values of multiple cardinality properties are comma seperated, without spaces.
-
-Take for example a Film entity with a high cardinality property called alternativeTitles.
-
-Adding alternative titles via the data browser would be done as follows:
-
-![Add list](images/databrowser.png "Add list")
 
 # Backup and restore data
 
@@ -36,7 +26,7 @@ Backups can be created at any time, as long as the Entity Store is deployed.
 
 To create a new backup, click on the **Add** button in the backups section in the left panel. You will be prompted to enter a **Name** and a **Description** for the backup.
 
-![Create a backup](images/createabackup.png "Create a backup")
+![Create a backup](images/create-backup.jpg "Create a backup")
 
 You can consult your existing backups in the left panel.
 
@@ -44,7 +34,7 @@ You can consult your existing backups in the left panel.
 
 To restore a backup, select a backup from the **Backups** list in the left panel, and click on the **Restore** button.
 
-> **Note**: restoring a backup will overwrite any existing data stored in you Entity Store. We recommend creating a backup of your current Entity Store before restoring a previous backup.
+> **Note**: restoring a backup will overwrite any existing data stored in your Entity Store. We recommend creating a backup of your current Entity Store before restoring a previous backup.
 
 ![Restore a backup](images/restore-a-backup.jpg "Restore a backup")
 

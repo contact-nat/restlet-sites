@@ -1,9 +1,18 @@
 v3.2.13 coming soon
 
-APISpark
+APISpark documentation improvements
 - Updated Descriptor Tutorial (steps order, content, screenshots)
-- Updated Descriptor User Guide
+- Updated Descriptor User Guide (content and structure)
 - Changed "get-documentation" into "download and share documentation" (updated ToC)
+
+APISpark documentation updates (5A)
+- Removed load strategy
+- Added server side caching (API/Settings)
+- Added **Synchronize** button
+- Updated screenshot for Downloads page (JavaScript Angular)
+- Updated SQL wrapper (MySQL only)
+- Updated Entity Store data modeling (composite/reference properties, etc.)
+- Added Quickstart wizard
 
 v3.2.12
 

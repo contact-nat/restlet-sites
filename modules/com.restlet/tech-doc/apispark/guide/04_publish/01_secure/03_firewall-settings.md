@@ -9,8 +9,8 @@ In the **Firewall** section, select **IP filtering**.
 
 ![IP filtering](images/ip-filtering.jpg "IP filtering")
 
-In the **IP list** text area, enter the different IP addresses seperated by a coma.  
-Select the appropriate **Type** radio button (Blacklist or Whitelist).
+In the **IP list** text area, enter the different IP addresses seperated by a comma.  
+Select the appropriate **Type** radio button (White list or Black list).
 
 
 # Rate limitation

@@ -23,7 +23,7 @@ By enabling the **Authorization** module, you activate the **Default Permissions
 
 You will find the **Default Permissions** page in the **Security** section of the **Settings** tab.
 
-![Security tab](images/default-permission.jpg "Security tab")
+![Security tab](images/default-permissions.jpg "Security tab")
 
 To go to the **Security** tab, navigate to the **Overview** tab and select a method from the **Resources** section.
 
@@ -180,5 +180,3 @@ java -jar\
   --sslKeyStorePath /path/to/server-keystore.jks\
   --sslKeyStoreType JKS
 ```
-
-

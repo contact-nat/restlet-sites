@@ -8,7 +8,7 @@ To facilitate this, APISpark can generate custom client SDKs (Software Developme
 - Java
 - Android
 - GWT
-- JavaScript (AJAX or Node.js)
+- JavaScript (Angular or Node.js)
 - IOS
 
 # Create and generate a client SDK

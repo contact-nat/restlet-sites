@@ -15,7 +15,7 @@ In the **Create an Entity Store** window, select **Full Stack** in order to crea
 
 ![Full Stack](images/full-stack.jpg "Full Stack")
 
-Enter a **Name** (required) and a **Description** (optional) and click on the **Create** button.
+Enter a **Name** (required) and a **Description** (optional) and click on the **Add** button.
 
 # Data modeling
 
@@ -23,11 +23,10 @@ An Entity Store's data model is defined in the store's **Overview** tab.
 
 An Entity Store is composed of entities, which represent types of objects and their properties. Entities can be linked together by defining special properties called relations.
 
-
 ## Create an entity
 
 In the **Entities** section, click on the **Add** button.  
-Give the new entity a name (required) and a description (optional).
+Give the new entity a name (required) and a description (optional) and click on the **Add** button.
 
 ![Add Entity](images/add-an-entity.jpg "Add Entity")
 
@@ -61,57 +60,70 @@ Entities are composed of properties. An entity property has a number of differen
 
 To add a property to an Entity, click on the **+** button.
 
-![Add property + button](images/add-property-plus-button.jpg "Add property + button")
+![Add property](images/add-property.jpg "Add property")
 
 You are then invited to specify the following **attributes** for the new property.
-
-![Add property](images/add-property.jpg "Add property")
 
 ### Name
 
 The property's name.
 
-### Datatype
+### Type
 
-The property's type. There are two main categories of types: primitive and relations. We'll cover relations in the next section. All possible types for a property are listed in the **Datatype** drop-down menu.
+The property's type. There are three main categories of types: Primitive, Composite and Reference. All possible types for a property are listed in the **Type** drop-down menu.
 
-The primitive types available in the Entity Store are *String*, *Integer*, *Date*, *Boolean*, *Double*, *Long*, and *Float*.
+#### Primitive
 
-### Optional
+Choose *Primitive* for basic datatypes. The primitive types available in the Entity Store are *String*, *Integer*, *Date*, *Boolean*, *Double*, *Long*, and *Float*.
 
-Deselect this checkbox to specify the property as a mandatory field.
+#### Composite
 
-### Repeating
+Choose *Composite* if you need your property to contain other properties, e.g. a “contact” entity contains an “address” property which contains a “zip code” and “city” property.
 
-Select this checkbox to specify the property as a collection (a list rather than a simple value).
+In this example, "address" is a Composite property which contains 4 properties.
 
-### Default value
+![composite property example](images/composite-properties.jpg "composite property example")
 
-A property’s default value is assigned if a null value is provided upon creation of a data element. To assign a default value, deselect the **Default value** checkbox and enter a value in the field that displays.
+#### Reference
 
-### Sample value
+Choose Reference to link your new property to another entity created in the Entity Store. You will need this other entity id to paste it as the value of your new property, e.g. a “contact” entity has a “company” property which value will be the “company” id.
 
-A sample value can be provided in this field. It will be suggested to the user when s/he adds a record.
+Practical data models usually require the definition of references between entities. APISpark supports one-to-many references for this purpose.
 
-## Entity relations
+To create a one-to-many reference, add a new **Property** to the entity on the unary side. From the **Type** drop-down, select the Entity that is a reference to your property.
 
-Practical data models usually require the definition of relations between entities.
-
-APISpark supports one-to-many relations for this purpose.
-
-To create a one-to-many relation, add a new **Property** to the entity on the unary side. From the **Type** drop-down, select the type of the entity at the n-ary side of the relation. Set minOccurs to '1' and maxOccurs to '*'.
-
-You will then be able to load a data element at the unary side of the relation, and load all the associated elements at the n-ary side of the relation automatically. Please visit the [Invocation](/technical-resources/apispark/guide/publish/publish/invocation "Invocation") page to learn how to retrieve your entities via a web API.
-
-### Example
+*Example*
 
 Suppose your application's data model includes Users that can post Comments. A User can post multiple Comments, and a Comment is related to a single author User. Thus, this is a typical one-to-many relation.
 
-In order to build an Entity Store like this, create a User entity and a Comment entity. Add a property to entity User called "comments" that is of type Comment. Set minOccurs to '1' and maxOccurs to '*'.
+In order to build an Entity Store like this, create a "user" entity and a "comment" entity. Add a property to entity "user" called "comments" that is of *Reference* type. Select "comment" among the *Reference* types list.
 
-When a User posts a new Comment, create a new Comment element. Update the corresponding User element's "comments" property by adding the ID of the newly created Comment to the list (comma seperated values).
+![Add a reference property](images/reference-example.jpg "Add a reference property")
 
-When loading a User, you will be able to also load all the User's comments. Visit the [Invocation](/technical-resources/apispark/guide/publish/publish/invocation "Invocation") page for more information on querying your data.
+When a user posts a new *comment*, create a new *comment* element. Update the corresponding *user* element's *comments* property by adding the ID of the newly created *comment* to the list (comma seperated values).
+
+### List
+
+Select this checkbox to specify the property as a collection (a list rather than a simple value).
+
+### Optional
+
+Deselect this checkbox to specify the property as a required field.
+
+
+### Default value
+
+To assign a default value, deselect the **Default value** checkbox and enter a value in the field that displays. The default value specified here will be suggested to the user when adding a record.
+
+### Sample value
+
+A sample value can be provided in this field. This value will be used to give you an idea of what your API representation will look like in different formats (by default JSON, XML or YAML).
+
+For example, to see your API representation in JSON format, open your API **Overview**, select en representation from the **Representations** section and click on the variant chosen from the **Variants** section in the central panel.
+
+![JSON sample data](images/json-sample-data.jpg "JSON sample data")
+
+
 
 <!--
 There are three types of relations available: association, aggregation, and composition.

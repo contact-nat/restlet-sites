@@ -31,7 +31,7 @@ For more information jump to our [Turn a Google Spreadsheet into a web API](/tec
 
 SQL is a language for defining and manipulating data structures stored in relation databases.
 
-The **SQL Wrapper** Entity Store lets you wrap an SQL database to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
+The **SQL Wrapper** Entity Store lets you wrap an SQL database (MySQL only) to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
 For more information jump to our [Expose an SQL database via a web API](/technical-resources/apispark/tutorials/expose-sql-via-api "Expose an SQL database via a web API") tutorial.
 
