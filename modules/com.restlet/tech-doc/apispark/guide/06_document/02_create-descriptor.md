@@ -1,6 +1,4 @@
 
-A *Descriptor* is a web API cell.
-
 # Create a Descriptor cell
 
 To create a Descriptor, go to the **Dashboard** and click on the **+Web API** button.
@@ -17,15 +15,15 @@ A **Descriptor** is composed of **Endpoints**, **Resources**, and **Representati
 
 Rather than manually create a *Descriptor* from scratch, APISpark provides ways for you to automatically generate one that describes your existing API.
 
-A *Descriptor* can be generated from your current API's Swagger definition, or from your API's Restlet Framework or JAX-RS implementation.
+A *Descriptor* can be generated from your current API's Swagger definition, or from your code if your API is implemented using either the Restlet Framework or JAX-RS.
 
 ## Generate a Descriptor from a Swagger definition
 
 You can generate a web API Descriptor by importing a Swagger definition for an existing web API, by providing the Swagger definition's URL.
 
-Open an existing Descriptor or create a new one from the Dashboard by clicking on **+ Web API** and selecting **Descriptor** from the drop-down menu.
+From the Dashboard, open an existing Descriptor or create a new one by clicking on **+ Web API** and selecting **Descriptor** from the drop-down menu.
 
-From the Descriptor's **Overview**, click on the actions button on top right of your screen and select the **Import definition** menu.
+From the Descriptor's **Overview**, click on the actions button on the top right of your screen and select **Import definition** from the menu.
 
 ![API Commons](images/swagger-import-definition.jpg "API Commons")
 

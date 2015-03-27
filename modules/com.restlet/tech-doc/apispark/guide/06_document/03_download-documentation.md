@@ -11,7 +11,7 @@ For details on how to get the documentation of your cell, go to the [Documentati
 
 ## Share it with team members
 
-Once you have created your Descriptor cell, you can give an access to it to your team members.
+Once you have created your Descriptor cell, you can share it with your team members.
 
 Navigate to the **Members** tab, and click on the **Add** button.
 

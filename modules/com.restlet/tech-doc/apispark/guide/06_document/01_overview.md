@@ -13,7 +13,7 @@ APISpark can help you document an existing API in the following ways:
 
 A web API *Descriptor* is an APISpark cell that documents a web API. Many features are then accessible via the Descriptor.
 
-You may [create a web API Descriptor](/technical-resources/apispark/guide/document/create-descriptor "create a web API Descriptor") by introspecting existing code (Restlet framework, JAX-RS) or by importing an existing web API definition in the Swagger format, or manually.
+You may [create a web API Descriptor](/technical-resources/apispark/guide/document/create-descriptor "create a web API Descriptor") by introspecting existing code (Restlet framework, JAX-RS) or by importing an existing web API definition in the Swagger format. You can also manually describe your API using the intuitive user interface.
 
 
 Similarly, an APISpark Descriptor can be automatically translated to the Swagger or RAML formats.
@@ -29,7 +29,7 @@ Here is a summary of the process that allows you to document an existing API usi
 * Maintain the Descriptor either by hand or automatically via introspection  
 * Generate documentation and SDKs for your API consumers to download
 
-In the following sections, we will show you how to manually create and edit a web API Descriptor. Then we will explain how to automatically generate a web API Descriptor from your existing web API implementation.
+In the following sections, we will show you how to manually create and edit a web API Descriptor. Then we will explain how to automatically generate a web API Descriptor by introspecting your existing web API implementation.
 
 <!-- TODO could also document the API first and develop the web API after with the server skeleton. -->
 
