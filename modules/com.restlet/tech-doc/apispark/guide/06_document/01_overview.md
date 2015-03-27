@@ -5,8 +5,8 @@ APISpark can enhance the way you document an existing web API hosted outside the
 
 APISpark can help you document an existing API in the following ways:
 
-* Automatically generate [*documentation*](/technical-resources/apispark/guide/document/get-documentation "Generate documentation")
-* Automatically generate [*client SDKs* and *server skeletons*](/technical-resources/apispark/guide/document/get-documentation "Generate client SDKs and server skeletons")
+* Automatically generate [*documentation*](/technical-resources/apispark/guide/document/download-documentation "Generate documentation")
+* Automatically generate [*client SDKs* and *server skeletons*](/technical-resources/apispark/guide/document/download-documentation "Generate client SDKs and server skeletons")
 * Automatically generate [*standard API definitions*](/technical-resources/apispark/guide/publish/publish/api-definition "Standard API definition") (RAML, Swagger) for third party integration
 
 # The web API Descriptor

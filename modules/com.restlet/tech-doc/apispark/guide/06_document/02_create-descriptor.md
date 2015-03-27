@@ -46,4 +46,4 @@ For more information on how to introspect a Restlet Framework application, jump 
 
 For more information on how to instrospect a JAX-RS application, jump to our [Document an existing JAX-RS web API](/technical-resources/apispark/tutorials/document-jax-rs-api "Document an existing JAX-RS web API") tutorial.
 
-After introspecting your JAX-RS code, you can work on your [Descriptor](/technical-resources/apispark/guide/document/get-documentation "Descriptor").
+After introspecting your JAX-RS code, you can work on your [Descriptor](/technical-resources/apispark/guide/document/download-documentation "Descriptor").
