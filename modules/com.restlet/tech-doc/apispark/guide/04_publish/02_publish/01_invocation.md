@@ -102,6 +102,8 @@ In case you have many entries stored in a collection, you may not want to read t
 
 `GET https://myapi.apsipark.net/v1/messages/?$page=4&$size=100`
 
+>**Note:** Page numbers start from 0.
+
 <!--
 ### Load Strategy
 
