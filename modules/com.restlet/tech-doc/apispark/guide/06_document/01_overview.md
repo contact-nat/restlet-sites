@@ -33,4 +33,4 @@ In the following sections, we will show you how to manually create and edit a we
 
 <!-- TODO could also document the API first and develop the web API after with the server skeleton. -->
 
-![Descriptors](images/descriptors.jpg "Descriptors")
+![Descriptors](images/descriptors-diagram.jpg "Descriptors")
