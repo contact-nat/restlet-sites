@@ -1,4 +1,4 @@
-v3.2.13 coming soon
+v3.2.13
 
 APISpark documentation improvements
 - Updated Descriptor Tutorial (steps order, content, screenshots)
