@@ -11,7 +11,7 @@ toc:
   - file: 02_quickstart-wizard.md
     id: quickstart-wizard
     link_url: /01_get-started/02_quickstart-wizard.md
-    long-title: Use Quickstart wizard
+    long-title: Use APISpark Quickstart wizard
     title: Quickstart wizard
     url: /get-started/quickstart-wizard
   - file: 03_discover-console.md
@@ -64,7 +64,7 @@ toc:
   - file: 05_revisions.md
     id: revisions
     link_url: /02_explore/05_revisions.md
-    long-title: APISpark cell revision managment
+    long-title: APISpark cell revision management
     title: Revisions
     url: /explore/revisions
   - file: 06_team-work.md
@@ -288,13 +288,13 @@ toc:
     id: connectors
     link_url: /07_manage/01_connectors.md
     long-title: Manage your web API via APISpark Connectors
-    title: Connectors
+    title: Use Connectors
     url: /manage/connectors
   - file: 02_remote-agent.md
     id: remote-agent
     link_url: /07_manage/02_remote-agent.md
-    long-title: Configure the Remote Agent and install it
-    title: Remote Agent
+    long-title: Configure and install your remote agent
+    title: Configure the remote agent
     url: /manage/remote-agent
   long-title: Manage existing web APIs with APISpark Connectors
   title: Manage web APIs
