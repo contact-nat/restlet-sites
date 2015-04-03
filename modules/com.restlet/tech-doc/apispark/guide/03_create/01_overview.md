@@ -9,6 +9,8 @@ In this section we look at different ways to automatically create a web API from
 
 You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](/technical-resources/apispark/guide/store/entity-stores/model-data "Entity Store") or the [File Store](/technical-resources/apispark/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
 
+![Export a web API from a Data Store](images/entity-store-to-api.jpg "Export a web API from a Data Store")
+
 The API export process can be launched from the Data Store **Overview**. Click on the action arrow and select **Export web API**.
 
 ![export custom API](images/exportfromstore.png "export custom API")
@@ -26,6 +28,8 @@ The window will notify you of the availability of the the domain name.
 As a complement to the Export API feature, APISpark lets you import one or more Data Stores into an existing web API.
 
 This has the added benefit of allowing you to import multiple Data Stores of potentially different types into a single web API.  
+
+![Import a Data Store into a web API](images/api-imports-entity-store.jpg "Import a Data Store into a web API")
 
 ## Create a web API
 
