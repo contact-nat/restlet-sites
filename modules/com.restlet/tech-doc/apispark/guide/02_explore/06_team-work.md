@@ -34,7 +34,9 @@ Depending on the role given to a member, s/he will have different permissions in
  * **User:** a User can consult basic information about a web API and be given runtime access rights by being added to a member group.
 
 
-# Managing cell members
+# Managing members
+
+## Members with standard accounts
 
 To manage the members of a cell, navigate to the cell's **Members** tab.
 
@@ -46,19 +48,37 @@ To add a member to a cell:
 
 From the web API **Overview** page, click on the **Members** tab.  
 In the **Members** section, click on the **Add** button.  
-In the window that displays, enter the name or email address of the member you want to add. From the information entered, APISpark will suggest the different accounts created by the member (GitHub, Google Mail, etc.).
+In the window that displays, enter the name or email address of the member you want to add in the **Search** field. From the information entered, APISpark will suggest the different accounts created by the member (GitHub, Google Mail, etc.).
 
-![Add member](images/addMemberToCell.jpg "Add member")
+![Add member](images/add-member-to-cell.jpg "Add member")
 
 Select the appropriate account and click on the **Add** button.  
 Select a role for your member in the drop-down menu (Manager, Operator, Developer or User).
 
-
-
 >**Note:** To add a member, s/he must have signed in to APISpark before.
 
 
-<!---# Switch role perspective
+## Members with App accounts
 
-Coming soon.
--->
+As the manager of an application backed by an APISpark Full Stack API (or Connector), you may want the end-users of your application that do not have APISpark accounts to be able to authenticate themselves to your application which is backed by the API by using an "App account".
+App accounts behave like standard accounts described above except that they will not allow access to APISpark Dashboard at this stage.
+
+As an API manager, you will be able to create new App accounts via the **Members** tab of your API, which will result in the App account being immediately and automatically added as an App member of this API.
+
+App accounts allow API consumers to invoke an API using their App member credentials for that particular API.
+
+To create a new App member to a cell (Full Stack API or Connector):
+
+From the web API **Overview** page, click on the **Members** tab.  
+In the **Members** section, click on the **Add** button.  
+In the window that displays, select **New local member** from the **Member** drop-down menu.
+
+![Add a new local member](images/add-new-local-member.jpg "Add a new local member")
+
+Enter the App account details: **First name**, **Last name**, **Email**, **Username** and **Secret key** (all fields are required except **Email**).
+
+![App account details](images/app-account-details.jpg "App account details")
+
+>**Note:** The **Username** must be a unique identifier across APISpark platform (a message will inform you in case the **Username** you chose is already taken). This **Username** may only contain alphanumeric characters, hyphens and underscores, and cannot begin with an hyphen or underscore.  
+The **Secret key** entered must contain at least 8 characters.
+App members are automatically assigned the *User* role.
