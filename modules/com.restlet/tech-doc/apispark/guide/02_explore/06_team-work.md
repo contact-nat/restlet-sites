@@ -60,14 +60,12 @@ Select a role for your member in the drop-down menu (Manager, Operator, Develope
 
 ## Members with App accounts
 
-As the manager of an application backed by an APISpark Full Stack API (or Connector), you may want the end-users of your application that do not have APISpark accounts to be able to authenticate themselves to your application which is backed by the API by using an "App account".
-App accounts behave like standard accounts described above except that they will not allow access to APISpark Dashboard at this stage.
+App accounts make it easy for end-users without an APISpark account to connect to protected APISpark APIs.
 
-As an API manager, you will be able to create new App accounts via the **Members** tab of your API, which will result in the App account being immediately and automatically added as an App member of this API.
+As the manager of an APISpark Full Stack API (or Connector), you can manually create App accounts and share their credentials directly with your end-users who can then authenticate themselves.
 
-App accounts allow API consumers to invoke an API using their App member credentials for that particular API.
 
-To create a new App member to a cell (Full Stack API or Connector):
+To create a new App member on a Full Stack API (or Connector):
 
 From the web API **Overview** page, click on the **Members** tab.  
 In the **Members** section, click on the **Add** button.  
@@ -79,6 +77,8 @@ Enter the App account details: **First name**, **Last name**, **Email**, **Usern
 
 ![App account details](images/app-account-details.jpg "App account details")
 
->**Note:** The **Username** must be a unique identifier across APISpark platform (a message will inform you in case the **Username** you chose is already taken). This **Username** may only contain alphanumeric characters, hyphens and underscores, and cannot begin with an hyphen or underscore.  
+The new account will automatically be added as a member of the API. You can now also add this account as a member of other APIs by searching for an existing member.
+
+>**Note:** The **Username** must be a unique identifier across the APISpark platform (a message will inform you in case the **Username** you chose is already taken). This **Username** may only contain alphanumeric characters, hyphens and underscores, and cannot begin with an hyphen or underscore.  
 The **Secret key** entered must contain at least 8 characters.
 App members are automatically assigned the *User* role.
