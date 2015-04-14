@@ -41,3 +41,28 @@ Add members to a group by clicking on the **+ Add a member** button of the selec
 Cell members destined to consume your API should be given role *User*. This means the member will be able to consult the API's documentation, but will not be able to modify the API in any way.
 
 By default, new members are given role *User*.
+
+# Creating App accounts
+
+App accounts make it easy for end-users without an APISpark account to connect to protected APISpark APIs.
+
+As the manager of an APISpark Full Stack API (or Connector), you can manually create App accounts and share their credentials directly with your end-users who can then authenticate themselves.
+
+To create a new App member on a Full Stack API (or Connector):
+
+From the web API **Overview** page, click on the **Members** tab.  
+In the **Members** section, click on the **Add** button.  
+In the window that displays, select **New local member** from the **Member** drop-down menu.
+
+![Add a new local member](images/add-new-local-member.jpg "Add a new local member")
+
+Enter the App account details: **First name**, **Last name**, **Email**, **Username** and **Secret key** (all fields are required except **Email**).
+
+![App account details](images/app-account-details.jpg "App account details")
+
+The new account will automatically be added as a member of the API.  
+You can now also add this account as a member of other APIs by searching for an existing member.
+
+>**Note:** The **Username** must be a unique identifier across the APISpark platform (a message will inform you in case the **Username** you chose is already taken). This **Username** may only contain alphanumeric characters, hyphens and underscores, and cannot begin with an hyphen or underscore.  
+The **Secret key** entered must contain at least 8 characters.  
+App members are automatically assigned the *User* role.

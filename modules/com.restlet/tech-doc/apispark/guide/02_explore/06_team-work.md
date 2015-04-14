@@ -36,8 +36,6 @@ Depending on the role given to a member, s/he will have different permissions in
 
 # Managing members
 
-## Members with standard accounts
-
 To manage the members of a cell, navigate to the cell's **Members** tab.
 
 From here, you can add, delete members, and attribute roles to members.
@@ -56,29 +54,3 @@ Select the appropriate account and click on the **Add** button.
 Select a role for your member in the drop-down menu (Manager, Operator, Developer or User).
 
 >**Note:** To add a member, s/he must have signed in to APISpark before.
-
-
-## Members with App accounts
-
-App accounts make it easy for end-users without an APISpark account to connect to protected APISpark APIs.
-
-As the manager of an APISpark Full Stack API (or Connector), you can manually create App accounts and share their credentials directly with your end-users who can then authenticate themselves.
-
-
-To create a new App member on a Full Stack API (or Connector):
-
-From the web API **Overview** page, click on the **Members** tab.  
-In the **Members** section, click on the **Add** button.  
-In the window that displays, select **New local member** from the **Member** drop-down menu.
-
-![Add a new local member](images/add-new-local-member.jpg "Add a new local member")
-
-Enter the App account details: **First name**, **Last name**, **Email**, **Username** and **Secret key** (all fields are required except **Email**).
-
-![App account details](images/app-account-details.jpg "App account details")
-
-The new account will automatically be added as a member of the API. You can now also add this account as a member of other APIs by searching for an existing member.
-
->**Note:** The **Username** must be a unique identifier across the APISpark platform (a message will inform you in case the **Username** you chose is already taken). This **Username** may only contain alphanumeric characters, hyphens and underscores, and cannot begin with an hyphen or underscore.  
-The **Secret key** entered must contain at least 8 characters.
-App members are automatically assigned the *User* role.
