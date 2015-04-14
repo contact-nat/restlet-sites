@@ -18,7 +18,7 @@ https://apispark.restlet.com/signin" target="_blank">sign in</a> to your APISpar
 
 Create a new Entity Store. Click on **+ Entity Store**, select the "Full stack" **Type** and enter the **Name** "myStore".
 
-![Create an Entity Store](images/create-entity-store.png "Create an Entity Store")
+![Create an Entity Store](images/create-entity-store.jpg "Create an Entity Store")
 
 Click on the **Add** button to create the new Entity Store.
 
@@ -28,15 +28,15 @@ You will be taken to the new Entity Store's **Overview page**.
 
 Click on the **Add** button next to **Entities** in the left panel to create a new Entity. Name the new Entity **Contact**.
 
-![Add an entity](images/add-an-entity.png "Add an Entity")
+![Add an entity](images/add-an-entity.jpg "Add an Entity")
 
-To add **Properties** to an entity, select the Entity from the **Entities** menu on the left and click on **+ Add a property** in the central panel.
+To add **Properties** to an entity, select the + button to the right of this entity.
 
-We are going to create three properties named *lastName*, *firstName* and *age*. Note that the *id* property was created automatically.
+We are going to create three properties named *firstName*, *lastName* and *age*. Note that the *id* property was created automatically.
 
-For each property you create, you can choose a data type, cardinality and default value. You can also decide if the property can take a *null* value.
+For each property you create, you can choose a **Type**, a **Default value**, make it **Optional** or a **List**.
 
-![Add a property](images/add-a-property.png "Add a property")
+![Add a property](images/add-a-property.jpg "Add a property")
 
 ## 1.3 Deploy the Entity Store
 
@@ -64,7 +64,7 @@ Click on the **Add** button. Your first contact should be displayed like so:
 
 ## 2.1 Export an API from the Entity Store
 
-From the Entity Store **Overview**, click on the actions button to the right of the **Deploy** button.
+From the Entity Store **Overview**, click on the actions button to the left of the **Deploy** button.
 
 ![Export web API](images/export-web-api.jpg "Export web API")
 
@@ -90,19 +90,25 @@ The API should now be accessible online. To reach it, use the subdomain of apisp
 
 ![credentials](images/credentials.jpg "credentials")
 
-The credentials required to invoke the API are located in the **Overview** tab, by selecting the relevant **Endpoint**. You will need to copy the **Endpoint URI**, **Login** and **Password** information for the next step.
+The credentials required to invoke the API are located in the **Overview** tab, by selecting the relevant **Endpoint**.
 
 # 3. Invoke the web API
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls. The following figure shows the call to the Contacts API with POSTMAN.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
-When using POSTMAN, click on the **Basic Auth** tab, fill in the **Username** and **Password** fields with the information copied from your APISpark **Endpoint**. Fill in the **Endpoint URI** and add **/contacts/** at the end of it.
+From the **Overview** tab of your API, select the appropriate Endpoint.  
+From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
 
-Click the **Send** button.
+![Try it out!](images/swagger-button.jpg "Try it out!")
 
-The following figure shows the API call in POSTMAN.
+The Swagger UI opens in a new tab.  
+Your credentials are pre-filled in the two fields on top of the screen.
 
-![Invoke your API with Postman](images/postman.jpg "Invoke your API with Postman")
+![Swagger UI](images/swagger-ui.jpg "Swagger UI")
+
+Scroll down to the bottom of the page and click on the **Try it out!** button to invoke your API.
+
+![Swagger Try it out button](images/swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 >**Note:** APISpark lets you generate custom Client SDKs for your API. Different environments are supported including Java, Android, GWT and JavaScript (AJAX or Node.js).
 
