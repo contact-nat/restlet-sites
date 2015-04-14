@@ -40,6 +40,23 @@ Navigate to the **Settings** tab and select the appropriate formatting from the 
 
 ![Representation formatting](images/representation-formatting.jpg "Representation formatting")
 
+## Collection formatting
+
+By default, collections are represented as *lists of items*.
+You can determine whether you want your API to return results represented as lists of items as shown below;
+
+![Collections represented as lists](images/collections-as-lists.jpg "Collections represented as lists")
+
+or whether you want your API to return results represented *within a wrapper* (an {entity}List entity is automatically created for each new entity added).
+
+![Collections within a wrapper](images/collections-within-wrapper.jpg "Collections represented within a wrapper")
+
+This setting can be changed from the **General** section of the API **Settings** tab.
+
+![Change collections formatting](images/change-collection-formatting.jpg "Change collections formatting")
+
+>**Note:** You will need to synchronize each store imported and then redeploy your API in order for your changes to be taken into account.
+
 # Variants
 
 A **Representation** has one or more **Variants** which determine how the representation is formatted, serialized, and deserialized.

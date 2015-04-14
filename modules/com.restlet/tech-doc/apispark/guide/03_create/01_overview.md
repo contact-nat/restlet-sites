@@ -5,7 +5,7 @@ These two types of cells are built to work together, and APISpark provides tools
 
 In this section we look at different ways to automatically create a web API from existing Data Stores.
 
-# Export a web API from a Data Store
+# 1. Export a web API from a Data Store
 
 You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](/technical-resources/apispark/guide/store/entity-stores/model-data "Entity Store") or the [File Store](/technical-resources/apispark/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
 
@@ -13,17 +13,46 @@ You can automatically export a web API from a Data Store. If you do not already 
 
 The API export process can be launched from the Data Store **Overview**. Click on the action arrow and select **Export web API**.
 
-![export custom API](images/exportfromstore.png "export custom API")
+![export custom API](images/export-from-store.jpg "export custom API")
 
 In the **Create a Web API** dialog, give your API a **Name**, **Domain**, and **Description** (optional).
 
 The window will notify you of the availability of the the domain name.
 
-![Create a web API](images/exportapi.png "Create a web API")
+![Create a web API](images/export-api.jpg "Create a web API")
 
-  > **Note:** When checked, **Add resources automatically** will create web API resources and representations that map towards the entities in your Entity Store. This is the recommended behavior.
+## Customize settings
 
-# Import a data store into an existing web API
+You can create your web api as is or start customizing it with the different settings available from the creation wizard.
+
+![Customize settings](images/customize-settings.jpg "Customize settings")
+
+### Read-only API
+In read-only mode, only GET calls are allowed.
+You can change this setting afterwards from the API **Settings** tab by clicking the store imported in the left section.
+
+![Read-only API](images/read-only-api.jpg "Read-only API")
+
+### Default permissions
+Selecting **No authentication required** means that your API default permissions for all methods are set to **Anyone**.
+
+For more information on default permissions, jump to the [Runtime permissions](/technical-resources/apispark/guide/publish/secure/runtime-permissions "Runtime permissions") section of our user guide.
+
+### Collection formatting
+
+By default, collections are represented as lists of items but you can change this setting to obtain a wrapper representation (an {entity}List entity is automatically created for each new entity).
+
+For more information on collection formatting, jump to the [Representations](/technical-resources/apispark/guide/create/edit/representations "Representations") section of our user guide.
+
+### Representation formatting
+By default your API returns all values. You can change this setting to include all values except null values or all values except null and empty values.
+
+For more information on representations, jump to the [Representations](/technical-resources/apispark/guide/create/edit/representations "Representations") section of our user guide.
+
+### Sample data
+The sample data text area gives you an idea of the syntax of the results returned according to the collection and representation formatting selected above.
+
+# 2. Import a data store into an existing web API
 
 As a complement to the Export API feature, APISpark lets you import one or more Data Stores into an existing web API.
 
