@@ -18,7 +18,7 @@ Depending on the primary key policy you chose for a given entity, the value prim
 
 ## Delete data
 
-You may delete your Entity Store entries one by one but if you need to delete all entries at once, use the **Delete all** button.  
+You may delete your Entity entries one by one but if you need to delete all entries at once, use the **Delete all** button.  
 Click the action button on the right of the **Delete** button and select **Delete all**.
 
 ![Delete all entries](images/delete-all-entries.jpg "Delete all entries")
