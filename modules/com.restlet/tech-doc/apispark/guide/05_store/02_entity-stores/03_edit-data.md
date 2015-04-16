@@ -6,13 +6,22 @@ In order to use the data browser, the Entity Store must be deployed first (see [
 
 If updates are made to the Entity Store's data model, the Entity Store will need to be redeployed in order for the data browser to update itself.
 
-## Editing data
+## Edit data
 
 The data browser lets you view existing data, add new entries, update existing entries, and delete entries.
+
+To open the data browser, select an Entity from the list in the left panel and click the **Browser** tab.
 
 ![Add](images/edit-data.jpg "Add")
 
 Depending on the primary key policy you chose for a given entity, the value primary key field will or will not be user-defined (see Primary key policy in [Model data section](/technical-resources/apispark/guide/store/entity-stores/model-data "Model data section")).
+
+## Delete data
+
+You may delete your Entity Store entries one by one but if you need to delete all entries at once, use the **Delete all** button.  
+Click the action button on the right of the **Delete** button and select **Delete all**.
+
+![Delete all entries](images/delete-all-entries.jpg "Delete all entries")
 
 # Backup and restore data
 
