@@ -1,11 +1,26 @@
 
-A web API has a set of **Representations** that are used as input and output types for the API's resource methods.
+A web API has a set of **Representations** that describe the API input and output data.
 
 A **Representation** has a **Name** and a **Description** (optional), and is composed of **Properties** which hold values.
 
+<!--
+An API e.g. `api/contacts/{id}` returns a `Contact` representation
+
+XXXXXXXXXXXXX
+```json
+{
+  "id" : "XXXid",
+  "lastName" : "Smith",
+  "age" : 27,
+  "firstName" : "John"
+}
+```
+
+-->
+
 To edit a web API's **Representations**, navigate to the web API's **Overview**. The API's representations are listed in the **Representations** section in the left panel.
 
-Once you have select a **Representation**, you can view its properties.
+Once you have selected a **Representation**, you can view its properties.
 
 Representation properties have a **Name**, **Description**, **Datatype** and  belong to a section.
 
@@ -17,7 +32,7 @@ Representations are composed of properties. A Representation property has a numb
 
 ![Representation properties](images/representation-properties.jpg "Representation properties")
 
-You can modify the following attributes for an existing Representation property. The remaining attributes will be modified from the Entity Store instead of the API.
+You can modify the following attributes for an existing Representation property. The remaining attributes are in read-only mode as they are linked to the data store. You will thus be able to modify them from the data store instead of the API.
 
 ### Name
 
