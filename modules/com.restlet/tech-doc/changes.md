@@ -1,3 +1,12 @@
+v3.6.0
+
+APISpark documentation update (6A):
+- Try it out with Swagger UI button
+- App accounts creation
+- Copy buttons for Endpoint UIR, User name and Secret key
+- Customized settings in "Create a web API" window
+- Collection formatting (represented within a wrapper or as a list of items by default)
+
 v3.5.0
 
 APISpark documentation improvements
