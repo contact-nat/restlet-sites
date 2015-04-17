@@ -110,6 +110,6 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 
 ![Swagger Try it out button](images/swagger-try-it-out-button.jpg "Swagger Try it out button")
 
->**Note:** APISpark lets you generate custom Client SDKs for your API. Different environments are supported including Java, Android, GWT and JavaScript (AJAX or Node.js).
+>**Note:** APISpark lets you generate custom Client SDKs for your API. Different environments are supported including Java, Android, iOS and JavaScript (AJAX or Node.js).
 
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.
