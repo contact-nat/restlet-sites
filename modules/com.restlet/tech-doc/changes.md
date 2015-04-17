@@ -1,3 +1,10 @@
+v3.7.0
+
+APISpark documentation update (7A):
+- API client SDKs
+- Entity Store flexible schemas (removed data stores lifecycle related parts)
+- Delete all data from entity
+
 v3.6.0
 
 APISpark documentation update (6A):

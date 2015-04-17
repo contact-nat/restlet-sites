@@ -26,7 +26,7 @@ In the **Imports** section, click on the **Add** button. From the **Bucket** dro
 
 Click on the **Folders** tab and on the **Add folders** button to create the associated folders.
 
-![Add folders](images/aws-add_folders.jpg "Add folders")
+![Add folders](images/aws-add-folders.jpg "Add folders")
 
 If your bucket contains several root folders, associated folders are created for each of them. You can then explore the folders individually by clicking on them.
 

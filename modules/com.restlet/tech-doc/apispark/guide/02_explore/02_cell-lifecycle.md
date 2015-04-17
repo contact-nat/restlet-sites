@@ -33,3 +33,6 @@ Archived state is only used for storage of cells that are no longer used. If you
 #### Deleted
 
 Once a cell is deleted, it no longer exists in any dashboards and is no longer reachable.
+
+
+>**Note:** Data stores (Entity Stores, Files Stores and Wrappers) are excluded from the cell lifecyle process i.e. they cannot be published, versioned, etc.
