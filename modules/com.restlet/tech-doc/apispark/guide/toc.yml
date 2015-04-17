@@ -159,8 +159,8 @@ toc:
     - file: 02_client-sdk.md
       id: client-sdk
       link_url: /04_publish/02_publish/02_client-sdk.md
-      long-title: Generate custom client SDKs
-      title: Client SDKs
+      long-title: Download custom client SDKs and server skeletons
+      title: Client SDKs and server skeletons
       url: /publish/publish/client-sdk
     - file: 03_documentation.md
       id: documentation
