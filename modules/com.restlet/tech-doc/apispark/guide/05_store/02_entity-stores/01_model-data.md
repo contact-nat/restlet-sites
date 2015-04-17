@@ -123,7 +123,11 @@ For example, to see your API representation in JSON format, open your API **Over
 
 ![JSON sample data](images/json-sample-data.jpg "JSON sample data")
 
+# Edit an Entity Store schema
 
+You can modify your Entity Store schema e.g. add a property or an entity without losing the data stored inside. Of course if you delete a property or entity, you will lose the data associated.
+
+>**Note:** Once you have deployed your Entity Store, you will not be able to edit a property's name or its type and you will not be able to change an entity's name or its primary key policy.
 
 <!--
 There are three types of relations available: association, aggregation, and composition.
