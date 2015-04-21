@@ -12,7 +12,7 @@ To follow this tutorial, you will need:
 
 # 1. Prepare the SQL Data Source
 
-In this tutorial example, we create an SQL table named **T_ADDRESS** with the following fields:
+In this tutorial example, we create an SQL table named **T_CONTACT** with the following fields:
 
 <li>**ID** (varchar): primary key</li>
 <li>**FIRST_NAME** (varchar): first name</li>
@@ -56,7 +56,7 @@ GRANT ALL PRIVILEGES on apispark.T_CONTACT TO 'username'@'%';
 FLUSH PRIVILEGES;
 </pre>
 
->**Note:** you can grant privileges on all tables by replacing T_ADDRESS by \* and on all databases by replacing apispark by \*.
+>**Note:** you can grant privileges on all tables by replacing T_CONTACT by \* and on all databases by replacing apispark by \*.
 
 
 # 2. Create an SQL Wrapper
@@ -67,33 +67,31 @@ If you have not already done so, <a href="https://apispark.restlet.com/signin" t
 
 Create a new Entity Store. Click on **+ Entity Store**, select the "SQL Wrapper" **Type** and enter the **Name** "mySQLWrapper".
 
-![Create an SQL Wrapper](images/create-sql-wrapper.png "Create an SQL Wrapper")
+![Create an SQL Wrapper](images/create-sql-wrapper.jpg "Create an SQL Wrapper")
 
 Input a description if you wish.
 
-Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Overview**.
+Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** tab.
 
 ## 2.2 Configure Wrapper security settings
 
-Click on the **Settings** tab.
+In the **Security** section, click on **SQL Source**.
 
-In the **Security** drop-down menu, click on **SQL Source**.
-
-Select the **Driver** (database type) and input the **Host name**, **Port number**, **Username** and **Password**.
+Select the **Driver** (database type) and input the **Host name**, **Port number**, **User** name and **Password**.
 
 Click on the **Test** button to test the connection.
 
-![Add an SQL source](images/add-sql-wrapper-source.png "Add an SQL source")
+![Add an SQL source](images/add-sql-wrapper-source.jpg "Add an SQL source")
 
->**Note:** you need to make sure that the APISpark IP addresses indicated in the Firewall field are authorized to access your database from the internet.
+>**Note:** depending on your configuration, you may need to configure your firewall in order to authorize APISpark IP addresses to access your database from the internet. Feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a> if you need help.
 
 ## 2.3 Import a Catalog
 
-From the **Settings** tab, click on **Import a catalog**.
+From the **Settings** tab, click on the **Add** button of the Imports section.
 
 The catalog list contains all the databases visible by the specified user. Select the **Catalog** you wish to import and click on the **Import catalog** button.
 
-![Add a Catalog](images/import-sql-catalog.png "Add a Catalog")
+![Add a Catalog](images/import-sql-catalog.jpg "Add a Catalog")
 
 Under the **Imports** dropdown, click on the **Catalog** you selected. It will open its **Overview** tab.
 
@@ -101,13 +99,13 @@ Next, click on the **Entities** tab.
 
 Click on the **Add entities** button.
 
-![Add a Catalog](images/add-entities-sql.png "Add a Catalog")
+![Add a Catalog](images/add-entities-sql.jpg "Add a Catalog")
 
 This automatically creates entities based on the imported tables. APISpark automatically renames the entities and their properties during this operation.
 
 Our Entity Store now contains an Entity called *Contact*.
 
-![New entities](images/new-sql-entities.png "Add a Catalog")
+![New entities](images/new-sql-entities.jpg "New SQL entities")
 
 The *Contact* entity’s properties correspond to the columns present in the matching database table.
 
@@ -117,13 +115,13 @@ Click on the **Deploy** button to deploy the Wrapper.
 
 # 3. Export a Web API
 
-From the Wrapper's **Overview** page, click on the action button on the right of the **Deploy** button and select **Export web API**.
+From the Wrapper's **Overview** page, click on the action button on the left of the **Deploy** button and select **Export web API**.
 
-![Export web API](images/export-api-from-sql.png "Export web API")
+![Export web API](images/export-api-from-sql.jpg "Export web API")
 
 Give your new API a name. We named ours **My Address Book API**.
 
-![Create web API](images/create-api-from-sql.png "Create web API")
+![Create web API](images/create-api-from-sql.jpg "Create web API")
 
 The domain will be created automatically but may not be available anymore so make sure to adjust it.
 
@@ -131,22 +129,25 @@ Click on **Add** to create the API. You will be taken to the API's **Overview** 
 
 Deploy the API by clicking the **Deploy** button.
 
-![Deploy button](images/deploy-button2.jpg "Deploy button")
+![Deploy button](images/deploy-button-address-book.jpg "Deploy button")
 
 # 4. Invoke the Web API
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Chrome extensions POSTMAN and DHC that provide a graphical user interface to perform HTTP calls.
-The following figure shows the call to the Contacts API with POSTMAN.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
-The credentials required to invoke the API can be found in the **Overview** tab, by clicking on the relevant **Endpoint**. You will need to copy the **Endpoint URI**, **Login** and **Password** information for the next step.
+From the **Overview** tab of your API, select the appropriate Endpoint.  
+From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
 
-When using POSTMAN, click on the **Basic Auth** tab, fill in the **Username** and **Password** fields with the information copied from your APISpark **Endpoint**. Fill in the **Endpoint URI** and add **/contacts/** at the end of it.
+![Try it out!](images/02swagger-button.jpg "Try it out!")
 
-Click the **Send** button.
+The Swagger UI opens in a new tab.  
+Your credentials are pre-filled in the two fields on top of the screen.
 
-The following figure shows the API call in POSTMAN.
+![Swagger UI](images/02swagger-ui.jpg "Swagger UI")
 
-![Invoke with POSTMAN](images/postman-gsheet.jpg "Invoke with POSTMAN")
+Scroll down to the bottom of the page and click on the **Try it out!** button to invoke your API.
+
+![Swagger Try it out button](images/02swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 Any POST requests made to the API will result in new data being created in your SQL database. Likewise, any data manually inserted via your SQL DBMS is visible via the custom web API.
 
