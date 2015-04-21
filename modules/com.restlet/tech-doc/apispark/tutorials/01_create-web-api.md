@@ -99,16 +99,16 @@ Using a web API does not impose any particular programming language. It can even
 From the **Overview** tab of your API, select the appropriate Endpoint.  
 From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
 
-![Try it out!](images/swagger-button.jpg "Try it out!")
+![Try it out!](images/01swagger-button.jpg "Try it out!")
 
 The Swagger UI opens in a new tab.  
 Your credentials are pre-filled in the two fields on top of the screen.
 
-![Swagger UI](images/swagger-ui.jpg "Swagger UI")
+![Swagger UI](images/01swagger-ui.jpg "Swagger UI")
 
 Scroll down to the bottom of the page and click on the **Try it out!** button to invoke your API.
 
-![Swagger Try it out button](images/swagger-try-it-out-button.jpg "Swagger Try it out button")
+![Swagger Try it out button](images/01swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 >**Note:** APISpark lets you generate custom Client SDKs for your API. Different environments are supported including Java, Android, iOS and JavaScript (AJAX or Node.js).
 

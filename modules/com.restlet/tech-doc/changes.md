@@ -5,6 +5,10 @@ APISpark documentation update (7A):
 - Entity Store flexible schemas (removed data stores lifecycle related parts)
 - Delete all data from entity
 
+Updated APISpark tutorials (Swagger UI button integration):
+- Create web api
+- Turn Gspreadsheet to api
+
 v3.6.0
 
 APISpark documentation update (6A):
