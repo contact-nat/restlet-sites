@@ -1,3 +1,7 @@
+v3.7.1
+
+Updated tutorials screenshots
+
 v3.7.0
 
 APISpark documentation update (7A):
