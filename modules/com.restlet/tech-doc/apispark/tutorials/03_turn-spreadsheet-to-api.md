@@ -114,7 +114,7 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button2.jpg "Deploy button")
 
-# 8. Invoke the web API
+# 7. Invoke the web API
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
@@ -130,7 +130,7 @@ Your credentials are pre-filled in the two fields on top of the screen.
 
 Scroll down to the bottom of the page and click on the **Try it out!** button to invoke your API.
 
-![Swagger Try it out button](images/01swagger-try-it-out-button.jpg "Swagger Try it out button")
+![Swagger Try it out button](images/03swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 Note that any POST requests made to the API will result in new data being created in your Google Spreadsheet. Likewise, any data manually inserted via the Google Spreadsheet is visible via the custom web API.
 
