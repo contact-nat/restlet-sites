@@ -9,7 +9,7 @@ To configure default permissions for an API, go to the **Settings** tab, and sel
 ![default permissions](images/default-permissions.jpg "default permissions")
 
 >**Note:** Select the **Anyone** checkbox to give rights to anyone including anonymous users who consume public APIs.
-
+Editing default permissions only affects resources that will be created afterwards. Previously created resources will stick to the former default permissions. 
 
 ## Configure method level access
 
