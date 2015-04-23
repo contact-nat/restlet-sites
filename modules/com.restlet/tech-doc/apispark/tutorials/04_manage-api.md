@@ -17,6 +17,8 @@ Click on the **Add** button to create the new web API Connector. You will be tak
 
 In the **Endpoints** section, click on the **Add** button to add an Endpoint to your Connector.
 
+![Add an endpoint](images/add-an-endpoint.jpg "Add an endpoint")
+
 # 2. Configure the authentication feature
 
 ## 2.1. Enable the authentication feature
@@ -24,15 +26,15 @@ In the **Endpoints** section, click on the **Add** button to add an Endpoint to 
 First of all, you will want to enable the authentication feature of the Connector you just created.  
 To do so, click on the **Settings** tab.  
 In the **Connector** section, select **Management features**.  
-Select the **Authentication** checkbox in the central panel.
+Select the **Authentication** checkbox in the central panel and click **Save**.
 
-![Enable authentication](images/enable-authentication.png "Enable authentication")
+![Enable authentication](images/enable-authentication.jpg "Enable authentication")
 
 ## 2.2. Add members to your web API
 
 To add new consumers to your API, create new members from the **Members** tab.
 
-![Add members](images/add-members.png "Add members")
+![Add members](images/add-members.jpg "Add members")
 
 Members of your web API Connector will be able to consume it once it has been deployed. A set of credentials will be auto-generated for each of them.
 
@@ -42,19 +44,35 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 You can now **Deploy** your web API Connector.
 
-# 3. Plug the agent to the web API
+# 3. Import your web API definition
 
-## 3.1. Launch your web API
+APISpark needs your web API contract to be able to access it.
+
+Click on the action button on top right of your screen and select Import definition.
+
+![Import definition](images/import-definition.jpg "Import definition")
+
+In the **Import definition** wizard, enter your API definition (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
+
+![Import definition wizard](images/import-def-wizard.jpg "Import definition wizard")
+
+You can see the content of your API in the **Resources** and **Representations** sections.
+
+![Your API definition](images/your-api-definition.jpg "Your API definition")
+
+# 4. Plug the agent to the web API
+
+## 4.1. Launch your web API
 
 If you have a web API running, make sure it is running. Otherwise just make GET calls on this sample web API:
 
 [https://rsreferenceapi.apispark.net/v1/contacts/](https://rsreferenceapi.apispark.net/v1/contacts/)
 
-## 3.2. Launch the agent
+## 4.2. Launch the agent
 
 The agent is available for download from the **Remote agent** page: click on the **Settings** tab and select **Remote agent** from the **Connector** section.
 
-![Download the agent](images/download-agent.png "Download the agent")
+![Download the agent](images/download-agent.jpg "Download the agent")
 
 You will download a zip file containing the jar and an empty configuration file. To learn how to configure the agent, please take a look at this [specific documentation](https://restlet.com/technical-resources/apispark/guide/manage/remote-agent) in the section **Configure the Agent**.
 
@@ -64,17 +82,17 @@ Once your agent is configured, launch it with the following command line:
 java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.jar
 ```
 
-# 4. Invoke the web API
+# 5. Invoke the web API
 
-Now that your environment is all set, call the agent (e.g. send GET calls to `http://localhost:8000/contacts/`) with and without providing valid credentials.
+Now that your environment is all set, you can call the agent with Swagger UI for example.
 
-## 4.1. Calling the API with invalid credentials
+From the **Overview** tab, select your Endpoint from the left panel and click the **swagger** button.
 
-![Invalid call](images/invalid-call.png "Invalid call")
+![Click the swagger button](images/connector-swagger-button.jpg "Click the swagger button")
 
-## 4.2. Calling the API with valid credentials
+A new tab opens with a test interface. Note that your credentials are filled in automatically.
 
-![Valid call](images/valid-call.png "Valid call")
+![your API](images/connector-swagger-ui.jpg "your API")
 
 Your API is now protected with authentication.
 
