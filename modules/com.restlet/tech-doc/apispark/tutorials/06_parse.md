@@ -52,19 +52,17 @@ Create a new Parse Wrapper Entity Store. Click on **+ Entity Store**, select the
 
 Click on the **Add** button to create the new Wrapper.
 
-You will be taken to the new Wrapper's **Overview page**.
+You will be taken to the new Wrapper's **Settings** tab.
 
 ## 2.2. Configure your Parse account
 
-Click on the **Settings** tab.
-
-In the **Security** drop down, click on **Parse Account**.
+In the **Security** section, click on **Parse Account**.
 
 Paste your **Application ID** and **REST API** keys.
 
 Click on the **Test** button.
 
-![Configure your Parse account](images/configure-parse-account.png "Configure your Parse account")
+![Configure your Parse account](images/configure-parse-account.jpg "Configure your Parse account")
 
 ## 2.3 Add an entity
 
@@ -72,11 +70,11 @@ Parse does not expose metadata about its data store. Therefore the structure or 
 
 To do so, click on the **Overview** tab.
 
-Click on **Add an entity**.
+**Add** an entity.
 
 Name your **Entity**. In this tutorial example, we will name it **Contact** and add three properties to it: firstName, lastName and age.
 
-![Add an entity](images/add-parse-entity.png "Add an entity")
+![Add an entity](images/add-parse-entity.jpg "Add an entity")
 
 >**Note:** Your **Entity** elements and the **Schema** elements from Parse.com do not have to match up perfectly. For this purpose, you can
 	use the **Mapped from** attribute on the entity and its fields. This allows you to specify the name of the target element (entity or property) in Parse.
@@ -87,11 +85,11 @@ When your **Entity Store** has been deployed, you can export it as a new web API
 
 # 3. Export a Web API
 
-From the Wrapper's **Overview** page, click on the actions button on the right of the **Deploy** button and select **Export web API**.
+From the Wrapper's **Overview** page, click on the actions button on the left of the **Deploy** button and select **Export web API**.
 
 Give your new API a name. We named ours **myAPI**.
 
-![Create a web API](images/domain-name-unavailable.jpg "Create a web API")
+![Create a web API](images/parse-export-web-api.jpg "Create a web API")
 
 The domain will be created automatically but may not be available anymore so make sure to adjust it.
 
@@ -101,20 +99,23 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button2.jpg "Deploy button")
 
-# 4. Invoke the Web API
+# 4. Invoke the web API
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Chrome extensions POSTMAN and DHC that provide a graphical user interface to perform HTTP calls.
-The following figure shows the call to the Contacts API with POSTMAN.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
-The credentials required to invoke the API can be found in the **Overview** tab, by clicking on the relevant **Endpoint**. You will need to copy the **Endpoint URI**, **Login** and **Password** information for the next step.
+From the **Overview** tab of your API, select the appropriate Endpoint.  
+From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
 
-When using POSTMAN, click on the **Basic Auth** tab, fill in the **Username** and **Password** fields with the information copied from your APISpark **Endpoint**. Fill in the **Endpoint URI** and add **/contacts/** at the end of it.
+![Try it out!](images/06swagger-button.jpg "Try it out!")
 
-Click the **Send** button.
+The Swagger UI opens in a new tab.  
+Your credentials are pre-filled in the two fields on top of the screen.
 
-The following figure shows the API call in POSTMAN.
+![Swagger UI](images/06swagger-ui.jpg "Swagger UI")
 
-![Invoke with POSTMAN](images/postman-gsheet.jpg "Invoke with POSTMAN")
+Scroll down to the bottom of the page and click on the **Try it out!** button to invoke your API.
+
+![Swagger Try it out button](images/01swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 Any POST requests made to the API will result in new data being created in your Parse backend. Likewise, any data manually inserted via your Parse backend's Data Browser is visible via the custom web API.
 
