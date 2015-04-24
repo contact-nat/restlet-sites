@@ -115,7 +115,7 @@ Your credentials are pre-filled in the two fields on top of the screen.
 
 Scroll down to the bottom of the page and click on the **Try it out!** button to invoke your API.
 
-![Swagger Try it out button](images/01swagger-try-it-out-button.jpg "Swagger Try it out button")
+![Swagger Try it out button](images/06swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 Any POST requests made to the API will result in new data being created in your Parse backend. Likewise, any data manually inserted via your Parse backend's Data Browser is visible via the custom web API.
 
