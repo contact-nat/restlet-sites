@@ -39,11 +39,9 @@ Select **Google Spreadsheet wrapper** and enter a name for your store . We named
 
 ![Create a spreadsheet wrapper](images/create-spreadsheet-wrapper.png "Create a spreadsheet wrapper")
 
-Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Overview** page.
+Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
 
 # 3. Setup a Google application-specific password
-
-From your new Wrapper's **Overview**, click on the **Settings** tab.
 
 In the **Security** section, click on **Google Account**.
 
