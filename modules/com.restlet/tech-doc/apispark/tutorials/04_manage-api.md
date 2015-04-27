@@ -84,7 +84,7 @@ java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.
 
 # 5. Invoke the web API
 
-Now that your environment is all set, you can call the agent with Swagger UI for example.
+Now that your environment is all set, you can call your API with Swagger UI for example.
 
 From the **Overview** tab, select your Endpoint from the left panel and click the **swagger** button.
 
