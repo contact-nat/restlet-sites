@@ -10,7 +10,7 @@ This guide does not explain how to configure AWS S3, but simply lists the inform
 
 # Configure your S3 File Store Wrapper
 
-Click on the **+File Store** button, select "AWS S3" from the **Type** drop-down menu, and give your store a name. In this example we named our store "AWS S3 File Store".
+Click on the **+File Store** button, select "AWS S3" from the **Type** drop-down menu, and give your store a name. In this example we named our store "myAWSS3Wrapper".
 
 ![Create AWS Store](images/create-aws-store.jpg "Create AWS Store")
 
