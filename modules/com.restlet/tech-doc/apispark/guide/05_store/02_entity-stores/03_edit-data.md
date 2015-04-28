@@ -14,6 +14,12 @@ To open the data browser, select an Entity from the list in the left panel and c
 
 ![Add](images/edit-data.jpg "Add")
 
+If your store contains more than 25 entries, they will be displayed in seperate pages. Each page contains 25 entries. You can navigate between the different pages via the button bar at the bottom of the table.
+
+![Data browser pages](images/data-browser-pagination.jpg "Data browser pages")
+
+This button bar allows you respectively to go to the **first page**, go to the **previous page**, enter a **page number**, go to the **next page**, go to the **last page** and **refresh the page**.
+
 Depending on the primary key policy you chose for a given entity, the value primary key field will or will not be user-defined (see Primary key policy in [Model data section](/technical-resources/apispark/guide/store/entity-stores/model-data "Model data section")).
 
 ## Delete data
