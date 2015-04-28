@@ -106,9 +106,18 @@ Use {customizable part} rather than <customizable part> which will not display:
 https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview
 
 ### Insert manual anchors
+
+#### Inside the same page
 To insert manual anchors, follow the syntax below:
 go to [Sparky](1)
----------
-# <a name="1"></a>Sparky
+
+<a name="1"></a>Sparky  
+
 The text in square brackets will display on the page as a clickable link.
-1 will not display.
+"1" will not display.
+
+#### Outside the page
+
+You will need to [synchronize](/technical-resources/apispark/guide/create/overview#synchronize "synchronize") each store imported.
+
+--> Add <a name="synchronize"></a> where you want to redirect the user
