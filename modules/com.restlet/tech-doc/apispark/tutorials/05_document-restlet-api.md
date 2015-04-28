@@ -210,4 +210,5 @@ From your **Dashboard**, open your **Descriptor** cell. Select the **Public** ch
 
 ![Make your Descriptor public](images/make-descriptor-public.jpg "Make your Descriptor public")
 
-You can then communicate the following link to your API users: https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview
+You can then communicate the following link to your API users:  
+<a style="pointer-events: none; cursor: default;" href="page.html">https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview</a>
