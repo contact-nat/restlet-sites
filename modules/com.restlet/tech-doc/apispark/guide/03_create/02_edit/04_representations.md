@@ -1,12 +1,10 @@
 
 A web API has a set of **Representations** that describe the API input and output data.
 
-A **Representation** has a **Name** and a **Description** (optional), and is composed of **Properties** which hold values.
+A **Representation** has a **Name** and a **Description** (optional), and is composed of **Properties** which hold values. There are *Raw* (without properties) and *Structured* representations.
 
-<!--
-An API e.g. `api/contacts/{id}` returns a `Contact` representation
+E.g. An API `/contacts/{id}` returns a `Contact` representation
 
-XXXXXXXXXXXXX
 ```json
 {
   "id" : "XXXid",
@@ -16,7 +14,14 @@ XXXXXXXXXXXXX
 }
 ```
 
--->
+It has different properties.
+
+- id *String*  
+- lastName *String*  
+- firstName *String*  
+- age *Integer*
+
+Properties can be *composite*, i.e. a property can contain other properties, e.g. a “contact” entity contains an “address” property which contains a “zip code” and “city” property.
 
 To edit a web API's **Representations**, navigate to the web API's **Overview**. The API's representations are listed in the **Representations** section in the left panel.
 
@@ -36,18 +41,22 @@ You can modify the following attributes for an existing Representation property.
 
 ### Name
 
-The property's name. You cannot edit the property's name of an API published version. To be able do edit it, you will need to revert to a draft version.
+The property's name.
+
+>**Note:** You cannot edit the property's name of an API published version. To be able do edit it, you will need to revert to a draft version.
 
 ### Hidden
 
-Select this checkbox so that the Representation properties are not included into client kits or when the API is invoked. You may want to include only part of your properties.
+Select this checkbox when the API is invoked or so that the Representation properties are not included into client kits. You may want to include only part of your properties.
 
 ### Sample value
 
-A sample value can be provided in this field. It will be suggested to the user when s/he adds a record.
+A sample value can be provided in this field. This value will be used to give you an idea of what your representation will look like in different formats (JSON, XML or YAML). From the API **Overview** tab, click on the Representation chosen and select the Variant you need.
 
 
 ## Representation formatting
+
+You may want to customize your API in order to choose whether output representations will contain properties with null values or not.
 
 From the **Settings** tab, you can determine whether you want your API to return all values, all values except null values or all values except null and empty values.
 
@@ -70,7 +79,7 @@ This setting can be changed from the **General** section of the API **Settings**
 
 ![Change collections formatting](images/change-collection-formatting.jpg "Change collections formatting")
 
->**Note:** You will need to synchronize each store imported and then redeploy your API in order for your changes to be taken into account.
+>**Note:** You will need to [synchronize](/technical-resources/apispark/guide/create/overview#synchronize "synchronize") each store imported and then redeploy your API in order for your changes to be taken into account.
 
 # Variants
 

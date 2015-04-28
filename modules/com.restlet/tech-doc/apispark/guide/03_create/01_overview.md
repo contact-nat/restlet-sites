@@ -92,7 +92,7 @@ Select an import from the left panel of the API's **Settings** tab, and click on
 If you update your Data Store, you can update the API's corresponding resources and representations by clicking on the **Update** button in the same window.
 -->
 
-### Synchronize your Entity Store with your API
+### <a name="synchronize"></a>Synchronize your Entity Store with your API
 
 If you deploy an Entity Store that is imported by a web API, you can update the web API's **Imports** to switch to the new deployed version of the Entity Store.
 
