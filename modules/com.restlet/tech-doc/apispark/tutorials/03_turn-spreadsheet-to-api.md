@@ -53,7 +53,7 @@ Head to your **Google Account Settings** <a href="
 https://www.google.com/settings/security?hl=en" target="_blank">**Security**</a> page and check that **2-step authentication is activated**. If **2-step authentication** is not activated, you need to activate it before proceeding.
 
 Once activated, go back to the <a href="
-https://www.google.com/settings/security?hl=en" target="_blank">**Security**</a> page, click on **Settings** and **App Passwords**. Generate a new application-specific password for APISpark. You will use it as your **Google Secret**.
+https://www.google.com/settings/security?hl=en" target="_blank">**Security**</a> page, click on **Settings** and near by click on **App Passwords**. Generate a new application-specific password for APISpark. You will use it as your **Google Secret**.
 
 ![Application specific passwords](images/google-app-password.png "Application specific passwords")
 
@@ -85,7 +85,7 @@ One entity will be created for each worksheet.
 
 ![Add spreadsheet entities](images/add-spreadsheet-entities.jpg "Add spreadsheet entities")
 
-In this case, a **Contacts** entity was automatically created. Entity properties are created based on the names of the columns in the first row of a worksheet.
+In this case, a **Contact** entity was automatically created. Entity properties are created based on the names of the columns in the first row of a worksheet.
 
 Go back to the Wrapper's **Overview** tab to view the new entities.
 
