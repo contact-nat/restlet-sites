@@ -123,7 +123,7 @@ For example, to see your API representation in JSON format, open your API **Over
 
 ![JSON sample data](images/json-sample-data.jpg "JSON sample data")
 
-# Edit an Entity Store schema
+# <a name="edit-schema"></a>Edit an Entity Store schema
 
 You can modify your Entity Store schema e.g. add a property or an entity without losing the data stored inside. Of course if you delete a property or entity, you will lose the data associated.
 
