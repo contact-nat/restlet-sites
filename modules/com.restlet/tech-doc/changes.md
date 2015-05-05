@@ -1,6 +1,13 @@
+
+v3.8
+
+APISpark documentation update (8A):
+- Hosted agent / standalone agent for connectors
+- Data browser pagination
+
 v3.7.1
 
-Updated tutorials screenshots
+Updated each tutorial and each interactive assistant tutorial
 
 v3.7.0
 

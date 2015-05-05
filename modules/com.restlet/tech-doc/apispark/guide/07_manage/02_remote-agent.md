@@ -1,6 +1,6 @@
 The features used by the *Remote Agent* are defined on your APISpark Dashboard, on the *Connector* cell.
 
-# Configure your Remote Agent
+# Configure your agent
 
 To enable or disable each feature:
 
@@ -19,9 +19,9 @@ For more information, jump to our [User Groups](/technical-resources/apispark/gu
 
 ## Authorization module
 
-By enabling the **Authorization** module, you activate the **Default Permissions** page and the **Security** section.
+By enabling the **Authorization** module, you activate the **General** section with the **Default permissions** page.
 
-You will find the **Default Permissions** page in the **Security** section of the **Settings** tab.
+You will find the **Default Permissions** page by clicking the **General** button in the **Settings** tab.
 
 ![Security tab](images/default-permissions.jpg "Security tab")
 
@@ -30,6 +30,8 @@ To go to the **Security** tab, navigate to the **Overview** tab and select a met
 ![Security tab](images/method-security.jpg "Security tab")
 
 Go to the [Runtime Permissions](/technical-resources/apispark/guide/publish/secure/runtime-permissions "Runtime Permissions") section to discover how to configure the access.
+
+>**Note:** The **Authorization** module requires the **Authentication** module to be activated.
 
 ## Firewall module
 
@@ -49,13 +51,13 @@ Once you have completed your settings, you need to deploy your *Connector* confi
 
 Click on the **Deploy** button to deploy your cell. Please go to the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page for further information.
 
-# Install your Remote Agent
+# Install your Standalone agent
 
-In order to plug the Connector services, you need to install the Agent in your Information System in front of your web API application.
+In order to plug the Connector services, you need to install the agent in your Information System in front of your web API application.
 
-Please follow the steps below to install the agent.
+Please follow the steps below to install the agent:
 
-## Download the Agent
+## Download the agent
 
 The agent is a standalone application and exists also as a Restlet Framework Service to use it embedded in a Restlet Framework application.
 
@@ -63,11 +65,11 @@ The agent is a standalone application and exists also as a Restlet Framework Ser
 
 ## Configure the Agent
 
-As explained before, APISpark Agent uses the modules that you have enabled in your APISpark Console.
+As explained before, APISpark agent uses the modules that you have enabled in your APISpark Console.
 
-The Agent retrieves its settings from APISpark and you need to configure the Agent first to communicate with your *Connector* cell.
+The agent retrieves its settings from APISpark and you need to configure the agent first to communicate with your Connector cell.
 
-The Remote Agent is configured from a properties file which is included in the downloaded file. This file looks like this:
+The Standalone agent is configured from a properties file which is included in the downloaded file. This file looks like this:
 
 ```ini
 agent.login=67b60a5d-c2b8-43a3-97b8-084d6ce60e10
@@ -107,7 +109,7 @@ Let's have a look at a full configuration example:
   reverseProxy.targetUrl=https://192.168.10.130:8080
   ```
 
-With the standalone Agent, the value of the `reverseProxy.enabled` key should be set to `true`.
+With the standalone agent, the value of the `reverseProxy.enabled` key should be set to `true`.
 
 ## Start the Agent
 
@@ -139,7 +141,7 @@ Use `--help` to have the full list of options.
 
 ### Sample case using a self signed certificate
 
-1. Generation of a self signed certificate into a keystore called `server-keystore.jks`
+1.Generation of a self signed certificate into a keystore called `server-keystore.jks`
 
 Achieve this step using `keytool`.
 
@@ -157,10 +159,9 @@ keytool -genkey\
  -validity 3650
 ```
 
-  > Note:
-  > The keystore is protected by a password.
+>**Note:** The keystore is protected by a password.
 
-2. Configure the agent to leveraging HTTPS and use this keystore
+2.Configure the agent to leveraging HTTPS and use this keystore
 
 Just add the following command line parameters:
 

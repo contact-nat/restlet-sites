@@ -18,18 +18,55 @@ The Connector Cell is defined in the APISpark console and holds the configuratio
 
 The APISpark Agent is set in front of your API, accesses this configuration, acts as a Reverse Proxy and provides the features you have enabled in the APISpark console on the incoming requests of your API.
 
-![APISPark remote agent](images/apispark-remote-agent.jpg "APISPark remote agent")
+You can either decide to host the agent on your own Information System or to host it directly on APISpark:
+
+## Hosted agent
+By default, APISpark hosts the agent. A hosted agent will be running directly within APISpark and will allow you to add management features to your API by proxying its traffic. if you choose hosted agent **Deployment mode**, you will be asked to choose a domain on apispark.net. A default HTTPS endpoint will be created using that domain.
+
+![hosted agent](images/hosted-agent-diagram.jpg "hosted agent")
+
+## Standalone agent
+A standalone agent can be downloaded and run on your own infrastructure, close to your application, to add management features to your API by proxying its traffic.
+
+![standalone agent](images/standalone-agent-diagram.jpg "standalone agent")
 
 # Create a Connector cell
 
 To create a Connector, go to the **Dashboard** and click on the **+Web API** button.
 
-In the **Create a web API** window, select **Connector** from the **Type** drop-down menu. You will be prompted to give your Connector a **Name** and a **Description** (optional).
+In the **Create a web API** window, select **Connector** from the **Type** drop-down menu.
 
-![Create a connector](images/create-connector.jpg "Create a connector")
+Select the appropriate **Deployment mode**:
 
-A Connector has the same properties as a [web API](/technical-resources/apispark/guide/create/overview "Web API") except that a connector is not hosted by the APISpark plateform.
+**Hosted agent**  
+The default configuration is *Hosted agent*.
+You are prompted to give your Connector a **Name** and a **Description** (optional). The **Domain** field is filled in automatically on the basis of the **Name** entered. If the domain is not available, a message informs you that you need to choose a unique domain.
+
+![Create a connector with a hosted agent](images/create-connector.jpg "Create a connector with a hosted agent")
+
+**Standalone agent**  
+You will be prompted to give your Connector a **Name** and a **Description** (optional).
+
+![Create a connector with a standalone agent](images/create-standalone-agent-connector.jpg "Create a connector with a standalone agent")
+
+
+A Connector has the same properties as a [web API](/technical-resources/apispark/guide/create/overview "Web API") except that a Connector is not hosted by the APISpark platform.
 
 With a Connector you can also document your web API as with a [Descriptor](/technical-resources/apispark/guide/document/overview "Descriptor").
 
-Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System, and that's all. Your web API has new features inside without writing a line of code!
+Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System (if you choose the standalone agent configuration), and that's all.  
+ Your web API has new features inside without writing a line of code!
+
+# Switch a connector cell deployment mode
+
+It is possible to switch between hosted or standalone configurations.  
+Switch from standalone agent to hosted agent deployment mode requires that you specify a domain name if one was not already chosen.
+>**Note:**  If you switch back to standalone agent configuration, the domain name is still reserved to this connector in case you would want to switch back.
+
+Domain creation is subject to the same rules as for full stack APIs. This also results in the creation of a new HTTPS endpoint that uses this domain.
+
+Navigate to the **Settings** tab and select **Remote agent** from the **Connector** section. Choose the *Hosted agent* or *Standalone agent* configuration from the **Deployment mode** drop-down menu.
+
+![Switch deployment mode](images/switch-deployment-mode.jpg "Switch deployment mode")
+
+**Save** your changes and **Deploy** your Connector so that your latest changes are taken into account.
