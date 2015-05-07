@@ -100,7 +100,9 @@ In order to build an Entity Store like this, create a "user" entity and a "comme
 
 ![Add a reference property](images/reference-example.jpg "Add a reference property")
 
-When a user posts a new *comment*, create a new *comment* element. Update the corresponding *user* element's *comments* property by adding the ID of the newly created *comment* to the list (comma seperated values).
+When a user posts a new *comment*, create a new *comment* element. Update the corresponding *user* element's *comments* property by adding the ID of the newly created *comment* to the list.
+
+![Add comments](images/add-comments-example.jpg "Add comments")
 
 ### List
 
