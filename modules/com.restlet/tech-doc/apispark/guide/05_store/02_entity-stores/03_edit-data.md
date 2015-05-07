@@ -20,8 +20,6 @@ If your store contains more than 25 entries, they will be displayed in seperate 
 
 This button bar allows you respectively to go to the **first page**, go to the **previous page**, enter a **page number**, go to the **next page**, go to the **last page** and **refresh the page**.
 
-Depending on the primary key policy you chose for a given entity, the value primary key field will or will not be user-defined (see Primary key policy in [Model data section](/technical-resources/apispark/guide/store/entity-stores/model-data "Model data section")).
-
 ## Delete data
 
 You may delete your Entity entries one by one but if you need to delete all entries at once, use the **Delete all** button.  
