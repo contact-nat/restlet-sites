@@ -5,6 +5,12 @@ org.restlet.client.ext.json.JsonRepresentation class that you can
 leverage to either parse a JSON representation received or to serialize
 a JSON value.
 
+Prior to leverage this extension, ensure to update your `module.gwt.xml` configuration file with the following instruction:
+
+```xml
+<inherits name="org.restlet.JSON" />
+```
+
 Here is a sample code taken from the example application. The
 JsonRepresentation gives access to the underlying JSONValue after the
 representation has been parsed.

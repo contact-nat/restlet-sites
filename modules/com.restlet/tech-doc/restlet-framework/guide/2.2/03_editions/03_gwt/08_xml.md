@@ -4,6 +4,12 @@ The GWT edition contains a XML extension that provides a
 org.restlet.client.ext.xml.DomRepresentation class that you can leverage
 to either parse a XML representation received or to serialize a XML DOM.
 
+Prior to leverage this extension, ensure to update your `module.gwt.xml` configuration file with the following instruction:
+
+```xml
+<inherits name="org.restlet.XML" />
+```
+
 Here is a sample code taken from the example application. The
 DomRepresentation gives access to the underlying DOM document via the
 "getDocument()" method.
