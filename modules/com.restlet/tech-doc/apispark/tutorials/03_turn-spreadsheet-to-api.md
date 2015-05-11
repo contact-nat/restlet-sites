@@ -1,7 +1,8 @@
 # Introduction
 
 This tutorial will show you how to create a custom web API that exposes data stored in a Google Spreasheet. <a href="
-http://docs.google.com/" target="_blank">Google Spreadsheet</a> is a popular collaborative data editing tool within the Google Docs suite.
+http://docs.google.com/" target="_blank">Google Spreadsheet</a> is a popular collaborative data editing tool within the Google Docs suite.  
+You can import one Google Spreadsheet per wrapper. If you need data from several Google Spreadsheets, create one wrapper per Google Spreadsheet and import them in one single API.
 
 # Requirements
 
