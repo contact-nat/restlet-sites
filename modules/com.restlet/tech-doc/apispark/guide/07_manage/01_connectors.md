@@ -26,7 +26,7 @@ By default, APISpark hosts the agent. A hosted agent will be running directly wi
 ![hosted agent](images/hosted-agent-diagram.jpg "hosted agent")
 
 ## Standalone agent
-A standalone agent can be downloaded and run on your own infrastructure, close to your application, to add management features to your API by proxying its traffic.
+A standalone agent can be downloaded and run on your own infrastructure in order to reduce lag as much as possible as the agent is very close to your hosted API. This agent allows you to add management features to your API by proxying its traffic.
 
 ![standalone agent](images/standalone-agent-diagram.jpg "standalone agent")
 
