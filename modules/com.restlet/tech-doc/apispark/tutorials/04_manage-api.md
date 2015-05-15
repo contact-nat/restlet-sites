@@ -33,7 +33,7 @@ Click on the **Add** button to create the new web API Connector. You will be tak
 
 Click on the **Settings** tab.
 In the **Connector** section, select **Agent details**.
-Enter a **Target endpoint** (here: http://rsreferenceapi.apispark.net/v1) and click **Save**.
+Enter a **Target endpoint** (here: https://rsreferenceapi.apispark.net/v1) and click **Save**.
 
 ![Define a Target endpoint](images/target-endpoint.jpg "Define a Target endpoint")
 
@@ -51,8 +51,6 @@ To add new consumers to your API, create new members from the **Members** tab.
 ![Add members](images/add-members.jpg "Add members")
 
 Members of your web API Connector will be able to consume it once it has been deployed. A set of credentials will be auto-generated for each of them.
-
-You can now **Deploy** your web API Connector.
 
 Each member of the Connector can use his/her credentials to consume the API. To get yours, go to the **Overview** page of the Connector and open the Endpoint you want to invoke.
 
@@ -73,6 +71,8 @@ In the **Import definition** wizard, enter your API definition (for this tutoria
 You can see the content of your API in the **Resources** and **Representations** sections.
 
 ![Your API definition](images/your-api-definition.jpg "Your API definition")
+
+You can now **Deploy** your web API Connector.
 
 ## 4. Invoke the web API
 
@@ -128,12 +128,11 @@ To add new consumers to your API, create new members from the **Members** tab.
 
 Members of your web API Connector will be able to consume it once it has been deployed. A set of credentials will be auto-generated for each of them.
 
-You can now **Deploy** your web API Connector.
-
 Each member of the Connector can use his/her credentials to consume the API. To get yours, go to the **Overview** page of the Connector and open the Endpoint you want to invoke.
 
 ![Connector credentials](images/connector-credentials.jpg "Connector credentials")
 
+>**Note:** Your credentials will only be accessible after your Connector first Deployment.
 
 ## 3. Import your web API definition
 
@@ -151,7 +150,7 @@ You can see the content of your API in the **Resources** and **Representations**
 
 ![Your API definition](images/your-api-definition.jpg "Your API definition")
 
-
+You can now **Deploy** your web API Connector.
 
 ## 4. Plug the agent to the web API
 
