@@ -4,10 +4,10 @@ APISpark provides a tool to manage an existing web API hosted outside of APISpar
 
 In this scenario, we will add authenticated access to an existing web API via the APISpark tool. If you do not have a running web API, you can use our sample API hosted on APISpark.
 
-You have two options:
-- **[hosted agent](hosted)**
-You can either create a connector with an agent hosted directly on APISpark or ;
-- **[standalone agent](standalone)**  
+You have two options:  
+- [hosted agent](/technical-resources/apispark/guide/manage/connectors#hosted)  
+You can either create a connector with an agent hosted directly on APISpark or;  
+- [standalone agent](/technical-resources/apispark/guide/manage/connectors#standalone)  
 You can install the agent on your own infrastructure to avoid possible lag issues.
 
 
