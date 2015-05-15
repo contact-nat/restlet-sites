@@ -1,9 +1,12 @@
-
 v3.8
 
 APISpark documentation update (8A):
 - Hosted agent / standalone agent for connectors
 - Data browser pagination
+- Connector tutorials (hosted and standalone versions)
+
+Restlet Studio
+- Smartbear Ready!API integration
 
 v3.7.1
 
