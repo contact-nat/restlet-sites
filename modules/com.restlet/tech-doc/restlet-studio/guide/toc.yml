@@ -12,7 +12,7 @@ toc:
     id: web-browser
     link_url: /01_get-started/02_web-browser.md
     long-title: Launch Restlet Studio from a web browser
-    title: in a web browser
+    title: From a browser
     url: /get-started/web-browser
   - file: 03_chrome-application.md
     id: chrome-application
@@ -23,8 +23,8 @@ toc:
   - file: 04_ready-api.md
     id: ready-api
     link_url: /01_get-started/04_ready-api.md
-    long-title: Launch Restlet Studio with Ready API! plugin
-    title: Ready API! plugin
+    long-title: Launch Restlet Studio with Ready! API plugin
+    title: Ready! API plugin
     url: /get-started/ready-api
   long-title: Get started
   title: Get started

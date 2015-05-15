@@ -1,13 +1,13 @@
-Restlet Studio has a special integration with <a href="http://smartbear.com/product/ready-api/overview/" target="_blank">Ready API!</a>.
+Restlet Studio has a special integration with <a href="http://smartbear.com/product/ready-api/overview/" target="_blank">Ready! API</a>.
 
-# Install Restlet Studio plugin from Ready API!
+# Install Restlet Studio plugin from Ready! API
 
-From Ready API! overview, click on **Plugin Manager**.  
+From the Ready! API overview, click on **Plugin Manager**.  
 From the **Plugin Manager** window, click on the **Browse Plugin Repository** button and select **Restlet Studio plugin**.
 
 ![Install Restlet Studio plugin](images/smartbear-plugin-install.jpg "Install Restlet Studio plugin")
 
->**Note:** You will need to restart Ready API! to allow Swagger and RAML definition calls to be performed properly.
+>**Note:** You will need to restart Ready! API to allow Swagger and RAML definition calls to be performed properly.
 
 # Launch Restlet Studio
 
