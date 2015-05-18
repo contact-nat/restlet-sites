@@ -3,9 +3,9 @@ Welcome to the APISpark User Guide.
 
 ![Sign in](images/apispark-logo-v1.png "Sign in")
 
-APISpark is *the* platform for those who want to
-- **create** new web APIs
-- **document** existing APIs
+APISpark is *the* platform for those who want to:  
+- **create** new web APIs  
+- **document** existing APIs  
 - **consume** APIs.
 
 This documentation covers all of these topics in detail in order to help you leverage REST APIs to deliver value to your customers and expand your products.  
