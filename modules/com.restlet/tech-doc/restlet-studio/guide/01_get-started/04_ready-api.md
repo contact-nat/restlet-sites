@@ -12,7 +12,7 @@ From the **Plugin Manager** window, click on the **Browse Plugin Repository** bu
 # Launch Restlet Studio
 
 Click on the **Projects** tab.  
-From the toolbar, select **Restlet Studio**.
+From the toolbar, click on **Restlet Studio**.
 
 ![Use Restlet Studio plugin](images/smartbear-plugin-use.jpg "Use Restlet Studio plugin")
 
