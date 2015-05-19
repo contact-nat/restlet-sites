@@ -35,6 +35,8 @@ Then, edit the new DNS entry, and bind one of your web APIs.
 
 From there, you can create new endpoints for your web API, with a base URI taken either from the default apispark.net domain or from your custom domain.
 
+>**Note:** HTTPS is not supported for custom domains.
+
 ## DNS configuration types
 
 APISpark proposes 2 types of DNS configuration for your custom domains.
