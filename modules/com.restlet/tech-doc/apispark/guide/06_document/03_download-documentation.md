@@ -27,30 +27,11 @@ Navigate to the **Overview** tab and select the **Public** checkbox.
 
 ![Make your Descriptor public](images/make-descriptor-public.jpg "Make your Descriptor public")
 
-# Download your web API Descriptor
+# Download your Descriptor documentation
 
-## Add new documentation for download
+You can download your Descriptor documentation from the **Overview** tab. Select the appropriate Endpoint and click on the **swagger** button.  From the Swagger UI, you can either invoke your API or download its documentation locally.
 
-In order to be able to download documentation for your Descriptor, you need to first define the documentation you want to make available.
-
-To do this, navigate to the **Downloads** tab of your Descriptor and click on the **Add** button of the **Documentations** section in the left panel.
-
-You will be prompted to select a **Name** and **Type** (format) for your new downloadable documentation.
-
-![Add documentation for download](images/add-documentation.jpg "Add documentation for download")
-
-Once the desired types of documentation have been added to the **Documentations** section, you will need to generate the downloads for your Descriptor.
-
-## Generate documentation and client kits
-
-To generate the downloads for your Descriptor, open the API's **Overview**, click on the drop-down action button and select **Generate downloads**.
-
-![Generate downloads](images/generate-downloads.jpg "Generate downloads")
-
-Your documentation can now be downloaded from the **Downloads** tab in the **Documentations** section by selecting a type of documentation from the list and clicking on the **Download** button.
-
-<!--add screenshot when bug fixed
--->
+![Download documentation from Swagger UI](images/Descriptor-in-Swagger-UI.jpg "Download documentation from Swagger UI")
 
 # Use Standard formats for third party integration
 
