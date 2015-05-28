@@ -25,11 +25,11 @@ From the Dashboard, open an existing Descriptor or create a new one by clicking 
 
 From the Descriptor's **Overview**, click on the actions button on the top right of your screen and select **Import definition** from the menu.
 
-![API Commons](images/import-swagger-definition.jpg "API Commons")
+![Import definition](images/swagger-import-definition.jpg "Import definition")
 
 You will be prompted to enter the URL that points to your API's Swagger definition.
 
-![API Commons](images/swagger-import.jpg "API Commons")
+![Enter swagger definition URL](images/swagger-import.jpg "Enter swagger definition URL")
 
 Click on the **Import** button to import the Swagger definition into your Descriptor. As a result, representations and resources will be added to your Descriptor according to the content of the Swagger definition.
 
