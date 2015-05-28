@@ -108,9 +108,9 @@ When a user posts a new *comment*, create a new *comment* element. Update the co
 
 Select this checkbox to specify the property as a collection (a list rather than a simple value).
 
-### Optional
+### Required
 
-Deselect this checkbox to specify the property as a required field.
+Deselect this checkbox to specify the property as an optional field.
 
 
 ### Default value
