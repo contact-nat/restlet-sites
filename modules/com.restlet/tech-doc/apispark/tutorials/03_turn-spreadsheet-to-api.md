@@ -42,27 +42,17 @@ Select **Google Spreadsheet wrapper** and enter a name for your store . We named
 
 Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
 
-# 3. Setup a Google application-specific password
+# 3. Connect to a Google Account
 
-In the **Security** section, click on **Google Account**.
+From the **Security** section, click on the **Google Account** menu.
 
->**Note:** Please do not overlook the next step, it is important to ensure your wrapper will work properly throughout the creation and deployment of your API.
+Click on the **Open authorization** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account.
 
-Open a new tab in your browser.
-
-Head to your **Google Account Settings** <a href="
-https://www.google.com/settings/security?hl=en" target="_blank">**Security**</a> page and check that **2-step authentication is activated**. If **2-step authentication** is not activated, you need to activate it before proceeding.
-
-Once activated, go back to the <a href="
-https://www.google.com/settings/security?hl=en" target="_blank">**Security**</a> page, click on **Settings** and near by click on **App Passwords**. Generate a new application-specific password for APISpark. You will use it as your **Google Secret**.
-
-![Application specific passwords](images/google-app-password.png "Application specific passwords")
-
-Back on APISpark, in the **Google Account** combo of your Wrapper's **Security** section, input your **Google Login** (your email address) and the **Google Secret** you just created.
+![Open authorization](images/open-authorization.jpg "Open authorization")
 
 Click on the **Test connection** button, to ensure the connection between APISpark and your Google Account is well configured.
 
-![Test connection](images/enter-google-account.jpg "Test connection")
+![Test connection](images/google-account-configured.jpg "Test connection")
 
 # 4. Import a Spreadsheet
 
@@ -72,7 +62,7 @@ Select a spreadsheet to import and click on **Import sheet**.
 
 ![Import a sheet](images/import-sheet.jpg "Import a sheet")
 
-The selected spreadsheet's **Overview** tab should open in the central panel.
+The selected spreadsheet's **Overview** tab opens in the central panel.
 
 # 5. Import entities
 
