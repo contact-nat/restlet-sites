@@ -19,15 +19,17 @@ A *Descriptor* can be generated from your current API's Swagger definition, or f
 
 ## Generate a Descriptor from a Swagger definition
 
-You can generate a web API Descriptor by importing a Swagger definition for an existing web API, by providing the Swagger definition's URL.
+You can generate a web API Descriptor by importing a Swagger definition for an existing web API, by providing the Swagger definition's URL. Swagger 1.2 and 2.0 are supported.
 
 From the Dashboard, open an existing Descriptor or create a new one by clicking on **+ Web API** and selecting **Descriptor** from the drop-down menu.
 
 From the Descriptor's **Overview**, click on the actions button on the top right of your screen and select **Import definition** from the menu.
 
-![API Commons](images/swagger-import-definition.jpg "API Commons")
+![Import definition](images/swagger-import-definition.jpg "Import definition")
 
 You will be prompted to enter the URL that points to your API's Swagger definition.
+
+![Enter swagger definition URL](images/swagger-import.jpg "Enter swagger definition URL")
 
 Click on the **Import** button to import the Swagger definition into your Descriptor. As a result, representations and resources will be added to your Descriptor according to the content of the Swagger definition.
 
