@@ -46,9 +46,9 @@ Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settin
 
 From the **Security** section, click on the **Google Account** menu.
 
-Click on the **Open authorization** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account.
+Click on the **Connect to Google Sheets** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account and accept offline access if you are asked to.
 
-![Open authorization](images/open-authorization.jpg "Open authorization")
+![Open authorization](images/connect-to-google-sheets.jpg "Open authorization")
 
 Click on the **Test connection** button, to ensure the connection between APISpark and your Google Account is well configured.
 
