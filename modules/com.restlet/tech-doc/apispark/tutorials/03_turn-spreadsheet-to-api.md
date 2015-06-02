@@ -19,9 +19,9 @@ Sign in to your **Google Drive** account.
 In this tutorial example, we have a spreadsheet with a worksheet named **Contact** with the following columns, containing a list of contacts:
 
 *   **contactid**: primary key
-*   **firstname** (string): first name
-*   **lastname** (string): last name
-*   **age** (integer): age
+*   **firstname**: first name
+*   **lastname**: last name
+*   **age**: age
 
 > **Note:** we recommend using lowercase characters from the roman alphabet only for column names.
 
