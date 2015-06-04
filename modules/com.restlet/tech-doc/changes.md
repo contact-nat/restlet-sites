@@ -1,3 +1,18 @@
+v3.9
+
+Updated Sparky logo in APISpark and Restlet Studio user guide and tutorials welcome page
+
+Iteration 9 features:
+- Front enhancements:
+  -- AS + RS Add several methods at once
+  -- AS + RS Optional (and Min /max occurs) relaced by required
+- Import Swagger 2.0:
+  -- RS Swagger 2.0 Import via file
+  -- AS Swagger 2.0 Import via URL
+- Pagination for GSheet wrapper
+  -- pagination for GSheet wrapper
+  -- authorization management via oauth2 (Open authorization and Test connection)
+
 v3.8
 
 APISpark documentation update (8A):
