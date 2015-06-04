@@ -48,7 +48,7 @@ Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settin
 
 From the **Security** section, click on the **Google Account** menu.
 
-Click on the **Connect to Google Sheets** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account and accept offline access if you are asked to.
+Click on the **Connect to Google Sheets** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account.
 
 ![Connect to Google Sheets](images/connect-to-google-sheets.jpg "Connect to Google Sheets")
 
