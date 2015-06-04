@@ -40,9 +40,9 @@ Select **Google Spreadsheet wrapper** and enter a name for your store . We named
 
 ![Create a spreadsheet wrapper](images/create-spreadsheet-wrapper.png "Create a spreadsheet wrapper")
 
-Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
-
 <a name="connect-to-gsheets"></a>
+
+Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
 
 # 3. Connect to Google Sheets
 
