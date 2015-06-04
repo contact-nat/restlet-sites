@@ -30,7 +30,7 @@ We have chosen to name ours Darth Vader, 46 years old.
 
 ![Google Spreadsheet](images/google-spreadsheet.jpg "Google Spreadsheet")
 
-# 2. Configure the Google Spreadsheet Wrapper
+# 2. Create the Google Spreadsheet Wrapper
 
 Sign in to your **APISpark** account.
 
@@ -42,17 +42,21 @@ Select **Google Spreadsheet wrapper** and enter a name for your store . We named
 
 Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
 
-# 3. Connect to a Google Account
+<a name="connect-to-gsheets"></a>
+
+# 3. Connect to Google Sheets
 
 From the **Security** section, click on the **Google Account** menu.
 
 Click on the **Connect to Google Sheets** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account and accept offline access if you are asked to.
 
-![Open authorization](images/connect-to-google-sheets.jpg "Open authorization")
+![Connect to Google Sheets](images/connect-to-google-sheets.jpg "Connect to Google Sheets")
 
-Click on the **Test connection** button, to ensure the connection between APISpark and your Google Account is well configured.
+A message informs you that the connection has been established.
 
-![Test connection](images/google-account-configured.jpg "Test connection")
+You can select another account later on by clicking the **Change Google account** button.
+
+![Change Google account](images/change-google-account.jpg "Change Google account")
 
 # 4. Import a Spreadsheet
 
