@@ -60,7 +60,7 @@ You can select another account later on by clicking the **Change Google account*
 
 # 4. Import a Spreadsheet
 
-From the **Imports** section in the left panel, click on the **Add** button.
+From the **Google sheet** section in the left panel, click on the **Add** button.
 
 Select a spreadsheet to import and click on **Import sheet**.
 
@@ -70,7 +70,7 @@ The selected spreadsheet's **Overview** tab opens in the central panel.
 
 # 5. Import entities
 
-Select a spreadsheet from the **Imports** section in the left panel.
+Select a spreadsheet from the **Google sheet** section in the left panel.
 
 Click on the **Entities** tab in the central panel.
 
