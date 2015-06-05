@@ -80,7 +80,7 @@ When using <a href="http://www.getpostman.com/" target="_blank">POSTMAN Chrome E
 
 ![POSTMAN POST request](images/postman-400-error.jpg "POSTMAN POST request")
 
-Jump to our [POST and PUT requests examples](#9) for further information.
+Jump to our [POST and PUT requests examples](#09) for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
@@ -100,7 +100,7 @@ Make sure the format used is valid.
 
 When using <a href="http://www.getpostman.com/" target="_blank">POSTMAN Chrome Extension</a> to invoke your API, you may have forgotten to set the **Content Type** Header to **application/json**.
 
-Jump to our [POST and PUT requests examples](#9) for further information.
+Jump to our [POST and PUT requests examples](#09) for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
