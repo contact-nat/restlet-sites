@@ -38,13 +38,11 @@ Click on **+ Entity Store**.
 
 Select **Google Spreadsheet wrapper** and enter a name for your store . We named ours "mySpreadsheet". Input a description if you like.
 
-<a name="connect-to-gsheets"></a>
-
 ![Create a spreadsheet wrapper](images/create-spreadsheet-wrapper.png "Create a spreadsheet wrapper")
 
 Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
 
-# 3. Connect to Google Sheets
+# <a class="anchor" name="connect-to-gsheets"></a>3. Connect to Google Sheets
 
 From the **Security** section, click on the **Google Account** menu.
 

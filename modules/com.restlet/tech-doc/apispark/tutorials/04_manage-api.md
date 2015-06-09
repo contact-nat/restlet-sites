@@ -12,7 +12,7 @@ You can install the agent on your own infrastructure to avoid possible lag issue
 
 
 
-# <a name="hosted"></a>Create a connector with an agent hosted on APISpark
+# <a class="anchor" name="hosted"></a>Create a connector with an agent hosted on APISpark
 
 ## 1. Create a web API Connector
 
@@ -91,7 +91,7 @@ Your API is now protected with authentication.
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.
 
 
-# <a name="standalone"></a>Create a connector with a standalone agent
+# <a class="anchor" name="standalone"></a>Create a connector with a standalone agent
 
 
 ## 1. Create a web API Connector
