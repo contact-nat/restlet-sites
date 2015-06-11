@@ -72,11 +72,11 @@ Select a spreadsheet from the **Google sheet** section in the left panel.
 
 Click on the **Entities** tab in the central panel.
 
-Click on the **Add entities** button to create entities based on the structure of the spreadsheet.
+Click on the **Synchronize** button to create entities based on the structure of the spreadsheet.
 
 One entity will be created for each worksheet.
 
-![Add spreadsheet entities](images/add-spreadsheet-entities.jpg "Add spreadsheet entities")
+![Synchronize](images/synchronize-button.jpg "Synchronize")
 
 In this case, a **Contact** entity was automatically created. Entity properties are created based on the names of the columns in the first row of a worksheet.
 
