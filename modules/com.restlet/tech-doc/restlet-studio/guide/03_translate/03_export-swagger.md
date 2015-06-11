@@ -13,10 +13,10 @@ Click on the **Swagger** tab. You can copy and paste its content or just visuali
 
 # Get your API definition in Swagger format
 
-Once you have designed your web API, you can export it in Swagger format.
+Once you have designed your web API, you can export it in Swagger 1.2 or 2.0 format.
 
-Click on the **API** menu and select **Export Swagger 2.0**.
+Click on the **API** menu and select **Export Swagger 1.2** or **Export Swagger 2.0**.
 
-![Export Swagger 2.0](images/export-swagger.jpg "Export Swagger 2.0")
+![Export Swagger 2.0](images/export-swagger-format.jpg "Export Swagger 2.0")
 
 Download the .json file that contains your API definition.
