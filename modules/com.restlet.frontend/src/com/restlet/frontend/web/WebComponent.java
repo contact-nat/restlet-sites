@@ -23,7 +23,7 @@ import com.restlet.frontend.web.applications.MavenRestletOrg;
 import com.restlet.frontend.web.applications.P2RestletOrg;
 import com.restlet.frontend.web.applications.RestletCom;
 import com.restlet.frontend.web.applications.StudioRestletCom;
-import com.restlet.frontend.web.applications.summerOfApisRestletCom;
+import com.restlet.frontend.web.applications.SummerOfApisRestletCom;
 
 /**
  * The web component managing the Restlet web servers.
@@ -142,7 +142,7 @@ public class WebComponent extends Component {
 		// -----------------
                 // summer-of-apis.restlet.com
                 // -----------------
-                host = addHost("summer-of-apis.restlet.com", port, new summerOfApisRestletCom(
+                host = addHost("summer-of-apis.restlet.com", port, new SummerOfApisRestletCom(
                                 "clap://class/summerOfApisRestletCom.properties"), properties);
                 getHosts().add(host);
 		// -----------------

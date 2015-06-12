@@ -21,7 +21,7 @@ import org.restlet.security.MapVerifier;
  * @author Jerome Louvel
  * @author Thierry Boileau
  */
-public class summerOfApisRestletCom extends BaseApplication {
+public class SummerOfApisRestletCom extends BaseApplication {
     /** The data file URI. */
     private String dataUri;
 	/** Login for global site authentication. */
@@ -38,7 +38,7 @@ public class summerOfApisRestletCom extends BaseApplication {
      *            The Reference to the application's properties file.
      * @throws IOException
      */
-    public summerOfApisRestletCom(String propertiesFileReference) throws IOException {
+    public SummerOfApisRestletCom(String propertiesFileReference) throws IOException {
         super(propertiesFileReference);
 
         this.dataUri = getProperty("data.uri");
