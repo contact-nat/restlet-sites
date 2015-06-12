@@ -79,7 +79,7 @@ In the **Security** section, click on **SQL Source**.
 
 Select the **Driver** (database type) and input the **Host name**, **Port number**, **User** name and **Password**.
 
-Click on the **Test** button to test the connection.
+Click **Save** and click on the **Test connection** button to test the connection.
 
 ![Add an SQL source](images/add-sql-wrapper-source.jpg "Add an SQL source")
 
@@ -87,13 +87,13 @@ Click on the **Test** button to test the connection.
 
 ## 2.3 Import a Catalog
 
-From the **Settings** tab, click on the **Add** button of the Imports section.
+From the **Settings** tab, click on the **Add** button of the **SQL database** section.
 
-The catalog list contains all the databases visible by the specified user. Select the **Catalog** you wish to import and click on the **Import catalog** button.
+The catalog list contains all the databases visible by the specified user. Select the **Catalog** you wish to import and click on the **Import** button.
 
 ![Add a Catalog](images/import-sql-catalog.jpg "Add a Catalog")
 
-Under the **Imports** dropdown, click on the **Catalog** you selected. It will open its **Overview** tab.
+From the **SQL database** section, click on the catalog you selected. It will open its **Overview** tab.
 
 Next, click on the **Entities** tab.
 
