@@ -23,6 +23,7 @@ import com.restlet.frontend.web.applications.MavenRestletOrg;
 import com.restlet.frontend.web.applications.P2RestletOrg;
 import com.restlet.frontend.web.applications.RestletCom;
 import com.restlet.frontend.web.applications.StudioRestletCom;
+import com.restlet.frontend.web.applications.summerOfApisRestletCom;
 
 /**
  * The web component managing the Restlet web servers.
@@ -139,6 +140,12 @@ public class WebComponent extends Component {
 				"clap://class/studioRestletCom.properties"), properties);
 		getHosts().add(host);
 		// -----------------
+                // summer-of-apis.restlet.com
+                // -----------------
+                host = addHost("summer-of-apis.restlet.com", port, new summerOfApisRestletCom(
+                                "clap://class/summerOfApisRestletCom.properties"), properties);
+                getHosts().add(host);
+		// -----------------
 		// maven.restlet.org
 		// -----------------
 		host = addHost("maven.restlet.org", port, new Redirector(getContext()
@@ -232,6 +239,21 @@ public class WebComponent extends Component {
 				"http://restlet.com/blog{rr}", properties);
 
 		getHosts().add(host);
+
+        // ----------------------------
+        // Redirect summerofapis.restlet.com to summer-of-apis.restlet.com
+        // ----------------------------
+        host = addRedirection("summerofapis.restlet.com", port,
+                "http://summer-of-apis.restlet.com{rr}", properties);
+
+        getHosts().add(host);
+        // ----------------------------
+        // Redirect summer-of-apis.restlet.com to restlet.com/summer-of-apis
+        // ----------------------------
+        host = addRedirection("summer-of-apis.restlet.com", port,
+                "http://restlet.com/summer-of-apis{rr}", properties);
+
+        getHosts().add(host);
 	}
 
 	/**
