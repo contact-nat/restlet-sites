@@ -6,7 +6,7 @@ Restlet Studio allows you to get an Android SDK for your web API.
 
 Once you have designed your web API, you can export its Android SDK.
 
-Click on the **Clients SDKs** menu and select **Generate Android (Restlet)**.
+Click on the **Clients SDK** menu and select **Generate Android (Restlet)**.
 
 ![Android](images/android.jpg "Android")
 

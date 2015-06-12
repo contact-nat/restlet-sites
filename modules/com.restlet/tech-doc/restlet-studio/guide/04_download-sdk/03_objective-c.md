@@ -6,7 +6,7 @@ Restlet Studio allows you to get an Objective-C SDK for your web API.
 
 Once you have designed your web API, you can export its Objective-C SDK.
 
-Click on the **Clients SDKs** menu and select **Generate Objective-C**.
+Click on the **Clients SDK** menu and select **Generate Objective-C**.
 
 ![Objective-C](images/objective-c.jpg "Objective-C")
 

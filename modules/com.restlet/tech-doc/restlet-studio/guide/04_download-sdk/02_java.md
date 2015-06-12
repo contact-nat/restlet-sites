@@ -6,7 +6,7 @@ Restlet Studio allows you to get a Java SDK for your web API.
 
 Once you have designed your web API, you can export its Java SDK.
 
-Click on the **Clients SDKs** menu and select **Generate Java (Restlet)**.
+Click on the **Clients SDK** menu and select **Generate Java (Restlet)**.
 
 ![Java](images/java.jpg "Java")
 
