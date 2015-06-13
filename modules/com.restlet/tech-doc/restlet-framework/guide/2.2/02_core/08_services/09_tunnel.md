@@ -7,62 +7,14 @@ requests sent.
 
 Here is the list of the default parameter names supported:
 
-Property
+Property | Default name | Value type | Description
+---------|--------------|------------|------------
+methodParameter | method | See values in [Method](javadocs://jse/api/org/restlet/data/Method.html) | For POST requests, let you specify the actual method to use (DELETE, PUT, MOVE, etc.). For GET requests, let you specify OPTIONS as the actual method to use.
+characterSetParameter | charset | Use extension names defined in [MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html) | For GET requests, replaces the accepted character set by the given value.
+encodingParameter | encoding | Use extension names defined in [MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html) | For GET requests, replaces the accepted encoding by the given value.
+languageParameter | language | Use extension names defined in [MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html) | For GET requests, replaces the accepted language by the given value.
+mediaTypeParameter | media | Use extension names defined in [MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html) | For GET requests, replaces the accepted media type set by the given value.
 
-Default name
-
-Value type
-
-Description
-
-methodParameter
-
-method
-
-See values in
-[Method](javadocs://jse/api/org/restlet/data/Method.html)
-
-For POST requests, let you specify the actual method to use (DELETE,
-PUT, MOVE, etc.).\
- For GET requests, let you specify OPTIONS as the actual method to use.
-
-characterSetParameter
-
-charset
-
-Use extension names defined in
-[MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html)
-
-For GET requests, replaces the accepted character set by the given
-value.
-
-encodingParameter
-
-encoding
-
-Use extension names defined in
-[MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html)
-
-For GET requests, replaces the accepted encoding by the given value.
-
-languageParameter
-
-language
-
-Use extension names defined in
-[MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html)
-
-For GET requests, replaces the accepted language by the given value.
-
-mediaTypeParameter
-
-media
-
-Use extension names defined in
-[MetadataService](javadocs://jse/api/org/restlet/service/MetadataService.html)
-
-For GET requests, replaces the accepted media type set by the given
-value.
 
 The client preferences can also be updated based on the extensions
 available in the last path segment. The syntax is similar to file
