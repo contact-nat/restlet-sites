@@ -1,8 +1,8 @@
 # Introduction
 
-This tutorial will show you how to create a custom web API that exposes data stored in a Google Spreasheet. <a href="
-http://docs.google.com/" target="_blank">Google Spreadsheet</a> is a popular collaborative data editing tool within the Google Docs suite.  
-You can import one Google Spreadsheet per wrapper. If you need data from several Google Spreadsheets, create one wrapper per Google Spreadsheet and import them in one single API.
+This tutorial will show you how to create a custom web API that exposes data stored in a Google Sheet. <a href="
+http://docs.google.com/" target="_blank">Google Sheet</a> is a popular collaborative data editing tool within the Google Docs suite.  
+You can import one Google Sheet per wrapper. If you need data from several Google Sheets, create one wrapper per Google Sheet and import them in one single API.
 
 # Requirements
 
@@ -12,7 +12,7 @@ To follow this tutorial, you will need:
 *   20 minutes of your time,
 *   a Google Account application-specific password.
 
-# 1. Prepare a Google Spreadsheet
+# 1. Prepare a spreadsheet
 
 Sign in to your **Google Drive** account.
 
@@ -28,66 +28,43 @@ In this tutorial example, we have a spreadsheet with a worksheet named **Contact
 Add a **Contact** so that you can retrieve it later when performing an HTTP call to your API.
 We have chosen to name ours Darth Vader, 46 years old.
 
-![Google Spreadsheet](images/google-spreadsheet.jpg "Google Spreadsheet")
+![Google Sheet](images/google-spreadsheet.jpg "Google Sheet")
 
-# 2. Create the Google Spreadsheet Wrapper
+# 2. Configure the Google Sheets Wrapper
 
 Sign in to your **APISpark** account.
 
 Click on **+ Entity Store**.
 
-Select **Google Spreadsheet wrapper** and enter a name for your store . We named ours "mySpreadsheet". Input a description if you like.
-
-![Create a spreadsheet wrapper](images/create-spreadsheet-wrapper.png "Create a spreadsheet wrapper")
-
-Click **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** page.
-
-# <a class="anchor" name="connect-to-gsheets"></a>3. Connect to Google Sheets
-
-From the **Security** section, click on the **Google Account** menu.
-
-Click on the **Connect to Google Sheets** button to connect to your Google account. A **Google Accounts** window displays and invites you to choose the Google account to which you want to connect. Select the appropriate account.
+Select "Google Spreadsheet wrapper" as a **Type** and enter a **Name** for your store. We named ours "mySpreadsheet". Input a **Description** if you like.
 
 ![Connect to Google Sheets](images/connect-to-google-sheets.jpg "Connect to Google Sheets")
 
-A message informs you that the connection has been established.
+Click the **Connect to Google Sheets** button. A message informs you that the connection has been established.
 
-You can select another account later on by clicking the **Change Google account** button.
+![Create a spreadsheet wrapper](images/create-gsheets-wrapper.jpg "Create a spreadsheet wrapper")
+
+Select the appropriate **Spreadsheet** from the drop-down menu.
+
+Click on the **Add** button.
+
+<a class="anchor" name="connect-to-gsheets"></a>
+
+>**Note:** You can connect to another Google account from the creation wizard by clicking the **Change Google account** button. After you have created your wrapper, you can still choose another Google account or another spreadsheet from your wrapper's **Settings** tab.
 
 ![Change Google account](images/change-google-account.jpg "Change Google account")
 
-# 4. Import a Spreadsheet
+Entities will be created based on the structure of your spreadsheet. One entity will be created for each worksheet.
 
-From the **Google sheet** section in the left panel, click on the **Add** button.
-
-Select a spreadsheet to import and click on **Import sheet**.
-
-![Import a sheet](images/import-sheet.jpg "Import a sheet")
-
-The selected spreadsheet's **Overview** tab opens in the central panel.
-
-# 5. Import entities
-
-Select a spreadsheet from the **Google sheet** section in the left panel.
-
-Click on the **Entities** tab in the central panel.
-
-Click on the **Synchronize** button to create entities based on the structure of the spreadsheet.
-
-One entity will be created for each worksheet.
-
-![Synchronize](images/synchronize-button.jpg "Synchronize")
-
-In this case, a **Contact** entity was automatically created. Entity properties are created based on the names of the columns in the first row of a worksheet.
+In this case, a **Contact** entity was automatically created. Entity properties are created based on the name of the columns in the first row of a worksheet.
 
 Go back to the Wrapper's **Overview** tab to view the new entities.
 
 ![Entities created](images/new-spreadsheet-entities.jpg "Entities created")
 
-Deploy the Spreadsheet Wrapper by clicking on the **Deploy** button.
+Deploy the Google Sheets Wrapper by clicking on the **Deploy** button.
 
-
-# 6. Export a Web API from the Wrapper
+# 3. Export a Web API from the Wrapper
 
 From the Wrapper's **Overview** page, click on the actions button on the right of the **Deploy** button and select **Export web API**.
 
@@ -105,7 +82,7 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button2.jpg "Deploy button")
 
-# 7. Invoke the web API
+# 4. Invoke the web API
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
