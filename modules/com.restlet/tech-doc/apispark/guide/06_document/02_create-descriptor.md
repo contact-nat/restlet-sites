@@ -27,7 +27,7 @@ From the Descriptor's **Overview**, click on the actions button on the top right
 
 ![Import definition](images/swagger-import-definition.jpg "Import definition")
 
-You will be prompted to enter the URL that points to your API's Swagger definition.
+You will be prompted to select the file that contains your API's Swagger definition or to enter the URL that points to it. Swagger 1.2 and Swagger 2.0 are supported.
 
 ![Enter swagger definition URL](images/swagger-import.jpg "Enter swagger definition URL")
 
