@@ -64,7 +64,8 @@ Click on the action button on top right of your screen and select Import definit
 
 ![Import definition](images/import-definition.jpg "Import definition")
 
-In the **Import definition** wizard, enter your API definition (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
+In the **Import definition** wizard, select "Swagger 2.0" as a **Type** and  "URL" as a **Source**.  
+Enter your API definition in the **URL** field (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
 
 ![Import definition wizard](images/import-def-wizard.jpg "Import definition wizard")
 
@@ -142,7 +143,8 @@ Click on the action button on top right of your screen and select Import definit
 
 ![Import definition](images/import-definition.jpg "Import definition")
 
-In the **Import definition** wizard, enter your API definition (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
+In the **Import definition** wizard, select "Swagger 2.0" as a **Type** and  "URL" as a **Source**.  
+Enter your API definition in the **URL** field (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
 
 ![Import definition wizard](images/import-def-wizard.jpg "Import definition wizard")
 
