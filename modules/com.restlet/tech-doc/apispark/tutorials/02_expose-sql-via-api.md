@@ -59,45 +59,23 @@ FLUSH PRIVILEGES;
 >**Note:** you can grant privileges on all tables by replacing T_CONTACT by \* and on all databases by replacing apispark by \*.
 
 
-# 2. Create an SQL Wrapper
-
-## 2.1 Create a new SQL Wrapper
+# 2. Create a SQL Wrapper
 
 If you have not already done so, <a href="https://apispark.restlet.com/signin" target="_blank">sign in</a> to your APISpark account and open your **Dashboard**.
 
-Create a new Entity Store. Click on **+ Entity Store**, select the "SQL Wrapper" **Type** and enter the **Name** "mySQLWrapper".
-
-![Create an SQL Wrapper](images/create-sql-wrapper.jpg "Create an SQL Wrapper")
+Create a new Entity Store. Click on **+ Entity Store**, select the "SQL wrapper" **Type** and enter the **Name** "mySQLwrapper".
 
 Input a description if you wish.
 
-Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** tab.
+![Create an SQL Wrapper](images/create-sql-wrapper.jpg "Create an SQL Wrapper")
 
-## 2.2 Configure Wrapper security settings
+From the **Connection settings** section, select the appropriate **Driver** (database type) and input the **Host name**, **Port number**, **Database**, **User** name and **Password**.
 
-In the **Security** section, click on **SQL Source**.
-
-Select the **Driver** (database type) and input the **Host name**, **Port number**, **User** name and **Password**.
-
-Click **Save** and click on the **Test connection** button to test the connection.
-
-![Add an SQL source](images/add-sql-wrapper-source.jpg "Add an SQL source")
+Click on the **Test connection** button to test the connection.
 
 >**Note:** depending on your configuration, you may need to configure your firewall in order to authorize APISpark IP addresses to access your database from the internet. Feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a> if you need help.
 
-## 2.3 Import a Catalog
-
-From the **Settings** tab, click on the **Add** button of the **SQL database** section.
-
-The catalog list contains all the databases visible by the specified user. Select the **Catalog** you wish to import and click on the **Import** button.
-
-![Add a Catalog](images/import-sql-catalog.jpg "Add a Catalog")
-
-From the **SQL database** section, click on the catalog you selected. It will open its **Overview** tab.
-
-Next, click on the **Entities** tab.
-
-Click on the **Add entities** button.
+Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** tab.
 
 ![Add a Catalog](images/add-entities-sql.jpg "Add a Catalog")
 
@@ -108,8 +86,6 @@ Our Entity Store now contains an Entity called *Contact*.
 ![New entities](images/new-sql-entities.jpg "New SQL entities")
 
 The *Contact* entity’s properties correspond to the columns present in the matching database table.
-
-# 2.4 Deploy the SQL Wrapper
 
 Click on the **Deploy** button to deploy the Wrapper.
 
