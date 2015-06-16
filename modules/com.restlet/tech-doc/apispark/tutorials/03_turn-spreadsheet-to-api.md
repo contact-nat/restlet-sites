@@ -104,7 +104,7 @@ Note that any POST requests made to the API will result in new data being create
 
 You can also perform simple [filters](/technical-resources/apispark/guide/publish/publish/invocation#filter "filters") on entity properties and [sort](/technical-resources/apispark/guide/publish/publish/invocation#sort "sort") queries on Google Sheets wrapper APIs.
 
->**Note:** Non alphanumeric characters must be in quotes in your queries. If your spreadsheet cells are in plaintext format, they must also be in quotes in your queries.
+>**Note:** Non alphanumeric characters must be in quotes in your queries. If your spreadsheet cells are in plain text format, they must also be in quotes in your queries.
 
 APISpark lets you generate custom Client SDKs for your API. Supported environments include Java, Android, iOS and JavaScript (AJAX or Node.js).
 
