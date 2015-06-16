@@ -59,7 +59,7 @@ Sending a DELETE request to this URL will delete the Contact whose identifier is
 
 Entity stores exposed through a web API support a rich query language for collection resources. The query language is based on a set of special parameters that are passed as query parameters in HTTP GET requests on collection resources.
 
-### Filter
+### <a class="anchor" name="filter"></a>Filter
 
 The results of a GET request on a collection resource can be filtered based on the values of properties of the representations returned.
 
@@ -77,7 +77,7 @@ All filter criteria in a GET request are combined with AND logic.
 
 `GET https://contactsapi.apispark.net/v1/contacts/?age=27&firstname=roy`
 
-### Sort
+### <a class="anchor" name="sort"></a>Sort
 
 The `$sort` query parameter is used to sort results in either ascending or descending order based on the value of a property. Multiple sort criteria can be used simultaneously.
 
