@@ -77,9 +77,11 @@ Click on the **Test connection** button to test the connection.
 
 Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** tab.
 
-![Add a Catalog](images/add-entities-sql.jpg "Add a Catalog")
+![Add a Catalog](images/settings-tab.jpg "Add a Catalog")
 
 This automatically creates entities based on the imported tables. APISpark automatically renames the entities and their properties during this operation.
+
+>**Note:** You can change the database you are connected to with the **Change database** button. If you want to retrieve your database original structure after you have made changes, click the **Synchronize** button. This will synchronize your Entity Store with your SQL database again.
 
 Our Entity Store now contains an Entity called *Contact*.
 
