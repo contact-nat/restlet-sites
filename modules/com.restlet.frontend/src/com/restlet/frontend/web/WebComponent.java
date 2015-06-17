@@ -241,6 +241,13 @@ public class WebComponent extends Component {
                 "http://restlet.com/summer-of-apis{rr}", properties);
 
         getHosts().add(host);
+        // ----------------------------
+        // Redirect summerofapis.restlet.com to restlet.com/summer-of-apis
+        // ----------------------------
+        host = addRedirection("summerofapis.restlet.com", port,
+                "http://restlet.com/summer-of-apis{rr}", properties);
+
+        getHosts().add(host);
 	}
 
 	/**
