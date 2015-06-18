@@ -1,8 +1,8 @@
 # Introduction
 
-This tutorial will show you how to create a custom web API that exposes data stored in a Google Sheet. <a href="
-http://docs.google.com/" target="_blank">Google Sheet</a> is a popular collaborative data editing tool within the Google Docs suite.  
-You can import one Google Sheet per wrapper. If you need data from several Google Sheets, create one wrapper per Google Sheet and import them in one single API.
+This tutorial will show you how to create a custom web API that exposes data stored in a spreadsheet created with Google Sheets. <a href="
+http://docs.google.com/" target="_blank">Google Sheets</a> is a popular collaborative data editing tool within the Google Docs suite.  
+You can import one spreadsheet per wrapper. If you need data from several spreadsheets, create one wrapper per spreadsheet and import them in one single API.
 
 # Requirements
 
@@ -36,7 +36,7 @@ Sign in to your **APISpark** account.
 
 Click on **+ Entity Store**.
 
-Select "Google Spreadsheet wrapper" as a **Type** and enter a **Name** for your store. We named ours "mySpreadsheet". Input a **Description** if you like.
+Select "Google Sheets wrapper" as a **Type** and enter a **Name** for your store. We named ours "mySpreadsheet". Input a **Description** if you like.
 
 ![Connect to Google Sheets](images/connect-to-google-sheets.jpg "Connect to Google Sheets")
 
@@ -100,7 +100,7 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 
 ![Swagger Try it out button](images/03swagger-try-it-out-button.jpg "Swagger Try it out button")
 
-Note that any POST requests made to the API will result in new data being created in your Google Spreadsheet. Likewise, any data manually inserted via the Google Spreadsheet is visible via the custom web API.
+Note that any POST requests made to the API will result in new data being created in your spreadsheet. Likewise, any data manually inserted via the spreadsheet is visible via the custom web API.
 
 You can also perform simple [filters](/technical-resources/apispark/guide/publish/publish/invocation#filter "filters") on entity properties and [sort](/technical-resources/apispark/guide/publish/publish/invocation#sort "sort") queries on Google Sheets wrapper APIs.
 
