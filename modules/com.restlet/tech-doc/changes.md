@@ -1,3 +1,15 @@
+v3.10
+
+- Gsheet wrapper filters
+- RS + AS Export Swagger 1.2B
+- RS + AS Import Definition by file
+- GSheet wrapper creation enhancements
+  -- Just need to deploy
+  -- Merge Add-Update-Delete buttons to Synchronize button
+- SQL wrapper database configuration
+- RS Add AngularJS SDK (Client SDK / Generate AngularJS)
+- Update Settings tab screenshots for the SQL wrapper
+
 v3.9
 
 Updated Sparky logo in APISpark and Restlet Studio user guide and tutorials welcome page
