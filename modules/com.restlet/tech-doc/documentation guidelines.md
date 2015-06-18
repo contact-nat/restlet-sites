@@ -120,4 +120,4 @@ The text in square brackets will display on the page as a clickable link.
 
 You will need to [synchronize](/technical-resources/apispark/guide/create/overview#synchronize "synchronize") each store imported.
 
---> Add <a name="synchronize"></a> where you want to redirect the user
+--> Add <a class="anchor" name="synchronize"></a> where you want to redirect the user
