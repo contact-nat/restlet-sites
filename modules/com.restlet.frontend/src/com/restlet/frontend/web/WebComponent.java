@@ -138,6 +138,7 @@ public class WebComponent extends Component {
 		host = addHost("studio.restlet.com", port, new StudioRestletCom(
 				"clap://class/studioRestletCom.properties"), properties);
 		getHosts().add(host);
+
 		// -----------------
 		// maven.restlet.org
 		// -----------------
@@ -232,6 +233,21 @@ public class WebComponent extends Component {
 				"http://restlet.com/blog{rr}", properties);
 
 		getHosts().add(host);
+
+        // ----------------------------
+        // Redirect summer-of-apis.restlet.com to restlet.com/summer-of-apis
+        // ----------------------------
+        host = addRedirection("summer-of-apis.restlet.com", port,
+                "http://restlet.com/summer-of-apis{rr}", properties);
+
+        getHosts().add(host);
+        // ----------------------------
+        // Redirect summerofapis.restlet.com to restlet.com/summer-of-apis
+        // ----------------------------
+        host = addRedirection("summerofapis.restlet.com", port,
+                "http://restlet.com/summer-of-apis{rr}", properties);
+
+        getHosts().add(host);
 	}
 
 	/**
