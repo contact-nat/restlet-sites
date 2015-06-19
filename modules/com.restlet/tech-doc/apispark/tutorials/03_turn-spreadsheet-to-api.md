@@ -58,7 +58,7 @@ Entities will be created based on the structure of your spreadsheet. One entity 
 
 In this case, a **Contact** entity was automatically created. Entity properties are created based on the name of the columns in the first row of a worksheet.
 
-Go back to the Wrapper's **Overview** tab to view the new entities.
+From the Wrapper's **Overview** tab, you can view the new entities.
 
 ![Entities created](images/new-spreadsheet-entities.jpg "Entities created")
 
