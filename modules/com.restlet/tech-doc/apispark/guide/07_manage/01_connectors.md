@@ -44,6 +44,10 @@ You are prompted to give your Connector a **Name** and a **Description** (option
 
 ![Create a connector with a hosted agent](images/create-connector.jpg "Create a connector with a hosted agent")
 
+From the **Settings** tab, select the **Remote agent** menu from the **Connector** section. Enter a **Target endpoint** for your agent.
+
+>**Note:** Your target endpoint must not end up with a trailing slash "/".
+
 **Standalone agent**  
 You will be prompted to give your Connector a **Name** and a **Description** (optional).
 
