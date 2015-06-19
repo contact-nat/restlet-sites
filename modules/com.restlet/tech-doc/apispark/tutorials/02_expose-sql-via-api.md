@@ -75,7 +75,7 @@ Click on the **Test connection** button to test the connection.
 
 >**Note:** depending on your configuration, you may need to configure your firewall in order to authorize APISpark IP addresses to access your database from the internet. Feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a> if you need help.
 
-Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Settings** tab.
+Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Overview** tab.
 
 ![Add a Catalog](images/settings-tab.jpg "Add a Catalog")
 
