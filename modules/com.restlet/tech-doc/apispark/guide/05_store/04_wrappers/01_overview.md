@@ -11,7 +11,7 @@ To create a **Wrapper** Entity Store, go to your **Dashboard** and click on the 
 
 Select the type of external data source you would like to wrap from the **Type** drop-down menu.
 
-![Create a wrapper](images/createawrapperstore.png "Create a wrapper")
+![Create a wrapper](images/create-a-wrapper-store.jpg "Create a wrapper")
 
 Each wrapper has its own simple configuration procedure.
 
@@ -19,13 +19,13 @@ For details on how to setup each wrapper, please navigate to the appropriate sub
 
 # Supported wrappers
 
-## Google Spreadsheet Wrapper
+## Google Sheets Wrapper
 
-<a href="https://docs.google.com/spreadsheets/" target="_blank">Google Spreadsheet</a> is a collaborative data editing tool that belongs to the Google Docs suite.
+<a href="https://docs.google.com/spreadsheets/" target="_blank">Google Sheets</a> is a collaborative data editing tool that belongs to the Google Docs suite.
 
-The **Google Spreadsheet Wrapper** Entity Store lets you wrap your spreadsheets to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
+The **Google Sheets Wrapper** Entity Store lets you wrap your spreadsheets to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
-For more information jump to our [Expose data from a Google Spreadsheet as an API](/technical-resources/apispark/tutorials/turn-spreadsheet-to-api "Expose data from a Google Spreadsheet as an API") tutorial.
+For more information jump to our [Expose data from a Google Sheets as an API](/technical-resources/apispark/tutorials/turn-spreadsheet-to-api "Expose data from a Google Sheets as an API") tutorial.
 
 ## SQL database Wrapper
 
