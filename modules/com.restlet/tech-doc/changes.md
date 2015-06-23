@@ -1,4 +1,11 @@
-v3.10
+v3.10.8
+
+- Updated Google Sheets screenshots
+- Added supported characters for spreadsheets
+- Moved AWS example from user guide "wrappers" section to "tutorials" section
+- Created a specific section for Google Sheets wrapper in the User guide
+
+v3.10.5
 
 - Gsheet wrapper filters
 - RS + AS Export Swagger 1.2B
