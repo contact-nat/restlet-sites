@@ -248,12 +248,12 @@ toc:
       long-title: Overview
       title: Overview
       url: /store/wrappers/overview
-    - file: 02_aws.md
-      id: aws
-      link_url: /05_store/04_wrappers/02_aws.md
-      long-title: Serve files from your AWS S3 account
-      title: AWS S3 example
-      url: /store/wrappers/aws
+    - file: 02_google-sheets.md
+      id: google-sheets
+      link_url: /05_store/04_wrappers/02_google-sheets.md
+      long-title: Expose data from a spreadsheet as an API
+      title: Google Sheets Wrapper Example
+      url: /store/wrappers/google-sheets
     long-title: Wrappers (externally stored data)
     title: Wrappers
   long-title: Store data for APIs in APISpark Data Stores
