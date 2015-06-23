@@ -53,25 +53,31 @@ configurable status page setting and more!
 
 In order to illustrate these classes, let's examine a simple example.
 Here we create a Component, then add an HTTP server connector to it,
-listening on port 8182. Then we create a simple trace Restlet and attach
+listening on port 8182. Then we create a simple trace ServerResource and attach
 it to the defaut VirtualHost of the Component. This default host is
 catching any request that wasn't already routed to a declared
 VirtualHost (see the Component.hosts property for details). In a later
 example, we will also introduce the usage of the Application class. Note
 that for now you don't see any access log displayed in the console. 
 
-```
+```java
+import org.restlet.Component;
+import org.restlet.data.Protocol;
+import org.restlet.resource.Get;
+import org.restlet.resource.ServerResource;
+
+public class Test extends ServerResource {
     public static void main(String[] args) throws Exception {
         // Create a new Restlet component and add a HTTP server connector to it
         Component component = new Component();  
         component.getServers().add(Protocol.HTTP, 8182);  
         // Then attach it to the local host
-        component.getDefaultHost().attach("/trace", Part05.class);  
+        component.getDefaultHost().attach("/trace", Test.class);  
         // Now, let's start the component!
         // Note that the HTTP server connector is also automatically started.
         component.start();  
     }  
-    @Get
+    @Get("txt")
     public String toString() {  
         // Print the requested URI path
         return "Resource URI  : " + getReference() + '\n' + "Root URI      : "
@@ -79,6 +85,8 @@ that for now you don't see any access log displayed in the console. 
                 + getReference().getBaseRef() + '\n' + "Remaining part: "
                 + getReference().getRemainingPart();  
     }
+}
+
 ```
 
 Now let's test it by entering
