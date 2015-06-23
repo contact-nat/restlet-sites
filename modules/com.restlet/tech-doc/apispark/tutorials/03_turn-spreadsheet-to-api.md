@@ -10,7 +10,6 @@ To follow this tutorial, you will need:
 
 *   a web browser,
 *   20 minutes of your time,
-*   a Google Account application-specific password.
 
 # 1. Prepare a spreadsheet
 
