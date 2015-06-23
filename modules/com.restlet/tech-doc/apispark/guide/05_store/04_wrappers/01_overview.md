@@ -57,7 +57,7 @@ For more information jump to our [Expose data from a Firebase real-time backend 
 
 The **S3** File Store lets you wrap AWS S3 buckets to an APISpark File Store. You are then free to expose these files via web APIs.
 
-For more information jump to our [AWS S3 tutorial](/technical-resources/apispark/tutorials/awss3-bucket-to-api "AWS S3 tutorial") tutorial.
+For more information jump to our [AWS S3](/technical-resources/apispark/tutorials/awss3-bucket-to-api "AWS S3 tutorial") tutorial.
 
 ## GitHub Wrapper
 
