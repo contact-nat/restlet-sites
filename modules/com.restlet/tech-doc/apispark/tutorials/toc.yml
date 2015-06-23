@@ -14,8 +14,8 @@ toc:
 - file: 03_turn-spreadsheet-to-api.md
   id: turn-spreadsheet-to-api
   link_url: /03_turn-spreadsheet-to-api.md
-  long-title: Expose data from a Google Spreadsheet as an API
-  title: Google Spreadsheet to API
+  long-title: Expose data from a spreadsheet as an API
+  title: Google Sheets to API
   url: /turn-spreadsheet-to-api
 - file: 04_manage-api.md
   id: manage-api
@@ -47,4 +47,10 @@ toc:
   long-title: Expose files from a GitHub repository as an API
   title: GitHub repository to API
   url: /github
+- file: 09_awss3-bucket-to-api.md
+  id: awss3-bucket-to-api
+  link_url: /09_awss3-bucket-to-api.md
+  long-title: Expose files from an AWS S3 bucket as an API
+  title: AWS S3 bucket to API
+  url: /awss3-bucket-to-api
 
