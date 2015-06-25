@@ -43,16 +43,16 @@ APISpark proposes 2 types of DNS configuration for your custom domains.
 
 ### DNS aliasing
 
-Use the **DNS aliasing** configuration if you opt for adding a CNAME entry with your DNS registrar, that points to your API's default endpoint on APISpark.
+Use the **DNS aliasing** configuration if you opt for adding a CNAME entry with your DNS registrar, that points to apispark.net.
 
-Here is an example configuration to setup with your domain registrar, for mypai.customdomain.com:
+Here is an example configuration to setup with your domain registrar, for myapi.customdomain.com:
 
 ```
-myapi 10800 IN CNAME myapi.apispark.net.
+myapi 10800 IN CNAME apispark.net.
 ```
 
 ### DNS delegation
 
 Use the **DNS delegation** configuration if you opt to let APISpark serve as your DNS.
 
-The Amazon Route53 service will be leveraged in this case. In this case, the IP addresses of the DNS servers are displayed.
+The Amazon Route53 service will be leveraged in this case. In this case, the DNS servers are displayed.
