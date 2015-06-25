@@ -46,7 +46,7 @@ Extensions|[Android](../editions/android/overview "Android")|[GAE](../editions/g
 [org.restlet.ext.sip](./sip "sip")|![](images/puce.png)|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for Session Initiation Protocol (SIP).
 [org.restlet.ext.slf4j](./slf4j "slf4j")|&nbsp;|&nbsp;|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the SLF4J logging bridge.
 [org.restlet.ext.spring](./spring/overview "spring")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Spring Framework.
-[org.restlet.ext.swagger](./swagger "swagger")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Simple framework.
+[org.restlet.ext.swagger](./swagger "swagger")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Swagger.
 [org.restlet.ext.thymeleaf](./thymeleaf "thymeleaf")|![](images/puce.png)|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Thymeleaf.
 [org.restlet.ext.velocity](./velocity "velocity")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Integration with Apache Velocity.
 [org.restlet.ext.wadl](./wadl "wadl")|&nbsp;|![](images/puce.png)|&nbsp;|![](images/puce.png)|![](images/puce.png)|![](images/puce.png)|Support for the WADL specification.
