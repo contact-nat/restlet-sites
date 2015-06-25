@@ -2,7 +2,8 @@
 
 This tutorial will show you how to create a custom web API that exposes data stored in a spreadsheet created with Google Sheets. <a href="
 http://docs.google.com/" target="_blank">Google Sheets</a> is a popular collaborative data editing tool within the Google Docs suite.  
-You can import one spreadsheet per wrapper. If you need data from several spreadsheets, create one wrapper per spreadsheet and import them in one single API.
+
+For more information, jump to the [Google Sheets section](/technical-resources/apispark/guide/store/wrappers/google-sheets "Google Sheets section") of our User Guide.
 
 # Requirements
 
@@ -100,10 +101,6 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 ![Swagger Try it out button](images/03swagger-try-it-out-button.jpg "Swagger Try it out button")
 
 Note that any POST requests made to the API will result in new data being created in your spreadsheet. Likewise, any data manually inserted via the spreadsheet is visible via the custom web API.
-
-You can also perform simple [filters](/technical-resources/apispark/guide/publish/publish/invocation#filter "filters") on entity properties and [sort](/technical-resources/apispark/guide/publish/publish/invocation#sort "sort") queries on Google Sheets wrapper APIs.
-
->**Note:** Non alphanumeric characters must be in quotes in your queries. If your spreadsheet cells are in plain text format, they must also be in quotes in your queries.
 
 APISpark lets you generate custom Client SDKs for your API. Supported environments include Java, Android, iOS and JavaScript (AJAX or Node.js).
 

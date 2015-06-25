@@ -8,6 +8,8 @@ APISpark features a Wrapper Entity Store for Google Sheets spreadsheets. The Goo
 
 To know how to create a Google Sheets wrapper step by step, jump to our [Google Sheets tutorial](/technical-resources/apispark/tutorials/turn-spreadsheet-to-api "Google Sheets tutorial").
 
+You can import one spreadsheet per wrapper. If you need data from several spreadsheets, create one wrapper per spreadsheet and import them into one single API.
+
 # Configure your spreadsheet
 
 Your spreadsheet must follow a few rules in order to be stored properly inside an Entity Store.
