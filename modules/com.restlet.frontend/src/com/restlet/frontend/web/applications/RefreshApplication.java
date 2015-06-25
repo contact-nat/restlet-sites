@@ -4,8 +4,6 @@
 
 package com.restlet.frontend.web.applications;
 
-import freemarker.template.Configuration;
-
 /**
  * Application that allows resources to refresh web pages with Freemarker.
  * 
@@ -13,18 +11,11 @@ import freemarker.template.Configuration;
  */
 public interface RefreshApplication {
 
-    /**
-     * Returns the Freemarker configuration object.
-     * 
-     * @return The Freemarker configuration object.
-     */
-    public Configuration getFmc();
-
-    /**
-     * Returns the URI of the Web pages directory.
-     * 
-     * @return The URI of the Web pages directory.
-     */
-    public String getWwwUri();
+	/**
+	 * Returns the URI of the Web pages directory.
+	 * 
+	 * @return The URI of the Web pages directory.
+	 */
+	public String getWwwUri();
 
 }

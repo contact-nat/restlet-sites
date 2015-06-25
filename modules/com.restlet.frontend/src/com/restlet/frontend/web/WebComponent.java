@@ -23,6 +23,7 @@ import com.restlet.frontend.web.applications.MavenRestletOrg;
 import com.restlet.frontend.web.applications.P2RestletOrg;
 import com.restlet.frontend.web.applications.RestletCom;
 import com.restlet.frontend.web.applications.StudioRestletCom;
+import com.restlet.frontend.web.services.RouterPropertiesReader;
 
 /**
  * The web component managing the Restlet web servers.
@@ -60,6 +61,12 @@ public class WebComponent extends Component {
 		}
 
 	}
+	
+	private Properties properties;
+	
+	private int port;
+	
+	private String virtualHostsPropertiesRef;
 
 	/**
 	 * Main method.
@@ -87,12 +94,14 @@ public class WebComponent extends Component {
 		getLogService().setLoggerName("com.noelios.web.WebComponent.www");
 		// getLogService().setIdentityCheck(true);
 
-		final Properties properties = getProperties("clap://class/webComponent.properties");
+		properties = getProperties("clap://class/webComponent.properties");
+		
+		virtualHostsPropertiesRef = properties.getProperty("virtual.hosts.uri", "clap://class/virtual-host.properties");
 
 		// IP address to listen on
 		String ipAddress = properties.getProperty("server.address");
 		// Port to listen on
-		int port = Integer.parseInt(properties.getProperty("server.http.port"));
+		port = Integer.parseInt(properties.getProperty("server.http.port"));
 
 		// Path to the truststore.
 		String truststorePath = properties.getProperty("truststore.path");
@@ -111,143 +120,61 @@ public class WebComponent extends Component {
 		getClients().add(Protocol.RIAP);
 		getClients().add(Protocol.HTTP);
 
-		// -----------
-		// restlet.org
-		// -----------
-		// handle redirection to restlet.com site.
-		VirtualHost host = addHost("restlet.org", port, new Redirector(
-				getContext().createChildContext(), null,
-				getFrameworkSiteRedirectionMode(properties)) {
-			@Override
-			protected Reference getTargetRef(Request request, Response response) {
-				Reference ref = new Reference(request.getResourceRef());
-				ref.setHostDomain(getHostDomain("restlet.com", properties));
-				return ref;
-			}
-		}, properties);
-		getHosts().add(host);
+		VirtualHost host;
 		// ---------------
 		// restlet.com
 		// ---------------
 		host = addHost("restlet.com", port, new RestletCom(
 				"clap://class/restletCom.properties"), properties);
-		getHosts().add(host);
+		getHosts().add(host);		
 		// -----------------
 		// studio.restlet.com
 		// -----------------
 		host = addHost("studio.restlet.com", port, new StudioRestletCom(
 				"clap://class/studioRestletCom.properties"), properties);
 		getHosts().add(host);
-
 		// -----------------
-		// maven.restlet.org
+		// maven.restlet.com
 		// -----------------
-		host = addHost("maven.restlet.org", port, new Redirector(getContext()
-				.createChildContext(), null,
-				getFrameworkSiteRedirectionMode(properties)) {
-			@Override
-			protected Reference getTargetRef(Request request, Response response) {
-				Reference ref = new Reference(request.getResourceRef());
-				ref.setHostDomain(getHostDomain("maven.restlet.com", properties));
-				return ref;
-			}
-		}, properties);
-		getHosts().add(host);
 		host = addHost("maven.restlet.com", port, new MavenRestletOrg(
 				"clap://class/mavenRestletOrg.properties"), properties);
 		getHosts().add(host);
-		// -----------------
-		// p2.restlet.org
-		// -----------------
-		host = addHost("p2.restlet.org", port, new Redirector(getContext()
-				.createChildContext(), null,
-				getFrameworkSiteRedirectionMode(properties)) {
-			@Override
-			protected Reference getTargetRef(Request request, Response response) {
-				Reference ref = new Reference(request.getResourceRef());
-				ref.setHostDomain(getHostDomain("p2.restlet.com", properties));
-				return ref;
-			}
-		}, properties);
-		getHosts().add(host);
+		// --------------
+		// p2.restlet.com
+		// --------------
 		host = addHost("p2.restlet.com", port, new P2RestletOrg(
 				"clap://class/p2RestletOrg.properties"), properties);
 		getHosts().add(host);
 
-		// -----------------------
-		// Redirect to restlet.org
-		// -----------------------
-		host = addRedirection("www.restlet.org", port,
-				"http://restlet.org{rr}", properties);
-		getHosts().add(host);
-		// -----------------------
-		// Redirect to restlet.com
-		// -----------------------
-		host = addRedirection("www.restlet.com", port,
-				"http://restlet.com{rr}", properties);
-		getHosts().add(host);
-		// -----------------------
-		// Redirect to restlet.org
-		// -----------------------
-		host = addRedirection(
-				"search.restlet.org|search.onrest.org|book.restlet.org|onrest.org|www.onrest.org",
-				port, "http://restlet.org/", properties);
-		getHosts().add(host);
-		// ------------------------------
-		// Redirect to restlet.tigris.org
-		// ------------------------------
-		host = addRedirection("restlet.net", port,
-				"http://restlet.tigris.org{rr}",
-				Redirector.MODE_CLIENT_TEMPORARY, properties);
-		getHosts().add(host);
-		host.attach("/fisheye/", new Redirector(null,
-				"http://restlet.net/source/browse/restlet/",
-				Redirector.MODE_CLIENT_PERMANENT));
-		getLogger()
-				.info(host.getHostDomain()
-						+ "/fisheye/ redirected to \"http://restlet.tigris.org{rr}\" on port "
-						+ host.getHostPort());
-		// -----------------------
-		// Redirect to restlet.net
-		// -----------------------
-		host = addRedirection("www.restlet.net", port,
-				"http://restlet.net{rr}", properties);
-		getHosts().add(host);
-		// ----------------------------
-		// Redirect to blog.restlet.com
-		// ----------------------------
-		host = addRedirection("blog.noelios.com", port,
-				"http://blog.restlet.com{rr}", properties);
-		getHosts().add(host);
-		// ---------------------------
-		// Redirect to restlet.com
-		// ---------------------------
-		host = addRedirection("noelios.com|noelios.net|noelios.org|"
-				+ "www.noelios.com|www.noelios.net|www.noelios.org", port,
-				"http://restlet.com{rr}", properties);
-
-		// ----------------------------
-		// Redirect to restlet.com/blog
-		// ----------------------------
-		host = addRedirection("blog.restlet.com", port,
-				"http://restlet.com/blog{rr}", properties);
-
-		getHosts().add(host);
-
-        // ----------------------------
-        // Redirect summer-of-apis.restlet.com to restlet.com/summer-of-apis
-        // ----------------------------
-        host = addRedirection("summer-of-apis.restlet.com", port,
-                "http://restlet.com/summer-of-apis{rr}", properties);
+		refreshHosts();
 
         getHosts().add(host);
-        // ----------------------------
-        // Redirect summerofapis.restlet.com to restlet.com/summer-of-apis
-        // ----------------------------
-        host = addRedirection("summerofapis.restlet.com", port,
-                "http://restlet.com/summer-of-apis{rr}", properties);
-
-        getHosts().add(host);
+	}
+	
+	private void refreshHosts() {
+		RouterPropertiesReader reader = new RouterPropertiesReader(virtualHostsPropertiesRef) {
+			
+			@Override
+			public void handle(final String source, final String target, int redirectionMode, boolean bStartsWith) {
+				VirtualHost host = null;
+				if (!target.toLowerCase().startsWith("http://") && !target.toLowerCase().startsWith("https://")) {
+					host = addHost(source, port, new Redirector(
+							getContext().createChildContext(), null,
+							redirectionMode) {
+						@Override
+						protected Reference getTargetRef(Request request, Response response) {
+							Reference ref = new Reference(request.getResourceRef());
+							ref.setHostDomain(getHostDomain(target, properties));
+							return ref;
+						}
+					}, properties);
+				} else {
+					host = addRedirection(source, port, target, redirectionMode, properties);					
+				}
+				getHosts().add(host);
+			}
+		};
+		reader.read(getLogger());
 	}
 
 	/**
@@ -323,29 +250,6 @@ public class WebComponent extends Component {
 			String redirection, Properties properties) {
 		return addRedirection(host, port, redirection,
 				Redirector.MODE_CLIENT_PERMANENT, properties);
-	}
-
-	/**
-	 * Returns the redirection mode for the framework site.
-	 * 
-	 * @param properties
-	 *            The current properties.
-	 * @return The redirection mode for the framework site.
-	 */
-	private int getFrameworkSiteRedirectionMode(Properties properties) {
-		String r = properties.getProperty("framework.site.redirection",
-				"MODE_CLIENT_TEMPORARY");
-
-		if ("MODE_CLIENT_FOUND".equals(r)) {
-			return Redirector.MODE_CLIENT_FOUND;
-		} else if ("MODE_CLIENT_PERMANENT".equals(r)) {
-			return Redirector.MODE_CLIENT_PERMANENT;
-		} else if ("MODE_CLIENT_SEE_OTHER".equals(r)) {
-			return Redirector.MODE_CLIENT_SEE_OTHER;
-		}
-
-		return Redirector.MODE_CLIENT_TEMPORARY;
-
 	}
 
 	/**

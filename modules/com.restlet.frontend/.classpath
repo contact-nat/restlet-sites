@@ -2,15 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/javax.servlet"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.jetty"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.freemarker"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.restlet.ext.atom"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.restlet.ext.freemarker"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.restlet.ext.jackson"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.restlet.ext.jetty"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.restlet.ext.xml"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.restlet"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/com.fasterxml.jackson"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
