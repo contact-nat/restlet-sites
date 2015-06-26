@@ -130,7 +130,7 @@ artifactId | Description
 [org.restlet.ext.sip](../../extensions/sip "sip")|Support for Session Initiation Protocol (SIP).
 [org.restlet.ext.slf4j](../../extensions/slf4j "slf4j")|Support for the SLF4J logging bridge.
 [org.restlet.ext.spring](guide:///extensions/spring/overview "spring")|Integration with Spring Framework.
-[org.restlet.ext.swagger](../../extensions/swagger "swagger")|Integration with Simple framework.
+[org.restlet.ext.swagger](../../extensions/swagger "swagger")|Integration with Swagger.
 [org.restlet.ext.thymeleaf](../../extensions/thymeleaf "thymeleaf")|Integration with Thymeleaf.
 [org.restlet.ext.velocity](../../extensions/velocity "velocity")|Integration with Apache Velocity.
 [org.restlet.ext.wadl](../../extensions/wadl "wadl")|Support for the WADL specification.
