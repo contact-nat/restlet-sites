@@ -23,21 +23,26 @@ Custom domains can also be used as a basis for you API endpoints.
 
 ## Add a custom domain
 
-To add a custom domain endpoint, you first have to register your custom domain, in the **My domains** tab of the **Account** page.
+To add a custom domain endpoint, you first have to register your custom domain, in the **Domains** tab of the **Account** page.
 
-![My domains tab](images/my-domains-tab.jpg "My domains tab")
-
-Add a domain and choose a DNS configuration type.
-
-![Add domain name](images/add-domain-name.jpg "Add domain name")
-
-Then, edit the new DNS entry, and bind one of your web APIs.
+![Domains tab](images/my-domains-tab.jpg "Domains tab")
 
 From there, you can create new endpoints for your web API, with a base URI taken either from the default apispark.net domain or from your custom domain.
 
->**Note:** HTTPS is not supported for custom domains.
+**Add** a domain, choose a [DNS configuration type](dns-configuration)  and enter a name for your domain.
 
-## DNS configuration types
+![Add domain name](images/add-domain-name.jpg "Add domain name")
+
+Then, you need to bind your domain to one or several APIs. Click **Add a binding**.
+
+![Add a binding](images/add-a-binding.jpg "Add a binding")
+
+>**Note:** If you want to apply the binding to all API versions, select "\*" in the **Version** drop-down menu.
+
+
+**Save** your changes and **Deploy** the API you bound to make them go live.
+
+## <a class="anchor" name="dns-configuration"></a>DNS configuration types
 
 APISpark proposes 2 types of DNS configuration for your custom domains.
 
@@ -45,14 +50,22 @@ APISpark proposes 2 types of DNS configuration for your custom domains.
 
 Use the **DNS aliasing** configuration if you opt for adding a CNAME entry with your DNS registrar, that points to apispark.net.
 
+![DNS Aliasing](images/alias-domain.jpg "DNS Aliasing")
+
 Here is an example configuration to setup with your domain registrar, for myapi.customdomain.com:
 
 ```
 myapi 10800 IN CNAME apispark.net.
 ```
 
+![DNS Aliasing](images/alias-binding.jpg "DNS Aliasing")
+
 ### DNS delegation
 
 Use the **DNS delegation** configuration if you opt to let APISpark serve as your DNS.
 
+![DNS Delegation](images/delegation-domain.jpg "DNS Delegation")
+
 The Amazon Route53 service will be leveraged in this case. In this case, the DNS servers are displayed.
+
+![DNS Delegation](images/delegation-binding.jpg "DNS Delegation")
