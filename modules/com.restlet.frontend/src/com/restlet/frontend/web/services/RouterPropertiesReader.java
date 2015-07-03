@@ -21,7 +21,7 @@ public abstract class RouterPropertiesReader {
 	}
 
 	public void read(Logger logger) {
-		Map<String, Integer> modes = new HashMap<>();
+		Map<String, Integer> modes = new HashMap<String, Integer>();
 		modes.put("CLIENT_PERMANENT", Redirector.MODE_CLIENT_PERMANENT);
 		modes.put("CLIENT_FOUND", Redirector.MODE_CLIENT_FOUND);
 		modes.put("CLIENT_SEE_OTHER", Redirector.MODE_CLIENT_SEE_OTHER);
