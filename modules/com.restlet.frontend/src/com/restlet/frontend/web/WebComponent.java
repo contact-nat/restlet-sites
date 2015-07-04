@@ -5,6 +5,7 @@
 package com.restlet.frontend.web;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import org.restlet.Component;
@@ -14,6 +15,8 @@ import org.restlet.Restlet;
 import org.restlet.Server;
 import org.restlet.data.Protocol;
 import org.restlet.data.Reference;
+import org.restlet.engine.Engine;
+import org.restlet.engine.connector.HttpClientHelper;
 import org.restlet.representation.Representation;
 import org.restlet.resource.ClientResource;
 import org.restlet.routing.Redirector;
@@ -90,7 +93,7 @@ public class WebComponent extends Component {
 	 */
 	public WebComponent() throws Exception {
 		super();
-		
+		Engine.getInstance().getRegisteredClients().add(0, new HttpClientHelper(null));
 		getLogService().setLoggerName("com.noelios.web.WebComponent.www");
 		// getLogService().setIdentityCheck(true);
 
