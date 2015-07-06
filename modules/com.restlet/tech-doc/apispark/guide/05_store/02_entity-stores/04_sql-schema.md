@@ -1,4 +1,4 @@
-If you need your API to get data from your existing SQL database, your firewall may prevent APISpark from connecting to this database. To solve this secure access issue, you can extract a SQL Schema from your database and import it in APISpark. The databases (and tools) supported are PostgreSQL (pgAdmin, pg_dump), MySQL (Mysql Workbench, mysqldump) and ORACLE (SQL Developer).
+If you need your API to get data from your existing SQL database, your firewall may prevent APISpark from connecting to this database. To solve this secure access issue, you can extract a SQL Schema from your database and import it in APISpark. We support MySQL (Mysql Workbench, mysqldump) databases.
 
 ![Exposing SQL data](images/exposing-sql-data.jpg "Exposing SQL data")
 
@@ -6,6 +6,7 @@ If you need your API to get data from your existing SQL database, your firewall 
 You only need a database structure with tables and constraints definitions to import your schema in APISpark.  
 Generate a DDL or SQL file following the appropriate database and tool instructions below.
 
+<!--
 ## using PostgreSQL
 
 ### with pgAdmin
@@ -42,6 +43,7 @@ Replace the square brackets [] content with:
   * [user] : User name  
   * [output.sql] : Path and name of the output SQL file  
   * [schema] : Database schema to export
+-->
 
 ## using MySQL
 
@@ -84,6 +86,7 @@ Replace the square brackets [] content with:
   * [schema]: Database schema to export  
   * [output.sql]: Path and name of the output SQL file
 
+<!--
 ## using Oracle
 
 ### with SQLDeveloper
@@ -128,6 +131,7 @@ In the **Export wizard - Step 5 of 5**  window:
   * Click on the **Finish** button.
 
 SQL Developer generates the SQL file which will be imported in APISpark.
+-->
 
 You can import the generated SQL file in APISpark.
 
@@ -179,11 +183,19 @@ The following table contains SQL features which can be read by APISpark in the S
 
 | Database/Export tool | Column name | Column type | Primary key | Foreign key | Not nullable column
 | :---: | :---: | :---: | :---: | :---: | :---: |
+| **MySQL/MySQL Workbench** | X | X | X | X | X
+| **MySQL/mysqldump** | X | X | X | X | X
+
+<!--
+| Database/Export tool | Column name | Column type | Primary key | Foreign key | Not nullable column
+| :---: | :---: | :---: | :---: | :---: | :---: |
 | **Oracle/ SQL Developer** | X | X | X | X |  |
 | **PostgreSQL/pgAdmin** | X | X | X | X | X
 | **PostgreSQL/pg_dump** | X | X | X | X | X
 | **MySQL/MySQL Workbench** | X | X | X | X | X
 | **MySQL/mysqldump** | X | X | X | X | X
+-->
+
 
 ## Supported SQL syntax in the SQL file
 The supported SQL statements in the SQL file are:
