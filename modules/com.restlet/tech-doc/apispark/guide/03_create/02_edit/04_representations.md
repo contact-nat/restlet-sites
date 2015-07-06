@@ -79,7 +79,7 @@ This setting can be changed from the **General** section of the API **Settings**
 
 ![Change collections formatting](images/change-collection-formatting.jpg "Change collections formatting")
 
->**Note:** You will need to [synchronize](/technical-resources/apispark/guide/create/overview#synchronize "synchronize") each store imported and then redeploy your API in order for your changes to be taken into account.
+>**Note:** You will need to [reset](/technical-resources/apispark/guide/create/overview#reset "reset") each store import and then redeploy your API in order for your changes to be taken into account.
 
 # Variants
 
