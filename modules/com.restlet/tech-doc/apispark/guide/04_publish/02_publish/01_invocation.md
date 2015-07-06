@@ -69,13 +69,16 @@ Currently, the only supported comparison operator is equality.
 
 All filter criteria in a GET request are combined with AND logic.
 
-*Syntax*
+>*Syntax*
 
-`GET https://<apiendpoint>/<collection_name>/?<property1>=<value1>&<property2>=<value2>&...`
+>`GET https://<apiendpoint>/<collection_name>/?<property1>=<value1>&<property2>=<value2>&...`
 
-*Example*
+>*Example*
 
-`GET https://contactsapi.apispark.net/v1/contacts/?age=27&firstname=roy`
+>`GET https://contactsapi.apispark.net/v1/contacts/?age=27&firstname=roy`
+
+
+>**Note:** When querying an API for String values, if there is a space in the property value, the query parameter must be surrounded by double quotes e.g. `GET https://fireworks.apispark.net/v1/towns/?City="Jackson Hole"`.
 
 ### <a class="anchor" name="sort"></a>Sort
 
@@ -83,13 +86,13 @@ The `$sort` query parameter is used to sort results in either ascending or desce
 
 Ascending order is used by default if none is specified.
 
-*Syntax*
+>*Syntax*
 
-`GET https://<endpoint>/<collection-name>/?$sort=<property1> <sort-order>,<property2> <sort-order>,...`
+>`GET https://<endpoint>/<collection-name>/?$sort=<property1> <sort-order>,<property2> <sort-order>,...`
 
-*Example*
+>*Example*
 
-`GET https://myapi.apsipark.net/v1/messages/?$sort=creationDate ASC,size DESC`
+>`GET https://myapi.apsipark.net/v1/messages/?$sort=creationDate ASC,size DESC`
 
 In this request, we sort a collection of messages by their creation date in ascending order, and then by size in descending order.
 
@@ -98,9 +101,9 @@ In this request, we sort a collection of messages by their creation date in asce
 
 In case you have many entries stored in a collection, you may not want to read them all at once when invoking the API. The `$page` and `$size` query parameters let you specify the size of a page, and which page number to load.
 
-*Example*
+>*Example*
 
-`GET https://myapi.apsipark.net/v1/messages/?$page=4&$size=100`
+>`GET https://myapi.apsipark.net/v1/messages/?$page=4&$size=100`
 
 >**Note:** Page numbers start from 0.
 
