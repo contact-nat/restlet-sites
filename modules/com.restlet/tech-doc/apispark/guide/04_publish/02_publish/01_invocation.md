@@ -43,6 +43,12 @@ Sending a GET request to this URL will list all Contacts stored by the server.
 
 Sending POST request to this URL with result in the creation of a new Contact, and the payload of the request will be used to initialise the Contact's properties.
 
+APISpark provides a total items count through headers for paginated APIs that import Entity Stores, SQL wrappers or Google Sheets wrappers. Here is a list of the available headers:
+- X-Page-Count -> total number of pages
+- X-page-Number -> page number
+- X-Page-Size -> page capacity (maximum number of items per page)
+- X-Total-Count -> total number of items
+
 ### Invoking an element resource
 
 An element resource is typically identified by a URL that ends in the name of a type of data followed by the unique identifier of the element.
