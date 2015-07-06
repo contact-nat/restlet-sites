@@ -196,6 +196,7 @@ The following table contains SQL features which can be read by APISpark in the S
 | **MySQL/mysqldump** | X | X | X | X | X
 -->
 
+The supported column types are: INTEGER, BIGINT, SMALLINT, TINYINT, DECIMAL, DOUBLE, NUMERIC, FLOAT, BOOLEAN, CHAR, NCHAR, VARCHAR, NVARCHAR, DATE and TIMESTAMP.
 
 ## Supported SQL syntax in the SQL file
 The supported SQL statements in the SQL file are:
