@@ -1,3 +1,14 @@
+v3.11
+
+- Synchro API
+- Custom domains
+- Primary key policy (from entity to id property)
+- Replaced Synchronize button by Reset import button
+- Removed ORACLE and Postgre from SQL doc as it is not supported so far
+- Added SQL supported column types
+- Added double quotes for queries with space in string
+- Added API pagination (page count, size, number of items and total count)
+
 v3.10.8
 
 - Updated Google Sheets screenshots
