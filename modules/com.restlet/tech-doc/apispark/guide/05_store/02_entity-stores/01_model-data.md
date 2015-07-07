@@ -148,7 +148,7 @@ In the green confirmation message that displays, click on the link that leads to
 
 ![add property](images/update-data-sources.jpg "add property")
 
-The **Data sources** section of your API opens in a new tab. This section allows you manage the entities and properties exposed through your web API.
+The **Data sources** section of your API opens in a new tab. This section allows you to manage the entities and properties exposed through your web API.
 
 Select the checkbox of the properties you want to expose and click **Apply**.
 
