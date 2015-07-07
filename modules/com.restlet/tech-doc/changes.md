@@ -1,4 +1,4 @@
-v3.11
+v3.11.4
 
 - Synchro API
 - Custom domains
