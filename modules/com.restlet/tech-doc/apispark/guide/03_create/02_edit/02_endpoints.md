@@ -27,8 +27,6 @@ To add a custom domain endpoint, you first have to register your custom domain, 
 
 ![Domains tab](images/my-domains-tab.jpg "Domains tab")
 
-From there, you can create new endpoints for your web API, with a base URI taken either from the default apispark.net domain or from your custom domain.
-
 **Add** a domain, choose a [DNS configuration type](dns-configuration)  and enter a name for your domain.
 
 ![Add domain name](images/add-domain-name.jpg "Add domain name")
@@ -41,6 +39,8 @@ Then, you need to bind your domain to one or several APIs. Click **Add a binding
 
 
 **Save** your changes and **Deploy** the API you bound to make them go live.
+
+>**Note:** **My domains** tab allows you to create new endpoints for your web API, with a base URI taken either from the default apispark.net domain or from your custom domain.
 
 ## <a class="anchor" name="dns-configuration"></a>DNS configuration types
 
