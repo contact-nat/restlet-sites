@@ -132,45 +132,37 @@ For example, to see your API representation in JSON format, open your API **Over
 
 # <a class="anchor" name="edit-schema"></a>Edit an Entity Store schema
 
-You can modify your Entity Store schema e.g. add a property or an entity without losing the data stored inside. Of course if you delete a property or entity, you will lose the data associated.
+You can modify your Entity Store schema e.g. add a property or an entity without losing the data stored inside. Of course if you delete a property or entity, you will lose the associated data.
 
 >**Note:** Once you have deployed your Entity Store, you will not be able to edit a property's name or its type and you will not be able to change an entity's name or its primary key policy.
 
 ## Add entities and properties
 
-You can add entities and properties to an Entity Store after you have deployed it and you have exported it to an API.
-
 From your Entity Store, add your properties (or entities). In this example we add a composite property called *address* composed of two subproperties called *city* and *country*.
 
 ![add property](images/add-property2.jpg "add property")
 
-In the green confirmation message that displays, click on the link that leads to the API associated.
+**Deploy** your Entity Store.
+
+From the associated APIs, navigate to the **Data sources** section. This section allows you to manage the entities and properties exposed through your web API.
 
 ![add property](images/update-data-sources.jpg "add property")
 
-The **Data sources** section of your API opens in a new tab. This section allows you to manage the entities and properties exposed through your web API.
-
 Select the checkbox of the properties you want to expose and click **Apply**.
-
-Go back to your Entity Store and **Deploy** it.
 
 You can now **Deploy** your API and invoke it.
 
 ## Delete entities and properties
 
-You can delete entities and properties from an Entity Store after you have deployed it and you have exported it to an API.
-
 From your Entity Store, delete your properties (or entities).
 
 ![delete property](images/delete-property.jpg "delete property")
 
-In the window that displays, click on the link that leads to the API associated e.g. *myAPIv1*.
+Click **Confirm** and **Deploy** your Entity Store.
 
-The **Data sources** section of your API opens in a new tab. This section allows you to manage the entities and properties exposed through your web API. Make sure you still want to delete this property.
+You can now **Deploy** the associated APIs and invoke them.
 
-Go back to your Entity Store. Click **Confirm** and **Deploy** it.
-
-You can now **Deploy** your API and invoke it.
+>**Note:** The web API **Data sources** section allows you to manage the entities and properties exposed through your web API.
 
 <!--
 There are three types of relations available: association, aggregation, and composition.
