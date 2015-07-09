@@ -43,13 +43,6 @@ Sending a GET request to this URL will list all Contacts stored by the server.
 
 Sending POST request to this URL with result in the creation of a new Contact, and the payload of the request will be used to initialise the Contact's properties.
 
-APISpark provides a total items count through headers for paginated APIs that import Entity Stores, SQL wrappers or Google Sheets wrappers. Here is a list of the available headers:
-
-- X-Page-Count -> total number of pages  
-- X-page-Number -> page number  
-- X-Page-Size -> page capacity (maximum number of items per page is set to 25)  
-- X-Total-Count -> total number of items
-
 ### Invoking an element resource
 
 An element resource is typically identified by a URL that ends in the name of a type of data followed by the unique identifier of the element.
@@ -113,6 +106,13 @@ In case you have many entries stored in a collection, you may not want to read t
 >`GET https://myapi.apsipark.net/v1/messages/?$page=4&$size=100`
 
 >**Note:** Page numbers start from 0.
+
+APISpark provides a total items count through headers for paginated APIs that import Entity Stores, SQL wrappers or Google Sheets wrappers. Here is a list of the available headers:
+
+- X-Page-Count -> total number of pages  
+- X-page-Number -> page number  
+- X-Page-Size -> page capacity (maximum number of items per page is set to 25)  
+- X-Total-Count -> total number of items
 
 <!--
 ### Load Strategy
@@ -228,9 +228,9 @@ In this request, in which the `$depth` parameter is set to 2, Organizations are 
 
 -->
 
-## Parametering cache information validity
+## Configure an API cache
 
-Parametering server and client-side caching will allow you to improve response time for your APIs. As an API is invoked, APISpark adds information in the HTTP header. The validity duration of these data can be set from your API's **Settings** tab. You can thus increase the data conservation duration and avoid performing requests on data you already collected.
+Configuring server and client-side caching will allow you to improve response time for your APIs. As an API is invoked, APISpark adds information in the HTTP header. The validity duration of these data can be set from your API's **Settings** tab. You can thus increase the data conservation duration and avoid performing requests on data you already collected.
 
 This feature is disabled by default. If you want to specify how long GET responses should be cached by our HTTP client and the APISpark server-side cache, select the **Enabled** checkbox and specify the time in minutes, hours, days or months.
 
