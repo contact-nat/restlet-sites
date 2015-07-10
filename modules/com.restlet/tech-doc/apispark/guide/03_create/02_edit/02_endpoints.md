@@ -57,6 +57,11 @@ Here is an example configuration to setup with your domain registrar, for myapi.
 ```
 myapi 10800 IN CNAME apispark.net.
 ```
+**PATH** - Name of the node to which this record pertains e.g. *myapi*  
+**TTL** - Number of seconds during which the Resource Record stays valid e.g. *10800*  
+**CLASS** - Class code e.g. *IN*, for Internet  
+**TYPE** - Type of Resource Record e.g. *CNAME*  
+**VALUE** - Value of the Canonical Name or CNAME e.g. *apispark.net.*
 
 ![DNS Aliasing](images/alias-binding.jpg "DNS Aliasing")
 
