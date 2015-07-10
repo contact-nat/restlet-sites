@@ -109,7 +109,7 @@ https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/ov
 
 #### Inside the same page
 To insert manual anchors, follow the syntax below:
-go to [Sparky](1)
+go to [Sparky](#1)
 
 <a name="1"></a>Sparky  
 
