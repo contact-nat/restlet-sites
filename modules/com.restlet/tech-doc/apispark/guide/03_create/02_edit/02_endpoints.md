@@ -27,7 +27,7 @@ To add a custom domain endpoint, you first have to register your custom domain, 
 
 ![Domains tab](images/my-domains-tab.jpg "Domains tab")
 
-**Add** a domain, choose a [DNS configuration type](dns-configuration)  and enter a name for your domain.
+**Add** a domain, choose a [DNS configuration type](/technical-resources/apispark/guide/create/edit/endpoints#dns-configuration) and enter a name for your domain.
 
 ![Add domain name](images/add-domain-name.jpg "Add domain name")
 
