@@ -2,21 +2,8 @@
 # Sign up
 
 
+<iframe width="600" height="450" src="https://www.youtube.com/embed/7IuAz43_QqE" frameborder="0" allowfullscreen></iframe>
 
-iframe in html
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/7IuAz43_QqE" frameborder="0" allowfullscreen></iframe>
-
-
------
-
-
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title")
-
-an image
-![image alt text](http//example.io/link-to-image)
-wrapped in a link
-[link text](http//example.io/my-link "link title")
 
 APISpark's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
 
