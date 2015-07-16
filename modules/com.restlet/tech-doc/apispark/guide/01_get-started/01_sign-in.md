@@ -2,7 +2,7 @@
 # Sign up
 
 
-<iframe width="600" height="450" src="https://www.youtube.com/embed/7IuAz43_QqE" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="350" src="https://www.youtube.com/embed/7IuAz43_QqE" frameborder="0" allowfullscreen></iframe>
 
 
 APISpark's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
