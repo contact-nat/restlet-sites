@@ -1,10 +1,6 @@
 
 # Sign up
 
-
-<iframe width="600" height="410" src="https://www.youtube.com/embed/7IuAz43_QqE" frameborder="0" allowfullscreen></iframe>
-
-
 APISpark's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
 
 To sign up, click on the **Sign in** button from the <a href="https://apispark.restlet.com/signin" target="_blank">Welcome page</a> of our website and pick a social provider to identify yourself with. Your account will automatically be created for you.
