@@ -91,15 +91,3 @@ Select an import from the left panel of the API's **Settings** tab, and click on
 
 If you update your Data Store, you can update the API's corresponding resources and representations by clicking on the **Update** button in the same window.
 -->
-
-### <a class="anchor" name="reset"></a>Reset your Entity Store import
-
-If you deploy an Entity Store that is imported by a web API, you can update the web API's **Imports** to switch to the new deployed version of the Entity Store.
-
-To switch to the new deployed version of an imported Entity Store, open the importing web API. Open the **Settings** tab, and select the imported Entity Store from the **Imports** section in the left panel.
-
-Click the **Reset import** button.
-
-![Reset import](images/reset-import.jpg "Reset import")
-
-Go back to the API's **Overview** to view your updated resources and representations.
