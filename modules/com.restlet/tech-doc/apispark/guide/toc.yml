@@ -113,9 +113,15 @@ toc:
       url: /create/edit/representations
     long-title: Edit your local web API
     title: Edit a local web API
-  - file: 03_test.md
+  - file: 03_sync-api-store.md
+    id: sync-api-store
+    link_url: /03_create/03_sync-api-store.md
+    long-title: Update your API structure
+    title: Update API structure
+    url: /create/sync-api-store
+  - file: 04_test.md
     id: test
-    link_url: /03_create/03_test.md
+    link_url: /03_create/04_test.md
     long-title: Test your web API
     title: Test a web API
     url: /create/test
