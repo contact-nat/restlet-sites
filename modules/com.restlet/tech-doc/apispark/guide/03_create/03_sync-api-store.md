@@ -7,3 +7,5 @@ Click the **Reset import** button.
 ![Reset import](images/reset-import.jpg "Reset import")
 
 Go back to the API's **Overview** to view your updated resources and representations.
+
+**Deploy** your API to make your changes go live.
