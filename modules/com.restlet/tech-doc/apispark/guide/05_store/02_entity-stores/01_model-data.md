@@ -148,7 +148,7 @@ From the associated APIs, navigate to the **Data sources** section. This section
 
 ![add property](images/update-data-sources.jpg "add property")
 
-Select the checkbox of the properties you want to expose and click **Apply**.
+You can deselect the checkbox of the properties you do not want to expose and click **Apply**.
 
 You can now **Deploy** your API and invoke it.
 
