@@ -27,7 +27,7 @@ If you have a big amount of data to import, you may need to perform a bulk impor
 >**Note:** Make sure your csv file data format matches the data type of your Entity Properties (*Date* type requires epoch format, *Boolean* type requires true/false format).
 
 
-From the data browser, click the cog on the right of the **Delete** button and select **Import**.
+From the data browser, click the cog button on the right of the **Delete** button and select **Import**.
 
 ![Bulk import](images/bulk-import.jpg "Bulk import")
 
@@ -42,7 +42,7 @@ A message informs you that the import has been successful and your data display 
 ## Delete data
 
 You may delete your Entity entries one by one but if you need to delete all entries at once, use the **Delete all** button.  
-Click the cog on the right of the **Delete** button and select **Delete all**.
+Click the cog button on the right of the **Delete** button and select **Delete all**.
 
 ![Delete all entries](images/delete-all-entries.jpg "Delete all entries")
 

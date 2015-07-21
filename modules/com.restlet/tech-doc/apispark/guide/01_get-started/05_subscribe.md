@@ -28,7 +28,7 @@ To add a payment method to your account, click on your name on top right of your
 
 ![My account](images/my-account.jpg "My account")
 
-Click on **My plan** tab. In the **Payment method** section, click on the action button, shown below.
+Click on **My plan** tab. In the **Payment method** section, click on the cog button, shown below.
 
 ![wheel](images/wheel.jpg "wheel")
 

@@ -93,7 +93,7 @@ Click on the **Deploy** button to deploy the Wrapper.
 
 # 3. Export a Web API
 
-From the Wrapper's **Overview** page, click on the action button on the left of the **Deploy** button and select **Export web API**.
+From the Wrapper's **Overview** page, click on the cog button on the left of the **Deploy** button and select **Export web API**.
 
 ![Export web API](images/export-api-from-sql.jpg "Export web API")
 

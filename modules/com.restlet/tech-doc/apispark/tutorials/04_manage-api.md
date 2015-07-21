@@ -60,7 +60,7 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 APISpark needs your web API contract to be able to access it.
 
-Click on the action button on top right of your screen and select Import definition.
+Click on the cog button on top right of your screen and select Import definition.
 
 ![Import definition](images/import-definition.jpg "Import definition")
 
@@ -139,7 +139,7 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 APISpark needs your web API contract to be able to access it.
 
-Click on the action button on top right of your screen and select Import definition.
+Click on the cog button on top right of your screen and select Import definition.
 
 ![Import definition](images/import-definition.jpg "Import definition")
 

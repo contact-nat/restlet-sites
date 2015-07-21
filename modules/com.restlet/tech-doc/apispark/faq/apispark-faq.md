@@ -60,7 +60,7 @@ Click on the **Save** button.
 
 Deploy your web API.  
 Go to the **Downloads** tab.  
-Click on the action button on top right of your screen and select **Generate downloads**.  
+Click on the cog button on top right of your screen and select **Generate downloads**.  
 In the **Clients** section, click the one you want to download.  
 Click the **Download** button.
 
