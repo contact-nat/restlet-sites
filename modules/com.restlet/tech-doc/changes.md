@@ -1,3 +1,10 @@
+v3.12
+
+- Added more info on custom domains
+- Created Screencasts section
+- Created "Update API structure" section to highlight "Reset import" action
+- Added data bulk import
+
 v3.11.5
 
 - Synchro API
