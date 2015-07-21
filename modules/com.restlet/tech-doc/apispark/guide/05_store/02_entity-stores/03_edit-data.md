@@ -20,12 +20,32 @@ If your store contains more than 25 entries, they will be displayed in seperate 
 
 This button bar allows you respectively to go to the **first page**, go to the **previous page**, enter a **page number**, go to the **next page**, go to the **last page** and **refresh the page**.
 
+## Import data
+
+If you have a big amount of data to import, you may need to perform a bulk import of your data. You can import your data in a csv file.
+
+>**Note:** Make sure your csv file data format matches the data type of your Entity Properties (*Date* type requires epoch format, *Boolean* type requires true/false format).
+
+
+From the data browser, click the cog on the right of the **Delete** button and select **Import**.
+
+![Bulk import](images/bulk-import.jpg "Bulk import")
+
+Navigate to your csv file and select the appropriate column delimiter (comma, semicolon or tab).
+
+![Choose csv file](images/choose-csv-file.jpg "Choose csv file")
+
+A message informs you that the import has been successful and your data display in the data browser.
+
+![Bulk import successful](images/bulk-import-successful.jpg "Bulk import successful")
+
 ## Delete data
 
 You may delete your Entity entries one by one but if you need to delete all entries at once, use the **Delete all** button.  
-Click the action button on the right of the **Delete** button and select **Delete all**.
+Click the cog on the right of the **Delete** button and select **Delete all**.
 
 ![Delete all entries](images/delete-all-entries.jpg "Delete all entries")
+
 
 # Backup and restore data
 
