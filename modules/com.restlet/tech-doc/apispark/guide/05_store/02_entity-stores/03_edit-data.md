@@ -20,7 +20,7 @@ If your store contains more than 25 entries, they will be displayed in seperate 
 
 This button bar allows you respectively to go to the **first page**, go to the **previous page**, enter a **page number**, go to the **next page**, go to the **last page** and **refresh the page**.
 
-## Import data
+## <a class="anchor" name="import-data"></a>Import data
 
 If you have a big amount of data to import, you may need to perform a bulk import of your data. You can import your data in a csv file.
 
