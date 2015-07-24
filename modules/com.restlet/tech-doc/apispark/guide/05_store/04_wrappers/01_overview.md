@@ -25,7 +25,7 @@ For details on how to setup each wrapper, please navigate to the appropriate sub
 
 The **Google Sheets Wrapper** Entity Store lets you wrap your spreadsheets to APISpark in the form of structured entities. You are then free to expose these entities via web APIs.
 
-For more information jump to our [Expose data from a Google Sheets as an API](/technical-resources/apispark/tutorials/turn-spreadsheet-to-api "Expose data from a Google Sheets as an API") tutorial.
+For more information jump to our [Expose data from Google Sheets as an API](/technical-resources/apispark/tutorials/turn-spreadsheet-to-api "Expose data from Google Sheets as an API") tutorial or go to the  [Google Sheets Wrapper page](/technical-resources/apispark/guide/store/wrappers/google-sheets "Google Sheets Wrapper page").
 
 ## SQL database Wrapper
 
