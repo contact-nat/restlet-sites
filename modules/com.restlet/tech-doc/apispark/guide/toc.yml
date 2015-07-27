@@ -258,14 +258,20 @@ toc:
       id: google-sheets
       link_url: /05_store/04_wrappers/02_google-sheets.md
       long-title: Google Sheets Wrapper
-      title: Google Sheets Example
+      title: Google Sheets Wrapper
       url: /store/wrappers/google-sheets
     - file: 03_sql.md
       id: sql
       link_url: /05_store/04_wrappers/03_sql.md
       long-title: SQL Wrapper
-      title: SQL Example
+      title: SQL Wrapper
       url: /store/wrappers/sql
+    - file: 04_github.md
+      id: github
+      link_url: /05_store/04_wrappers/04_github.md
+      long-title: GitHub Wrapper
+      title: GitHub Wrapper
+      url: /store/wrappers/github
     long-title: Wrappers (externally stored data)
     title: Wrappers
   long-title: Store data for APIs in APISpark Data Stores
