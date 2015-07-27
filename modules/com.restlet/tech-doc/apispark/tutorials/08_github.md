@@ -32,6 +32,8 @@ Enter your GitHub account credentials. Press the **Test** button to check the co
 
 ![Setup GitHub account](images/github-account.jpg "Setup your GitHub account")
 
+>**Note:** We advise you to [use personal access tokens](/technical-resources/apispark/guide/store/wrappers/github#personal-access-tokens "use personal access tokens") to import your GitHub repository.
+
 ## 3. Import a GitHub repository
 
 To select a GitHub repository to import, click the **Add** button next to the **Imports** section in the left panel.
@@ -39,8 +41,6 @@ To select a GitHub repository to import, click the **Add** button next to the **
 You will be prompted to enter the username of the **Owner** of the repository, as well as the **Repository** name.
 
 ![Add a GitHub repo](images/import-github-repo.jpg "Add a GitHub repository")
-
->**Note:** We advise you to [use personal access tokens](/technical-resources/apispark/guide/store/wrappers/github#personal-access-tokens "use personal access tokens") to import your GitHub repository.
 
 ## 4. Generate the Wrapper's folders
 
