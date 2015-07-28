@@ -52,3 +52,24 @@ Click on the **Download ...** button from the central panel.
 ![Server skeletons](images/server-skeletons.jpg "Server skeletons")
 
 Server skeletons follow the same version creation process described above for client SDKs.
+
+<!--
+# How to use Java client SDK
+1) Download Java (Restlet Framework) DSK form **Downloads** tab.  
+
+2) From Eclipse, **File** / **Import**  
+**Existing Maven project** / **Next**  
+select folder  
+**Finish**  
+
+3) In **AbstractClientResource.java**, paste code provided  
+Insert your API credentials  
+Execute class **Run as**/**Java application**  
+
+4) Create new Java class (**New**/**class**)  
+Call it *TestAPI.java*  
+Select **Public static void...** checkbox  
+Execute class **Run as**/**Java application**  
+
+5) With your *TestAPI.java* file, you can perform GET, POST requests...
+-->
