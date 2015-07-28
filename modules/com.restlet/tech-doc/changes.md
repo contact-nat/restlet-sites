@@ -1,9 +1,12 @@
-v3.12
+v3.12.7
 
 - Added more info on custom domains
 - Created Screencasts section
 - Created "Update API structure" section to highlight "Reset import" action
 - Added data bulk import
+- Added SQL wrapper pk policy
+- Added more info in Gsheet wrapper page
+- Added info on GitHub personal access tokens
 
 v3.11.5
 
