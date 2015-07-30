@@ -73,9 +73,9 @@ For this purpose, create an API using APISpark Quickstart wizard.
 
 ![Use the Quickstart wizard](images/quickstart-wizard.jpg "Use the Quickstart wizard")
 
-For this example, we call our API *quick_start_wizard_angularjs_sdk*. As it is based on the quickstart wizard, the resources associated are:
-* Company
-* Contact
+For this example, we call our API *quick_start_wizard_angularjs_sdk*. As it is based on the quickstart wizard, the resources associated are:  
+* Company  
+* Contact  
 
 ![API created via the Quickstart wizard](images/qs-wizard-api.jpg "API created via the Quickstart wizard")
 
@@ -96,17 +96,21 @@ The downloaded archive has the following folder structure:
 An HTTP server is required to be able to use the provided code. It can be served from any server.
 
 If the OS has python installed, a `SimpleHTTPServer` inside the folder will do the trick:
+
 ```
 cd /path/to/your/unzipped/sdk
 python -mSimpleHTTPServer 1234
 ```
+
 Then go to `http://localhost:1234/`.
 
 Or use node [http-server](https://www.npmjs.com/package/http-server) with the following command line:
+
 ```
 npm install -g http-server
 http-server /path/to/your/unzipped/sdk
 ```
+
 Open `http://localhost:8080/`.
 
 The developed application is now available.
@@ -131,6 +135,7 @@ With the same convention the quickstart wizard generates a `/companies/{companyI
 * deleteCompany
 
 For any method generated the parameters are provided as a JS object provided as first parameter of the method. For instance to access the company of id *1*:
+
 ```JavaScript
 quick_start_wizard_angularjs_sdkClientResource.getCompany({
   companyid: 1
@@ -165,6 +170,7 @@ quick_start_wizard_angularjs_sdkClientResource.getCompanyList()
 ### Query for one specific company
 
 To get a given company, the `companyid` must be provided as shown below:
+
 ```JavaScript
 quick_start_wizard_angularjs_sdkClientResource.getCompany({
   companyid: 1
@@ -176,9 +182,9 @@ quick_start_wizard_angularjs_sdkClientResource.getCompany({
 
 ### Update an existing company
 
-An update is a call to `putCompany` with:
-* the `companyid` which is the id of the company to update
-* the `body` which is the new company as JSON
+An update is a call to `putCompany` with:  
+* the `companyid` which is the id of the company to update  
+* the `body` which is the new company as JSON  
 
 The promise is then resolved with the updated company.
 
