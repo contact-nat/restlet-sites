@@ -111,7 +111,7 @@ https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/ov
 To insert manual anchors, follow the syntax below:
 go to [Sparky](#1)
 
-<a name="1"></a>Sparky  
+<a class="anchor" name="1"></a>Sparky  
 
 The text in square brackets will display on the page as a clickable link.
 "1" will not display.

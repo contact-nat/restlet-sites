@@ -8,7 +8,7 @@ APISpark features a Wrapper File Store for GitHub repositories. The GitHub Wrapp
 
 To know how to create a GitHub wrapper step by step, jump to our [GitHub tutorial](/technical-resources/apispark/tutorials/github "GitHub tutorial").
 
-# <a name="personal-access-tokens"></a>Use GitHub Personal Access Tokens
+# <a class="anchor" name="personal-access-tokens"></a>Use GitHub Personal Access Tokens
 
 To avoid using your personal GitHub credentials, you can create <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/" target="_blank">Personal access tokens</a> that will give access to a restricted part of your repositories and that can be revoked at any time.
 

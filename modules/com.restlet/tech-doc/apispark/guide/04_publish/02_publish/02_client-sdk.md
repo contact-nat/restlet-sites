@@ -65,7 +65,7 @@ Execute class **Run as**/**Java application**
 5) With your *TestAPI.java* file, you can perform GET, POST requests...
 -->
 
-# <a name="javascript-sdk"></a>Using JavaScript (AngularJS) SDK
+# <a class="anchor" name="javascript-sdk"></a>Using JavaScript (AngularJS) SDK
 
 As an example, we want to create a sample app using AngularJS and APISpark.
 
