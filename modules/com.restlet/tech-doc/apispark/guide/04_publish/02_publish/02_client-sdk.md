@@ -10,8 +10,10 @@ To facilitate this, APISpark can generate custom client SDKs (Software Developme
 | ------------- |
 | Java (Restlet Framework) |
 | Android (Restlet Framework) |
-| JavaScript (AngularJS) |
+| [JavaScript (AngularJS)](#javascript-sdk) |
 | iOS (Objective C) |
+
+
 
 You can **Add** or **Delete** client SDKs from the **Client SDKs** section of the **Downloads** tab.
 
@@ -63,7 +65,7 @@ Execute class **Run as**/**Java application**
 5) With your *TestAPI.java* file, you can perform GET, POST requests...
 -->
 
-# Using JavaScript (AngularJS) SDK
+# <a name="javascript-sdk"></a>Using JavaScript (AngularJS) SDK
 
 As an example, we want to create a sample app using AngularJS and APISpark.
 
