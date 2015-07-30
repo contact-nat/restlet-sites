@@ -165,18 +165,24 @@ toc:
     - file: 02_client-sdk.md
       id: client-sdk
       link_url: /04_publish/02_publish/02_client-sdk.md
-      long-title: Download custom client SDKs and server skeletons
-      title: Client SDKs and server skeletons
+      long-title: Download custom client SDKs
+      title: Client SDKs
       url: /publish/publish/client-sdk
-    - file: 03_documentation.md
+    - file: 03_server-skeleton.md
+      id: server-skeleton
+      link_url: /04_publish/02_publish/03_server-skeleton.md
+      long-title: Download server skeletons
+      title: Server skeletons
+      url: /publish/publish/server-skeleton
+    - file: 04_documentation.md
       id: documentation
-      link_url: /04_publish/02_publish/03_documentation.md
+      link_url: /04_publish/02_publish/04_documentation.md
       long-title: Document your web API to facilitate its consumption
       title: Documentation
       url: /publish/publish/documentation
-    - file: 04_api-definition.md
+    - file: 05_api-definition.md
       id: api-definition
-      link_url: /04_publish/02_publish/04_api-definition.md
+      link_url: /04_publish/02_publish/05_api-definition.md
       long-title: Standard API definition and integration with third party applications
       title: API definition
       url: /publish/publish/api-definition
