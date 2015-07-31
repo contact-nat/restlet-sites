@@ -1,3 +1,7 @@
+v3.12.8
+
+- Added Angular SDK tutorial
+
 v3.12.7
 
 - Added more info on custom domains
