@@ -30,17 +30,17 @@ calls. With that URI-notation those calls fall naturally under appliance
 of the uniform interface. There are three blends of this protocol, that
 use distinct 'authorities' for different use cases.
 
-riap://component/\*\*
+`riap://component/\*\*`
 
 -   resolves the remainder URI with respect to the current context's
     "component"
 
-riap://host/\*\*
+`riap://host/\*\*`
 
 -   resolves the remainder URI with respect to the current context's
     "virtual host"
 
-riap://application/\*\*
+`riap://application/\*\*`
 
 -   resolves the remainder URI with respect to the current context's
     "application" \
@@ -60,19 +60,19 @@ about dependency injection solutions, the configuration of X is covered
 by calling some setResourceYBaseUri(...).  That will cover any of these
 'service-providers' of this resource Y:
 
-file://whateverpath/Y
+`file://whateverpath/Y`
 
 -   a local static file
 
-http://service.example.com/somepath/Y
+`http://service.example.com/somepath/Y`
 
 -   an external service provider
 
-riap://component/internalpath/Y
+`riap://component/internalpath/Y`
 
 -   a URI resolved versus the internal router of the current 'Component'
 
-riap://application/fallback/Y
+`riap://application/fallback/Y`
 
 -   this application itself providing some basic version of the required
     resource.

@@ -651,6 +651,3 @@ list](/community/lists).
     Jensen, Jim Ancona, Roger Menday, John D. Mitchell, Jérôme Bernard,
     Dave Pawson, Peter Murray, Alex Combs and Leonardo Maranhão for the
     feed-back on this tutorial.
--   A [Chinese translation is
-    available](http://www.matrix.org.cn/resource/article/2007-11-30/1312be72-9f14-11dc-bd16-451eadcf4db4.html)
-    via the Matrix.org.cn site.

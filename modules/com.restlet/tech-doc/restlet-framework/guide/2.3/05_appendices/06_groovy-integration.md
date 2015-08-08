@@ -9,7 +9,7 @@ recommand this post from Arc90:
 -   [Part 1: Up and
     Running](http://blog.arc90.com/2008/06/04/building-restful-web-apps-with-groovy-and-restlet-part-1-up-and-running/)
 -   [Part 2:
-    Resources](http://blog.arc90.com/2008/06/building_restful_web_apps_groovy_restlet_part_2.php)
+    Resources](http://blog.arc90.com/2008/06/13/building-restful-web-apps-with-groovy-and-restlet-part-2-resources/)
 
 # As a Domain Specific Language
 

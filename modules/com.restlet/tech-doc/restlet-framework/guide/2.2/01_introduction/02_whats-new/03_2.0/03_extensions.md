@@ -23,7 +23,7 @@ Following the security API enhancements and refactorings, the classes relying on
 
 # Jackson extension
 
-New [Jackson](http://jackson.codehaus.org/) extension added, offering a nice alternative to the existing XStream
+New [Jackson](http://wiki.fasterxml.com/JacksonHome) extension added, offering a nice alternative to the existing XStream
 extension for JSON object serialization (based on Jettison).
 
 # JAX-RS extension

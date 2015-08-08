@@ -1,6 +1,6 @@
 # Introduction
 
-This extension provides and integration of Restlet with Jackson. [Jackson](http://jackson.codehaus.org/)
+This extension provides and integration of Restlet with Jackson. [Jackson](http://wiki.fasterxml.com/JacksonHome)
 is a fast library to serialize objects to JSON and back again.
 
 # Usage instructions

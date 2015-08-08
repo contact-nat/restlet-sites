@@ -156,7 +156,7 @@ org.eclipse.osgi\_3.5.0.v20090127-1630.jar
 ​2) Download the FileInstall bundle by Peter Kriens, which will monitor
 a directory and automatically install bundles it finds there. (for a
 longer description you can see
-[http://felix.apache.org/site/apache-felix-file-install.html](http://felix.apache.org/site/apache-felix-file-install.html))
+[http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html))
 
 [http://www.aqute.biz/repo/biz/aQute/fileinstall/1.3.4/fileinstall-1.3.4.jar](http://www.aqute.biz/repo/biz/aQute/fileinstall/1.3.4/fileinstall-1.3.4.jar)
 

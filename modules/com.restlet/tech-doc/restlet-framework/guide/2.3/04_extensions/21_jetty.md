@@ -44,6 +44,6 @@ to set some of the HTTPS parameters listed above, for example:
 
 ## SPDY
 
-The support for SPDY is disabled by default. In order to use it, you need to add the "spdy.version" parameter to your Jetty HTTPS server configuration with a value of "3" add a special NPN JAR file to the the boot classpath of your JRE 7. See [the instructions here](http://www.eclipse.org/jetty/documentation/current/npn-chapter.html).
+The support for SPDY is disabled by default. In order to use it, you need to add the "spdy.version" parameter to your Jetty HTTPS server configuration with a value of "3" add a special NPN JAR file to the the boot classpath of your JRE 7. See [the instructions here](https://wiki.eclipse.org/Jetty/Feature/NPN).
 
-Additional information on Jetty support for SPDY can be found in [this chapter](http://www.eclipse.org/jetty/documentation/current/spdy.html) of Jetty's user guide.
+Additional information on Jetty support for SPDY can be found in [this chapter](https://wiki.eclipse.org/Jetty/Feature/SPDY) of Jetty's user guide.

@@ -21,7 +21,7 @@ java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02
 Then we will document an API based on its Swagger definition.
 
 ~~~~{.sh}
-java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 -l swagger http://petstore.swagger.wordnik.com/api/api-docs
+java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 -l swagger http://petstore.swagger.io/api/api-docs
 ~~~~
 
 And finish with a JAX-RS API.

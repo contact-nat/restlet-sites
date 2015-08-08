@@ -87,8 +87,8 @@ files.
 # <a name="build-the-component"></a>Build the component
 
 Now we need to build the component containing our web applications. As
-we are handling several domain names (www.noelios.com, restlet.org,
-search.restlet.org, etc.) via the same HTTP server connector (with a
+we are handling several domain names (`www.noelios.com`, `restlet.org`,
+`search.restlet.org`, etc.) via the same HTTP server connector (with a
 single IP address and port open), we also need to declare several
 virtual hosts.
 
