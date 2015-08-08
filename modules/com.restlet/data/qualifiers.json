@@ -1,5 +1,5 @@
 [
-{"id":"stable", "version":"2.2.2", "name":"Stable"},
-{"id":"testing", "version":"2.3m5", "name":"Testing"},
-{"id":"unstable", "version":"2.3snapshot", "name":"Unstable"}
+{"id":"stable", "version":"2.3.4", "name":"Stable"},
+{"id":"testing", "version":"3.0m1", "name":"Testing"},
+{"id":"unstable", "version":"3.0snapshot", "name":"Unstable"}
 ]
