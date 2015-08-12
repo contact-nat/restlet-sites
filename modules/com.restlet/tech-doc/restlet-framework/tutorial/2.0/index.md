@@ -351,7 +351,7 @@ if (resource.getStatus().isSuccess()) {
         .equals(Status.CLIENT_ERROR_UNAUTHORIZED)) {
     // Unauthorized access
     System.out
-            .println("Access authorized by the server, check your credentials");
+            .println("Access unauthorized by the server, check your credentials");
 } else {
     // Unexpected status
     System.out.println("An unexpected status was returned: "

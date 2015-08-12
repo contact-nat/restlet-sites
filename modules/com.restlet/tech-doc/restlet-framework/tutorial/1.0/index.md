@@ -365,7 +365,7 @@ if (response.getStatus().isSuccess()) {
         .equals(Status.CLIENT_ERROR_FORBIDDEN)) {
     // Unauthorized access
     System.out
-            .println("Access authorized by the server, " +
+            .println("Access unauthorized by the server, " +
                     "check your credentials");
 } else {
     // Unexpected status
