@@ -13,8 +13,7 @@ To follow this tutorial, you will need the following:
 
 ## 1.1 Add a new Entity Store
 
-If you have not already done so, <a href="
-https://apispark.restlet.com/signin" target="_blank">sign in</a> to your APISpark account and open your **Dashboard**.
+If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
 Create a new Entity Store. Click on **+ Entity Store**, select the "Full stack" **Type** and enter the **Name** "myStore".
 

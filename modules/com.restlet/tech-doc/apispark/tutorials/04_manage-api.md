@@ -16,8 +16,7 @@ You can install the agent on your own infrastructure to avoid possible lag issue
 
 ## 1. Create a web API Connector
 
-If you have not already done so, <a href="
-https://apispark.restlet.com/signin" target="_blank">sign in</a> to your APISpark account and open your **Dashboard**.
+If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
 Create a new Connector. Click on **+ Web API**, select the "Connector" **Type** and enter the **Name** "myConnector".
 
