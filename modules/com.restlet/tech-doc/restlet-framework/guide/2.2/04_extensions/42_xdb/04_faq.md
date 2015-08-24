@@ -118,41 +118,23 @@ Then you have to register your __Restlet__ application into __XMLDB__ configurat
 
 
 ```xml
-              <servlet
-xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-               
- <servlet-name>UsersRestlet</servlet-name>
-               
- <servlet-language>Java</servlet-language>
-               
- <display-name>Restlet Servlet</display-name>
-               
-<servlet-class>org.restlet.ext.xdb.XdbServerServlet</servlet-class>
-
-               
- <servlet-schema>PUBLIC</servlet-schema>
-                <init-param
-xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-          
-        
-<param-name>org.restlet.application</param-name>
-
-                 
-<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
-
-                 
- <description>REST User Application</description>
-
-                </init-param>
-                <security-role-ref
-xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-                  <description/>
-                 
- <role-name>PUBLIC</role-name>
-                 
- <role-link>PUBLIC</role-link>
-                </security-role-ref>
-              </servlet>
+<servlet xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+	<servlet-name>UsersRestlet</servlet-name>
+	<servlet-language>Java</servlet-language>
+	<display-name>Restlet Servlet</display-name>
+	<servlet-class>org.restlet.ext.xdb.XdbServerServlet</servlet-class>
+	<servlet-schema>PUBLIC</servlet-schema>
+	<init-param xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+		<param-name>org.restlet.application</param-name>
+		<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
+		<description>REST User Application</description>
+	</init-param>
+	<security-role-ref xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+		<description />
+		<role-name>PUBLIC</role-name>
+		<role-link>PUBLIC</role-link>
+	</security-role-ref>
+</servlet>
 
 ```
 
@@ -180,19 +162,11 @@ Servlet',schema=>'PUBLIC');
   SELECT
 INSERTCHILDXML(xdburitype('/xdbconfig.xml').getXML(),'/xdbconfig/sysconfig/protocolconfig/httpconfig/webappconfig/servletconfig/servlet-list/servlet[servlet-name="UsersRestlet"]','init-param',
 
-  XMLType('<init-param xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-
-                 
+  XMLType('<init-param xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">                 
  <param-name>org.restlet.application</param-name>
-
-                 
-<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
-
-                 
+ <param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
  <description>REST User Application</description>
-
-          
-</init-param>'),'xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd"') INTO
+ </init-param>'),'xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd"') INTO
 configxml
   FROM DUAL;
   -- Update the configuration to use the modified version
@@ -243,7 +217,7 @@ This file look like:
 ```
 
 
-Second option do not require __DBA__ role if you want to update your application class name, for a complete explanation of [restlet.xml](http://www.restlet.org/schemas/1.1/Component file syntax look at [Component java documation](http://www.restlet.org/documentation/1.2/api/org/restlet/Component.html.
+Second option do not require __DBA__ role if you want to update your application class name, for a complete explanation of [restlet.xml](http://restlet.com/schemas/2.2/Component.xsd) file syntax look at [Component java docummentation](javadocs://jse/api/org/restlet/Component.html).
 
 
 * How can I run XDB Restlet adapter behind a proxy?
@@ -274,7 +248,7 @@ the proxied location
 
 ```
 
-Above configuration, usually in __/etc/httpd/modules.d/30_mod_proxy.conf__, will forward all request to http://localhost:80/ to http://localhost:8080/ assuming that your Oracle listener is in the same host as Apache.
+Above configuration, usually in __/etc/httpd/modules.d/30_mod_proxy.conf__, will forward all request to `http://localhost:80/` to `http://localhost:8080/` assuming that your Oracle listener is in the same host as Apache.
 If you want to configure Apache mod_cache to speed GET request which have expiration Date header, for example, follow this configuration:
 
 
@@ -286,7 +260,6 @@ If you want to configure Apache mod_cache to speed GET request which have expira
 </IfModule>
 
 ```
-
 
 This configuration will enable Apache mod_mem_cache on directories __/ds__ __/oraws__ and __/userapp__.
 

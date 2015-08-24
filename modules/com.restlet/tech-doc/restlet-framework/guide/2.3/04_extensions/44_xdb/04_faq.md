@@ -118,42 +118,23 @@ Then you have to register your __Restlet__ application into __XMLDB__ configurat
 
 
 ```xml
-              <servlet
-xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-               
- <servlet-name>UsersRestlet</servlet-name>
-               
- <servlet-language>Java</servlet-language>
-               
- <display-name>Restlet Servlet</display-name>
-               
-<servlet-class>org.restlet.ext.xdb.XdbServerServlet</servlet-class>
-
-               
- <servlet-schema>PUBLIC</servlet-schema>
-                <init-param
-xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-          
-        
-<param-name>org.restlet.application</param-name>
-
-                 
-<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
-
-                 
- <description>REST User Application</description>
-
-                </init-param>
-                <security-role-ref
-xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-                  <description/>
-                 
- <role-name>PUBLIC</role-name>
-                 
- <role-link>PUBLIC</role-link>
-                </security-role-ref>
-              </servlet>
-
+<servlet xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+	<servlet-name>UsersRestlet</servlet-name>
+	<servlet-language>Java</servlet-language>
+	<display-name>Restlet Servlet</display-name>
+	<servlet-class>org.restlet.ext.xdb.XdbServerServlet</servlet-class>
+	<servlet-schema>PUBLIC</servlet-schema>
+	<init-param xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+		<param-name>org.restlet.application</param-name>
+		<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
+		<description>REST User Application</description>
+	</init-param>
+	<security-role-ref xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+		<description />
+		<role-name>PUBLIC</role-name>
+		<role-link>PUBLIC</role-link>
+	</security-role-ref>
+</servlet>
 ```
 
 
@@ -243,14 +224,13 @@ This file look like:
 ```
 
 
-Second option do not require __DBA__ role if you want to update your application class name, for a complete explanation of [restlet.xml](http://www.restlet.org/schemas/1.1/Component file syntax look at [Component java documation](http://www.restlet.org/documentation/1.2/api/org/restlet/Component.html.
+Second option do not require __DBA__ role if you want to update your application class name, for a complete explanation of [restlet.xml](http://restlet.com/schemas/2.3/Component.xsd) file syntax look at [Component java docummentation](javadocs://jse/api/org/restlet/Component.html).
 
 
 * How can I run XDB Restlet adapter behind a proxy?
 
 
 If you want to use Apache mod_proxy behind Oracle XMLDB Restlet adapter for security reason or to exploit caching support follow this example configuration:
-
 
 
 ```
