@@ -12,7 +12,7 @@ and the example illustrates standalone and servlet-container deployment.
 In a nutshell, Spring handles the configuration of the top-level Restlet
 Component and Router beans. The Restlet Resources had to be modified to
 support the init method and the injection of the dependency on the
-[db4o](http://www.db4o.com/)
+[db4o](http://supportservices.actian.com/versant/default.html)
 ObjectContainer, which is also configured in Spring. As expected, the
 domain objects User and Bookmark remained unchanged.
 
@@ -113,7 +113,7 @@ accessing a static field in a class.
 Unlike the preceding singleton beans, we define the ServerResources as
 prototype beans so that they get instantiated separately for each
 request. All of the Resource beans depend on the
-[db4o](http://www.db4o.com/)
+[db4o](http://supportservices.actian.com/versant/default.html)
 ObjectContainer and are configured analogously, so we show only
 UserResource here.
 
@@ -128,7 +128,7 @@ UserResource here.
 ```
 
 Using the
-[db4o](http://www.db4o.com/)
+[db4o](http://supportservices.actian.com/versant/default.html)
 [Spring Module](http://community.versant.com/Projects/html/projectspaces/db4o-spring.html),
 configuring the ObjectContainer is straightforward.
 
