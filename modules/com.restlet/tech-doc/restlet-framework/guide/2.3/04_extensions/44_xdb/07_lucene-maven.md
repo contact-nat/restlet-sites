@@ -2,10 +2,10 @@
 
 
 This document and his related project aims to show how to implement REST Web Services inside Oracle JVM.
-To show it, the idea is to implement some services which interacts with [Lucene Domain Index for Oracle](http://docs.google.com/View?docid=ddgw7sjp_54fgj9kg, this domain index provides to Oracle
-[free text searching facilities](http://marceloochoa.blogspot.com/2007/09/running-lucene-inside-your-oracle-jvm.html using
-[Apache Lucene library](http://lucene.apache.org/java/docs/index.html.
-To re-use some ideas and specification we use [Lucene WS API Document]http://dev.lucene-ws.net/wiki/API).
+To show it, the idea is to implement some services which interacts with [Lucene Domain Index for Oracle](http://www.oracle.com/technetwork/database/s298820-java-db-lucene-134484.pdf), this domain index provides to Oracle
+[free text searching facilities](http://marceloochoa.blogspot.com/2007/09/running-lucene-inside-your-oracle-jvm.html) using
+[Apache Lucene library](http://lucene.apache.org/java/docs/index.html).
+To re-use some ideas and specification we use [Lucene WS API Document](http://dev.lucene-ws.net/wiki/API).
 
 
 * Change Log
@@ -39,7 +39,7 @@ This project is downloaded from several sources as follow:
  - Project binary archive [Zip](http://downloads.sourceforge.net/dbprism/lucene-restlet-0.9.0.zip?download) or [Tar.gz](http://downloads.sourceforge.net/dbprism/lucene-restlet-0.9.0.tar.gz?download)
  - Project source from __CVS__ repository, follow instructions from [lucene-restlet](http://sourceforge.net/cvs/?group_id=56183) module.
  - Lucene Domain Index [binary distribution](http://downloads.sourceforge.net/dbprism/ojvm-bin-11g-2.3.2.0.0.jar?download), download and extract in any directory, then follow Maven install instruction to add to your local repository.
- - RESTs artifacts, automatically download from http://maven.restlet.org/.
+ - Restlet artifacts, automatically download from http://maven.restlet.org/.
  - Lucene artifacts, automatically downloaded from Maven's public repository.
 
 
