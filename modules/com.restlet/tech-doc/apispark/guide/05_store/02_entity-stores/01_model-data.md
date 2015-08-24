@@ -164,6 +164,16 @@ You can now **Deploy** the associated APIs and invoke them.
 
 >**Note:** The web API **Data sources** section allows you to manage the entities and properties exposed through your web API.
 
+# Clone an Entity Store schema
+
+You may want to clone an Entity Store schema in order to create a new Entity Store starting from a former one's structure. Cloning your Entity Store will result in creating a new store with the same Entities, Properties and General information (Name, Description, Keywords, etc.). This new store will be empty (no data inside).
+
+From your Entity Store, click on the cog button and select **Clone store**.
+
+![Clone Entity Store](images/clone-entity-store.jpg "Clone Entity Store")
+
+>**Note:** Only the Entity Store Owner will be allowed to clone his/her Entity Store.
+
 <!--
 There are three types of relations available: association, aggregation, and composition.
 -->
