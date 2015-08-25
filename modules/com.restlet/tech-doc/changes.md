@@ -1,3 +1,13 @@
+v3.13.9
+
+- Removed links to former "Sign in" page
+- AS-40 Clone store
+- AS-231 Synchro Gsheet & SQL wrappers
+- AS-30 Drag and drop on Entity Store Properties
+- AS-41 Sort by Property in the Data browser
+- AS-240 swagger ui not available for http (added to faq)
+- Updated FAQ
+
 v3.12.8
 
 - Added Angular SDK tutorial
