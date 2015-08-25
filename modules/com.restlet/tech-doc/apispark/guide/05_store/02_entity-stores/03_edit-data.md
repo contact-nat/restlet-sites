@@ -20,6 +20,14 @@ If your store contains more than 25 entries, they will be displayed in seperate 
 
 This button bar allows you respectively to go to the **first page**, go to the **previous page**, enter a **page number**, go to the **next page**, go to the **last page** and **refresh the page**.
 
+## Sort data
+
+You may want to sort data to facilitate the reading. Each column can be sorted in ascendant or descendant order.
+
+Click on the column title once for ascendant order (▲), twice for descendant order (▼) and three time to get back to the initial order.
+
+![Sort](images/sort-data.jpg "Sort")
+
 ## <a class="anchor" name="import-data"></a>Import data
 
 If you have a big amount of data to import, you may need to perform a bulk import of your data. You can import your data in a csv file.
