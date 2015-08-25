@@ -1,4 +1,4 @@
-<a name="list"></a>
+<a class="anchor" name="list"></a>
 
 1. [I wonder if my cell is deployed](#01 "I wonder if my cell is deployed")
 2. [What is the difference between deploying & publishing my API?](#02 "What is the difference between deploying & publishing my API?")
@@ -10,10 +10,10 @@
 8. [I get a 500 error when I try to invoke my API](#08 "I get a 500 error when I try to invoke my API")
 9. [I need examples of POST and PUT requests](#09 "I need examples of POST and PUT requests")
 10. [I get an HTTP Error when I try to invoke my API](#10 "List of HTTP Errors Codes")
+11. [The swagger button is disabled](#11 "The **swagger** button is disabled")
 
 
-
-# <a name="01"></a>1. I wonder if my cell is deployed
+# <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
 
 Once your cell has been deployed, a confirmation message displays on top of your screen to inform you that the deployment is successful.
 
@@ -23,11 +23,11 @@ If you have any doubt, go to the **Messages** tab which reports the last actions
 
 ![Messages tab](images/messages-section.jpg "Messages tab")
 
-Jump to the [Check your messages](/technical-resources/apispark/guide/create/test03 "Test your web API") section of our online documentation for further information.
+Jump to the [Check your messages](/technical-resources/apispark/guide/create/test#check-messages "Check your messages") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="02"></a>2. What is the difference between deploying & publishing my API?
+# <a class="anchor" name="02"></a>2. What is the difference between deploying & publishing my API?
 
 ## Deploying your API
 When you deploy a cell, APISpark generates source code, compiles and deploys it in the cloud so that it will be executed in the APISpark runtime environment. As long as you have not deployed your data stores and web APIs, they are not available to store data or receive HTTP requests.
@@ -38,11 +38,11 @@ Jump to the [Cell deployment](/technical-resources/apispark/guide/explore/cell-d
 When you publish your API, you specify that it is in a stable state and is available to be used by end users or imported by other cells: you bring it into production.
 A Published cell (APIs, data stores, etc.) cannot undergo structural modifications or be deleted as this could break clients or other cells using it.
 
-Jump to the [Cell lifecycle](/technical-resources/apispark/guide/explore/lifecycle "Cell lifecycle") section of our online documentation for further information.
+Jump to the [Cell lifecycle](/technical-resources/apispark/guide/explore/cell-lifecycle "Cell lifecycle") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="03"></a>3. I want a resource to be accessible without authentication
+# <a class="anchor" name="03"></a>3. I want a resource to be accessible without authentication
 
 The API credentials (login/password) are used to identify the users of your API.
 If you want a Resource to be accessible without authentication, you can modify the security access directly on a method and set it to **Anyone**, meaning a user authenticated or not.
@@ -56,23 +56,20 @@ Click on the **Save** button.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="04"></a>4. I cannot find where to download Client SDKs
+# <a class="anchor" name="04"></a>4. I cannot find where to download Client SDKs
 
 Deploy your web API.  
 Go to the **Downloads** tab.  
-Click on the cog button on top right of your screen and select **Generate downloads**.  
-In the **Clients** section, click the one you want to download.  
-Click the **Download** button.
+From the **Client SDKs** section, select the SDK you want to download.  
+Click on the **Download...** button (working version or latest deployed version).
 
->**Note:** The **Download** button is only visible once you have generated the downloads.
-
-![Generate client SDKs](images/generate-sdks.jpg "Generate client SDKs")
+![Download client SDKs](images/generate-sdks.jpg "Download client SDKs")
 
 Jump to the [Generate custom client SDKs](/technical-resources/apispark/guide/publish/publish/client-sdk "Generate custom client SDKs") section of our user guide for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="05"></a>5. I get a 400 error (Bad request) when I try to invoke my API
+# <a class="anchor" name="05"></a>5. I get a 400 error (Bad request) when I try to invoke my API
 
 Make sure the syntax you are using is valid.
 
@@ -84,7 +81,7 @@ Jump to our [POST and PUT requests examples](#09) for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="06"></a>6. I get a 405 error (Method Not Allowed) when I try to invoke my API
+# <a class="anchor" name="06"></a>6. I get a 405 error (Method Not Allowed) when I try to invoke my API
 
 Make sure the method you are using is allowed.
 
@@ -94,7 +91,7 @@ Open your API's Overview, in the **Resources** section, click on the resource yo
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="07"></a>7. I get a 415 error (Unsupported Media Type) when I try to invoke my API
+# <a class="anchor" name="07"></a>7. I get a 415 error (Unsupported Media Type) when I try to invoke my API
 
 Make sure the format used is valid.
 
@@ -104,7 +101,7 @@ Jump to our [POST and PUT requests examples](#09) for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="08"></a>8. I get a 500 error when I try to invoke my API
+# <a class="anchor" name="08"></a>8. I get a 500 error when I try to invoke my API
 Before invoking your API, make sure you call the last version of your API and Data Store. You need to (re)deploy your API and the Data Stores (or/and File Stores) associated.
 
 ## (Re)deploy your API
@@ -131,7 +128,7 @@ The **Traces** section may display a *runtime error*. Click on it and check its 
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="09"></a>9. I need examples of POST and PUT requests
+# <a class="anchor" name="09"></a>9. I need examples of POST and PUT requests
 
 To perform your POST and PUT requests, of course you can directly use your web browser, but we recommend that you use <a href="http://www.getpostman.com/" target="_blank">POSTMAN Chrome Extension</a> that gives you a graphical view of your requests.
 
@@ -162,9 +159,9 @@ Enter your modifications in the input area underneath and click **Send**. The up
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-# <a name="10"></a>10.  List of HTTP Errors Codes
+# <a class="anchor" name="10"></a>10.  List of HTTP Errors Codes
 <!---MARKDOWN TABLE
-| html error code | html error name | actions / remedies |
+| http error code | http error name | actions / remedies |
 | :---: | :---: |---|
 | **400** | Bad Request | Make sure the syntax you are using is valid. When using POSTMAN Chrome Extension to invoke your API, you may have entered your content in the address instead of entering it in the input area underneath the Headers. |
 | **401** | Unauthorized | Make sure you entered the right credentials. |
@@ -183,9 +180,9 @@ Enter your modifications in the input area underneath and click **Send**. The up
 </style>
 <table class="tg">
   <tr>
-    <th class="tg-s6z2">**http error code**</th>
-    <th class="tg-s6z2">**http error name**</th>
-    <th class="tg-031e">**actions / remedies**</th>
+    <th class="tg-s6z2">http error code</th>
+    <th class="tg-s6z2">http error name</th>
+    <th class="tg-031e">actions / remedies</th>
   </tr>
   <tr>
     <td class="tg-s6z2">400</td>
@@ -215,7 +212,7 @@ Enter your modifications in the input area underneath and click **Send**. The up
   <tr>
     <td class="tg-s6z2">422</td>
     <td class="tg-s6z2">Unprocessable Entity</td>
-    <td class="tg-031e">Make sure that the data you POST refer to the representation's properties and not to the column names they are mapping. Also make sure you use the right value type (string, integer) in your POST.</td>
+    <td class="tg-031e">Make sure that the data you POST refer to the representation's properties and not to the column names they are mapping. Also make sure you use the right value type (string, integer) in yoclass="anchor" ur POST.</td>
   </tr>
   <tr>
     <td class="tg-s6z2">500</td>
@@ -226,4 +223,18 @@ Enter your modifications in the input area underneath and click **Send**. The up
 
 [Back to list](#list "Back to list of frequently asked questions")
 
-Last update: December 30th 2014, 1:40pm
+# <a class="anchor" name="11"></a>11. The **swagger** button is disabled
+
+You may have removed your API https endpoint. To test your API via Swagger UI, you need an https endpoint.
+
+![swagger UI button disabled](images/swaggerui-http.jpg "swagger UI button disabled")
+
+From your API, go to the **Overview** tab.  
+From the **Endpoints** section, click on the **Add** button and add an https endpoint.  
+The **swagger** button is now enabled for your http endpoint.
+
+![swagger UI button disabled](images/swaggerui-http-button-enabled.jpg "swagger UI button disabled")
+
+Jump to the [Test your API](/technical-resources/apispark/guide/create/test "Test your API") section of our online documentation for further information.
+
+[Back to list](#list "Back to list of frequently asked questions")

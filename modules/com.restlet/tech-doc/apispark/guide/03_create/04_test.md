@@ -39,7 +39,7 @@ Click on the **Send** button.
 
 ![POSTMAN](images/postman.jpg "POSTMAN")
 
-# Check your messages
+# <a class="anchor" name="check-messages"></a>Check your messages
 
 The web API's **Messages** tab displays messages pertaining to different aspects of your API's life.
 
