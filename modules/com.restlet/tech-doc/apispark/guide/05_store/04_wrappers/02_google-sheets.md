@@ -19,10 +19,9 @@ Click the **Synchronize** button and **Deploy** your wrapper.
 
 ![Synchronize](images/synchro-button.jpg "Synchronize")
 
-Go to the associated API and navigate to the **Settings** tab.  
-Select your spreadsheet from the **Imports** section, click the **Reset import** button and **Deploy** your API.
+The changes made have been propagated to the associated API(s) as you you can see in your API **Data sources** section.
 
-![Reset import](images/reset-import-button.jpg "Reset import")
+![Data sources](images/gsheet-data-sources-section.jpg "Data sources")
 
 # Perform queries
 
