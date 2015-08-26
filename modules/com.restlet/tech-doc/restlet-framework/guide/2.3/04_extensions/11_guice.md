@@ -12,6 +12,7 @@ Note that the extension is limited to injection of server resources, and not oth
 # Self-injection
 
 When using this approach:
+
 - DI framework must support static field injection (Guice does).
 - No constructor injection for resources; only field and method injection will work.
 
@@ -23,6 +24,7 @@ To inject resources with Guice, install a SelfInjectingServerResourceModule when
 # Finder factory
 
 When using this approach:
+
 - DI framework does not need to support static field injection.
 - All forms of injection are allowed: constructor, field, method.
 - Target resource can be specified by type alone or by type and JSR-330 Qualifier.
@@ -52,6 +54,7 @@ Alternatively, for standalone Applications, create a single RestletGuice.Module 
 # Resource-injecting application
 
 When using this approach:
+
 - DI framework does not need to support static field injection.
 - No constructor injection for resources; only field and method injection will work.
 - Application instance must itself be injected.

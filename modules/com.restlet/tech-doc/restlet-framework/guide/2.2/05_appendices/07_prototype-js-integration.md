@@ -32,8 +32,7 @@ It's very clean from its name that it works as db4o function simpler.Its
 generalOperate method handles general operation with db4o:
 
 Note:This class works as only non-concurrent model,because it doesn't
-work as [client/server
-model](http://developer.db4o.com/resources/api/db4o-java/com/db4o/Db4o.html).If
+work as [client/server model](http://supportservices.actian.com/versant/default.html).If
 you have requirement,you should modify it in concurrent(client/server)
 model by using [Db4o.openServer
 method](http://developer.db4o.com/resources/api/db4o-java/com/db4o/Db4o.html#openServer%28java.lang.String,%20int%29).
@@ -516,8 +515,7 @@ which was exposed in server side:
 
 # Running Application
 
-Running MicroblogApplication,and visit
-http://localhost:8182/www/microblog.html.
+Running MicroblogApplication,and visit http://localhost:8182/www/microblog.html.
 
 ##
 
@@ -607,4 +605,4 @@ javascript snippet in web page:
 -   [Router](javadocs://jse/api/org/restlet/routing/Router.html)
 -   [Application](javadocs://jse/api/org/restlet/Application.html)
 -   [Resource](javadocs://jse/api/org/restlet/resource/Resource.html)
--   [db4o](http://www.db4o.com/)
+-   [db4o](http://supportservices.actian.com/versant/default.html)
