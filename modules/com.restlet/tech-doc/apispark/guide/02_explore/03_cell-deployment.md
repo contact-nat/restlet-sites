@@ -22,7 +22,7 @@ Cells can be deployed from the draft, published and deprecated states, and can b
 
 The deployment process is composed of several steps, which are displayed in the deployment information window.
 
-![cell deployment process](images/deploymentmessages.png "cell deployment process")
+![cell deployment process](images/deployment-messages.jpg "cell deployment process")
 
 Each step of the deployment process is also documented by a message in the **Messages** tab. The events are listed in the **Traces** section.
 
