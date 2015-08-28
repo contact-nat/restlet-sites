@@ -29,6 +29,16 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 
 ![Swagger Try it out button](images/swagger-try-it-out-button.jpg "Swagger Try it out button")
 
+## Test your web API with code snippets
+
+Code snippets let you quickly get an idea of how to invoke your API from a number of different programming languages. Snippets come preconfigured with authentication and sample data extracted from your API's definition.
+
+Navigate to your API's **Overview**.  
+From the **Resources** section, select a method e.g. GET.
+
+![http snippet](images/http-snippet.jpg "http snippet")
+
+>**Note:** Snippets are available for Full Stack web APIs, Descriptors and Connectors.
 
 ## Invoke your web API with POSTMAN
 
