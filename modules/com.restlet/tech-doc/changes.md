@@ -1,3 +1,9 @@
+v3.14
+
+- AS-217 http snippet
+- deployment process screenshot
+- Google rate limits for Google Sheets Wrapper
+
 v3.13.9
 
 - Removed links to former "Sign in" page
