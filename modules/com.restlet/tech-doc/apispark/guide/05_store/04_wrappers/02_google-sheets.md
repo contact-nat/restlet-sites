@@ -28,10 +28,11 @@ The changes made have been propagated to the associated API(s) as you you can se
 You can apply simple [filters](/technical-resources/apispark/guide/publish/publish/invocation#filter "filters") on entity properties and [sort](/technical-resources/apispark/guide/publish/publish/invocation#sort "sort") queries on Google Sheets wrapper APIs.
 
 >**Note:** Non alphanumeric characters must be in quotes in your queries.  
- If your spreadsheet cells are in plain text format, they must also be in quotes in your queries.
+>If your spreadsheet cells are in plain text format, they must also be in quotes in your queries.
 
- # Google rate limits
 
- The usage of the Google Sheets wrapper is subject to <a href="https://developers.google.com/apps-script/guides/services/quotas" target="_blank">Google rate limits</a>.
+# Google rate limits
 
-  You can to turn on the [server cache in APISpark](/technical-resources/apispark/guide/create/overview#configure-cache "server cache in APISpark") to mitigate the problem and improve performance.
+The usage of the Google Sheets wrapper is subject to <a href="https://developers.google.com/apps-script/guides/services/quotas" target="_blank">Google rate limits</a>.
+
+You can to turn on the [server cache in APISpark](/technical-resources/apispark/guide/publish/publish/invocation#configure-cache "server cache in APISpark") to mitigate the problem and improve performance.
