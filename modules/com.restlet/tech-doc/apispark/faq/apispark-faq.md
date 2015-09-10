@@ -11,6 +11,7 @@
 9. [I need examples of POST and PUT requests](#09 "I need examples of POST and PUT requests")
 10. [I get an HTTP Error when I try to invoke my API](#10 "List of HTTP Errors Codes")
 11. [The swagger button is disabled](#11 "The **swagger** button is disabled")
+12. [What is the difference between "Public" and "Anyone" settings for my API?](#12 "What is the difference between "Public" and "Anyone" settings?")
 
 
 # <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
@@ -233,8 +234,43 @@ From your API, go to the **Overview** tab.
 From the **Endpoints** section, click on the **Add** button and add an https endpoint.  
 The **swagger** button is now enabled for your http endpoint.
 
-![swagger UI button disabled](images/swaggerui-http-button-enabled.jpg "swagger UI button disabled")
+![swagger UI button enabled](images/swaggerui-http-button-enabled.jpg "swagger UI button enabled")
 
 Jump to the [Test your API](/technical-resources/apispark/guide/create/test "Test your API") section of our online documentation for further information.
+
+[Back to list](#list "Back to list of frequently asked questions")
+
+# <a class="anchor" name="12"></a>12. What is the difference between "Public" and "Anyone" settings for my API?
+
+It is important you do not confuse the **Public** checkbox which makes your API's Overview public with the **Anyone** checkbox that lets you deactivate authentication on a specific method.
+
+## Make your API Description public
+
+You can make the Description of an API publicly available and not the API itself. In this instance, accessing your API would still require your credentials (which can be found in the **Overview** tab by clicking your Endpoint on the left).
+
+From your API's **Overview**, click **General information**.  
+Select the **Public** checkbox.
+
+![Make your API Description public](images/api-description-public.jpg "Make your API Description public")
+
+## Deactivate authentication
+
+### on a particular method
+
+If you wish to make your API available to anyone (without authentication), you can set each method independently.
+
+From your API's **Overview**, select a method from the **Resources** section.  
+Click on the **Security** tab and select the **Anyone** checkbox.
+
+![Anyone checkbox](images/anyone-checkbox.jpg "Anyone checkbox")
+
+### for your whole API
+
+If you wish for anyone to be able to access an API you can set this up right from the beginning when exporting your web API from the data store, so that you do not have to deactivate authentication for each resource and method manually.
+
+From your data store, click on the cog button (on the left of the **Deploy** button) and select **Export web API**.  
+From the creation wizard, click on **Customize settings** and select **No authentication required** from the **Default permissions** drop-down menu.
+
+![Anyone checkbox](images/no-authentication-required.jpg "Anyone checkbox")
 
 [Back to list](#list "Back to list of frequently asked questions")
