@@ -130,76 +130,82 @@ toc:
 - dir: 04_publish
   id: publish
   items:
-  - dir: 01_secure
+  - file: 01_overview.md
+    id: overview
+    link_url: /04_publish/01_overview.md
+    long-title: Overview
+    title: Overview
+    url: /publish/overview
+  - dir: 02_secure
     id: secure
     items:
     - file: 01_user-groups.md
       id: user-groups
-      link_url: /04_publish/01_secure/01_user-groups.md
+      link_url: /04_publish/02_secure/01_user-groups.md
       long-title: Manage groups and members
       title: User groups
       url: /publish/secure/user-groups
     - file: 02_runtime-permissions.md
       id: runtime-permissions
-      link_url: /04_publish/01_secure/02_runtime-permissions.md
+      link_url: /04_publish/02_secure/02_runtime-permissions.md
       long-title: Configure runtime access for groups
       title: Runtime permissions
       url: /publish/secure/runtime-permissions
     - file: 03_firewall-settings.md
       id: firewall-settings
-      link_url: /04_publish/01_secure/03_firewall-settings.md
+      link_url: /04_publish/02_secure/03_firewall-settings.md
       long-title: Determine firewall settings
       title: Firewall settings
       url: /publish/secure/firewall-settings
     long-title: Secure a web API
     title: Secure a web API
-  - dir: 02_publish
+  - dir: 03_publish
     id: publish
     items:
     - file: 01_invocation.md
       id: invocation
-      link_url: /04_publish/02_publish/01_invocation.md
+      link_url: /04_publish/03_publish/01_invocation.md
       long-title: Invoke public and private APIs
       title: Invoke an API
       url: /publish/publish/invocation
     - file: 02_client-sdk.md
       id: client-sdk
-      link_url: /04_publish/02_publish/02_client-sdk.md
+      link_url: /04_publish/03_publish/02_client-sdk.md
       long-title: Download custom client SDKs
       title: Client SDKs
       url: /publish/publish/client-sdk
     - file: 03_server-skeleton.md
       id: server-skeleton
-      link_url: /04_publish/02_publish/03_server-skeleton.md
+      link_url: /04_publish/03_publish/03_server-skeleton.md
       long-title: Download server skeletons
       title: Server skeletons
       url: /publish/publish/server-skeleton
     - file: 04_documentation.md
       id: documentation
-      link_url: /04_publish/02_publish/04_documentation.md
+      link_url: /04_publish/03_publish/04_documentation.md
       long-title: Document your web API to facilitate its consumption
       title: Documentation
       url: /publish/publish/documentation
     - file: 05_api-definition.md
       id: api-definition
-      link_url: /04_publish/02_publish/05_api-definition.md
+      link_url: /04_publish/03_publish/05_api-definition.md
       long-title: Standard API definition and integration with third party applications
       title: API definition
       url: /publish/publish/api-definition
     long-title: Publish a web API
     title: Publish a web API
-  - dir: 03_manage
+  - dir: 04_manage
     id: manage
     items:
     - file: 01_analytics.md
       id: analytics
-      link_url: /04_publish/03_manage/01_analytics.md
+      link_url: /04_publish/04_manage/01_analytics.md
       long-title: Access your web API consumption Analytics
       title: Analytics
       url: /publish/manage/analytics
     - file: 02_community-management.md
       id: community-management
-      link_url: /04_publish/03_manage/02_community-management.md
+      link_url: /04_publish/04_manage/02_community-management.md
       long-title: Keep your community informed
       title: Community management
       url: /publish/manage/community-management
