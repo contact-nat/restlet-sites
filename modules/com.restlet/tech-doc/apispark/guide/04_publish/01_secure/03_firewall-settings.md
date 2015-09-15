@@ -1,6 +1,6 @@
 APISpark allows you to determine different firewall settings from the **Settings** tab.
 
-# IP filtering
+# <a class="anchor" name="ip-filtering"></a>IP filtering
 
 You can filter the use of your API by filtering the APIs that will access it. You can either choose to define the IP that will be allowed to access it or those which will not be allowed to access it.
 
@@ -13,7 +13,7 @@ In the **IP list** text area, enter the different IP addresses seperated by a co
 Select the appropriate **Type** radio button (White list or Black list).
 
 
-# Rate limitation
+# <a class="anchor" name="rate-limitation"></a>Rate limitation
 
 You can limit your API consumption in time and number of calls for the groups of consumers and/or testers chosen. You can create a limitation for each group created.
 
