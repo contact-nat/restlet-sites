@@ -1,3 +1,8 @@
+v3.15
+- SDK "Put it all together"
+- FAQ entry "public vs anyone"
+- Added "Overview" to "Publish and consume" chapter
+
 v3.14
 
 - AS-217 http snippet
