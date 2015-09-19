@@ -24,12 +24,12 @@ import org.restlet.security.MapVerifier;
 public class StudioRestletCom extends BaseApplication {
     /** The data file URI. */
     private String dataUri;
-	/** Login for global site authentication. */
-	private String siteLogin;
 
-	/** Password for global site authentication. */
-	private char[] sitePassword;
+    /** Login for global site authentication. */
+    private String siteLogin;
 
+    /** Password for global site authentication. */
+    private char[] sitePassword;
 
     /**
      * Constructor.
@@ -42,18 +42,11 @@ public class StudioRestletCom extends BaseApplication {
         super(propertiesFileReference);
 
         this.dataUri = getProperty("data.uri");
-		this.siteLogin = getProperty("site.login");
-		String str = getProperty("site.password");
-		if (str != null) {
-			sitePassword = str.toCharArray();
-		}
-
-        MediaType mediaType = new MediaType("application/sha1",
-                "Secured hash algorithm");
-        getMetadataService().addExtension("sha1", mediaType);
-        mediaType = new MediaType("application/md5", "Message-digest algorithm");
-        getMetadataService().addExtension("MD5", mediaType);
-        getMetadataService().addExtension("md5", mediaType);
+        this.siteLogin = getProperty("site.login");
+        String str = getProperty("site.password");
+        if (str != null) {
+            sitePassword = str.toCharArray();
+        }
     }
 
     @Override
@@ -68,20 +61,18 @@ public class StudioRestletCom extends BaseApplication {
         directory.setListingAllowed(false);
         rootRouter.attachDefault(directory);
 
-        Encoder encoder = new Encoder(getContext(), false, true,
-				getEncoderService());
+        Encoder encoder = new Encoder(getContext(), false, true, getEncoderService());
 
         if (siteLogin != null && sitePassword != null) {
-			ChallengeAuthenticator ca = new ChallengeAuthenticator(
-					getContext(), ChallengeScheme.HTTP_BASIC, "realm");
-			MapVerifier mv = new MapVerifier();
-			mv.getLocalSecrets().put(siteLogin, sitePassword);
-			ca.setVerifier(mv);
-			ca.setNext(rootRouter);
-			encoder.setNext(ca);
-		} else {
-			encoder.setNext(rootRouter);
-		}
+            ChallengeAuthenticator ca = new ChallengeAuthenticator(getContext(), ChallengeScheme.HTTP_BASIC, "realm");
+            MapVerifier mv = new MapVerifier();
+            mv.getLocalSecrets().put(siteLogin, sitePassword);
+            ca.setVerifier(mv);
+            ca.setNext(rootRouter);
+            encoder.setNext(ca);
+        } else {
+            encoder.setNext(rootRouter);
+        }
 
         return encoder;
     }

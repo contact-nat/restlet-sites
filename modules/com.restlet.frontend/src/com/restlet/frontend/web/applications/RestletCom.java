@@ -29,7 +29,6 @@ import org.restlet.security.ChallengeAuthenticator;
 import org.restlet.security.MapVerifier;
 import org.restlet.util.Series;
 
-import com.restlet.frontend.web.resources.RestletComRefreshResource;
 import com.restlet.frontend.web.services.RouterPropertiesReader;
 
 /**
@@ -37,325 +36,272 @@ import com.restlet.frontend.web.services.RouterPropertiesReader;
  * 
  * @author Jerome Louvel
  */
-public class RestletCom extends BaseApplication implements RefreshApplication {
+public class RestletCom extends BaseApplication {
 
-	/**
-	 * {@link TemplateRoute} that scores URIs according to a regex pattern. Once
-	 * chosen, the URI is transmitted to the next Restlet unchanged, whereas a
-	 * classic {@link TemplateRoute} adjusts the base reference according to the
-	 * matched par of the URI.
-	 * 
-	 * @author Thierry Boileau
-	 * 
-	 */
-	private static class StartsWithRoute extends TemplateRoute {
-		/** The pattern to use for formatting or parsing. */
-		private volatile String pattern;
+    /**
+     * {@link TemplateRoute} that scores URIs according to a regex pattern. Once
+     * chosen, the URI is transmitted to the next Restlet unchanged, whereas a
+     * classic {@link TemplateRoute} adjusts the base reference according to the
+     * matched par of the URI.
+     * 
+     * @author Thierry Boileau
+     * 
+     */
+    private static class StartsWithRoute extends TemplateRoute {
+        /** The pattern to use for formatting or parsing. */
+        private volatile String pattern;
 
-		/** The internal Regex pattern. */
-		private volatile Pattern regexPattern;
+        /** The internal Regex pattern. */
+        private volatile Pattern regexPattern;
 
-		/**
-		 * Constructor.
-		 * 
-		 * @param router
-		 *            the router.
-		 * @param next
-		 *            the Restlet to transmit the Request to.
-		 * @param pattern
-		 *            The regex pattern to match.
-		 */
-		public StartsWithRoute(Router router, Restlet next, String pattern) {
-			super(next);
-			setRouter(router);
-			this.pattern = pattern;
-			this.regexPattern = Pattern.compile(this.pattern.toString());
-		}
+        /**
+         * Constructor.
+         * 
+         * @param router
+         *            the router.
+         * @param next
+         *            the Restlet to transmit the Request to.
+         * @param pattern
+         *            The regex pattern to match.
+         */
+        public StartsWithRoute(Router router, Restlet next, String pattern) {
+            super(next);
+            setRouter(router);
+            this.pattern = pattern;
+            this.regexPattern = Pattern.compile(this.pattern.toString());
+        }
 
-		@Override
-		public float score(Request request, Response response) {
-			float result = -1f;
-			String remainingPart = request.getResourceRef().getRemainingPart(
-					false, isMatchingQuery());
-			if (remainingPart != null) {
-				Matcher matcher = regexPattern.matcher(remainingPart);
-				if (matcher.lookingAt()) {
-					result = matcher.end();
-				}
-			}
-			return result;
-		}
-	}
+        @Override
+        public float score(Request request, Response response) {
+            float result = -1f;
+            String remainingPart = request.getResourceRef().getRemainingPart(
+                    false, isMatchingQuery());
+            if (remainingPart != null) {
+                Matcher matcher = regexPattern.matcher(remainingPart);
+                if (matcher.lookingAt()) {
+                    result = matcher.end();
+                }
+            }
+            return result;
+        }
+    }
 
-	/** The data file URI. */
-	private String dataUri;
+    /** The data file URI. */
+    private String dataUri;
 
-	/** Login for admin protected pages. */
-	private String login;
+    /** Login for admin protected pages. */
+    private String login;
 
-	/** Password for admin protected pages. */
-	private char[] password;
+    /** Password for admin protected pages. */
+    private char[] password;
 
-	/** The URI of the router properties file. */
-	private String routerPropertiesFileReference;
+    /** The URI of the router properties file. */
+    private String routerPropertiesFileReference;
 
-	/** The root router. */
-	private Router rootRouter;
+    /** The root router. */
+    private Router rootRouter;
 
-	/** Login for global site authentication. */
-	private String siteLogin;
+    /** Login for global site authentication. */
+    private String siteLogin;
 
-	/** Password for global site authentication. */
-	private char[] sitePassword;
+    /** Password for global site authentication. */
+    private char[] sitePassword;
 
-	/** The Web files root directory URI. */
-	private String wwwUri;
+    /** The Web files root directory URI. */
+    private String wwwUri;
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param propertiesFileReference
-	 *            The Reference to the application's properties file.
-	 * @throws IOException
-	 */
-	public RestletCom(String propertiesFileReference) throws IOException {
-		super(propertiesFileReference);
+    /**
+     * Constructor.
+     * 
+     * @param propertiesFileReference
+     *            The Reference to the application's properties file.
+     * @throws IOException
+     */
+    public RestletCom(String propertiesFileReference) throws IOException {
+        super(propertiesFileReference);
 
-		// By default, check the classpath.
-		this.routerPropertiesFileReference = getProperty("router.uri",
-				"clap://class/router.properties");
+        // By default, check the classpath.
+        this.routerPropertiesFileReference = getProperty("router.uri", "clap://class/router.properties");
 
-		this.dataUri = getProperty("data.uri");
-		this.wwwUri = getProperty("www.uri");
-		this.login = getProperty("admin.login");
+        this.dataUri = getProperty("data.uri");
+        this.wwwUri = getProperty("www.uri");
+        this.login = getProperty("admin.login");
 
-		String str = getProperty("admin.password");
-		if (str != null) {
-			this.password = str.toCharArray();
-		}
-		this.siteLogin = getProperty("site.login");
-		str = getProperty("site.password");
-		if (str != null) {
-			sitePassword = str.toCharArray();
-		}
+        String str = getProperty("admin.password");
+        if (str != null) {
+            this.password = str.toCharArray();
+        }
+        this.siteLogin = getProperty("site.login");
+        str = getProperty("site.password");
+        if (str != null) {
+            sitePassword = str.toCharArray();
+        }
 
-		// Turn off extension tunnelling because of redirections.
-		this.getTunnelService().setExtensionsTunnel(false);
+        // Turn off extension tunnelling because of redirections.
+        this.getTunnelService().setExtensionsTunnel(false);
 
-		// Override the default mediatype for XSD
-		getMetadataService().addExtension("xsd", MediaType.APPLICATION_XML,
-				true);
+        // Override the default mediatype for XSD
+        getMetadataService().addExtension("xsd", MediaType.APPLICATION_XML, true);
+    }
 
-		getConnectorService().getClientProtocols().add(Protocol.CLAP);
-		getConnectorService().getClientProtocols().add(Protocol.HTTP);
-		getConnectorService().getClientProtocols().add(Protocol.FILE);
-	}
+    @Override
+    public Restlet createInboundRoot() {
+        Engine.setLogLevel(Level.FINEST);
+        // Create a root router
+        rootRouter = new Router(getContext());
+        rootRouter.setDefaultMatchingMode(Router.MODE_FIRST_MATCH);
+        updateRootRouter();
 
-	@Override
-	public Restlet createInboundRoot() {
-		Engine.setLogLevel(Level.FINEST);
-		// Create a root router
-		rootRouter = new Router(getContext());
-		rootRouter.setDefaultMatchingMode(Router.MODE_FIRST_MATCH);
-		updateRootRouter();
+        Encoder encoder = new Encoder(getContext(), false, true, getEncoderService());
 
-		Encoder encoder = new Encoder(getContext(), false, true,
-				getEncoderService());
+        if (siteLogin != null && sitePassword != null) {
+            ChallengeAuthenticator ca = new ChallengeAuthenticator(
+                    getContext(), ChallengeScheme.HTTP_BASIC, "realm");
+            MapVerifier mv = new MapVerifier();
+            mv.getLocalSecrets().put(siteLogin, sitePassword);
+            mv.getLocalSecrets().put(login, password);
+            ca.setVerifier(mv);
+            ca.setNext(rootRouter);
+            encoder.setNext(ca);
+        } else {
+            encoder.setNext(rootRouter);
+        }
 
-		if (siteLogin != null && sitePassword != null) {
-			ChallengeAuthenticator ca = new ChallengeAuthenticator(
-					getContext(), ChallengeScheme.HTTP_BASIC, "realm");
-			MapVerifier mv = new MapVerifier();
-			mv.getLocalSecrets().put(siteLogin, sitePassword);
-			mv.getLocalSecrets().put(login, password);
-			ca.setVerifier(mv);
-			ca.setNext(rootRouter);
-			encoder.setNext(ca);
-		} else {
-			encoder.setNext(rootRouter);
-		}
+        return encoder;
+    }
 
-		return encoder;
-	}
+    @Override
+    public String getName() {
+        return "Application for restlet.com";
+    }
 
-	public String getDataUri() {
-		return this.dataUri;
-	}
+    /**
+     * Sets up the redirections.
+     * 
+     * @param router
+     *            The router to complete.
+     * @param redirectionsFileUri
+     *            The URI of the redirections file.
+     */
+    private void readRouter(final Router router, String redirectionsFileUri) {
+        RouterPropertiesReader reader = new RouterPropertiesReader(
+                redirectionsFileUri) {
 
-	@Override
-	public String getName() {
-		return "Application for restlet.com";
-	}
+            @Override
+            public void handle(String source, String target, int currentMode,
+                    boolean bStartsWith) {
+                if (currentMode == -1) {
+                    Directory dir = new Directory(getContext(), "file://" + target.toString());
+                    rootRouter.attach(source.toString(), dir);
+                    getLogger().fine(
+                            "  attach directory: from " + dir.getRootRef()
+                                    + " to " + source.toString());
+                } else if (!bStartsWith) {
+                    redirect(router, source.toString(), target.toString(), currentMode);
+                } else {
+                    redirect(router, source.toString(), target.toString(),
+                            currentMode).setMatchingMode(Template.MODE_STARTS_WITH);
+                }
+            }
+        };
+        reader.read(getLogger());
+    }
 
-	public String getWwwUri() {
-		return this.wwwUri;
-	}
+    /**
+     * Helps to define redirections assuming that the router defines route by
+     * using the {@link Template.MODE_STARTS_WITH} mode.
+     * 
+     * @param router
+     *            The router where to define the redirection.
+     * @param from
+     *            The source template.
+     * @param to
+     *            The target template.
+     * @param mode
+     *            The redirection mode (cf {@link Redirector}.
+     * @return The defined route.
+     */
+    private TemplateRoute redirect(Router router, String from, String to, int mode) {
+        TemplateRoute route = router.attach(from, new Redirector(getContext(), to, mode) {
+            protected void serverRedirect(Restlet next, Reference targetRef,
+                    Request request, Response response) {
+                if (next == null) {
+                    getLogger().warning(
+                            "No next Restlet provided for server redirection to " + targetRef);
+                } else {
+                    // Save the base URI if it exists as we might need it for redirections
+                    Reference resourceRef = request.getResourceRef();
+                    Reference baseRef = resourceRef.getBaseRef();
 
-	/**
-	 * Refreshes the list of distributions, versions, etc.
-	 */
-	public void refresh() {
-		updateRootRouter();
-	}
+                    // Reset the protocol and let the dispatcher handle the protocol
+                    request.setProtocol(null);
 
-	/**
-	 * Sets up the redirections.
-	 * 
-	 * @param router
-	 *            The router to complete.
-	 * @param redirectionsFileUri
-	 *            The URI of the redirections file.
-	 */
-	private void readRouter(final Router router, String redirectionsFileUri) {
-		RouterPropertiesReader reader = new RouterPropertiesReader(
-				redirectionsFileUri) {
+                    // Update the request to cleanly go to the target URI
+                    request.setResourceRef(targetRef);
+                    request.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
+                    next.handle(request, response);
 
-			@Override
-			public void handle(String source, String target, int currentMode,
-					boolean bStartsWith) {
-				if (currentMode == -1) {
-					Directory dir = new Directory(getContext(), "file://"
-							+ target.toString());
-					rootRouter.attach(source.toString(), dir);
-					getLogger().fine(
-							"  attach directory: from " + dir.getRootRef()
-									+ " to " + source.toString());
-				} else {
-					if (!bStartsWith) {
-						redirect(router, source.toString(), target.toString(),
-								currentMode);
-					} else {
-						redirect(router, source.toString(), target.toString(),
-								currentMode).setMatchingMode(
-								Template.MODE_STARTS_WITH);
-					}
-				}
-			}
-		};
-		reader.read(getLogger());
-	}
+                    // Memorize Access-Control-Allow-* headers to reinject in the response
+                    Series<Header> resHeaders = response.getHeaders();
+                    Series<Header> newHeaders = new Series<Header>(Header.class);
+                    for (Header h : resHeaders) {
+                        if (h.getName().startsWith("Access-Control-Allow")) {
+                            newHeaders.add(h.getName(), h.getValue());
+                        }
+                    }
 
-	/**
-	 * Helps to define redirections assuming that the router defines route by
-	 * using the {@link Template.MODE_STARTS_WITH} mode.
-	 * 
-	 * @param router
-	 *            The router where to define the redirection.
-	 * @param from
-	 *            The source template.
-	 * @param to
-	 *            The target template.
-	 * @param mode
-	 *            The redirection mode (cf {@link Redirector}.
-	 * @return The defined route.
-	 */
-	private TemplateRoute redirect(Router router, String from, String to,
-			int mode) {
-		TemplateRoute route = router.attach(from, new Redirector(getContext(),
-				to, mode) {
-			protected void serverRedirect(Restlet next, Reference targetRef,
-					Request request, Response response) {
-				if (next == null) {
-					getLogger().warning(
-							"No next Restlet provided for server redirection to "
-									+ targetRef);
-				} else {
-					// Save the base URI if it exists as we might need it for
-					// redirections
-					Reference resourceRef = request.getResourceRef();
-					Reference baseRef = resourceRef.getBaseRef();
+                    // Allow for response rewriting and clean the headers
+                    response.setEntity(rewrite(response.getEntity()));
+                    response.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
+                    request.setResourceRef(resourceRef);
 
-					// Reset the protocol and let the dispatcher handle the
-					// protocol
-					request.setProtocol(null);
+                    // Reinject Access-Control-Allow-* headers
+                    response.getAttributes().put(HeaderConstants.ATTRIBUTE_HEADERS, newHeaders);
 
-					// Update the request to cleanly go to the target URI
-					request.setResourceRef(targetRef);
-					request.getAttributes().remove(
-							HeaderConstants.ATTRIBUTE_HEADERS);
-					next.handle(request, response);
+                    // In case of redirection, we may have to rewrite the redirect URI
+                    if (response.getLocationRef() != null) {
+                        Template rt = new Template(this.targetTemplate);
+                        rt.setLogger(getLogger());
+                        int matched = rt.parse(response.getLocationRef().toString(), request);
 
-					// Memorize Access-Control-Allow-* headers to reinject in
-					// the response
-					Series<Header> resHeaders = response.getHeaders();
-					Series<Header> newHeaders = new Series<Header>(Header.class);
-					for (Header h : resHeaders) {
-						if (h.getName().startsWith("Access-Control-Allow")) {
-							newHeaders.add(h.getName(), h.getValue());
-						}
-					}
+                        if (matched > 0) {
+                            String remainingPart = (String) request.getAttributes().get("rr");
 
-					// Allow for response rewriting and clean the headers
-					response.setEntity(rewrite(response.getEntity()));
-					response.getAttributes().remove(
-							HeaderConstants.ATTRIBUTE_HEADERS);
-					request.setResourceRef(resourceRef);
+                            if (remainingPart != null) {
+                                response.setLocationRef(baseRef.toString() + remainingPart);
+                            }
+                        }
+                    }
+                }
 
-					// Reinject Access-Control-Allow-* headers
-					response.getAttributes().put(
-							HeaderConstants.ATTRIBUTE_HEADERS, newHeaders);
+            }
+        });
+        if (to.contains("{rr}")) {
+            route.setMatchingMode(Template.MODE_STARTS_WITH);
+        }
+        return route;
+    }
 
-					// In case of redirection, we may have to rewrite the
-					// redirect URI
-					if (response.getLocationRef() != null) {
-						Template rt = new Template(this.targetTemplate);
-						rt.setLogger(getLogger());
-						int matched = rt.parse(response.getLocationRef()
-								.toString(), request);
+    @Override
+    public synchronized void start() throws Exception {
+        super.start();
+        updateRootRouter();
+    }
 
-						if (matched > 0) {
-							String remainingPart = (String) request
-									.getAttributes().get("rr");
+    private void updateRootRouter() {
+        rootRouter.getRoutes().clear();
 
-							if (remainingPart != null) {
-								response.setLocationRef(baseRef.toString()
-										+ remainingPart);
-							}
-						}
-					}
-				}
+        // Set up routes and redirections.
+        readRouter(rootRouter, routerPropertiesFileReference);
 
-			}
-		});
-		if (to.contains("{rr}")) {
-			route.setMatchingMode(Template.MODE_STARTS_WITH);
-		}
-		return route;
-	}
+        // "download" routing
+        Router downloadRouter = new Router(getContext());
+        downloadRouter.getRoutes().add(new StartsWithRoute(downloadRouter, new Directory(getContext(), this.wwwUri + "/download"), "\\/[a-zA-Z]+"));
 
-	@Override
-	public synchronized void start() throws Exception {
-		super.start();
-		refresh();
-	}
+        // Serve archives
+        downloadRouter.attachDefault(new Directory(getContext(), this.dataUri + "/archive/restlet"));
 
-	private void updateRootRouter() {
-		rootRouter.getRoutes().clear();
-
-		// Guarding access to sensitive services
-		ChallengeAuthenticator guard = new ChallengeAuthenticator(getContext(),
-				ChallengeScheme.HTTP_BASIC, "Admin section");
-		MapVerifier verifier = new MapVerifier();
-		verifier.getLocalSecrets().put(this.login, this.password);
-		guard.setVerifier(verifier);
-		guard.setNext(RestletComRefreshResource.class);
-		rootRouter.attach("/rf-refresh", guard);
-
-		// Set up routes and redirections.
-		readRouter(rootRouter, routerPropertiesFileReference);
-
-		// "download" routing
-		Router downloadRouter = new Router(getContext());
-		downloadRouter.getRoutes().clear();
-		downloadRouter.getRoutes().add(
-				new StartsWithRoute(downloadRouter, new Directory(getContext(),
-						this.wwwUri + "/download"), "\\/[a-zA-Z]+"));
-
-		// Serve archives
-		downloadRouter.attachDefault(new Directory(getContext(), this.dataUri
-				+ "/archive/restlet"));
-
-		rootRouter.attach("/download", downloadRouter);
-	}
+        rootRouter.attach("/download", downloadRouter);
+    }
 
 }
