@@ -71,6 +71,7 @@ This .yml file generates the associated menu in the ToC.
 Each .md file has an associated .yml file (e.g. 01_sign-in.md file has its 01_sign-in.yml file) in order to display as an item in the ToC.
 
 ## c. Add resources
+
 ### Insert screenshots
 surround the interesting part in a red rectangle with round corners (size 3)
 screenshots are left-aligned
@@ -83,6 +84,7 @@ To insert images in the documentation pages, create a folder called “images”
 ![Add an entity](images/add-an-entity.png "Add an Entity")
 The text in square brackets will display on the page as a clickable link.
 The text in quotes displays in the tooltip.
+
 #### Insert clickable images
 
 [ ![Restlet in action (Manning)][1]][2]
@@ -90,6 +92,16 @@ The text in quotes displays in the tooltip.
 [2]: http://www.amazon.com/gp/product/193518234X/ref=as_li_tf_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=193518234X&linkCode=as2&tag=restlet-20
 
 >**Note**: Each reference number e.g. [1] must be unique in the page
+
+#### Insert animated GIFs
+
+An animated GIF works like a flip-book, i.e. you need source images that can be stringed together to an animated GIF. In order to work with the following command, name your source images ‘source1.jpg’, ‘source2.jpg’ and so on. After you created the source images, ‘cd’ in the Terminal to their folder. If you don’t know how to ‘cd’: Type ‘cd’ followed by a space and then drag the folder with the source images to the Terminal and hit ‘Enter’. Now copy, paste and execute this command in the Terminal:
+
+convert -delay 35 -loop 0 source*.jpg animated.gif
+
+Play around with the delay parameter in order to see how the animated GIF changes.
+
+http://johannesluderschmidt.de/creating-animated-gifs-from-the-command-line-in-mac-os-x-using-convert/2732/
 
 ### Insert links
 #### External links
