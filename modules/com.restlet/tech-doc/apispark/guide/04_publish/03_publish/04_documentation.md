@@ -45,8 +45,6 @@ Once the desired types of documentation have been added to the **Documentation**
 
 To generate the downloads for an API, open the API's **Overview**, click on the drop-down cog button and select **Generate downloads**.
 
-![Generate downloads](images/generate-downloads.jpg "Generate downloads")
-
 Your documentation can now be downloaded from the **Documentation** section by selecting a type of documentation from the list and clicking on the **Download** button.
 
 # Get the Swagger definition of your API
