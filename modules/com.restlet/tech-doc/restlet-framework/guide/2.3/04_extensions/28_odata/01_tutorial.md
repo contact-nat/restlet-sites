@@ -278,9 +278,11 @@ and entity:
         </content>
       </entry>
     </feed>
+```
 
 Getting the set of defined “Item” is quite similar:
 
+```java
     Query<Item> queryItem = service.createItemQuery("/Items");
 
     for (Item Item : queryItem) {
@@ -328,7 +330,7 @@ Let's complete the current list of entities and add a new one. This
 process is quite simple and just requires you to firstly create and
 complete the new entity, then invoke the “addEntity” method as follow.
 
-```
+```java
     Cafe Cafe = new Cafe();
     Cafe.setID("3");
     Cafe.setZipCode(12345);
@@ -382,7 +384,7 @@ of its properties. The sample code below illustrates this with the “Nom”
 property. It simply uses the “updateEntity” method. You can check that
 the value has really been taken into account by making a new query.
 
-```
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
 
     Cafe Cafe = query.iterator().next();
@@ -401,7 +403,7 @@ Let's finish the tour of the basic operations with the deletion of an
 entity. You just need to wall the deleteEntity method as shown just
 below.
 
-```
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
     Cafe Cafe = query.iterator().next();
 
@@ -430,7 +432,9 @@ this kind of trace at the console.
     Item
     id: 1
     Description: Poulet au curry
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes('1')").expand("Item");
 
     Cafe Cafe = query.next();
@@ -468,7 +472,9 @@ console this king of trace:
     description: Pâté
     id: 1
     description: Poulet au curry
+```
 
+```java
     Query<Item> query = service.createItemQuery("/Items").orderby("Description");
 
     for (Item Item : query) {
@@ -501,7 +507,9 @@ the console:
 ```
     id: 1  
     nom: Le Café Louis
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").filter("Name eq 'Le Café Louis'");
 
     for (Cafe Cafe : query) {
@@ -525,7 +533,9 @@ kind of trace at the console.
 ```
     id: 2  
     name: Le Petit Marly
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").skip(1);
 
     for (Cafe Cafe : query) {
@@ -545,7 +555,9 @@ use is very simple as shown below:
 ```
     id: 1
     name: Le Café Louis
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").top(1);
 
     for (Cafe Cafe : query) {
@@ -576,7 +588,9 @@ entities:
 ```
     id: null
     name: Le Café Louis
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").top(1).select("Name");
 
     for (Cafe Cafe : query) {
@@ -596,7 +610,9 @@ expanded:
     Item
     id: null
     Description: Poulet au curry
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").top(1).expand("Item").select("Name,Item.Description");
 
     for (Cafe Cafe : query) {
@@ -638,7 +654,7 @@ segment (set the parameter to "false", this is the value by default).
 The following sample code illustrates how to get the count using the
 *inlinecount* query parameter.
 
-```
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").inlineCount(true);
 
     System.out.println("Number of entities: " + query.getCount());
@@ -697,7 +713,9 @@ to set the credentials:
                             "login",
                             "password")
             );
+```
 
+```java
     Query<Cafe> query = service.createCafeQuery("/Cafes").top(1);
 
     for (Cafe Cafe : query) {

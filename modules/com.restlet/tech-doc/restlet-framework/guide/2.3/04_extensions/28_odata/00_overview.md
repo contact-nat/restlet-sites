@@ -61,7 +61,7 @@ the whole set of Java classes with correct types.
 Just note the URI of the target service, and specify the directory where
 you would like to generate the code via the command line:
 
-```java}
+```java
 java -jar org.restlet.ext.odata Generator http://ogdi.cloudapp.net/v1/dc/ ~/workspace/testADO
 ```
 
@@ -83,7 +83,6 @@ required archives for the class path argument (nb: take care of the OS
 specific classpath separator) and the name of the main class:
 
 ```
-java
 java -cp org.restlet.jar:org.restlet.ext.xml.jar:org.restlet.ext.atom.jar:org.restlet.ext.freemarker.jar:
  org.restlet.ext.odata.jar:org.freemarker.jar org.restlet.ext.odata.Generator
  http://ogdi.cloudapp.net/v1/dc/
@@ -106,7 +105,7 @@ exchanges of data), XML (required by the Atom extension) and FreeMarker
 
 This will generate the following Java classes and directory:
 
-```java
+```
 ogdiDc/
   +-- AmbulatorySurgicalCenter.java
   +-- BuildingPermit.java
@@ -134,7 +133,7 @@ use the generated classes.
 The code below gets the two first entities and displays some of their
 properties. It will display this kind of output on the console:
 
-```java
+```
 *** buildingPermit
 Owner   :DARYL ADAIR
 City    :WASHINGTON
@@ -188,7 +187,7 @@ The code below gets the five first entities located in the city of
 Washington and more precisely on the fifth district and displays some of
 their properties. It will display this kind of output on the console:
 
-```java
+```
 *** building permit
 Owner   :RUTH D PROCTOR
 Address :144 U ST NW

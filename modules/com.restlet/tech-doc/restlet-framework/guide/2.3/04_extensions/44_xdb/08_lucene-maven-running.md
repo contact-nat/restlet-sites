@@ -133,8 +133,8 @@ Note that the Authorization header have a B64 encoding information of scott:tige
 SQL> create table test_source_big as (select * from all_source);
 
 
-SQL> create index source_big_lidx on test_source_big(text) 
-indextype is lucene.LuceneIndex 
+SQL> create index source_big_lidx on test_source_big(text)
+indextype is lucene.LuceneIndex
 parameters('AutoTuneMemory:true;Analyzer:org.apache.lucene.analysis.StopAnalyzer;\
 
 MergeFactor:500;FormatCols:line(0000);ExtraCols:line "line"');
@@ -151,7 +151,7 @@ Install required libraries from JMeter distribution
 
 ```
 mvn install:install-file -DgroupId=org.apache.jmeter -DartifactId=jmeter -Dversion=2.2 -Dpackaging=jar -Dfile=/home/mochoa/Download/jmeter-2.2.jar -DpomFile=/home/mochoa/Download/jmeter-2.2.pom
-mvn install:install-file -DgroupId=org.apache.jorphan -DartifactId=jorphan -Dversion=2.2 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/jorphan.jar   
+mvn install:install-file -DgroupId=org.apache.jorphan -DartifactId=jorphan -Dversion=2.2 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/jorphan.jar
 mvn install:install-file -DgroupId=org.mozilla.javascript -DartifactId=javascript -Dversion=1.0 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/js_rhino1_6R5.jar  
 mvn install:install-file -DgroupId=jcharts -DartifactId=jcharts -Dversion=0.7.5 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/jCharts-0.7.5.jar  
 
@@ -161,7 +161,7 @@ mvn install:install-file -DgroupId=jcharts -DartifactId=jcharts -Dversion=0.7.5 
 pom.xml file modifications
 
 
-```
+```xml
 ....
 
 
@@ -179,7 +179,7 @@ pom.xml file modifications
         <configuration>
           <includes>
             <include>test_get_scott.jmx</include>
-          </includes>         
+          </includes>
 <reportDir>target/jmeter-reports</reportDir>
         </configuration>
       </plugin>
@@ -202,4 +202,3 @@ mvn org.apache.jmeter:maven-jmeter-plugin:jmeter
 
 
 Using some of the JMeter templates at directory __src/test/____jmeter__ you can perform performance test of Lucene REST WS API over Lucene Domain Index.
-

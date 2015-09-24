@@ -31,7 +31,7 @@ $ORACLE_HOME/lib/xmlparserv2.jar
 edit a a file named __library.xml__ into above directory with this content.
 
 
-```
+```xml
 <library id="xdb">
   <package name="oracle.xdb" />
   <version>11.1</version>
@@ -43,7 +43,6 @@ edit a a file named __library.xml__ into above directory with this content.
    <a href="http://www.oracle.com/technology/tech/xml/xmldb/index.html">http://www.oracle.com/technology/tech/xml/xmldb/index.html</a>
   </homeUri>
 </library>
-
 ```
 
 
@@ -61,9 +60,8 @@ bin.includes = META-INF/,\
 then edit the file __pom.xml__ into __modules__ directory of Restlet sources addind a new line in section __properties__ with:
 
 
-```
+```xml
 <lib-xdb-version>11.1.1</lib-xdb-version>
-
 ```
 
 
@@ -99,4 +97,3 @@ SQL> exec dbms_xdb.sethttpport(8080);
 ```
 
 Restart your database and test with a browser or any WebDAV enable file manager a connection to http://localhost:8080/
-
