@@ -17,7 +17,7 @@ If you have not already done so, sign in to your APISpark account and open your 
 
 Create a new Entity Store. Click on **+ Entity Store**, select the "Full stack" **Type** and enter the **Name** "myStore".
 
-![Create an Entity Store](images/create-entity-store.jpg "Create an Entity Store")
+![Create an Entity Store](images/add-store.gif "Create an Entity Store")
 
 Click on the **Add** button to create the new Entity Store.
 
@@ -27,7 +27,7 @@ You will be taken to the new Entity Store's **Overview page**.
 
 Click on the **Add** button next to **Entities** in the left panel to create a new Entity. Name the new Entity **Contact**.
 
-![Add an entity](images/add-an-entity.jpg "Add an Entity")
+![Add an entity](images/add-entity.gif "Add an Entity")
 
 To add **Properties** to an entity, select the + button to the right of this entity.
 
@@ -71,7 +71,7 @@ Enter a name for your API (e.g. myAPI).
 
 The domain will be created automatically but may not be available anymore so make sure to adjust it.
 
-![Create a web API](images/domain-name-unavailable.jpg "Create a web API")
+![Create a web API](images/domain-name-available.jpg "Create a web API")
 
 Click **Add**. You will be taken to the API’s **Overview** page.
 
