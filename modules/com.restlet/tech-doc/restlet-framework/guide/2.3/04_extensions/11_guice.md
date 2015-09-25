@@ -31,7 +31,7 @@ When using this approach:
 
 In the Finder factory approach, inject FinderFactory into contexts where routing to resources is initialized, e.g., createInboundRoot(), and use FinderFactory.finder(Class) in calls to Router.attach() instead of the plain server resource class name. For example:
 
-```
+```java
    // Binding in Guice:
    bind(ServerResource.class)
        .annotatedWith(Hello.class)

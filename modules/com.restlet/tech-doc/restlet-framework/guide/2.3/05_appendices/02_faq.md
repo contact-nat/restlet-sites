@@ -16,7 +16,7 @@ sandbox.
 The solution is to use a custom Restlet engine as below, that won't
 create this new classloader:
 
-```
+```java
     public class AppletEngine extends Engine {
 
         @Override
@@ -29,7 +29,7 @@ create this new classloader:
 
 Now you just need to call this line before using the Restlet API:
 
-```
+```java
     Engine.setInstance(new AppletEngine());
 ```
 
@@ -81,7 +81,7 @@ their context (see the
 Here is a sample code that illustrates how to configure the HTTP  server
 connector of a Component:
 
-```
+```java
     Component c = new Component();
     Server s = new Server(Protocol.HTTP, 8182);
     c.getServers().add(s);
@@ -91,7 +91,7 @@ connector of a Component:
 Here is a sample code that illustrates how to configure the HTTP  client
 connector of a resource:
 
-```
+```java
     Client client = new Client(new Context(), Protocol.HTTP);
     client.getContext().getParameters().add("tracing", "true");
     ClientResource resource = new ClientResource("http://localhost:8182/<resource>");

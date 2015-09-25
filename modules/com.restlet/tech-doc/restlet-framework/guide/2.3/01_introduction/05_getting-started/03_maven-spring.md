@@ -53,7 +53,7 @@ particular the Spring and Servlet extension packages.  It also defines
 the Jetty plugin since we will be running this web service in an
 embedded Jetty server.
 
-```
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -128,7 +128,7 @@ extends ServerResource and responds to the HTTP GET method. Note the use
 of annotations, which is part of  the Restlet Framework.  For the
 purpose of this document we will only define this simple resource.
 
-```
+```java
     package com.mycompany.restlet.basecamp.resource.demo;
 
     import org.restlet.resource.Get;
@@ -150,7 +150,7 @@ BaseCampApplication, which extends the core framework class. It's not
 really required for this example but if you need to override base class
 behaviour this is how you would go about it.
 
-```
+```java
     package com.mycompany.restlet.basecamp.application;
 
     import org.restlet.Application;
@@ -178,7 +178,7 @@ various components.
 
 <!-- -->
 
-```
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
     <beans>
@@ -205,7 +205,7 @@ The important parts are the **context-param** entries. One points to the
 the SpringComponent class instance in our application context and the
 other points to the location of the application context file.
 
-```
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <web-app id="restlet-basecamp" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
@@ -339,7 +339,7 @@ the web service respectively.
 An minimal configured tomcat maven plugin is shown below but you should
 consult the documentation for the finer details.
 
-```
+```xml
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>tomcat-maven-plugin</artifactId>

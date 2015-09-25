@@ -16,7 +16,7 @@ sets the properties. An obvious workaround is to refine the init method
 like so:
 
 
-```brush: .java
+```java
     @Override
     public void init(Context context, Request request, Response response) {
         final ResourcePropertyHolder backup = new ResourcePropertyHolder(); 

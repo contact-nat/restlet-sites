@@ -61,10 +61,10 @@ This project follows Maven standard layout. Here a list of the content of each o
 Several parameters at the boton of pom.xml file, properties section, are used during install target, here a brief explanation of each one:
 
 
-```
+```xml
 ....
 <properties>
-   
+
 <sqlplus.app.value>${env.ORACLE_HOME}/bin/sqlplus</sqlplus.app.value>
 
     <restlet.owner.value>RESTLET</restlet.owner.value>
@@ -119,4 +119,3 @@ Runs JUnit test suites. By now only a simple test suite is performed, Maven requ
 ** mvn install
 
 Install Lucene REST WS API into the database using configurations parameters explained above. Also copy a .jar file to a local repository.
-

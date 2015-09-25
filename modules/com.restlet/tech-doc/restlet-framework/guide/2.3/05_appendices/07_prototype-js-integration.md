@@ -500,7 +500,7 @@ which was exposed in server side:
 
 ## Microblog.Class
 
-```
+```java
 package com.bjinfotech.restlet.practice.demo.microblog;
 
 public class Microblog {\

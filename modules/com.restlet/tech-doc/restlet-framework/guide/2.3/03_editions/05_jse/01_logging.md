@@ -177,7 +177,7 @@ We also configured a logger for the WWW access log of our Restlet
 component. For information, our Component subclass has this code in its
 constructor:
 
-```
+```java
     getLogService().setLoggerName("com.noelios.web.WebComponent.www");
 ```
 
@@ -303,7 +303,7 @@ This bridge is [provided by the SLF4J
 project](http://www.slf4j.org/legacy.html).
 Once it is installed, you will just need to add these lines of code:
 
-```
+```java
      import org.slf4j.bridge.SLF4JBridgeHandler;
      SLF4JBridgeHandler.install();
 ```
@@ -319,7 +319,7 @@ Commons Logging to SLF4J and keep all log consistent.
 In addition, if you want to disable the usual console outputs, you could
 add those lines:
 
-```
+```java
     java.util.logging.Logger rootLogger = LogManager.getLogMan​ager().getLogger(​"");
     Handler[] handlers = rootLogger.getHandlers();
     rootLogger.removeHan​dler(handlers[0]);
