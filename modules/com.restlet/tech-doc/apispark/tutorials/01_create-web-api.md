@@ -35,7 +35,7 @@ We are going to create three properties named *firstName*, *lastName* and *age*.
 
 For each property you create, you can choose a **Type**, a **Default value**, make it **Optional** or a **List**.
 
-![Add a property](images/add-a-property.jpg "Add a property")
+![Add a property](images/add-property.gif "Add a property")
 
 ## 1.3 Deploy the Entity Store
 
@@ -63,9 +63,9 @@ Click on the **Add** button. Your first contact should be displayed like so:
 
 ## 2.1 Export an API from the Entity Store
 
-From the Entity Store **Overview**, click on the actions button to the left of the **Deploy** button.
+From the Entity Store **Overview**, click on the cog button to the left of the **Deploy** button.
 
-![Export web API](images/export-web-api.jpg "Export web API")
+![Export web API](images/export-web-api.gif "Export web API")
 
 Enter a name for your API (e.g. myAPI).
 
