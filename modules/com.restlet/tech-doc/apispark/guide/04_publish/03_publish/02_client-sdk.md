@@ -8,12 +8,11 @@ To facilitate this, APISpark can generate custom client SDKs (Software Developme
 
 | Client SDKs |
 | ------------- |
+| [JavaScript (AngularJS)](/technical-resources/apispark/tutorials/angular-sdk) |
 | Java (Restlet Framework) |
 | Android (Restlet Framework) |
-| [JavaScript (AngularJS)](/technical-resources/apispark/tutorials/angular-sdk) |
+| JavaScript (Node.js) |
 | iOS (Objective C) |
-
-
 
 
 You can **Add** or **Delete** client SDKs from the **Client SDKs** section of the **Downloads** tab.
@@ -26,7 +25,7 @@ To download a client SDK for a web API:
 
 Open the appropriate API.  
 Click on the **Downloads** tab.  
-Select the language you need (JavaScript, iOS, Java or Android) in the **Client SDKs** section.  
+Select the language you need (JavaScript, Android, Java or iOS) in the **Client SDKs** section.  
 Click on the **Download ...** button from the central panel.  
 
 ![Download version under development](images/download-version-under-dev.jpg "Download version under development")
