@@ -2,6 +2,10 @@ v3.15
 - SDK "Put it all together"
 - FAQ entry "public vs anyone"
 - Added "Overview" to "Publish and consume" chapter
+- Added animated gifs
+- Added language info to code blocks in RF
+- Added HTML documentation
+- Added Java Node.js client SDK
 
 v3.14
 
