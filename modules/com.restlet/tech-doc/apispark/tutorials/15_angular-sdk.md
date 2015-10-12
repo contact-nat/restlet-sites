@@ -168,3 +168,186 @@ quick_start_wizard_angularjs_sdkClientResource.deleteCompany({
       $scope.company = company;
   });
 ```
+
+# Put it all together
+
+Now let's create a sample application which is going to get the companies and let us update their name and address.
+
+The first part is to create a simple HTML template, so let's open the provided
+`index.html` and replace the content of `<div class="container"> ... </div>` with
+the following:
+
+```html
+<h2>Companies</h2>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-striped col-md-6">
+      <tr>
+        <th>Name</th>
+      </tr>
+      <tr ng-repeat="company in companies" ng-click="selectCompany(company.id)">
+        <td>
+          {{company.name}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-md-6" ng-if="company">
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" ng-model="company.name">
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" class="form-control" id="street" placeholder="Street" ng-model="company.address.street">
+      </div>
+      <div class="form-group">
+        <label for="zipcode">ZIP code</label>
+        <input type="text" class="form-control" id="zipcode" placeholder="Zip code" ng-model="company.address.zipcode">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="City" ng-model="company.address.city">
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
+    </form>
+  </div>
+</div>
+```
+
+So let's break it apart to clarify it.
+
+## The company array
+
+```html
+<div class="col-md-6">
+  <table class="table table-striped col-md-6">
+    <tr>
+      <th>Name</th>
+    </tr>
+    <tr ng-repeat="company in companies" ng-click="selectCompany(company.id)">
+      <td>
+        {{company.name}}
+      </td>
+    </tr>
+  </table>
+</div>
+```
+
+In this part, a table is created with a row per company. To do so Angular iterates over the companies' array stored in the scope using the `ng-repeat="company in companies"`.
+
+It can also be noticed that a click on any `tr` is going to `selectCompany` which leads us to the company detail.
+
+## Company detail
+
+The company detail is a standard form displayed if and only if a company has been selected.
+
+It also contains various bindings to handle update of:
+* The name of the company
+* The address of the company divided into street, zip code and city
+
+Finally the save button triggers an update of the company with the last values changed by the user.
+
+```html
+<div class="col-md-6" ng-if="company">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="company.name">
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" id="street" placeholder="Street" ng-model="company.address.street">
+    </div>
+    <div class="form-group">
+      <label for="zipcode">ZIP code</label>
+      <input type="text" class="form-control" id="zipcode" placeholder="Zip code" ng-model="company.address.zipcode">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" placeholder="City" ng-model="company.address.city">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
+  </form>
+</div>
+```
+
+At that point, the structure of the controller starts to appear. Many properties have to be set onto the `$scope`:
+* `companies` the list of companies
+* `company` the currently selected company
+* `selectCompany` a method which selects and recovers the company of a given id from the server
+* `save` saves a company
+
+## JavaScript part
+
+### Authentication
+
+First let's add the credentials into the [run block](https://docs.angularjs.org/guide/module#module-loading-dependencies) which are required to be able to access the API if the default security has not been changed.
+
+```JavaScript
+.run(function ($http) {
+
+	// Adds HTTP basic authentication to all your calls to the API
+  var encoded = btoa('9ac12010-68fd-4a68-b114-127672bdd2cd:4f8bd084-6644-45f2-b4b8-b8980782093d');
+  $http.defaults.headers.common.Authorization = 'Basic ' + encoded;
+
+})
+```
+
+### Controller
+
+Now the last task is to add the logic into the controller which means to:
+* recover the companies (`getCompanies`)
+* select a company (`selectCompany`)
+* update a company (`save`)
+
+```JavaScript
+.controller('MainCtrl', function ($scope, $http, $q, $location, $timeout, $window, Quick_start_wizard_angularjs_sdkClientResource) {
+
+  var quick_start_wizard_angularjs_sdkClientResource = new Quick_start_wizard_angularjs_sdkClientResource();
+
+  // Let's get the company
+  getCompanies();
+
+  /**
+   * Recovers the information about a specific company and set it to the `company`
+   * property of the scope.
+   * @param {String} companyId the id of the company to load from APISpark
+   * @returns {undefined}
+   */
+  $scope.selectCompany = function(companyId) {
+    quick_start_wizard_angularjs_sdkClientResource.getCompany({
+      companyid: companyId
+    }).then(function(company) {
+      $scope.company = company;
+    });
+  };
+
+  /**
+   * Updates the provided company with the new value provided.
+   * The company to update is determined based on the id of the provided company.
+   * @param {Object} company the new company state
+   * @returns {undefined}
+   */
+  $scope.save = function(company) {
+    quick_start_wizard_angularjs_sdkClientResource.putCompany({
+      companyid: company.id,
+      body: company
+    }).then(function(company) {
+      $scope.company = company;
+      getCompanies();
+    });
+  };
+
+  function getCompanies() {
+    quick_start_wizard_angularjs_sdkClientResource.getCompanyList().then(function(companies) {
+      $scope.companies = companies;
+    });
+  }
+
+});
+```
+
+Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.

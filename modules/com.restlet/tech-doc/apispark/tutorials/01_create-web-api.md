@@ -63,7 +63,7 @@ Click on the **Add** button. Your first contact should be displayed like so:
 
 ## 2.1 Export an API from the Entity Store
 
-From the Entity Store **Overview**, click on the cog button to the left of the **Deploy** button.
+From the Entity Store **Overview**, click on the cog button to the left of the **Deploy** button and select **Export web API**.
 
 ![Export web API](images/export-web-api.gif "Export web API")
 
