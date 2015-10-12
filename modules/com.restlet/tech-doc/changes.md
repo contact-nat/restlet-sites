@@ -1,4 +1,4 @@
-v3.15
+v3.16.18
 - SDK "Put it all together"
 - FAQ entry "public vs anyone"
 - Added "Overview" to "Publish and consume" chapter
@@ -7,7 +7,7 @@ v3.15
 - Added HTML documentation
 - Added Java Node.js client SDK
 
-v3.14
+v3.14.10
 
 - AS-217 http snippet
 - deployment process screenshot
