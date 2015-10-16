@@ -17,7 +17,7 @@ To make your API documentation public:
 
 Open your API **Overview** page.  
 In the central panel, click on the **Overview** tab.  
-Select the **Public documentation** checkbox.
+Select the **Share API Overview** checkbox.
 
 ![Public documentation](images/publicdocumentation.jpg "Public documentation")
 

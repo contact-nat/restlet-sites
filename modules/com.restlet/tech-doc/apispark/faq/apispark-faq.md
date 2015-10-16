@@ -249,9 +249,9 @@ It is important you do not confuse the **Public** checkbox which makes your API'
 You can make the Description of an API publicly available and not the API itself. In this instance, accessing your API would still require your credentials (which can be found in the **Overview** tab by clicking your Endpoint on the left).
 
 From your API's **Overview**, click **General information**.  
-Select the **Public** checkbox.
+Select the **Share API Overview** checkbox.
 
-![Make your API Description public](images/api-description-public.jpg "Make your API Description public")
+![Make your API Description public](images/publicdocumentation.jpg "Make your API Description public")
 
 ## Deactivate authentication
 
