@@ -61,6 +61,33 @@ With a Connector you can also document your web API as with a [Descriptor](/tech
 Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System (if you choose the standalone agent configuration), and that's all.  
  Your web API has new features inside without writing a line of code!
 
+# Import a Swagger or RAML definition
+
+You can import a Swagger or RAML definition by providing the definition's URL or file. Swagger 1.2, Swagger 2.0 and RAML 0.8 are supported.
+
+From the Dashboard, open an existing Connector or create a new one by clicking on **+ Web API** and selecting **Connector** from the drop-down menu.
+
+From the Connector's **Overview**, click on the cog button on the top right of your screen and select **Import definition** from the menu.
+
+![Import definition](images/swagger-import-definition.jpg "Import definition")
+
+You will be prompted to select the file that contains your API's definition or to enter the URL that points to it. Swagger 1.2, Swagger 2.0 and RAML 0.8 are supported.
+
+![Enter swagger definition URL](images/swagger-import.jpg "Enter swagger definition URL")
+
+Click on the **Import** button to import the Swagger or RAML definition into your Connector. As a result, representations and resources will be added to your Connector according to the content of the definition.
+
+To view the changes, navigate to the Connector's **Overview** tab.
+
+## Import a multi-file definition
+
+You can import a multi-file definition by uploading a zip archive.
+
+Click on **Choose a file** and browse to the zip archive you have chosen.  
+From the **Main definition file** drop-down menu, select the  main file at the root of your API definition.
+
+![Import multi-file definition](images/multi-file-definition.jpg "Import multi-file definition")
+
 # Switch a connector cell deployment mode
 
 It is possible to switch between hosted or standalone configurations.  

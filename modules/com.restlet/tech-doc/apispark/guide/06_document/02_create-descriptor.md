@@ -17,26 +17,32 @@ Rather than manually create a *Descriptor* from scratch, APISpark provides ways 
 
 A *Descriptor* can be generated from your current API's Swagger definition, or from your code if your API is implemented using either the Restlet Framework or JAX-RS.
 
-## Generate a Descriptor from a Swagger definition
+## Generate a Descriptor from a Swagger or RAML definition
 
-You can generate a web API Descriptor by importing a Swagger definition for an existing web API, by providing the Swagger definition's URL. Swagger 1.2 and 2.0 are supported.
+You can generate a web API Descriptor by importing a Swagger/RAML definition for an existing web API, by providing the Swagger definition's URL or file. Swagger 1.2, Swagger 2.0 and RAML 0.8 are supported.
 
 From the Dashboard, open an existing Descriptor or create a new one by clicking on **+ Web API** and selecting **Descriptor** from the drop-down menu.
 
-From the Descriptor's **Overview**, click on the actions button on the top right of your screen and select **Import definition** from the menu.
+From the Descriptor's **Overview**, click on the cog button on the top right of your screen and select **Import definition** from the menu.
 
 ![Import definition](images/swagger-import-definition.jpg "Import definition")
 
-You will be prompted to select the file that contains your API's Swagger definition or to enter the URL that points to it. Swagger 1.2 and Swagger 2.0 are supported.
+You will be prompted to select the file that contains your API's Swagger definition or to enter the URL that points to it. Swagger 1.2, Swagger 2.0 and RAML 0.8 are supported.
 
 ![Enter swagger definition URL](images/swagger-import.jpg "Enter swagger definition URL")
 
-Click on the **Import** button to import the Swagger definition into your Descriptor. As a result, representations and resources will be added to your Descriptor according to the content of the Swagger definition.
+Click on the **Import** button to import the Swagger/RAML definition into your Descriptor. As a result, representations and resources will be added to your Descriptor according to the content of the Swagger definition.
 
 To view the changes, navigate to the Descriptor's **Overview** tab.
 
-> **Note:** Importing several Swagger definitions to the same Descriptor could result in naming conflicts for resource paths or representations. The import wizard will indicate which conflicts need to be resolved.
+### Import a multi-file definition
 
+You can import a multi-file definition by uploading a zip archive.
+
+Click on **Choose a file** and browse to the zip archive you have chosen.  
+From the **Main definition file** drop-down menu, select the  main file at the root of your API definition.
+
+![Import multi-file definition](images/multi-file-definition.jpg "Import multi-file definition")
 
 ## Generate a Descriptor with Restlet's code Introspector
 
