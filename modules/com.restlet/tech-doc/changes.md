@@ -1,3 +1,9 @@
+v3.17
+
+- Changed "Public" checkbox into "Share API Overview"
+- Added multi-file import feature
+- Added 2 entries in FAQ (csv import failure & undeployed store)
+
 v3.16.18
 - SDK "Put it all together"
 - FAQ entry "public vs anyone"
