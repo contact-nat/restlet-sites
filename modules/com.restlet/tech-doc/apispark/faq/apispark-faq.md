@@ -12,6 +12,8 @@
 10. [I get an HTTP Error when I try to invoke my API](#10 "List of HTTP Errors Codes")
 11. [The swagger button is disabled](#11 "The **swagger** button is disabled")
 12. [What is the difference between "Public" and "Anyone" settings for my API?](#12 "What is the difference between "Public" and "Anyone" settings?")
+13. [Why has my store been undeployed?](#13 "Why has my store been undeployed?")
+14. [My csv file import failed](#14 "My csv file import failed")
 
 
 # <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
@@ -272,5 +274,31 @@ From your data store, click on the cog button (on the left of the **Deploy** but
 From the creation wizard, click on **Customize settings** and select **No authentication required** from the **Default permissions** drop-down menu.
 
 ![Anyone checkbox](images/no-authentication-required.jpg "Anyone checkbox")
+
+[Back to list](#list "Back to list of frequently asked questions")
+
+# <a class="anchor" name="13"></a>13. Why has my store been undeployed?
+
+If you read this message when opening your store: "This cell has been undeployed due to inactivity", it means you Entity Store has been deactivated as it has not been used for at least two months.
+
+Two actions are now possible. You can either delete your store or activate it again by redeploying it.
+
+Click on the **Deploy** button.
+
+![Deploy your store](images/undeployed-store.jpg "Deploy your store")
+
+You can now use your Entity Store.
+
+[Back to list](#list "Back to list of frequently asked questions")
+
+# <a class="anchor" name="14"></a>14. My csv file import failed
+
+APISpark allows you to import data stored in a csv file in your Entity Store from the data browser. This import will automatically fail after 25 errors. You will get an error message that invites you to navigate to the **Traces** of the **Messages** tab.
+
+![Error message](images/error-message.jpg "Error message")
+
+From this tab, you will be given the lines for which errors have been detected.
+
+![Messages tab](images/messages-tab.jpg "Messages tab")
 
 [Back to list](#list "Back to list of frequently asked questions")
