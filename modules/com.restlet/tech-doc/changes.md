@@ -1,7 +1,7 @@
-v3.17
+v3.17.12
 
 - Changed "Public" checkbox into "Share API Overview"
-- Added multi-file import feature
+- Added RAML and multi-file import feature
 - Added 2 entries in FAQ (csv import failure & undeployed store)
 
 v3.16.18
