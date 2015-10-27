@@ -28,6 +28,7 @@ Click on the column title once for ascendant order (▲), twice for descendant o
 
 ![Sort](images/sort-data.jpg "Sort")
 
+
 ## <a class="anchor" name="import-data"></a>Import data
 
 If you have a big amount of data to import, you may need to perform a bulk import of your data. You can import your data in a csv file.
@@ -46,6 +47,21 @@ Navigate to your csv file and select the appropriate column delimiter (comma, se
 A message informs you that the import has been successful and your data display in the data browser.
 
 ![Bulk import successful](images/bulk-import-successful.jpg "Bulk import successful")
+
+
+## <a class="anchor" name="export-data"></a>Export data
+
+You may need to perform a bulk export of your data. You can export your data in a csv file.
+
+From the data browser, click the cog button on the right of the **Delete** button and select **Export**.
+
+![Bulk export](images/bulk-export.jpg "Bulk export")
+
+Select the appropriate column delimiter (comma, semicolon or tab).
+
+![Choose column delimiter](images/choose-column-delimiter.jpg "Choose column delimiter")
+
+>**Note:** The output file is UTF-8 encoded.
 
 ## Delete data
 
