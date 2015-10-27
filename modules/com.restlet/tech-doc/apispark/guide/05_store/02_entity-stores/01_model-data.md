@@ -84,7 +84,7 @@ The property's type. There are three main categories of types: Primitive, Compos
 
 #### Primitive
 
-Choose *Primitive* for basic datatypes. The primitive types available in the Entity Store are *String*, *Integer*, *Date*, *Boolean*, *Double*, *Long*, and *Float*.
+Choose *Primitive* for basic datatypes. The primitive types available in the Entity Store are *String*, *Integer*, *Timestamp*, *Boolean*, *Double*, *Long*, and *Float*.
 
 #### Composite
 

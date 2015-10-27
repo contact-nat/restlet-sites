@@ -32,7 +32,7 @@ Click on the column title once for ascendant order (▲), twice for descendant o
 
 If you have a big amount of data to import, you may need to perform a bulk import of your data. You can import your data in a csv file.
 
->**Note:** Make sure your csv file data format matches the data type of your Entity Properties (*Date* type requires epoch format, *Boolean* type requires true/false format).
+>**Note:** Make sure your csv file data format matches the data type of your Entity Properties (*Timestamp* type requires epoch format, *Boolean* type requires true/false format).
 
 
 From the data browser, click the cog button on the right of the **Delete** button and select **Import**.
