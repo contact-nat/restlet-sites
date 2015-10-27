@@ -17,7 +17,7 @@ To open the data browser, select an Entity from the list in the left panel and c
 If your store contains more than 25 entries, they will be displayed in seperate pages. Each page contains 25 entries. You can navigate between the different pages via the button bar at the bottom of the table.
 
 ![Data browser pages](images/data-browser-pagination.jpg "Data browser pages")
-
+M
 This button bar allows you respectively to go to the **first page**, go to the **previous page**, enter a **page number**, go to the **next page**, go to the **last page** and **refresh the page**.
 
 ## Sort data
@@ -61,7 +61,9 @@ Select the appropriate column delimiter (comma, semicolon or tab).
 
 ![Choose column delimiter](images/choose-column-delimiter.jpg "Choose column delimiter")
 
->**Note:** The output file is UTF-8 encoded.
+The output file is UTF-8 encoded.
+
+>**Note:** composites and lists properties are not exported for the moment.
 
 ## Delete data
 
