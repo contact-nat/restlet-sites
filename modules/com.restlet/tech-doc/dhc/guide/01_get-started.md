@@ -8,9 +8,13 @@ DHC by Restlet can be used as an online service from <a href="https://dhc.restle
 
 ## DHC by Restlet online service
 
+![DHC online service](images/dhc-online-service.jpg "DHC online service")
+
 ## DHC by Restlet Chrome application
 
 The tool is then available in your Chrome applications through chrome://apps.
+
+![DHC Chrome app](images/dhc-chrome-app.jpg "DHC Chrome app")
 
 # Execute a request
 
@@ -26,16 +30,37 @@ This area maps the different request elements. The latter is summarized in the f
 
 ![Request diagram](images/request-diagram.jpg "Request diagram")
 
-Here are some details about these elements:
+#### Method
 
-- The **protocol** used to interact with a server.
-- **Host** and **port** identify the target to contact to send the request. Once connected to the server, the **path** is used to select the resource to handle the request.
-- The **method** corresponds to the HTTP verb used. It identifies the action to execute on the resource.
-- **Query parameters** are used to build the query string of the request. They contain data that does not fit conveniently into a hierarchical path structure.
-- HTTP **Headers** define the operating parameters of an HTTP transaction. They correspond to a list of key-value pairs.
-- Request **payload** corresponds to the data sent when supported. This applies to methods POST, PUT and PATCH.
+The **method** corresponds to the HTTP verb used. It identifies the action to execute on the resource.
 
-DHC by Restlet defines four distinct sub areas: the request URL and method, the query parameters, the headers and the request payload.
+#### Protocol
+
+The **protocol** used to interact with a server e.g. HTTP or HTTPS.
+
+#### Host, Port & Path
+
+**Host** and **port** identify the target to contact to send the request. Once connected to the server, the **path** is used to select the resource to handle the request.
+
+#### Query parameters
+
+**Query parameters** are used to build the query string of the request. They contain data that does not fit conveniently into a hierarchical path structure.
+
+#### Headers
+
+HTTP **Headers** define the operating parameters of an HTTP transaction. They correspond to a list of key-value pairs.
+
+#### Payload
+
+Request **payload** corresponds to the data sent when supported. This applies to methods POST, PUT and PATCH.
+
+DHC by Restlet defines four distinct sub areas:
+
+- the request URL and method;  
+- the query parameters;  
+- the headers and  
+- the request payload.
+
 
 ### GET method
 
@@ -121,17 +146,25 @@ DHC provides a dedicated area to display the response. This area maps the differ
 
 ![Response diagram](images/response-diagram.jpg "Response diagram")
 
-Here are some details about these elements:
+### Response structure
 
-- The **status code** and **message** correspond to the status of the response. The status code is a normalized number. HTTP defines different families at this level: 2xx for success, 3xx for redirection, 4xx for client errors and 5xx for server errors.
-- HTTP **Headers** define the operating parameters of an HTTP transaction. They correspond to a list of key-value pairs.
-- Response **payload** corresponds to the data received when supported. This applies to all methods except HEAD, DELETE and OPTIONS.
+#### Status code and message
+
+The **status code** and **message** correspond to the status of the response. The status code is a normalized number. HTTP defines different families at this level: 2xx for success, 3xx for redirection, 4xx for client errors and 5xx for server errors.
+
+#### Headers
+
+HTTP **Headers** define the operating parameters of an HTTP transaction. They correspond to a list of key-value pairs.
+
+#### Payload
+
+Response **payload** corresponds to the data received when supported. This applies to all methods except HEAD, DELETE and OPTIONS.
 
 DHC defines three distinct sub areas: the response status, the headers, and the response payload.
 
 ### Response with payload
 
-The following screenshot describes the case where some payload is received in the response. In the case of structured text payload, the formatted mode is selected by default to display data using a tree. Raw mode is also available to content as text.
+The following screenshots describe the case where some payload is received in the response. In the case of structured text payload, the formatted mode is selected by default to display data using a tree. Raw mode is also available to content as text.
 
 #### Response headers
 
