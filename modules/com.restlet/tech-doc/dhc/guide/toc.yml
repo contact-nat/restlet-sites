@@ -1,8 +1,13 @@
 toc:
-- file: 01_get-started.md
+- dir: 01_get-started
   id: get-started
-  link_url: /01_get-started.md
+  items:
+  - file: 01_dhc.md
+    id: dhc
+    link_url: /01_get-started/01_dhc.md
+    long-title: Get started with DHC by Restlet
+    title: Get started
+    url: /get-started/dhc
   long-title: Get started with DHC by Restlet
   title: Get started
-  url: /get-started
 
