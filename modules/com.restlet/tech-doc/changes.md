@@ -1,3 +1,11 @@
+
+v3.18
+
+- AS-206 Replaced "Date" format label by "Timestamp"
+- DHC - Created "Get started" page in new "DHC" section
+- AS-32 Added csv bulk export feature
+- AS-242 Added "Long" type to "Specified at creation" primary key policy
+
 v3.17.12
 
 - Changed "Public" checkbox into "Share API Overview"
