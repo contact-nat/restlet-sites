@@ -2,12 +2,64 @@ toc:
 - dir: 01_get-started
   id: get-started
   items:
-  - file: 01_dhc.md
-    id: dhc
-    link_url: /01_get-started/01_dhc.md
+  - file: 01_install.md
+    id: install
+    link_url: /01_get-started/01_install.md
     long-title: Get started with DHC by Restlet
     title: Get started
-    url: /get-started/dhc
+    url: /get-started/install
   long-title: Get started with DHC by Restlet
   title: Get started
+- dir: 02_perform-requests
+  id: perform-requests
+  items:
+  - file: 01_build-request.md
+    id: build-request
+    link_url: /02_perform-requests/01_build-request.md
+    long-title: Build requests with DHC by Restlet
+    title: Build requests
+    url: /perform-requests/build-request
+  - file: 02_display-response.md
+    id: display-response
+    link_url: /02_perform-requests/02_display-response.md
+    long-title: Display responses with DHC by Restlet
+    title: Display responses
+    url: /perform-requests/display-response
+  - file: 03_organize-requests.md
+    id: organize-requests
+    link_url: /02_perform-requests/03_organize-requests.md
+    long-title: Organize requests with DHC by Restlet
+    title: Organize requests
+    url: /perform-requests/organize-requests
+  - file: 04_context-attributes.md
+    id: context-attributes
+    link_url: /02_perform-requests/04_context-attributes.md
+    long-title: Use context attributes with DHC by Restlet
+    title: Use context attributes
+    url: /perform-requests/context-attributes
+  - file: 05_export-requests.md
+    id: export-requests
+    link_url: /02_perform-requests/05_export-requests.md
+    long-title: Import & export requests with DHC by Restlet
+    title: Import & export requests
+    url: /perform-requests/export-requests
+  long-title: Perform requests with DHC by Restlet
+  title: Perform requests
+- dir: 03_run-tests
+  id: run-tests
+  items:
+  - file: 01_assertions.md
+    id: assertions
+    link_url: /03_run-tests/01_assertions.md
+    long-title: Assertions with DHC by Restlet
+    title: Assertions
+    url: /run-tests/assertions
+  - file: 02_use-case.md
+    id: use-case
+    link_url: /03_run-tests/02_use-case.md
+    long-title: Use case with DHC by Restlet
+    title: Use case
+    url: /run-tests/use-case
+  long-title: Run tests with DHC by Restlet
+  title: Run tests
 
