@@ -133,7 +133,7 @@ Data model: An Organization has Employees which each have an Address.
 
 In this request, the `$strategy` is set to *reference*, therefore the list of Organizations is loaded along with all the values of primitive type properties (e.g. name). Employees are only loaded by reference.  
 
-```json
+<pre lang:"json"><code>
 {
   "list": [
     {
@@ -154,7 +154,7 @@ In this request, the `$strategy` is set to *reference*, therefore the list of Or
     }
   ]
 }
-```
+</code></pre>
 
 *Load strategy*
 
@@ -162,7 +162,7 @@ In this request, the `$strategy` is set to *reference*, therefore the list of Or
 
 In this request, in which the `$depth` parameter is set to its default value 1, Organizations are loaded along with the first level of related data, therefore the values of primitive type fields of Employees are also loaded.
 
-```json
+<pre lang:"json"><code>
 {
   "list": [
     {
@@ -189,7 +189,7 @@ In this request, in which the `$depth` parameter is set to its default value 1, 
     }
   ]
 }
-```
+</code></pre>
 
 *Load strategy, depth set to 2*
 
@@ -197,7 +197,7 @@ In this request, in which the `$depth` parameter is set to its default value 1, 
 
 In this request, in which the `$depth` parameter is set to 2, Organizations are loaded along with the first level of related data (Employees) along with the third level of related data (Employee Addresses).
 
-```json
+<pre lang:"json"><code>
 {
   "list": [
     {
@@ -224,7 +224,7 @@ In this request, in which the `$depth` parameter is set to 2, Organizations are 
     }
   ]
 }
-```
+</code></pre>
 
 -->
 

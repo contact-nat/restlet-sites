@@ -71,14 +71,14 @@ The agent retrieves its settings from APISpark and you need to configure the age
 
 The Standalone agent is configured from a properties file which is included in the downloaded file. This file looks like this:
 
-```ini
+<pre lang="ini"><code>
 agent.login=67b60a5d-c2b8-43a3-97b8-084d6ce60e10
 agent.password=5dcf7dc2-a2c4-44f5-b753-c26abea2c8b5
 agent.cellId=154
 agent.cellVersion=1
 reverseProxy.enabled=true
 reverseProxy.targetUrl=https://192.168.10.130:8080
-```
+</code></pre>
 
 To fill-in this configuration file, go to the **Settings** tab and select **Remote Agent** in the **Connector** section.
 
@@ -105,9 +105,9 @@ Let's have a look at a full configuration example:
 
   Therefore the agent configuration is:
 
-  ```ini
+  <pre lang="ini"><code>
   reverseProxy.targetUrl=https://192.168.10.130:8080
-  ```
+</code></pre>
 
 With the standalone agent, the value of the `reverseProxy.enabled` key should be set to `true`.
 
@@ -115,9 +115,9 @@ With the standalone agent, the value of the `reverseProxy.enabled` key should be
 
 Once your configuration file is filled, you can start the agent with the command below:
 
-```
+<pre lang="java"><code>
 java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
-```
+</code></pre>
 
   > Note:
   > The agent requires a Java runtime environment 1.7 (or above).
@@ -126,12 +126,12 @@ java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
 
 By default the *Agent* runs on port 8000. You could change the port with the `-p` option as shown below:
 
-```
+<pre lang="java"><code>
 java -jar\
   -DapiSparkServiceConfig=/path/to/agent.properties\
   apispark-agent.jar\
   -p 3000
-```
+</code></pre>
 
 ## Use HTTPS
 
@@ -145,7 +145,7 @@ Use `--help` to have the full list of options.
 
 Achieve this step using `keytool`.
 
-```shell
+<pre lang="shell"><code>
 keytool -genkey\
  -v\
  -alias serverX\
@@ -157,7 +157,7 @@ keytool -genkey\
  -sigalg "MD5withRSA"\
  -keysize 2048\
  -validity 3650
-```
+</code></pre>
 
 >**Note:** The keystore is protected by a password.
 
@@ -165,13 +165,13 @@ keytool -genkey\
 
 Just add the following command line parameters:
 
-```
+<pre lang="shell"><code>
 --https --sslKeyPassword password --sslKeyStorePassword password --sslKeyStorePath /path/to/server-keystore.jks --sslKeyStoreType JKS
-```
+</code></pre>
 
 Here is the full command line of the agent:
 
-```shell
+<pre lang="shell"><code>
 java -jar\
   -DapiSparkServiceConfig=/path/to/agent.properties\
   apispark-agent.jar\
@@ -180,4 +180,4 @@ java -jar\
   --sslKeyStorePassword password\
   --sslKeyStorePath /path/to/server-keystore.jks\
   --sslKeyStoreType JKS
-```
+</code></pre>

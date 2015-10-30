@@ -26,18 +26,21 @@ In this tutorial example, we create an SQL table named **T_CONTACT** with the fo
 
 Connect the database engine using the MySQL console:
 
-<pre>$ mysql -u root -p</pre>
+<pre lang="mysql"><code>$ mysql -u root -p </code></pre>
 
 Create a database and switch to it:
 
-<pre>mysql> create database apispark;
+<pre lang="mysql"><code>
+>mysql> create database apispark;
 Query OK, 1 row affected (0.01 sec)
 mysql> use apispark;
-Database changed</pre>
+Database changed
+</code></pre>
 
 Create an InnoDB table named T_ADDRESS with fields previously listed:
 
-<pre>CREATE TABLE T_CONTACT (
+<pre lang="mysql"><code>
+CREATE TABLE T_CONTACT (
 	  ID VARCHAR(255),
 	  FIRST_NAME VARCHAR (255),
 	  LAST_NAME VARCHAR (255),
@@ -47,7 +50,7 @@ Create an InnoDB table named T_ADDRESS with fields previously listed:
 	  CITY VARCHAR (255),
 	  PRIMARY KEY(ID)
 	) ENGINE = InnoDB;
-</pre>
+</code></pre>
 
 Create a new user and grant him full rights on the database. Replace username and password by the values you like:
 

@@ -30,19 +30,19 @@ An HTTP server is required to be able to use the provided code. It can be served
 
 If the OS has python installed, a `SimpleHTTPServer` inside the folder will do the trick:
 
-```
+<pre lang="javascript"><code>
 cd /path/to/your/unzipped/sdk
 python -mSimpleHTTPServer 1234
-```
+</code></pre>
 
 Then go to `http://localhost:1234/`.
 
 Or use node [http-server](https://www.npmjs.com/package/http-server) with the following command line:
 
-```
+<pre lang="javascript"><code>
 npm install -g http-server
 http-server /path/to/your/unzipped/sdk
-```
+</code></pre>
 
 Open `http://localhost:8080/`.
 
@@ -71,11 +71,11 @@ With the same convention the quickstart wizard generates a `/companies/{companyI
 
 For any method generated the parameters are provided as a JS object provided as first parameter of the method. For instance to access the company of id *1*:
 
-```JavaScript
+<pre lang="javascript"><code>
 quick_start_wizard_angularjs_sdkClientResource.getCompany({
   companyid: 1
 });
-```
+</code></pre>
 
 ## Security
 
@@ -93,12 +93,12 @@ Knowing this, getting the companies is pretty straight-forward and is made by ca
 
 A special attention has to be dedicated to the `.then` part in the following snippets for any JS developer not familiar with promises. Since Angular is based on the [Promise theory](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and the [Q specification](https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md), it is recommended to have a good understanding of that and how it works. The AngularJS related documentation can be found [there](https://docs.angularjs.org/api/ng/service/$q).
 
-```JavaScript
+<pre lang="javascript"><code>
 quick_start_wizard_angularjs_sdkClientResource.getCompanyList()
   .then(function(companies) {
     $scope.companies = companies;
   });
-```
+</code></pre>
 
 >**Note:** The promises returned by the SDK are resolved directly with the body of the HTTP response.
 
@@ -106,14 +106,14 @@ quick_start_wizard_angularjs_sdkClientResource.getCompanyList()
 
 To get a given company, the `companyid` must be provided as shown below:
 
-```JavaScript
+<pre lang="javascript"><code>
 quick_start_wizard_angularjs_sdkClientResource.getCompany({
   companyid: 1
 })
   .then(function(company) {
       $scope.company = company;
   });
-```
+</code></pre>
 
 ## Update an existing company
 
@@ -123,7 +123,7 @@ An update is a call to `putCompany` with:
 
 The promise is then resolved with the updated company.
 
-```JS
+<pre lang="javascript"><code>
 quick_start_wizard_angularjs_sdkClientResource.putCompany({
   companyid: company.id,
   body: company
@@ -132,7 +132,7 @@ quick_start_wizard_angularjs_sdkClientResource.putCompany({
     console.log(company);
     alert('Company updated successfully');
   });
-```
+</code></pre>
 
 ## Add a new company
 
@@ -140,7 +140,7 @@ Adding a new company is made through the use of the post on the resource list. I
 
 The only parameter to provide is the `body` (the JSON representation of the company).
 
-```JS
+<pre lang="javascript"><code>
 quick_start_wizard_angularjs_sdkClientResource.postCompanyList({
   body: {
     "tags": [],
@@ -154,20 +154,20 @@ quick_start_wizard_angularjs_sdkClientResource.postCompanyList({
 }).then(function(newCompany) {
   $scope.company = newCompany;
 });
-```
+</code></pre>
 
 ## Delete an existing company
 
 Deleting a company is very similar to getting an existing company and only requires  the `companyid` to detect which record should be deleted.
 
-```JavaScript
+<pre lang="javascript"><code>
 quick_start_wizard_angularjs_sdkClientResource.deleteCompany({
   companyid: 1
 })
   .then(function(company) {
       $scope.company = company;
   });
-```
+</code></pre>
 
 # Put it all together
 
@@ -177,7 +177,7 @@ The first part is to create a simple HTML template, so let's open the provided
 `index.html` and replace the content of `<div class="container"> ... </div>` with
 the following:
 
-```html
+<pre lang="html"><code>
 <h2>Companies</h2>
 <div class="row">
   <div class="col-md-6">
@@ -215,13 +215,13 @@ the following:
     </form>
   </div>
 </div>
-```
+</code></pre>
 
 So let's break it apart to clarify it.
 
 ## The company array
 
-```html
+<pre lang="html"><code>
 <div class="col-md-6">
   <table class="table table-striped col-md-6">
     <tr>
@@ -234,7 +234,7 @@ So let's break it apart to clarify it.
     </tr>
   </table>
 </div>
-```
+</code></pre>
 
 In this part, a table is created with a row per company. To do so Angular iterates over the companies' array stored in the scope using the `ng-repeat="company in companies"`.
 
@@ -250,7 +250,7 @@ It also contains various bindings to handle update of:
 
 Finally the save button triggers an update of the company with the last values changed by the user.
 
-```html
+<pre lang="html"><code>
 <div class="col-md-6" ng-if="company">
   <form>
     <div class="form-group">
@@ -272,7 +272,7 @@ Finally the save button triggers an update of the company with the last values c
     <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
   </form>
 </div>
-```
+</code></pre>
 
 At that point, the structure of the controller starts to appear. Many properties have to be set onto the `$scope`:
 * `companies` the list of companies
@@ -286,7 +286,7 @@ At that point, the structure of the controller starts to appear. Many properties
 
 First let's add the credentials into the [run block](https://docs.angularjs.org/guide/module#module-loading-dependencies) which are required to be able to access the API if the default security has not been changed.
 
-```JavaScript
+<pre lang="javascript"><code>
 .run(function ($http) {
 
 	// Adds HTTP basic authentication to all your calls to the API
@@ -294,7 +294,7 @@ First let's add the credentials into the [run block](https://docs.angularjs.org/
   $http.defaults.headers.common.Authorization = 'Basic ' + encoded;
 
 })
-```
+</code></pre>
 
 ### Controller
 
@@ -303,7 +303,7 @@ Now the last task is to add the logic into the controller which means to:
 * select a company (`selectCompany`)
 * update a company (`save`)
 
-```JavaScript
+<pre lang="javascript"><code>
 .controller('MainCtrl', function ($scope, $http, $q, $location, $timeout, $window, Quick_start_wizard_angularjs_sdkClientResource) {
 
   var quick_start_wizard_angularjs_sdkClientResource = new Quick_start_wizard_angularjs_sdkClientResource();
@@ -348,6 +348,6 @@ Now the last task is to add the logic into the controller which means to:
   }
 
 });
-```
+</code></pre>
 
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.

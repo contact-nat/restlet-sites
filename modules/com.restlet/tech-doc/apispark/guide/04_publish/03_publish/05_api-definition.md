@@ -24,7 +24,7 @@ Click on one of the **Swagger** URLs to open the corresponding Swagger definitio
 
 The **Swagger 1.2** definition for the Contacts API looks like this:
 
-```json
+<pre lang="json"><code>
 {  
    "apis":[  
       {  
@@ -39,7 +39,7 @@ The **Swagger 1.2** definition for the Contacts API looks like this:
    },
    "swaggerVersion":"1.2"
 }
-```
+</code></pre>
 
 # Integrate with third party applications
 

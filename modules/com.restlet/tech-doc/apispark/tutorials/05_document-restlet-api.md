@@ -25,7 +25,9 @@ We provide you with a <a href="https://github.com/restlet/restlet-sample-descrip
 or
 - Launch the command from your development environment. If you are working on Windows, you can use e.g. git shell or git bash.
 
-```git clone https://github.com/restlet/restlet-sample-descriptor.git```
+<code><pre>
+git clone https://github.com/restlet/restlet-sample-descriptor.git
+</code></pre>
 
 # 2. Retrieve your credentials
 Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.  
@@ -43,7 +45,7 @@ We will need these credentials to fill in the parameters at introspection launch
 Run the introspection code to export the API documentation to APISpark with Maven.  
 Install Maven (if you have not done it yet) to launch introspection in command line from the `restlet-sample-descriptor` directory.
 
-```mvn test -Pexport-to-apispark -Dapispark.username=<your username> -Dapispark.secretkey=<your secret key>```
+<pre lang="shell"><code>mvn test -Pexport-to-apispark -Dapispark.username=<your username> -Dapispark.secretkey=<your secret key></code></pre>
 
 >**Note:** Working on Windows, avoid using git shell or git bash for this operation.
 
@@ -51,10 +53,10 @@ The main method is located in the ```org.restlet.example.contact.api.ExportToApi
 
 Once introspection is completed successfully a similar message displays:
 
-```
+<pre><code>
 Your Web API descriptor's id is: 123456
 Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/123456/versions/1/overview
-```
+</code></pre>
 
 In your <a href="https://apispark.restlet.com/dashboard" target="_blank">APISpark Dashboard</a>, you can see the new **Descriptor** cell created.
 
