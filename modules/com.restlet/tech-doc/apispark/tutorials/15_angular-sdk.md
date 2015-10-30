@@ -177,7 +177,7 @@ The first part is to create a simple HTML template, so let's open the provided
 `index.html` and replace the content of `<div class="container"> ... </div>` with
 the following:
 
-<pre lang="html"><code>
+<pre><code>
 <h2>Companies</h2>
 <div class="row">
   <div class="col-md-6">
@@ -221,7 +221,7 @@ So let's break it apart to clarify it.
 
 ## The company array
 
-<pre lang="html"><code>
+<pre><code>
 <div class="col-md-6">
   <table class="table table-striped col-md-6">
     <tr>
@@ -250,7 +250,7 @@ It also contains various bindings to handle update of:
 
 Finally the save button triggers an update of the company with the last values changed by the user.
 
-<pre lang="html"><code>
+<pre><code>
 <div class="col-md-6" ng-if="company">
   <form>
     <div class="form-group">
