@@ -2,40 +2,42 @@
 
 DHC allows you to execute HTTP requests, but it also allows you to apply rules on calls to check that the responses received correspond to what you expect.
 
-DHC's tests are based on *assertions*. Assertions aim at determining if calls match what is expected to be returned by the API under test.
+DHC's tests are based on *Assertions*. Assertions aim at determining if calls match what is expected to be returned by the API under test.
 
-# Define assertions
+# Assertions basics
 For each request an **Assertions** tab is provided to define the rules that the response of a call, to a RESTful service, needs to check to be successful.
 
-# Assertion structure
+
+## Assertion structure
 
 An assertion consists of several parts:
 
-## The part of the call the assertion applies to
+![Assertion diagram](images/assertions.jpg "Assertion diagram")
+
+### Part of the call the assertion applies to
 The following parts are supported by DHC: status, header, JSON body, body and response. You can see that there are two “body” parts. As a matter of fact, the tool provides native support of JSON within body. This means that you can leverage JSON Patch to get data from JSON content.
 
-## An optional parameter according to the previously selected part
+### An optional parameter related to the first part
 For example for headers, it corresponds to the name of the header.
 
-## The comparison to use
+### The comparison operator
 The matching mode can differ depending on the part of the call. Of course, standard comparisons (equality, superiority, inferiority) are always present. In addition, where header and body is concerned you can also check existence and containment.
 
-## The value to check
+### The value to check
 This can be raw values but also expressions.
 
-The following screenshot provides a sample use of assertions within the **Assertions** tab
 
+## Assertion principle
 
+The following screenshot provides a sample use of assertions within the **Assertions** tab.
 
 If at least one test fails, the call is flagged as failed. In the same spirit as xUnit tools in different languages, DHC uses the green color for successful assertions and the red one for failures.
 
 You will notice the ability to disable assertions if necessary using the checkbox right before the line of the assertion, as shown below:
 
 
-
 As you can see, the assertion that failed is not taken into account anymore.
 
-Now that you have seen the basics about assertions, let’s dive a bit more into the power of DHC to define the response element to test.
 
 # Test response parts
 
@@ -93,7 +95,3 @@ You can then use this variable when defining your request in the Accept header, 
 
 
 Another possibility is to rely on the result of previous calls. DHC lets you reference the executed calls through expressions. For this to be possible, these calls need to have been saved at least once. The tool will automatically look for the corresponding last call in the history. To do this, it is important to follow this pattern: {“PROJECT-NAME”.”SERVICE-NAME”.”CALL-NAME”}. You can then reference any part such asresponse body or headers. For example, to get the value of the id attribute in the response body, simply use the expression response.body.id, as described below
-
-
-
-Having reviewed the capabilities of DHC regarding testing, let’s try it out with a real world RESTful service
