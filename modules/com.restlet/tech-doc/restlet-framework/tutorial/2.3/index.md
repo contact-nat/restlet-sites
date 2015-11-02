@@ -25,7 +25,7 @@ client-side and server-side applications. This API is backed by the
 Restlet Engine and both are now shipped in a single JAR
 ("org.restlet.jar").
 
-![](images/tutorial01)
+![](images/tutorial01.png)
 
 This separation between the API and the implementation is similar to the
 one between the Servlet API and Web containers like Jetty or Tomcat, or
@@ -119,7 +119,7 @@ that enables the communication between components which are represented
 by the larger boxes. The links represents the particular protocol (HTTP,
 SMTP, etc.) used for the actual communication.
 
-![](images/tutorial04)
+![](images/tutorial04.png)
 
 Note that the same component can have any number of client and server
 connectors attached to it. Web Server B, for example, has both a server
@@ -147,7 +147,7 @@ different virtual hosts. In addition, they provide important services
 like access logging, automatic decoding of request entities,
 configurable status page setting and more!
 
-![](images/tutorial05)
+![](images/tutorial05.png)
 
 In order to illustrate these classes, let's examine a simple example.
 Here we create a Component, then add an HTTP server connector to it,
@@ -326,7 +326,7 @@ return guard;
 
 ~~~~
 
-![](images/tutorial09)
+![](images/tutorial09.png)
 
 Note that the authentication and authorization decisions are clearly
 considered as distinct concerns and are fully customizable via dedicated
@@ -448,7 +448,7 @@ the request URI will received the call and be able to invoke its
 attached Restlet. At the same time, the request's attributes map will be
 automatically updated with the value of the URI template variables!
 
-![](images/tutorial11)
+![](images/tutorial11.png)
 
 See the implementation code below. In a real application, you will
 probably want to create separate subclasses instead of the anonymous
@@ -564,7 +564,7 @@ ServerResource class and that transparently creates the Finder for you.
 Now, let's have a look at this overall diagram, showing the relationship
 between the main framework classes involved in this example:
 
-![](images/tutorial12)
+![](images/tutorial12.png)
 
 Back to the code, here is our refactored Application.createRoot()
 method. For simplicity purpose, we didn't keep the Directory serving
@@ -625,11 +625,11 @@ on by yourself, let's take a step back and look at two hierarchy
 diagrams showing the main concepts covered in this tutorial and their
 relationships:
 
-![](images/restlets)
+![](images/restlets.png)
 
 Now, here is the hierarchy with the core Representation classes:
 
-![](images/representations)
+![](images/representations.png)
 
 Beside this tutorial, your best source of information will be the
 Javadocs available for the [Restlet API](/technical-resources/restlet-framework/javadocs/2.3/jse/api/),
@@ -652,4 +652,3 @@ in our [discussion list](/community/lists).
     Jensen, Jim Ancona, Roger Menday, John D. Mitchell, Jérôme Bernard,
     Dave Pawson, Peter Murray, Alex Combs and Leonardo Maranhão for the
     feed-back on this tutorial.
-
