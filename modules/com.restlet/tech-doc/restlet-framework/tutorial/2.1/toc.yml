@@ -1,0 +1,62 @@
+toc:
+- file: 01_overview.md
+  id: overview
+  link_url: /01_overview.md
+  long-title: Overview
+  title: Overview
+  url: /overview
+- file: 02_retrieve-content.md
+  id: retrieve-content
+  link_url: /02_retrieve-content.md
+  long-title: Retrieve the content of a web page
+  title: Retrieve the content of a web page
+  url: /retrieve-content
+- file: 03_listen-web-browser.md
+  id: listen-web-browser
+  link_url: /03_listen-web-browser.md
+  long-title: Listen to web browsers
+  title: Listen to web browsers
+  url: /listen-web-browser
+- file: 04_rest-concepts.md
+  id: rest-concepts
+  link_url: /04_rest-concepts.md
+  long-title: REST main concepts
+  title: REST main concepts
+  url: /rest-concepts
+- file: 05_serve-static-files.md
+  id: serve-static-files
+  link_url: /05_serve-static-files.md
+  long-title: Serve static files
+  title: Serve static files
+  url: /serve-static-files
+- file: 06_guard-access.md
+  id: guard-access
+  link_url: /06_guard-access.md
+  long-title: Guard access to sensitive resources
+  title: Guard access to sensitive resources
+  url: /guard-access
+- file: 07_uris.md
+  id: uris
+  link_url: /07_uris.md
+  long-title: Rewriting, redirection, router & hierarchical URIs
+  title: URIs
+  url: /uris
+- file: 08_reach-target-resources.md
+  id: reach-target-resources
+  link_url: /08_reach-target-resources.md
+  long-title: Reach target resources
+  title: Reach target resources
+  url: /reach-target-resources
+- file: 09_access-logging.md
+  id: access-logging
+  link_url: /09_access-logging.md
+  long-title: Access logging & display error pages
+  title: Access logging & display error pages
+  url: /access-logging
+- file: 10_conclusion.md
+  id: conclusion
+  link_url: /10_conclusion.md
+  long-title: Conclusion
+  title: Conclusion
+  url: /conclusion
+
