@@ -48,12 +48,41 @@ toc:
 - dir: 03_run-tests
   id: run-tests
   items:
-  - file: 01_assertions.md
+  - dir: 01_assertions
     id: assertions
-    link_url: /03_run-tests/01_assertions.md
+    items:
+    - file: 01_overview.md
+      id: overview
+      link_url: /03_run-tests/01_assertions/01_overview.md
+      long-title: Overview
+      title: Overview
+      url: /run-tests/assertions/overview
+    - file: 02_assertions-basics.md
+      id: assertions-basics
+      link_url: /03_run-tests/01_assertions/02_assertions-basics.md
+      long-title: Assertions basics
+      title: Assertions basics
+      url: /run-tests/assertions/assertions-basics
+    - file: 03_response-parts.md
+      id: response-parts
+      link_url: /03_run-tests/01_assertions/03_response-parts.md
+      long-title: Test response parts
+      title: Response parts
+      url: /run-tests/assertions/response-parts
+    - file: 04_json-payloads.md
+      id: json-payloads
+      link_url: /03_run-tests/01_assertions/04_json-payloads.md
+      long-title: Use JSON path for JSON payloads
+      title: JSON payloads
+      url: /run-tests/assertions/json-payloads
+    - file: 05_expressions.md
+      id: expressions
+      link_url: /03_run-tests/01_assertions/05_expressions.md
+      long-title: Leverage expressions in assertions
+      title: Expressions
+      url: /run-tests/assertions/expressions
     long-title: Assertions with DHC by Restlet
     title: Assertions
-    url: /run-tests/assertions
   - file: 02_use-case.md
     id: use-case
     link_url: /03_run-tests/02_use-case.md
