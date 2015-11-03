@@ -1,5 +1,9 @@
+v3.18.8
 
-v3.18
+- Updated Restlet Framework Tutorials page: splitted in into several sections
+- Updated DHC User guide content & structure
+
+v3.18.5
 
 - AS-206 Replaced "Date" format label by "Timestamp"
 - DHC - Created DHC User Guide structure and added content
