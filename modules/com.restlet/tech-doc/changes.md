@@ -1,3 +1,7 @@
+v3.18.9
+
+- Escaped html code to fix code blocks display in APISpark tutorial
+
 v3.18.8
 
 - Updated Restlet Framework Tutorials page: splitted in into several sections
