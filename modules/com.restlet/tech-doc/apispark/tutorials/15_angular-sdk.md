@@ -178,43 +178,43 @@ The first part is to create a simple HTML template, so let's open the provided
 the following:
 
 <pre lang="html"><code>
-&lt;h2&gt;Companies&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;col-md-6&quot;&gt;
-    &lt;table class=&quot;table table-striped col-md-6&quot;&gt;
-      &lt;tr&gt;
-        &lt;th&gt;Name&lt;/th&gt;
-      &lt;/tr&gt;
-      &lt;tr ng-repeat=&quot;company in companies&quot; ng-click=&quot;selectCompany(company.id)&quot;&gt;
-        &lt;td&gt;
+<h2>Companies</h2>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-striped col-md-6">
+      <tr>
+        <th>Name</th>
+      </tr>
+      <tr ng-repeat="company in companies" ng-click="selectCompany(company.id)">
+        <td>
           {{company.name}}
-        &lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/table&gt;
-  &lt;/div&gt;
+        </td>
+      </tr>
+    </table>
+  </div>
 
-  &lt;div class=&quot;col-md-6&quot; ng-if=&quot;company&quot;&gt;
-    &lt;form&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;Name&quot; ng-model=&quot;company.name&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;street&quot;&gt;Street&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;street&quot; placeholder=&quot;Street&quot; ng-model=&quot;company.address.street&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;zipcode&quot;&gt;ZIP code&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;zipcode&quot; placeholder=&quot;Zip code&quot; ng-model=&quot;company.address.zipcode&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;city&quot; placeholder=&quot;City&quot; ng-model=&quot;company.address.city&quot;&gt;
-      &lt;/div&gt;
-      &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; ng-click=&quot;save(company)&quot;&gt;Save&lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="col-md-6" ng-if="company">
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" ng-model="company.name">
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" class="form-control" id="street" placeholder="Street" ng-model="company.address.street">
+      </div>
+      <div class="form-group">
+        <label for="zipcode">ZIP code</label>
+        <input type="text" class="form-control" id="zipcode" placeholder="Zip code" ng-model="company.address.zipcode">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="City" ng-model="company.address.city">
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
+    </form>
+  </div>
+</div>
 </code></pre>
 
 So let's break it apart to clarify it.
@@ -222,18 +222,18 @@ So let's break it apart to clarify it.
 ## The company array
 
 <pre><code>
-&lt;div class=&quot;col-md-6&quot;&gt;
-  &lt;table class=&quot;table table-striped col-md-6&quot;&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr ng-repeat=&quot;company in companies&quot; ng-click=&quot;selectCompany(company.id)&quot;&gt;
-      &lt;td&gt;
+<div class="col-md-6">
+  <table class="table table-striped col-md-6">
+    <tr>
+      <th>Name</th>
+    </tr>
+    <tr ng-repeat="company in companies" ng-click="selectCompany(company.id)">
+      <td>
         {{company.name}}
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
+      </td>
+    </tr>
+  </table>
+</div>
 </code></pre>
 
 In this part, a table is created with a row per company. To do so Angular iterates over the companies' array stored in the scope using the `ng-repeat="company in companies"`.
@@ -251,27 +251,27 @@ It also contains various bindings to handle update of:
 Finally the save button triggers an update of the company with the last values changed by the user.
 
 <pre><code>
-&lt;div class=&quot;col-md-6&quot; ng-if=&quot;company&quot;&gt;
-  &lt;form&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;Name&quot; ng-model=&quot;company.name&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;street&quot;&gt;Street&lt;/label&gt;
-      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;street&quot; placeholder=&quot;Street&quot; ng-model=&quot;company.address.street&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;zipcode&quot;&gt;ZIP code&lt;/label&gt;
-      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;zipcode&quot; placeholder=&quot;Zip code&quot; ng-model=&quot;company.address.zipcode&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
-      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;city&quot; placeholder=&quot;City&quot; ng-model=&quot;company.address.city&quot;&gt;
-    &lt;/div&gt;
-    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; ng-click=&quot;save(company)&quot;&gt;Save&lt;/button&gt;
-  &lt;/form&gt;
-&lt;/div&gt;
+<div class="col-md-6" ng-if="company">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="company.name">
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" id="street" placeholder="Street" ng-model="company.address.street">
+    </div>
+    <div class="form-group">
+      <label for="zipcode">ZIP code</label>
+      <input type="text" class="form-control" id="zipcode" placeholder="Zip code" ng-model="company.address.zipcode">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" placeholder="City" ng-model="company.address.city">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
+  </form>
+</div>
 </code></pre>
 
 At that point, the structure of the controller starts to appear. Many properties have to be set onto the `$scope`:
