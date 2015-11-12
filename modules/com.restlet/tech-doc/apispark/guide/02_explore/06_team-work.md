@@ -11,27 +11,40 @@ A member can have one of five roles on a cell.
 
 For team-based collaboration, members should be given either of the roles *Owner*, *Manager*, *Operator*, or *Developer*.
 
-*User* is a special role designed for web API members who are consumers of your API. For more information about managing your API consumption, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User Groups") page.
-
-Depending on the role given to a member, s/he will have different permissions in the APISpark console.
-
 ![team work](images/provider-team.jpg "team work")
 
+*User* is a special role designed for web API members who are consumers of your API. For more information about managing your API consumption, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User Groups") page.
 
 ## Team roles
 
- * **Owner:** a cell's Owner has full rights on it. Each cell has a unique Owner, who is also the Owner of every version of the cell. The Owner's role cannot be modified.
+### Owner
 
- * **Manager:** a Manager has all but a few rights on a cell. For instance, a manager cannot delete a cell, as this operation is reserved to the Owner and to manage the community of cell members.
+A cell's Owner has full rights on it. Each cell has a unique Owner, who is also the Owner of every version of the cell. The Owner's role cannot be modified.
 
- * **Operator:** an Operator has the rights to manage runtime aspects of a cell and to manage a cell's lifecycle.
+### Manager
 
- * **Developer:** a Developer has rights to the design-time and development aspects of a cell.
+A Manager has all but a few rights on a cell. For instance, a manager cannot delete a cell, as this operation is reserved to the Owner and to manage the community of cell members.
 
+### Operator
+
+An Operator has the rights to manage runtime aspects of a cell and to manage a cell's lifecycle.
+
+### Developer
+
+A Developer has rights to the design-time and development aspects of a cell.
 
 ## Consumer roles
 
- * **User:** a User can consult basic information about a web API and be given runtime access rights by being added to a member group.
+### User
+
+A User can consult basic information about a web API and be given runtime access rights by being added to a member group.
+
+
+## Members rights
+
+Depending on the role given to a member, s/he will have different permissions in the APISpark console.
+
+![members rights](images/roles-permissions-diagram.jpg "members rights")
 
 
 # Managing members
