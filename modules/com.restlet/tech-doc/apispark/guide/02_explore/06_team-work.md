@@ -15,6 +15,12 @@ For team-based collaboration, members should be given either of the roles *Owner
 
 *User* is a special role designed for web API members who are consumers of your API. For more information about managing your API consumption, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User Groups") page.
 
+## <a class="anchor" name="members-rights"></a>Members rights
+
+Depending on the role given to a member, s/he will have different permissions in the APISpark console.
+
+![members rights](images/roles-permissions-diagram.jpg "members rights")
+
 ## Team roles
 
 ### Owner
@@ -38,13 +44,6 @@ A Developer has rights to the design-time and development aspects of a cell.
 ### User
 
 A User can consult basic information about a web API and be given runtime access rights by being added to a member group.
-
-
-## Members rights
-
-Depending on the role given to a member, s/he will have different permissions in the APISpark console.
-
-![members rights](images/roles-permissions-diagram.jpg "members rights")
 
 
 # Managing members
