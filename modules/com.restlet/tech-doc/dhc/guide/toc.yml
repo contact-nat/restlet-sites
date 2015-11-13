@@ -108,4 +108,33 @@ toc:
     url: /run-tests/use-case
   long-title: Run tests with DHC by Restlet
   title: Run tests
+- dir: 04_expressions
+  id: expressions
+  items:
+  - file: 01_overview.md
+    id: overview
+    link_url: /04_expressions/01_overview.md
+    long-title: Overview
+    title: Overview
+    url: /expressions/overview
+  - file: 02_references.md
+    id: references
+    link_url: /04_expressions/02_references.md
+    long-title: References
+    title: References
+    url: /expressions/references
+  - file: 03_built-in-methods.md
+    id: built-in-methods
+    link_url: /04_expressions/03_built-in-methods.md
+    long-title: Built-in methods
+    title: Built-in methods
+    url: /expressions/built-in-methods
+  - file: 04_grammar.md
+    id: grammar
+    link_url: /04_expressions/04_grammar.md
+    long-title: Grammar
+    title: Grammar
+    url: /expressions/grammar
+  long-title: Transform data through expressions
+  title: Transform data through expressions
 
