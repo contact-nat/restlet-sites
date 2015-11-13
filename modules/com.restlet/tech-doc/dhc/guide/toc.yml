@@ -16,33 +16,50 @@ toc:
   - file: 01_build-request.md
     id: build-request
     link_url: /02_perform-requests/01_build-request.md
-    long-title: Build requests with DHC by Restlet
+    long-title: Build requests
     title: Build requests
     url: /perform-requests/build-request
   - file: 02_display-response.md
     id: display-response
     link_url: /02_perform-requests/02_display-response.md
-    long-title: Display responses with DHC by Restlet
+    long-title: Display responses
     title: Display responses
     url: /perform-requests/display-response
   - file: 03_organize-requests.md
     id: organize-requests
     link_url: /02_perform-requests/03_organize-requests.md
-    long-title: Organize requests with DHC by Restlet
+    long-title: Organize requests
     title: Organize requests
     url: /perform-requests/organize-requests
   - file: 04_context-attributes.md
     id: context-attributes
     link_url: /02_perform-requests/04_context-attributes.md
-    long-title: Use context attributes with DHC by Restlet
+    long-title: Use context attributes
     title: Use context attributes
     url: /perform-requests/context-attributes
-  - file: 05_export-requests.md
+  - dir: 05_export-requests
     id: export-requests
-    link_url: /02_perform-requests/05_export-requests.md
-    long-title: Import & export requests with DHC by Restlet
+    items:
+    - file: 01_overview.md
+      id: overview
+      link_url: /02_perform-requests/05_export-requests/01_overview.md
+      long-title: Overview
+      title: Overview
+      url: /perform-requests/export-requests/overview
+    - file: 02_import-export-policy.md
+      id: import-export-policy
+      link_url: /02_perform-requests/05_export-requests/02_import-export-policy.md
+      long-title: Import and export policy
+      title: Import & export policy
+      url: /perform-requests/export-requests/import-export-policy
+    - file: 03_data-format.md
+      id: data-format
+      link_url: /02_perform-requests/05_export-requests/03_data-format.md
+      long-title: Import and export data format
+      title: Import & export data format
+      url: /perform-requests/export-requests/data-format
+    long-title: Import & export requests
     title: Import & export requests
-    url: /perform-requests/export-requests
   long-title: Perform requests with DHC by Restlet
   title: Perform requests
 - dir: 03_run-tests
@@ -81,7 +98,7 @@ toc:
       long-title: Leverage expressions in assertions
       title: Expressions
       url: /run-tests/assertions/expressions
-    long-title: Assertions with DHC by Restlet
+    long-title: Assertions
     title: Assertions
   - file: 02_use-case.md
     id: use-case
