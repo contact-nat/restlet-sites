@@ -13,11 +13,3 @@ When importing a file in DHC by Restlet, you can select which parts (projects an
 The same approach is possible when exporting a set of requests, as shown below:
 
 ![Data export](images/27-data-export.jpg "Data export")
-
-# Import/Export Policy
-
-**Update** - imports new requests and updates existing requests only if the import contains  newer version.  
-
-**Override** - imports new requests and overrides all existing requests.  
-
-**Preserve** - imports new requests and never touches existing requests.
