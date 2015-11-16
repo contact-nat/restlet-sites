@@ -1,4 +1,4 @@
-DHC import/export uses JSON of the structure described below.
+DHC import and export use JSON of the structure described below.
 
 # Container
 
@@ -42,7 +42,7 @@ Project #1
                 "type"   :  "Request"
 </code></pre>
 
-Datetime is always encoded in ISO_8601 format. e.g. 2015-03-24T20:29:55.624+01:00
+Datetime is always encoded in ISO_8601 format e.g. ```2015-03-24T20:29:55.624+01:00```.
 
 # Request
 
@@ -144,27 +144,27 @@ Datetime is always encoded in ISO_8601 format. e.g. 2015-03-24T20:29:55.624+01:0
 
 The subject is one of these values:
 
-- Response
-- ResponseStatus
-- ResponseHeader
-- ResponseJsonBody
-- ResponseXmlBody
-- ResponseBody
+- ```Response```
+- ```ResponseStatus```
+- ```ResponseHeader```
+- ```ResponseJsonBody```
+- ```ResponseXmlBody```
+- ```ResponseBody```
 
 The comparison is one these values:
 
-- IsBlank
-- IsNotBlank
-- Equals
-- DoesNotEqual
-- Contains
-- DoesNotContain
-- Less
-- LessOrEqual
-- Greater
-- GreateOrEqual
-- Exists
-- DoesNotExist
+- ```IsBlank```
+- ```IsNotBlank```
+- ```Equals```
+- ```DoesNotEqual```
+- ```Contains```
+- ```DoesNotContain```
+- ```Less```
+- ```LessOrEqual```
+- ```Greater```
+- ```GreateOrEqual```
+- ```Exists```
+- ```DoesNotExist```
 
 # Project
 
