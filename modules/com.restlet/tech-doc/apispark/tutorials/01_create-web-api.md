@@ -2,14 +2,14 @@
 
 This tutorial will show you how to deploy your first API in 15 minutes or less. Head to our [User guide](/technical-resources/apispark/guide "User guide") page first if you would like to learn about the main concepts behind APISpark. Now, let’s get right to it.
 
-# Requirements
+<h1 class="iconed" id="toc_0">*<i class="fa fa-flag-checkered"></i>*Requirements</h1>
 
 To follow this tutorial, you will need the following:
 
 *   a web browser,
 *   15 minutes of your time.
 
-# 1. Create an Entity Store
+<h1 class="numbered" id="toc_1">*<i>1</i>*Create an Entity Store</h1>
 
 ## 1.1 Add a new Entity Store
 
@@ -59,7 +59,7 @@ Click on the **Add** button. Your first contact should be displayed like so:
 
 ![](images/browser-tab.jpg)
 
-# 2. Create a Web API
+<h1 class="numbered" id="toc_2">*<i>2</i>*Create a Web API</h1>
 
 ## 2.1 Export an API from the Entity Store
 
@@ -91,7 +91,7 @@ The API should now be accessible online. To reach it, use the subdomain of apisp
 
 The credentials required to invoke the API are located in the **Overview** tab, by selecting the relevant **Endpoint**.
 
-# 3. Invoke the web API
+<h1 class="numbered" id="toc_3">*<i>3</i>*Invoke the web API</h1>
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
