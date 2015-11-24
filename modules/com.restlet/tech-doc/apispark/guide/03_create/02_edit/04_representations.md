@@ -51,7 +51,7 @@ Select this checkbox when the API is invoked or so that the Representation prope
 
 ### Sample value
 
-A sample value can be provided in this field. This value will be used to give you an idea of what your representation will look like in different formats (JSON, XML or YAML). From the API **Overview** tab, click on the Representation chosen and select the Variant you need.
+A sample value can be provided in this field. This value will be used to give you an idea of what your representation will look like in different formats (JSON, XML or YAML). From the API **Overview** tab, click on the Representation chosen and select the Format you need.
 
 
 ## Representation formatting
@@ -77,18 +77,16 @@ or whether you want your API to return results represented *within a wrapper* (a
 
 This setting can be changed from the **General** section of the API **Settings** tab.
 
-![Change collections formatting](images/change-collection-formatting.jpg "Change collections formatting")
-
 >**Note:** You will need to [reset](/technical-resources/apispark/guide/create/sync-api-store "reset") each store import and then redeploy your API in order for your changes to be taken into account.
 
-# Variants
+# Formats
 
-A **Representation** has one or more **Variants** which determine how the representation is formatted, serialized, and deserialized.
+A **Representation** has one or more **Formats** which determine how the representation is formatted, serialized, and deserialized.
 
-By default, APISpark supports 3 different types of representation variants: XML, JSON or YAML.  
+By default, APISpark supports 3 different types of representation formats: JSON, XML or YAML.  
 
-To view a representation's **Variants**, select the representation from the **Representations** section in the left panel.
+To view a representation's **Formats**, select the representation from the **Representations** section in the left panel.
 
-![Variants](images/variants.jpg "Variants")
+![Formats](images/formats.jpg "Formats")
 
 >**Note:** When you want to POST a new entry via [Postman](/technical-resources/apispark/guide/create/test "Postman") tool for example, you can use the **Sample** text area content to make sure you are using the appropriate syntax.
