@@ -2,16 +2,16 @@
 
 This tutorial will show you how to deploy your first API in 15 minutes or less. Head to our [User guide](/technical-resources/apispark/guide "User guide") page first if you would like to learn about the main concepts behind APISpark. Now, let’s get right to it.
 
-<h1 class="iconed" id="toc_0">*<i class="fa fa-flag-checkered"></i>*Requirements</h1>
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need the following:
 
 *   a web browser,
 *   15 minutes of your time.
 
-<h1 class="numbered" id="toc_1">*<i>1</i>*Create an Entity Store</h1>
+<h1 class="numbered" id="toc_1"><i>1</i>Create an Entity Store</h1>
 
-## 1.1 Add a new Entity Store
+## Add a new Entity Store
 
 If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
@@ -23,7 +23,7 @@ Click on the **Add** button to create the new Entity Store.
 
 You will be taken to the new Entity Store's **Overview page**.
 
-## 1.2 Create your data model by adding entities and properties
+## Create your data model by adding entities and properties
 
 Click on the **Add** button next to **Entities** in the left panel to create a new Entity. Name the new Entity **Contact**.
 
@@ -37,13 +37,13 @@ For each property you create, you can choose a **Type**, a **Default value**, ma
 
 ![Add a property](images/add-property.gif "Add a property")
 
-## 1.3 Deploy the Entity Store
+## Deploy the Entity Store
 
 Click on the **Deploy** button to deploy your Entity Store.
 
 ![Deploy Entity Store](images/deploy-entity-store.jpg "Deploy Entity Store")
 
-## 1.4 Add data via the Data Browser
+## Add data via the Data Browser
 
 Once your Entity Store has been deployed, you can use it to store contacts. For the purpose of this tutorial, let’s add one via the APISpark Data Browser.
 
@@ -59,9 +59,9 @@ Click on the **Add** button. Your first contact should be displayed like so:
 
 ![](images/browser-tab.jpg)
 
-<h1 class="numbered" id="toc_2">*<i>2</i>*Create a Web API</h1>
+<h1 class="numbered" id="toc_2"><i>2</i>Create a Web API</h1>
 
-## 2.1 Export an API from the Entity Store
+## Export an API from the Entity Store
 
 From the Entity Store **Overview**, click on the cog button to the left of the **Deploy** button and select **Export web API**.
 
@@ -81,7 +81,7 @@ The screenshot below shows some of the drop down menus opened to give you an ide
 
 ![structure](images/api-overview.jpg "structure")
 
-## 2.2 Deploy the web API
+## Deploy the web API
 
 Deploy the API by clicking the **Deploy** button.
 
@@ -91,7 +91,7 @@ The API should now be accessible online. To reach it, use the subdomain of apisp
 
 The credentials required to invoke the API are located in the **Overview** tab, by selecting the relevant **Endpoint**.
 
-<h1 class="numbered" id="toc_3">*<i>3</i>*Invoke the web API</h1>
+<h1 class="numbered" id="toc_3"><i>3</i>Invoke the web API</h1>
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
