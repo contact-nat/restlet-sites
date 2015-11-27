@@ -96,7 +96,7 @@ Switch from standalone agent to hosted agent deployment mode requires that you s
 
 Domain creation is subject to the same rules as for full stack APIs. This also results in the creation of a new HTTPS endpoint that uses this domain.
 
-Navigate to the **Settings** tab and select **Remote agent** from the **Connector** section. Choose the *Hosted agent* or *Standalone agent* configuration from the **Deployment mode** drop-down menu.
+Navigate to the **Settings** tab and select **Agent details** from the **Connector** section. Choose the *Hosted agent* or *Standalone agent* configuration from the **Deployment mode** drop-down menu.
 
 ![Switch deployment mode](images/switch-deployment-mode.jpg "Switch deployment mode")
 
