@@ -131,9 +131,9 @@ To assign a default value, deselect the **Default value** checkbox and enter a v
 
 A sample value can be provided in this field. This value will be used to give you an idea of what your API representation will look like in different formats (by default JSON, XML or YAML).
 
-For example, to see your API representation in JSON format, open your API **Overview**, select en representation from the **Representations** section and click on the variant chosen from the **Variants** section in the central panel.
+For example, to see your API representation in YAML format, open your API **Overview**, select a representation from the **Representations** section and click on the format chosen from the **Formats** section in the central panel.
 
-![JSON sample data](images/json-sample-data.jpg "JSON sample data")
+![JSON sample data](images/yaml-sample-data.jpg "JSON sample data")
 
 
 # <a class="anchor" name="edit-schema"></a>Edit an Entity Store schema
