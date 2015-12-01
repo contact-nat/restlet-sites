@@ -2,7 +2,7 @@
 
 This tutorial will show you how to create a custom web API that exposes data stored in an Address Book SQL database.
 
-# Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need:
 
@@ -10,7 +10,7 @@ To follow this tutorial, you will need:
 *   20 minutes of your time,
 *   your SQL database login details.
 
-# 1. Prepare the SQL Data Source
+<h1 class="numbered" id="toc_1"><i>1</i>Prepare the SQL Data Source</h1>
 
 In this tutorial example, we create an SQL table named **T_CONTACT** with the following fields:
 
@@ -61,8 +61,7 @@ FLUSH PRIVILEGES;
 
 >**Note:** you can grant privileges on all tables by replacing T_CONTACT by \* and on all databases by replacing apispark by \*.
 
-
-# 2. Create a SQL Wrapper
+<h1 class="numbered" id="toc_2"><i>2</i>Create a SQL Wrapper</h1>
 
 If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
@@ -94,7 +93,7 @@ The *Contact* entity’s properties correspond to the columns present in the mat
 
 Click on the **Deploy** button to deploy the Wrapper.
 
-# 3. Export a Web API
+<h1 class="numbered" id="toc_3"><i>3</i>Export a Web API</h1>
 
 From the Wrapper's **Overview** page, click on the cog button on the left of the **Deploy** button and select **Export web API**.
 
@@ -112,7 +111,7 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button-address-book.jpg "Deploy button")
 
-# 4. Invoke the Web API
+<h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 

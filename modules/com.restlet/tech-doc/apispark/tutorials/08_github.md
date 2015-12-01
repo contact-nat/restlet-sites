@@ -5,7 +5,7 @@ GitHub is a social coding platform that hosts Git repositories.
 
 The APISpark GitHub Wrapper is a type of File Store that wraps the content of a GitHub repository. This content can then be manipulated directly via the wrapper, or imported into a web API and exposed for consumption.
 
-# Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need:
 
@@ -14,7 +14,7 @@ To follow this tutorial, you will need:
 *   your GitHub login details,
 *   access to a GitHub repository.
 
-## 1. Create a GitHub Wrapper
+<h1 class="numbered" id="toc_1"><i>1</i>Create a GitHub Wrapper</h1>
 
 From the **Dashboard**, click on the **+ File Store** button, and select "GitHub wrapper" from the **Type** drop-down menu.
 
@@ -24,7 +24,7 @@ Give your wrapper a **Name** and a **Description** (optional).
 
 You will be taken to the new Wrapper's **Settings** tab.
 
-## 2. Configure your GitHub account
+<h1 class="numbered" id="toc_2"><i>2</i>Configure your GitHub account</h1>
 
 From the wrapper's **Settings** tab, select **Github Account** from the **Security** section in the left panel.
 
@@ -34,7 +34,7 @@ Enter your GitHub account credentials. Press the **Test** button to check the co
 
 >**Note:** We advise you to [use personal access tokens](/technical-resources/apispark/guide/store/wrappers/github#personal-access-tokens "use personal access tokens") to import your GitHub repository.
 
-## 3. Import a GitHub repository
+<h1 class="numbered" id="toc_3"><i>3</i>Import a GitHub repository</h1>
 
 To select a GitHub repository to import, click the **Add** button next to the **Imports** section in the left panel.
 
@@ -42,7 +42,7 @@ You will be prompted to enter the username of the **Owner** of the repository, a
 
 ![Add a GitHub repo](images/import-github-repo.jpg "Add a GitHub repository")
 
-## 4. Generate the Wrapper's folders
+<h1 class="numbered" id="toc_4"><i>4</i>Generate the Wrapper's folders</h1>
 
 Once the repository has been imported, select it from the **Imports** section in the left panel, and open the **Folders** tab in the central panel.
 
@@ -54,7 +54,7 @@ Open the Wrapper's **Overview** tab to view the imported folders.
 
 ![GitHub folders overview](images/github-folders-overview.jpg "GitHub folders overview")
 
-## 5. Deploy the Wrapper and browse the folders
+<h1 class="numbered" id="toc_5"><i>5</i>Deploy the Wrapper and browse the folders</h1>
 
 In order to browser the contents of the folders, you need to start by deploying the Wrapper. Click on the **Deploy** button at the top-right of the screen.
 

@@ -9,7 +9,7 @@ With this tool, you will be able to create a new APISpark cell and edit it withi
 
 For this tutorial, we provide you with a Restlet sample API in order to test the Descriptor feature. This fully operational API handles companies and contacts: it can be invoked to add, read, update and delete contacts and companies.
 
-# Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need:
 
@@ -18,7 +18,8 @@ To follow this tutorial, you will need:
 * Git,  
 * 20 minutes of your time.
 
-# 1. Retrieve Restlet sample API
+<h1 class="numbered" id="toc_1"><i>1</i>Retrieve Restlet sample API</h1>
+
 We provide you with a <a href="https://github.com/restlet/restlet-sample-descriptor" target="_blank">Restlet sample API description</a> that allows you to test the Descriptor feature. If you have your own Restlet API, feel free to use it.  
 
 - Install git (if you have not done it yet) to launch a git clone in command line;  
@@ -29,7 +30,8 @@ or
 git clone https://github.com/restlet/restlet-sample-descriptor.git
 </code></pre>
 
-# 2. Retrieve your credentials
+<h1 class="numbered" id="toc_2"><i>2</i>Retrieve your credentials</h1>
+
 Sign in to [APISpark](https://apispark.restlet.com) (if you have not done it yet) and retrieve your credentials in the **My account** page.  
 Click on your username on top right of the screen and select **My account**.
 
@@ -41,7 +43,8 @@ You will find your **Username** and **Secret key** in the **Tokens** section.
 
 We will need these credentials to fill in the parameters at introspection launch.
 
-# 3. Launch introspection
+<h1 class="numbered" id="toc_3"><i>3</i>Launch introspection</h1>
+
 Run the introspection code to export the API documentation to APISpark with Maven.  
 Install Maven (if you have not done it yet) to launch introspection in command line from the `restlet-sample-descriptor` directory.
 
@@ -80,8 +83,8 @@ e.g. java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 559
 
 -->
 
+<h1 class="numbered" id="toc_4"><i>4</i>Customize API documentation</h1>
 
-# 4. Customize API documentation
 Once you have imported our sample API documentation in your APISpark Dashboard, feel free to customize it: the application, its resources, methods and beans.
 
 You can customize it either:  
@@ -204,8 +207,8 @@ curl http://localhost:8000/swagger.json
 <!-- Test your API
 You can then test your API from your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.
 -->
+<h1 class="numbered" id="toc_5"><i>5</i>Share your documentation</h1>
 
-# 5. Share your documentation
 If you want to share your documentation with other members or even with your API users, you can make your Descriptor cell public.
 
 From your **Dashboard**, open your **Descriptor** cell. Select the **Public** checkbox and click the **Save** button.

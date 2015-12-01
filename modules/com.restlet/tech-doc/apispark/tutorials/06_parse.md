@@ -3,7 +3,7 @@
 This tutorial will show you how to create a web API that gives access to existing data stored in a Parse backend.
 <a href="http://Parse.com/" target="_blank">Parse.com</a> is a popular Backend as a Service (BaaS) provider that powers connected mobile applications.
 
-# Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need:
 
@@ -11,7 +11,7 @@ To follow this tutorial, you will need:
 *   20 minutes of your time,
 *   your Parse login details.
 
-# 1. Prepare the Parse backend
+<h1 class="numbered" id="toc_1"><i>1</i>Prepare the Parse backend</h1>
 
 Sign in to your **Parse** account and go to the **Dashboard**.
 
@@ -40,9 +40,9 @@ Copy both your **Application ID** and your **REST API key**.
 
 ![Copy your keys](images/parse-app-keys.png "Copy your keys")
 
-# 2. Create a Parse Wrapper
+<h1 class="numbered" id="toc_2"><i>2</i>Create a Parse Wrapper</h1>
 
-## 2.1 Add a new Parse Wrapper Entity Store
+## Add a new Parse Wrapper Entity Store
 
 If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
@@ -54,7 +54,7 @@ Click on the **Add** button to create the new Wrapper.
 
 You will be taken to the new Wrapper's **Settings** tab.
 
-## 2.2. Configure your Parse account
+## Configure your Parse account
 
 In the **Security** section, click on **Parse Account**.
 
@@ -64,7 +64,7 @@ Click on the **Test** button.
 
 ![Configure your Parse account](images/configure-parse-account.jpg "Configure your Parse account")
 
-## 2.3 Add an entity
+## Add an entity
 
 Parse does not expose metadata about its data store. Therefore the structure or your Parse store must be re-created manually in APISpark, by creating entities and properties with matching names.
 
@@ -83,7 +83,7 @@ Click on the **Deploy** button.
 
 When your **Entity Store** has been deployed, you can export it as a new web API.
 
-# 3. Export a Web API
+<h1 class="numbered" id="toc_3"><i>3</i>Export a Web API</h1>
 
 From the Wrapper's **Overview** page, click on the actions button on the left of the **Deploy** button and select **Export web API**.
 
@@ -99,7 +99,7 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button2.jpg "Deploy button")
 
-# 4. Invoke the web API
+<h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 

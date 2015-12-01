@@ -2,7 +2,7 @@
 
 This tutorial will show you how to create a custom web API that gives access to existing data stored in a Firebase backend. <a href="https://www.firebase.com" target="_blank">Firebase</a> is a popular Backend as a Service (BaaS) provider that powers real time HTML 5 applications.
 
-# Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need:
 
@@ -10,9 +10,9 @@ To follow this tutorial, you will need:
 *   20 minutes of your time,
 *   Your Firebase login details.
 
-# 1. Prepare the Firebase Backend
+<h1 class="numbered" id="toc_1"><i>1</i>Prepare the Firebase Backend</h1>
 
-## 1.1 Create a new Firebase
+## Create a new Firebase
 
 Sign in to your **Firebase** account. Select the application you want to work on, or create a new one. For this tutorial, we created a new app called **MyRealtimeDB**, and with app URL **myrealtimedb**. You may need to edit the app URL if it is already taken.
 
@@ -35,7 +35,7 @@ Be aware that the structure of this data will be reflected in APISpark later, na
 *   the entity identifier
 *   the entity's properties
 
-## 1.2 Secure your Firebase
+## Secure your Firebase
 
 By default, operations to your Firebase are not secured. Everything is authorized. You can easily change this in the **Security** tab of the Firebase console with security rules as described below. In this case, you need to be authenticated to execute both read and write operations on data.
 
@@ -58,9 +58,9 @@ In order to give APISpark access to you Firebase app, you will need your secret 
 
 ![Firebase secrets](images/firebase-secrets.png "Firebase secrets")
 
-# 2. Create a Firebase Wrapper
+<h1 class="numbered" id="toc_2"><i>2</i>Create a Firebase Wrapper</h1>
 
-## 2.1 Create a new Firebase Wrapper
+## Create a new Firebase Wrapper
 
 Sign in to your **APISpark** account.
 
@@ -72,7 +72,7 @@ Select **Firebase wrapper** and enter a name for your Wrapper. We named ours "my
 
 Click **Add**. You will be taken to the **Settings** tab.
 
-## 2.2. Setup your Firebase account
+## Setup your Firebase account
 
 In the **Security** section, click on **Firebase Account**.
 
@@ -82,7 +82,7 @@ Click on the **Test** button.
 
 ![Configure your firebase app](images/configure-firebase-app.jpg "Configure your firebase app")
 
-## 2.3 Create an Entity
+## Create an Entity
 
 We will now create an entity in the APISpark **Entity Store** whose name and property names match the ones chosen in Firebase.
 
@@ -98,7 +98,7 @@ Name your **Entity**. In this tutorial example, we named our entity **Contact** 
 
 Click on the **Deploy** button.
 
-# 3. Export a Web API
+<h1 class="numbered" id="toc_3"><i>3</i>Export a Web API</h1>
 
 From the Wrapper's **Overview** page, click on the actions button on the left of the **Deploy** button and select **Export web API**.
 
@@ -114,7 +114,7 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button2.jpg "Deploy button")
 
-# 4. Invoke the web API
+<h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 

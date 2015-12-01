@@ -5,14 +5,14 @@ http://docs.google.com/" target="_blank">Google Sheets</a> is a popular collabor
 
 For more information, jump to the [Google Sheets section](/technical-resources/apispark/guide/store/wrappers/google-sheets "Google Sheets section") of our User Guide.
 
-# Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
 To follow this tutorial, you will need:
 
 *   a web browser,
 *   20 minutes of your time,
 
-# 1. Prepare a spreadsheet
+<h1 class="numbered" id="toc_1"><i>1</i>Prepare a spreadsheet</h1>
 
 Sign in to your **Google Drive** account.
 
@@ -30,7 +30,7 @@ We have chosen to name ours Darth Vader, 46 years old.
 
 ![Google Sheet](images/google-spreadsheet.jpg "Google Sheet")
 
-# 2. Configure the Google Sheets Wrapper
+<h1 class="numbered" id="toc_2"><i>2</i>Configure the Google Sheets Wrapper</h1>
 
 Sign in to your **APISpark** account.
 
@@ -64,7 +64,7 @@ From the Wrapper's **Overview** tab, you can view the new entities.
 
 Deploy the Google Sheets Wrapper by clicking on the **Deploy** button.
 
-# 3. Export a Web API from the Wrapper
+<h1 class="numbered" id="toc_3"><i>3</i>Export a Web API from the Wrapper</h1>
 
 From the Wrapper's **Overview** page, click on the actions button on the right of the **Deploy** button and select **Export web API**.
 
@@ -82,7 +82,7 @@ Deploy the API by clicking the **Deploy** button.
 
 ![Deploy button](images/deploy-button2.jpg "Deploy button")
 
-# 4. Invoke the web API
+<h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
 Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 

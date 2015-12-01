@@ -14,7 +14,7 @@ You can install the agent on your own infrastructure to avoid possible lag issue
 
 # <a class="anchor" name="hosted"></a>Create a connector with an agent hosted on APISpark
 
-## 1. Create a web API Connector
+<h1 class="numbered" id="toc_1"><i>1</i>Create a web API Connector</h1>
 
 If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
@@ -26,9 +26,10 @@ Create a new Connector. Click on **+ Web API**, select the "Connector" **Type** 
 
 Click on the **Add** button to create the new web API Connector. You will be taken to the new web API Connector's **Overview** page.
 
-## 2. Configure the Connector
+<h1 class="numbered" id="toc_2"><i>2</i>Configure the Connector
+</h1>
 
-### 2.1. Define a target endpoint
+## Define a target endpoint
 
 Click on the **Settings** tab.
 In the **Connector** section, select **Agent details**.
@@ -36,14 +37,14 @@ Enter a **Target endpoint** (here: https://rsreferenceapi.apispark.net/v1) and c
 
 ![Define a Target endpoint](images/target-endpoint.jpg "Define a Target endpoint")
 
-### 2.2. Enable the authentication feature
+## Enable the authentication feature
 
 Still in the **Connector** section, select **Management features**.  
 Select the **Authentication** checkbox in the central panel and click **Save**.
 
 ![Enable authentication](images/enable-authentication.jpg "Enable authentication")
 
-### 2.3. Add members to your web API
+## Add members to your web API
 
 To add new consumers to your API, create new members from the **Members** tab.
 
@@ -55,7 +56,7 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 ![Connector credentials](images/connector-credentials.jpg "Connector credentials")
 
-## 3. Import your web API definition
+<h1 class="numbered" id="toc_3"><i>3</i>Import your web API definition</h1>
 
 APISpark needs your web API contract to be able to access it.
 
@@ -74,7 +75,7 @@ You can see the content of your API in the **Resources** and **Representations**
 
 You can now **Deploy** your web API Connector.
 
-## 4. Invoke the web API
+<h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
 Now that your environment is all set, you can call your API with Swagger UI for example.
 
@@ -94,7 +95,7 @@ Congratulations on completing this tutorial! If you have questions or suggestion
 # <a class="anchor" name="standalone"></a>Create a connector with a standalone agent
 
 
-## 1. Create a web API Connector
+<h1 class="numbered" id="toc_1"><i>1</i>Create a web API Connector</h1>
 
 If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
 
@@ -108,9 +109,9 @@ In the **Endpoints** section, click on the **Add** button to add an Endpoint to 
 
 ![Add an endpoint](images/add-an-endpoint-standalone.jpg "Add an endpoint")
 
-## 2. Configure the authentication feature
+<h1 class="numbered" id="toc_2"><i>2</i>Configure the authentication feature</h1>
 
-### 2.1. Enable the authentication feature
+## Enable the authentication feature
 
 First of all, you will want to enable the authentication feature of the Connector you just created.  
 To do so, click on the **Settings** tab.  
@@ -119,7 +120,7 @@ Select the **Authentication** checkbox in the central panel and click **Save**.
 
 ![Enable authentication](images/enable-authentication.jpg "Enable authentication")
 
-### 2.2. Add members to your web API
+## Add members to your web API
 
 To add new consumers to your API, create new members from the **Members** tab.
 
@@ -133,7 +134,7 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 >**Note:** Your credentials will only be accessible after your Connector first Deployment.
 
-## 3. Import your web API definition
+<h1 class="numbered" id="toc_3"><i>3</i>Import your web API definition</h1>
 
 APISpark needs your web API contract to be able to access it.
 
@@ -152,15 +153,15 @@ You can see the content of your API in the **Resources** and **Representations**
 
 You can now **Deploy** your web API Connector.
 
-## 4. Plug the agent to the web API
+<h1 class="numbered" id="toc_4"><i>4</i>Plug the agent to the web API</h1>
 
-### 4.1. Launch your web API
+## Launch your web API
 
 If you have a web API running, make sure it is running. Otherwise just make GET calls on this sample web API:
 
 [https://rsreferenceapi.apispark.net/v1/contacts/](https://rsreferenceapi.apispark.net/v1/contacts/)
 
-### 4.2. Launch the agent
+## Launch the agent
 
 The agent is available for download from the **Agent details** page: click on the **Settings** tab and select **Agent details** from the **Connector** section.
 
@@ -173,8 +174,7 @@ Once your agent is configured, launch it with the following command line:
 ```
 java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.jar
 ```
-
-## 5. Invoke the web API
+<h1 class="numbered" id="toc_5"><i>5</i>Invoke the Web API</h1>
 
 Now that your environment is all set, you can call your API with Swagger UI for example.
 
