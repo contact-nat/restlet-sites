@@ -1,4 +1,4 @@
-<h1 class="iconed" id="toc_0"><i class="fa fa-map-signs"></i>Introduction</h1>
+<h1 class="iconed" id="toc_0"><i class="fa fa-map-marker"></i>Introduction</h1>
 
 This tutorial will show you how to deploy your first API in 15 minutes or less. Head to our [User guide](/technical-resources/apispark/guide "User guide") page first if you would like to learn about the main concepts behind APISpark. Now, let’s get right to it.
 
