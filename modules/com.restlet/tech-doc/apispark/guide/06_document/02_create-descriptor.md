@@ -11,6 +11,17 @@ A **Descriptor** is composed of **Endpoints**, **Resources**, and **Representati
 
 ![Descriptor](images/descriptor-composition.jpg "Descriptor")
 
+## Add a custom sample value to a representation
+
+You can add custom samples to a representation:
+From the **Overview** tab, select the chosen representation from the left panel and select the **Custom sample** checkbox. Edit the sample in the associated text field and **Save**.
+
+![custom value](images/custom-samples-descriptor.jpg "custom value")
+
+To go back to the default sample value, deselect the **Custom sample** checkbox and **Save**.
+
+>**Note:** Custom sample values are not supported for input representations or method responses of **list** Type.
+
 # Describe your web API
 
 Rather than manually create a *Descriptor* from scratch, APISpark provides ways for you to automatically generate one that describes your existing API.

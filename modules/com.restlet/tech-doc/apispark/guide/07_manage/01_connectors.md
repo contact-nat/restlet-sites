@@ -61,6 +61,17 @@ With a Connector you can also document your web API as with a [Descriptor](/tech
 Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System (if you choose the standalone agent configuration), and that's all.  
  Your web API has new features inside without writing a line of code!
 
+ ## Add a custom sample value to a representation
+
+ You can add custom samples to a representation:
+ From the **Overview** tab, select the chosen representation from the left panel and select the **Custom sample** checkbox. Edit the sample in the associated text field and **Save**.
+
+![custom value](images/custom-sample-connector.jpg "custom value")
+
+To go back to the default sample value, deselect the **Custom sample** checkbox and **Save**.
+
+>**Note:** Custom sample values are not supported for input representations or method responses of **list** Type.
+
 # Import a Swagger or RAML definition
 
 You can import a Swagger or RAML definition by providing the definition's URL or file. Swagger 1.2, Swagger 2.0 and RAML 0.8 are supported.
