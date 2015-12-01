@@ -1,4 +1,4 @@
-# Introduction
+<h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
 This tutorial will show you how to create a web API that gives access to existing data stored in a Parse backend.
 <a href="http://Parse.com/" target="_blank">Parse.com</a> is a popular Backend as a Service (BaaS) provider that powers connected mobile applications.

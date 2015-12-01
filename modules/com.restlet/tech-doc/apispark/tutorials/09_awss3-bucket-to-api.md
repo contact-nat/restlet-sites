@@ -1,4 +1,4 @@
-# Introduction
+<h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
 APISpark features a Wrapper File Store for Amazon <a href="
 http://aws.amazon.com/s3/" target="_blank">AWS S3</a>

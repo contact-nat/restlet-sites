@@ -1,4 +1,4 @@
-# Introduction
+<h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
 This tutorial will show you how to create a custom web API that gives access to existing data stored in a Firebase backend. <a href="https://www.firebase.com" target="_blank">Firebase</a> is a popular Backend as a Service (BaaS) provider that powers real time HTML 5 applications.
 

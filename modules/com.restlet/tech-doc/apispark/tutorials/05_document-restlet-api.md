@@ -1,4 +1,4 @@
-# Introduction
+<h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
 The Restlet Framework provides a tool that extracts the web API definition of your Restlet (or JAX-RS) application and imports it in APISpark to provide documentation and tooling such as generation of client kits.
 

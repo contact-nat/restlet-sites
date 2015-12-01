@@ -1,5 +1,4 @@
-
-# Introduction
+<h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
 GitHub is a social coding platform that hosts Git repositories.
 
