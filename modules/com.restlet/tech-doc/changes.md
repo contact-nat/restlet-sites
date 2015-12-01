@@ -1,3 +1,13 @@
+
+v3.19.8
+
+- Added Roles and permissions diagram to Team Work section
+- Added Expressions section to DHC User Guide
+- Added Import & Export Formats section to DHC User Guide
+- Replaced Variants by Formats
+- Added appropriate markdown to display hexagon icons in tutorials
+- Added custom sample values to descriptors & connectors
+
 v3.18.9
 
 - Escaped html code to fix code blocks display in APISpark tutorial
