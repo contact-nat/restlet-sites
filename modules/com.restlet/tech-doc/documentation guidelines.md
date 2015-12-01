@@ -133,3 +133,23 @@ The text in square brackets will display on the page as a clickable link.
 You will need to [synchronize](/technical-resources/apispark/guide/create/overview#synchronize "synchronize") each store imported.
 
 --> Add <a class="anchor" name="synchronize"></a> where you want to redirect the user
+
+## c. Tutorial titles
+
+### Introduction
+<h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
+
+### Requirements
+<h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
+
+### Part 1
+<h1 class="numbered" id="toc_1"><i>1</i>Create an Entity Store</h1>
+
+### Part 2
+<h1 class="numbered" id="toc_2"><i>2</i>Create a Web API</h1>
+
+### Part 3
+<h1 class="numbered" id="toc_3"><i>3</i>Invoke the web API</h1>
+
+### Part 4
+<h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
