@@ -14,7 +14,7 @@
 12. [What is the difference between "Public" and "Anyone" settings for my API?](#12 "What is the difference between "Public" and "Anyone" settings?")
 13. [Why has my store been undeployed?](#13 "Why has my store been undeployed?")
 14. [My csv file import failed](#14 "My csv file import failed")
-
+15. [I cannot find my cells anymore](#15 "I cannot find my cells anymore")
 
 # <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
 
@@ -300,5 +300,25 @@ APISpark allows you to import data stored in a csv file in your Entity Store fro
 From this tab, you will be given the lines for which errors have been detected.
 
 ![Messages tab](images/messages-tab.jpg "Messages tab")
+
+[Back to list](#list "Back to list of frequently asked questions")
+
+# <a class="anchor" name="15"></a>15. I cannot find my cells anymore
+
+You may have created two different accounts with the same email address but with two different providers. That is why you cannot find cells you created on a different account.
+
+To have more information on your account, navigate to your account page: click on your name on top right of the screen, select **My account**.
+
+![My account](images/my-account.jpg "My account")
+
+In the **My account** tab, you will find the email and the provider with which you created the current account.
+
+In this example, you created an account directly with APISpark and without any provider:
+
+![My account](images/my-auth0-account.jpg "My account")
+
+In this example, you created an account with Google provider:
+
+![My account](images/my-google-account.jpg "My account")
 
 [Back to list](#list "Back to list of frequently asked questions")
