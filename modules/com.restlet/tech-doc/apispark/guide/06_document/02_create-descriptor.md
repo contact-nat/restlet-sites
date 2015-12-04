@@ -11,12 +11,21 @@ A **Descriptor** is composed of **Endpoints**, **Resources**, and **Representati
 
 ![Descriptor](images/descriptor-composition.jpg "Descriptor")
 
+## Add a format to a representation
+
+Navigate to the **Settings** tab and click on **Add** a format from the left panel. Enter a **Name**, one or several media type(s) and select the **Favorite format** checkbox if you want this format to be added to each new representation by default.
+
+![add a format](images/descriptor-format.jpg "add a format")
+
 ## Add a custom sample value to a representation
 
-You can add custom samples to a representation:
-From the **Overview** tab, select the chosen representation from the left panel and select the **Custom sample** checkbox. Edit the sample in the associated text field and **Save**.
+From the **Overview** tab, select the chosen representation from the left panel. In the central panel, click on the appropriate format and select its **Custom sample** checkbox. You can then edit the sample in the text field above and **Save**.
 
 ![custom value](images/custom-samples-descriptor.jpg "custom value")
+
+Once you have saved your custom sample, you will retrieve it in read-only mode in the **Resources** section.
+
+![custom value](images/custom-samples-descriptor-resources.jpg "custom value")
 
 To go back to the default sample value, deselect the **Custom sample** checkbox and **Save**.
 

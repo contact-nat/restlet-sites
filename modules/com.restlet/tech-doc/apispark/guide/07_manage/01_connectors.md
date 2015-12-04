@@ -61,12 +61,21 @@ With a Connector you can also document your web API as with a [Descriptor](/tech
 Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System (if you choose the standalone agent configuration), and that's all.  
  Your web API has new features inside without writing a line of code!
 
+ ## Add a format to a representation
+
+ Navigate to the **Settings** tab. From the **Formats** section in the left panel, click the **Add** button. Enter a **Name**, one or several media type(s) and select the **Favorite format** checkbox if you want this format to be added to each new representation by default.
+
+ ![add a format](images/connector-format.jpg "add a format")
+
  ## Add a custom sample value to a representation
 
- You can add custom samples to a representation:
- From the **Overview** tab, select the chosen representation from the left panel and select the **Custom sample** checkbox. Edit the sample in the associated text field and **Save**.
+From the **Overview** tab, select the chosen representation from the left panel. In the central panel, click on the appropriate format and select its **Custom sample** checkbox. You can then edit the sample in the text field above and **Save**.
 
 ![custom value](images/custom-sample-connector.jpg "custom value")
+
+Once you have saved your custom sample, you will retrieve it in read-only mode in the **Resources** section.
+
+![custom value](images/custom-sample-connector-resource.jpg "custom value")
 
 To go back to the default sample value, deselect the **Custom sample** checkbox and **Save**.
 
