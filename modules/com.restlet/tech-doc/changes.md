@@ -1,4 +1,9 @@
 
+v3.19.10
+
+- Added FAQ entry
+- Added motre content to custom samples for descriptors and connectors
+
 v3.19.8
 
 - Added Roles and permissions diagram to Team Work section
