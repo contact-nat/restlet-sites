@@ -243,12 +243,6 @@ toc:
       long-title: Edit, back up and restore your Entity Store data
       title: Edit & backup data
       url: /store/entity-stores/edit-data
-    - file: 04_sql-schema.md
-      id: sql-schema
-      link_url: /05_store/02_entity-stores/04_sql-schema.md
-      long-title: Extract an SQL Schema from your database and import it in APISpark
-      title: Exposing existing SQL data
-      url: /store/entity-stores/sql-schema
     long-title: Entity Stores
     title: Entity Stores
   - file: 03_file-stores.md
