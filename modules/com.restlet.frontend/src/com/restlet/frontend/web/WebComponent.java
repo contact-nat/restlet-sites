@@ -132,6 +132,14 @@ public class WebComponent extends Component {
 		host = addHost("restlet.com", port, new RestletCom(
 				"clap://class/restletCom.properties"), properties);
 		getHosts().add(host);
+		
+		// -----------------
+		// stage.restlet.com
+		// -----------------
+		host = addHost("stage.restlet.com", port, new RestletCom(
+				"clap://class/stageRestletCom.properties"), properties);
+		getHosts().add(host);
+		
 		// -----------------
 		// studio.restlet.com
 		// -----------------
