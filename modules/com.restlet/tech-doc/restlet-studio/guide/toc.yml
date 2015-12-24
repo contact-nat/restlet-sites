@@ -75,19 +75,13 @@ toc:
   - file: 02_import-swagger.md
     id: import-swagger
     link_url: /03_translate/02_import-swagger.md
-    long-title: Import Swagger 1.2 format
-    title: Swagger 1.2
+    long-title: Import & export Swagger definitions
+    title: Swagger
     url: /translate/import-swagger
-  - file: 03_export-swagger.md
-    id: export-swagger
-    link_url: /03_translate/03_export-swagger.md
-    long-title: Export to Swagger 2.0 format
-    title: Swagger 2.0
-    url: /translate/export-swagger
-  - file: 04_export-raml.md
+  - file: 03_export-raml.md
     id: export-raml
-    link_url: /03_translate/04_export-raml.md
-    long-title: Export to RAML 0.8 format
+    link_url: /03_translate/03_export-raml.md
+    long-title: Import & export RAML definitions
     title: RAML 0.8
     url: /translate/export-raml
   long-title: Translate between API languages
@@ -119,6 +113,12 @@ toc:
     long-title: Generate AngularJS SDKs
     title: AngularJS
     url: /download-sdk/angular-js
+  - file: 05_node-js.md
+    id: node-js
+    link_url: /04_download-sdk/05_node-js.md
+    long-title: Generate Node.js SDKs
+    title: Node.js
+    url: /download-sdk/node-js
   long-title: Download client SDKs
   title: Download client SDKs
 - dir: 05_download-skeleton
