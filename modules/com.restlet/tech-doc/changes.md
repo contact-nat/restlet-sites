@@ -1,3 +1,8 @@
+v3.20.7
+
+- RS Updated screenshot in craft section
+- RS Updated content & screenshots of import & export of swagger and raml def
+- RS Added Node.js sdk to downloads section
 
 v3.19.10
 
