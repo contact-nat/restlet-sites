@@ -23,7 +23,7 @@ Click on the **Sign up** button.
 Enter your email address and password.  
 Click on the **Sign up** button.
 
-![Sign uo](images/sign-up-via-email.jpg "Sign up")
+![Sign up](images/sign-up-via-email.jpg "Sign up")
 
 # The Account page
 
