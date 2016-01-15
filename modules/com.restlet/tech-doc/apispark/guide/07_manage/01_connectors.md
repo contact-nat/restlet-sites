@@ -12,7 +12,7 @@ With a *Connector*, you can add and configure the following features to your API
 
 # How does a connector work?
 
-A connector is splitted into two parts: a *Connector Cell* and a *APISpark Agent*.
+A connector is split into two parts: a *Connector Cell* and a *APISpark Agent*.
 
 The Connector Cell is defined in the APISpark console and holds the configuration of the desired features.
 
