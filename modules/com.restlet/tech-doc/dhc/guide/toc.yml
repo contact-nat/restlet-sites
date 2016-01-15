@@ -8,6 +8,24 @@ toc:
     long-title: Install DHC by Restlet
     title: Install DHC
     url: /get-started/install
+  - file: 02_sign-in.md
+    id: sign-in
+    link_url: /01_get-started/02_sign-in.md
+    long-title: Sign-in to DHC
+    title: Sign-in
+    url: /get-started/sign-in
+  - file: 03_subscribe.md
+    id: subscribe
+    link_url: /01_get-started/03_subscribe.md
+    long-title: Subscribe to a plan
+    title: Subscribe to a plan
+    url: /get-started/subscribe
+  - file: 04_account-info.md
+    id: account-info
+    link_url: /01_get-started/04_account-info.md
+    long-title: Access your account details
+    title: Access account info
+    url: /get-started/account-info
   long-title: Get started with DHC by Restlet
   title: Get started
 - dir: 02_perform-requests
@@ -98,12 +116,24 @@ toc:
       long-title: Leverage expressions in assertions
       title: Expressions
       url: /run-tests/assertions/expressions
-    long-title: Assertions
-    title: Assertions
-  - file: 02_use-case.md
+    long-title: Use assertions
+    title: Use assertions
+  - file: 02_run-tests.md
+    id: run-tests
+    link_url: /03_run-tests/02_run-tests.md
+    long-title: Run tests scenarios
+    title: Run tests scenarios
+    url: /run-tests/run-tests
+  - file: 03_test-reports-maven.md
+    id: test-reports-maven
+    link_url: /03_run-tests/03_test-reports-maven.md
+    long-title: Get test reports with Maven plugin
+    title: Get test reports
+    url: /run-tests/test-reports-maven
+  - file: 04_use-case.md
     id: use-case
-    link_url: /03_run-tests/02_use-case.md
-    long-title: Use case with DHC by Restlet
+    link_url: /03_run-tests/04_use-case.md
+    long-title: Use case with DHC
     title: Use case
     url: /run-tests/use-case
   long-title: Run tests with DHC by Restlet
