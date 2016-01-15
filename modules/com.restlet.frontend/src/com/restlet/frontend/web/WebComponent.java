@@ -4,28 +4,36 @@
 
 package com.restlet.frontend.web;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.restlet.Client;
 import org.restlet.Component;
 import org.restlet.Request;
 import org.restlet.Response;
 import org.restlet.Restlet;
 import org.restlet.Server;
+import org.restlet.data.LocalReference;
 import org.restlet.data.Protocol;
 import org.restlet.data.Reference;
 import org.restlet.engine.Engine;
+import org.restlet.engine.application.MetadataExtension;
 import org.restlet.engine.connector.HttpClientHelper;
+import org.restlet.engine.local.Entity;
+import org.restlet.engine.local.FileClientHelper;
+import org.restlet.engine.local.FileEntity;
 import org.restlet.engine.util.StringUtils;
 import org.restlet.representation.Representation;
 import org.restlet.resource.ClientResource;
 import org.restlet.routing.Redirector;
 import org.restlet.routing.VirtualHost;
 
+import com.restlet.frontend.web.applications.BaseApplication;
 import com.restlet.frontend.web.services.ComponentPropertiesReader;
-import com.restlet.frontend.web.services.RouterPropertiesReader;
 
 /**
  * The web component managing the Restlet web servers.
@@ -64,7 +72,7 @@ public class WebComponent extends Component {
 
     }
 
-    private int port;
+    private int globalPort;
 
     /**
      * Main method.
@@ -92,28 +100,32 @@ public class WebComponent extends Component {
 
         String ipAddress = null;
 
+        refreshHosts();
+
         // ------------------
         // Add the connectors
         // ------------------
-        Server server = getServers().add(Protocol.HTTP, ipAddress, port);
+        Server server = getServers().add(Protocol.HTTP, ipAddress, globalPort);
         server.getContext().getParameters().add("useForwardedForHeader", "true");
 
         getClients().add(Protocol.CLAP);
         getClients().add(Protocol.FILE);
         getClients().add(Protocol.RIAP);
         getClients().add(Protocol.HTTP);
-
-        refreshHosts();
     }
 
     private void refreshHosts() {
         final Map<String, String> domainSynonyms = new HashMap<String, String>();
-        
+
         ComponentPropertiesReader reader = new ComponentPropertiesReader("clap://class/webComponent.properties", this) {
+
+            VirtualHost virtualHost = null;
+
+            BaseApplication application = null;
 
             @Override
             public void handleRoute(String source, String target, int currentMode, boolean bStartsWith) {
-
+                application.handleRoute(source, target, currentMode, bStartsWith);
             }
 
             @Override
@@ -125,7 +137,7 @@ public class WebComponent extends Component {
                     break;
                 case "server.http.port":
                     // Port to listen on
-                    port = Integer.parseInt(value);
+                    globalPort = Integer.parseInt(value);
                     break;
                 default:
                     domainSynonyms.put(property, value);
@@ -137,7 +149,7 @@ public class WebComponent extends Component {
             public void handleHostRedirection(String source, String target, int redirectionMode, boolean bStartsWith) {
                 if (!target.toLowerCase().startsWith("http://")
                         && !target.toLowerCase().startsWith("https://")) {
-                    VirtualHost host = addHost(source, port, new Redirector(
+                    VirtualHost host = addHost(source, globalPort, new Redirector(
                             getContext().createChildContext(), null,
                             redirectionMode) {
                         @Override
@@ -149,18 +161,20 @@ public class WebComponent extends Component {
                     }, domainSynonyms.get(target));
                     getHosts().add(host);
                 } else {
-                    getHosts().add(addRedirection(source, port, target, redirectionMode, null));
+                    getHosts().add(addRedirection(source, globalPort, target, redirectionMode, null));
                 }
 
             }
 
             @Override
-            public void handleVirtualHost(String domain, String login, String password) {
-                System.out.println("add vh " + domain);
-                
+            public void handleVirtualHost(String domain, Integer port, String login, String password,
+                    String clientDispatcher, List<MetadataExtension> extensions) {
+                application = new BaseApplication("strict".equals(clientDispatcher), extensions, login, password);
+                virtualHost = addHost(domain, (port == null) ? globalPort : port, application,
+                        domainSynonyms.get(domain));
+                getHosts().add(virtualHost);
             }
         };
-
 
         reader.read(getLogger());
     }
@@ -233,7 +247,37 @@ public class WebComponent extends Component {
         } else {
             host.setHostDomain(domainSynonym);
         }
-        getLogger().info(domain + " swapped to " + host.getHostDomain());
+        if (!domain.equals(host.getHostDomain())) {
+            getLogger().info(domain + " swapped to " + host.getHostDomain());
+        }
+
+    }
+
+    /**
+     * File client helper that does not try to infer file according to the
+     * metadata.
+     * 
+     * @author thboileau
+     * 
+     */
+    private static class StrictFileClientHelper extends FileClientHelper {
+        public StrictFileClientHelper(Client client) {
+            super(client);
+        }
+
+        @Override
+        public Entity getEntity(String decodedPath) {
+            File file = new File(LocalReference.localizePath(decodedPath));
+            if (file.exists()) {
+                return new FileEntity(file, getMetadataService());
+            }
+            return new FileEntity(file, getMetadataService()) {
+                @Override
+                public String getBaseName() {
+                    return "";
+                }
+            };
+        }
     }
 
 }
