@@ -8,21 +8,33 @@ toc:
     long-title: Overview
     title: Overview
     url: /get-started/overview
-  - file: 02_web-browser.md
-    id: web-browser
-    link_url: /01_get-started/02_web-browser.md
-    long-title: Launch Restlet Studio from a web browser
-    title: From a browser
-    url: /get-started/web-browser
-  - file: 03_chrome-application.md
-    id: chrome-application
-    link_url: /01_get-started/03_chrome-application.md
-    long-title: Launch Restlet Studio as a Chrome application
-    title: Chrome application
-    url: /get-started/chrome-application
-  - file: 04_ready-api.md
+  - file: 02_launch-restlet-studio.md
+    id: launch-restlet-studio
+    link_url: /01_get-started/02_launch-restlet-studio.md
+    long-title: Launch Restlet Studio
+    title: Launch Restlet Studio
+    url: /get-started/launch-restlet-studio
+  - file: 03_sign-in.md
+    id: sign-in
+    link_url: /01_get-started/03_sign-in.md
+    long-title: Sign-in to Restlet Studio
+    title: Sign-in
+    url: /get-started/sign-in
+  - file: 04_subscribe.md
+    id: subscribe
+    link_url: /01_get-started/04_subscribe.md
+    long-title: Subscribe to a plan
+    title: Subscribe
+    url: /get-started/subscribe
+  - file: 05_account-info.md
+    id: account-info
+    link_url: /01_get-started/05_account-info.md
+    long-title: Access your account information
+    title: Access account info
+    url: /get-started/account-info
+  - file: 06_ready-api.md
     id: ready-api
-    link_url: /01_get-started/04_ready-api.md
+    link_url: /01_get-started/06_ready-api.md
     long-title: Launch Restlet Studio with Ready! API plugin
     title: Ready! API plugin
     url: /get-started/ready-api
@@ -144,4 +156,21 @@ toc:
     url: /download-skeleton/node-js
   long-title: Download server skeletons
   title: Download server skeletons
+- dir: 06_share
+  id: share
+  items:
+  - file: 01_share-apis.md
+    id: share-apis
+    link_url: /06_share/01_share-apis.md
+    long-title: Share your APIs
+    title: Share your APIs
+    url: /share/share-apis
+  - file: 02_manage-apis.md
+    id: manage-apis
+    link_url: /06_share/02_manage-apis.md
+    long-title: Manage your APIs
+    title: Manage your APIs
+    url: /share/manage-apis
+  long-title: Share your APIs
+  title: Share your APIs
 
