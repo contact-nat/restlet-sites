@@ -24,7 +24,7 @@ Click on the **Confirm subscription** button to activate the new plan.
 
 # Payment methods
 
-In order to updgrade your plan from the **Free** plan, you need to enter your credit card details.
+In order to upgrade your plan from the **Free** plan, you need to enter your credit card details.
 
 To add a payment method to your account, click on your name on top right of your screen and select **My account**.
 
