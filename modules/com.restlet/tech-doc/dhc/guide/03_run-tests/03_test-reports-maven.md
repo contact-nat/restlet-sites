@@ -53,7 +53,7 @@ Content-Type: application/json
 
 ## Remote API test use case
 
-1. Create a pom.xml file with the following content:
+#### 1. Create a pom.xml file with the following content:
 
 <pre><code>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
@@ -98,13 +98,13 @@ Content-Type: application/json
 
 >**Note:** Make sure you enter the appropriate version and the appropriate path to the JSON configuration file.
 
-2. Launch > mvn install.
+#### 2. Launch > mvn install.
 
 ## In-build API test use case
 
 In this example, we added variables and profile.
 
-1. Create a pom.xml file with the following content:
+#### 1. Create a pom.xml file with the following content:
 
 <pre><code>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -152,4 +152,4 @@ In this example, we added variables and profile.
 </project>
 </code></pre>
 
-2. Launch > mvn clean install -P it
+#### 2. Launch > mvn clean install -P it
