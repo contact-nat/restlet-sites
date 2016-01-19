@@ -7,9 +7,9 @@ To sign up, click on the **Sign in** button from the <a href="https://dhc.restle
 
 # Sign in with your social provider account  
 
-Several social login providers are supported, including **GitHub**, **Google**, **Windows Live**, **Yahoo**, **LinkedIn**, **Wordpress** and **Facebook**. You can create an account for free with any of these providers if you do not already own one.
+Several social login providers are supported, including **GitHub** and **Google**. You can create an account for free with these providers if you do not already own one.
 
-Screenshot ![Sign in](images/sign-in-page.jpg "Sign in")
+![Sign in](images/sign-in-page.jpg "Sign in")
 
 If you are not already logged-in to your chosen provider, you will be asked to enter your username and password.
 
@@ -21,4 +21,4 @@ Click on the **Sign up** button.
 Enter your email address and password.  
 Click on the **Sign up** button.
 
-Screenshot ![Sign up](images/sign-up-via-email.jpg "Sign up")
+![Sign up](images/sign-up.jpg "Sign up")

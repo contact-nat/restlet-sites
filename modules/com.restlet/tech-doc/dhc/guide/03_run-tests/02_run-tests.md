@@ -6,7 +6,7 @@ You only need to save a series of requests inside a scenario and to launch it by
 
 # Create a scenario
 
-Create a request an save it by clicking the **Save** button..
+Create a request an save it by clicking the **Save** button.
 
 ![Save request button](images/save-request-button.jpg "Save request button")
 

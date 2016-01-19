@@ -3,8 +3,8 @@ DHC allow you to use exported tests as an input for Maven plugin which generates
 
 # Maven plugin characteristics
 
-GroupId:	com.restlet.dhc
-ArtifactId:	dhc-maven-plugin
+- GroupId:	com.restlet.dhc  
+- ArtifactId:	dhc-maven-plugin
 
 ## Plugin parameters
 
