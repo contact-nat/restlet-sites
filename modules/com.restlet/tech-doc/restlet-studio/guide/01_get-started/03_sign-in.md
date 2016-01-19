@@ -1,7 +1,7 @@
 
 Restlet Studio's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
 
-To sign up, click on the **Sign in** button from the <a href="https://dhc.restlet.com/" target="_blank">Restlet Studio page</a> of our website and pick a social provider to identify yourself with. Your account will automatically be created for you.
+To sign up, click on the **Sign in** button from the <a href="http://studio.restlet.com/" target="_blank">Restlet Studio</a> and pick a social provider to identify yourself with. Your account will automatically be created for you.
 
 ![Sign in](images/sign-in.jpg "Sign in")
 
