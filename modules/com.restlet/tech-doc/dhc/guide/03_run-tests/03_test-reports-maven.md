@@ -86,13 +86,13 @@ Content-Type: application/json
     </plugins>
   </build>
 
-<repositories>
-    <repository>
+<pluginRepositories>
+    <pluginRepository>
         <id>nexus-public</id>
         <name>Nexus Release Repository</name>
         <url>https://nexus.rest-let.com/nexus/content/repositories/public</url>
-    </repository>
-</repositories>
+    </pluginRepository>
+</pluginrepositories>
 </project>
 </code></pre>
 
