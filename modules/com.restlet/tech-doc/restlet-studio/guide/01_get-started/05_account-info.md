@@ -4,8 +4,9 @@ To navigate to your **Account** page, make sure you are signed in, then click on
 
 ![My account](images/my-account.jpg "My account")
 
-Your **Account** page is divided into 2 sections:
-- the **Account** section provides your account details.
+Your **Account** page is divided into 2 sections:  
+
+- the **Account** section provides your account details.  
 
 - the **Plan** section provides information about the plan you selected and allows you to change plan or modify your billing details.
 
@@ -38,8 +39,8 @@ Your **Account** page is divided into 2 sections:
 
 ![Change plan](images/change-plan.jpg "Change plan")
 
-You can downgrade or upgrade plan directly from your **Account** page.
-Click on the **Change plan** link.
+You can downgrade or upgrade plan directly from your **Account** page.  
+Click on the **Change plan** link.  
 From the **Plans & Pricing** page, click on the appropriate **Downgrade** or **Upgrade** button and follow the confirmation messages.
 
 ## Change card
