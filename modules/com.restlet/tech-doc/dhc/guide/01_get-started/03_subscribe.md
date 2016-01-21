@@ -6,6 +6,9 @@ As you subscribe to DHC, you can choose between different base plan levels as de
 
 ![plans overview](images/dhc-plans.jpg "Plans overview")
 
+Restlet offers simple, all-inclusive plans that scale with your projects and your team size.   Getting started is free, and switching between plans is easy.  
+All plans include access to the whole Restlet platform: Restlet Studio, DHC by Restlet and APISpark.
+
 ## Select a plan
 
 When you Sign In, you are automatically assigned a **Free** plan.
