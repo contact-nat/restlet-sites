@@ -8,34 +8,20 @@ As you subscribe to DHC, you can choose between different base plan levels as de
 
 ## Select a plan
 
-When you Sign In, you are automatically assigned a **Free** plan. To upgrade your base plan level, you first need to enter your credit card details (see *Payment method* section below).
+When you Sign In, you are automatically assigned a **Free** plan.
 
-To switch base plan level, click on your name in the top right of your screen.
+To switch base plan level, click on your name on top right of your screen and select the **Billing** tab.
 
-![My account](images/my-account.jpg "My account")
+![user name](images/click-user-account.jpg "user name")
 
-Open the **My plan** tab. In the **Level** drop-down menu, select your base plan level (10 to 2000 concurrent clients).
+From the **Billing** page, click on the **Change plan** button.
 
-![Select plan](images/select-plan.jpg "Select plan")
+![user name](images/change-plan.jpg "user name")
 
-Click on the **Confirm subscription** button to activate the new plan.
+The **Plans** page gives you a snapshot of what each plan allows you to do for what price. Depending on the Plan you subscribed to, you can click on the corresponding **Downgrade** or **Upgrade** button.
 
-![Confirm subscription](images/confirm-subscription.jpg "Confirm subscription")
+![Plans and pricing page](images/dhc-plans-page.jpg "Plans and pricing page")
 
-# Payment methods
-
-In order to upgrade your plan from the **Free** plan, you need to enter your credit card details.
-
-To add a payment method to your account, click on your name on top right of your screen and select **My account**.
-
-![My account](images/my-account.jpg "My account")
-
-Click on **My plan** tab. In the **Payment method** section, click on the cog button, shown below.
-
-![wheel](images/wheel.jpg "wheel")
-
-Enter your credit card details and click on the **OK** button.
-
-![Create new payment method](images/credit-card-details.jpg "Create new payment method")
-
-Your credit card details are displayed in the **Payment method** section. You can now upgrade your base plan as described above.
+You will then need to enter your credit card details unless you have done it already.  
+You can also enter a new credit card by clicking **No, change card**.  
+Click on **Purchase** to confirm. A message will give you a recap of what this new plan allows you to do.
