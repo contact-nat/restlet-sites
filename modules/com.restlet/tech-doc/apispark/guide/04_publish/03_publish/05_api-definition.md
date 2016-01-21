@@ -16,11 +16,25 @@ From this page, you can export your API to the following format:
 * Swagger 1.2
 * Swagger 2.0
 
-> **Note:** Multiple versions of Swagger are supported.
+## Download your API definition
 
-### Obtain your API's Swagger definition
+From the **API definitions** section, click on the appropriate **Download** button.
 
-Click on one of the **Swagger** URLs to open the corresponding Swagger definition.
+For **RAML 0.8** definitions, you will get a .yml file.  
+For **Swagger 1.2** definitions, you will get a .zip file with .json files in it.  
+For **Swagger 2.0** definitions, you will get a .json file.
+
+
+## Get your API definition via a URL
+
+From the **API definitions** section, click on the appropriate URL to open the corresponding definition.
+
+If you have selected the **Share API overview** checkbox, you will not need to enter credentials.
+
+If you did select the **Share API overview** checkbox, you will have to enter credentials.  To get those credentials, click on your username on top right of the screen and select **My account**. You will find your credentials in the **Tokens** section.
+
+
+## Swagger 1.2 definition example
 
 The **Swagger 1.2** definition for the Contacts API looks like this:
 
