@@ -19,6 +19,7 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.restlet.Context;
 import org.restlet.Request;
 import org.restlet.Response;
 import org.restlet.Restlet;
@@ -260,6 +261,37 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 		getConnectorService().getClientProtocols().add(Protocol.FILE);
 	}
 
+    private static final class HttpRedirectFilter extends Filter {
+        private HttpRedirectFilter(Context context) {
+            super(context);
+        }
+
+        @Override
+        protected int beforeHandle(Request request, Response response) {
+            // issue #134 : routes all proxied HTTP urls to HTTPS.
+            Series<Header> headers = (Series<Header>) request.getAttributes().get(HeaderConstants.ATTRIBUTE_HEADERS);
+            if (headers ==  null) {
+            	headers = new Series<>(Header.class);
+            }
+            Protocol protocol = Protocol.valueOf(headers.getFirstValue("X-Forwarded-Proto", true));
+            if (protocol != null) {
+                request.getHostRef().setProtocol(Protocol.HTTPS);
+                request.getResourceRef().setProtocol(Protocol.HTTPS);
+                if (request.getResourceRef().getBaseRef() != null) {
+                    request.getResourceRef().getBaseRef()
+                            .setProtocol(Protocol.HTTPS);
+                }
+                request.getRootRef().setProtocol(Protocol.HTTPS);
+                if (Protocol.HTTP.equals(protocol)) {
+                    response.redirectPermanent(request.getResourceRef());
+                    response.getLocationRef().setProtocol(Protocol.HTTPS);
+                    return Filter.STOP;
+                }
+            }
+            return super.beforeHandle(request, response);
+        }
+    }
+    
 	@Override
 	public Restlet createInboundRoot() {
 		Engine.setLogLevel(Level.FINEST);
@@ -268,8 +300,7 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 		rootRouter.setDefaultMatchingMode(Router.MODE_FIRST_MATCH);
 		updateRootRouter();
 
-		Encoder encoder = new Encoder(getContext(), false, true,
-				getEncoderService());
+		HttpRedirectFilter redirectFilter = new HttpRedirectFilter(getContext());
 
 		if (siteLogin != null && sitePassword != null) {
 			ChallengeAuthenticator ca = new ChallengeAuthenticator(
@@ -279,10 +310,14 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 			mv.getLocalSecrets().put(login, password);
 			ca.setVerifier(mv);
 			ca.setNext(rootRouter);
-			encoder.setNext(ca);
+			redirectFilter.setNext(ca);
 		} else {
-			encoder.setNext(rootRouter);
+			redirectFilter.setNext(rootRouter);
 		}
+
+		Encoder encoder = new Encoder(getContext(), false, true,
+				getEncoderService());
+		encoder.setNext(redirectFilter);
 
 		return encoder;
 	}
