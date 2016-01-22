@@ -2,11 +2,25 @@ Restlet Studio allows you to craft your APIs from scratch from its design view. 
 
 # Create a new API definition
 
-To create a new API definition, you can start from the sample API provided and change its characteristics in the **General Information** window and modify the different items in the left panel.
+## From a sample API
+
+To create a new API definition, you can start from the sample API provided and change its characteristics in the **General Information** window and in the left panel.
+
+Once you are logged in, click on the **APIs** menu and select **My APIs**.  
+Click on the **New example API** button.
+
+![Sample API](images/new-example-api.jpg "Sample API")
+
+
+## From scratch
 
 If you would rather start from scratch, click on the **APIs** menu and select **Clear**.
 
 ![Clear](images/clear.jpg "Clear")
+
+From your **APIs** page, you can also click the **New API** button.
+
+![Empty API](images/new-api-from-scratch.jpg "Empty API")
 
 
 <!--
