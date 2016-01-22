@@ -7,9 +7,9 @@ To sign up, click on the **Sign in** button from the <a href="http://studio.rest
 
 # Sign in with your social provider account  
 
-Several social login providers are supported, including **GitHub** and **Google**. You can create an account for free with these providers if you do not already own one.
+Several social login providers are supported, including **GitHub**, **Google** and **Facebook**. You can create an account for free with these providers if you do not already own one.
 
-![Sign in](images/sign-in-page.jpg "Sign in")
+![Sign in](images/log-in-pop-up.jpg "Sign in")
 
 If you are not already logged-in to your chosen provider, you will be asked to enter your username and password.
 
@@ -21,4 +21,4 @@ Click on the **Sign up** button.
 Enter your email address and password.  
 Click on the **Sign up** button.
 
-![Sign up](images/sign-up.jpg "Sign up")
+![Sign up](images/sign-up-pop-up.jpg "Sign up")
