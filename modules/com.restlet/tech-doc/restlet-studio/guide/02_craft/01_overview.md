@@ -2,11 +2,14 @@ Restlet Studio allows you to craft your APIs from scratch from its design view. 
 
 # Create a new API definition
 
-To create a new API definition, start entering its characteristics in the **General Information** window and create the different items necessary in the left panel.
-To start again from scratch, click on the **API** menu and select **New**.
+To create a new API definition, you can start from the sample API provided and change its characteristics in the **General Information** window and modify the different items in the left panel.
 
-![New API](images/new-api.jpg "New API")
+If you would rather start from scratch, click on the **APIs** menu and select **Clear**.
 
+![Clear](images/clear.jpg "Clear")
+
+
+<!--
 ## Save and restore your API definition
 
 To save the API definition you are designing, click the **API** menu and select **Save**. Your API definition is saved in your web browser local storage. You can now close your web browser.  
@@ -17,4 +20,5 @@ You can thus work offline by restoring an API definition and saving it in your w
 
 # Load an API definition sample
 
-If you wish to see an API definition sample, Restlet Studio provides you one by cliking the **API** menu and selecting **Load sample**.
+If you wish to see an API definition sample, Restlet Studio provides you one by clicking the **API** menu and selecting **Load sample**.
+-->

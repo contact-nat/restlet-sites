@@ -12,7 +12,7 @@ Click on the **Add** button of the **Representations** section.
 
 ![Add a Representation](images/add-representation.jpg "Add a Representation")
 
-3. Fill in the **Add a representation** window and click on the **Add** button.
+Fill in the **Add a representation** window and click on the **Add** button.
 
 # Add a Property
 
