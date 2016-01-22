@@ -1,3 +1,12 @@
+3.23.1
+
+- DHC user guide : Updated "Get started" and "Run tests" sections.
+- Restlet Studio user guide :
+-- Updated "Get started" section
+-- Added "Share your APIs" section
+-- Updated all Restlet Studio screenshots
+- APISpark : Updated API definitions (download + link) & Base plans page
+
 v3.20.7
 
 - RS Updated screenshot in craft section
@@ -7,7 +16,7 @@ v3.20.7
 v3.19.10
 
 - Added FAQ entry
-- Added motre content to custom samples for descriptors and connectors
+- Added more content to custom samples for descriptors and connectors
 
 v3.19.8
 
@@ -24,7 +33,7 @@ v3.18.9
 
 v3.18.8
 
-- Updated Restlet Framework Tutorials page: splitted in into several sections
+- Updated Restlet Framework Tutorials page: split into several sections
 - Updated DHC User guide content & structure
 
 v3.18.5
