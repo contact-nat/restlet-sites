@@ -90,7 +90,7 @@ Content-Type: application/json
     <pluginRepository>
         <id>nexus-public</id>
         <name>Nexus Release Repository</name>
-        <url>https://nexus.rest-let.com/nexus/content/repositories/public</url>
+        <url>http://maven.restlet.com</url>
     </pluginRepository>
 </pluginrepositories>
 </project>
