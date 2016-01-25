@@ -268,6 +268,9 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 
         @Override
         protected int beforeHandle(Request request, Response response) {
+            if (request.getResourceRef().getPath().startsWith("/blog")) {
+            return super.beforeHandle(request, response);
+            }            
             // issue #134 : routes all proxied HTTP urls to HTTPS.
             Series<Header> headers = (Series<Header>) request.getAttributes().get(HeaderConstants.ATTRIBUTE_HEADERS);
             if (headers ==  null) {
