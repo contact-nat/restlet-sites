@@ -2,7 +2,7 @@
 
 ## Plans overview
 
-As you subscribe to DHC, you can choose between different base plan levels as defined in our <a href="http://restlet.com/products/apispark/pricing" target="_blank">Pricing page</a>. Each level includes a number of features associated to it. Of course you can switch to a higher or lower plan at any time.
+As you subscribe to DHC, you can choose between different base plan levels as defined in our <a href="https://restlet.com/pricing" target="_blank">Pricing page</a>. Each level includes a number of features associated to it. Of course you can switch to a higher or lower plan at any time.
 
 ![plans overview](images/dhc-plans.jpg "Plans overview")
 
