@@ -55,21 +55,21 @@ Content-Type: application/json
 
 #### 1. Create a pom.xml file with the following content:
 
-<pre><code>
+<pre lang="html"><code>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 >
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.restlet.dhc</groupId>
-  <artifactId>dhc-maven-plugin-test</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>com.example</groupId>
+  <artifactId>my-first-api-test</artifactId>
+  <version>1.2.3</version>
 
  <build>
     <plugins>
       <plugin>
         <groupId>com.restlet.dhc</groupId>
         <artifactId>dhc-maven-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.1</version>
    <executions>
           <execution>
             <phase>test</phase>
@@ -106,13 +106,13 @@ In this example, we added variables and profile.
 
 #### 1. Create a pom.xml file with the following content:
 
-<pre><code>
+<pre lang="html"><code>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sprintapi.dhc</groupId>
-	<artifactId>server-proxy</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>DHC Server Proxy</name>
+	<groupId>com.example</groupId>
+	<artifactId>my-first-api-test</artifactId>
+	<version>1.2.3</version>
+	<name>myProject</name>
 ...
 
      <profiles>
@@ -124,7 +124,7 @@ In this example, we added variables and profile.
                      <plugin>
                          <groupId>com.restlet.dhc</groupId>
                          <artifactId>dhc-maven-plugin</artifactId>
-                         <version>1.0-SNAPSHOT</version>
+                         <version>1.1</version>
                          <executions>
                              <execution>
                                  <phase>integration-test</phase>
