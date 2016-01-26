@@ -47,7 +47,8 @@ Content-Type: application/json
 {
    “event” : [Begin|End]
 }
-</code></pre>
+</code>
+</pre>
 
 # Use cases
 
