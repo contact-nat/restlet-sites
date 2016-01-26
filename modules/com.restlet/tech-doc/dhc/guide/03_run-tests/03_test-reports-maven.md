@@ -40,15 +40,14 @@ Content-Type: application/json
 
 ## Begin/End notifications
 
-<pre lang="html"><code>
+<pre><code>
 POST [url]
 Content-Type: application/json
 …
 {
    “event” : [Begin|End]
 }
-</code>
-</pre>
+</code></pre>
 
 # Use cases
 
