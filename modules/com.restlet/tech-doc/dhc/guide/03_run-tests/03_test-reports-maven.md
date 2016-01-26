@@ -40,7 +40,7 @@ Content-Type: application/json
 
 ## Begin/End notifications
 
-<pre><code>
+<pre lang="html"><code>
 POST [url]
 Content-Type: application/json
 …
