@@ -96,6 +96,7 @@ Content-Type: application/json
 </project>
 </code></pre>
 
+
 >**Note:** Make sure you enter the appropriate version and the appropriate path to the JSON configuration file.
 
 #### 2. Launch > mvn install.
