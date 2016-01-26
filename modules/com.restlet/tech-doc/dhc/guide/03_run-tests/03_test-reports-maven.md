@@ -55,7 +55,7 @@ Content-Type: application/json
 
 #### 1. Create a pom.xml file with the following content:
 
-<pre lang="html"><code>
+<pre><code>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 >
   <modelVersion>4.0.0</modelVersion>
@@ -95,7 +95,6 @@ Content-Type: application/json
 </pluginrepositories>
 </project>
 </code></pre>
-
 
 >**Note:** Make sure you enter the appropriate version and the appropriate path to the JSON configuration file.
 
