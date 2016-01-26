@@ -12,6 +12,12 @@ DHC by Restlet can be used as an online service from <a href="https://dhc.restle
 
 ## DHC by Restlet Chrome application
 
-The tool is then available in your Chrome applications through chrome://apps.
+The tool is also available in your Chrome applications through chrome://apps.
 
 ![DHC Chrome app](images/dhc-chrome-app.jpg "DHC Chrome app")
+
+>**Note:** When installing DHC Chrome app, a confirmation message displays informing you that DHC requires permissions to "Read and change all your data on the websites you visit" and to "Communicate with cooperating websites".
+- Permission to "**Read and change all your data on the websites you visit**"  
+Chrome applications which need access to internet resources must declare it in their manifest. It can be a list of URLs or URL mask e.g. http://*/* allowing access to any URL. Allowing access to any URL is a primary feature of DHC, and the URL mask with wildcards is interpreted by Chrome Store as: This app "can read and change all your data on the websites you visit". Which is true, but in fact DHC does not collect your data.
+- Permission to "**Communicate with cooperating websites**"  
+DHC is available also as a service. This permission allows data exchange between DHC Service and DHC Chrome. This feature is disabled by default.
