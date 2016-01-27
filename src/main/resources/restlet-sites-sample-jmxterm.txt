@@ -1,0 +1,41 @@
+# One line commands
+
+## in order to list all defined virtual hosts (seen as MBean attributes) and operations
+echo "info -d com.restlet.frontend.routing.virtualHosts -b com.restlet.frontend.routing.virtualHosts:type=DynamicMBean" | java -jar ~/scripts/jmxterm.jar -l $PID
+
+## displays some data about the restlet.org domain, listening on port 9000 (whether if the whole domain is redirected, etc)
+echo "run -d com.restlet.frontend.routing.virtualHosts -b com.restlet.frontend.routing.virtualHosts:type=DynamicMBean describeVirtualHostApplication restlet.org 9000" | java -jar ~/scripts/jmxterm.jar -l $PID
+
+## in order to list all routes of a the restlet.org domain, listening on port 9000
+echo "run -d com.restlet.frontend.routing.virtualHosts -b com.restlet.frontend.routing.virtualHosts:type=DynamicMBean listRoutes restlet.org 9000" | java -jar ~/scripts/jmxterm.jar -l $PID
+
+## refresh the configuration
+echo "run -d com.restlet.frontend.routing.virtualHosts -b com.restlet.frontend.routing.virtualHosts:type=DynamicMBean refreshHosts" | java -jar ~/scripts/jmxterm.jar -l $PID
+
+
+# Jmxterm console
+## Run the following command to open a jmxterm console
+java -jar ~/scripts/jmxterm.jar
+
+## then you can enter the following commands one by one
+
+## list all running JVMs
+$>jvms
+
+## open a connection the the given running JVM
+$>open <PID>
+
+## list all defined domains
+$>domains
+
+## connect to a specific domain
+$>domain com.restlet.frontend.routing.virtualHosts
+
+## list all defined beans on the current domain
+$>beans
+
+## connect to a specific MBean of the current domain
+$>bean com.restlet.frontend.routing.virtualHosts:type=DynamicMBean
+
+## list all data about this MBean
+$>info

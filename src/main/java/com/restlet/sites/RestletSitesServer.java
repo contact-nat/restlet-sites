@@ -15,6 +15,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
 
+import static java.lang.String.format;
+
 class RestletSitesServer {
 
     /**
@@ -28,6 +30,14 @@ class RestletSitesServer {
         for (int i = 0; i < args.length; i++) {
             String argument = args[i];
             switch (argument) {
+                case "-h":
+                    printHelp();
+                    System.exit(0);
+                    break;
+                case "--help":
+                    printHelp();
+                    System.exit(0);
+                    break;
                 case "-v":
                     vHostsConfigurationRootPath = checkVHostsConfigurationPath(args[++i]);
                     break;
@@ -40,11 +50,23 @@ class RestletSitesServer {
                 case "--global-configuration":
                     globalConfigurationPath = checkGlobalConfigurationPath(args[++i]);
                     break;
-                case "--display-default-configuration":
-                    displayGlobalPropertiesFile();
+                case "--display-global-default-configuration":
+                    displayDefaultGlobalPropertiesFile();
                     break;
                 case "-dg":
-                    displayGlobalPropertiesFile();
+                    displayDefaultGlobalPropertiesFile();
+                    break;
+                case "--display-sample-host-configuration":
+                    displaySampleHostPropertiesFile();
+                    break;
+                case "-s":
+                    displaySampleHostPropertiesFile();
+                    break;
+                case "--display-sample-jmxterm-commands":
+                    displaySampleJmxCommands();
+                    break;
+                case "-j":
+                    displaySampleJmxCommands();
                     break;
                 default:
                     displayErrorAndQuit(String.format("This argument is unknown %s", argument));
@@ -58,18 +80,30 @@ class RestletSitesServer {
         new WebComponent(Optional.ofNullable(globalConfigurationPath), vHostsConfigurationRootPath).start();
     }
 
-    private static void displayGlobalPropertiesFile() {
-        try (InputStream is = RestletSitesServer.class.getResourceAsStream("/restlet-sites-default-global.properties")) {
+    private static void displayDefaultGlobalPropertiesFile() {
+        displaySampleFile("restlet-sites-default-global.properties.txt", "global default properties");
+    }
+
+    private static void displaySampleHostPropertiesFile() {
+        displaySampleFile("restlet-sites-sample-host.properties.txt", "sample host properties");
+    }
+    private static void displaySampleJmxCommands() {
+        displaySampleFile("restlet-sites-sample-jmxterm.txt", "sample jmxterm commands");
+    }
+
+    private static void displaySampleFile(String sampleFile, String title) {
+        try (InputStream is = RestletSitesServer.class.getResourceAsStream(format("/%s", sampleFile))) {
             if (is == null) {
-                System.out.println("Cannot display global default properties, as it seems that the file `restlet-sites-default-global.properties` is missing from the packaged jar.");
+                System.out.println(format("Cannot display %s, as it seems that the file `%s` is missing from the packaged jar.", title, sampleFile));
                 System.exit(0);
             }
             new InputRepresentation(is).write(System.out);
             System.exit(0);
         } catch (IOException ioe) {
-            System.err.println("Can't read `restlet-sites-default-global.properties` (taken from packaged jar).");
+            System.err.println(format("Can't read `%s` (taken from packaged jar).", sampleFile));
             System.exit(1);
         }
+
     }
 
     private static void displayErrorAndQuit(String message) {
@@ -97,11 +131,14 @@ class RestletSitesServer {
     private static void printHelp() {
         System.out.println("Serves a set of Web resources described in properties file.");
         System.out.println();
-        System.out.println("Command line: (--virtual-hosts-configuration|-v) directory [(--global-configuration|-g) file] [(--display-default-configuration|-dg)]");
+        System.out.println("Command line: [--help|-h] (--virtual-hosts-configuration|-v) directory [(--global-configuration|-g) file] [(--display-default-configuration|-dg)]");
         System.out.println();
-        System.out.println("  -v, --virtual-hosts-configuration   : mandatory directory where to find descriptors of virtual hosts");
-        System.out.println("  -g, --global-configuration          : optional path to the global properties file");
-        System.out.println("  -dg, --display-default-configuration: when set, displays the default global configuration file");
+        System.out.println("  -h,  --help                                : displays this help");
+        System.out.println("  -v,  --virtual-hosts-configuration         : mandatory directory where to find descriptors of virtual hosts");
+        System.out.println("  -g,  --global-configuration                : optional path to the global properties file");
+        System.out.println("  -dg, --display-global-default-configuration: displays the default global configuration file");
+        System.out.println("  -s,  --display-sample-host-configuration   : displays a sample host configuration file");
+        System.out.println("  -j,  --display-sample-jmxterm-commands         : displays sample jmxterm commands");
         System.out.println();
         System.out.println("Sample command line parameters:");
         System.out.println("  reads the virtual hosts configuration files from '/etc/web-sites/configuration', and global properties from '/etc/web-sites/configuration/global.properties'");

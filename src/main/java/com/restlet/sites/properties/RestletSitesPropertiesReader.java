@@ -4,7 +4,8 @@
 
 package com.restlet.sites.properties;
 
-import com.restlet.sites.web.BaseApplication;
+import com.restlet.sites.filter.CacheInstruction;
+import com.restlet.sites.filter.DirectoryInstruction;
 import com.restlet.sites.web.RedirectedVirtualHost;
 import com.restlet.sites.web.RestletSiteVirtualHost;
 import org.restlet.Context;
@@ -18,6 +19,7 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.logging.Logger;
 
+import static com.restlet.sites.filter.HttpRedirectFilter.HttpMode;
 import static com.restlet.sites.web.BaseApplication.RedirectionMode;
 import static java.lang.String.format;
 import static org.restlet.engine.util.StringUtils.isNullOrEmpty;
@@ -32,9 +34,10 @@ public class RestletSitesPropertiesReader {
     private RestletSiteVirtualHost vHost;
     private RedirectionMode currentRouterMode;
     private RedirectionMode currentVirtualHostMode;
+    private HttpMode currentHttpMode;
 
-    private BaseApplication.CacheInstruction cacheInstruction;
-    private BaseApplication.DirectoryInstruction directoryInstruction;
+    private CacheInstruction currentCacheInstruction;
+    private DirectoryInstruction currentDirectoryInstruction;
 
     private Locus locus;
 
@@ -51,8 +54,8 @@ public class RestletSitesPropertiesReader {
 
         currentRouterMode = RedirectionMode.CLIENT_SEE_OTHER;
         currentVirtualHostMode = RedirectionMode.CLIENT_SEE_OTHER;
-        cacheInstruction = new BaseApplication.CacheInstruction();
-        directoryInstruction = new BaseApplication.DirectoryInstruction();
+        currentCacheInstruction = new CacheInstruction();
+        currentDirectoryInstruction = new DirectoryInstruction();
         locus = Locus.VIRTUAL_HOSTS_SYNONYMS;
 
         int lineNumber = 0;
@@ -93,15 +96,11 @@ public class RestletSitesPropertiesReader {
                         checkVirtualHost(lineNumber, locus);
                         vHost.setHostPort(parameter);
                         break;
-                    case "setHttpsRedirect":
-                        checkVirtualHost(lineNumber, locus);
-                        vHost.setHostPort(parameter);
-                        break;
-                    case "login":
+                    case "setLogin":
                         checkVirtualHost(lineNumber, locus);
                         vHost.application.setLogin(parameter);
                         break;
-                    case "password":
+                    case "setPassword":
                         checkVirtualHost(lineNumber, locus);
                         vHost.application.setPassword(parameter);
                         break;
@@ -113,40 +112,48 @@ public class RestletSitesPropertiesReader {
                         checkVirtualHost(lineNumber, locus);
                         mapExtensionsToMediaType(parameter);
                         break;
-                    case "setHttpMode":
-                        checkVirtualHost(lineNumber, locus);
-                        vHost.application.setHttpMode(BaseApplication.HttpMode.valueOf(parameter));
-                        break;
 
                     case "setMode":
                         checkVirtualHost(lineNumber, locus);
                         // Update the current redirection mode
                         currentRouterMode = RedirectionMode.valueOf(parameter);
-                        cacheInstruction = new BaseApplication.CacheInstruction();
-                        directoryInstruction = new BaseApplication.DirectoryInstruction();
+                        currentCacheInstruction = new CacheInstruction();
+                        currentDirectoryInstruction = new DirectoryInstruction();
                         break;
-                    case "cacheExpires":
+                    case "setHttpMode":
                         checkVirtualHost(lineNumber, locus);
-                        cacheInstruction.expires = parameter;
+                        currentHttpMode = HttpMode.valueOf(parameter);
                         break;
-                    case "cacheControl":
+                    case "withCacheExpires":
                         checkVirtualHost(lineNumber, locus);
-                        cacheInstruction.cacheControl = parameter;
+                        currentCacheInstruction = currentCacheInstruction.withExpires(parameter);
                         break;
-                    case "directoryIndex":
+                    case "withCacheControl":
                         checkVirtualHost(lineNumber, locus);
-                        directoryInstruction.index = parameter;
+                        currentCacheInstruction = currentCacheInstruction.withCacheControl(parameter);
                         break;
-                    case "directoryListingAllowed":
+                    case "withDirectoryIndex":
                         checkVirtualHost(lineNumber, locus);
-                        directoryInstruction.listingAllowed = Boolean.parseBoolean(parameter);
+                        currentDirectoryInstruction = currentDirectoryInstruction.withIndex(parameter);
                         break;
-                    case "directoryNegotiatingContent":
+                    case "withDirectoryListingAllowed":
                         checkVirtualHost(lineNumber, locus);
-                        directoryInstruction.negotiatingContent = Boolean.parseBoolean(parameter);
+                        currentDirectoryInstruction = currentDirectoryInstruction.withListingAllowed(Boolean.parseBoolean(parameter));
+                        break;
+                    case "withDirectoryNegotiatingContent":
+                        checkVirtualHost(lineNumber, locus);
+                        currentDirectoryInstruction = currentDirectoryInstruction.withNegotiatingContent(Boolean.parseBoolean(parameter));
+                        break;
+                    case "withTryFiles":
+                        checkVirtualHost(lineNumber, locus);
+                        currentDirectoryInstruction = currentDirectoryInstruction.withTryFiles(parameter);
                         break;
                     default:
-                        handleInstruction(action, parameter);
+                        if (locus == Locus.VIRTUAL_HOSTS_SYNONYMS) {
+                            hostSynonyms.put(action, parameter);
+                        } else {
+                            handleRoute(action, parameter);
+                        }
                         break;
                 }
             }
@@ -161,24 +168,17 @@ public class RestletSitesPropertiesReader {
         }
     }
 
-    private void handleInstruction(String action,
-                                   String parameter) {
+    private void handleRoute(String contextPath, String parameter) {
         switch (locus) {
-            case VIRTUAL_HOSTS_SYNONYMS:
-                hostSynonyms.put(action, parameter);
-                break;
             case VIRTUAL_HOSTS_REDIRECTIONS:
-                vHosts.put(action, new RedirectedVirtualHost(context, action, optionalGlobalPort, parameter, currentVirtualHostMode.redirectionMode));
+                vHosts.put(contextPath, new RedirectedVirtualHost(context, contextPath, optionalGlobalPort, parameter, currentVirtualHostMode.redirectionMode));
                 break;
             case VIRTUAL_HOST:
-                BaseApplication.CacheInstruction ci = new BaseApplication.CacheInstruction();
-                ci.expires = cacheInstruction.expires;
-                ci.cacheControl = cacheInstruction.cacheControl;
-                BaseApplication.DirectoryInstruction di = new BaseApplication.DirectoryInstruction();
-                di.negotiatingContent = directoryInstruction.negotiatingContent;
-                di.index = directoryInstruction.index;
-                di.listingAllowed = directoryInstruction.listingAllowed;
-                vHost.application.instructions.add(new BaseApplication.HostInstruction(currentRouterMode, action, parameter, ci, di));
+                if (currentRouterMode == RedirectionMode.DIRECTORY || currentRouterMode == RedirectionMode.ROUTER) {
+                    vHost.application.addDirectory(currentHttpMode, contextPath, parameter, currentCacheInstruction, currentDirectoryInstruction);
+                } else {
+                    vHost.application.addRedirection(currentHttpMode, currentRouterMode, contextPath, parameter);
+                }
                 break;
         }
     }

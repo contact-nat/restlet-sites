@@ -1,0 +1,129 @@
+# use setHost <domain> instruction to define a new domain and its properties
+# use setMode <mode> instruction to set the redirection mode
+#setMode CLIENT_PERMANENT client side permanent redirection
+#setMode CLIENT_FOUND client side redirection
+#setMode CLIENT_SEE_OTHER client side redirection
+#setMode CLIENT_TEMPORARY client side temporary redirection
+#setMode REVERSE_PROXY server side redirection like a transparent proxy
+#setMode DIRECTORY serves static files from a directory
+
+# One host "p2.restlet.com", served from port 8182
+setHost p2.restlet.com
+  setHostPort 8182
+
+  setMode DIRECTORY
+    # here are the default parameters of a server "directory".
+    # when requesting a local directory, the server looks for an index file.
+    # as content negotiation is activated, the server looks for all files starting by "index.",
+    # and guess the one that meets at best the client's preferences
+    withDirectoryIndex index
+    withDirectoryListingAllowed false
+    withDirectoryNegotiatingContent true
+    /default               /tmp/p2
+
+    # when requesting a local directory, the server looks for a file called "index"
+    # in case no file "index" exists (or sub-files such as "index.html", "index.txt", because of content negotiation)
+    # then the listing of the directory is displayed
+    withDirectoryListingAllowed true
+    /listing	/tmp/p2
+
+    # when requesting a local directory, the server looks for a file called "index.html"
+    # in case no file "index" exists (or sub-files such as "index.html", "index.txt", because of content negotiation)
+    # then a 404 response is returned
+    withDirectoryListingAllowed false
+    /nolisting	/tmp/p2
+
+    # when requesting a local directory, the server looks for a file called "index.html"
+    # in case the file "index.html" does not exist
+    # then a 404 response is returned
+    withDirectoryIndex index.html
+    withDirectoryNegotiatingContent false
+    /nocontentnegotiation	/tmp/p2
+
+# One host "restlet.com", served from port 9000
+setHost restlet.com
+    setHostPort 9000
+
+    # add a HTTP_BASIC authentcation filter base on the given login and a password
+    setLogin    restlet
+    setPassword restlet2016
+
+    # serves a set of routes in the reverse proxy mode
+    setMode REVERSE_PROXY
+        # only /reverse-proxy/test1 is redirected to http://maven.tboi.com:8182
+        /reverse-proxy/test1                    http://maven.tboi.com:8182
+        # /reverse-proxy/test2 and all sub-uris are redirected to http://maven.tboi.com:8182
+        /reverse-proxy/test2*                   http://maven.tboi.com:8182
+        # /reverse-proxy/test3/path/to/resource is redirected to http://maven.tboi.com:8182/path/to/resource
+        /reverse-proxy/test3                    http://maven.tboi.com:9000*
+
+        # ensure that the client requests to /reverse-proxy/test4 and /reverse-proxy/test5 will be done using HTTP (even behind a proxy)
+        setHttpMode REDIRECT_TO_HTTP
+        /reverse-proxy/test4                    http://maven.tboi.com:9000*
+        /reverse-proxy/test5                    http://maven.tboi.com:9000*
+
+    # when requesting this set of routes (and sub-uris), the client is asked to go http://maven.tboi.com:8182/*. Redirection is "permanent" (status 301)
+    # Other supported values: CLIENT_FOUND, CLIENT_SEE_OTHER, CLIENT_TEMPORARY
+    # ensure that the client requests to /permanent/maven will be done using HTTPS (even behind a proxy)
+    setMode CLIENT_PERMANENT
+        setHttpMode REDIRECT_TO_HTTPS
+        /permanent/maven                     http://maven.tboi.com:8182{rr}
+
+    # when requesting this directory, ensure that the client requests will be done using HTTPS (even behind a proxy)
+    setMode DIRECTORY
+        setHttpMode REDIRECT_TO_HTTPS
+        /onlyHttps                     /tmp/httpsOnly
+
+    # serves static content from a local path
+    setMode DIRECTORY
+        # every HTTP response will contain an "expires" header whose value is the current request date + 24h
+        # supported units: y (year), m (month), d (day), h (hour)
+        withCacheExpires 24h
+        # simply set the cache-control header.
+        withCacheControl private
+
+        # nb: the two cache directives apply to both routes
+        /static/js/expires24h               /path/to/static/1/
+        /static/css/expires24h              /path/to/static/2/
+
+        # every HTTP response will contain an "expires" header whose value is the modification date of the file + 24h
+        # it contains also the cache control directive defined above
+        # call setMode DIRECTORY again to reset entirely the configuration
+        withCacheExpires modified24h
+        /static/js/modified24h               /path/to/static/1/
+
+    setMode DIRECTORY
+        withCacheExpires 1y
+        withCacheControl private, max-age=100
+        /static/js                              /home/path/to/js
+
+        # the content will expire at 9 am, or at 9 am of the day after, in case the computed date is before the current date.
+        # nb: the cache-control directive previously set still applies
+        withCacheExpires @09:00:00
+        /static/nine_hour	/home/path/to/static/9am
+
+        # every HTTP response will contain an "expires" header valuated to the given date
+        withCacheExpires @2016-12-13T10:00:00.123Z
+        /	/home/path/to/home
+
+setHost maven.restlet.com
+    setHostPort 8182
+
+    setFileClient strict
+    # add some media type extensions (useful for content negotiation)
+    mapExtensions application/sha1 sha1
+    mapExtensions application/md5 MD5 md5
+
+    setMode DIRECTORY
+        # allows to navigate the directory from the browser
+        withDirectoryListingAllowed true
+        /                                   /home/path/to/maven
+
+setHost angulard.restlet.com
+    setHostPort 8182
+
+    setMode DIRECTORY
+        # "Try" mode used for example for single page applications
+        # when not found, try to find file /home/path/to/angular/index (or sub-files such as "index.html", "index.txt", because of content negotiation)
+        withTryFiles /index
+        /                                   /home/path/to/angular

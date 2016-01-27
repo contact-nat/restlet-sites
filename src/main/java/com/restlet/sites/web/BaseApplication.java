@@ -6,6 +6,8 @@ package com.restlet.sites.web;
 
 import com.restlet.sites.connector.StrictFileClientHelper;
 import com.restlet.sites.filter.CacheFilter;
+import com.restlet.sites.filter.CacheInstruction;
+import com.restlet.sites.filter.DirectoryInstruction;
 import com.restlet.sites.filter.HttpRedirectFilter;
 import org.restlet.Application;
 import org.restlet.Context;
@@ -16,15 +18,19 @@ import org.restlet.data.MediaType;
 import org.restlet.data.Protocol;
 import org.restlet.engine.application.Encoder;
 import org.restlet.engine.application.MetadataExtension;
+import org.restlet.engine.log.LogFilter;
 import org.restlet.engine.util.StringUtils;
 import org.restlet.resource.Directory;
 import org.restlet.routing.Redirector;
 import org.restlet.routing.Router;
 import org.restlet.routing.Template;
-import org.restlet.routing.TemplateRoute;
 import org.restlet.security.ChallengeAuthenticator;
 import org.restlet.security.MapVerifier;
+import org.restlet.service.LogService;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +46,7 @@ public class BaseApplication extends Application {
 
     private final Router rootRouter;
     public List<MetadataExtension> extensions = new ArrayList<>();
-    public List<HostInstruction> instructions = new ArrayList<>();
-    private HttpMode httpMode;
+
     private String login;
     private String password;
     private boolean strictFileClient;
@@ -72,17 +77,6 @@ public class BaseApplication extends Application {
         return this;
     }
 
-    public BaseApplication setInstructions(List<HostInstruction> instructions) {
-        this.instructions = instructions;
-        return this;
-    }
-
-    public BaseApplication setHttpMode(HttpMode httpMode) {
-        this.httpMode = httpMode;
-        return this;
-    }
-
-
     public BaseApplication setLogin(String login) {
         this.login = login;
         return this;
@@ -101,7 +95,6 @@ public class BaseApplication extends Application {
     @Override
     public Restlet createInboundRoot() {
         rootRouter.setContext(getContext());
-        instructions.forEach(this::handleRoute);
 
         if (strictFileClient) {
             StrictFileClientHelper.setStrictClientDispatcher(getContext());
@@ -110,9 +103,6 @@ public class BaseApplication extends Application {
         // Add the filters
         RestletChain restletChain = new RestletChain();
 
-        if (httpMode == HttpMode.REDIRECT_TO_HTTPS) {
-            return new HttpRedirectFilter(getContext());
-        }
         restletChain.add(new Encoder(getContext(), false, true, getEncoderService()));
 
         if (!StringUtils.isNullOrEmpty(login) && !StringUtils.isNullOrEmpty(password)) {
@@ -128,56 +118,75 @@ public class BaseApplication extends Application {
         return restletChain.getFirst();
     }
 
-    private void handleRoute(HostInstruction hostInstruction) {
-        if (hostInstruction.mode == RedirectionMode.ROUTER) {
-            Directory dir = new Directory(getContext(), "file://" + hostInstruction.target);
+    public void addRedirection(HttpRedirectFilter.HttpMode httpMode, RedirectionMode mode, String contextPath, String target) {
+        RestletChain chain = new RestletChain();
 
-            if (hostInstruction.directoryInstruction != null) {
-                DirectoryInstruction instruction = hostInstruction.directoryInstruction;
-                if (!StringUtils.isNullOrEmpty(instruction.index)) {
-                    dir.setIndexName(instruction.index);
-                }
-                dir.setListingAllowed(instruction.listingAllowed);
-                dir.setNegotiatingContent(instruction.negotiatingContent);
-            }
+        if (httpMode != null) {
+            chain.add(new HttpRedirectFilter(getContext(), httpMode));
+        }
 
-            if (hostInstruction.cacheInstruction != null
-                    && (
-                    !StringUtils.isNullOrEmpty(hostInstruction.cacheInstruction.expires)
-                            || StringUtils.isNullOrEmpty(hostInstruction.cacheInstruction.cacheControl)
-            )) {
-                CacheFilter cacheFilter = new CacheFilter(getContext(), dir, hostInstruction.cacheInstruction);
-                rootRouter.attach(hostInstruction.source, cacheFilter);
-            } else {
-                rootRouter.attach(hostInstruction.source, dir);
-            }
+        chain.add(redirect(target, mode.redirectionMode));
 
-            getLogger().fine(format("  attach directory: from %s to %s", dir.getRootRef().toString(), hostInstruction.source));
-        } else if (!hostInstruction.target.contains("*")) {
-            redirect(rootRouter, hostInstruction.source, hostInstruction.target, hostInstruction.mode.redirectionMode);
+        if (contextPath.endsWith("*")) {
+            rootRouter.attach(contextPath.replace("*", ""), chain.getFirst()).setMatchingMode(Template.MODE_STARTS_WITH);
+        } else if (target.endsWith("*")) {
+            rootRouter.attach(contextPath, chain.getFirst()).setMatchingMode(Template.MODE_STARTS_WITH);
+        } else if (target.endsWith("{rr}")) {
+            rootRouter.attach(contextPath, chain.getFirst()).setMatchingMode(Template.MODE_STARTS_WITH);
         } else {
-            redirect(rootRouter, hostInstruction.source, hostInstruction.target, hostInstruction.mode.redirectionMode).setMatchingMode(Template.MODE_STARTS_WITH);
+            rootRouter.attach(contextPath, chain.getFirst());
         }
     }
 
-    /**
-     * Helps to define redirections assuming that the router defines route by
-     * using the {@link Template#MODE_STARTS_WITH} mode.
-     *
-     * @param router The router where to define the redirection.
-     * @param from   The source template.
-     * @param to     The target template.
-     * @param mode   The redirection mode (cf {@link Redirector}.
-     * @return The defined route.
-     */
-    private TemplateRoute redirect(Router router, String from, String to, int mode) {
-        Redirector redirector = new Redirector(getContext(), to, mode);
-        redirector.setHeadersCleaning(true);
-        TemplateRoute route = router.attach(from, redirector);
-        if (to.contains("{rr}")) {
-            route.setMatchingMode(Template.MODE_STARTS_WITH);
+    public void addDirectory(HttpRedirectFilter.HttpMode httpMode, String contextPath, String filePath, CacheInstruction cacheInstruction, DirectoryInstruction directoryInstruction) {
+        RestletChain chain = new RestletChain();
+
+        if (httpMode != null) {
+            chain.add(new HttpRedirectFilter(getContext(), httpMode));
         }
-        return route;
+        if (cacheInstruction != null
+                && (
+                !StringUtils.isNullOrEmpty(cacheInstruction.getExpires())
+                        || StringUtils.isNullOrEmpty(cacheInstruction.getCacheControl())
+        )) {
+            chain.add(new CacheFilter(getContext(), cacheInstruction));
+        }
+
+        Path path = Paths.get(filePath);
+        if (!Files.isDirectory(path)) {
+            getLogger().warning(format("'%s' is not a valid directory", filePath));
+        }
+
+        Directory directory;
+        if (directoryInstruction != null
+                && directoryInstruction.getTryFiles() != null
+                && !directoryInstruction.getTryFiles().isEmpty()) {
+            directory = new TryFilesDirectory(getContext(), "file://" + filePath, directoryInstruction.getTryFiles());
+        } else {
+            directory = new Directory(getContext(), "file://" + filePath);
+        }
+
+        if (directoryInstruction != null) {
+            directory.setIndexName(directoryInstruction.getIndex());
+            directory.setListingAllowed(directoryInstruction.isListingAllowed());
+            directory.setNegotiatingContent(directoryInstruction.isNegotiatingContent());
+        }
+        chain.add(directory);
+
+        rootRouter.attach(contextPath, chain.getFirst());
+    }
+
+    private Redirector redirect(String to, int mode) {
+        Redirector redirector;
+
+        if (to.endsWith("*")) {
+            redirector = new Redirector(getContext(), to.replace("*", "{rr}"), mode);
+        } else {
+            redirector = new Redirector(getContext(), to, mode);
+        }
+        redirector.setHeadersCleaning(true);
+
+        return redirector;
     }
 
     public enum RedirectionMode {
@@ -187,8 +196,8 @@ public class BaseApplication extends Application {
         SEE_OTHER(Redirector.MODE_CLIENT_SEE_OTHER),
         CLIENT_TEMPORARY(Redirector.MODE_CLIENT_TEMPORARY),
         REVERSE_PROXY(Redirector.MODE_SERVER_OUTBOUND),
+        DIRECTORY(-1),
         ROUTER(-1);
-
 
         public final int redirectionMode;
 
@@ -197,34 +206,13 @@ public class BaseApplication extends Application {
         }
     }
 
-    public enum HttpMode {
-        REDIRECT_TO_HTTPS
-    }
+    @Override
+    public Restlet createOutboundRoot() {
+        RestletChain chain = new RestletChain();
 
-    public static class CacheInstruction {
-        public String expires;
-        public String cacheControl;
-    }
+        chain.add(new LogFilter(getContext(), new LogService()));
+        chain.add(super.createOutboundRoot());
 
-    public static class DirectoryInstruction {
-        public String index = null;
-        public boolean listingAllowed = false;
-        public boolean negotiatingContent = true;
-    }
-
-    public static class HostInstruction {
-        public final BaseApplication.RedirectionMode mode;
-        public final String source;
-        public final String target;
-        public final CacheInstruction cacheInstruction;
-        public final DirectoryInstruction directoryInstruction;
-
-        public HostInstruction(BaseApplication.RedirectionMode mode, String source, String target, CacheInstruction cacheInstruction, DirectoryInstruction directoryInstruction) {
-            this.mode = mode;
-            this.source = source;
-            this.target = target;
-            this.cacheInstruction = cacheInstruction;
-            this.directoryInstruction = directoryInstruction;
-        }
+        return chain.getFirst();
     }
 }

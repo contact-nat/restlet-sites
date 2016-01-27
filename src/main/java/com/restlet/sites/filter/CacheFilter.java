@@ -4,13 +4,12 @@
 
 package com.restlet.sites.filter;
 
-import com.restlet.sites.web.BaseApplication;
 import org.restlet.Context;
 import org.restlet.Request;
 import org.restlet.Response;
-import org.restlet.Restlet;
 import org.restlet.data.CacheDirective;
 import org.restlet.data.Status;
+import org.restlet.engine.header.CacheDirectiveReader;
 import org.restlet.engine.util.DateUtils;
 import org.restlet.engine.util.StringUtils;
 import org.restlet.routing.Filter;
@@ -29,23 +28,25 @@ import java.util.regex.Pattern;
  */
 
 public class CacheFilter extends Filter {
-
+    /**
+     * follow the ngninx syntax
+     */
     private static final Pattern expiresModificationDatePattern = Pattern.compile("modified([\\+|-]?[0-9]+)([ymdh]?)");
     private static final Pattern expiresCurrentDatePattern = Pattern.compile("([\\+|-]?[0-9]+)([ymdh]?)");
 
     private final Consumer<Response> setExpirationDateRule;
-    private final CacheDirective cacheDirective;
+    private final Collection<CacheDirective> cacheDirectives;
 
     /**
      * Constructor.
      *
      * @param context Context.
-     * @param next    The next Restlet to transmit the request to.
      */
-    public CacheFilter(Context context, Restlet next, BaseApplication.CacheInstruction cacheInstruction) {
-        super(context, next);
-        this.setExpirationDateRule = getExpiresRule(cacheInstruction.expires);
-        this.cacheDirective = getCacheDirective(cacheInstruction.cacheControl);
+    public CacheFilter(Context context, CacheInstruction cacheInstruction) {
+        super(context);
+        this.setExpirationDateRule = getExpiresRule(cacheInstruction.getExpires());
+        this.cacheDirectives = getCacheDirectives(cacheInstruction.getCacheControl());
+
     }
 
     @Override
@@ -64,8 +65,8 @@ public class CacheFilter extends Filter {
 
             return;
         }
-        if (cacheDirective != null) {
-            response.getCacheDirectives().add(cacheDirective);
+        if (cacheDirectives != null) {
+            response.getCacheDirectives().addAll(cacheDirectives);
         }
         if (setExpirationDateRule != null) {
             // apply the set expiration date rule
@@ -73,55 +74,14 @@ public class CacheFilter extends Filter {
         }
     }
 
-    private static CacheDirective getCacheDirective(String cacheControlInstruction) {
+    private static List<CacheDirective> getCacheDirectives(String cacheControlInstruction) {
+        List<CacheDirective> cacheDirectives = new ArrayList<>();
         if (StringUtils.isNullOrEmpty(cacheControlInstruction)) {
-            return null;
+            return cacheDirectives;
         }
-        if ("public".equals(cacheControlInstruction)) {
-            return CacheDirective.publicInfo();
-        } else if ("no-transform".equals(cacheControlInstruction)) {
-            return CacheDirective.noTransform();
-        } else if ("only-if-cached".equals(cacheControlInstruction)) {
-            return CacheDirective.onlyIfCached();
-        } else if ("must-revalidate".equals(cacheControlInstruction)) {
-            return CacheDirective.mustRevalidate();
-        } else if ("proxy-revalidate".equals(cacheControlInstruction)) {
-            return CacheDirective.proxyMustRevalidate();
-        } else if (cacheControlInstruction.startsWith("private")) {
-            List<String> fields = getCacheControlParameters("private", cacheControlInstruction);
-            return CacheDirective.privateInfo(fields);
-        } else if (cacheControlInstruction.startsWith("max-age")) {
-            List<String> fields = getCacheControlParameters("max-age", cacheControlInstruction);
-            if (fields != null && !fields.isEmpty()) {
-                return CacheDirective.maxAge(Integer.parseInt(fields.get(0)));
-            }
-        } else if (cacheControlInstruction.startsWith("max-stale")) {
-            List<String> fields = getCacheControlParameters("max-stale", cacheControlInstruction);
-            if (fields != null && !fields.isEmpty()) {
-                return CacheDirective.maxStale(Integer.parseInt(fields.get(0)));
-            }
-            return CacheDirective.maxStale();
-        } else if (cacheControlInstruction.startsWith("min-fresh")) {
-            List<String> fields = getCacheControlParameters("min-fresh", cacheControlInstruction);
-            if (fields != null && !fields.isEmpty()) {
-                return CacheDirective.minFresh(Integer.parseInt(fields.get(0)));
-            }
-        } else if (cacheControlInstruction.startsWith("s-maxage")) {
-            List<String> fields = getCacheControlParameters("s-maxage", cacheControlInstruction);
-            if (fields != null && !fields.isEmpty()) {
-                return CacheDirective.sharedMaxAge(Integer.parseInt(fields.get(0)));
-            }
-        }
-        return null;
-    }
+        new CacheDirectiveReader(cacheControlInstruction).addValues(cacheDirectives);
 
-    private static List<String> getCacheControlParameters(String cacheDirective, String cacheControlInstruction) {
-        List<String> fields = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer(cacheControlInstruction.substring(cacheDirective.length()));
-        while (st.hasMoreTokens()) {
-            fields.add(st.nextToken().trim());
-        }
-        return fields;
+        return cacheDirectives;
     }
 
     private Consumer<Response> getExpiresRule(String expiresInstruction) {
@@ -132,7 +92,7 @@ public class CacheFilter extends Filter {
         if (expiresInstruction.startsWith("@")) {
             // first case: the expiration date is static
             try {
-                Date date = DateUtils.parse(expiresInstruction.substring(1));
+                Date date = DateUtils.parse(expiresInstruction.substring(1), DateUtils.FORMAT_ISO_8601);
                 if (date != null) {
                     return getSetExpirationDateRule(date);
                 }
@@ -234,7 +194,7 @@ public class CacheFilter extends Filter {
         };
     }
 
-    private static Map<String, Integer> expiresDateUnits;
+    private final static Map<String, Integer> expiresDateUnits;
 
     static {
         expiresDateUnits = new HashMap<>();

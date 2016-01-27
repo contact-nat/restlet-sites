@@ -55,6 +55,7 @@ public class ServerConnectorHelper {
             newPorts.stream()
                     .forEach(port -> addNewServer(webComponent, port, newConnectorProperties));
         } else {
+            // the connector properties have not been updated: let's keep the running the servers that are necessary
             Set<Integer> newPorts = extractAllPorts(optionalNewGlobalPort, newVirtualHosts);
 
             // remove the useless connectors
@@ -108,6 +109,9 @@ public class ServerConnectorHelper {
         return new PropertiesWrapper(connectorProperties);
     }
 
+    /**
+     * list all distinct ports used by the given virtual hosts, plus the optional global port.
+     */
     private static Set<Integer> extractAllPorts(Optional<Integer> optionalGlobalPort, Collection<VirtualHost> virtualHosts) {
         Set<Integer> ports = virtualHosts.stream()
                 .map(vh -> Integer.parseInt(vh.getHostPort()))
