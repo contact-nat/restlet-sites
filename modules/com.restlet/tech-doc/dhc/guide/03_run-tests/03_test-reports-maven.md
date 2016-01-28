@@ -55,44 +55,43 @@ Content-Type: application/json
 
 Create a pom.xml file with the following content:
 
-<pre lang="html"><code>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
->
+<pre lang="xml"><code>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
   <artifactId>my-first-api-test</artifactId>
   <version>1.2.3</version>
 
- <build>
-    <plugins>
-      <plugin>
-        <groupId>com.restlet.dhc</groupId>
-        <artifactId>dhc-maven-plugin</artifactId>
-        <version>1.1</version>
-   <executions>
-          <execution>
-            <phase>test</phase>
+  <build>
+     <plugins>
+       <plugin>
+         <groupId>com.restlet.dhc</groupId>
+         <artifactId>dhc-maven-plugin</artifactId>
+         <version>1.1</version>
+    <executions>
+           <execution>
+             <phase>test</phase>
 
-            <goals>
-              <goal>test</goal>
-            </goals>
-<configuration>
-		<file>/home/filip/dhc-test-1.json</file>
-</configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+             <goals>
+               <goal>test</goal>
+             </goals>
+ <configuration>
+ 		<file>/home/filip/dhc-test-1.json</file>
+ </configuration>
+           </execution>
+         </executions>
+       </plugin>
+     </plugins>
+   </build>
 
-<pluginRepositories>
-    <pluginRepository>
-        <id>nexus-public</id>
-        <name>Nexus Release Repository</name>
-        <url>http://maven.restlet.com</url>
-    </pluginRepository>
-</pluginrepositories>
+   <pluginRepositories>
+       <pluginRepository>
+           <id>nexus-public</id>
+           <name>Nexus Release Repository</name>
+           <url>http://maven.restlet.com</url>
+       </pluginRepository>
+   </pluginrepositories>
 </project>
 </code></pre>
 
