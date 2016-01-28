@@ -1,3 +1,8 @@
+3.23.2
+- updated link in DHC user guide
+- Escaped code in DHC user guide to fix display
+- Modified version number in DHC maven plugin page
+
 3.23.1
 
 - DHC user guide : Updated "Get started" and "Run tests" sections.
