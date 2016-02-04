@@ -18,7 +18,7 @@ To configure the pre-build steps, define where the pom.xml file to use is locate
 The project is now correctly configured.  
 You can launch a build for your project directly from the Jenkins Web UI.
 
->**Note:** To facilitate the Root POM path specification, you can leverage the Maven ```project.basedir``` variable, as describe below:
+>**Note:** To facilitate the Root POM path specification, you can leverage the Maven ```project.basedir``` variable, as describe below.
 <pre lang="xml"><code>
 &lt;build&gt;
   &lt;plugins&gt;
