@@ -368,9 +368,9 @@ In this example, you created an account with Google provider:
 
 
 
-# <a class="anchor" name="16"></a>16. I want to know the consequences of downgrading to another Plan
+# <a class="anchor" name="16"></a>16. What happens when I downgrade my Plan?
 
-As you downgrade to a lower Plan, you will not longer access specific features depending on the Plan you are subscribing to. You will find the impacts of your downgrade on each product below.
+As you downgrade to a lower Plan, you will no longer access specific features depending on the Plan you are subscribing to. You will find the impacts of your downgrade on each product below.
 
 ## Downgrading from Team to Solo Plan
 
@@ -412,3 +412,5 @@ As you downgrade to a lower Plan, you will not longer access specific features d
 * You will not be allowed to create as many test scenarios. Existing test scenarios will not be affected.
 * Your Maven plugin license will be revoked.
 * You will no longer benefit from premium support.
+
+[Back to list](#list "Back to list of frequently asked questions")
