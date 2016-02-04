@@ -130,9 +130,15 @@ toc:
     long-title: Get test reports with Maven plugin
     title: Get test reports
     url: /run-tests/test-reports-maven
-  - file: 04_use-case.md
+  - file: 04_jenkins-ci.md
+    id: jenkins-ci
+    link_url: /03_run-tests/04_jenkins-ci.md
+    long-title: Running tests in continuous integration
+    title: Run tests in CI
+    url: /run-tests/jenkins-ci
+  - file: 05_use-case.md
     id: use-case
-    link_url: /03_run-tests/04_use-case.md
+    link_url: /03_run-tests/05_use-case.md
     long-title: Use case with DHC
     title: Use case
     url: /run-tests/use-case
