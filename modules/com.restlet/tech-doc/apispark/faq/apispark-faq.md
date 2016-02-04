@@ -15,7 +15,7 @@
 13. [Why has my store been undeployed?](#13 "Why has my store been undeployed?")
 14. [My csv file import failed](#14 "My csv file import failed")
 15. [I cannot find my cells anymore](#15 "I cannot find my cells anymore")
-16. [I want to know the consequences of downgrading to another plan](#16 "I want to know the consequences of downgrading to another plan")
+16. [What happens when I downgrade my Plan?](#16 "What happens when I downgrade my Plan?")
 
 
 # <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
