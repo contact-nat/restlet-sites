@@ -15,6 +15,8 @@
 13. [Why has my store been undeployed?](#13 "Why has my store been undeployed?")
 14. [My csv file import failed](#14 "My csv file import failed")
 15. [I cannot find my cells anymore](#15 "I cannot find my cells anymore")
+16. [I want to know the consequences of downgrading to another plan](#16 "I want to know the consequences of downgrading to another plan")
+
 
 # <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
 
@@ -29,6 +31,9 @@ If you have any doubt, go to the **Messages** tab which reports the last actions
 Jump to the [Check your messages](/technical-resources/apispark/guide/create/test#check-messages "Check your messages") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
+
 
 # <a class="anchor" name="02"></a>2. What is the difference between deploying & publishing my API?
 
@@ -45,6 +50,9 @@ Jump to the [Cell lifecycle](/technical-resources/apispark/guide/explore/cell-li
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="03"></a>3. I want a resource to be accessible without authentication
 
 The API credentials (login/password) are used to identify the users of your API.
@@ -59,6 +67,9 @@ Click on the **Save** button.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="04"></a>4. I cannot find where to download Client SDKs
 
 Deploy your web API.  
@@ -72,6 +83,9 @@ Jump to the [Generate custom client SDKs](/technical-resources/apispark/guide/pu
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="05"></a>5. I get a 400 error (Bad request) when I try to invoke my API
 
 Make sure the syntax you are using is valid.
@@ -84,6 +98,9 @@ Jump to our [POST and PUT requests examples](#09) for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="06"></a>6. I get a 405 error (Method Not Allowed) when I try to invoke my API
 
 Make sure the method you are using is allowed.
@@ -94,6 +111,9 @@ Open your API's Overview, in the **Resources** section, click on the resource yo
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="07"></a>7. I get a 415 error (Unsupported Media Type) when I try to invoke my API
 
 Make sure the format used is valid.
@@ -103,6 +123,9 @@ When using <a href="http://www.getpostman.com/" target="_blank">POSTMAN Chrome E
 Jump to our [POST and PUT requests examples](#09) for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
+
 
 # <a class="anchor" name="08"></a>8. I get a 500 error when I try to invoke my API
 Before invoking your API, make sure you call the last version of your API and Data Store. You need to (re)deploy your API and the Data Stores (or/and File Stores) associated.
@@ -130,6 +153,9 @@ The **Traces** section may display a *runtime error*. Click on it and check its 
 ![Entity Store Traces](images/entity-store-traces.png "Entity Store Traces")
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
+
 
 # <a class="anchor" name="09"></a>9. I need examples of POST and PUT requests
 
@@ -161,6 +187,9 @@ Enter your modifications in the input area underneath and click **Send**. The up
 ![POSTMAN PUT request](images/postman-put-request.jpg "POSTMAN PUT request")
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
+
 
 # <a class="anchor" name="10"></a>10.  List of HTTP Errors Codes
 <!---MARKDOWN TABLE
@@ -226,6 +255,8 @@ Enter your modifications in the input area underneath and click **Send**. The up
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
 # <a class="anchor" name="11"></a>11. The **swagger** button is disabled
 
 You may have removed your API https endpoint. To test your API via Swagger UI, you need an https endpoint.
@@ -241,6 +272,9 @@ The **swagger** button is now enabled for your http endpoint.
 Jump to the [Test your API](/technical-resources/apispark/guide/create/test "Test your API") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
+
 
 # <a class="anchor" name="12"></a>12. What is the difference between "Public" and "Anyone" settings for my API?
 
@@ -277,6 +311,9 @@ From the creation wizard, click on **Customize settings** and select **No authen
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="13"></a>13. Why has my store been undeployed?
 
 If you read this message when opening your store: "This cell has been undeployed due to inactivity", it means you Entity Store has been deactivated as it has not been used for at least two months.
@@ -291,6 +328,9 @@ You can now use your Entity Store.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
+
+
+
 # <a class="anchor" name="14"></a>14. My csv file import failed
 
 APISpark allows you to import data stored in a csv file in your Entity Store from the data browser. This import will automatically fail after 25 errors. You will get an error message that invites you to navigate to the **Traces** of the **Messages** tab.
@@ -302,6 +342,8 @@ From this tab, you will be given the lines for which errors have been detected.
 ![Messages tab](images/messages-tab.jpg "Messages tab")
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
 
 # <a class="anchor" name="15"></a>15. I cannot find my cells anymore
 
@@ -322,3 +364,51 @@ In this example, you created an account with Google provider:
 ![My account](images/my-google-account.jpg "My account")
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+
+
+
+# <a class="anchor" name="16"></a>16. I want to know the consequences of downgrading to another Plan
+
+As you downgrade to a lower Plan, you will not longer access specific features depending on the Plan you are subscribing to. You will find the impacts of your downgrade on each product below.
+
+## Downgrading from Team to Solo Plan
+
+### Impacts on Restlet Studio
+
+* All members will be removed from your team.
+* You will not be allowed to create as many APIs. Existing APIs will not be affected.
+
+### Impacts on DHC
+
+* All members will be removed from your team.
+* Your Maven plugin license will be revoked.
+
+
+## Downgrading from Solo to Free plan
+
+### Impacts on Restlet Studio
+
+* You will not be allowed to create as many APIs. Existing APIs will not be affected.
+* You will no longer benefit from premium support.
+
+### Impacts on DHC
+
+* You will not be allowed to create as many test scenarios. Existing test scenarios will not be affected.
+* You will no longer benefit from premium support.
+
+
+## Downgrading from Team to Free plan
+
+### Impacts on Restlet Studio
+
+* All members will be removed from your team.
+* You will not be allowed to create as many APIs. Existing APIs will not be affected.
+* You will no longer benefit from premium support.
+
+### Impacts on DHC
+
+* All members will be removed from your team.
+* You will not be allowed to create as many test scenarios. Existing test scenarios will not be affected.
+* Your Maven plugin license will be revoked.
+* You will no longer benefit from premium support.
