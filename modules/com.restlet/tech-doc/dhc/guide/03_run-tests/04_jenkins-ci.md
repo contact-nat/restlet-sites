@@ -1,4 +1,4 @@
-With the [Maven plugin](/technical-resources/dhc/guide/run-tests/test-reports-maven "Maven plugin"), we have taken a step towards industrialization. We can can go even further by integrating it within continuous integration with tools like *Jenkins*. This will allow us to automate builds and test executions.
+With the [Maven plugin](/technical-resources/dhc/guide/run-tests/test-reports-maven "Maven plugin"), we have taken a step towards industrialization. We can go even further by integrating it within continuous integration with tools like *Jenkins*. This will allow us to automate builds and test executions.
 
 To bring DHC into Jenkins:
 
@@ -18,7 +18,7 @@ To configure the pre-build steps, define where the pom.xml file to use is locate
 The project is now correctly configured.  
 You can launch a build for your project directly from the Jenkins Web UI.
 
->**Note:** To facilitate the Root POM path specification, you can leverage the Maven ```project.basedir``` variable, as describe below.
+>**Note:** To facilitate the Root POM path specification, you can leverage the Maven ```project.basedir``` variable, as described below.
 <pre lang="xml"><code>
 &lt;build&gt;
   &lt;plugins&gt;
