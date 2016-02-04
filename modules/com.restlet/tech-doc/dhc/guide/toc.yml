@@ -133,7 +133,7 @@ toc:
   - file: 04_jenkins-ci.md
     id: jenkins-ci
     link_url: /03_run-tests/04_jenkins-ci.md
-    long-title: Running tests in continuous integration
+    long-title: Run tests in continuous integration
     title: Run tests in CI
     url: /run-tests/jenkins-ci
   - file: 05_use-case.md
