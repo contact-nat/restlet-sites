@@ -7,7 +7,7 @@ Select the appropriate project type (**Maven** here).
 
 ![Maven project](images/01-jenkins-create-dhc-maven1.png "Maven project")
 
-To configure where to get the source for your project, push the corresponding content into a Github repository: select **Git** as a **Source Code Management** and fill in the **Repository URL**.
+To configure where to get the source for your project, push the corresponding content into a Github repository, for example: select **Git** as a **Source Code Management** and fill in the **Repository URL**.
 
 ![Git repo](images/02-jenkins-create-dhc-maven2.png "Git repo")
 
