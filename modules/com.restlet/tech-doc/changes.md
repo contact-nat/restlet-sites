@@ -1,3 +1,7 @@
+v3.24.1
+
+- Updated maven plugin version number
+
 v3.24
 - Added FAQ entry to explain impacts of downgrading in Restlet Studio and DHC
 - DHC - Fixed code blocks display
