@@ -68,7 +68,7 @@ Create a pom.xml file with the following content:
        <plugin>
          <groupId>com.restlet.dhc</groupId>
          <artifactId>dhc-maven-plugin</artifactId>
-         <version>1.1</version>
+         <version>1.1.0.1</version>
     <executions>
            <execution>
              <phase>test</phase>

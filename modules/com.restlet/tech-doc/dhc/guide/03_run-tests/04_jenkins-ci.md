@@ -19,27 +19,27 @@ The project is now correctly configured.
 You can launch a build for your project directly from the Jenkins Web UI.
 
 >**Note:** To facilitate the Root POM path specification, you can leverage the Maven ```project.basedir``` variable, as described below.
-<pre lang="xml"><code>
-&lt;build&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
-      &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-      &lt;version&gt;1.1&lt;/version&gt;
-      &lt;executions&gt;
-        &lt;execution&gt;
-          &lt;phase&gt;test&lt;/phase&gt;
-          &lt;goals&gt;
-            &lt;goal&gt;test&lt;/goal&gt;
-          &lt;/goals&gt;
-          &lt;configuration&gt;
-            &lt;file&gt;${project.basedir}/company-scenario.json&lt;/file&gt;
-          &lt;/configuration&gt;
-        &lt;/execution&gt;
-      &lt;/executions&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/build&gt;
+<pre lang="html"><code>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>com.restlet.dhc</groupId>
+      <artifactId>dhc-maven-plugin</artifactId>
+      <version>1.1.0.1</version>
+      <executions>
+        <execution>
+          <phase>test</phase>
+          <goals>
+            <goal>test</goal>
+          </goals>
+          <configuration>
+            <file>${project.basedir}/company-scenario.json</file>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
 </code></pre>
 
 To launch the build, click on the **Build Now** menu. It displays in the **Build History** section in real time.
