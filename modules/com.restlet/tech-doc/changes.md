@@ -1,9 +1,16 @@
-3.23.2
+v3.24
+- Added FAQ entry to explain impacts of downgrading in Restlet Studio and DHC
+- DHC - Fixed code blocks display
+
+v3.23.3
+- DHC - Added Jenkins continuous integration
+
+v3.23.2
 - updated link in DHC user guide
 - Escaped code in DHC user guide to fix display
 - Modified version number in DHC maven plugin page
 
-3.23.1
+v3.23.1
 
 - DHC user guide : Updated "Get started" and "Run tests" sections.
 - Restlet Studio user guide :
