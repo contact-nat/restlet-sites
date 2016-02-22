@@ -1,3 +1,8 @@
+v3.24.2
+
+- Added Free Trial to DHC and RS
+- DHC - Removed limitation on number of calls
+
 v3.24.1
 
 - Updated maven plugin version number
