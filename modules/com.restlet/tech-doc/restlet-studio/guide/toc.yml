@@ -20,21 +20,27 @@ toc:
     long-title: Sign-in to Restlet Studio
     title: Sign-in
     url: /get-started/sign-in
-  - file: 04_subscribe.md
+  - file: 04_free-trial.md
+    id: free-trial
+    link_url: /01_get-started/04_free-trial.md
+    long-title: Restlet Studio Free Trial
+    title: Try it for FREE
+    url: /get-started/free-trial
+  - file: 05_subscribe.md
     id: subscribe
-    link_url: /01_get-started/04_subscribe.md
+    link_url: /01_get-started/05_subscribe.md
     long-title: Subscribe to a plan
     title: Subscribe
     url: /get-started/subscribe
-  - file: 05_account-info.md
+  - file: 06_account-info.md
     id: account-info
-    link_url: /01_get-started/05_account-info.md
+    link_url: /01_get-started/06_account-info.md
     long-title: Access your account information
     title: Access account info
     url: /get-started/account-info
-  - file: 06_ready-api.md
+  - file: 07_ready-api.md
     id: ready-api
-    link_url: /01_get-started/06_ready-api.md
+    link_url: /01_get-started/07_ready-api.md
     long-title: Launch Restlet Studio with Ready! API plugin
     title: Ready! API plugin
     url: /get-started/ready-api
