@@ -14,15 +14,21 @@ toc:
     long-title: Sign-in to DHC
     title: Sign-in
     url: /get-started/sign-in
-  - file: 03_subscribe.md
+  - file: 03_free-trial.md
+    id: free-trial
+    link_url: /01_get-started/03_free-trial.md
+    long-title: DHC Free Trial
+    title: Try it for FREE
+    url: /get-started/free-trial
+  - file: 04_subscribe.md
     id: subscribe
-    link_url: /01_get-started/03_subscribe.md
+    link_url: /01_get-started/04_subscribe.md
     long-title: Subscribe to a plan
     title: Subscribe to a plan
     url: /get-started/subscribe
-  - file: 04_account-info.md
+  - file: 05_account-info.md
     id: account-info
-    link_url: /01_get-started/04_account-info.md
+    link_url: /01_get-started/05_account-info.md
     long-title: Access your account details
     title: Access account info
     url: /get-started/account-info
