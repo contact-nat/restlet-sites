@@ -8,3 +8,5 @@ Welcome to the Restlet Studio User Guide.
 This documentation covers all of these topics in detail in order to help you define your APIs and generate your server skeletons and client SDKs.  
 
 To help you start with Restlet Studio, we recommend that you browse through the different sections of this User Guide and find the information you need. Simply click on one of the topics in the menu on the left, or directly start by crafting your API from scratch.
+
+[Try Restlet Studio for FREE now](/technical-resources/restlet-studio/guide/get-started/free-trial "Try Restlet Studio for FREE now")!
