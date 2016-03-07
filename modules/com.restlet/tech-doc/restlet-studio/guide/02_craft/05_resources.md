@@ -19,7 +19,7 @@ Fill in the **Add a resource** window and click on the **Add** button. The new r
 
 >**Note:** The **Relative path** and **Name** fields are required and must be Java class compliant.
 
-# Add a Method
+## Add a Method
 
 Click on the appropriate Resource in the **Resources** section.  
 Click on the **+** button on the right of the Resource.
@@ -29,6 +29,21 @@ Click on the **+** button on the right of the Resource.
 Fill in the **Add a method** window and click on the **Add** button.
 
 ![Add a method](images/add-method.jpg "Add a method")
+
+## <a class="anchor" name="path-variable"></a>Add a path variable
+
+To add a path variable to a resource, select the appropriate resource from the left panel and click **Add a path variable**.  
+
+![Add a path variable](images/add-path-variable.jpg "Add a path variable")
+
+Enter a **Name** and a **Type** to your variable.  
+
+![Enter Name and Type](images/enter-path-variable.jpg "Enter Name and Type")
+
+Add your path variable to your **Relative path** between curly brackets.
+
+![Add variable to relative path](images/add-path-variable-to-relative-path.jpg "Add variable to relative path")
+
 
 
 # Add a Section
