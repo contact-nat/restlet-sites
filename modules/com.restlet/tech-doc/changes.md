@@ -1,4 +1,4 @@
-v3.25
+v3.25.0
 
 - Added "Try it for free" in DHC and Restlet Studio doc welcome pages
 - Updated APISpark csv import section
