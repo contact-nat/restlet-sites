@@ -110,6 +110,7 @@ public class WebComponent extends Component {
 		getClients().add(Protocol.FILE);
 		getClients().add(Protocol.RIAP);
 		getClients().add(Protocol.HTTP);
+		getClients().add(Protocol.HTTPS);
 
 		// -----------
 		// restlet.org
