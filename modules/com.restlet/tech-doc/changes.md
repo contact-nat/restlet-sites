@@ -1,3 +1,7 @@
+v3.25.1
+
+- Inserted Easter egg in DHC doc!
+
 v3.25.0
 
 - Added "Try it for free" in DHC and Restlet Studio doc welcome pages
