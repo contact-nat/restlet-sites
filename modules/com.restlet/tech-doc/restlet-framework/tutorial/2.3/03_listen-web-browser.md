@@ -5,8 +5,7 @@ one based on Mortbay's Jetty) and return a simple string representation
 "hello, world" as plain text. Note that the Part03 class extends the
 base ServerResource class provided by Restlet:
 
-~~~~ {.java:nocontrols:nogutter}
-public class Part03 extends ServerResource {
+<pre class="language-java"><code class="language-java">public class Part03 extends ServerResource {
 
     public static void main(String[] args) throws Exception {
         // Create the HTTP server and listen on port 8182
@@ -19,8 +18,7 @@ public class Part03 extends ServerResource {
     }
 
 }
-
-~~~~
+</code></pre>
 
 If you run this code and launch your server, you can open a Web browser
 and hit the <http://localhost:8182>. Actually, any URI will work, try

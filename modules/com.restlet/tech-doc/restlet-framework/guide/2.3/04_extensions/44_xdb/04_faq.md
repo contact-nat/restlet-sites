@@ -4,8 +4,7 @@ __Restlet__ framework and __XMLDB Restlet Adapter__ uses __JDK__ logging package
 Due __REST WS__ are started by a background process automatically controlled by Oracle database logging information is at files named $SID_snnn_pid.trc, for example:
 
 
-```
--bash-3.2$ more test_s000_10388.trc
+<pre class="language-bash"><code class="language-bash">-bash-3.2$ more test_s000_10388.trc
 Trace file /u01/app/oracle/diag/rdbms/test/test/trace/test_s000_10388.trc
 Oracle Database 11g Release 11.1.0.6.0 - Production
 ORACLE_HOME = /u01/app/oracle/product/11.1.0.6.0/db_1
@@ -72,19 +71,19 @@ INFO: efective user is: ANONYMOUS
 *** 2008-06-04 15:28:27.588
 Jun 4, 2008 6:28:27 PM org.restlet.engine.application.LogFilter afterHandle
 
-INFO: 2008-06-04        
-18:28:27        
--       
--       
--       8080    
-GET    
-/userapp/users/scott/orders/300 -       
-200     28      
--    155     
-http://null     
+INFO: 2008-06-04
+18:28:27
+-
+-
+-       8080
+GET
+/userapp/users/scott/orders/300 -
+200     28
+-    155
+http://null
 -       -
 
-```
+</code></pre>
 
 
 * How many concurrent session are started by Oracle?
@@ -108,86 +107,82 @@ __REST WS__ which are authorized though HTTP header __Authorization __are execut
 First unlock ANONYMOUS Oracle account. By default __XMLDB Restlet Adapter__ do this command at __postInstall.sql__ script
 
 
-```sql
-SQL> alter user anonymous account unlock;
-
-```
+<pre class="language-sql"><code class="language-sql">SQL> alter user anonymous account unlock;
+</code></pre>
 
 
 Then you have to register your __Restlet__ application into __XMLDB__ configuration file (named /xdbconfig.xml) with this __Servlet__ role:
 
 
-```xml
-<servlet xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-	<servlet-name>UsersRestlet</servlet-name>
-	<servlet-language>Java</servlet-language>
-	<display-name>Restlet Servlet</display-name>
-	<servlet-class>org.restlet.ext.xdb.XdbServerServlet</servlet-class>
-	<servlet-schema>PUBLIC</servlet-schema>
-	<init-param xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-		<param-name>org.restlet.application</param-name>
-		<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
-		<description>REST User Application</description>
-	</init-param>
-	<security-role-ref xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
-		<description />
-		<role-name>PUBLIC</role-name>
-		<role-link>PUBLIC</role-link>
-	</security-role-ref>
-</servlet>
-```
+<pre class="language-markup"><code class="language-markup">&lt;servlet xmlns=&quot;http://xmlns.oracle.com/xdb/xdbconfig.xsd&quot;&gt;
+&Tab;&lt;servlet-name&gt;UsersRestlet&lt;/servlet-name&gt;
+&Tab;&lt;servlet-language&gt;Java&lt;/servlet-language&gt;
+&Tab;&lt;display-name&gt;Restlet Servlet&lt;/display-name&gt;
+&Tab;&lt;servlet-class&gt;org.restlet.ext.xdb.XdbServerServlet&lt;/servlet-class&gt;
+&Tab;&lt;servlet-schema&gt;PUBLIC&lt;/servlet-schema&gt;
+&Tab;&lt;init-param xmlns=&quot;http://xmlns.oracle.com/xdb/xdbconfig.xsd&quot;&gt;
+&Tab;&Tab;&lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
+&Tab;&Tab;&lt;param-value&gt;RESTLET:org.restlet.example.tutorial.Part12&lt;/param-value&gt;
+&Tab;&Tab;&lt;description&gt;REST User Application&lt;/description&gt;
+&Tab;&lt;/init-param&gt;
+&Tab;&lt;security-role-ref xmlns=&quot;http://xmlns.oracle.com/xdb/xdbconfig.xsd&quot;&gt;
+&Tab;&Tab;&lt;description /&gt;
+&Tab;&Tab;&lt;role-name&gt;PUBLIC&lt;/role-name&gt;
+&Tab;&Tab;&lt;role-link&gt;PUBLIC&lt;/role-link&gt;
+&Tab;&lt;/security-role-ref&gt;
+&lt;/servlet&gt;
+</code></pre>
 
 
 Above registration can be done by a following PLSQL script executed logged as SYS:
 
 
-```
-DECLARE
+<pre class="language-bash"><code class="language-bash">DECLARE
   configxml SYS.XMLType;
 begin
-  dbms_xdb.deleteServletMapping('UsersRestlet');
-  dbms_xdb.deleteServlet('UsersRestlet');
-  dbms_xdb.addServlet(name=>'UsersRestlet',
-                                 
- language=>'Java',
-                                 
-class=>'org.restlet.ext.xdb.XdbServerServlet',
-                                 
- dispname=>'Restlet
-Servlet',schema=>'PUBLIC');
+  dbms_xdb.deleteServletMapping(&apos;UsersRestlet&apos;);
+  dbms_xdb.deleteServlet(&apos;UsersRestlet&apos;);
+  dbms_xdb.addServlet(name=&gt;&apos;UsersRestlet&apos;,
+
+ language=&gt;&apos;Java&apos;,
+
+class=&gt;&apos;org.restlet.ext.xdb.XdbServerServlet&apos;,
+
+ dispname=&gt;&apos;Restlet
+Servlet&apos;,schema=&gt;&apos;PUBLIC&apos;);
   -- Modify the configuration
-  -- Due this servlet provide public access, it can not load 
-  -- '/home/'||USER||'/restlet/UsersRestlet.xml' from XMLDB repository
+  -- Due this servlet provide public access, it can not load
+  -- &apos;/home/&apos;||USER||&apos;/restlet/UsersRestlet.xml&apos; from XMLDB repository
   SELECT
-INSERTCHILDXML(xdburitype('/xdbconfig.xml').getXML(),'/xdbconfig/sysconfig/protocolconfig/httpconfig/webappconfig/servletconfig/servlet-list/servlet[servlet-name="UsersRestlet"]','init-param',
+INSERTCHILDXML(xdburitype(&apos;/xdbconfig.xml&apos;).getXML(),&apos;/xdbconfig/sysconfig/protocolconfig/httpconfig/webappconfig/servletconfig/servlet-list/servlet[servlet-name=&quot;UsersRestlet&quot;]&apos;,&apos;init-param&apos;,
 
-  XMLType('<init-param xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd">
+  XMLType(&apos;&lt;init-param xmlns=&quot;http://xmlns.oracle.com/xdb/xdbconfig.xsd&quot;&gt;
 
-                 
- <param-name>org.restlet.application</param-name>
 
-                 
-<param-value>RESTLET:org.restlet.example.tutorial.Part12</param-value>
+ &lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
 
-                 
- <description>REST User Application</description>
 
-          
-</init-param>'),'xmlns="http://xmlns.oracle.com/xdb/xdbconfig.xsd"') INTO
+&lt;param-value&gt;RESTLET:org.restlet.example.tutorial.Part12&lt;/param-value&gt;
+
+
+ &lt;description&gt;REST User Application&lt;/description&gt;
+
+
+&lt;/init-param&gt;&apos;),&apos;xmlns=&quot;http://xmlns.oracle.com/xdb/xdbconfig.xsd&quot;&apos;) INTO
 configxml
   FROM DUAL;
   -- Update the configuration to use the modified version
   --I got this error at this line :
   dbms_xdb.cfg_update(configxml);
-  dbms_xdb.addServletSecRole(SERVNAME => 'UsersRestlet',ROLENAME =>
-'PUBLIC',ROLELINK => 'PUBLIC');
-  dbms_xdb.addServletMapping('/userapp/*','UsersRestlet');
+  dbms_xdb.addServletSecRole(SERVNAME =&gt; &apos;UsersRestlet&apos;,ROLENAME =&gt;
+&apos;PUBLIC&apos;,ROLELINK =&gt; &apos;PUBLIC&apos;);
+  dbms_xdb.addServletMapping(&apos;/userapp/*&apos;,&apos;UsersRestlet&apos;);
   commit;
 end;
 /
 commit;
 
-```
+</code></pre>
 
 
 For more information on how to register a __Servlet__ with anonymous access read
@@ -201,10 +196,8 @@ First option was used in previous examples, it means using __Servlet 2.2 <init-p
 For authenticated applications there is another option which is to put an XML file at XMLDB repository using this predefined path:
 
 
-```
-/home/[USER]/wars/[appName]/WEB-INF/restlet.xml
-
-```
+<pre class="language-bash"><code class="language-bash">/home/[USER]/wars/[appName]/WEB-INF/restlet.xml
+</code></pre>
 
 
 for example, `/home/__SCOTT__/wars/__DirectoryExample__/WEB-INF/restlet.xml` where __USER__ is the effective connected user name, for example `SCOTT`, and `appName` is the Servlet name; __name__ argument in __dbms_xdb.addServlet__ procedure used for registering Servlet in __XMLDB__, in above example is __DirectoryExample__.
@@ -213,15 +206,13 @@ for example, `/home/__SCOTT__/wars/__DirectoryExample__/WEB-INF/restlet.xml` whe
 This file look like:
 
 
-```xml
-<component>
-    <defaultHost>
-         <attach uriPattern="/root/" targetClass="org.restlet.test.xdb.DirectoryApplication"/>
-    </defaultHost>
-    <statusService enabled="true" contactEmail="mochoa@ieee.org"/>
-</component>
-
-```
+<pre class="language-markup"><code class="language-markup">&lt;component&gt;
+    &lt;defaultHost&gt;
+         &lt;attach uriPattern=&quot;/root/&quot; targetClass=&quot;org.restlet.test.xdb.DirectoryApplication&quot;/&gt;
+    &lt;/defaultHost&gt;
+    &lt;statusService enabled=&quot;true&quot; contactEmail=&quot;mochoa@ieee.org&quot;/&gt;
+&lt;/component&gt;
+</code></pre>
 
 
 Second option do not require __DBA__ role if you want to update your application class name, for a complete explanation of [restlet.xml](http://restlet.com/schemas/2.3/Component.xsd) file syntax look at [Component java docummentation](javadocs://jse/api/org/restlet/Component.html).
@@ -233,40 +224,36 @@ Second option do not require __DBA__ role if you want to update your application
 If you want to use Apache mod_proxy behind Oracle XMLDB Restlet adapter for security reason or to exploit caching support follow this example configuration:
 
 
-```
-
-<IfModule mod_proxy.c>
+<pre class="language-bash"><code class="language-bash">&lt;IfModule mod_proxy.c&gt;
 
 
-    # <Proxy> - Container for directives affecting resources located in
+    # &lt;Proxy&gt; - Container for directives affecting resources located in
 the proxied location
-    <Proxy *>
+    &lt;Proxy *&gt;
         Order deny,allow
         Allow from all
     #    Allow from .your-domain.com
-    </Proxy>
+    &lt;/Proxy&gt;
     ProxyRequests On
     ProxyVia On
     ProxyPreserveHost On
     SetEnv proxy-nokeepalive 1
     ProxyPass / http://localhost:8080/
-</IfModule>
+&lt;/IfModule&gt;
 
-```
+</code></pre>
 
 Above configuration, usually in __/etc/httpd/modules.d/30_mod_proxy.conf__, will forward all request to http://localhost:80/ to http://localhost:8080/ assuming that your Oracle listener is in the same host as Apache.
 If you want to configure Apache mod_cache to speed GET request which have expiration Date header, for example, follow this configuration:
 
 
-```
-<IfModule mod_cache.c>
+<pre class="language-bash"><code class="language-bash">&lt;IfModule mod_cache.c&gt;
     CacheEnable mem /userapp
     CacheEnable mem /orawsv
     CacheEnable mem /ds
-</IfModule>
+&lt;/IfModule&gt;
 
-```
+</code></pre>
 
 
 This configuration will enable Apache mod_mem_cache on directories __/ds__ __/oraws__ and __/userapp__.
-

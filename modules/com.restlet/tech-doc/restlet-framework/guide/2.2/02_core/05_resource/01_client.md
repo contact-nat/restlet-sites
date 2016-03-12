@@ -8,18 +8,21 @@ read the [first client](../../introduction/first-steps/first-client "First clien
 You can get automatic conversion for retrieved representations like
 this:
 
-      String myString = myClientResource.get(String.class);
+<pre class="language-java"><code class="language-java">      String myString = myClientResource.get(String.class);
+</code></pre>
 
 For sent representations:
 
-      myClientResource.put(myString);
+<pre class="language-java"><code class="language-java">      myClientResource.put(myString);
+</code></pre>
 
 There is even a more transparent way if you define an annotated Java
 interface (using the Restlet @Get, @Put, etc. annotations). Once it is
 defined, you can use it on the server side in your ServerResource
 subclasses or on the client side to consume it:
 
-      MyAnnotatedInterface myClient = myClientResource.wrap(MyAnnotatedInterface.class);
+<pre class="language-java"><code class="language-java">      MyAnnotatedInterface myClient = myClientResource.wrap(MyAnnotatedInterface.class);
+</code></pre>
 
 In this case, automatic conversion is handled for you. By default, the
 Restlet Engine support Java object serialization (binary or XML), but
@@ -38,7 +41,7 @@ server resources.
 First, we define the contract between the client and the server as a
 Java interface:
 
-    package annos;
+<pre class="language-java"><code class="language-java">    package annos;
 
     import org.restlet.resource.Delete;
     import org.restlet.resource.Get;
@@ -62,12 +65,13 @@ Java interface:
         public void remove() throws Exception;
 
     }
+</code></pre>
 
 ## Server side implementation
 
 Then, we implement is in a subclass of ServerResource
 
-    package annos;
+<pre class="language-java"><code class="language-java">    package annos;
 
     import org.restlet.Context;
     import org.restlet.Server;
@@ -111,12 +115,13 @@ Then, we implement is in a subclass of ServerResource
         }
 
     }
+</code></pre>
 
 ## Client-side consumption
 
 Finally, we can consume it via the ClientResource class:
 
-    package annos;
+<pre class="language-java"><code class="language-java">    package annos;
 
     import org.restlet.resource.ClientResource;
 
@@ -137,6 +142,7 @@ Finally, we can consume it via the ClientResource class:
             }
         }
     }
+</code></pre>
 
 # Consuming response entities
 

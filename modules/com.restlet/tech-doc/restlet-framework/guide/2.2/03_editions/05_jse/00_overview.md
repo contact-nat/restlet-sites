@@ -36,8 +36,7 @@ Let's start with the core of a REST application: the Resource. Here is
 the code of the single resource defined by the sample application.
 Copy/paste the code in your "HelloWorldResource" class.
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
@@ -53,13 +52,12 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-```
+</code></pre>
 
 Then, create the sample application. Let's call it
 "FirstStepsApplication" and copy/paste the following code:
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.Application;
 import org.restlet.Restlet;
@@ -82,7 +80,7 @@ public class FirstStepsApplication extends Application {
     }
 
 }
-```
+</code></pre>
 
 ## <a name="run-as-a-standalone-java-application"></a>Run as a standalone Java application
 
@@ -95,8 +93,7 @@ Create also a main class, copy/paste the following code which aims at
 defining a new HTTP server listening on port 8182 and delegating all
 requests to the "FirstStepsApplication".
 
-```java
-public static void main(String[] args) throws Exception {  
+<pre class="language-java"><code class="language-java">public static void main(String[] args) throws Exception {  
     // Create a new Component.  
     Component component = new Component();  
 
@@ -110,7 +107,7 @@ public static void main(String[] args) throws Exception {
     // Start the component.  
     component.start();  
 }      
-```
+</code></pre>
 Once you have launched the main class, if you can open your favorite web
 browser, and gently type the following URL:
 [http://localhost:8182/firstSteps/hello](http://localhost:8182/firstSteps/hello)

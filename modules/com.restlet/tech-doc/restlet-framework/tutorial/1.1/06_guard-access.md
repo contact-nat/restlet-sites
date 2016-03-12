@@ -23,7 +23,7 @@ the concept is similar to the
 interface. See below how we would modify the previous example to secure
 the access to the Directory:
 
-~~~~ {.java:nocontrols:nogutter}
+<pre class="language-java"><code class="language-java">
 // Create a Guard
 Guard guard = new Guard(getContext(),
         ChallengeScheme.HTTP_BASIC, "Tutorial");
@@ -32,9 +32,9 @@ guard.getSecrets().put("scott", "tiger".toCharArray());
 // Create a Directory able to return a deep hierarchy of files
 Directory directory = new Directory(getContext(), ROOT_URI);
 guard.setNext(directory);
-return guard;
 
-~~~~
+return guard;
+</code></pre>
 
 ![](images/tutorial09.png)
 
@@ -45,8 +45,7 @@ and whether the authenticated user is authorized to continue to the
 attached Restlet. Here we simply hard-coded a single user and password
 couple. In order to test, let's use the client-side Restlet API:
 
-~~~~ {.java:nocontrols:nogutter}
-// Prepare the request
+<pre class="language-java"><code class="language-java">// Prepare the request
 Request request = new Request(Method.GET, "http://localhost:8182/");
 
 // Add the client authentication to the call
@@ -73,8 +72,7 @@ if (response.getStatus().isSuccess()) {
     System.out.println("An unexpected status was returned: "
             + response.getStatus());
 }
-
-~~~~
+</code></pre>
 
 You can change the user ID or password sent by this test client in order
 to check the response returned by the server. Remember to launch the

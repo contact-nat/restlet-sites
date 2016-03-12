@@ -22,16 +22,17 @@ a text field ( called "textField"). If you want to transfer them
 respectively to attributes named "selectAttribute" and "textAttribute",
 just proceed as follow.
 
-    @Override
-    public Restlet createInboundRoot() { 
-         Extractor extractor = new Extractor(getContext());      
-         extractor.extractFromEntity("selectAttribute", "selectField", true); 
+<pre class="language-java"><code class="language-java">    @Override
+    public Restlet createInboundRoot() {
+         Extractor extractor = new Extractor(getContext()); 
+         extractor.extractFromEntity("selectAttribute", "selectField", true);
          extractor.extractFromEntity("textAttribute", "textField", false);
 
          extractor.setNext(...)
 
          return extractor;
     }
+</code></pre>
 
 You will get a String value in the "selectAttribute" (the selected
 option), and a Form object which is a collection of key/value pairs
@@ -39,7 +40,7 @@ option), and a Form object which is a collection of key/value pairs
 
 Here is sample code which helps to retrieve some attributes:
 
-    // Get the map of request attributes
+<pre class="language-java"><code class="language-java">    // Get the map of request attributes
     Map<String, Object> map = request.getAttributes();
 
     // Retrieve the "selectAttribute" value
@@ -57,4 +58,4 @@ Here is sample code which helps to retrieve some attributes:
             }
         }
     }
-
+</code></pre>

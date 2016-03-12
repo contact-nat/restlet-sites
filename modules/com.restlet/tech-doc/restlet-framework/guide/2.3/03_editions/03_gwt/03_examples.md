@@ -49,8 +49,7 @@ This page is in charge to display several sample item such image,
 button, etc organized in panels. All of these objects are instances of
 GWT classes:
 
-```java
-    // Define an image
+<pre class="language-java"><code class="language-java">    // Define an image
     Image img = new Image("http://code.google.com/webtoolkit/logo-185x175.png");
     // Define a button
     final Button button = new Button("Click me");
@@ -63,15 +62,14 @@ GWT classes:
     // Add image, button, tree
     vPanel.add(img);
     vPanel.add(button);
-```
+</code></pre>
 
 These class illustrates also how to add an asynchronous call with AJAX
 inside the final Web page. It is as simple as to use a simple Restlet
 client in order to request the "ping" resource located at URL
 '"http://localhost:8080/ping" :
 
-```java
-        // Add an AJAX call to the server
+<pre class="language-java"><code class="language-java">        // Add an AJAX call to the server
         ClientResource r = new ClientResource("/ping");
 
         // Set the callback object invoked when the response is received.
@@ -85,7 +83,7 @@ client in order to request the "ping" resource located at URL
             }
         });
         r.get();
-```
+</code></pre>
 
 ## Server side
 
@@ -101,8 +99,7 @@ requests with a line of text that contains the HTTP method of the
 request and, if available, its challengeScheme if the user has provided
 credentials.
 
-```java
-    public class PingResource extends ServerResource {
+<pre class="language-java"><code class="language-java">    public class PingResource extends ServerResource {
 
         @Get("txt")
         public String toText() {
@@ -119,4 +116,4 @@ credentials.
             return sb.toString();
         }
     }
-```
+</code></pre>

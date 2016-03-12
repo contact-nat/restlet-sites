@@ -11,8 +11,7 @@ later one that the framework provides many specialized subclasses as
 well as a Resource class that will be able to greatly abstract and
 simplify the handling process. For now, let's stick to a simple example:
 
-~~~~ {.java:nocontrols:nogutter}
-// Creating a minimal Restlet returning "Hello World"
+<pre class="language-java"><code class="language-java">// Creating a minimal Restlet returning "Hello World"
 Restlet restlet = new Restlet() {
     @Override
     public void handle(Request request, Response response) {
@@ -22,8 +21,7 @@ Restlet restlet = new Restlet() {
 
 // Create the HTTP server and listen on port 8182
 new Server(Protocol.HTTP, 8182, restlet).start();
-
-~~~~
+</code></pre>
 
 If you run this code and launch your server, you can open a Web browser
 and hit the <http://localhost:8182>. Actually, any URI will work, try

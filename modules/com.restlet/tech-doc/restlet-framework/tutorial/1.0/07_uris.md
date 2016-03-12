@@ -14,8 +14,7 @@ web site (named "mysite.org") based on Google. The "/search" relative
 URI identifies the search service, accepting some keywords via the "kwd"
 parameter:
 
-~~~~ {.java:nocontrols:nogutter}
-// Create an application
+<pre class="language-java"><code class="language-java">// Create an application
 Application application = new Application(component.getContext()) {
     @Override
     public Restlet createRoot() {
@@ -36,8 +35,7 @@ Route route = component.getDefaultHost().attach("/search", application);
 // will be routed to
 // http://www.google.com/search?q=site:mysite.org+myKeyword1%20myKeyword2
 route.extractQuery("keywords", "kwd", true);
-
-~~~~
+</code></pre>
 
 Note that the Redirector needs three parameters only. The first is the
 parent context, the second one defines how the URI rewriting should be
@@ -82,8 +80,7 @@ See the implementation code below. In a real application, you will
 probably want to create separate subclasses instead of the anonymous
 ones we use here:
 
-~~~~ {.java:nocontrols:nogutter}
-// Create a component
+<pre class="language-java"><code class="language-java">// Create a component
 Component component = new Component();
 component.getServers().add(Protocol.HTTP, 8182);
 component.getClients().add(Protocol.FILE);
@@ -153,8 +150,7 @@ Application application = new Application(component.getContext()) {
 // Attach the application to the component and start it
 component.getDefaultHost().attach(application);
 component.start();
-
-~~~~
+</code></pre>
 
 Please note that the values of the variables are directly extracted from
 the URI and are therefore not percent-decoded. In order to achieve such

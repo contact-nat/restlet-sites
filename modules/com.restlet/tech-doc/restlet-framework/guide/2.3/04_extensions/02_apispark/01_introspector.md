@@ -14,26 +14,22 @@ In these scenarios we'll leverage the Introspector tool by loading a Web API def
 
 In a first example, we will document a Restlet-based Web API. Users have to point the Introspector to the class extending org.restlet.Application. Here, the Application class in our code is org.restlet.api.MyContacts.
 
-~~~~{.sh}
-java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.restlet.api.MyContacts
-~~~~
+<pre class="language-bash"><code class="language-bash">java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.restlet.api.MyContacts
+</code></pre>
 
 Then we will document an API based on its Swagger definition.
 
-~~~~{.sh}
-java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 -l swagger http://petstore.swagger.io/api/api-docs
-~~~~
+<pre class="language-bash"><code class="language-bash">java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 -l swagger http://petstore.swagger.io/api/api-docs
+</code></pre>
 
 And finish with a JAX-RS API.
 
-~~~~{.sh}
-java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.jaxrs.api.MyContacts
-~~~~
+<pre class="language-bash"><code class="language-bash">java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.jaxrs.api.MyContacts
+</code></pre>
 
 __Note:__ For the JAX-RS introspection to work, users have to point the Introspector to a class extending javax.ws.rs.core.Application and listing all the JAX-RS annotated classes as follows:
 
-~~~~{.java}
-package org.coenraets.directory;
+<pre class="language-java"><code class="language-java">package org.coenraets.directory;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -47,7 +43,7 @@ public class MyContacts extends Application {
         return classes;
     }
 }
-~~~~
+</code></pre>
 
 Whether you use this class to run your Web API or not, you must create it to run the Introspector.
 
@@ -61,73 +57,72 @@ You can use the following pom.xml to get the dependencies required for the Intro
 (* To use it in eclipse, run in your terminal : "mvn eclipse:eclipse")
 * Run the main class : org.restlet.ext.apispark.Introspector
 
-~~~~{.xml}
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.restlet.jse</groupId>
-		<artifactId>org.restlet.parent</artifactId>
-		<version>2.3.1</version>
-	</parent>
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+&Tab;xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+&Tab;&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&Tab;&lt;parent&gt;
+&Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
+&Tab;&Tab;&lt;artifactId&gt;org.restlet.parent&lt;/artifactId&gt;
+&Tab;&Tab;&lt;version&gt;2.3.1&lt;/version&gt;
+&Tab;&lt;/parent&gt;
 
-	<artifactId>org.restlet.ext.apispark</artifactId>
-	<name>Restlet Extension - APISpark</name>
-	<description>Integration with APISpark cloud platform, by Restlet.</description>
+&Tab;&lt;artifactId&gt;org.restlet.ext.apispark&lt;/artifactId&gt;
+&Tab;&lt;name&gt;Restlet Extension - APISpark&lt;/name&gt;
+&Tab;&lt;description&gt;Integration with APISpark cloud platform, by Restlet.&lt;/description&gt;
 
-	<dependencies>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>16.0.1</version>
+&Tab;&lt;dependencies&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;com.google.guava&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;guava&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;16.0.1&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>javax.ws.rs</groupId>
-			<artifactId>javax.ws.rs-api</artifactId>
-			<version>2.0</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;javax.ws.rs&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;javax.ws.rs-api&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;2.0&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>org.raml</groupId>
-			<artifactId>raml-parser</artifactId>
-			<version>0.8.7</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;org.raml&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;raml-parser&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;0.8.7&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>com.wordnik</groupId>
-			<artifactId>swagger-annotations</artifactId>
-			<version>1.3.10</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;com.wordnik&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;1.3.10&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>org.restlet.jse</groupId>
-			<artifactId>org.restlet.lib.swagger-models</artifactId>
-			<version>1.5.0-SNAPSHOT</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;org.restlet.lib.swagger-models&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;1.5.0-SNAPSHOT&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>org.raml</groupId>
-			<artifactId>raml-parser</artifactId>
-			<version>0.8.7</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;org.raml&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;raml-parser&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;0.8.7&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>org.restlet.jse</groupId>
-			<artifactId>org.restlet</artifactId>
-			<version>2.3.1</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;org.restlet&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;2.3.1&lt;/version&gt;
 
-		</dependency>
-		<dependency>
-			<groupId>org.restlet.jse</groupId>
-			<artifactId>org.restlet.ext.jackson</artifactId>
-			<version>2.3.1</version>
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&Tab;&lt;dependency&gt;
+&Tab;&Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
+&Tab;&Tab;&Tab;&lt;artifactId&gt;org.restlet.ext.jackson&lt;/artifactId&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;2.3.1&lt;/version&gt;
 
-		</dependency>
-	</dependencies>
-</project>
-~~~~
+&Tab;&Tab;&lt;/dependency&gt;
+&Tab;&lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
 
 ### Manually
 
@@ -170,11 +165,9 @@ The parameters -u and -p are mandatory, they correspond to your APISpark user na
 
 Here is the result, we get from the Introspector:
 
-
-~~~~
-Your Web API descriptor's id is: 123456
+<pre class="language-ini"><code class="language-ini">Your Web API descriptor's id is: 123456
 Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/123456/versions/1/overview
-~~~~
+</code></pre>
 
 ![Descriptor in APISpark](images/descriptor-in-apispark.jpg "Descriptor in APISpark")
 
@@ -197,8 +190,7 @@ The Restlet extension for APISpark provides a source code introspector that take
 
 Here is its commande line help:
 
-~~~~
-
+<pre class="language-bash"><code class="language-bash">
 SYNOPSIS
        org.restlet.ext.apispark.Introspector [credentials] [actions] [options] [--language
        swagger SWAGGER_DEFINITION_URL_OR_PATH | APPLICATION]
@@ -284,4 +276,4 @@ ENHANCE INTROSPECTION
        To add a new helper, create a
        'META-INF/services/org.restlet.ext.apispark.internal.introspection.IntrospectionHelper' file
        with the name of your implementation class.
-~~~~
+</code></pre>

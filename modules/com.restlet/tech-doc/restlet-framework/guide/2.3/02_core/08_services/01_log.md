@@ -17,7 +17,8 @@ java.util.logging framework by modifying the Component's "logService"
 property. In order to fully configure the logging, you need to declare a
 configuration file by setting a system property like:
 
-    System.setProperty("java.util.logging.config.file", "/your/path/logging.config"); 
+<pre class="language-java"><code class="language-java">System.setProperty("java.util.logging.config.file", "/your/path/logging.config"); 
+</code></pre>
 
 For details on the configuration file format, please check the [JDK's
 LogManager](http://docs.oracle.com/javase/7/docs/api/index.html?java/util/logging/LogManager.html)
@@ -59,20 +60,19 @@ command:
 ## First method: customize the log format
 
 You can update the log format by setting the "responseLogFormat" attribute of the logging service.
-This is a simple template which leverages the variables listed here 
+This is a simple template which leverages the variables listed here
 [Template](javadocs://jse/api/org/restlet/util/Resolver.html#createResolver%28org.restlet.data.Request,%20org.restlet.data.Response%29).
 
 Here is a sample template and a sample log trace.
 
-```java
-    Component c = new Component();
+<pre class="language-java"><code class="language-java">    Component c = new Component();
     c.getServers().add(Protocol.HTTP, 8182);
     c.getDefaultHost().attach(new MyApplication());
 
     c.getLogService().setResponseLogFormat("{ciua} {cri} {ra} {m} {rp} {rq} {S} {ES} {es} {hh} {cig} {fi}");
-    
+
     c.start();
-```
+</code></pre>
 
 This log format displays the following data:
 
@@ -91,9 +91,8 @@ This log format displays the following data:
 
 For example:
 
-```
-127.0.0.1  localhost:8182 GET /ping  200 5 0 http://localhost:8182 curl/7.35.0 http://test.example.com
-```
+<pre class="language-bash"><code class="language-bash">127.0.0.1  localhost:8182 GET /ping  200 5 0 http://localhost:8182 curl/7.35.0 http://test.example.com
+</code></pre>
 
 ## Second method: write the log manually
 
@@ -101,4 +100,3 @@ As you may have noticed, the log template does not handle data such as the respo
 In this case, you can programmatically write your own log trace.
 In order to do so, just inherit from the LogService class and override the [getResponseLogMessage(Response, int) method](javadocs://jse/api/org/restlet/service/LogService.html#getResponseLogMessage%28org.restlet.Response,%20int%29).
 The first parameter is the Response object (wich gives your access to the Request object), and the duration of the call.
-

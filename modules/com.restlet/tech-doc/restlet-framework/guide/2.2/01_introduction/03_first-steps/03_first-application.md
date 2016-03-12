@@ -80,8 +80,7 @@ representations.
 
 ContactResource is an interface annotated with Restlet annotations:
 
-```java
-public interface ContactResource {
+<pre class="language-java"><code class="language-java">public interface ContactResource {
     @Get
     public Contact retrieve();
 
@@ -91,7 +90,7 @@ public interface ContactResource {
     @Delete
     public void remove();
 }
-```
+</code></pre>
 
 It represents the contract passed between the client and the server.
 
@@ -115,8 +114,7 @@ See also the "readme.txt" file located in the sources file. It list also all nec
 
 The server-side resource implements the annotated interface.
 
-```java
-/**
+<pre class="language-java"><code class="language-java">/**
  * The server side implementation of the Restlet resource.
  */
 public class ContactServerResource extends ServerResource implements ContactResource {
@@ -137,12 +135,11 @@ public class ContactServerResource extends ServerResource implements ContactReso
         ContactServerResource.contact = contact;
     }
 }
-```
+</code></pre>
 
 This resource is then exposed by the server application:
 
-```java
-    @Override
+<pre class="language-java"><code class="language-java">    @Override
     public Restlet createInboundRoot() {
         Router router = new Router(getContext());
 
@@ -152,7 +149,7 @@ This resource is then exposed by the server application:
 
         return router;
     }
-```
+</code></pre>
 
 # <a name="gwt-client"></a>GWT client
 
@@ -163,8 +160,7 @@ In order to get the Contact object, a proxy class is required. This is
 an interface that inherits on a specific interface (delivered by the GWT
 edition of the Restlet Framework):
 
-```java
-public interface ContactResourceProxy extends ClientProxy {
+<pre class="language-java"><code class="language-java">public interface ContactResourceProxy extends ClientProxy {
     @Get
     public void retrieve(Result<Contact> callback);
 
@@ -174,7 +170,7 @@ public interface ContactResourceProxy extends ClientProxy {
     @Delete
     public void remove(Result<Void> callback);
 }
-```
+</code></pre>
 
 This interface looks like the ContactResource interface, expect that it
 adds a callback to each declared methods, due to the asynchronous nature
@@ -189,8 +185,7 @@ GWT-RPC code base to GWT-REST with Restlet.
 Then, the following code allows you to request and handle the Contact
 resource:
 
-```java
-ContactResourceProxy contactResource = GWT.create(ContactResourceProxy.class);
+<pre class="language-java"><code class="language-java">ContactResourceProxy contactResource = GWT.create(ContactResourceProxy.class);
 
 // Set up the contact resource
 contactResource.getClientResource().setReference("/contacts/123");
@@ -209,7 +204,7 @@ contactResource.retrieve(new Result<Contact>() {
         cTbAge.setText(Integer.toString(contact.getAge()));
     }
 });
-```
+</code></pre>
 
 Here is a screenshot of the GWT client page once the user has clicked on
 the GET button.
@@ -220,8 +215,7 @@ the GET button.
 In order to update the contact, simply complete your contact object and
 invoke the "store" method as specified by the proxy interface:
 
-```java
-contactResource.store(contact, new Result<Void>() {
+<pre class="language-java"><code class="language-java">contactResource.store(contact, new Result<Void>() {
     public void onFailure(Throwable caught) {
         // Handle the error
     }
@@ -234,7 +228,7 @@ contactResource.store(contact, new Result<Void>() {
         closeButton.setFocus(true);
     }
 });
-```
+</code></pre>
 
 # <a name="android-client"></a>Android client
 
@@ -247,8 +241,7 @@ Android client (in both directions) using the standard Java
 serialization process. No additional interface is required except the
 ContactResource interface furnished by the server.
 
-```java
-// Initialize the resource proxy.
+<pre class="language-java"><code class="language-java">// Initialize the resource proxy.
 ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
 // Workaround for GAE servers to prevent chunk encoding
 cr.setRequestEntityBuffering(true);
@@ -257,14 +250,13 @@ ContactResource resource = cr.wrap(ContactResource.class);
 
 // Get the remote contact
 Contact contact = resource.retrieve();
-```
+</code></pre>
 
 In order to update the contact, simply use this instruction:
 
-```java
-// Update the remote contact
+<pre class="language-java"><code class="language-java">// Update the remote contact
 resource.store(contact);
-```
+</code></pre>
 
 The internal HTTP client has been rewritten using the java.nio.package.
 This may lead, on some android devices, to encounter this kind of
@@ -283,8 +275,7 @@ Here is a screenshot of the Android user interface.
 The same code used on the Android application allows you to get the full
 Contact object:
 
-```java
-ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
+<pre class="language-java"><code class="language-java">ClientResource cr = new ClientResource("http://restlet-example-serialization.appspot.com/contacts/123");
 // Get the Contact object
 ContactResource resource = cr.wrap(ContactResource.class);
 Contact contact = resource.retrieve();
@@ -294,13 +285,15 @@ if (contact != null) {
     System.out.println(" lastname: " + contact.getLastName());
     System.out.println("     nage: " + contact.getAge());
 }
-```
+</code></pre>
 
   This code produces the following ouput on the console:
 
+<pre class="language-bash"><code class="language-bash">
     firstname: Scott
      lastname: Tiger
           age: 40
+</code></pre>
 
 ## Get a JSON representation
 
@@ -308,11 +301,11 @@ In case the Contact class is not available, you can still retrieve a
 JSON representation by setting the client preferences when retrieving
 the resource's representation:
 
-```java
-cr.get(MediaType.APPLICATION_JSON).write(System.out);
-```
+<pre class="language-java"><code class="language-java">cr.get(MediaType.APPLICATION_JSON).write(System.out);
+</code></pre>
 
 which produces the following output:
 
-    {"age":40,"firstName":"Scott","homeAddress":{"country":"USA","city":"Mountain View","line1":"10 bd Google","line2":null,"zipCode":"20010"},
+<pre class="language-json"><code class="language-json">{"age":40,"firstName":"Scott","homeAddress":{"country":"USA","city":"Mountain View","line1":"10 bd Google","line2":null,"zipCode":"20010"},
     "lastName":"Tiger"}
+</code></pre>

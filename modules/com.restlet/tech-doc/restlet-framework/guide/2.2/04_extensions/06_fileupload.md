@@ -47,8 +47,7 @@ back its content as plain text to the client.
 
 Here is the content of the MyResource\#accept method:
 
-```java
-@Post
+<pre class="language-java"><code class="language-java">@Post
 public Representation accept(Representation entity) throws Exception {
     Representation result = null;
     if (entity != null) {
@@ -96,7 +95,7 @@ public Representation accept(Representation entity) throws Exception {
     }
     return result;
 }
-```
+</code></pre>
 
 Before running this example, please add the following jars to the
 classpath:

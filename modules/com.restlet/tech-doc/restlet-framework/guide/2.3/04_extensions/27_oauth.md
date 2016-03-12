@@ -7,7 +7,7 @@ This is intended to be used with primarily following use-cases in mind:
 
 It is very simple to create an OAuth server with just a few lines of code. It is also possible to implement a custom back end for data storage and retrieval. The default implementation stores only to memory, so a JVM restart flushes all data.
 
-    {
+<pre class="language-java"><code class="language-java">    {
         public Restlet createInboundRoot(){
         ...
         OAuthAuthorizer auth = new OAuthAuthorizer(
@@ -16,10 +16,11 @@ It is very simple to create an OAuth server with just a few lines of code. It is
         router.attach("/me", auth);
         ...
     }
+</code></pre>
 
 Example 1. Creating a Protected Resource
 
-    {
+<pre class="language-java"><code class="language-java">    {
         OAuthParameter params = new OAuthParameters("clientId", "clientSecret",
             oauthURL, "scope1 scope2");
         OAuthProxy proxy = new OauthProxy(params, getContext(), true);
@@ -38,6 +39,7 @@ Example 1. Creating a Protected Resource
         proxy.setNext(DummyResource.class);
         router.attach("/write", write);
     }
+</code></pre>
 
 Example 2. Creating a Proxies to access protected resources
 

@@ -9,8 +9,7 @@ and return a simple string representation "hello, world" as plain text.
 Note that the FirstServerResource class extends the base
 org.restlet.resource.ServerResource class provided by the Restlet API:
 
-```java
-public class FirstServerResource extends ServerResource {  
+<pre class="language-java"><code class="language-java">public class FirstServerResource extends ServerResource {  
 
    public static void main(String[] args) throws Exception {  
       // Create the HTTP server and listen on port 8182  
@@ -23,7 +22,7 @@ public class FirstServerResource extends ServerResource {
    }
 
 }  
-```
+</code></pre>
 
 If you run this code and launch your server, you can open a Web browser
 and hit the

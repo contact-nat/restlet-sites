@@ -54,34 +54,37 @@ When a component instantiate an Application, or any kind of Restlet, it
 is no more mandatory to specify the context. Taking a simple component
 that attaches an application, here is the ancient way to achieve this:
 
-    Component component = new Component();
+<pre class="language-java"><code class="language-java">    Component component = new Component();
 
     // Add a new HTTP server listening on port 8182.
     component.getServers().add(Protocol.HTTP, 8182);
 
     // Attach the sample application.
     component.getDefaultHost().attach(new FirstStepsApplication(component.getContext()));
+</code></pre>
 
 And now, here is the new way:
 
-    Component component = new Component();
+<pre class="language-java"><code class="language-java">    Component component = new Component();
 
     // Add a new HTTP server listening on port 8182.
     component.getServers().add(Protocol.HTTP, 8182);
 
     // Attach the sample application.
     component.getDefaultHost().attach(new FirstStepsApplication());
+</code></pre>
 
 If you still need to handle the context in the Application constructor,
 you must do as follow:
 
-    Component component = new Component();
+<pre class="language-java"><code class="language-java">    Component component = new Component();
 
     // Add a new HTTP server listening on port 8182.
     component.getServers().add(Protocol.HTTP, 8182);
 
     // Attach the sample application.
     component.getDefaultHost().attach(new FirstStepsApplication(component.getContext().createChildContext()));
+</code></pre>
 
 The application is instantiated with a child context, not the component
 context. Otherwise, your application might not start properly and a log

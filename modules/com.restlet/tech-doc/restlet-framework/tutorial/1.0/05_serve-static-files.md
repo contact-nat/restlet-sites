@@ -2,8 +2,7 @@ Do you have a part of your web application that serves static pages like
 Javadocs? Well, no need to setup an Apache server just for that, use
 instead the dedicated Directory class. See how simple it is to use it:
 
-~~~~ {.java:nocontrols:nogutter}
-// URI of the root directory.
+<pre class="language-java"><code class="language-java">// URI of the root directory.
 public static final String ROOT_URI = "file:///c:/restlet/docs/api/";
 
 [...]
@@ -24,8 +23,7 @@ Application application = new Application(component.getContext()) {
 // Attach the application to the component and start it
 component.getDefaultHost().attach("", application);
 component.start();
-
-~~~~
+</code></pre>
 
 As you may notice, the application is instantiated by passing the
 context of its parent component, contrary to the previous sample code

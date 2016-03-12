@@ -14,8 +14,7 @@ Here is a snippet of code (from the downloadable example below) showing
 briefly how to instantiate a ClientResource and make an asynchronous GET
 call:
 
-```java
-// Add behaviour on the close button.
+<pre class="language-java"><code class="language-java">// Add behaviour on the close button.
 closeButton.addClickHandler(new ClickHandler() {
     public void onClick(ClickEvent event) {
         // Add an AJAX call to the server
@@ -35,4 +34,4 @@ closeButton.addClickHandler(new ClickHandler() {
         dialogBox.hide();
     }
 });
-```
+</code></pre>

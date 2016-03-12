@@ -22,7 +22,7 @@ specification, [section
 
 ## Usage example
 
-    Representation file = new FileRepresentation(***);
+<pre class="language-java"><code class="language-java">    Representation file = new FileRepresentation(***);
 
     FormDataSet form = new FormDataSet();
     form.setMultipart(true);
@@ -33,3 +33,4 @@ specification, [section
 
     ClientResource cr = new ClientResource("http://mydomain.com/upload");
     cr.post(form);
+</code></pre>

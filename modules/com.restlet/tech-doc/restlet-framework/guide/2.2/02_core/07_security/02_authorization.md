@@ -31,7 +31,7 @@ in your build path.
 
 Main class for role authorization example:
 
-    public class MyApiWithRoleAuthorization extends Application {
+<pre class="language-java"><code class="language-java">    public class MyApiWithRoleAuthorization extends Application {
 
 	    //Define role names
 	    public static final String ROLE_USER = "user";
@@ -100,11 +100,12 @@ Main class for role authorization example:
 	        c.start();
 	    }
 	}
+</code></pre>
 
 Resources classes, call them Resource1, Resource2 etc... and copy-paste
 their content from here:
 
-    public class Resource0 extends ServerResource{
+<pre class="language-java"><code class="language-java">    public class Resource0 extends ServerResource{
 
         @Get
     	public String represent() throws Exception {
@@ -131,11 +132,12 @@ their content from here:
     		return this.getClass().getSimpleName() + " deleted!";
     	}
     }
+</code></pre>
 
 Main class for method authorization example, use the last class and replace
 its createInboundRoot and createRoleAuthorizer with the methods below:
 
-    @Override
+<pre class="language-java"><code class="language-java">    @Override
     public Restlet createInboundRoot() {
         //ChallengeAuthenticator
         ChallengeAuthenticator ca = createAuthenticator();
@@ -161,6 +163,7 @@ its createInboundRoot and createRoleAuthorizer with the methods below:
     	methodAuth.getAuthenticatedMethods().add(Method.DELETE);
     	return methodAuth;
     }
+</code></pre>
 
 # Fine-grained authorization
 
@@ -171,7 +174,7 @@ can leverage the ServerResource\#isInRole() method.
 
 Create a simple server as below:
 
-    public class ApiWithFineGrainedAuthorization extends Application {
+<pre class="language-java"><code class="language-java">    public class ApiWithFineGrainedAuthorization extends Application {
 
         @Override
     	public org.restlet.Restlet createInboundRoot() {
@@ -188,10 +191,11 @@ Create a simple server as below:
             c.start();
     	}
     }
+</code></pre>
 
 With a resource like this:
 
-    public class ResourceFineGrained extends ServerResource {
+<pre class="language-java"><code class="language-java">    public class ResourceFineGrained extends ServerResource {
 
         @Get
         public String represent() throws ResourceException {
@@ -217,6 +221,7 @@ With a resource like this:
     		return this.getClass().getSimpleName() + " patched !";
     	}
     }
+</code></pre>
 
 For a call to [http://localhost:9000/v1/resourceTypePublic/resource1/](http://localhost:9000/v1/resourceTypePublic/resource1/)
 you will need to use the owner profile to use POST and just authenticate to use PATCH.

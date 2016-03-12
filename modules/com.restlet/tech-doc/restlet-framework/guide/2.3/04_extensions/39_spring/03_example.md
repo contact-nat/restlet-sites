@@ -25,33 +25,31 @@ First, we show the configuration of the Restlet Component and top-level
 Router beans. The top-level Router is necessary only if an non-root
 context path is required for standalone deployment.
 
-```java
-<bean id="top" class="org.restlet.ext.spring.SpringComponent">
-    <property name="server">
-        <bean class="org.restlet.ext.spring.SpringServer">
-            <constructor-arg value="http" />
-            <constructor-arg value="3000" />
-        </bean>
-    </property>
-    <property name="defaultTarget" ref="default" />
-</bean>
+<pre class="language-markup"><code class="language-markup">&lt;bean id=&quot;top&quot; class=&quot;org.restlet.ext.spring.SpringComponent&quot;&gt;
+    &lt;property name=&quot;server&quot;&gt;
+        &lt;bean class=&quot;org.restlet.ext.spring.SpringServer&quot;&gt;
+            &lt;constructor-arg value=&quot;http&quot; /&gt;
+            &lt;constructor-arg value=&quot;3000&quot; /&gt;
+        &lt;/bean&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;defaultTarget&quot; ref=&quot;default&quot; /&gt;
+&lt;/bean&gt;
 
-<bean id="default" class="org.restlet.ext.spring.SpringRouter">
-    <property name="attachments">
-        <map>
-            <entry key="/v1" value-ref="root" />
-        </map>
-    </property>
-</bean>
-```
+&lt;bean id=&quot;default&quot; class=&quot;org.restlet.ext.spring.SpringRouter&quot;&gt;
+    &lt;property name=&quot;attachments&quot;&gt;
+        &lt;map&gt;
+            &lt;entry key=&quot;/v1&quot; value-ref=&quot;root&quot; /&gt;
+        &lt;/map&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
 
 As a result, the main method has become very simple. It loads a Spring
 context based on two configuration metadata files, one for the preceding
 top-level beans, and one for the application-specific beans shown below.
 It then starts up the top-level Restlet Component.
 
-```java
-    public static void main(String... args) throws Exception {
+<pre class="language-java"><code class="language-java">    public static void main(String... args) throws Exception {
     // load the Spring application context
     ApplicationContext springContext = new ClassPathXmlApplicationContext(
         new String[] { "applicationContext-router.xml", "applicationContext-server.xml" });
@@ -59,7 +57,7 @@ It then starts up the top-level Restlet Component.
     // obtain the Restlet component from the Spring context and start it
     ((Component) springContext.getBean("top")).start();
     }
-```
+</code></pre>
 
 Next, we look at the configuration of the application-specific Router.
 We use a SpringRouter for this purpose, which is configured using a map
@@ -73,40 +71,39 @@ pattern. We use Spring's nested properties to drill into the
 configuration of the URI pattern along with Spring's mechanism for
 accessing a static field in a class.
 
-```java
-<bean id="root" class="org.restlet.ext.spring.SpringRouter">
-    <property name="attachments">
-        <map>
-            <entry key="/users/{username}">
-                <bean class="org.restlet.ext.spring.SpringFinder">
-                    <lookup-method name="create"
-                        bean="userResource" />
-                </bean>
-            </entry>
-            <entry key="/users/{username}/bookmarks">
-                <bean class="org.restlet.ext.spring.SpringFinder">
-                    <lookup-method name="create"
-                        bean="bookmarksResource" />
-                </bean>
-            </entry>
-            <entry key="/users/{username}/bookmarks/{URI}">
-                <bean class="org.restlet.ext.spring.SpringFinder">
-                    <lookup-method name="create"
-                        bean="bookmarkResource" />
-                </bean>
-            </entry>
-        </map>
-    </property>
-    <property name="routes[2].template.variables[URI]">
-        <bean class="org.restlet.util.Variable">
-            <constructor-arg ref="org.restlet.util.Variable.TYPE_URI_ALL" />
-        </bean>
-    </property>
-</bean>
+<pre class="language-markup"><code class="language-markup">&lt;bean id=&quot;root&quot; class=&quot;org.restlet.ext.spring.SpringRouter&quot;&gt;
+    &lt;property name=&quot;attachments&quot;&gt;
+        &lt;map&gt;
+            &lt;entry key=&quot;/users/{username}&quot;&gt;
+                &lt;bean class=&quot;org.restlet.ext.spring.SpringFinder&quot;&gt;
+                    &lt;lookup-method name=&quot;create&quot;
+                        bean=&quot;userResource&quot; /&gt;
+                &lt;/bean&gt;
+            &lt;/entry&gt;
+            &lt;entry key=&quot;/users/{username}/bookmarks&quot;&gt;
+                &lt;bean class=&quot;org.restlet.ext.spring.SpringFinder&quot;&gt;
+                    &lt;lookup-method name=&quot;create&quot;
+                        bean=&quot;bookmarksResource&quot; /&gt;
+                &lt;/bean&gt;
+            &lt;/entry&gt;
+            &lt;entry key=&quot;/users/{username}/bookmarks/{URI}&quot;&gt;
+                &lt;bean class=&quot;org.restlet.ext.spring.SpringFinder&quot;&gt;
+                    &lt;lookup-method name=&quot;create&quot;
+                        bean=&quot;bookmarkResource&quot; /&gt;
+                &lt;/bean&gt;
+            &lt;/entry&gt;
+        &lt;/map&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;routes[2].template.variables[URI]&quot;&gt;
+        &lt;bean class=&quot;org.restlet.util.Variable&quot;&gt;
+            &lt;constructor-arg ref=&quot;org.restlet.util.Variable.TYPE_URI_ALL&quot; /&gt;
+        &lt;/bean&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
 
-<bean id="org.restlet.util.Variable.TYPE_URI_ALL"
-    class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
-```
+&lt;bean id=&quot;org.restlet.util.Variable.TYPE_URI_ALL&quot;
+    class=&quot;org.springframework.beans.factory.config.FieldRetrievingFactoryBean&quot; /&gt;
+</code></pre>
 
 Unlike the preceding singleton beans, we define the ServerResources as
 prototype beans so that they get instantiated separately for each
@@ -115,32 +112,30 @@ request. All of the Resource beans depend on the
 ObjectContainer and are configured analogously, so we show only
 UserResource here.
 
-```java
-<bean id="userResource"
-    class="org.restlet.example.book.rest.ch7.spring.UserResource"
-    scope="prototype">
-    <property name="container" ref="db4oContainer" />
-</bean>
-```
+<pre class="language-markup"><code class="language-markup">&lt;bean id=&quot;userResource&quot;
+    class=&quot;org.restlet.example.book.rest.ch7.spring.UserResource&quot;
+    scope=&quot;prototype&quot;&gt;
+    &lt;property name=&quot;container&quot; ref=&quot;db4oContainer&quot; /&gt;
+&lt;/bean&gt;
+</code></pre>
 
 Using the
 [db4o](http://supportservices.actian.com/versant/default.html)
 [Spring Module](http://community.versant.com/Projects/html/projectspaces/db4o-spring.html),
 configuring the ObjectContainer is straightforward.
 
-```java
-<bean id="db4oContainer"
-    class="org.springmodules.db4o.ObjectContainerFactoryBean">
-    <property name="configuration" ref="db4oConfiguration" />
-    <property name="databaseFile" value="file://${user.home}/restbook.dbo" />
-</bean>
+<pre class="language-markup"><code class="language-markup">&lt;bean id=&quot;db4oContainer&quot;
+    class=&quot;org.springmodules.db4o.ObjectContainerFactoryBean&quot;&gt;
+    &lt;property name=&quot;configuration&quot; ref=&quot;db4oConfiguration&quot; /&gt;
+    &lt;property name=&quot;databaseFile&quot; value=&quot;file://${user.home}/restbook.dbo&quot; /&gt;
+&lt;/bean&gt;
 
-<bean id="db4oConfiguration"
-    class="org.springmodules.db4o.ConfigurationFactoryBean">
-    <property name="updateDepth" value="2" />
-    <property name="configurationCreationMode" value="NEW" />
-</bean>
-```
+&lt;bean id=&quot;db4oConfiguration&quot;
+    class=&quot;org.springmodules.db4o.ConfigurationFactoryBean&quot;&gt;
+    &lt;property name=&quot;updateDepth&quot; value=&quot;2&quot; /&gt;
+    &lt;property name=&quot;configurationCreationMode&quot; value=&quot;NEW&quot; /&gt;
+&lt;/bean&gt;
+</code></pre>
 
 As mentioned above, we added the following elements to each
 application-specific Resource:
@@ -154,8 +149,7 @@ application-specific Resource:
 
 The following code fragment summarizes these changes.
 
-```java
-public class UserResource extends ServerResource {
+<pre class="language-java"><code class="language-java">public class UserResource extends ServerResource {
 
     private ObjectContainer container;
 
@@ -184,4 +178,4 @@ public class UserResource extends ServerResource {
 
     // other methods
 }
-```
+</code></pre>

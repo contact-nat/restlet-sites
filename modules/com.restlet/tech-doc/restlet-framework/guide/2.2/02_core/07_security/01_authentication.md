@@ -26,20 +26,21 @@ simple Restlet that answers to request with a "hello, word" text
 representation. Of course this Restlet is a very simple representation
 of your own complex application.
 
-    // Restlet that simply replies to requests with an "hello, world" text message
+<pre class="language-java"><code class="language-java">    // Restlet that simply replies to requests with an "hello, world" text message
     Restlet restlet = new Restlet() {
         @Override
         public void handle(Request request, Response response) {
             response.setEntity(new StringRepresentation("hello, world", MediaType.TEXT_PLAIN));
         }
     };
+</code></pre>
 
 Then, the component protects this Restlet with a ChallengeAuthenticator
 instance based on the BASIC authentication scheme. Once the instance is
 created, it is given the list of known (login/password) pairs via the
 "verifier" attibute.
 
-    // Guard the restlet with BASIC authentication.
+<pre class="language-java"><code class="language-java">    // Guard the restlet with BASIC authentication.
     ChallengeAuthenticator guard = new ChallengeAuthenticator(null, ChallengeScheme.HTTP_BASIC, "testRealm");
     // Instantiates a Verifier of identifier/secret couples based on a simple Map.
     MapVerifier mapVerifier = new MapVerifier();
@@ -53,6 +54,7 @@ created, it is given the list of known (login/password) pairs via the
     component.getServers().add(Protocol.HTTP, 8182);  
     component.getDefaultHost().attachDefault(guard);
     component.start();
+</code></pre>
 
 ### Customization
 
@@ -71,7 +73,7 @@ provides an abstract implementation that retrieves the pair of
 identifier/secret in the request's challenge response and allow to
 verify them:
 
-    import org.restlet.security.LocalVerifier;
+<pre class="language-java"><code class="language-java">    import org.restlet.security.LocalVerifier;
 
     public class TestVerifier extends LocalVerifier {
 
@@ -86,13 +88,14 @@ verify them:
         }
 
     }
+</code></pre>
 
 ## Description of the client side
 
 The credentials are transmitted to the request via a ChallengeResponse
 object as follow:
 
-    public static void main(String args[]) {
+<pre class="language-java"><code class="language-java">    public static void main(String args[]) {
         ClientResource resource = new ClientResource("http://localhost:8182/");
 
         // Send an authenticated request using the Basic authentication scheme.
@@ -103,6 +106,7 @@ object as follow:
         // Should be 200
         System.out.println(resource.getStatus());
     }
+</code></pre>
 
 If you try to access http://localhost:8182/ via a web browser, a window will
 appear to type in your credentials.
@@ -126,13 +130,14 @@ simple Restlet that answers to request with a "hello, word" text
 representation. Of course this Restlet is a very simple representation
 of your own complex application.
 
-    // Restlet that simply replies to requests with an "hello, world" text message
+<pre class="language-java"><code class="language-java">    // Restlet that simply replies to requests with an "hello, world" text message
     Restlet restlet = new Restlet() {
         @Override
         public void handle(Request request, Response response) {
             response.setEntity(new StringRepresentation("hello, world", MediaType.TEXT_PLAIN));
         }
     };
+</code></pre>
 
 Then, the component protects this Restlet with an Authenticator instance
 based on the DIGEST authentication scheme. A dedicated constructor of
@@ -140,7 +145,7 @@ the Guard class of the Restlet API allows you to create such instance.
 Once the instance is created, it is given the list of known
 (login/password) pairs via the "secrets" attibute.
 
-    DigestAuthenticator guard = new DigestAuthenticator(null, "TestRealm", "mySecretServerKey");
+<pre class="language-java"><code class="language-java">    DigestAuthenticator guard = new DigestAuthenticator(null, "TestRealm", "mySecretServerKey");
 
     // Instantiates a Verifier of identifier/secret couples based on a simple Map.
     MapVerifier mapVerifier = new MapVerifier();
@@ -152,6 +157,7 @@ Once the instance is created, it is given the list of known
     guard.setNext(restlet);
 
     component.getDefaultHost().attachDefault(guard);
+</code></pre>
 
 ### Customization
 
@@ -170,7 +176,7 @@ provides an abstract implementation that retrieves the pair of
 identifier/secret in the request's challenge response and allow to
 verify them:
 
-    import org.restlet.security.LocalVerifier;
+<pre class="language-java"><code class="language-java">    import org.restlet.security.LocalVerifier;
 
     public class TestVerifier extends LocalVerifier {
 
@@ -185,6 +191,7 @@ verify them:
         }
 
     }
+</code></pre>
 
 ## Description of the client side
 
@@ -196,7 +203,7 @@ value, etc.). Unless these pieces of data are known in advance by the
 client, it appears that in general a first request is required in order
 to collect them.
 
-    ClientResource resource = new ClientResource("http://localhost:8182/");
+<pre class="language-java"><code class="language-java">    ClientResource resource = new ClientResource("http://localhost:8182/");
 
     resource.setChallengeResponse(ChallengeScheme.HTTP_DIGEST, "login", "secret");
     // Send the first request with unsufficient authentication.
@@ -207,11 +214,12 @@ to collect them.
     // Should be 401, since the client needs some data sent by the server in
     // order to complete the ChallengeResponse.
     System.out.println(resource.getStatus());
+</code></pre>
 
 Then, the second step allows to get the required data for the final
 computation of a correct ChallengeResponse object:
 
-    // Complete the challengeResponse object according to the server's data
+<pre class="language-java"><code class="language-java">    // Complete the challengeResponse object according to the server's data
     // 1- Loop over the challengeRequest objects sent by the server.
     ChallengeRequest c1 = null;
     for (ChallengeRequest challengeRequest : resource.getChallengeRequests()) {
@@ -226,13 +234,15 @@ computation of a correct ChallengeResponse object:
                                                                 resource.getResponse(),
                                                                 "login",
                                                                 "secret".toCharArray());
+</code></pre>
 
 Finally, the request is completed with the computed ChallengeResponse
 instance:
 
-    resource.setChallengeResponse(challengeResponse);
+<pre class="language-java"><code class="language-java">    resource.setChallengeResponse(challengeResponse);
 
     // Try authenticated request
     resource.get();
     // Should be 200.
     System.out.println(resource.getStatus());
+</code></pre>

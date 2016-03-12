@@ -35,8 +35,7 @@ the code of the single resource defined by the sample application.
 Copy/paste the code in your "HelloWorldResource" class.
 
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
@@ -52,15 +51,13 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-
-```
+</code></pre>
 
 Then, create the sample application. Let's call it
 "FirstStepsApplication" and copy/paste the following code:
 
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.Application;
 import org.restlet.Restlet;
@@ -83,8 +80,7 @@ public class FirstStepsApplication extends Application {
     }
 
 }
-
-```
+</code></pre>
 
 ## Run in a Servlet container
 
@@ -100,34 +96,32 @@ in. Add the archives listed below into the directory of librairies
 Then, update the "web.xml" configuration file as follow:
 
 
-```java
-<?xml version="1.0" encoding="UTF-8"?>  
-<web-app id="WebApp_ID" version="2.4"  
-            xmlns="http://java.sun.com/xml/ns/j2ee"  
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-            xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee  
-                 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">  
-   <display-name>first steps servlet</display-name>  
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;web-app id=&quot;WebApp_ID&quot; version=&quot;2.4&quot;  
+            xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot;  
+            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;  
+            xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee  
+                 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;&gt;  
+   &lt;display-name&gt;first steps servlet&lt;/display-name&gt;  
 
-   <!-- Restlet adapter -->  
-   <servlet>  
-      <servlet-name>RestletServlet</servlet-name>  
-      <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
-      <init-param>
-            <!-- Application class name -->
-            <param-name>org.restlet.application</param-name>
-            <param-value>firstSteps.FirstStepsApplication</param-value>
-      </init-param>
-   </servlet>  
+   &lt;!-- Restlet adapter --&gt;  
+   &lt;servlet&gt;  
+      &lt;servlet-name&gt;RestletServlet&lt;/servlet-name&gt;  
+      &lt;servlet-class&gt;org.restlet.ext.servlet.ServerServlet&lt;/servlet-class&gt;
+      &lt;init-param&gt;
+            &lt;!-- Application class name --&gt;
+            &lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
+            &lt;param-value&gt;firstSteps.FirstStepsApplication&lt;/param-value&gt;
+      &lt;/init-param&gt;
+   &lt;/servlet&gt;  
 
-   <!-- Catch all requests -->  
-   <servlet-mapping>  
-      <servlet-name>RestletServlet</servlet-name>  
-      <url-pattern>/*</url-pattern>  
-   </servlet-mapping>  
-</web-app>  
-
-```
+   &lt;!-- Catch all requests --&gt;  
+   &lt;servlet-mapping&gt;  
+      &lt;servlet-name&gt;RestletServlet&lt;/servlet-name&gt;  
+      &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  
+   &lt;/servlet-mapping&gt;  
+&lt;/web-app&gt;
+</code></pre>
 
 Finally, package the whole as a WAR file called for example
 "firstStepsServlet.war" and deploy it inside your Servlet container.
@@ -135,10 +129,8 @@ Once you have launched the Servlet container, open your favorite web
 browser, and enter the following URL:
 
 
-```java
-http://<your server name>:<its port number>/firstStepsServlet/hello
-
-```
+<pre class="language-bash"><code class="language-bash">http://<your server name>:<its port number>/firstStepsServlet/hello
+</code></pre>
 
 The server will happily welcome you with the expected "hello, world"
 message. You can find the WAR file (packaged with archives taken from
@@ -156,8 +148,7 @@ defining a new HTTP server listening on port 8182 and delegating all
 requests to the "FirstStepsApplication".
 
 
-```java
-public static void main(String[] args) throws Exception {  
+<pre class="language-java"><code class="language-java">public static void main(String[] args) throws Exception {  
     // Create a new Component.  
     Component component = new Component();  
 
@@ -170,9 +161,8 @@ public static void main(String[] args) throws Exception {
 
     // Start the component.  
     component.start();  
-}      
-
-```
+}
+</code></pre>
 
 Once you have launched the main class, if you can open your favorite web
 browser, and gently type the following URL:

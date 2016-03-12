@@ -40,34 +40,36 @@ Declare the repository for your project or for a parent project by
 updating the *pom.xml* file and adding the following code to the
 \<repositories\> section:
 
-    <repository>
-       <id>maven-restlet</id>
-       <name>Public online Restlet repository</name>
-       <url>http://maven.restlet.com</url>
-    </repository> 
+<pre class="language-markup"><code class="language-markup">    &lt;repository&gt;
+    &nbsp;&nbsp;&nbsp;&lt;id&gt;maven-restlet&lt;/id&gt;
+    &nbsp;&nbsp;&nbsp;&lt;name&gt;Public&nbsp;online&nbsp;Restlet&nbsp;repository&lt;/name&gt;
+    &nbsp;&nbsp;&nbsp;&lt;url&gt;http://maven.restlet.com&lt;/url&gt;
+    &lt;/repository&gt;&nbsp;
+</code></pre>
 
 As an alternative, you can also declare the repository for all of your
 projects. Go to the directory on the local computer where you just
 install Maven. Open and edit *conf/settings.xml* file. Add to the
 \<profiles\> section the following code:
 
-    <profile> 
-      <id>restlet</id>
-      <repositories>
-        <repository>
-          <id>maven-restlet</id>
-          <name>Public online Restlet repository</name>
-          <url>http://maven.restlet.com</url>
-        </repository>
-      </repositories>
-    </profile>
+<pre class="language-markup"><code class="language-markup">    &lt;profile&gt;&nbsp;
+    &nbsp;&nbsp;&lt;id&gt;restlet&lt;/id&gt;
+    &nbsp;&nbsp;&lt;repositories&gt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;repository&gt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;maven-restlet&lt;/id&gt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Public&nbsp;online&nbsp;Restlet&nbsp;repository&lt;/name&gt;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;url&gt;http://maven.restlet.com&lt;/url&gt;
+    &nbsp;   &lt;/repository&gt;
+    &nbsp;&nbsp;&lt;/repositories&gt;
+    &lt;/profile&gt;
+</code></pre>
 
 Just after the \</profiles\> add the following:
 
-    <activeProfiles> 
-      <activeProfile>restlet</activeProfile>
-    </activeProfiles> 
-
+<pre class="language-markup"><code class="language-markup">    &lt;activeProfiles&gt;&nbsp;
+    &nbsp; &lt;activeProfile&gt;restlet&lt;/activeProfile&gt;
+    &lt;/activeProfiles&gt;&nbsp;
+</code></pre>
 
 # Available artifacts
 
@@ -150,13 +152,14 @@ Simple. Since your Maven client correctly references the Restlet online
 repository, just open and edit the *pom.xml* file for your project and
 add the following lines of text into the \<dependencies\> section.
 
-    <dependency>
-      <groupId>org.restlet.jse</groupId>
-      <artifactId>org.restlet</artifactId>
-      <version>2.2-RC4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.restlet.jse</groupId>
-      <artifactId>org.restlet.ext.simple</artifactId>
-      <version>2.2-RC4</version>
-    </dependency>
+<pre class="language-markup"><code class="language-markup">    &lt;dependency&gt;
+      &lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
+      &lt;artifactId&gt;org.restlet&lt;/artifactId&gt;
+      &lt;version&gt;2.2-RC4&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
+      &lt;artifactId&gt;org.restlet.ext.simple&lt;/artifactId&gt;
+      &lt;version&gt;2.2-RC4&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>

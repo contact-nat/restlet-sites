@@ -105,9 +105,10 @@ optimal efficiency when calling upon each other.
 
 To call a resource via the  riap:// scheme one can just use:
 
-    Context context;
+<pre class="language-java"><code class="language-java">    Context context;
 
     context.getClientDispatcher().get("riap://component/some-path/Y");
+</code></pre>
 
 There is no need to register a RIAP client, this is handled by built-in
 support.
@@ -117,9 +118,10 @@ support.
 Applications need just to be attached to the internalRouter property of
 the Component.
 
-    Component component;
+<pre class="language-java"><code class="language-java">    Component component;
 
     component.getInternalRouter().attach("/path", someApplication);
+</code></pre>
 
 Applications can be attached multiple times (at different paths) to both
 the internal router as to several virtual hosts.\

@@ -29,15 +29,17 @@ initialized in two different ways.
 
 First one is to specify directory and configFile parameters.
 
-    Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
+<pre class="language-java"><code class="language-java">    Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
     solrClient.getContext().getParameters().getFirstValue("directory");
     solrClient.getContext().getParameters().getFirstValue("configFile");
+</code></pre>
 
 Second one is to create the CoreContainer.
 
-    Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
+<pre class="language-java"><code class="language-java">    Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
     CoreContainer coreContainer = initSolrContainer(component);
     solrClient.getContext().getAttributes().put("CoreContainer",coreContainer);
+</code></pre>
 
 To configure your core container see solr documentation :
 [http://wiki.apache.org/solr/](http://wiki.apache.org/solr/)
@@ -55,8 +57,9 @@ To update a document like described
 [here](http://wiki.apache.org/solr/UpdateXmlMessages)
 you can do :
 
-    StringRepresentation repr = new StringRepresentation(xml, MediaType.TEXT_XML);
+<pre class="language-java"><code class="language-java">    StringRepresentation repr = new StringRepresentation(xml, MediaType.TEXT_XML);
     getContext().getClientDispatcher().post("solr://main/update", repr);
+</code></pre>
 
 ## Solr Core Container
 
@@ -64,7 +67,7 @@ If you would like to interact with Solr through http without a Servlet
 container you can use this restlet. It can also be very useful for
 debug.
 
-    import org.restlet.Context;
+<pre class="language-java"><code class="language-java">    import org.restlet.Context;
     import org.restlet.Restlet;
     import org.restlet.data.Reference;
     import org.restlet.data.Request;
@@ -91,3 +94,4 @@ debug.
         }
 
     }
+</code></pre>

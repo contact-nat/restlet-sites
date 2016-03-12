@@ -16,8 +16,7 @@ sandbox.
 The solution is to use a custom Restlet engine as below, that won't
 create this new classloader:
 
-```java
-    public class AppletEngine extends Engine {
+<pre class="language-java"><code class="language-java">    public class AppletEngine extends Engine {
 
         @Override
         protected ClassLoader createClassLoader() {
@@ -25,13 +24,12 @@ create this new classloader:
         }
 
     }
-```
+</code></pre>
 
 Now you just need to call this line before using the Restlet API:
 
-```java
-    Engine.setInstance(new AppletEngine());
-```
+<pre class="language-java"><code class="language-java"    Engine.setInstance(new AppletEngine());
+</code></pre>
 
 # <a name="solve-405-status-code-responses"></a>Solve 405 status code responses
 
@@ -53,14 +51,13 @@ compatible return type. the case (A/) is easy to understand, let's focus
 on case (B/). This may happen when you server resource use annotation
 with media type parameters:
 
-```java
-public class MyResource extends ServerResource {
+<pre class="language-java"><code class="language-java">public class MyResource extends ServerResource {
    @Get("html")
    public String toHtml() {
       return "<html><body>hello, world</body></html>";
    }
 }
-```
+</code></pre>
 
 In this case, the client requires a JSON representation but the server
 resource is not able to generate it.
@@ -81,22 +78,20 @@ their context (see the
 Here is a sample code that illustrates how to configure the HTTP  server
 connector of a Component:
 
-```java
-    Component c = new Component();
+<pre class="language-java"><code class="language-java">    Component c = new Component();
     Server s = new Server(Protocol.HTTP, 8182);
     c.getServers().add(s);
     s.getContext().getParameters().add("tracing", "true");
-```
+</code></pre>
 
 Here is a sample code that illustrates how to configure the HTTP  client
 connector of a resource:
 
-```java
-    Client client = new Client(new Context(), Protocol.HTTP);
+<pre class="language-java"><code class="language-java">    Client client = new Client(new Context(), Protocol.HTTP);
     client.getContext().getParameters().add("tracing", "true");
     ClientResource resource = new ClientResource("http://localhost:8182/<resource>");
     resource.setNext(client);
-```
+</code></pre>
 
 # <a name="how-do-i-implement-the-traditional-mvc-pattern"></a>How do I implement the traditional MVC pattern?
 

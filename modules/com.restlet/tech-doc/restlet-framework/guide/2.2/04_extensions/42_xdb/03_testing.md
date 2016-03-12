@@ -1,15 +1,11 @@
 * Testing using a browser
 
-
 Test your __REST__ examples with your favorite browser using these URLs (they where configured as __XMLDB__ Servlets by src/com.noelios.restlet.ext.xdb_11.1/resources/sql/postInstall.sql script):
 
 
-```
-
-http://localhost:8080/searchapp/search?kwd=marcelo+ochoa
+<pre class="language-bash"><code class="language-bash">http://localhost:8080/searchapp/search?kwd=marcelo+ochoa
 http://localhost:8080/userapp/users/scott/orders/300
-
-```
+</code></pre>
 
 
 Note: XMLDB is an HTTP 1.0 complaint connector, usually modern browsers try to connect using HTTP 1.1 so you can experiment that the browser leave the connection open because is trying to use Keep-alive feature.
@@ -21,8 +17,7 @@ Note: XMLDB is an HTTP 1.0 complaint connector, usually modern browsers try to c
 Some test can be done by using telnet application to see which headers are sent and got as response from __REST WS__. For example:
 
 
-```
-[mochoa@mochoa resources]$ telnet localhost 8080
+<pre class="language-bash"><code class="language-bash">[mochoa@mochoa resources]$ telnet localhost 8080
 Trying 127.0.0.1...
 Connected to live.dbprism.mochoa.dyndns.org (127.0.0.1).
 Escape character is '^]'.
@@ -41,9 +36,7 @@ Content-Length: 28
 
 
 __Order "300" for user "scott"__
-
-
-```
+</code></pre>
 
 
 * Minimalistic test comparing REST versus native SOAP
@@ -53,9 +46,8 @@ __Order "300" for user "scott"__
 
 As you can see in a previous section there is simple User application which returns orders for __scott__ user. Using __ApacheBench__ you can test the application executing:
 
-```
-ab -n {total_request} -c {concurrent_request} http://localhost:8080/userapp/users/scott/orders/300
-```
+<pre class="language-bash"><code class="language-bash">ab -n {total_request} -c {concurrent_request} http://localhost:8080/userapp/users/scott/orders/300
+</code></pre>
 
 Where __total_request__ is number of request sent by Apache benchmark paralleling it in __concurrent_request__ request.
 A result of this execution on my notebook can be compared in [this Google sheet](http://spreadsheets.google.com/pub?key=pAl-EJ5Wtb_10aTyfnO1dUw).
@@ -68,13 +60,11 @@ A similar functionality can be implemented using __[XMLDB Native SOAP WS](http:/
 For doing that create this Java source at Scott's schema:
 
 create or replace and compile java source named "my.OrderCalculator" as
-```java
-package my;
 
+<pre class="language-java"><code class="language-java">package my;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 public class OrderCalculator {
     /**
@@ -82,18 +72,15 @@ public class OrderCalculator {
      */
     private static Logger logger = null;
 
-
     /**
      * Constant used to get Logger name
      */
     static final String CLASS_NAME = OrderCalculator.class.getName();
 
-
     static {
             logger = Logger.getLogger(CLASS_NAME);
             logger.setLevel(Level.ALL);
     }
-
 
    public static String getOrder(String userName, int orderId) {
         logger.entering(CLASS_NAME,"getOrder",new Object [] {userName,new Integer(orderId)});
@@ -101,59 +88,51 @@ public class OrderCalculator {
         return "Order '"+orderId+"' for user '"+userName+"'";
    }
 }
-/
-
-```
+</code></pre>
 
 
 Note that I have added JDK Logging functionality to compare a closer example to Restlet functionality, obviously routing and many other default Restlet functionalities are not compared with this example.
 And his __PLSQL__ Call Spec:
 
 
-```
-CREATE OR REPLACE PACKAGE orders_calculator AUTHID CURRENT_USER AS
+<pre class="language-sql"><code class="language-sql">CREATE OR REPLACE PACKAGE orders_calculator AUTHID CURRENT_USER AS
   FUNCTION getOrder(user_name IN VARCHAR2, order_id IN NUMBER) RETURN VARCHAR2
 as LANGUAGE JAVA NAME
      'my.OrderCalculator.getOrder(java.lang.String, int) return
 java.lang.String';
 END orders_calculator;
 /
-
-```
+</code></pre>
 
 
 As you can see OrderCalculator class is using JDK logging package, to get JDK logging working this grant is required:
 
 
-```sql
-SQL> exec dbms_java.grant_permission( 'SCOTT',
+<pre class="language-sql"><code class="language-sql">SQL> exec dbms_java.grant_permission( 'SCOTT',
 'SYS:java.util.logging.LoggingPermission', 'control', '' );
 SQL> commit;
-```
+</code></pre>
 
 
 Finally to send a POST message using Apache benchmark its necessary to edit a POST XML message like:
 
 
-```xml
-<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://xmlns.oracle.com/orawsv/SCOTT/ORDERS_CALCULATOR/GETORDER">
-   <env:Header/>
-   <env:Body>
-      <ns1:SVARCHAR2-GETORDERInput>       
-<ns1:USER_NAME-VARCHAR2-IN>scott</ns1:USER_NAME-VARCHAR2-IN>
-         <ns1:ORDER_ID-NUMBER-IN>300</ns1:ORDER_ID-NUMBER-IN>
-      </ns1:SVARCHAR2-GETORDERInput>
-   </env:Body>
-</env:Envelope>
-
-```
+<pre class="language-markup"><code class="language-markup">&lt;env:Envelope xmlns:env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns1=&quot;http://xmlns.oracle.com/orawsv/SCOTT/ORDERS_CALCULATOR/GETORDER&quot;&gt;
+   &lt;env:Header/&gt;
+   &lt;env:Body&gt;
+      &lt;ns1:SVARCHAR2-GETORDERInput&gt;
+&lt;ns1:USER_NAME-VARCHAR2-IN&gt;scott&lt;/ns1:USER_NAME-VARCHAR2-IN&gt;
+         &lt;ns1:ORDER_ID-NUMBER-IN&gt;300&lt;/ns1:ORDER_ID-NUMBER-IN&gt;
+      &lt;/ns1:SVARCHAR2-GETORDERInput&gt;
+   &lt;/env:Body&gt;
+&lt;/env:Envelope&gt;
+</code></pre>
 
 
 The ApacheBench command line will look like:
 
-```
-ab -A scott:tiger -H 'SOAPAction: "GETORDER"' -p /tmp/soap-post-func.txt -n {total_request} -c {concurrent_request} http://localhost:8080/orawsv/SCOTT/ORDERS_CALCULATOR/GETORDER
-```
+<pre class="language-bash"><code class="language-bash">ab -A scott:tiger -H 'SOAPAction: "GETORDER"' -p /tmp/soap-post-func.txt -n {total_request} -c {concurrent_request} http://localhost:8080/orawsv/SCOTT/ORDERS_CALCULATOR/GETORDER
+</code></pre>
 
 Where:
 
@@ -173,9 +152,8 @@ One of the most important consequence of REST architecture is that is on top on 
 Add this to __/etc/httpd/modules.d/57_mod_mem_cache.conf__ file:
 
 
-```
-.....
-<IfModule mod_cache.c>
+<pre class="language-bash"><code class="language-bash">.....
+&lt;IfModule mod_cache.c&gt;
 
     # CacheEnable - A cache type and partial URL prefix below which caching is enabled
     #CacheEnable mem /manual
@@ -183,18 +161,16 @@ Add this to __/etc/httpd/modules.d/57_mod_mem_cache.conf__ file:
     CacheEnable mem /userapp
     CacheEnable mem /orawsv
 
-</IfModule>
+&lt;/IfModule&gt;
 ....
-
-```
+</code></pre>
 
 
 This will enable mod_mem_cache to any URL starting with /userapp/ directory, this directory will be retrieved using Apache mod_proxy.
 Edit __/etc/httpd/modules.d/30_mod_proxy.conf__ adding these lines:
 
 
-```
-<IfModule mod_proxy.c>
+<pre class="language-bash"><code class="language-bash">&lt;IfModule mod_proxy.c&gt;
 ....
     SetEnv proxy-nokeepalive 1
 ....
@@ -203,9 +179,9 @@ Edit __/etc/httpd/modules.d/30_mod_proxy.conf__ adding these lines:
     ProxyPass /orawsv/ http://localhost:8080/orawsv/
     ProxyPassReverse /orawsv/ http://localhost:8080/orawsv/
 ....
-</IfModule>
+&lt;/IfModule&gt;
 
-```
+</code></pre>
 
 
 This will redirect automatically any __URL__ __http://localhost:80/userapp/__ to __XMLDB__ __http://localhost:8080/userapp/__.
@@ -213,26 +189,21 @@ Finally start __Apache Web Server__ and test the __URL__ __http://localhost/user
 To boost your __REST WS__ performance you can change, for example, the expiration header of the response, many __WS__ can use this trick a typically example is a weather service which is updated every 30 minutes. In our User application this change can be injected at __org.restlet.example.tutorial.OrderResource__ class method __represent__, for example:
 
 
-```java
-
-    @Override
+<pre class="language-java"><code class="language-java">    @Override
     public Representation represent(Variant variant) throws ResourceException {
 
         Representation result = null;
 
-
         if (variant.getMediaType().equals(MediaType.TEXT_PLAIN)) {
             result = new StringRepresentation("Order \"" + this.orderId  + "\" for user \"" + this.userName + "\"");
        }
-
 
         Date expirationDate = new Date(System.currentTimeMillis()+10000);
 
         result.setExpirationDate(expirationDate);
         return result;
     }
-
-```
+</code></pre>
 
 
 This small change represent for 100 request in User application a difference between:
@@ -246,8 +217,7 @@ __XMLDB Restlet Adapter__ can be tested with __Apache JMeter__, here some captur
 Test plan used with Users Restlet example:
 
 
-```
-Thread Group -> Thread Properties
+<pre class="language-bash"><code class="language-bash">Thread Group -> Thread Properties
 Number of Threads (users): 10
 
 Ramp Up Period (in seconds): 0
@@ -264,14 +234,12 @@ Path: /userapp/users/scott/orders/300
 Gaussian Random Timer -> Thread Delay Properties
 Deviation (in milliseconds): 100.0
 Constant Delay Offset (in milliseconds): 300
-
-```
+</code></pre>
 
 
 Test plan used with Users SOAP example:
 
-```
-Number of Threads (users): 10
+<pre><code class="language-bash">Number of Threads (users): 10
 Ramp Up Period (in seconds): 0
 Loop Count: 200
 
@@ -291,18 +259,17 @@ Gaussian Random Timer -> Thread Delay Properties
 Deviation (in milliseconds): 100.0
 Constant Delay Offset (in milliseconds): 300
 /tmp/soap-post-func.txt file content:
-<?xml version = '1.0'?>
-<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://xmlns.oracle.com/orawsv/SCOTT/ORDERS_CALCULATOR/GETORDER">
+</code>
+<code class="language-markup">&lt;?xml version = &apos;1.0&apos;?&gt;
+&lt;env:Envelope xmlns:env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns1=&quot;http://xmlns.oracle.com/orawsv/SCOTT/ORDERS_CALCULATOR/GETORDER&quot;&gt;
 
-   <env:Header/>
-   <env:Body>
-      <ns1:SVARCHAR2-GETORDERInput>
-        
-<ns1:USER_NAME-VARCHAR2-IN>scott</ns1:USER_NAME-VARCHAR2-IN>
-         <ns1:ORDER_ID-NUMBER-IN>300</ns1:ORDER_ID-NUMBER-IN>
-      </ns1:SVARCHAR2-GETORDERInput>
-   </env:Body>
-</env:Envelope>
+   &lt;env:Header/&gt;
+   &lt;env:Body&gt;
+      &lt;ns1:SVARCHAR2-GETORDERInput&gt;
 
-```
-
+&lt;ns1:USER_NAME-VARCHAR2-IN&gt;scott&lt;/ns1:USER_NAME-VARCHAR2-IN&gt;
+         &lt;ns1:ORDER_ID-NUMBER-IN&gt;300&lt;/ns1:ORDER_ID-NUMBER-IN&gt;
+      &lt;/ns1:SVARCHAR2-GETORDERInput&gt;
+   &lt;/env:Body&gt;
+&lt;/env:Envelope&gt;
+</code></pre>
