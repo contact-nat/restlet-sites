@@ -26,12 +26,24 @@ toc:
     long-title: Use interactive assistants
     title: Interactive assistants
     url: /get-started/interactive-assistants
-  - file: 05_subscribe.md
+  - file: 05_free-trial.md
+    id: free-trial
+    link_url: /01_get-started/05_free-trial.md
+    long-title: APISpark Free Trial
+    title: Try it for FREE
+    url: /get-started/free-trial
+  - file: 06_subscribe.md
     id: subscribe
-    link_url: /01_get-started/05_subscribe.md
+    link_url: /01_get-started/06_subscribe.md
     long-title: Subscribe to a plan
     title: Subscribe to a plan
     url: /get-started/subscribe
+  - file: 07_account-info.md
+    id: account-info
+    link_url: /01_get-started/07_account-info.md
+    long-title: Access your account information
+    title: Access account info
+    url: /get-started/account-info
   long-title: Get started with APISpark
   title: Get started
 - dir: 02_explore
