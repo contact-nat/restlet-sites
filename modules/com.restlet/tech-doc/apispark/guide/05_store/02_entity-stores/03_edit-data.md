@@ -33,6 +33,8 @@ Click on the column title once for ascendant order (▲), twice for descendant o
 
 If you have a big amount of data to import, you may need to perform a bulk import of your data. You can import your data in a csv file.
 
+<iframe width="600" height="410" src="https://player.vimeo.com/video/148567520" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 >**Notes:**  
 - The first line of your csv file must include the name of each Property.  
 - Make sure your csv file data format matches the data type of your Entity Properties (*Timestamp* type requires epoch format, *Boolean* type requires true/false format).  
@@ -56,6 +58,8 @@ A message informs you that the import has been successful and your data display 
 ## <a class="anchor" name="export-data"></a>Export data
 
 You may need to perform a bulk export of your data. You can export your data in a csv file.
+
+<iframe width="600" height="410" src="https://player.vimeo.com/video/148664884" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 From the data browser, click the cog button on the right of the **Delete** button and select **Export**.
 

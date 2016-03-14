@@ -41,6 +41,8 @@ A *Descriptor* can be generated from your current API's Swagger definition, or f
 
 You can generate a web API Descriptor by importing a Swagger/RAML definition for an existing web API, by providing the Swagger definition's URL or file. Swagger 1.2, Swagger 2.0 and RAML 0.8 are supported.
 
+<iframe width="600" height="410" src="https://player.vimeo.com/video/151703029" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 From the Dashboard, open an existing Descriptor or create a new one by clicking on **+ Web API** and selecting **Descriptor** from the drop-down menu.
 
 From the Descriptor's **Overview**, click on the cog button on the top right of your screen and select **Import definition** from the menu.

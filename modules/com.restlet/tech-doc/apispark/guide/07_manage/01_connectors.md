@@ -39,6 +39,9 @@ In the **Create a web API** window, select **Connector** from the **Type** drop-
 Select the appropriate **Deployment mode**:
 
 **Hosted agent**  
+
+<iframe width="600" height="410" src="https://player.vimeo.com/video/141036085" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 The default configuration is *Hosted agent*.
 You are prompted to give your Connector a **Name** and a **Description** (optional). The **Domain** field is filled in automatically on the basis of the **Name** entered. If the domain is not available, a message informs you that you need to choose a unique domain.
 

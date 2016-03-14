@@ -23,6 +23,8 @@ Custom domains can also be used as a basis for you API endpoints.
 
 ## Add a custom domain
 
+<iframe width="600" height="410" src="https://player.vimeo.com/video/141033147" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 To add a custom domain endpoint, you first have to register your custom domain, in the **Domains** tab of the **Account** page.
 
 ![Domains tab](images/my-domains-tab.jpg "Domains tab")
