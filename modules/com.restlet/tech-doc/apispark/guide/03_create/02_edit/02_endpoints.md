@@ -56,8 +56,7 @@ Use the **DNS aliasing** configuration if you opt for adding a CNAME entry with 
 
 Here is an example configuration to setup with your domain registrar, for myapi.customdomain.com:
 
-<pre><code>
-myapi 10800 IN CNAME apispark.net.
+<pre class="language-bash"><code class="language-bash">myapi 10800 IN CNAME apispark.net.
 </code></pre>
 **PATH** - Name of the node to which this record pertains e.g. *myapi*  
 **TTL** - Number of seconds during which the Resource Record stays valid e.g. *10800*  

@@ -26,21 +26,19 @@ In this tutorial example, we create an SQL table named **T_CONTACT** with the fo
 
 Connect the database engine using the MySQL console:
 
-<pre lang="mysql"><code>$ mysql -u root -p </code></pre>
+<pre class="language-bash"><code class="language-bash">$ mysql -u root -p </code></pre>
 
 Create a database and switch to it:
 
-<pre lang="mysql"><code>
->mysql> create database apispark;
+<pre class="language-sql"><code class="language-sql">&gt;mysql&gt; create database apispark;
 Query OK, 1 row affected (0.01 sec)
-mysql> use apispark;
+mysql&gt; use apispark;
 Database changed
 </code></pre>
 
 Create an InnoDB table named T_ADDRESS with fields previously listed:
 
-<pre lang="mysql"><code>
-CREATE TABLE T_CONTACT (
+<pre class="language-sql"><code class="language-sql">CREATE TABLE T_CONTACT (
 	  ID VARCHAR(255),
 	  FIRST_NAME VARCHAR (255),
 	  LAST_NAME VARCHAR (255),
@@ -54,10 +52,10 @@ CREATE TABLE T_CONTACT (
 
 Create a new user and grant him full rights on the database. Replace username and password by the values you like:
 
-<pre>CREATE USER 'username'@'%' IDENTIFIED BY "password";
+<pre class="language-sql"><code class="language-sql">CREATE USER 'username'@'%' IDENTIFIED BY "password";
 GRANT ALL PRIVILEGES on apispark.T_CONTACT TO 'username'@'%';
 FLUSH PRIVILEGES;
-</pre>
+</code></pre>
 
 >**Note:** you can grant privileges on all tables by replacing T_CONTACT by \* and on all databases by replacing apispark by \*.
 

@@ -1,7 +1,6 @@
 Described in Augmented Backus-Naur Form (ABNF).
 
-<pre><code>
-expression       = "{" *SP declaration  *SP "}"  / "${" *SP declaration  *SP "}"  
+<pre class="language-none"><code class="language-none">expression       = "{" *SP declaration  *SP "}"  / "${" *SP declaration  *SP "}"  
 declaration      = ( method  / index / id / string )  *("."  ( id / string / method / index))
 method           = id "("  *SP [  method-arguments  ] *SP  ")"
 method-arguments =  declaration *SP  *( ","  *SP declaration )

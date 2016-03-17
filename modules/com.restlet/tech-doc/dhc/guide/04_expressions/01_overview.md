@@ -16,8 +16,7 @@ Expressions can be freely mixed with a plain text.
 
 Ex. 1: an expression declarations
 
-<pre><code>
-{host}
+<pre class="language-bash"><code class="language-bash">{host}
 
 {host}{path}
 
@@ -30,6 +29,5 @@ You can also use built-in methods to transform values.
 
 Ex. 2: calculate MD5 hash from text or JSON response body
 
-<pre><code>
-{"Saved Request #1".body.md5()}
+<pre class="language-bash"><code class="language-bash">{"Saved Request #1".body.md5()}
 </code></pre>

@@ -38,8 +38,7 @@ If you did select the **Share API overview** checkbox, you will have to enter cr
 
 The **Swagger 1.2** definition for the Contacts API looks like this:
 
-<pre lang="json"><code>
-{  
+<pre class="language-json"><code class="language-json">{  
    "apis":[  
       {  
          "path":"/contacts"

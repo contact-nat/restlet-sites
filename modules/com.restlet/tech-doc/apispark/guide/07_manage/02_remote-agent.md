@@ -71,8 +71,7 @@ The agent retrieves its settings from APISpark and you need to configure the age
 
 The Standalone agent is configured from a properties file which is included in the downloaded file. This file looks like this:
 
-<pre lang="ini"><code>
-agent.login=67b60a5d-c2b8-43a3-97b8-084d6ce60e10
+<pre class="language-ini"><code class="language-ini">agent.login=67b60a5d-c2b8-43a3-97b8-084d6ce60e10
 agent.password=5dcf7dc2-a2c4-44f5-b753-c26abea2c8b5
 agent.cellId=154
 agent.cellVersion=1
@@ -105,8 +104,7 @@ Let's have a look at a full configuration example:
 
   Therefore the agent configuration is:
 
-  <pre lang="ini"><code>
-  reverseProxy.targetUrl=https://192.168.10.130:8080
+<pre class="language-ini"><code class="language-ini">reverseProxy.targetUrl=https://192.168.10.130:8080
 </code></pre>
 
 With the standalone agent, the value of the `reverseProxy.enabled` key should be set to `true`.
@@ -115,8 +113,7 @@ With the standalone agent, the value of the `reverseProxy.enabled` key should be
 
 Once your configuration file is filled, you can start the agent with the command below:
 
-<pre lang="java"><code>
-java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
+<pre class="language-bash"><code class="language-bash">java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
 </code></pre>
 
   > Note:
@@ -126,8 +123,7 @@ java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
 
 By default the *Agent* runs on port 8000. You could change the port with the `-p` option as shown below:
 
-<pre lang="java"><code>
-java -jar\
+<pre class="language-bash"><code class="language-bash">java -jar\
   -DapiSparkServiceConfig=/path/to/agent.properties\
   apispark-agent.jar\
   -p 3000
@@ -145,8 +141,7 @@ Use `--help` to have the full list of options.
 
 Achieve this step using `keytool`.
 
-<pre lang="shell"><code>
-keytool -genkey\
+<pre class="language-bash"><code class="language-bash">keytool -genkey\
  -v\
  -alias serverX\
  -dname "CN=**serverX**,OU=IT,O=JPC,C=GB"\
@@ -165,14 +160,12 @@ keytool -genkey\
 
 Just add the following command line parameters:
 
-<pre lang="shell"><code>
---https --sslKeyPassword password --sslKeyStorePassword password --sslKeyStorePath /path/to/server-keystore.jks --sslKeyStoreType JKS
+<pre class="language-bash"><code class="language-bash">--https --sslKeyPassword password --sslKeyStorePassword password --sslKeyStorePath /path/to/server-keystore.jks --sslKeyStoreType JKS
 </code></pre>
 
 Here is the full command line of the agent:
 
-<pre lang="shell"><code>
-java -jar\
+<pre class="language-bash"><code class="language-bash">java -jar\
   -DapiSparkServiceConfig=/path/to/agent.properties\
   apispark-agent.jar\
   --https\
