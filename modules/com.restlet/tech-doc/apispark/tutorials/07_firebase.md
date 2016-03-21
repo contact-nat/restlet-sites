@@ -41,14 +41,13 @@ By default, operations to your Firebase are not secured. Everything is authorize
 
 To do so, head to the **Security & Rules** tab and replace the default rules by those below:
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "rules": {
       ".read": "auth != null",
       ".write": "auth != null"
       }
 }
-</code></pre>    
+</code></pre>
 
 ![Firebase security](images/firebase-security.png "Firebase security")
 

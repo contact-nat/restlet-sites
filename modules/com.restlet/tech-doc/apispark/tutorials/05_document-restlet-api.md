@@ -26,8 +26,7 @@ We provide you with a <a href="https://github.com/restlet/restlet-sample-descrip
 or
 - Launch the command from your development environment. If you are working on Windows, you can use e.g. git shell or git bash.
 
-<code><pre>
-git clone https://github.com/restlet/restlet-sample-descriptor.git
+<pre class="language-bash"><code class="language-bash">git clone https://github.com/restlet/restlet-sample-descriptor.git
 </code></pre>
 
 <h1 class="numbered" id="toc_2"><i>2</i>Retrieve your credentials</h1>
@@ -48,7 +47,7 @@ We will need these credentials to fill in the parameters at introspection launch
 Run the introspection code to export the API documentation to APISpark with Maven.  
 Install Maven (if you have not done it yet) to launch introspection in command line from the `restlet-sample-descriptor` directory.
 
-<pre lang="shell"><code>mvn test -Pexport-to-apispark -Dapispark.username=<your username> -Dapispark.secretkey=<your secret key></code></pre>
+<pre class="language-bash"><code class="language-bash">mvn test -Pexport-to-apispark -Dapispark.username=<your username> -Dapispark.secretkey=<your secret key></code></pre>
 
 >**Note:** Working on Windows, avoid using git shell or git bash for this operation.
 
@@ -56,8 +55,7 @@ The main method is located in the ```org.restlet.example.contact.api.ExportToApi
 
 Once introspection is completed successfully a similar message displays:
 
-<pre><code>
-Your Web API descriptor's id is: 123456
+<pre class="language-bash"><code class="language-bash">Your Web API descriptor's id is: 123456
 Your Web API documentation is accessible at this URL: https://apispark.restlet.com/apis/123456/versions/1/overview
 </code></pre>
 
@@ -75,9 +73,10 @@ b) Launch introspection with the following parameters:
 - your password (-p)
 - the name of your own class
 
-java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u {your username} -p {your password} {your class}
+<pre class="language-bash"><code class="language-bash">java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u {your username} -p {your password} {your class}</code></pre>
 
-e.g. java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.restlet.api.MyContacts
+e.g.
+<pre class="language-bash"><code class="language-bash">java -cp "/path/to/your/lib/*" org.restlet.ext.apispark.Introspector -u 55955e02-0e99-47f8 -p 6f3ee88e-8405-44c8 org.restlet.api.MyContacts</code></pre>
 
 >**Note:** The "org.restlet.ext.apispark.Introspector" class is the entry point.
 

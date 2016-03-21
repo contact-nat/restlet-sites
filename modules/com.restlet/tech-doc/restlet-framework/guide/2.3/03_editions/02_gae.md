@@ -32,8 +32,7 @@ directory and to your project build path.
 
 Here is the Restlet resource to create:
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
@@ -50,12 +49,11 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-```
+</code></pre>
 
 Now here is the parent application:
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.Application;
 import org.restlet.Restlet;
@@ -78,35 +76,34 @@ public class FirstStepsApplication extends Application {
         return router;
     }
 }
-```
+</code></pre>
 
 Finally, here is the Servlet configuration file:
 
-```java
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd">
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE web-app PUBLIC
+ &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
+ &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot;&gt;
 
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
-         <display-name>first steps servlet</display-name>
+&lt;web-app xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; version=&quot;2.5&quot;&gt;
+         &lt;display-name&gt;first steps servlet&lt;/display-name&gt;
 
-         <servlet>
-                 <servlet-name>RestletServlet</servlet-name>
-                 <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
-                 <init-param>
-                         <param-name>org.restlet.application</param-name>
-                         <param-value>firstSteps.FirstStepsApplication  </param-value>
-                 </init-param>
-         </servlet>
+         &lt;servlet&gt;
+                 &lt;servlet-name&gt;RestletServlet&lt;/servlet-name&gt;
+                 &lt;servlet-class&gt;org.restlet.ext.servlet.ServerServlet&lt;/servlet-class&gt;
+                 &lt;init-param&gt;
+                         &lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
+                         &lt;param-value&gt;firstSteps.FirstStepsApplication  &lt;/param-value&gt;
+                 &lt;/init-param&gt;
+         &lt;/servlet&gt;
 
-    <!-- Catch all requests -->
-    <servlet-mapping>
-        <servlet-name>RestletServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
-    </servlet-mapping>
-</web-app>
-```
+    &lt;!-- Catch all requests --&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;RestletServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
 
 For more information on Restlet, please check our [documentation
 pages](javadocs://jse/).

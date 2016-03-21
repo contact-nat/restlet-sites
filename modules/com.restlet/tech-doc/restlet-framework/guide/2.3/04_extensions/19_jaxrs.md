@@ -46,7 +46,7 @@ First create an easy root resource class: Create a new java class named
 **EasyRootResource** in the previously created package and insert the
 following source  code:
 
-    package test.restlet.jaxrs;
+<pre class="language-java"><code class="language-java">    package test.restlet.jaxrs;
 
     import javax.ws.rs.GET;
     import javax.ws.rs.Path;
@@ -69,6 +69,7 @@ following source  code:
             return "This is an easy resource (as plain text)";
         }
     }
+</code></pre>
 
 ## Create Application
 
@@ -77,7 +78,7 @@ JAX-RS runtime you integrate these classes to an Application. Create a
 new class **ExampleApplication** in the same package with the following
 content:
 
-    package test.restlet.jaxrs;
+<pre class="language-java"><code class="language-java">    package test.restlet.jaxrs;
 
     import java.util.HashSet;
     import java.util.Set;
@@ -91,6 +92,7 @@ content:
             return rrcs;
         }
     }
+</code></pre>
 
 The root resource class and the Application is specified by the JAX-RS
 specification. It can be used in any JAX-RS runtime environment.
@@ -105,7 +107,7 @@ A JAX-RS server using the Restlet JAX-RS extension is set up like any
 Restlet server. Create a third class in the same package, named
 **ExampleServer**:
 
-    package test.restlet.jaxrs;
+<pre class="language-java"><code class="language-java">    package test.restlet.jaxrs;
 
     import org.restlet.Component;
     import org.restlet.Server;
@@ -137,6 +139,7 @@ Restlet server. Create a third class in the same package, named
             System.out.println("Server stopped");
         }
     }
+</code></pre>
 
 Start this class, open a browser and request
 [http://localhost:8182/easy](http://localhost:8182/easy).
@@ -163,7 +166,7 @@ If you want to run the JAX-RS Application in a Servlet Container, create
 a subclass of the JaxRsApplication. In the constructor you could attach
 the Application and sets the Guard and the RoleChecker (if needed).
 
-    public class MyJaxRsApplication extends JaxRsApplication {
+<pre class="language-java"><code class="language-java">    public class MyJaxRsApplication extends JaxRsApplication {
 
         public MyJaxRsApplication(Context context) {
             super(context);
@@ -172,6 +175,7 @@ the Application and sets the Guard and the RoleChecker (if needed).
             this.setRoleChecker(...); // if needed
         }
     }
+</code></pre>
 
 For details to run this Application in a Servet Container take a look at
 [Restlet
@@ -179,10 +183,11 @@ FAQ](guide:///appendices/faq "FAQ").
 
 You could use this subclass also in the example above:
 
-            // create JAX-RS runtime environment
+<pre class="language-java"><code class="language-java">            // create JAX-RS runtime environment
             Application application = new MyJaxRsApplication(comp.getContext());
 
             // if you use this kind, you don't need to attach the Application again.
+</code></pre>
 
 Comments are welcome to the [Restlet mailing
 list](http://restlet.com/community/lists)

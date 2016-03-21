@@ -48,11 +48,12 @@ dedicated to internal HTTP server connectors.
 Here is a sample code showing how to set such a parameter on a
 component's server connector.
 
-    // Create the HTTP server and listen on port 8182
+<pre class="language-java"><code class="language-java">    // Create the HTTP server and listen on port 8182
     Component c = new Component();
     Server server = c.getServers().add(Protocol.HTTP, 8182);
     server.getContext().getParameters().add("useForwardedForHeader", "true");
     c.start();
+</code></pre>
 
 ## Client connectors
 
@@ -64,16 +65,18 @@ dedicated to internal HTTP client connectors.
 
 Here is a sample code showing how to set such a parameter.
 
-    Client client = new Client(new Context(), Protocol.HTTP);
+<pre class="language-java"><code class="language-java">    Client client = new Client(new Context(), Protocol.HTTP);
     client.getContext().getParameters().add("useForwardedForHeader","false");
+</code></pre>
 
 Here is a sample code showing how to set such a parameter on a
 component's client connector.
 
-    // Create the HTTP server and listen on port 8182
+<pre class="language-java"><code class="language-java">    // Create the HTTP server and listen on port 8182
     Component c = new Component();
     Client client = c.getClients().add(Protocol.HTTP);
     client.getContext().getParameters().add("useForwardedForHeader", "false");
+</code></pre>
 
 If you want to configure the client connector used by a ClientResource,
 there are several cases. When your ClientResource instances are created
@@ -82,13 +85,14 @@ connector of the component is used for all requests. Thus, just
 configure the component's client connector as shown just above. If not,
 just set it:
 
-    // Instantiate the client connector, and configure it.
+<pre class="language-java"><code class="language-java">    // Instantiate the client connector, and configure it.
     Client client = new Client(new Context(), Protocol.HTTP);
     client.getContext().getParameters().add("useForwardedForHeader","false");
 
     // Instantiate the ClientResource, and set it's client connector.
     ClientResource cr = new ClientResource("http://www.example.com/");
     cr.setNext(client);
+</code></pre>
 
 # List of available connectors
 

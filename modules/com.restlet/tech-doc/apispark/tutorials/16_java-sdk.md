@@ -34,7 +34,7 @@ to be updated
 # 2. Import provided code
 
 From Eclipse, import the provided code in the main method. This code describes the project and its dependancies.  
-Click **File** and select **Import**.   
+Click **File** and select **Import**.
 Select **Existing Maven projects**.  
 ![Existing Maven projects](images/existing-maven-project.png "Existing Maven projects")  
 
@@ -47,7 +47,7 @@ Insert your API credentials.
 
 # 3. Create new Java class
 Create a new Java class called *TestApi*.  
-Click **New** and select **class**.   
+Click **New** and select **class**.
 From the **New Java Class** window, select the **Public static void main(String[] args)** checkbox and click **Finish**.
 ![Create new Java class](images/create-new-class.png "Create new Java class")
 

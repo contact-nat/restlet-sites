@@ -24,12 +24,13 @@ The GaeAuthenticator is able to check wether or not the current request
 is sent by a logged user. In case the authenticator is not optional, the
 user is automatically redirected to the standard login page.
 
-    GaeAuthenticator guard = new GaeAuthenticator(getContext());
+<pre class="language-java"><code class="language-java">    GaeAuthenticator guard = new GaeAuthenticator(getContext());
     // Attach the guarded hierarchy of URIs to the Authenticator filter
     guard.setNext(adminRouter);
 
     // Attach this guarded set of URIs
     router.attach("/admin", guard);
+</code></pre>
 
 ## Usage of the GaeEnroler
 
@@ -38,7 +39,7 @@ deployed application and completes the list of user's roles with a
 defined aministrator role. It is used in conjunction with the
 GaeAuthenticator filter described above.
 
-      /** Administrative role. */
+<pre class="language-java"><code class="language-java">      /** Administrative role. */
       private Role adminRole = new Role("admin", "Administractive role");
 
       /**
@@ -59,14 +60,16 @@ GaeAuthenticator filter described above.
         guard.setNext(adminRouter);
         [...]
       }
+</code></pre>
 
 Thanks to the Enroler, a resource can check if the current request is
 sent by an administrator:
 
-      @Override
+<pre class="language-java"><code class="language-java">      @Override
       protected void doInit() throws ResourceException {
         if (isInRole("admin")) {
           // logged as admin
         [...]
         }
       }
+</code></pre>

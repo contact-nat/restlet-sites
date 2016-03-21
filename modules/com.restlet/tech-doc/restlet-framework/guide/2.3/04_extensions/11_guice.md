@@ -31,8 +31,7 @@ When using this approach:
 
 In the Finder factory approach, inject FinderFactory into contexts where routing to resources is initialized, e.g., createInboundRoot(), and use FinderFactory.finder(Class) in calls to Router.attach() instead of the plain server resource class name. For example:
 
-```java
-   // Binding in Guice:
+<pre class="language-java"><code class="language-java">   // Binding in Guice:
    bind(ServerResource.class)
        .annotatedWith(Hello.class)
        .to(HelloServerResource.class);
@@ -45,7 +44,7 @@ In the Finder factory approach, inject FinderFactory into contexts where routing
 
    // Attachment with direct knowledge of concrete resource type:
    router.attach("/bye", finderFactory.finder(ByeServerResource.class);
-```
+</code></pre>
 
 To use a Guice-enabled FinderFactory, install a RestletGuice.Module when creating the Injector. (RestletGuice has convenience methods to install such a module that parallel those in the Guice class.)
 
@@ -67,8 +66,7 @@ To work with Guice, install a SelfInjectingServerResourceModule when creating th
 
 Instead of calling new FooApplication(...) when attaching an application in setting up a component, inject that application beforehand:
 
-```java
- public class MyComponent extends Component {
+<pre class="language-java"><code class="language-java">public class MyComponent extends Component {
 
      public static void main(String... args) {
            // Run as standalone component:
@@ -85,12 +83,11 @@ Instead of calling new FooApplication(...) when attaching an application in sett
          getDefaultHost().attach("/bar", barApp);
      }
  }
-```
+</code></pre>
 
 To avoid coupling a knowledge of a specific application subtype in this setting, use qualifiers:
 
-```java
- @Inject
+<pre class="language-java"><code class="language-java">@Inject
  MyComponent(@Foo Application fooApp, @Bar Application barApp) {
      // ...
      getDefaultHost().attach("/foo", fooApp);
@@ -103,13 +100,12 @@ To avoid coupling a knowledge of a specific application subtype in this setting,
  @javax.inject.Qualifier
  public @interface Foo {
  }
-```
+</code></pre>
 
 Using the @Named qualifier trades some type-safety for convenience:
 
-```java
-   @Inject
+<pre class="language-java"><code class="language-java">   @Inject
    MyComponent(@Named(FOO) Application fooApp, @Named(BAR) Application barApp) ...
-```
+</code></pre>
 
 [Javadocs](javadocs://jse/ext/org/restlet/ext/guice/package-summary.html).

@@ -27,11 +27,10 @@ This Maven plugin comes with a number of parameters.
 
 ## Before/After test notifications
 
-<pre><code>
-POST [url]
+<pre><code class="language-bash">POST [url]
 Content-Type: application/json
 …
-{
+</code><code class="language-json">{
    “name” : [test name],
    “event” : [BeforeTest|AfterTest],
    “result” : [Ok|Failure|Error] 	<- present only if event=afterTest
@@ -40,11 +39,10 @@ Content-Type: application/json
 
 ## Begin/End notifications
 
-<pre><code>
-POST [url]
+<pre><code class="language-bash">POST [url]
 Content-Type: application/json
 …
-{
+</code><code class="language-json">{
    “event” : [Begin|End]
 }
 </code></pre>
@@ -55,44 +53,43 @@ Content-Type: application/json
 
 Create a pom.xml file with the following content:
 
-<pre lang="html"><code>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<pre class="language-markup"><code class="language-markup">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
-  <groupId>com.example</groupId>
-  <artifactId>my-first-api-test</artifactId>
-  <version>1.2.3</version>
+  &lt;groupId&gt;com.example&lt;/groupId&gt;
+  &lt;artifactId&gt;my-first-api-test&lt;/artifactId&gt;
+  &lt;version&gt;1.2.3&lt;/version&gt;
 
-  <build>
-     <plugins>
-       <plugin>
-         <groupId>com.restlet.dhc</groupId>
-         <artifactId>dhc-maven-plugin</artifactId>
-         <version>1.1.0.1</version>
-    <executions>
-           <execution>
-             <phase>test</phase>
+  &lt;build&gt;
+     &lt;plugins&gt;
+       &lt;plugin&gt;
+         &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
+         &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
+         &lt;version&gt;1.1.0.1&lt;/version&gt;
+    &lt;executions&gt;
+           &lt;execution&gt;
+             &lt;phase&gt;test&lt;/phase&gt;
 
-             <goals>
-               <goal>test</goal>
-             </goals>
- <configuration>
- 		<file>/home/filip/dhc-test-1.json</file>
- </configuration>
-           </execution>
-         </executions>
-       </plugin>
-     </plugins>
-   </build>
+             &lt;goals&gt;
+               &lt;goal&gt;test&lt;/goal&gt;
+             &lt;/goals&gt;
+ &lt;configuration&gt;
+ &Tab;&Tab;&lt;file&gt;/home/filip/dhc-test-1.json&lt;/file&gt;
+ &lt;/configuration&gt;
+           &lt;/execution&gt;
+         &lt;/executions&gt;
+       &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/build&gt;
 
-   <pluginRepositories>
-       <pluginRepository>
-           <id>nexus-public</id>
-           <name>Nexus Release Repository</name>
-           <url>http://maven.restlet.com</url>
-       </pluginRepository>
-   </pluginrepositories>
-</project>
+   &lt;pluginRepositories&gt;
+       &lt;pluginRepository&gt;
+           &lt;id&gt;nexus-public&lt;/id&gt;
+           &lt;name&gt;Nexus Release Repository&lt;/name&gt;
+           &lt;url&gt;http://maven.restlet.com&lt;/url&gt;
+       &lt;/pluginRepository&gt;
+   &lt;/pluginrepositories&gt;
+&lt;/project&gt;
 </code></pre>
 
 >**Note:** Make sure you enter the appropriate version and the appropriate path to the JSON configuration file.
@@ -105,50 +102,49 @@ In this example, we added variables and profile.
 
 Create a pom.xml file with the following content:
 
-<pre lang="html"><code>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.example</groupId>
-	<artifactId>my-first-api-test</artifactId>
-	<version>1.2.3</version>
-	<name>myProject</name>
+<pre class="language-markup"><code class="language-markup">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+&Tab;&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&Tab;&lt;groupId&gt;com.example&lt;/groupId&gt;
+&Tab;&lt;artifactId&gt;my-first-api-test&lt;/artifactId&gt;
+&Tab;&lt;version&gt;1.2.3&lt;/version&gt;
+&Tab;&lt;name&gt;myProject&lt;/name&gt;
 ...
 
-     <profiles>
-         <profile>
-             <id>it</id>
-             <build>
-                 <plugins>
-                      ….
-                     <plugin>
-                         <groupId>com.restlet.dhc</groupId>
-                         <artifactId>dhc-maven-plugin</artifactId>
-                         <version>1.1.0.1</version>
-                         <executions>
-                             <execution>
-                                 <phase>integration-test</phase>
+     &lt;profiles&gt;
+         &lt;profile&gt;
+             &lt;id&gt;it&lt;/id&gt;
+             &lt;build&gt;
+                 &lt;plugins&gt;
+                      &hellip;.
+                     &lt;plugin&gt;
+                         &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
+                         &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
+                         &lt;version&gt;1.1.0.1&lt;/version&gt;
+                         &lt;executions&gt;
+                             &lt;execution&gt;
+                                 &lt;phase&gt;integration-test&lt;/phase&gt;
 
-                                 <goals>
-                                     <goal>test</goal>
-                                 </goals>
-                                 <configuration>
-                                     <file>${project.basedir}/src/test/resources/assertions.json</file>
-                                     <context>localhost</context>
-                                     <variables>
-                                     	<property>
-                                     		<name>port</name>
-                                     		<value>13337</value>
-                                     	</property>
-                                     </variables>
-                                 </configuration>
-                             </execution>
-                         </executions>
-                     </plugin>
-                 </plugins>
-             </build>
-         </profile>
-     </profiles>
-</project>
+                                 &lt;goals&gt;
+                                     &lt;goal&gt;test&lt;/goal&gt;
+                                 &lt;/goals&gt;
+                                 &lt;configuration&gt;
+                                     &lt;file&gt;${project.basedir}/src/test/resources/assertions.json&lt;/file&gt;
+                                     &lt;context&gt;localhost&lt;/context&gt;
+                                     &lt;variables&gt;
+                                     &Tab;&lt;property&gt;
+                                     &Tab;&Tab;&lt;name&gt;port&lt;/name&gt;
+                                     &Tab;&Tab;&lt;value&gt;13337&lt;/value&gt;
+                                     &Tab;&lt;/property&gt;
+                                     &lt;/variables&gt;
+                                 &lt;/configuration&gt;
+                             &lt;/execution&gt;
+                         &lt;/executions&gt;
+                     &lt;/plugin&gt;
+                 &lt;/plugins&gt;
+             &lt;/build&gt;
+         &lt;/profile&gt;
+     &lt;/profiles&gt;
+&lt;/project&gt;
 </code></pre>
 
 Launch ```> mvn clean install -P it```.

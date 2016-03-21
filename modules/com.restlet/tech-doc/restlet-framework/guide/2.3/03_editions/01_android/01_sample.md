@@ -44,28 +44,30 @@ A new contact has been added
 
 ### Declaration of the service (AndroidManifest.xml):
 
-    <service android:name=".service.ContactService" android:exported="true" android:enabled="true">
-        <intent-filter>
-            <action android:name="org.restlet.example.android.service.IContactService" />
-        </intent-filter>
-    </service>
+<pre class="language-markup"><code class="language-markup">    &lt;service android:name=&quot;.service.ContactService&quot; android:exported=&quot;true&quot; android:enabled=&quot;true&quot;&gt;
+    &nbsp;&nbsp;&nbsp; &lt;intent-filter&gt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;action android:name=&quot;org.restlet.example.android.service.IContactService&quot; /&gt;
+    &nbsp;&nbsp;&nbsp; &lt;/intent-filter&gt;
+    &lt;/service&gt;
+</code></pre>
 
 ### Declaration of the IPC (inter process communication) interface (org/restlet/example/android/service/IContactService.aidl)
 
-    package org.restlet.example.android.service;
+<pre class="language-java"><code class="language-java">    package org.restlet.example.android.service;
 
     interface IContactService {
 
         List<FoafContact> getFriends(String foafUri);
 
     }
+</code></pre>
 
 ### Implementation of the FoafContact class
 
 This class, referenced in the IPC interface description file, must
 implement the Parcelable java interface.
 
-    public class FoafContact implements Parcelable {
+<pre class="language-java"><code class="language-java">    public class FoafContact implements Parcelable {
         /**
          * Used to de-serialize a stream into a FoafContact.
          */
@@ -118,6 +120,7 @@ implement the Parcelable java interface.
         }
 
     }
+</code></pre>
 
 ### Implementation of the service (org.restlet.example.android.ContactService)
 
@@ -126,12 +129,13 @@ its URI, then parsing this RDF document (in this case, it is generated
 in N-Triples format), and retrieving the list of friends declared in
 this FOAF profile.
 
-    ClientResource foafProfile = new ClientResource(foafUri);
+<pre class="language-java"><code class="language-java">    ClientResource foafProfile = new ClientResource(foafUri);
     Representation rep = foafProfile.get();
     if (foafProfile.getStatus().isSuccess()) {
         FoafRepresentation foafRep = new FoafRepresentation(rep);
         return foafRep.getFriends();
     }
+</code></pre>
 
 ## Contact activity
 
@@ -141,39 +145,41 @@ book). It calls the "FOAF" service.
 
 ### Declaration of the activity (AndroidManifest.xml)
 
-    <activity android:name=".ContactActivity" android:label="@string/contact">
-        <intent-filter>
-        <category android:name="android.intent.category.DEFAULT" />
-        <action android:name="org.restlet.android.example.CONTACT_DETAIL" />
-        </intent-filter>
-    </activity>
+<pre class="language-markup"><code class="language-markup">    &lt;activity android:name=&quot;.ContactActivity&quot; android:label=&quot;@string/contact&quot;&gt;
+        &lt;intent-filter&gt;
+        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+        &lt;action android:name=&quot;org.restlet.android.example.CONTACT_DETAIL&quot; /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/activity&gt;
+</code></pre>
 
 ### Declaration of its layout (res/layout/contact.xml)
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+<pre class="language-markup"><code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:orientation=&quot;vertical&quot; android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot;&gt;
 
-        <ListView android:id="@android:id/list" android:layout_width="fill_parent"
-            android:layout_height="fill_parent" android:layout_weight="1"
-            android:drawSelectorOnTop="false" style="@style/contacts_list" />
+        &lt;ListView android:id=&quot;@android:id/list&quot; android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;fill_parent&quot; android:layout_weight=&quot;1&quot;
+            android:drawSelectorOnTop=&quot;false&quot; style=&quot;@style/contacts_list&quot; /&gt;
 
-        <TextView android:id="@+id/empty" android:layout_width="fill_parent"
-            android:layout_height="fill_parent" style="@style/empty" android:text="" />
+        &lt;TextView android:id=&quot;@+id/empty&quot; android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;fill_parent&quot; style=&quot;@style/empty&quot; android:text=&quot;&quot; /&gt;
 
-        <ImageView android:id="@+id/imagefoaf" android:src="@drawable/restletandroid"
-            android:layout_width="fill_parent" android:layout_height="wrap_content"
-            android:adjustViewBounds="true" />
+        &lt;ImageView android:id=&quot;@+id/imagefoaf&quot; android:src=&quot;@drawable/restletandroid&quot;
+            android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;wrap_content&quot;
+            android:adjustViewBounds=&quot;true&quot; /&gt;
 
-    </LinearLayout>
+    &lt;/LinearLayout&gt;
+</code></pre>
 
 ### Implementation (org.restlet.example.android.ContactActivity)
 
 Connection to the remote service. Refreshes the list of friends of the
 current contact.
 
-        private ServiceConnection connection = new ServiceConnection() {
+<pre class="language-java"><code class="language-java">        private ServiceConnection connection = new ServiceConnection() {
             public void onServiceConnected(ComponentName name, IBinder service) {
                 contactService = IContactService.Stub.asInterface(service);
                 // Once connected, then update the interface
@@ -184,11 +190,12 @@ current contact.
                 contactService = null;
             }
         };
+</code></pre>
 
 Load the list of friends of the current contact, from its foaf profile.
 It simply calls the contactService method "getFriends(String)".
 
-        private void loadFriends() {
+<pre class="language-java"><code class="language-java">        private void loadFriends() {
             if (contactService != null) {
                 try {
                     List<FoafContact> list = contactService.getFriends(this.contact.getFoafUri());
@@ -207,20 +214,22 @@ It simply calls the contactService method "getFriends(String)".
             }
             handler.sendEmptyMessage(0);
         }
+</code></pre>
 
 Used to unbind the service.
 
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void onPause() {
             super.onPause();
             if (contactService != null) {
                 this.unbindService(connection);
             }
         }
+</code></pre>
 
 Used to bind the service, when the activity starts.
 
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void onStart() {
             super.onStart();
             if (contactService == null) {
@@ -229,3 +238,4 @@ Used to bind the service, when the activity starts.
                         connection, Context.BIND_AUTO_CREATE);
             }
         }
+</code></pre>

@@ -60,9 +60,8 @@ the whole set of Java classes with correct types.
 Just note the URI of the target service, and specify the directory where
 you would like to generate the code via the command line:
 
-```java
-java -jar org.restlet.ext.odata Generator http://ogdi.cloudapp.net/v1/dc/ ~/workspace/testADO
-```
+<pre class="language-bash"><code class="language-bash">java -jar org.restlet.ext.odata Generator http://ogdi.cloudapp.net/v1/dc/ ~/workspace/testADO
+</code></pre>
 
 Please note that this feature requires the use of the core Restlet, and
 additional dependencies such as Atom (used by OData services for all
@@ -81,21 +80,19 @@ You can also used the full command line that includes the list of
 required archives for the class path argument (nb: take care of the OS
 specific classpath separator) and the name of the main class:
 
-```java
-java -cp org.restlet.jar:org.restlet.ext.xml.jar:org.restlet.ext.atom.jar:org.restlet.ext.freemarker.jar:
+<pre class="language-bash"><code class="language-bash">java -cp org.restlet.jar:org.restlet.ext.xml.jar:org.restlet.ext.atom.jar:org.restlet.ext.freemarker.jar:
  org.restlet.ext.odata.jar:org.freemarker.jar org.restlet.ext.odata.Generator
  http://ogdi.cloudapp.net/v1/dc/
  ~/workspace/testADO
-```
+</code></pre>
 
 or programmatically:
 
-```java
-String[] arguments =
+<pre class="language-java"><code class="language-java">String[] arguments =
       { "http://ogdi.cloudapp.net/v1/dc/",
         "/home/thierry/workspace/restlet-2.0/odata/src" };
 Generator.main(arguments);
-```
+</code></pre>
 
 Please note that this feature requires the use of the core Restlet, and
 additional dependencies such as Atom (used by OData services for all
@@ -104,14 +101,13 @@ exchanges of data), XML (required by the Atom extension) and FreeMarker
 
 This will generate the following Java classes and directory:
 
-```java
-ogdiDc/
+<pre class="language-bash"><code class="language-bash">ogdiDc/
   +-- AmbulatorySurgicalCenter.java
   +-- BuildingPermit.java
   +-- etc
 
 OgdiDcSession.java
-```
+</code></pre>
 
 The classes that correspond to entities are generated in their
 corresponding package (in our case: “ogdiDc”), as defined by the meta
@@ -132,8 +128,7 @@ use the generated classes.
 The code below gets the two first entities and displays some of their
 properties. It will display this kind of output on the console:
 
-```java
-*** buildingPermit
+<pre class="language-bash"><code class="language-bash">*** buildingPermit
 Owner   :DARYL ADAIR
 City    :WASHINGTON
 District:THIRD
@@ -146,13 +141,12 @@ City    :WASHINGTON
 District:FIFTH
 Address :144 U ST NW
 State   :DC
-```
+</code></pre>
 
 The listing below shows how to rRetrieve the two first “BuildingPermits”
 entities:
 
-```java
-OgdiDcSession session = new OgdiDcSession();
+<pre class="language-java"><code class="language-java">OgdiDcSession session = new OgdiDcSession();
 Query<BuildingPermit> query =
       session.createBuildingPermitQuery("/BuildingPermits").top(2);
 
@@ -167,7 +161,7 @@ if (query != null) {
       System.out.println();
    }
 }
-```
+</code></pre>
 
 The first step is the creation of a new session. This is the only
 required action, and it must be done once, but prior to any other one.
@@ -187,8 +181,7 @@ The code below gets the five first entities located in the city of
 Washington and more precisely on the fifth district and displays some of
 their properties. It will display this kind of output on the console:
 
-```java
-*** building permit
+<pre class="language-java"><code class="language-java">*** building permit
 Owner   :RUTH D PROCTOR
 Address :144 U ST NW
 
@@ -207,13 +200,12 @@ Address :336 ADAMS ST NE
 *** building permit
 Owner   :CARL J HAMPTON
 Address :2925 SOUTH DAKOTA AVE NE
-```
+</code></pre>
 
 The listing below shows how to retrieve the five first “BuildingPermits”
 entities in the fifht district of Washington:
 
-```java
-Query<BuildingPermit> search =
+<pre class="language-java"><code class="language-java">Query<BuildingPermit> search =
    session.createBuildingPermitQuery("/BuildingPermits")
       .filter("((city eq 'WASHINGTON') and (district eq 'FIFTH'))")
       .top(5);
@@ -226,7 +218,8 @@ if (search != null) {
       System.out.println();
    }
 }
-```
+</code></pre>
+
 As we want to get a set of “BuildingPermit”, we just create a new query
 and specify the desired data. In addition we add a filter based on the
 expression of two criteria: the name of the city and the district. This

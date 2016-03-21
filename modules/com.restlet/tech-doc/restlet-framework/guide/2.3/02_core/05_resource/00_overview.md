@@ -38,8 +38,7 @@ All annotation have a single optional parameter. Its name is the default
 
 Here is the grammar for this parameter:
 
-```
-    CHARACTER  = 'a-z' | 'A-Z' | '0-9'
+<pre class="language-bash"><code class="language-bash">    CHARACTER  = 'a-z' | 'A-Z' | '0-9'
     TOKEN      = CHARACTER [CHARACTER]*
     EXTENSION  = TOKEN
     PARAMETER  = TOKEN ['=' TOKEN]
@@ -49,12 +48,11 @@ Here is the grammar for this parameter:
     OUTPUT     = ENTITY
     QUERY      = PARAMETER ['&' PARAMETER]
     ANNOTATION = INPUT [',' INPUT]* [':' OUTPUT] ['?' QUERY]
-```
+</code></pre>
 
 Here are some valid values:
 
-```java
-    // Returns a representation in the "text/xml" media type
+<pre class="language-java"><code class="language-java">    // Returns a representation in the "text/xml" media type
     @Get("xml")
     String toString();
 
@@ -77,7 +75,7 @@ Here are some valid values:
 
     // Alternative variants
     @Put("xml+ascii | json+utf8 : json")
-```
+</code></pre>
 
 >**Note** the importance of registering the proper extension names via the
 MetadataService in order to use additional extension names.
@@ -88,8 +86,7 @@ Here is how a sample resource would look like with the refactored API.
 Note that both extension names and full MIME type would be supported.
 Extensions can be updated via the MetadataService.
 
-```java
-    import java.io.InputStream;
+<pre class="language-java"><code class="language-java">    import java.io.InputStream;
 
     import org.restlet.ext.atom.Feed;
     import org.restlet.resource.Delete;
@@ -136,4 +133,4 @@ Extensions can be updated via the MetadataService.
         }
 
     }
-```
+</code></pre>

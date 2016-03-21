@@ -8,8 +8,7 @@ The required step is to setup your custom Authenticator instance wich will be
 referenced each the client connector will issue a request. According to the JDK5
 javadocs, just proceed as follow:
 
-
-// Create your own authenticator
+<pre class="language-java"><code class="language-java">// Create your own authenticator
 Authenticator a = new Authenticator() {
 &nbsp;&nbsp;&nbsp; public PasswordAuthentication getPasswordAuthentication() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (new PasswordAuthentication("&lt;your account&gt;", "&lt;your password&gt;".toCharArray()));
@@ -17,7 +16,7 @@ Authenticator a = new Authenticator() {
 };
 // Sets the default Authenticator
 Authenticator.setDefault(a);
-
+</code></pre>
 
 ## Authenticate with NTML all requests performed via the internal HTTP client connector.
 
@@ -51,5 +50,5 @@ be added to your project.
 Here is a sample code that manually adds this client helper:
 
 
-Engine.getInstance().getRegisteredClients().add(0, new MyNtlmHttpClientHelper(new Client(Protocol.HTTP)));
-
+<pre class="language-java"><code class="language-java">Engine.getInstance().getRegisteredClients().add(0, new MyNtlmHttpClientHelper(new Client(Protocol.HTTP)));
+</code></pre>

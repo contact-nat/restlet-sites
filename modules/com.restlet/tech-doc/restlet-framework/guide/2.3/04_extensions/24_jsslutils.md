@@ -30,29 +30,30 @@ configuration, it provides a way to set up certificate revocation lists
 
 ### Example using the Component XML configuration:
 
-    <component xmlns="http://www.restlet.org/schemas/1.1/Component"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.restlet.org/schemas/1.1/Component">
+<pre class="language-markup"><code class="language-markup">    &lt;component xmlns=&quot;http://www.restlet.org/schemas/1.1/Component&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://www.restlet.org/schemas/1.1/Component&quot;&gt;
 
-        <client protocol="FILE" />
+        &lt;client protocol=&quot;FILE&quot; /&gt;
 
-        <server protocol="HTTPS" port="8183">
-            <parameter name="sslContextFactory" value="org.restlet.ext.ssl.PkixSslContextFactory" />
-            <parameter name="keystorePath" value="/path/to/keystore.p12" />
-            <parameter name="keystoreType" value="PKCS12" />
-            <parameter name="keystorePassword" value="testtest" />
-            <parameter name="keyPassword" value="testtest" />
-            <parameter name="truststorePath" value="/path/to/truststore.jks" />
-            <parameter name="truststoreType" value="JKS" />
-            <parameter name="truststorePassword" value="testtest" />
-            <parameter name="crlUrl" value="file:///path/to/crl.crl" />
-            <parameter name="wantClientAuthentication" value="true" />
-        </server>
+        &lt;server protocol=&quot;HTTPS&quot; port=&quot;8183&quot;&gt;
+            &lt;parameter name=&quot;sslContextFactory&quot; value=&quot;org.restlet.ext.ssl.PkixSslContextFactory&quot; /&gt;
+            &lt;parameter name=&quot;keystorePath&quot; value=&quot;/path/to/keystore.p12&quot; /&gt;
+            &lt;parameter name=&quot;keystoreType&quot; value=&quot;PKCS12&quot; /&gt;
+            &lt;parameter name=&quot;keystorePassword&quot; value=&quot;testtest&quot; /&gt;
+            &lt;parameter name=&quot;keyPassword&quot; value=&quot;testtest&quot; /&gt;
+            &lt;parameter name=&quot;truststorePath&quot; value=&quot;/path/to/truststore.jks&quot; /&gt;
+            &lt;parameter name=&quot;truststoreType&quot; value=&quot;JKS&quot; /&gt;
+            &lt;parameter name=&quot;truststorePassword&quot; value=&quot;testtest&quot; /&gt;
+            &lt;parameter name=&quot;crlUrl&quot; value=&quot;file:///path/to/crl.crl&quot; /&gt;
+            &lt;parameter name=&quot;wantClientAuthentication&quot; value=&quot;true&quot; /&gt;
+        &lt;/server&gt;
 
-        <defaultHost>
-            <attach uriPattern="" targetClass="org.restlet.example.tutorial.Part12" />
-        </defaultHost>
-    </component>
+        &lt;defaultHost&gt;
+            &lt;attach uriPattern=&quot;&quot; targetClass=&quot;org.restlet.example.tutorial.Part12&quot; /&gt;
+        &lt;/defaultHost&gt;
+    &lt;/component&gt;
+</code></pre>
 
 There can be multiple `crlUrl` parameters. In addition, two other
 parameters can be set:
@@ -67,7 +68,7 @@ SslContextFactory, but is often used in conjunction with it.
 
 ### Example embedded within the program, using two connectors:
 
-    Component component = new Component();
+<pre class="language-java"><code class="language-java">    Component component = new Component();
 
     Server server1 = component.getServers().add(Protocol.HTTPS,
        "host1.example.org", 8083);
@@ -86,6 +87,7 @@ SslContextFactory, but is often used in conjunction with it.
     param2.add("sslContextFactory","org.restlet.ext.ssl.PkixSslContextFactory");
     param2.add("keystorePath","/path/to/keystore2.p12");
     //...
+</code></pre>
 
 This example uses two certificates depending on which server connector
 (and thus which listening socket) is used.

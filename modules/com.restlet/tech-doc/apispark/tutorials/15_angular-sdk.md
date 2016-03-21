@@ -30,8 +30,7 @@ An HTTP server is required to be able to use the provided code. It can be served
 
 If the OS has python installed, a `SimpleHTTPServer` inside the folder will do the trick:
 
-<pre lang="javascript"><code>
-cd /path/to/your/unzipped/sdk
+<pre class="language-bash"><code class="language-bash">cd /path/to/your/unzipped/sdk
 python -mSimpleHTTPServer 1234
 </code></pre>
 
@@ -39,8 +38,7 @@ Then go to `http://localhost:1234/`.
 
 Or use node [http-server](https://www.npmjs.com/package/http-server) with the following command line:
 
-<pre lang="javascript"><code>
-npm install -g http-server
+<pre class="language-bash"><code class="language-bash">npm install -g http-server
 http-server /path/to/your/unzipped/sdk
 </code></pre>
 
@@ -71,8 +69,7 @@ With the same convention the quickstart wizard generates a `/companies/{companyI
 
 For any method generated the parameters are provided as a JS object provided as first parameter of the method. For instance to access the company of id *1*:
 
-<pre lang="javascript"><code>
-quick_start_wizard_angularjs_sdkClientResource.getCompany({
+<pre class="language-javascript"><code class="language-javascript">quick_start_wizard_angularjs_sdkClientResource.getCompany({
   companyid: 1
 });
 </code></pre>
@@ -93,8 +90,7 @@ Knowing this, getting the companies is pretty straight-forward and is made by ca
 
 A special attention has to be dedicated to the `.then` part in the following snippets for any JS developer not familiar with promises. Since Angular is based on the [Promise theory](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and the [Q specification](https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md), it is recommended to have a good understanding of that and how it works. The AngularJS related documentation can be found [there](https://docs.angularjs.org/api/ng/service/$q).
 
-<pre lang="javascript"><code>
-quick_start_wizard_angularjs_sdkClientResource.getCompanyList()
+<pre class="language-javascript"><code class="language-javascript">quick_start_wizard_angularjs_sdkClientResource.getCompanyList()
   .then(function(companies) {
     $scope.companies = companies;
   });
@@ -106,8 +102,7 @@ quick_start_wizard_angularjs_sdkClientResource.getCompanyList()
 
 To get a given company, the `companyid` must be provided as shown below:
 
-<pre lang="javascript"><code>
-quick_start_wizard_angularjs_sdkClientResource.getCompany({
+<pre class="language-javascript"><code class="language-javascript">quick_start_wizard_angularjs_sdkClientResource.getCompany({
   companyid: 1
 })
   .then(function(company) {
@@ -123,8 +118,7 @@ An update is a call to `putCompany` with:
 
 The promise is then resolved with the updated company.
 
-<pre lang="javascript"><code>
-quick_start_wizard_angularjs_sdkClientResource.putCompany({
+<pre class="language-javascript"><code class="language-javascript">quick_start_wizard_angularjs_sdkClientResource.putCompany({
   companyid: company.id,
   body: company
 })
@@ -140,8 +134,7 @@ Adding a new company is made through the use of the post on the resource list. I
 
 The only parameter to provide is the `body` (the JSON representation of the company).
 
-<pre lang="javascript"><code>
-quick_start_wizard_angularjs_sdkClientResource.postCompanyList({
+<pre class="language-javascript"><code class="language-javascript">quick_start_wizard_angularjs_sdkClientResource.postCompanyList({
   body: {
     "tags": [],
     "name": "Testing company",
@@ -160,8 +153,7 @@ quick_start_wizard_angularjs_sdkClientResource.postCompanyList({
 
 Deleting a company is very similar to getting an existing company and only requires  the `companyid` to detect which record should be deleted.
 
-<pre lang="javascript"><code>
-quick_start_wizard_angularjs_sdkClientResource.deleteCompany({
+<pre class="language-javascript"><code class="language-javascript">quick_start_wizard_angularjs_sdkClientResource.deleteCompany({
   companyid: 1
 })
   .then(function(company) {
@@ -177,63 +169,61 @@ The first part is to create a simple HTML template, so let's open the provided
 `index.html` and replace the content of `<div class="container"> ... </div>` with
 the following:
 
-<pre lang="html"><code>
-<h2>Companies</h2>
-<div class="row">
-  <div class="col-md-6">
-    <table class="table table-striped col-md-6">
-      <tr>
-        <th>Name</th>
-      </tr>
-      <tr ng-repeat="company in companies" ng-click="selectCompany(company.id)">
-        <td>
+<pre class="language-markup"><code class="language-markup">&lt;h2&gt;Companies&lt;/h2&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-6&quot;&gt;
+    &lt;table class=&quot;table table-striped col-md-6&quot;&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr ng-repeat=&quot;company in companies&quot; ng-click=&quot;selectCompany(company.id)&quot;&gt;
+        &lt;td&gt;
           {{company.name}}
-        </td>
-      </tr>
-    </table>
-  </div>
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
 
-  <div class="col-md-6" ng-if="company">
-    <form>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Name" ng-model="company.name">
-      </div>
-      <div class="form-group">
-        <label for="street">Street</label>
-        <input type="text" class="form-control" id="street" placeholder="Street" ng-model="company.address.street">
-      </div>
-      <div class="form-group">
-        <label for="zipcode">ZIP code</label>
-        <input type="text" class="form-control" id="zipcode" placeholder="Zip code" ng-model="company.address.zipcode">
-      </div>
-      <div class="form-group">
-        <label for="city">City</label>
-        <input type="text" class="form-control" id="city" placeholder="City" ng-model="company.address.city">
-      </div>
-      <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
-    </form>
-  </div>
-</div>
+  &lt;div class=&quot;col-md-6&quot; ng-if=&quot;company&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;Name&quot; ng-model=&quot;company.name&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;street&quot;&gt;Street&lt;/label&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;street&quot; placeholder=&quot;Street&quot; ng-model=&quot;company.address.street&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;zipcode&quot;&gt;ZIP code&lt;/label&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;zipcode&quot; placeholder=&quot;Zip code&quot; ng-model=&quot;company.address.zipcode&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;city&quot; placeholder=&quot;City&quot; ng-model=&quot;company.address.city&quot;&gt;
+      &lt;/div&gt;
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; ng-click=&quot;save(company)&quot;&gt;Save&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 
 So let's break it apart to clarify it.
 
 ## The company array
 
-<pre><code>
-<div class="col-md-6">
-  <table class="table table-striped col-md-6">
-    <tr>
-      <th>Name</th>
-    </tr>
-    <tr ng-repeat="company in companies" ng-click="selectCompany(company.id)">
-      <td>
+<pre class="language-markup"><code class="language-markup">&lt;div class=&quot;col-md-6&quot;&gt;
+  &lt;table class=&quot;table table-striped col-md-6&quot;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr ng-repeat=&quot;company in companies&quot; ng-click=&quot;selectCompany(company.id)&quot;&gt;
+      &lt;td&gt;
         {{company.name}}
-      </td>
-    </tr>
-  </table>
-</div>
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
 </code></pre>
 
 In this part, a table is created with a row per company. To do so Angular iterates over the companies' array stored in the scope using the `ng-repeat="company in companies"`.
@@ -250,28 +240,27 @@ It also contains various bindings to handle update of:
 
 Finally the save button triggers an update of the company with the last values changed by the user.
 
-<pre><code>
-<div class="col-md-6" ng-if="company">
-  <form>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="company.name">
-    </div>
-    <div class="form-group">
-      <label for="street">Street</label>
-      <input type="text" class="form-control" id="street" placeholder="Street" ng-model="company.address.street">
-    </div>
-    <div class="form-group">
-      <label for="zipcode">ZIP code</label>
-      <input type="text" class="form-control" id="zipcode" placeholder="Zip code" ng-model="company.address.zipcode">
-    </div>
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" class="form-control" id="city" placeholder="City" ng-model="company.address.city">
-    </div>
-    <button type="submit" class="btn btn-default" ng-click="save(company)">Save</button>
-  </form>
-</div>
+<pre class="language-markup"><code class="language-markup">&lt;div class=&quot;col-md-6&quot; ng-if=&quot;company&quot;&gt;
+  &lt;form&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;Name&quot; ng-model=&quot;company.name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;street&quot;&gt;Street&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;street&quot; placeholder=&quot;Street&quot; ng-model=&quot;company.address.street&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;zipcode&quot;&gt;ZIP code&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;zipcode&quot; placeholder=&quot;Zip code&quot; ng-model=&quot;company.address.zipcode&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;city&quot; placeholder=&quot;City&quot; ng-model=&quot;company.address.city&quot;&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; ng-click=&quot;save(company)&quot;&gt;Save&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
 </code></pre>
 
 At that point, the structure of the controller starts to appear. Many properties have to be set onto the `$scope`:
@@ -286,8 +275,7 @@ At that point, the structure of the controller starts to appear. Many properties
 
 First let's add the credentials into the [run block](https://docs.angularjs.org/guide/module#module-loading-dependencies) which are required to be able to access the API if the default security has not been changed.
 
-<pre lang="javascript"><code>
-.run(function ($http) {
+<pre class="language-javascript"><code class="language-javascript">.run(function ($http) {
 
 	// Adds HTTP basic authentication to all your calls to the API
   var encoded = btoa('9ac12010-68fd-4a68-b114-127672bdd2cd:4f8bd084-6644-45f2-b4b8-b8980782093d');
@@ -303,8 +291,7 @@ Now the last task is to add the logic into the controller which means to:
 * select a company (`selectCompany`)
 * update a company (`save`)
 
-<pre lang="javascript"><code>
-.controller('MainCtrl', function ($scope, $http, $q, $location, $timeout, $window, Quick_start_wizard_angularjs_sdkClientResource) {
+<pre class="language-javascript"><code class="language-javascript">.controller('MainCtrl', function ($scope, $http, $q, $location, $timeout, $window, Quick_start_wizard_angularjs_sdkClientResource) {
 
   var quick_start_wizard_angularjs_sdkClientResource = new Quick_start_wizard_angularjs_sdkClientResource();
 

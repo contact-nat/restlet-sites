@@ -29,8 +29,7 @@ Make your application class extend org.restlet.ext.swagger.SwaggerApplication in
 
 By default, the Swagger documentation will be available on the path "/api-docs" of your API. If you want to change this path, you can specify it manually in the method _createInboundRoot_:
 
-```java
-public Restlet createInboundRoot() {
+<pre class="language-java"><code class="language-java">public Restlet createInboundRoot() {
         // Router for the API's resources
         Router apiRouter = createApiRouter();
         attachSwaggerSpecificationRestlet(apiRouter, "/docs");
@@ -38,8 +37,7 @@ public Restlet createInboundRoot() {
         ChallengeAuthenticator guard = createApiGuard(apiRouter);
         return guard;
     }
-
-```
+</code></pre>
 
 Here, you specify that the Swagger definition will be provided on the path "/docs".
 
@@ -49,9 +47,7 @@ If you want to display a definition edited manually, the SwaggerApplication can 
 
 See sample implementation below:
 
-```java
-
-@Override
+<pre class="language-java"><code class="language-java">@Override
     public SwaggerSpecificationRestlet getSwaggerSpecificationRestlet(
             Context context) {
         return new SwaggerSpecificationRestlet(getContext()) {
@@ -74,8 +70,7 @@ See sample implementation below:
             }
         };
     }
-
-```
+</code></pre>
 
 # Swagger-UI
 

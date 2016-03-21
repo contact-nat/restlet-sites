@@ -14,8 +14,7 @@ web site (named "mysite.org") based on Google. The "/search" relative
 URI identifies the search service, accepting some keywords via the "kwd"
 parameter:
 
-~~~~ {.java:nocontrols:nogutter}
-// Create a root router
+<pre class="language-java"><code class="language-java">// Create a root router
 Router router = new Router(getContext());
 
 // Create a Redirector to Google search service
@@ -32,8 +31,7 @@ Route route = router.attach("/search", redirector);
 // will be routed to
 // http://www.google.com/search?q=site:mysite.org+myKeyword1%20myKeyword2
 route.extractQuery("keywords", "kwd", true);
-
-~~~~
+</code></pre>
 
 Note that the Redirector needs three parameters only. The first is the
 parent context, the second one defines how the URI rewriting should be
@@ -78,8 +76,7 @@ See the implementation code below. In a real application, you will
 probably want to create separate subclasses instead of the anonymous
 ones we use here:
 
-~~~~ {.java:nocontrols:nogutter}
-// Create a root router
+<pre class="language-java"><code class="language-java">// Create a root router
 Router router = new Router(getContext());
 
 // Attach a guard to secure access to the directory
@@ -131,8 +128,7 @@ Restlet order = new Restlet(getContext()) {
 router.attach("/users/{user}", account);
 router.attach("/users/{user}/orders", orders);
 router.attach("/users/{user}/orders/{order}", order);
-
-~~~~
+</code></pre>
 
 Note that the routing assumes that your request contains an absolute
 target URI that identifies a target resource. During the request

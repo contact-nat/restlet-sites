@@ -32,9 +32,7 @@ Here is the list of modifications.
 -   Implement the "getApplicationInfo" method in order to add a title
     and a simple description:
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         public ApplicationInfo getApplicationInfo(Request request, Response response) {
             ApplicationInfo result = super.getApplicationInfo(request, response);
 
@@ -45,6 +43,7 @@ Here is the list of modifications.
 
             return result;
         }
+</code></pre>
 
 ## BaseResource class
 
@@ -55,19 +54,16 @@ Here is the list of modifications.
 
 -   Implement the "describe" method,in order to set a proper title.
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected Representation describe() {
             setTitle("List of items.");
             return super.describe();
         }
+</code></pre>
 
 -   Implement the"describeGet" method
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void describeGet(MethodInfo info) {
             info.setIdentifier("items");
             info.setDocumentation("Retrieve the list of current items.");
@@ -77,12 +73,11 @@ Here is the list of modifications.
             repInfo.setDocumentation("List of items as XML file");
             info.getResponse().getRepresentations().add(repInfo);
         }
+</code></pre>
 
 -   Implement the "describePost" method
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void describePost(MethodInfo info) {
             info.setIdentifier("create_item");
             info.setDocumentation("To create an item.");
@@ -105,24 +100,22 @@ Here is the list of modifications.
             faultInfo.setMediaType(MediaType.TEXT_HTML);
             info.getResponse().getFaults().add(faultInfo);
         }
+</code></pre>
 
 ## ItemResource
 
 -   Implement the "describe" method,in order to set a proper title.
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         public Representation describe() {
             setTitle("Representation of a single item");
             return super.describe();
         }
+</code></pre>
 
 -   Implement the"describeGet" method
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void describeGet(MethodInfo info) {
             info.setIdentifier("item");
             info.setDocumentation("To retrieve details of a specific item");
@@ -138,12 +131,11 @@ Here is the list of modifications.
             faultInfo.setMediaType(MediaType.TEXT_HTML);
             info.getResponse().getFaults().add(faultInfo);
         }
+</code></pre>
 
 -   Implement the "describeDelete" method
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void describeDelete(MethodInfo info) {
             info.setDocumentation("Delete the current item.");
 
@@ -152,12 +144,11 @@ Here is the list of modifications.
             repInfo.getStatuses().add(Status.SUCCESS_NO_CONTENT);
             info.getResponse().getRepresentations().add(repInfo);
         }
+</code></pre>
 
 -   Implement the "describePut" method
 
-<!-- -->
-
-        @Override
+<pre class="language-java"><code class="language-java">        @Override
         protected void describePut(MethodInfo info) {
             info.setDocumentation("Update or create the current item.");
 
@@ -177,6 +168,7 @@ Here is the list of modifications.
 
             super.describePut(info);
         }
+</code></pre>
 
 # Getting the documentation
 
@@ -188,18 +180,20 @@ under 2 formats: WADL or HTML.
 Here is a way to programmatically obtain the WADL documentation of the
 application:
 
-    ClientResource app = new ClientResource("http://localhost:8182/firstResource");
+<pre class="language-java"><code class="language-java">    ClientResource app = new ClientResource("http://localhost:8182/firstResource");
 
     // Displays the WADL documentation of the application
     app.options().write(System.out);
+</code></pre>
 
 Here is a way to programmatically obtain the WADL documentation of the
 "items" resource:
 
-    ClientResource items = new ClientResource("http://localhost:8182/firstResource/items");
+<pre class="language-java"><code class="language-java">    ClientResource items = new ClientResource("http://localhost:8182/firstResource/items");
 
     // Displays the WADL documentation of the application
     items.options().write(System.out);
+</code></pre>
 
 ## HTML documentation
 
@@ -210,10 +204,11 @@ XSL sheet, developped and maintained by  Mark Nottingham:
 Here is a way to programmatically obtain the HTML documentation of the
 application:
 
-    ClientResource app = new ClientResource("http://localhost:8182/firstResource");
+<pre class="language-java"><code class="language-java">    ClientResource app = new ClientResource("http://localhost:8182/firstResource");
 
     // Displays an HTML documentation of the application
     app.options(MediaType.TEXT_HTML).write(System.out);
+</code></pre>
 
 In order to work properly, you will certainly have to update your
 classpath with the archive of a convenient transformation engine. Xalan
@@ -233,10 +228,11 @@ Quoting the WADL specification:
 
 For example:
 
-    <grammars>
-      <include href="NewsSearchResponse.xsd"/>
-      <include href="Error.xsd"/>
-    </grammars>
+<pre class="language-markup"><code class="language-markup">    &lt;grammars&gt;
+      &lt;include href=&quot;NewsSearchResponse.xsd&quot;/&gt;
+      &lt;include href=&quot;Error.xsd&quot;/&gt;
+    &lt;/grammars&gt;
+</code></pre>
 
 At this time, the WADL extension of the Restlet framework supports only
 "included" and not "inline" schemas via the GrammarsInfo\#includes
@@ -248,18 +244,20 @@ section.
 
 For example:
 
-    <representation mediaType="application/xml" element="yn:ResultSet"/>
+<pre class="language-markup"><code class="language-markup">    &lt;representation mediaType=&quot;application/xml&quot; element=&quot;yn:ResultSet&quot;/&gt;
+</code></pre>
 
 Assuming that the "yn" namespace is declared in the document:
 
-    <application [...] xmlns:yn="urn:yahoo:yn" >
+<pre class="language-markup"><code class="language-markup">    &lt;application [...] xmlns:yn=&quot;urn:yahoo:yn&quot; &gt;
+</code></pre>
 
 ### Implementation with Restlet
 
 At the level of the subclass of WadlApplication, override the
 getApplicationInfo method:
 
-    @Override
+<pre class="language-java"><code class="language-java">    @Override
     public ApplicationInfo getApplicationInfo(Request request, Response response) {
         ApplicationInfo appInfo = super.getApplicationInfo(request, response);
         appInfo.getNamespaces().put("urn:yahoo:yn", "yn");
@@ -270,9 +268,11 @@ getApplicationInfo method:
         appInfo.setGrammars(grammar);
         return appInfo;
     }
+</code></pre>
 
 Then, at the level of the subclass of WadlResource, update the
 RepresentationInfo\#element attribute:
 
-    RepresentationInfo formRepresentation = new RepresentationInfo();
+<pre class="language-java"><code class="language-java">    RepresentationInfo formRepresentation = new RepresentationInfo();
     formRepresentation.setXmlElement("yn:ResultSet");
+</code></pre>

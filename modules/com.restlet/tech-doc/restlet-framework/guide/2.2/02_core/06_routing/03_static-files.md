@@ -5,7 +5,7 @@ Javadocs? Well, no need to setup an Apache server just for that, use
 instead the dedicated org.restlet.resource.Directory class. See how
 simple it is to use it:
 
-    public class FileServer extends Restlet {
+<pre class="language-java"><code class="language-java">    public class FileServer extends Restlet {
         // URI of the root directory.  
         public static final String ROOT_URI = "file:///c:/path/to/root";  
 
@@ -29,6 +29,7 @@ simple it is to use it:
             component.start();
         }
     }
+</code></pre>
 
 In order to run this example, you need to specify a valid value for
 ROOT\_URI, In this case, it is set to

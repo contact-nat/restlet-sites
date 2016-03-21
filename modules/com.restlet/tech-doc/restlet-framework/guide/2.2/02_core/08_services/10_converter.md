@@ -12,7 +12,7 @@ annotated Restlet resources.
 Let's describe how this service is typically used with a ServerResource
 that supports GET and PUT methods as below:
 
-    @Get("json")
+<pre class="language-java"><code class="language-java">    @Get("json")
     // Returns a json representation of a contact.
     public Contact toJson(){
        [...]
@@ -23,6 +23,7 @@ that supports GET and PUT methods as below:
     public void store(Form form){
        [...]
     }
+</code></pre>
 
 In this case, the aim of the converter service is to:
 
@@ -48,8 +49,9 @@ related methods on ClientResource:
 For example if you want to retrieve an XML representation as a DOM
 document, you can just do:
 
-    ClientResource cr = new ClientResource("http://myapi.com/path/resource");
+<pre class="language-java"><code class="language-java">    ClientResource cr = new ClientResource("http://myapi.com/path/resource");
     Document doc = cr.get(Document.class);
+</code></pre>
 
 And that's all you need to do, as long as you have the
 org.restlet.ext.xml.jar in your classpath!

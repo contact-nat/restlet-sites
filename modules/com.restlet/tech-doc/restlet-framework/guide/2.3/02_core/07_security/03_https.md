@@ -87,8 +87,7 @@ be used as the common name, in the '-dname' option (see below). In the
 following example, the machine is called 'serverX' (the command-line
 options are put onto separate lines for readability only):
 
-```
-keytool -genkey\
+<pre class="language-bash"><code class="language-bash">keytool -genkey\
  -v\
  -alias serverX\
  -dname "CN=**serverX**,OU=IT,O=JPC,C=GB"\
@@ -99,17 +98,16 @@ keytool -genkey\
  -sigalg "MD5withRSA"\
  -keysize 2048\
  -validity 3650
-```
+</code></pre>
 
 The output should be:
 
-```
-Generating 2,048 bit RSA key pair and self-signed certificate
+<pre class="language-bash"><code class="language-bash">Generating 2,048 bit RSA key pair and self-signed certificate
 (MD5withRSA) with\
  a validity of 3,650 days\
  for: CN=serverX, OU=IT, O=JPC, C=GB\
  [Storing serverX.jks]
-```
+</code></pre>
 
 To explain each option:
 
@@ -133,9 +131,8 @@ files (.p12) is "PKCS12", which can be specified by adding the following
 options to the keytool command line:
 
 
-```
--storetype “PKCS12”
-```
+<pre class="language-bash"><code class="language-bash">-storetype “PKCS12”
+</code></pre>
 
 # Step 2: Exporting the Self-Signed Certificate
 
@@ -145,20 +142,18 @@ it can be imported into other keystores such as those used by the Java
 VM or Windows. To export the certificate, use keytool with the following
 options:
 
-```
-keytool -export\
+<pre class="language-bash"><code class="language-bash">keytool -export\
  -v\
  -alias serverX\
  -file serverX.cer\
  -keystore serverX.jks\
  -storepass password
-```
+</code></pre>
 
 The output should be:
 
-```
-Certificate stored in file \<serverX.cer\>
-```
+<pre class="language-bash"><code class="language-bash">Certificate stored in file \<serverX.cer\>
+</code></pre>
 
 To explain each option:
 
@@ -207,13 +202,12 @@ Files\\Java\\jre6\\lib\\security\\cacerts*
 
 The keytool command to do this is:
 
-```
-keytool -import\
+<pre class="language-bash"><code class="language-bash">keytool -import\
  -alias serverX\
  -file serverX.cer\
  -keystore "C:\\Program Files\\Java\\jre6\\lib\\security\\cacerts"\
  -storepass "changeit"
-```
+</code></pre>
 
 Note that the default password for the cacerts keystore file is
 'changeit'.
@@ -221,10 +215,9 @@ Note that the default password for the cacerts keystore file is
 ​2. Add the following Java VM arguments to your Java client command
 line:
 
-```
--Djavax.net.ssl.trustStore=C:\\\\somedir\\\\serverX.jks -Djavax.net.ssl.trustStoreType=JKS\
+<pre class="language-bash"><code class="language-bash">-Djavax.net.ssl.trustStore=C:\\\\somedir\\\\serverX.jks -Djavax.net.ssl.trustStoreType=JKS\
  -Djavax.net.ssl.trustStorePassword=password
-```
+</code></pre>
 
 These arguments tell the Java VM where to find your certificate.
 **Please note that this approach should only be used in a test
@@ -237,18 +230,16 @@ In addition to the standard Restlet jar files, you also need to
 reference jar files for HTTPS. The 'Simple' HTTPS connector uses these
 jar files:
 
-```
-lib/org.restlet.ext.simple\_3.1.jar\
+<pre class="language-bash"><code class="language-bash">lib/org.restlet.ext.simple\_3.1.jar\
  lib/org.simpleframework\_3.1/org.simpleframework.jar
 lib/org.restlet.ext.ssl.jar\
  lib/org.jsslutils\_0.5/org.jsslutils.jar
-```
+</code></pre>
 
 The server code in this example will explicitly load the certificate
 from the keystore file (serverX.jks):
 
-```java
-    package com.jpc.samples;
+<pre class="language-java"><code class="language-java">    package com.jpc.samples;
 
     import org.restlet.Component;
     import org.restlet.Server;
@@ -279,12 +270,11 @@ from the keystore file (serverX.jks):
             component.start();
         }
     }
-```
+</code></pre>
 
 # Step 5: Sample Restlet Client Code
 
-```java
-    package com.jpc.samples;
+<pre class="language-java"><code class="language-java">    package com.jpc.samples;
 
     import java.io.IOException;
     import org.restlet.Client;
@@ -319,7 +309,7 @@ from the keystore file (serverX.jks):
         }
     }
 ...other code not shown (similar to original HTTP Restlet example)...
-```
+</code></pre>
 
 # Conclusion
 

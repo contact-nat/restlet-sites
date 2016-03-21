@@ -9,7 +9,7 @@ web site (named "mysite.org") based on Google. The "/search" relative
 URI identifies the search service, accepting some keywords via the "kwd"
 parameter:
 
-    // Create a root router
+<pre class="language-java"><code class="language-java">    // Create a root router
     Router router = new Router(getContext());
 
     // Create a Redirector to Google search service
@@ -27,6 +27,7 @@ parameter:
 
     // Attach the extractor to the router
     router.attach("/search", extractor);
+</code></pre>
 
 Note that the Redirector needs three parameters only. The first is the
 parent context, the second one defines how the URI rewriting should be

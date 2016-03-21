@@ -40,16 +40,14 @@ method. For simplicity purpose, we didn't keep the Directory serving
 static files as this part wouldn't change. You can notice the way that
 resource classes are directly attached to the router.
 
-~~~~ {.java:nocontrols:nogutter}
-// Create a router
+<pre class="language-java"><code class="language-java">// Create a router
 Router router = new Router(getContext());
 
 // Attach the resources to the router
 router.attach("/users/{user}", UserResource.class);
 router.attach("/users/{user}/orders", OrdersResource.class);
 router.attach("/users/{user}/orders/{order}", OrderResource.class);
-
-~~~~
+</code></pre>
 
 We will finally review one of the resource classes, the UserResource
 class. This class derives from org.restlet.resource.ServerResource. We
@@ -60,8 +58,7 @@ application, we would lookup our associated "user" domain object.
 Finally, we declare a toString() method that supports the GET method as
 indicated by the @Get annotation.
 
-~~~~ {.java:nocontrols:nogutter}
-public class UserResource extends ServerResource {
+<pre class="language-java"><code class="language-java">public class UserResource extends ServerResource {
     String userName;
 
     Object user;
@@ -77,8 +74,7 @@ public class UserResource extends ServerResource {
         return "Account of user \"" + this.userName + "\"";
     }
 }
-
-~~~~
+</code></pre>
 
 You can have a look at the rest of the code in the tutorial package and
 test the application. You will obtain the same behavior as in Part11,

@@ -20,7 +20,7 @@ For additional details, please consult the
 This extension can be used for LDAP authentication, for example.
 Considering this JAAS configuration:
 
-      BasicJaasAuthenticationApplication {
+<pre class="language-java"><code class="language-java">      BasicJaasAuthenticationApplication {
         com.sun.security.auth.module.LdapLoginModule REQUIRED
 
             userProvider="ldap://ldap.example.net/"
@@ -28,13 +28,15 @@ Considering this JAAS configuration:
             authIdentity="uid={USERNAME},ou=people,dc=example,dc=net"
 
       };
+</code></pre>
 
 Using a verifier configured like this:
 
-      JaasVerifier verifier = new JaasVerifier("BasicJaasAuthenticationApplication");
+<pre class="language-java"><code class="language-java">      JaasVerifier verifier = new JaasVerifier("BasicJaasAuthenticationApplication");
       verifier.setConfiguration(jaasConfig);
       verifier.setUserPrincipalClassName("com.sun.security.auth.UserPrincipal");
       authenticator.setVerifier(verifier);
+</code></pre>
 
 A successful JAAS login will add principals like these to the subject:
 

@@ -38,144 +38,145 @@ you have requirement,you should modify it in concurrent(client/server)
 model by using [Db4o.openServer
 method](http://developer.db4o.com/resources/api/db4o-java/com/db4o/Db4o.html#openServer%28java.lang.String,%20int%29).
 
->         package com.bjinfotech.util;
->
->         import com.db4o.Db4o;
->         import com.db4o.ObjectContainer;
->         import com.db4o.query.Query;
->         import java.util.ArrayList;
->         import java.util.Iterator;
->         import java.util.List;
->         import org.apache.commons.beanutils.*;
->         /**
->          * It's very clean from its name that it works as db4o function simpler.
->          * Its generalOperate method handles general operation with db4o.
->          * @author cleverpig
->          *
->          */
->         public class DB4OSimpler {
->             //operation constants that will be used as generalOperate method's param
->             public static final int OPERATION_SAVE=0;
->             public static final int OPERATION_LOAD=1;
->             public static final int OPERATION_UPDATE=2;
->             public static final int OPERATION_DELETE=3;
->             public static final int OPERATION_QUERY=4;
->             public static final int OPERATION_LIST=5;
->             public static final int OPERATION_CLEAR=6;
->             /**
->              * perform general Operation
->              * @param fileName
->              * @param op_code corresponding integer type constant
->              * @param example object which is needed in operation
->              * @param keyFieldName object's key field name
->              * @return
->              */
->             public static Object generalOperate(
->                     String fileName,
->                     int op_code,
->                     Object example,
->                     String keyFieldName){
->                 Object ret=null;
->                 //open db4o file to get ObjectContainer
->                 ObjectContainer db=Db4o.openFile(fileName);
->                 Iterator iter=null;
->                 List list=null;
->                 Query query=null;
->                 try{
->                     //perform operation according to op_code param value
->                     switch(op_code){
->                     case OPERATION_SAVE:
->                         //just set!It's very simple!
->                         db.set(example);
->                         ret=example;
->                         break;
->                     case OPERATION_LOAD:
->                         //just get!
->                         list=db.get(example);
->                         if (list!=null && list.size()>0){
->                             ret=list.get(0);
->                         }
->                         break;
->                     case OPERATION_UPDATE:
->                         //at first,I find objects which will be updated with its key field value
->                         query=db.query();
->                         query.constrain(example.getClass());
->                         query.descend(keyFieldName)
->                             .constrain(BeanUtils.getProperty(example, keyFieldName));
->                         iter=query.execute().listIterator();
->                         //and then delete all of them
->                         while(iter.hasNext()){
->                             db.delete(iter.next());
->                         }
->                         //set new one,now!
->                         db.set(example);
->                         ret=example;
->                         break;
->                     case OPERATION_DELETE:
->                         //just like update process:find firstly,and then delete them
->                         query=db.query();
->                         query.constrain(example.getClass());
->                         query.descend(keyFieldName)
->                             .constrain(BeanUtils.getProperty(example, keyFieldName));
->                         iter=query.execute().listIterator();
->                         if (iter.hasNext()){
->                             while(iter.hasNext()){
->                                 db.delete(iter.next());
->                             }
->                             ret=true;
->                         }
->                         else{
->                             ret=false;
->                         }
->                         break;
->                     case OPERATION_QUERY:
->                         //just like update process:find firstly,and then return them
->                         query=db.query();
->                         query.constrain(example.getClass());
->                         query.descend(keyFieldName)
->                             .constrain(BeanUtils.getProperty(example, keyFieldName));
->                         iter=query.execute().listIterator();
->                         list=new ArrayList();
->                         while(iter.hasNext()){
->                                 list.add(iter.next());
->                         }
->                         if (list.size()>0)
->                             ret=list;
->                         break;
->                     case OPERATION_LIST:
->                         //return list of object which class is example.class.
->                         list=new ArrayList();
->                         iter=db.query(example.getClass()).listIterator();
->                         while(iter.hasNext()){
->                             list.add(iter.next());
->                         }
->                         if (list.size()>0)
->                             ret=list;
->                         break;
->                     case OPERATION_CLEAR:
->                         //delete anything which class is example.class.
->                         iter=db.query(example.getClass()).listIterator();
->                         int deleteCount=0;
->                         while(iter.hasNext()){
->                             db.delete(iter.next());
->                             deleteCount++;
->                         };
->                         ret=true;
->                         break;
->                     }
->                     //commit,finally
->                     db.commit();
->                 }
->                 catch(Exception ex){
->                     db.rollback();
->                     ex.printStackTrace();
->                 }
->                 finally{
->                     db.close();
->                 }
->                 return ret;
->             }
->         }
+<pre class="language-java"><code class="language-java">         package com.bjinfotech.util;
+
+         import com.db4o.Db4o;
+         import com.db4o.ObjectContainer;
+         import com.db4o.query.Query;
+         import java.util.ArrayList;
+         import java.util.Iterator;
+         import java.util.List;
+         import org.apache.commons.beanutils.*;
+         /**
+          * It's very clean from its name that it works as db4o function simpler.
+          * Its generalOperate method handles general operation with db4o.
+          * @author cleverpig
+          *
+          */
+         public class DB4OSimpler {
+             //operation constants that will be used as generalOperate method's param
+             public static final int OPERATION_SAVE=0;
+             public static final int OPERATION_LOAD=1;
+             public static final int OPERATION_UPDATE=2;
+             public static final int OPERATION_DELETE=3;
+             public static final int OPERATION_QUERY=4;
+             public static final int OPERATION_LIST=5;
+             public static final int OPERATION_CLEAR=6;
+             /**
+              * perform general Operation
+              * @param fileName
+              * @param op_code corresponding integer type constant
+              * @param example object which is needed in operation
+              * @param keyFieldName object's key field name
+              * @return
+              */
+             public static Object generalOperate(
+                     String fileName,
+                     int op_code,
+                     Object example,
+                     String keyFieldName){
+                 Object ret=null;
+                 //open db4o file to get ObjectContainer
+                 ObjectContainer db=Db4o.openFile(fileName);
+                 Iterator iter=null;
+                 List list=null;
+                 Query query=null;
+                 try{
+                     //perform operation according to op_code param value
+                     switch(op_code){
+                     case OPERATION_SAVE:
+                         //just set!It's very simple!
+                         db.set(example);
+                         ret=example;
+                         break;
+                     case OPERATION_LOAD:
+                         //just get!
+                         list=db.get(example);
+                         if (list!=null && list.size()>0){
+                             ret=list.get(0);
+                         }
+                         break;
+                     case OPERATION_UPDATE:
+                         //at first,I find objects which will be updated with its key field value
+                         query=db.query();
+                         query.constrain(example.getClass());
+                         query.descend(keyFieldName)
+                             .constrain(BeanUtils.getProperty(example, keyFieldName));
+                         iter=query.execute().listIterator();
+                         //and then delete all of them
+                         while(iter.hasNext()){
+                             db.delete(iter.next());
+                         }
+                         //set new one,now!
+                         db.set(example);
+                         ret=example;
+                         break;
+                     case OPERATION_DELETE:
+                         //just like update process:find firstly,and then delete them
+                         query=db.query();
+                         query.constrain(example.getClass());
+                         query.descend(keyFieldName)
+                             .constrain(BeanUtils.getProperty(example, keyFieldName));
+                         iter=query.execute().listIterator();
+                         if (iter.hasNext()){
+                             while(iter.hasNext()){
+                                 db.delete(iter.next());
+                             }
+                             ret=true;
+                         }
+                         else{
+                             ret=false;
+                         }
+                         break;
+                     case OPERATION_QUERY:
+                         //just like update process:find firstly,and then return them
+                         query=db.query();
+                         query.constrain(example.getClass());
+                         query.descend(keyFieldName)
+                             .constrain(BeanUtils.getProperty(example, keyFieldName));
+                         iter=query.execute().listIterator();
+                         list=new ArrayList();
+                         while(iter.hasNext()){
+                                 list.add(iter.next());
+                         }
+                         if (list.size()>0)
+                             ret=list;
+                         break;
+                     case OPERATION_LIST:
+                         //return list of object which class is example.class.
+                         list=new ArrayList();
+                         iter=db.query(example.getClass()).listIterator();
+                         while(iter.hasNext()){
+                             list.add(iter.next());
+                         }
+                         if (list.size()>0)
+                             ret=list;
+                         break;
+                     case OPERATION_CLEAR:
+                         //delete anything which class is example.class.
+                         iter=db.query(example.getClass()).listIterator();
+                         int deleteCount=0;
+                         while(iter.hasNext()){
+                             db.delete(iter.next());
+                             deleteCount++;
+                         };
+                         ret=true;
+                         break;
+                     }
+                     //commit,finally
+                     db.commit();
+                 }
+                 catch(Exception ex){
+                     db.rollback();
+                     ex.printStackTrace();
+                 }
+                 finally{
+                     db.close();
+                 }
+                 return ret;
+             }
+         }
+</code></pre>
 
 ## MicroblogApplication.Class
 
@@ -187,62 +188,64 @@ Microblog):
 think TunnelService is easy for using.But I'd discuss how to using
 custom finder to implement same function.
 
->         package com.bjinfotech.restlet.practice.demo.microblog;
->
->         import org.restlet.Application;
->         import org.restlet.Component;
->         import org.restlet.Directory;
->         import org.restlet.Restlet;
->         import org.restlet.Router;
->         import org.restlet.data.Protocol;
->
->         /**
->          * restful server
->          * it serves static files and resource
->          * @author cleverpig
->          *
->          */
->         public class MicroblogApplication {
->             public static void main(String[] argv) throws Exception{
->                 Component component=new Component();
->                 //add http protocol
->                 component.getServers().add(Protocol.HTTP,8182);
->                 //add file protocol for accessing static web files in some directories
->                 component.getClients().add(Protocol.FILE);
->
->                 Application application=new Application(component.getContext()){
->                     @Override
->                     public Restlet createRoot(){
->                         //directory where static web files live
->                         final String DIR_ROOT_URI="file:///E:/eclipse3.1RC3/workspace/RestletPractice/static_files/";
->                         //create router
->                         Router router=new Router(getContext());
->                         //attach static web files to "www" folder
->                         Directory dir=new Directory(getContext(),DIR_ROOT_URI);
->                         dir.setListingAllowed(true);
->                         dir.setDeeplyAccessible(true);
->                         dir.setNegotiateContent(true);
->                         router.attach("/www/",dir);
->                         //attach resource class:MicroblogResource to "/restful/blog" as web service URI
->                         router.attach("/restful/blog",MicroblogResource.class);
->                         return router;
->                     }
->                 };
->                 //use TunnelService to simplify request's dispatching  
->                 application.getTunnelService().setEnabled(true);
->                 application.getTunnelService().setMethodTunnel(true);
->                 application.getTunnelService().setMethodParameter("method");
->                 //attach application
->                 component.getDefaultHost().attach(application);
->                 component.start();
->             }
->         }
+<pre class="language-java"><code class="language-java">         package com.bjinfotech.restlet.practice.demo.microblog;
+
+         import org.restlet.Application;
+         import org.restlet.Component;
+         import org.restlet.Directory;
+         import org.restlet.Restlet;
+         import org.restlet.Router;
+         import org.restlet.data.Protocol;
+
+         /**
+          * restful server
+          * it serves static files and resource
+          * @author cleverpig
+          *
+          */
+         public class MicroblogApplication {
+             public static void main(String[] argv) throws Exception{
+                 Component component=new Component();
+                 //add http protocol
+                 component.getServers().add(Protocol.HTTP,8182);
+                 //add file protocol for accessing static web files in some directories
+                 component.getClients().add(Protocol.FILE);
+
+                 Application application=new Application(component.getContext()){
+                     @Override
+                     public Restlet createRoot(){
+                         //directory where static web files live
+                         final String DIR_ROOT_URI="file:///E:/eclipse3.1RC3/workspace/RestletPractice/static_files/";
+                         //create router
+                         Router router=new Router(getContext());
+                         //attach static web files to "www" folder
+                         Directory dir=new Directory(getContext(),DIR_ROOT_URI);
+                         dir.setListingAllowed(true);
+                         dir.setDeeplyAccessible(true);
+                         dir.setNegotiateContent(true);
+                         router.attach("/www/",dir);
+                         //attach resource class:MicroblogResource to "/restful/blog" as web service URI
+                         router.attach("/restful/blog",MicroblogResource.class);
+                         return router;
+                     }
+                 };
+                 //use TunnelService to simplify request's dispatching  
+                 application.getTunnelService().setEnabled(true);
+                 application.getTunnelService().setMethodTunnel(true);
+                 application.getTunnelService().setMethodParameter("method");
+                 //attach application
+                 component.getDefaultHost().attach(application);
+                 component.start();
+             }
+         }
+</code></pre>
 
 ## microblogAppInterface.js
 
 This is a JavaScript file used in microblog.html file,it call functions
 which was exposed in server side:
 
+<pre class="language-javascript"><code class="language-javascript">
          var SAVE_MODEL=1;
          var UPDATE_MODEL=2;
 
@@ -334,10 +337,11 @@ which was exposed in server side:
                      }
                  );
          }
+</code></pre>
 
 ## MicroblogResource.Class
 
-         package com.bjinfotech.restlet.practice.demo.microblog;
+<pre class="language-java"><code class="language-java">         package com.bjinfotech.restlet.practice.demo.microblog;
 
          import java.util.List;
          import java.util.logging.Logger;
@@ -497,11 +501,11 @@ which was exposed in server side:
                  getResponse().setEntity(callMethod("delete",jsonParamVal));
              }
          }
+</code></pre>
 
 ## Microblog.Class
 
-```java
-package com.bjinfotech.restlet.practice.demo.microblog;
+<pre class="language-java"><code class="language-java">package com.bjinfotech.restlet.practice.demo.microblog;
 
 public class Microblog {\
    private String subject;\
@@ -512,7 +516,7 @@ public class Microblog {\
    }\
    ...
 }
-```
+</code></pre>
 
 # Running Application
 
@@ -542,15 +546,16 @@ all!
 
 In Application:
 
-         ...
+<pre class="language-java"><code class="language-java">         ...
          Router router = new Router(getContext());
          //It's very easy!
          router.setFinderClass(PrototypeFinder.class);
          ...
+</code></pre>
 
 Custom Finder:
 
-         public class PrototypeFinder extends Finder {
+<pre class="language-java"><code class="language-java">         public class PrototypeFinder extends Finder {
                 public  PrototypeFinder(Context context, Class
          targetClass) {
                         super(context, targetClass);
@@ -565,9 +570,11 @@ Custom Finder:
                         super.handle(request, response);
                 }
          }
+</code></pre>
 
 javascript snippet in web page:
 
+<pre class="language-javascript"><code class="language-javascript">
          ...
 
 
@@ -591,7 +598,7 @@ javascript snippet in web page:
                         }
                 });
          }
-
+</code></pre>
 
          ...
 

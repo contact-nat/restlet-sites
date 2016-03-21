@@ -13,7 +13,8 @@ GWT to the project classpath *^[explain]^*
 ​3) Add the following to your application's module definition file
 (*yourapp*.gwt.xml):
 
-    <inherits name='org.restlet.Restlet'/>
+<pre class="language-markup"><code class="language-markup">    &lt;inherits name=&apos;org.restlet.Restlet&apos;/&gt;
+</code></pre>
 
 This will make the Restlet API available to your GWT compiled code.  The
 Restlet module in turn inherits the GWT standard
@@ -39,7 +40,7 @@ side.
 
 ​2) Modify the web.xml:
 
-    <?xml version="1.0" encoding="UTF-8"?>
+<pre class="language-markup"><code class="language-markup">    <?xml version="1.0" encoding="UTF-8"?>
     <web-app>
         <servlet>
             <servlet-name>restlet</servlet-name>
@@ -57,6 +58,7 @@ side.
 
              ...
     </web-app>
+</code></pre>
 
 For *application*, supply the name of your Restlet Application, e.g.
 `com.mycompany.server.TestApplication`.  You can also supply a

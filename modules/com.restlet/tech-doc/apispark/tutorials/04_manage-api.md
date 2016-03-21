@@ -171,9 +171,9 @@ You will download a zip file containing the jar and an empty configuration file.
 
 Once your agent is configured, launch it with the following command line:
 
-```
-java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.jar
-```
+<pre class="language-bash"><code class="language-bash">java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.jar
+</code></pre>
+
 <h1 class="numbered" id="toc_5"><i>5</i>Invoke the Web API</h1>
 
 Now that your environment is all set, you can call your API with Swagger UI for example.

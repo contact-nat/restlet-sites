@@ -61,23 +61,21 @@ This project follows Maven standard layout. Here a list of the content of each o
 Several parameters at the boton of pom.xml file, properties section, are used during install target, here a brief explanation of each one:
 
 
-```xml
+<pre class="language-markup"><code class="language-markup">....
+&lt;properties&gt;
+
+&lt;sqlplus.app.value&gt;${env.ORACLE_HOME}/bin/sqlplus&lt;/sqlplus.app.value&gt;
+
+    &lt;restlet.owner.value&gt;RESTLET&lt;/restlet.owner.value&gt;
+    &lt;sqlnet.string.value&gt;test&lt;/sqlnet.string.value&gt;
+    &lt;jdbc.str.value&gt;test&lt;/jdbc.str.value&gt;
+    &lt;jdbc.username.value&gt;LUCENE&lt;/jdbc.username.value&gt;
+    &lt;jdbc.password.value&gt;LUCENE&lt;/jdbc.password.value&gt;
+    &lt;jdbc.sysusr.value&gt;sys&lt;/jdbc.sysusr.value&gt;
+    &lt;jdbc.syspwd.value&gt;change_on_install&lt;/jdbc.syspwd.value&gt;
+  &lt;/properties&gt;
 ....
-<properties>
-
-<sqlplus.app.value>${env.ORACLE_HOME}/bin/sqlplus</sqlplus.app.value>
-
-    <restlet.owner.value>RESTLET</restlet.owner.value>
-    <sqlnet.string.value>test</sqlnet.string.value>
-    <jdbc.str.value>test</jdbc.str.value>
-    <jdbc.username.value>LUCENE</jdbc.username.value>
-    <jdbc.password.value>LUCENE</jdbc.password.value>
-    <jdbc.sysusr.value>sys</jdbc.sysusr.value>
-    <jdbc.syspwd.value>change_on_install</jdbc.syspwd.value>
-  </properties>
-....
-
-```
+</code></pre>
 
  - __sqlplus.app__: using __ORACLE_HOME__ environment variable will work in most of the installation, this parameter is used to locate Oracle
  - __SQLPlus__ executable application used to connect as sysdba.
@@ -101,13 +99,11 @@ Clean Maven's target directory.
 Compile Lucene REST WS API implementation. First execution of this target will try to download from Maven publics repostories Oracle JDBC driver and Oracle-Lucene artifacts, this Maven's artifacts are not in public repositories you can install into your local repository as follow
 
 
-```
-mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc5 -Dversion=11.1.0 -Dpackaging=jar -Dfile=$ORACLE_HOME/jdbc/lib/ojdbc5.jar
+<pre class="language-bash"><code class="language-bash">mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc5 -Dversion=11.1.0 -Dpackaging=jar -Dfile=$ORACLE_HOME/jdbc/lib/ojdbc5.jar
 mvn install:install-file -DgroupId=oracle -DartifactId=xdb -Dversion=11.1.0 -Dpackaging=jar -Dfile=$ORACLE_HOME/rdbms/jlib/xdb.jar
 mvn install:install-file -DgroupId=org.apache.lucene -DartifactId=lucene-ojvm -Dversion=2.3.2 -Dpackaging=jar -Dfile=/home/mochoa/jdevhome/mywork/ojvm-bin/11g/ojvm/lib/lucene-ojvm-2.3.jar
 mvn install:install-file -DgroupId=org.apache.lucene -DartifactId=lucene-ojvm-test -Dversion=2.3.2 -Dpackaging=jar -Dfile=/home/mochoa/jdevhome/mywork/ojvm-bin/11g/ojvm/lib/lucene-ojvm-2.3-test.jar
-
-```
+</code></pre>
 
 
 ** mvn test

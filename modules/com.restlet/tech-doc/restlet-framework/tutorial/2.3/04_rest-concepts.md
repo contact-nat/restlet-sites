@@ -45,8 +45,7 @@ VirtualHost (see the Component.hosts property for details). In a later
 example, we will also introduce the usage of the Application class. Note
 that for now you don't see any access log displayed in the console.
 
-~~~~ {.java:nocontrols:nogutter}
-public static void main(String[] args) throws Exception {
+<pre class="language-java"><code class="language-java">public static void main(String[] args) throws Exception {
     // Create a new Restlet component and add a HTTP server connector to it
     Component component = new Component();
     component.getServers().add(Protocol.HTTP, 8182);
@@ -67,14 +66,14 @@ public String toString() {
             + getReference().getBaseRef() + '\n' + "Remaining part: "
             + getReference().getRemainingPart();
 }
-
-~~~~
+</code></pre>
 
 Now let's test it by entering
 <http://localhost:8182/trace/abc/def?param=123> in a Web browser. Here
 is the result that you will get:
 
-    Resource URI  : http://localhost:8182/trace/abc/def?param=123
+<pre class="language-bash"><code class="language-bash">    Resource URI  : http://localhost:8182/trace/abc/def?param=123
     Root URI      : http://localhost:8182/trace
     Routed part   : http://localhost:8182/trace
     Remaining part: /abc/def?param=123
+</code></pre>

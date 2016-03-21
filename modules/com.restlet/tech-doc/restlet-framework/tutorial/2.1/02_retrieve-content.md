@@ -13,11 +13,9 @@ configure them.
 Here we will get the representation of an existing resource and output
 it in the JVM console:
 
-~~~~ {.java:nocontrols:nogutter}
-// Outputting the content of a Web page
+<pre class="language-java"><code class="language-java">// Outputting the content of a Web page
 new ClientResource("http://restlet.com").get().write(System.out);
-
-~~~~
+</code></pre>
 
 Note that the example above uses a simplified way to issue calls via the
 ClientResource class. If you need multi-threading or more control it is
@@ -26,8 +24,7 @@ Request objects directly. The example below how to set some preferences
 in your client call, like a referrer URI. It could also be the languages
 and media types you prefer to receive as a response:
 
-~~~~ {.java:nocontrols:nogutter}
-// Create the client resource
+<pre class="language-java"><code class="language-java">// Create the client resource
 ClientResource resource = new ClientResource("http://restlet.com");
 
 // Customize the referrer property
@@ -35,5 +32,4 @@ resource.setReferrerRef("http://www.mysite.org");
 
 // Write the response entity on the console
 resource.get().write(System.out);
-
-~~~~
+</code></pre>

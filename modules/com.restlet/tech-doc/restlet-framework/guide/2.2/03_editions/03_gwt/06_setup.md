@@ -13,7 +13,8 @@ GWT to the project classpath *^[explain]^*
 ​3) Add the following to your application's module definition file
 (*yourapp*.gwt.xml):
 
-    <inherits name='org.restlet.Restlet'/>
+<pre class="language-markup"><code class="language-markup">    &lt;inherits name=&apos;org.restlet.Restlet&apos;/&gt;
+</code></pre>
 
 This will make the Restlet API available to your GWT compiled code.  The
 Restlet module in turn inherits the GWT standard
@@ -39,24 +40,25 @@ side.
 
 ​2) Modify the web.xml:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <web-app>
-        <servlet>
-            <servlet-name>restlet</servlet-name>
-            <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
-            <init-param>
-              <param-name>org.restlet.application</param-name>
-              <param-value>application</param-value>
-            </init-param>
-        </servlet>
+<pre class="language-markup"><code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;web-app&gt;
+        &lt;servlet&gt;
+            &lt;servlet-name&gt;restlet&lt;/servlet-name&gt;
+            &lt;servlet-class&gt;org.restlet.ext.servlet.ServerServlet&lt;/servlet-class&gt;
+            &lt;init-param&gt;
+              &lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
+              &lt;param-value&gt;application&lt;/param-value&gt;
+            &lt;/init-param&gt;
+        &lt;/servlet&gt;
 
-        <servlet-mapping>
-            <servlet-name>restlet</servlet-name>
-            <url-pattern>/rest/*</url-pattern>
-        </servlet-mapping>
+        &lt;servlet-mapping&gt;
+            &lt;servlet-name&gt;restlet&lt;/servlet-name&gt;
+            &lt;url-pattern&gt;/rest/*&lt;/url-pattern&gt;
+        &lt;/servlet-mapping&gt;
 
              ...
-    </web-app>
+    &lt;/web-app&gt;
+</code></pre>
 
 For *application*, supply the name of your Restlet Application, e.g.
 `com.mycompany.server.TestApplication`.  You can also supply a

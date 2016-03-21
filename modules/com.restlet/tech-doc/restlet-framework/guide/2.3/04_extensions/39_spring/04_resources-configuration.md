@@ -15,15 +15,14 @@ values but, in the Spring component life cycle, is invoked after Spring
 sets the properties. An obvious workaround is to refine the init method
 like so:
 
-```java
-    @Override
+<pre class="language-java"><code class="language-java">    @Override
     public void init(Context context, Request request, Response response) {
         final ResourcePropertyHolder backup = new ResourcePropertyHolder(); 
         BeanUtils.copyProperties(this, backup);
         super.init(context, request, response);
         BeanUtils.copyProperties(backup, this);
     }
-```
+</code></pre>
 
 # Configuration of representation templates
 
@@ -36,61 +35,59 @@ representation factory, which then instantiates the template with the
 data model and returns the resulting representation. (The Freemarker
 configuration is also handled by Spring.)
 
-```java
-<bean id="resource" class="helloworldrestlet.HelloWorldResource"
-    scope="prototype">
-    <property name="available" value="true" />
-    <property name="representationTemplates">
-        <map>
-            <entry key-ref="org.restlet.data.MediaType.TEXT_PLAIN"
-                value-ref="hwFreemarkerTextPlain" />
-            <entry key-ref="org.restlet.data.MediaType.TEXT_HTML"
-                value-ref="hwFreemarkerTextHtml" />
-            <entry key-ref="org.restlet.data.MediaType.APPLICATION_JSON"
-                value-ref="jsonRepresentationFactory" />
-        </map>
-    </property>
-</bean>
+<pre class="language-markup"><code class="language-markup">&lt;bean id=&quot;resource&quot; class=&quot;helloworldrestlet.HelloWorldResource&quot;
+    scope=&quot;prototype&quot;&gt;
+    &lt;property name=&quot;available&quot; value=&quot;true&quot; /&gt;
+    &lt;property name=&quot;representationTemplates&quot;&gt;
+        &lt;map&gt;
+            &lt;entry key-ref=&quot;org.restlet.data.MediaType.TEXT_PLAIN&quot;
+                value-ref=&quot;hwFreemarkerTextPlain&quot; /&gt;
+            &lt;entry key-ref=&quot;org.restlet.data.MediaType.TEXT_HTML&quot;
+                value-ref=&quot;hwFreemarkerTextHtml&quot; /&gt;
+            &lt;entry key-ref=&quot;org.restlet.data.MediaType.APPLICATION_JSON&quot;
+                value-ref=&quot;jsonRepresentationFactory&quot; /&gt;
+        &lt;/map&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
 
-<bean id="hwFreemarkerTextPlain"
-    class="edu.luc.etl.restlet.spring.FreemarkerRepresentationFactory">
-    <property name="templateName" value="hw-plain.ftl" />
-    <property name="freemarkerConfig" ref="freemarkerConfig" />
-</bean>
+&lt;bean id=&quot;hwFreemarkerTextPlain&quot;
+    class=&quot;edu.luc.etl.restlet.spring.FreemarkerRepresentationFactory&quot;&gt;
+    &lt;property name=&quot;templateName&quot; value=&quot;hw-plain.ftl&quot; /&gt;
+    &lt;property name=&quot;freemarkerConfig&quot; ref=&quot;freemarkerConfig&quot; /&gt;
+&lt;/bean&gt;
 
-<bean id="hwFreemarkerTextHtml"
-    class="edu.luc.etl.restlet.spring.FreemarkerRepresentationFactory">
-    <property name="templateName" value="hw-html.ftl" />
-    <property name="freemarkerConfig" ref="freemarkerConfig" />
-</bean>
+&lt;bean id=&quot;hwFreemarkerTextHtml&quot;
+    class=&quot;edu.luc.etl.restlet.spring.FreemarkerRepresentationFactory&quot;&gt;
+    &lt;property name=&quot;templateName&quot; value=&quot;hw-html.ftl&quot; /&gt;
+    &lt;property name=&quot;freemarkerConfig&quot; ref=&quot;freemarkerConfig&quot; /&gt;
+&lt;/bean&gt;
 
-<bean id="jsonRepresentationFactory"
-    class="edu.luc.etl.restlet.spring.JsonRepresentationFactory" />
+&lt;bean id=&quot;jsonRepresentationFactory&quot;
+    class=&quot;edu.luc.etl.restlet.spring.JsonRepresentationFactory&quot; /&gt;
 
-<!-- omitted beans for specific MediaType static fields -->
+&lt;!-- omitted beans for specific MediaType static fields --&gt;
 
-<bean id="freemarkerConfig"
-    class="freemarker.template.Configuration">
-    <property name="directoryForTemplateLoading"
-        value="src/test/resources/presentation" />
-    <property name="objectWrapper">
-        <bean class="freemarker.template.DefaultObjectWrapper" />
-    </property>
-</bean>
-```
+&lt;bean id=&quot;freemarkerConfig&quot;
+    class=&quot;freemarker.template.Configuration&quot;&gt;
+    &lt;property name=&quot;directoryForTemplateLoading&quot;
+        value=&quot;src/test/resources/presentation&quot; /&gt;
+    &lt;property name=&quot;objectWrapper&quot;&gt;
+        &lt;bean class=&quot;freemarker.template.DefaultObjectWrapper&quot; /&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
 
 When using this approach, the ServerResources themselves become very
 simple, for example:
 
-```java
-public class HelloWorldResource extends ConfigurableRestletResource {
+<pre class="language-java"><code class="language-java">public class HelloWorldResource extends ConfigurableRestletResource {
     @Override
     public Representation get(Variant variant) {
     Map<String, Object> dataModel = Collections.singletonMap("DATE", (Object) new Date());
     return createTemplateRepresentation(variant.getMediaType(), dataModel);
     }
 }
-```
+</code></pre>
 
 A working proof-of-concept for this approach is available through
 Git at

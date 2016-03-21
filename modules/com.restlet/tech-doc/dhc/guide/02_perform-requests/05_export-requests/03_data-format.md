@@ -4,8 +4,7 @@ DHC import and export use JSON of the structure described below.
 
 A container is an object holding a version of the format and a list of nodes. The current format version is 3. The container is the root JSON object.
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "version" : {number},
     "nodes"   : [{node}, ...]
 }
@@ -26,8 +25,7 @@ A node can have a parent node optionally. The parent node is referenced by the i
 
 e.g. A tree of nodes
 
-<pre><code>
-Project #1
+<pre class="language-bash"><code class="language-bash">Project #1
         "id"     : "2BC20C27-22F6-4E2C-8627-1FA2932D2A28",
         "type"   : "Project"
 
@@ -36,7 +34,7 @@ Project #1
             "parent" : "2BC20C27-22F6-4E2C-8627-1FA2932D2A28",
             "type"   : "Service"
 
-        --> Request #1   
+        --> Request #1
                 "id"     : , "DA0C7479-2538-4E65-BE2F-E62646A0A1C9",
                 "parent" : "2778CB6D-4EB0-4628-A214-D276876BA494",
                 "type"   :  "Request"
@@ -46,8 +44,7 @@ Datetime is always encoded in ISO_8601 format e.g. ```2015-03-24T20:29:55.624+01
 
 # Request
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "id"           : {string},
     "type"         : "Request",
     "lastModified" : {datetime},
@@ -107,8 +104,7 @@ Datetime is always encoded in ISO_8601 format e.g. ```2015-03-24T20:29:55.624+01
 
 # Request URI
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "scheme" : {
         "name" : {"http" | "https"},
         "version" : "V11",
@@ -132,8 +128,7 @@ Datetime is always encoded in ISO_8601 format e.g. ```2015-03-24T20:29:55.624+01
 
 # Request Assertion
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "subject"    : {subject},
     "path"       : {string},
     "comparison" : {comparison},
@@ -168,8 +163,7 @@ The comparison is one these values:
 
 # Project
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "id"           : {string},
     "type"         : "Project",
     "lastModified" : {datetime},
@@ -183,8 +177,7 @@ The comparison is one these values:
 
 # Service
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "id"           : {string},
     "type"         : "Service",
     "lastModified" : {datetime},
@@ -198,8 +191,7 @@ The comparison is one these values:
 
 # Context
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "id"           : {string},
     "type"         : "Context",
     "lastModified" : {datetime},
@@ -220,8 +212,7 @@ The comparison is one these values:
 
 Simple ```GET http://www.google.com``` request without headers and without a body. Named as ```Example #1``` and stored at the top level (no project nor a service).
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
     "version" : 3,
     "nodes"   : [
         {

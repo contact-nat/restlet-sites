@@ -23,10 +23,10 @@ This page needs to be updated to use the new Restlet ${restlet-version-minor} AP
 First, let's declare the imported classes required to support our web
 component.
 
-    import org.restlet.Component;
+<pre class="language-java"><code class="language-java">    import org.restlet.Component;
     import org.restlet.VirtualHost;
     import org.restlet.data.Protocol;
-
+</code></pre>
 
 # <a name="declaring-the-main-class"></a>Declaring the Main class
 
@@ -34,14 +34,14 @@ Now, we declare the main class, called the WebComponent, extending the
 org.restlet.Component. This component contains several virtual hosts and
 associated applications.
 
-    /**
+<pre class="language-java"><code class="language-java">    /**
      * The web component managing the Restlet web servers.
      *
      * @author Jerome Louvel (contact@restlet.com)
      */
     public class WebComponent extends Component {
           ...
-
+</code></pre>
 
 # <a name="main-method"></a>Main method
 
@@ -50,7 +50,7 @@ Note that we require a few arguments in order to parameterize several
 aspects like IP address and port to listen on, or the location of static
 files.
 
-    /**
+<pre class="language-java"><code class="language-java">    /**
     * Main method.
     *
     * @param args
@@ -82,7 +82,7 @@ files.
           e.printStackTrace(System.err);
        }
     }
-
+</code></pre>
 
 # <a name="build-the-component"></a>Build the component
 
@@ -92,7 +92,7 @@ we are handling several domain names (`www.noelios.com`, `restlet.org`,
 single IP address and port open), we also need to declare several
 virtual hosts.
 
-    /**
+<pre class="language-java"><code class="language-java">    /**
     * Constructor.
     *
     * @param ipAddress
@@ -185,7 +185,7 @@ virtual hosts.
               "http://www.noelios.com{rr}", true));
        getHosts().add(host);
     }
-
+</code></pre>
 
 # <a name="redirection-application"></a>Redirection Application
 
@@ -193,7 +193,7 @@ In addition to the main WebComponent class, we also rely on four
 application classes. Let's have a look at the RedirectApplication which
 is generic and reused several times.
 
-    /**
+<pre class="language-java"><code class="language-java">    /**
      * Application redirecting to a target URI.
      *
      * @author Jerome Louvel (contact@restlet.com)
@@ -234,7 +234,7 @@ is generic and reused several times.
             return new Redirector(getContext(), this.targetUri, mode);
         }
     }
-
+</code></pre>
 
 # <a name="conclusion"></a>Conclusion
 

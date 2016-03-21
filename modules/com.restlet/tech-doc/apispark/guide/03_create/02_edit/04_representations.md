@@ -5,8 +5,7 @@ A **Representation** has a **Name** and a **Description** (optional), and is com
 
 E.g. An API `/contacts/{id}` returns a `Contact` representation
 
-<pre lang:"json"><code>
-{
+<pre class="language-json"><code class="language-json">{
   "id" : "XXXid",
   "lastName" : "Smith",
   "age" : 27,

@@ -37,8 +37,7 @@ the code of the single resource defined by the sample application.
 Copy/paste the code in your "HelloWorldResource" class.
 
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
@@ -54,15 +53,13 @@ public class HelloWorldResource extends ServerResource {
     }
 
 }
-
-```
+</code></pre>
 
 Then, create the sample application. Let's call it
 "FirstStepsApplication" and copy/paste the following code:
 
 
-```java
-package firstSteps;
+<pre class="language-java"><code class="language-java">package firstSteps;
 
 import org.restlet.Application;
 import org.restlet.Restlet;
@@ -85,8 +82,7 @@ public class FirstStepsApplication extends Application {
     }
 
 }
-
-```
+</code></pre>
 
 ## Run as a standalone Java application
 
@@ -100,8 +96,7 @@ defining a new HTTP server listening on port 8182 and delegating all
 requests to the "FirstStepsApplication".
 
 
-```java
-public static void main(String[] args) throws Exception {  
+<pre class="language-java"><code class="language-java">public static void main(String[] args) throws Exception {  
     // Create a new Component.  
     Component component = new Component();  
 
@@ -114,9 +109,8 @@ public static void main(String[] args) throws Exception {
 
     // Start the component.  
     component.start();  
-}      
-
-```
+}
+</code></pre>
 
 Once you have launched the main class, if you can open your favorite web
 browser, and gently type the following URL:

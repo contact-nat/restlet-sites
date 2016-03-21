@@ -39,8 +39,7 @@ the Servlet API, the concept is similar to the
 interface. See below how we would modify the previous example to secure
 the access to the Directory:
 
-```java
-    @Override
+<pre class="language-java"><code class="language-java">    @Override
     public Restlet createInboundRoot() {
         // Create a simple password verifier
         MapVerifier verifier = new MapVerifier();
@@ -58,7 +57,7 @@ the access to the Directory:
 
         return guard;
     }
-```
+</code></pre>
 
 ![](images/guard.png)
 
@@ -69,8 +68,7 @@ ChallengeAuthenticator) and the Authorizer abstract classes. Here we
 simply hard-coded a single user and password couple. In order to test,
 let's use the client-side Restlet API:
 
-```java
-    public static void main(String[] args) {
+<pre class="language-java"><code class="language-java">    public static void main(String[] args) {
         // Prepare the request
         ClientResource resource = new ClientResource("http://localhost:8182/");
 
@@ -96,7 +94,7 @@ let's use the client-side Restlet API:
             }
         }
     }
-```
+</code></pre>
 
 You can change the user ID or password sent by this test client in order
 to check the response returned by the server. Remember to launch the

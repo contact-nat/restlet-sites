@@ -41,17 +41,14 @@ method. For simplicity purpose, we didn't keep the Directory serving
 static files as this part wouldn't change. You can notice the way that
 resource classes are directly attached to the router.
 
-~~~~ {.java:nocontrols:nogutter}
-// Create a router
+<pre class="language-java"><code class="language-java">// Create a router
 Router router = new Router(getContext());
 
 // Attach the resources to the router
 router.attach("/users/{user}", UserResource.class);
 router.attach("/users/{user}/orders", OrdersResource.class);
-router.attach("/users/{user}/orders/{order}",
-        OrderResource.class);
-
-~~~~
+router.attach("/users/{user}/orders/{order}", OrderResource.class);
+</code></pre>
 
 We will finally review one of the resource classes, the UserResource
 class. This class derives from org.restlet.resource.Resource and
@@ -66,8 +63,7 @@ text. This will be used at runtime to transparently do some content
 negotiation, in order to select the preferred variant for each request
 handled, all this transparently.
 
-~~~~ {.java:nocontrols:nogutter}
-public class UserResource extends Resource {
+<pre class="language-java"><code class="language-java">public class UserResource extends Resource {
     String userName;
 
     Object user;
@@ -92,8 +88,7 @@ public class UserResource extends Resource {
         return result;
     }
 }
-
-~~~~
+</code></pre>
 
 You can have a look at the rest of the code in the tutorial package and
 test the application. You will obtain the same behavior as in Part11,

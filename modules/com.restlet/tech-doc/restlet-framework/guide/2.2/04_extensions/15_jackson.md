@@ -11,7 +11,7 @@ It also provides a plugin for the ConverterService which will automatically seri
 
 Here is an example server resource:
 
-    import org.restlet.Server;
+<pre class="language-java"><code class="language-java">    import org.restlet.Server;
     import org.restlet.data.Protocol;
     import org.restlet.resource.Get;
     import org.restlet.resource.Put;
@@ -36,10 +36,11 @@ Here is an example server resource:
         }
 
     }
+</code></pre>
 
 Here is the matching client resource:
 
-    import org.restlet.resource.ClientResource;
+<pre class="language-java"><code class="language-java">    import org.restlet.resource.ClientResource;
     import org.restlet.resource.ResourceException;
 
     public class TestClient {
@@ -67,6 +68,7 @@ Here is the matching client resource:
         }
 
     }
+</code></pre>
 
 Note that our Customer and Address classes are just regular serializablecbeans, with no special parent classes and no special annotations.
 

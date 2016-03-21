@@ -13,20 +13,17 @@ If the referenced value is JSON object, then you can use ```JsonPath``` method o
 
 Ex. 1: a reference on the context variable named host
 
-<pre><code>
-{host}
+<pre class="language-javascript"><code class="language-javascript">{host}
 </code></pre>
 
 Ex. 2: a reference on the response status code on saved request named “Create User”
 
-<pre><code>
-{"Create User".response.status.code}
+<pre class="language-javascript"><code class="language-javascript">{"Create User".response.status.code}
 </code></pre>
 
 This declaration is equivalent to:
 
-<pre><code>
-{"Create User".jsonPath("$.response.status.code")}
+<pre class="language-javascript"><code class="language-javascript">{"Create User".jsonPath("$.response.status.code")}
 </code></pre>
 
 References Look-up Order:
@@ -47,8 +44,7 @@ Only the selected context is effective.
 
 Ex.1: a context variables declaration
 
-<pre><code>
-simple_value = test text
+<pre class="language-javascript"><code class="language-javascript">simple_value = test text
 json_value = { "a" : { "b" : "test" }}
 </code></pre>
 
@@ -56,24 +52,21 @@ You can turn a reference into a context variable by declaring the variable name 
 
 Ex.2: a variable name as an identifier
 
-<pre><code>
-Context:         host = http://localhost
+<pre class="language-none"><code class="language-none">Context:         host = http://localhost
 Expression:      {host}
 Result:          http://localhost
 </code></pre>
 
 Ex.3: a variable name as a string
 
-<pre><code>
-Context:        secret key = 1234
+<pre class="language-none"><code class="language-none">Context:        secret key = 1234
 Expression:     {'secret key'}
 Result:         1234
 </code></pre>
 
 Ex.4: a reference on JSON value
 
-<pre><code>
-Context:         JSON variable = { "a" : { "b" : 1 }}
+<pre class="language-none"><code class="language-none">Context:         JSON variable = { "a" : { "b" : 1 }}
 
 Expression:      {'JSON variable'}
 Result:          { "a" : { "b" : 1 }}
@@ -87,8 +80,7 @@ Result:          1
 
 Ex.5: a reference on JSON value + JSON Path method
 
-<pre><code>
-Context:         JSON variable = { "a" : { "b" : 1 }}
+<pre class="language-none"><code class="language-none">Context:         JSON variable = { "a" : { "b" : 1 }}
 Expression:      {'JSON variable'.jsonPath('$.a.b')}    // equivalent to {'JSON variable'.a.b}
 Result:          1
 </code></pre>
@@ -99,8 +91,7 @@ A request stored in the repository is referenced by a path and by a name. If the
 
 The referenced repository request is represented as a ```JSON object``` containing the request and optionally the last response to the request.
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
   "name"      : "path+name",
   "request"   : { ... },
   "response"  : { ... }
@@ -109,8 +100,7 @@ The referenced repository request is represented as a ```JSON object``` containi
 
 Ex.1: a reference on the “Create User” stored request
 
-<pre><code>
-Expression: {"Create User"}
+<pre class="language-none"><code class="language-none">Expression: {"Create User"}
 Result: {
             "name"     : "Create User",
             "request"  : {...},
@@ -120,8 +110,7 @@ Result: {
 
 Ex.2: a reference on the “Get Ticker” stored request, found under service “Public API” under Project “Stocks”
 
-<pre><code>
-Expression: {Stocks."Public API"."Get Ticker"}
+<pre class="language-none"><code class="language-none">Expression: {Stocks."Public API"."Get Ticker"}
 Result: {
             "name"     : "Get Ticker",
             "request"  : {...},
@@ -135,8 +124,7 @@ A stored request is represented as a ```JSON object``` and you can use the dot n
 
 Here is the request reference JSON object structure:
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
    "uri"     : {string},
    "method"  : {string},
    "headers" : {object},
@@ -150,8 +138,7 @@ The *form* or *file* body are not supported yet.
 
 Ex.1: stored request headers
 
-<pre><code>
-{"Auth Request".request.headers.authorization}
+<pre class="language-javascript"><code class="language-javascript">{"Auth Request".request.headers.authorization}
 </code></pre>
 
 >**Note:** all headers names are lowercased.
@@ -162,8 +149,7 @@ Response Reference allows you to retrieve the last stored response to a request 
 
 Here is the response reference JSON object structure:
 
-<pre><code>
-{
+<pre class="language-json"><code class="language-json">{
    "status"  : {
         "message" : {string},
         "code"    : {number}
@@ -183,23 +169,20 @@ Ex.1: get a status code
 
 Finds the last response on top level request named “request #1” and returns a status:
 
-<pre><code>
-Expression:     {"request #1".response.status}
+<pre class="language-none"><code class="language-none">Expression:     {"request #1".response.status}
 Result:         {"code" : 200, "message" : OK }
 </code></pre>
 
 Finds the last response on/to the top level request named “request #1” and returns a status code:
 
-<pre><code>
-Expression:     {"request #1".response.status.code}
+<pre class="language-none"><code class="language-none">Expression:     {"request #1".response.status.code}
 Result:         200
 </code></pre>
 
 
 Ex.2: get a value from JSON body
 
-<pre><code>
-Response body: { "name" : "John Doe", ... }
+<pre class="language-none"><code class="language-none">Response body: { "name" : "John Doe", ... }
 Expression:    {"request #1".response.body.name}
 Result:        "John Doe"
 </code></pre>

@@ -31,8 +31,9 @@ method. The feature is based on a property-like file called
 "accept.properties" and loaded from the classpath. Here is an excerpt of
 such file :
 
-agentName: firefox accept:
+<pre class="language-ini"><code class="language-ini">agentName: firefox accept:
 application/xhtml+xml,text/html,text/xml;q=0.9,application/xml;q=0.9
+</code></pre>
 
 It allows to specify a complete "accept" header string for a set of
 (key:value) pairs. The header value is given with the "accept" key, and

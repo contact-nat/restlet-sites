@@ -23,8 +23,7 @@ Make your application class extend org.restlet.ext.raml.RamlApplication instead 
 
 By default, the RAML documentation will be available on the path "/raml" of your API. If you want to change this path, you can specify it manually in the method _createInboundRoot_:
 
-```java
-public Restlet createInboundRoot() {
+<pre class="language-java"><code class="language-java">public Restlet createInboundRoot() {
         // Router for the API's resources
         Router apiRouter = createApiRouter();
         attachRamlSpecificationRestlet(apiRouter, "/docs");
@@ -32,8 +31,7 @@ public Restlet createInboundRoot() {
         ChallengeAuthenticator guard = createApiGuard(apiRouter);
         return guard;
     }
-
-```
+</code></pre>
 
 Here, you specify that the RAML definition will be provided on the path "/docs".
 
@@ -45,9 +43,7 @@ I am using RAML java parser to get the definition from a file. You can get it [h
 
 See sample implementation below:
 
-```java
-
-@Override
+<pre class="language-java"><code class="language-java">@Override
     public RamlSpecificationRestlet getRamlSpecificationRestlet(
             Context context) {
         return new RamlSpecificationRestlet(getContext()) {
@@ -62,8 +58,7 @@ See sample implementation below:
             }
         };
     }
-
-```
+</code></pre>
 
 For additional details, please consult the
 [Javadocs](javadocs://jse/ext/org/restlet/ext/raml/package-summary.html).

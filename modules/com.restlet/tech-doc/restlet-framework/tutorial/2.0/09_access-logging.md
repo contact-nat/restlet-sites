@@ -14,11 +14,8 @@ java.util.logging framework by modifying the Component's "logService"
 property. In order to fully configure the logging, you need to declare a
 configuration file by setting a system property like:
 
-~~~~ {.java:nocontrols:nogutter}
-System.setProperty("java.util.logging.config.file",
-        "/your/path/logging.config");
-
-~~~~
+<pre class="language-java"><code class="language-java">System.setProperty("java.util.logging.config.file", "/your/path/logging.config");
+</code></pre>
 
 For details on the configuration file format, please check the [JDK's
 LogManager](http://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/util/logging/LogManager.html)

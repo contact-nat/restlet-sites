@@ -11,12 +11,10 @@ connectors and explain how to use and configure them.
 Here we will get the representation of an existing resource and output
 it in the JVM console:
 
-~~~~ {.java:nocontrols:nogutter}
-// Outputting the content of a Web page
+<pre class="language-java"><code class="language-java">// Outputting the content of a Web page
 Client client = new Client(Protocol.HTTP);
 client.get("http://restlet.com").getEntity().write(System.out);
-
-~~~~
+</code></pre>
 
 Note that the example above uses a simplified way to issue calls via the
 generic Client class. A more flexible way is to create a new Request
@@ -25,8 +23,7 @@ how to set some preferences in your call, like a referrer URI. It could
 also be the languages and media types you prefer to receive as a
 response:
 
-~~~~ {.java:nocontrols:nogutter}
-// Prepare the request
+<pre class="language-java"><code class="language-java">// Prepare the request
 Request request = new Request(Method.GET, "http://restlet.com");
 request.setReferrerRef("http://www.mysite.org");
 
@@ -37,5 +34,4 @@ Response response = client.handle(request);
 // Write the response entity on the console
 Representation output = response.getEntity();
 output.write(System.out);
-
-~~~~
+</code></pre>

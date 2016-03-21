@@ -6,15 +6,14 @@ to either parse a XML representation received or to serialize a XML DOM.
 
 Prior to leverage this extension, ensure to update your `module.gwt.xml` configuration file with the following instruction:
 
-```xml
-<inherits name="org.restlet.XML" />
-```
+<pre class="language-markup"><code class="language-markup">&lt;inherits name=&quot;org.restlet.XML&quot; /&gt;
+</code></pre>
 
 Here is a sample code taken from the example application. The
 DomRepresentation gives access to the underlying DOM document via the
 "getDocument()" method.
 
-    ClientResource r = new ClientResource("/test");
+<pre class="language-java"><code class="language-java">    ClientResource r = new ClientResource("/test");
 
     // Set the callback object invoked when the response is received.
     r.setOnResponse(new Uniform() {
@@ -39,3 +38,4 @@ DomRepresentation gives access to the underlying DOM document via the
     // Indicates the client preferences and let the server handle
     // the best representation with content negotiation.
     r.get(MediaType.TEXT_XML);
+</code></pre>
