@@ -19,8 +19,7 @@ The project is now correctly configured.
 You can launch a build for your project directly from the Jenkins Web UI.
 
 >**Note:** To facilitate the Root POM path specification, you can leverage the Maven ```project.basedir``` variable, as described below.
-<pre lang="html"><code>
-<build>
+<pre class="language-html"><code class="language-html"><build>
   <plugins>
     <plugin>
       <groupId>com.restlet.dhc</groupId>

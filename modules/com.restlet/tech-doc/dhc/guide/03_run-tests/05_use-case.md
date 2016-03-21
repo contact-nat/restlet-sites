@@ -23,8 +23,7 @@ Let’s create a request in DHC by Restlet to add an element. The assertions her
 
 Let’s check that the company we just added actually appears in the list of companies. We can use the same resource but with the *GET* method. Since we already had two companies, we would expect this company to be in the third position. What is interesting here is that we can use the content of the previous request within our assert statement to check that the company identifier is the right one. For this, we will use the following expression in the assertion for the identifier:
 
-<pre><code>
-{"Company project"."CRUD service"."1 - Add company".response.body.id}.
+<pre class="language-none"><code class="language-none">{"Company project"."CRUD service"."1 - Add company".response.body.id}
 </code></pre>
 
 ![Check companies](images/17-check-companies.jpg "Check companies")
