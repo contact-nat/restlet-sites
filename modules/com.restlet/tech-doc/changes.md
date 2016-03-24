@@ -1,10 +1,14 @@
+v3.26.1
+
+- DHC - Escaped code to fix code block display
+
 v3.26.0
 
 - Added "Try it for free" in DHC and Restlet Studio doc welcome pages
 - Updated APISpark csv import section
 - RS - Added Path variable info to Resources page
 - DHC - Added "Share" section (add members + share project)
-- Fixed syntax highlighting
+- Fixed syntax highlighting (AS - DHC - RF)
 - Added Easter egg
 
 v3.24.2
