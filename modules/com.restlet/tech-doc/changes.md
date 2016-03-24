@@ -1,9 +1,11 @@
-v3.25.0
+v3.26.0
 
 - Added "Try it for free" in DHC and Restlet Studio doc welcome pages
 - Updated APISpark csv import section
 - RS - Added Path variable info to Resources page
 - DHC - Added "Share" section (add members + share project)
+- Fixed syntax highlighting
+- Added Easter egg
 
 v3.24.2
 
