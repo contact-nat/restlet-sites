@@ -32,26 +32,26 @@ instructions to get a simple Restlet project working with OSGi:
 7.  Open the "Activator" class generated and type the code below:
 
 
-<pre class="language-java"><code class="language-java">    public class Activator implements BundleActivator {
+<pre class="language-java"><code class="language-java">public class Activator implements BundleActivator {
 
-        private Server server;
+     private Server server;
 
-        public void start(BundleContext context) throws Exception {
-            server = new Server(Protocol.HTTP, 8554, new Restlet() {
-                @Override
-                public void handle(Request request, Response response) {
-                    response.setEntity("Hello world!", MediaType.TEXT_PLAIN);
-                }
-            });
+     public void start(BundleContext context) throws Exception {
+         server = new Server(Protocol.HTTP, 8554, new Restlet() {
+             @Override
+             public void handle(Request request, Response response) {
+                 response.setEntity("Hello world!", MediaType.TEXT_PLAIN);
+             }
+         });
 
-            server.start();
-        }
+         server.start();
+     }
 
-        public void stop(BundleContext context) throws Exception {
-            server.stop();
-        }
+     public void stop(BundleContext context) throws Exception {
+         server.stop();
+     }
 
-    }
+ }
 </code></pre>
 
 1.  Open the Run Configurations dialog
@@ -75,34 +75,34 @@ the Part12 example of the Restlet tutorial.
 
 4.  Open the "Activator" class generated and type the code below:
 
-<pre class="language-java"><code class="language-java">    import org.osgi.framework.BundleActivator;
-    import org.osgi.framework.BundleContext;
-    import org.restlet.Application;
-    import org.restlet.Component;
-    import org.restlet.data.Protocol;
+<pre class="language-java"><code class="language-java">import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.restlet.Application;
+import org.restlet.Component;
+import org.restlet.data.Protocol;
 
-    public class Activator implements BundleActivator {
+public class Activator implements BundleActivator {
 
-        private Component component;
+    private Component component;
 
-        public void start(BundleContext context) throws Exception {
-            // Create a component
-            component = new Component();
-            component.getServers().add(Protocol.HTTP, 8182);
+    public void start(BundleContext context) throws Exception {
+        // Create a component
+        component = new Component();
+        component.getServers().add(Protocol.HTTP, 8182);
 
-            // Create an application
-            final Application application = new Part12_ServerResources();
+        // Create an application
+        final Application application = new Part12_ServerResources();
 
-            // Attach the application to the component and start it
-            component.getDefaultHost().attachDefault(application);
-            component.start();
-        }
-
-        public void stop(BundleContext context) throws Exception {
-            component.stop();
-        }
-
+        // Attach the application to the component and start it
+        component.getDefaultHost().attachDefault(application);
+        component.start();
     }
+
+    public void stop(BundleContext context) throws Exception {
+        component.stop();
+    }
+
+}
 </code></pre>
 
 For the rest of the source code, copy and paste from the regular Restlet
@@ -176,7 +176,7 @@ to test.
 "config.ini" should be a text file with the following lines in it (but
 not indented):
 
-<pre class="language-ini"><code class="language-ini">    osgi.bundles=fileinstall-1.3.4.jar@start \
+<pre class="language-ini"><code class="language-ini">osgi.bundles=fileinstall-1.3.4.jar@start \
      eclipse.ignoreApp=true
 </code></pre>
 
@@ -204,14 +204,15 @@ osgi console, you then type:
 check the status of all installed bundles, type (where "osgi\>" is the
 osgi command prompt):
 
-    osgi\> ss
+<pre class="language-bash"><code class="language-bash">osgi\> ss
+</code></pre>
 
 "ss" stands for "short status", and in this case you should see
 something like:
 
-<pre class="language-bash"><code class="language-bash">    id State Bundle \
-     0 ACTIVE org.eclipse.osgi\_3.X.X \
-     1 ACTIVE biz.aQute.fileinstall\_1.3.4
+<pre class="language-bash"><code class="language-bash">id State Bundle \
+0 ACTIVE org.eclipse.osgi\_3.X.X \
+1 ACTIVE biz.aQute.fileinstall\_1.3.4
 </code></pre>
 
 ​6) copy any bundles you want to install to the "load/" directory. The
@@ -245,35 +246,35 @@ loaded bundles and before executing your REST request, the registered
 client connector. \
  Here is the code to see all registered client connectors:
 
- <pre class="language-java"><code class="language-java">    List<ConnectorHelper<Client>> clients = Engine.getInstance().getRegisteredClients();
-    System.out.println("Connectors - "+clients.size());
-    for(ConnectorHelper<Client> connectorHelper : clients) {   
-        System.out.println("connector = "+connectorHelper.getClass());
-    }
+ <pre class="language-java"><code class="language-java">List<ConnectorHelper<Client>> clients = Engine.getInstance().getRegisteredClients();
+System.out.println("Connectors - "+clients.size());
+for(ConnectorHelper<Client> connectorHelper : clients) {   
+    System.out.println("connector = "+connectorHelper.getClass());
+}
 </code></pre>
 
 You can use OSGi bundle listeners to see if necessary bundles are
 loaded. Here is a sample of code:
 
-<pre class="language-java"><code class="language-java">    // Checking the bundle loading in the future
-    bundleContext.addBundleListener(new BundleListener() {
-        public void bundleChanged(BundleEvent event) {
-            if (event.getBundle().getSymbolicName().equals("org.restlet.ext.ssl")             
-                            & event.getBundle().getState()==BundleEvent.RESOLVED) {           
-                registerClientConnector();
-            }
-        }
-    });
-
-    // Checking if the bundle is already present
-
-    Bundle[] bundles = bundleContext.getBundles();
-    for (Bundle bundle : bundles) {
-        if (bundle.getSymbolicName().equals("org.restlet.ext.ssl")
-                  && bundle.getState()==BundleEvent.RESOLVED) {
+<pre class="language-java"><code class="language-java">// Checking the bundle loading in the future
+bundleContext.addBundleListener(new BundleListener() {
+    public void bundleChanged(BundleEvent event) {
+        if (event.getBundle().getSymbolicName().equals("org.restlet.ext.ssl")             
+                        & event.getBundle().getState()==BundleEvent.RESOLVED) {           
             registerClientConnector();
         }
     }
+});
+
+// Checking if the bundle is already present
+
+Bundle[] bundles = bundleContext.getBundles();
+for (Bundle bundle : bundles) {
+    if (bundle.getSymbolicName().equals("org.restlet.ext.ssl")
+              && bundle.getState()==BundleEvent.RESOLVED) {
+        registerClientConnector();
+    }
+}
 </code></pre>
 
 The registerClientConnector method simply does something like that:

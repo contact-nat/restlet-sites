@@ -24,12 +24,12 @@ The GaeAuthenticator is able to check wether or not the current request
 is sent by a logged user. In case the authenticator is not optional, the
 user is automatically redirected to the standard login page.
 
-<pre class="language-java"><code class="language-java">    GaeAuthenticator guard = new GaeAuthenticator(getContext());
-    // Attach the guarded hierarchy of URIs to the Authenticator filter
-    guard.setNext(adminRouter);
+<pre class="language-java"><code class="language-java">GaeAuthenticator guard = new GaeAuthenticator(getContext());
+// Attach the guarded hierarchy of URIs to the Authenticator filter
+guard.setNext(adminRouter);
 
-    // Attach this guarded set of URIs
-    router.attach("/admin", guard);
+// Attach this guarded set of URIs
+router.attach("/admin", guard);
 </code></pre>
 
 ## Usage of the GaeEnroler
@@ -39,37 +39,37 @@ deployed application and completes the list of user's roles with a
 defined aministrator role. It is used in conjunction with the
 GaeAuthenticator filter described above.
 
-<pre class="language-java"><code class="language-java">      /** Administrative role. */
-      private Role adminRole = new Role("admin", "Administractive role");
+<pre class="language-java"><code class="language-java">/** Administrative role. */
+private Role adminRole = new Role("admin", "Administractive role");
 
-      /**
-       * Constructor.
-       */
-      public TestServerApplication() {
-        // Add The administration role to the application.
-        getRoles().add(adminRole);
-      }
+/**
+ * Constructor.
+ */
+public TestServerApplication() {
+  // Add The administration role to the application.
+  getRoles().add(adminRole);
+}
 
-      @Override
-      public Restlet createInboundRoot() {
-        [...]
-        // Guard this hierarchy of URIs
-        GaeAuthenticator guard = new GaeAuthenticator(getContext());
-        // Set the Enroler that will set the Admin Role according to the right of the logged user's.
-        guard.setEnroler(new GaeEnroler(adminRole));
-        guard.setNext(adminRouter);
-        [...]
-      }
+@Override
+public Restlet createInboundRoot() {
+  [...]
+  // Guard this hierarchy of URIs
+  GaeAuthenticator guard = new GaeAuthenticator(getContext());
+  // Set the Enroler that will set the Admin Role according to the right of the logged user's.
+  guard.setEnroler(new GaeEnroler(adminRole));
+  guard.setNext(adminRouter);
+  [...]
+}
 </code></pre>
 
 Thanks to the Enroler, a resource can check if the current request is
 sent by an administrator:
 
-<pre class="language-java"><code class="language-java">      @Override
-      protected void doInit() throws ResourceException {
-        if (isInRole("admin")) {
-          // logged as admin
-        [...]
-        }
-      }
+<pre class="language-java"><code class="language-java">@Override
+protected void doInit() throws ResourceException {
+  if (isInRole("admin")) {
+    // logged as admin
+  [...]
+  }
+}
 </code></pre>

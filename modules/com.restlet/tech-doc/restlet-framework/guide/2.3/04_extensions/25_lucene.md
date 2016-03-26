@@ -29,16 +29,16 @@ initialized in two different ways.
 
 First one is to specify directory and configFile parameters.
 
-<pre class="language-java"><code class="language-java">    Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
-    solrClient.getContext().getParameters().getFirstValue("directory");
-    solrClient.getContext().getParameters().getFirstValue("configFile");
+<pre class="language-java"><code class="language-java">Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
+solrClient.getContext().getParameters().getFirstValue("directory");
+solrClient.getContext().getParameters().getFirstValue("configFile");
 </code></pre>
 
 Second one is to create the CoreContainer.
 
-<pre class="language-java"><code class="language-java">    Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
-    CoreContainer coreContainer = initSolrContainer(component);
-    solrClient.getContext().getAttributes().put("CoreContainer",coreContainer);
+<pre class="language-java"><code class="language-java">Client solrClient = component.getClients().add(SolrClientHelper.SOLR_PROTOCOL);
+CoreContainer coreContainer = initSolrContainer(component);
+solrClient.getContext().getAttributes().put("CoreContainer",coreContainer);
 </code></pre>
 
 To configure your core container see solr documentation :
@@ -57,8 +57,8 @@ To update a document like described
 [here](http://wiki.apache.org/solr/UpdateXmlMessages)
 you can do :
 
-<pre class="language-java"><code class="language-java">    StringRepresentation repr = new StringRepresentation(xml, MediaType.TEXT_XML);
-    getContext().getClientDispatcher().post("solr://main/update", repr);
+<pre class="language-java"><code class="language-java">StringRepresentation repr = new StringRepresentation(xml, MediaType.TEXT_XML);
+getContext().getClientDispatcher().post("solr://main/update", repr);
 </code></pre>
 
 ## Solr Core Container
@@ -67,31 +67,31 @@ If you would like to interact with Solr through http without a Servlet
 container you can use this restlet. It can also be very useful for
 debug.
 
-<pre class="language-java"><code class="language-java">    import org.restlet.Context;
-    import org.restlet.Restlet;
-    import org.restlet.data.Reference;
-    import org.restlet.data.Request;
-    import org.restlet.data.Response;
+<pre class="language-java"><code class="language-java">import org.restlet.Context;
+import org.restlet.Restlet;
+import org.restlet.data.Reference;
+import org.restlet.data.Request;
+import org.restlet.data.Response;
 
-    public class SolrForward extends Restlet {
+public class SolrForward extends Restlet {
 
-        public SolrForward() {
-        }
-
-        public SolrForward(Context context) {
-            super(context);
-        }
-
-        @Override
-        public void handle(Request request, Response response) {
-            super.handle(request, response);
-            String path = request.getResourceRef().getRemainingPart();
-            Reference solrRef = new Reference("solr://"+path);
-            Request solrRequest = new Request(request.getMethod(),solrRef,request.getEntity());
-            Response solrResp = getContext().getClientDispatcher().handle(solrRequest);
-            response.setStatus(solrResp.getStatus());
-            response.setEntity(solrResp.getEntity());
-        }
-
+    public SolrForward() {
     }
+
+    public SolrForward(Context context) {
+        super(context);
+    }
+
+    @Override
+    public void handle(Request request, Response response) {
+        super.handle(request, response);
+        String path = request.getResourceRef().getRemainingPart();
+        Reference solrRef = new Reference("solr://"+path);
+        Request solrRequest = new Request(request.getMethod(),solrRef,request.getEntity());
+        Response solrResp = getContext().getClientDispatcher().handle(solrRequest);
+        response.setStatus(solrResp.getStatus());
+        response.setEntity(solrResp.getEntity());
+    }
+
+}
 </code></pre>

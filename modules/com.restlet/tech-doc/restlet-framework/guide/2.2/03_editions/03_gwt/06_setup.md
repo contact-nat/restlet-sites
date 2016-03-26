@@ -40,24 +40,24 @@ side.
 
 ​2) Modify the web.xml:
 
-<pre class="language-markup"><code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-    &lt;web-app&gt;
-        &lt;servlet&gt;
-            &lt;servlet-name&gt;restlet&lt;/servlet-name&gt;
-            &lt;servlet-class&gt;org.restlet.ext.servlet.ServerServlet&lt;/servlet-class&gt;
-            &lt;init-param&gt;
-              &lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
-              &lt;param-value&gt;application&lt;/param-value&gt;
-            &lt;/init-param&gt;
-        &lt;/servlet&gt;
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;restlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.restlet.ext.servlet.ServerServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+          &lt;param-name&gt;org.restlet.application&lt;/param-name&gt;
+          &lt;param-value&gt;application&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
 
-        &lt;servlet-mapping&gt;
-            &lt;servlet-name&gt;restlet&lt;/servlet-name&gt;
-            &lt;url-pattern&gt;/rest/*&lt;/url-pattern&gt;
-        &lt;/servlet-mapping&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;restlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/rest/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
 
-             ...
-    &lt;/web-app&gt;
+         ...
+&lt;/web-app&gt;
 </code></pre>
 
 For *application*, supply the name of your Restlet Application, e.g.

@@ -25,13 +25,13 @@ under the form of Template and Variable classes.
 
 Here is a sample code illustrating the default usage of a Router:
 
-<pre class="language-java"><code class="language-java">    // Create a router Restlet that defines routes.
-    Router router = new Router(getContext());
+<pre class="language-java"><code class="language-java">// Create a router Restlet that defines routes.
+Router router = new Router(getContext());
 
-    // Defines a route for the resource "list of items"
-    router.attach("/items", ItemsResource.class);
-    // Defines a route for the resource "item"
-    router.attach("/items/{itemName}", ItemResource.class);
+// Defines a route for the resource "list of items"
+router.attach("/items", ItemsResource.class);
+// Defines a route for the resource "item"
+router.attach("/items/{itemName}", ItemResource.class);
 </code></pre>
 
 It declares two routes, the first one associates the URI "/items" to the
@@ -69,7 +69,7 @@ routers to be used.
 
 Here is a sample code:
 
-<pre class="language-java"><code class="language-java">    router.setMatchingMode(Template.MODE_STARTS_WITH);
+<pre class="language-java"><code class="language-java">router.setMatchingMode(Template.MODE_STARTS_WITH);
 </code></pre>
 
 ## Routing and queries
@@ -79,13 +79,13 @@ won't accept URI with query strings going to this Resource. To solve
 this, you can either indicate at the router level, that the matching
 process does not take into account the query part of the reference:
 
-<pre class="language-java"><code class="language-java">    router.setDefaultMatchQuery(false);
+<pre class="language-java"><code class="language-java">router.setDefaultMatchQuery(false);
 </code></pre>
 
 Or you can explicitly allow the query part in your URI template:
 
-<pre class="language-java"><code class="language-java">    TemplateRoute route = router.attach("/users/{user}?{query}", UserResource.class);
-    route.setMatchingQuery(false);
+<pre class="language-java"><code class="language-java">TemplateRoute route = router.attach("/users/{user}?{query}", UserResource.class);
+route.setMatchingQuery(false);
 </code></pre>
 
 ## Routing mode
@@ -105,7 +105,7 @@ affinity score for each declared route then choose the one that have the
 best affinity score. You can update this behavior by setting the routing
 mode property with one of the listed modes declared above.
 
-<pre class="language-java"><code class="language-java">    router.setRoutingMode(Router.FIRST);
+<pre class="language-java"><code class="language-java">router.setRoutingMode(Router.FIRST);
 </code></pre>
 
 ## Matching of template variables
@@ -114,13 +114,13 @@ As said in the introduction, the routing feature relies on the
 declaration of templates of URI. In the sample code below, the URI
 template declares one variable called "user":
 
-<pre class="language-java"><code class="language-java">    TemplateRoute route = router.attach("/users/{user}", UserResource.class);
+<pre class="language-java"><code class="language-java">TemplateRoute route = router.attach("/users/{user}", UserResource.class);
 </code></pre>
 
 At run-time, the value of this variable is put into the attributes of
 the request:
 
-<pre class="language-java"><code class="language-java">    this.userId = (String) getRequest().getAttributes().get("user");
+<pre class="language-java"><code class="language-java">this.userId = (String) getRequest().getAttributes().get("user");
 </code></pre>
 
 By default a variable is meant to match a URI segment as defined in the
@@ -153,8 +153,8 @@ Regarding the matching mode, the default behavior of a Router can be
 customized for a single route by updating its underlying template
 instance as follow:
 
-<pre class="language-java"><code class="language-java">    TemplateRoute route = router.attach("/users/{user}", UserResource.class);
-    route.getTemplate().setMatchingMode(Template.MODE_STARTS_WITH);
+<pre class="language-java"><code class="language-java">TemplateRoute route = router.attach("/users/{user}", UserResource.class);
+route.getTemplate().setMatchingMode(Template.MODE_STARTS_WITH);
 </code></pre>
 
 ## Routing and queries
@@ -194,7 +194,7 @@ Value | Description
 
 Here is the way to change the type of a variable:
 
-<pre class="language-java"><code class="language-java">    TemplateRoute route = router.attach("/items/{itemName}", ItemResource);
-    Map<String, Variable> routeVariables = route.getTemplate().getVariables();
-    routeVariables.put("itemName", new Variable(Variable.TYPE_URI_WORD));
+<pre class="language-java"><code class="language-java">TemplateRoute route = router.attach("/items/{itemName}", ItemResource);
+Map<String, Variable> routeVariables = route.getTemplate().getVariables();
+routeVariables.put("itemName", new Variable(Variable.TYPE_URI_WORD));
 </code></pre>

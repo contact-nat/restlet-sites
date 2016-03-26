@@ -16,14 +16,14 @@ sandbox.
 The solution is to use a custom Restlet engine as below, that won't
 create this new classloader:
 
-<pre class="language-java"><code class="language-java">    public class AppletEngine extends Engine {
+<pre class="language-java"><code class="language-java">public class AppletEngine extends Engine {
 
-        @Override
-        protected ClassLoader createClassLoader() {
-            return getClass().getClassLoader();
-        }
+    @Override
+    protected ClassLoader createClassLoader() {
+        return getClass().getClassLoader();
+    }
 
-    }
+}
 </code></pre>
 
 Now you just need to call this line before using the Restlet API:
@@ -78,19 +78,19 @@ their context (see the
 Here is a sample code that illustrates how to configure the HTTP  server
 connector of a Component:
 
-<pre class="language-java"><code class="language-java">    Component c = new Component();
-    Server s = new Server(Protocol.HTTP, 8182);
-    c.getServers().add(s);
-    s.getContext().getParameters().add("tracing", "true");
+<pre class="language-java"><code class="language-java">Component c = new Component();
+Server s = new Server(Protocol.HTTP, 8182);
+c.getServers().add(s);
+s.getContext().getParameters().add("tracing", "true");
 </code></pre>
 
 Here is a sample code that illustrates how to configure the HTTP  client
 connector of a resource:
 
-<pre class="language-java"><code class="language-java">    Client client = new Client(new Context(), Protocol.HTTP);
-    client.getContext().getParameters().add("tracing", "true");
-    ClientResource resource = new ClientResource("http://localhost:8182/<resource>");
-    resource.setNext(client);
+<pre class="language-java"><code class="language-java">Client client = new Client(new Context(), Protocol.HTTP);
+client.getContext().getParameters().add("tracing", "true");
+ClientResource resource = new ClientResource("http://localhost:8182/<resource>");
+resource.setNext(client);
 </code></pre>
 
 # <a name="how-do-i-implement-the-traditional-mvc-pattern"></a>How do I implement the traditional MVC pattern?

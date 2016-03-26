@@ -23,9 +23,9 @@ This page needs to be updated to use the new Restlet ${restlet-version-minor} AP
 First, let's declare the imported classes required to support our web
 component.
 
-<pre class="language-java"><code class="language-java">    import org.restlet.Component;
-    import org.restlet.VirtualHost;
-    import org.restlet.data.Protocol;
+<pre class="language-java"><code class="language-java">import org.restlet.Component;
+import org.restlet.VirtualHost;
+import org.restlet.data.Protocol;
 </code></pre>
 
 # <a name="declaring-the-main-class"></a>Declaring the Main class
@@ -34,13 +34,13 @@ Now, we declare the main class, called the WebComponent, extending the
 org.restlet.Component. This component contains several virtual hosts and
 associated applications.
 
-<pre class="language-java"><code class="language-java">    /**
-     * The web component managing the Restlet web servers.
-     *
-     * @author Jerome Louvel (contact@restlet.com)
-     */
-    public class WebComponent extends Component {
-          ...
+<pre class="language-java"><code class="language-java">/**
+ * The web component managing the Restlet web servers.
+ *
+ * @author Jerome Louvel (contact@restlet.com)
+ */
+public class WebComponent extends Component {
+      ...
 </code></pre>
 
 # <a name="main-method"></a>Main method
@@ -50,38 +50,38 @@ Note that we require a few arguments in order to parameterize several
 aspects like IP address and port to listen on, or the location of static
 files.
 
-<pre class="language-java"><code class="language-java">    /**
-    * Main method.
-    *
-    * @param args
-    *            Program arguments.
-    */
-    public static void main(String[] args) {
-       try {
-          if ((args == null) || (args.length != 7)) {
-              // Display program arguments
-              System.err
-                     .println("Can't launch the web server. List of "
-                       + "required arguments:\n"
-                       + " 1) IP address to listen on\n"
-                       + " 2) Port to listen on\n"
-                       + " 3) File URI to the \"www\" directory location.\n"
-                       + " 4) File URI to the \"data\" directory location.\n"
-                       + " 5) Search redirect URI template."
-                       + " 6) Login for protected pages."
-                       + " 7) Password for protected pages.");
-          } else {
-              // Create and start the server
-              new WebComponent(args[0], Integer.parseInt(args[1]), args[2],
-                      args[3], args[4], args[5], args[6]).start();
-          }
-       } catch (Exception e) {
+<pre class="language-java"><code class="language-java">/**
+* Main method.
+*
+* @param args
+*            Program arguments.
+*/
+public static void main(String[] args) {
+   try {
+      if ((args == null) || (args.length != 7)) {
+          // Display program arguments
           System.err
-                  .println("Can't launch the web server.\nAn unexpected "
-                  + "exception occured:");
-          e.printStackTrace(System.err);
-       }
-    }
+                 .println("Can't launch the web server. List of "
+                   + "required arguments:\n"
+                   + " 1) IP address to listen on\n"
+                   + " 2) Port to listen on\n"
+                   + " 3) File URI to the \"www\" directory location.\n"
+                   + " 4) File URI to the \"data\" directory location.\n"
+                   + " 5) Search redirect URI template."
+                   + " 6) Login for protected pages."
+                   + " 7) Password for protected pages.");
+      } else {
+          // Create and start the server
+          new WebComponent(args[0], Integer.parseInt(args[1]), args[2],
+                  args[3], args[4], args[5], args[6]).start();
+      }
+   } catch (Exception e) {
+      System.err
+              .println("Can't launch the web server.\nAn unexpected "
+              + "exception occured:");
+      e.printStackTrace(System.err);
+   }
+}
 </code></pre>
 
 # <a name="build-the-component"></a>Build the component
@@ -92,99 +92,99 @@ we are handling several domain names (`www.noelios.com`, `restlet.org`,
 single IP address and port open), we also need to declare several
 virtual hosts.
 
-<pre class="language-java"><code class="language-java">    /**
-    * Constructor.
-    *
-    * @param ipAddress
-    *            IP address to listen on.
-    * @param port
-    *            Port to listen on.
-    * @param wwwUri
-    *            File URI to the "www" directory location.
-    * @param dataUri
-    *            File URI to the "data" directory location.
-    * @param redirectUri
-    *            The search redirect URI template.
-    * @param login
-    *            Login for protected pages.
-    * @param password
-    *            Password for protected pages.
-    */
-    public WebComponent(String ipAddress, int port, String wwwUri,
-          String dataUri, String redirectUri, String login, String password)
-          throws Exception {
-       getLogService().setLoggerName("com.noelios.web.WebComponent.www");
+<pre class="language-java"><code class="language-java">/**
+* Constructor.
+*
+* @param ipAddress
+*            IP address to listen on.
+* @param port
+*            Port to listen on.
+* @param wwwUri
+*            File URI to the "www" directory location.
+* @param dataUri
+*            File URI to the "data" directory location.
+* @param redirectUri
+*            The search redirect URI template.
+* @param login
+*            Login for protected pages.
+* @param password
+*            Password for protected pages.
+*/
+public WebComponent(String ipAddress, int port, String wwwUri,
+      String dataUri, String redirectUri, String login, String password)
+      throws Exception {
+   getLogService().setLoggerName("com.noelios.web.WebComponent.www");
 
-       // ------------------
-       // Add the connectors
-       // ------------------
-       getServers().add(Protocol.HTTP, ipAddress, port);
-       getClients().add(Protocol.FILE);
+   // ------------------
+   // Add the connectors
+   // ------------------
+   getServers().add(Protocol.HTTP, ipAddress, port);
+   getClients().add(Protocol.FILE);
 
-       // ---------------
-       // restlet.org
-       // ---------------
-       VirtualHost host = new VirtualHost(getContext());
-       host.setHostDomain("restlet.org|81.67.81.67");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach(new WwwRestletOrg(getContext(), dataUri, wwwUri
-              + "/www-restlet-org"));
-       getHosts().add(host);
+   // ---------------
+   // restlet.org
+   // ---------------
+   VirtualHost host = new VirtualHost(getContext());
+   host.setHostDomain("restlet.org|81.67.81.67");
+   host.setHostPort("80|" + Integer.toString(port));
+   host.attach(new WwwRestletOrg(getContext(), dataUri, wwwUri
+          + "/www-restlet-org"));
+   getHosts().add(host);
 
-       // ---------------------------
-       // Redirect to restlet.org
-       // ---------------------------
-       host = new VirtualHost(getContext());
-       host.setHostDomain("restlet.org|restlet.net|restlet.com|"
-              + "www.restlet.net|www.restlet.com");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach(new RedirectApplication(getContext(),
-              "http://restlet.org{rr}", true));
-       getHosts().add(host);
+   // ---------------------------
+   // Redirect to restlet.org
+   // ---------------------------
+   host = new VirtualHost(getContext());
+   host.setHostDomain("restlet.org|restlet.net|restlet.com|"
+          + "www.restlet.net|www.restlet.com");
+   host.setHostPort("80|" + Integer.toString(port));
+   host.attach(new RedirectApplication(getContext(),
+          "http://restlet.org{rr}", true));
+   getHosts().add(host);
 
-       // ------------------
-       // search.restlet.org
-       // ------------------
-       host = new VirtualHost(getContext());
-       host.setHostDomain("search.restlet.org|localhost");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach(new SearchRestletOrg(getContext(), wwwUri
-              + "/search-restlet-org", redirectUri));
-       getHosts().add(host);
+   // ------------------
+   // search.restlet.org
+   // ------------------
+   host = new VirtualHost(getContext());
+   host.setHostDomain("search.restlet.org|localhost");
+   host.setHostPort("80|" + Integer.toString(port));
+   host.attach(new SearchRestletOrg(getContext(), wwwUri
+          + "/search-restlet-org", redirectUri));
+   getHosts().add(host);
 
-       // ---------------
-       // www.restlet.net
-       // ---------------
-       host = new VirtualHost(getContext());
-       host.setHostDomain("www.restlet.net");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach(new RedirectApplication(getContext(),
-              "http://restlet.tigris.org{rr}", false));
-       host.attach("/fisheye/", new RedirectApplication(getContext(),
-              "http://fisheye3.cenqua.com/browse/restlet/{rr}", false));
-       getHosts().add(host);
+   // ---------------
+   // www.restlet.net
+   // ---------------
+   host = new VirtualHost(getContext());
+   host.setHostDomain("www.restlet.net");
+   host.setHostPort("80|" + Integer.toString(port));
+   host.attach(new RedirectApplication(getContext(),
+          "http://restlet.tigris.org{rr}", false));
+   host.attach("/fisheye/", new RedirectApplication(getContext(),
+          "http://fisheye3.cenqua.com/browse/restlet/{rr}", false));
+   getHosts().add(host);
 
-       // ---------------
-       // www.noelios.com
-       // ---------------
-       host = new VirtualHost(getContext());
-       host.setHostDomain("www.noelios.com");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach(new WwwNoeliosCom(getContext(), dataUri, wwwUri
-              + "/www-noelios-com", login, password));
-       getHosts().add(host);
+   // ---------------
+   // www.noelios.com
+   // ---------------
+   host = new VirtualHost(getContext());
+   host.setHostDomain("www.noelios.com");
+   host.setHostPort("80|" + Integer.toString(port));
+   host.attach(new WwwNoeliosCom(getContext(), dataUri, wwwUri
+          + "/www-noelios-com", login, password));
+   getHosts().add(host);
 
-       // ---------------------------
-       // Redirect to www.noelios.com
-       // ---------------------------
-       host = new VirtualHost(getContext());
-       host.setHostDomain("noelios.com|noelios.net|noelios.org|"
-              + "www.noelios.net|www.noelios.org");
-       host.setHostPort("80|" + Integer.toString(port));
-       host.attach(new RedirectApplication(getContext(),
-              "http://www.noelios.com{rr}", true));
-       getHosts().add(host);
-    }
+   // ---------------------------
+   // Redirect to www.noelios.com
+   // ---------------------------
+   host = new VirtualHost(getContext());
+   host.setHostDomain("noelios.com|noelios.net|noelios.org|"
+          + "www.noelios.net|www.noelios.org");
+   host.setHostPort("80|" + Integer.toString(port));
+   host.attach(new RedirectApplication(getContext(),
+          "http://www.noelios.com{rr}", true));
+   getHosts().add(host);
+}
 </code></pre>
 
 # <a name="redirection-application"></a>Redirection Application
@@ -193,47 +193,47 @@ In addition to the main WebComponent class, we also rely on four
 application classes. Let's have a look at the RedirectApplication which
 is generic and reused several times.
 
-<pre class="language-java"><code class="language-java">    /**
-     * Application redirecting to a target URI.
+<pre class="language-java"><code class="language-java">/**
+ * Application redirecting to a target URI.
+ *
+ * @author Jerome Louvel (contact@restlet.com)
+ */
+public class RedirectApplication extends Application {
+    /** The target URI template. */
+    private String targetUri;
+
+    /** Indicates if the redirection is permanent or temporary. */
+    private boolean permanent;
+
+    /**
+     * Constructor.
      *
-     * @author Jerome Louvel (contact@restlet.com)
+     * @param parentContext
+     *            The parent context. Typically the component's context.
+     * @param targetUri
+     *            The target URI template.
+     * @param permanent
+     *            Indicates if the redirection is permanent or temporary.
      */
-    public class RedirectApplication extends Application {
-        /** The target URI template. */
-        private String targetUri;
-
-        /** Indicates if the redirection is permanent or temporary. */
-        private boolean permanent;
-
-        /**
-         * Constructor.
-         *
-         * @param parentContext
-         *            The parent context. Typically the component's context.
-         * @param targetUri
-         *            The target URI template.
-         * @param permanent
-         *            Indicates if the redirection is permanent or temporary.
-         */
-        public RedirectApplication(Context parentContext, String targetUri,
-                boolean permanent) {
-            super(parentContext);
-            this.targetUri = targetUri;
-            this.permanent = permanent;
-        }
-
-        @Override
-        public String getName() {
-            return "Redirection application";
-        }
-
-        @Override
-        public Restlet createRoot() {
-            int mode = (this.permanent) ? Redirector.MODE_CLIENT_PERMANENT
-                    : Redirector.MODE_CLIENT_TEMPORARY;
-            return new Redirector(getContext(), this.targetUri, mode);
-        }
+    public RedirectApplication(Context parentContext, String targetUri,
+            boolean permanent) {
+        super(parentContext);
+        this.targetUri = targetUri;
+        this.permanent = permanent;
     }
+
+    @Override
+    public String getName() {
+        return "Redirection application";
+    }
+
+    @Override
+    public Restlet createRoot() {
+        int mode = (this.permanent) ? Redirector.MODE_CLIENT_PERMANENT
+                : Redirector.MODE_CLIENT_TEMPORARY;
+        return new Redirector(getContext(), this.targetUri, mode);
+    }
+}
 </code></pre>
 
 # <a name="conclusion"></a>Conclusion

@@ -9,24 +9,24 @@ web site (named "mysite.org") based on Google. The "/search" relative
 URI identifies the search service, accepting some keywords via the "kwd"
 parameter:
 
-<pre class="language-java"><code class="language-java">    // Create a root router
-    Router router = new Router(getContext());
+<pre class="language-java"><code class="language-java">// Create a root router
+Router router = new Router(getContext());
 
-    // Create a Redirector to Google search service
-    String target = "http://www.google.com/search?q=site:mysite.org+{keywords}";
-    Redirector redirector = new Redirector(getContext(), target,
-    Redirector.MODE_CLIENT_TEMPORARY);
+// Create a Redirector to Google search service
+String target = "http://www.google.com/search?q=site:mysite.org+{keywords}";
+Redirector redirector = new Redirector(getContext(), target,
+Redirector.MODE_CLIENT_TEMPORARY);
 
-    // While routing requests to the redirector, extract the "kwd" query
-    // parameter. For instance :
-    // http://localhost:8182/search?kwd=myKeyword1+myKeyword2
-    // will be routed to
-    // http://www.google.com/search?q=site:mysite.org+myKeyword1%20myKeyword2
-    Extractor extractor = new Extractor(getContext(), redirector);
-    extractor.extractFromQuery("keywords", "kwd", true);
+// While routing requests to the redirector, extract the "kwd" query
+// parameter. For instance :
+// http://localhost:8182/search?kwd=myKeyword1+myKeyword2
+// will be routed to
+// http://www.google.com/search?q=site:mysite.org+myKeyword1%20myKeyword2
+Extractor extractor = new Extractor(getContext(), redirector);
+extractor.extractFromQuery("keywords", "kwd", true);
 
-    // Attach the extractor to the router
-    router.attach("/search", extractor);
+// Attach the extractor to the router
+router.attach("/search", extractor);
 </code></pre>
 
 Note that the Redirector needs three parameters only. The first is the

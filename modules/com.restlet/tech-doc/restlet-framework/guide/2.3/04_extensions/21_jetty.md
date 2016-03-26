@@ -37,10 +37,11 @@ For general information on Jetty HTTPS/SSL configuration, please read
 For configuration of the connector in a Restlet component, you will need
 to set some of the HTTPS parameters listed above, for example:
 
-    Server server = myComponent.getServers().add(Protocol.HTTPS, 8183);
-    server.getContext().getParameters().add("keystorePath", "<your-path>");
-    server.getContext().getParameters().add("keystorePassword", "<your-password>");
-    server.getContext().getParameters().add("keyPassword", "<your-password>");
+<pre><code class="language-java">Server server = myComponent.getServers().add(Protocol.HTTPS, 8183);
+server.getContext().getParameters().add("keystorePath", "<your-path>");
+server.getContext().getParameters().add("keystorePassword", "<your-password>");
+server.getContext().getParameters().add("keyPassword", "<your-password>");
+</code></pre>
 
 ## SPDY
 

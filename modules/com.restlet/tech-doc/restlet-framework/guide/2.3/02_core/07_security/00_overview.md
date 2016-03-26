@@ -39,24 +39,24 @@ the Servlet API, the concept is similar to the
 interface. See below how we would modify the previous example to secure
 the access to the Directory:
 
-<pre class="language-java"><code class="language-java">    @Override
-    public Restlet createInboundRoot() {
-        // Create a simple password verifier
-        MapVerifier verifier = new MapVerifier();
-        verifier.getLocalSecrets().put("scott", "tiger".toCharArray());
+<pre class="language-java"><code class="language-java">@Override
+public Restlet createInboundRoot() {
+    // Create a simple password verifier
+    MapVerifier verifier = new MapVerifier();
+    verifier.getLocalSecrets().put("scott", "tiger".toCharArray());
 
-        // Create a guard
-        ChallengeAuthenticator guard = new ChallengeAuthenticator(
-            getContext(), ChallengeScheme.HTTP_BASIC, "Tutorial");
-        guard.setVerifier(verifier);
+    // Create a guard
+    ChallengeAuthenticator guard = new ChallengeAuthenticator(
+        getContext(), ChallengeScheme.HTTP_BASIC, "Tutorial");
+    guard.setVerifier(verifier);
 
-        // Create a Directory able to return a deep hierarchy of files
-        Directory directory = new Directory(getContext(), ROOT_URI);
-        directory.setListingAllowed(true);
-        guard.setNext(directory);
+    // Create a Directory able to return a deep hierarchy of files
+    Directory directory = new Directory(getContext(), ROOT_URI);
+    directory.setListingAllowed(true);
+    guard.setNext(directory);
 
-        return guard;
-    }
+    return guard;
+}
 </code></pre>
 
 ![](images/guard.png)
@@ -68,32 +68,32 @@ ChallengeAuthenticator) and the Authorizer abstract classes. Here we
 simply hard-coded a single user and password couple. In order to test,
 let's use the client-side Restlet API:
 
-<pre class="language-java"><code class="language-java">    public static void main(String[] args) {
-        // Prepare the request
-        ClientResource resource = new ClientResource("http://localhost:8182/");
+<pre class="language-java"><code class="language-java">public static void main(String[] args) {
+    // Prepare the request
+    ClientResource resource = new ClientResource("http://localhost:8182/");
 
-        // Add the client authentication to the call
-        ChallengeScheme scheme = ChallengeScheme.HTTP_BASIC;
-        ChallengeResponse authentication = new ChallengeResponse(scheme, "scott", "tiger");
-        resource.setChallengeResponse(authentication);
+    // Add the client authentication to the call
+    ChallengeScheme scheme = ChallengeScheme.HTTP_BASIC;
+    ChallengeResponse authentication = new ChallengeResponse(scheme, "scott", "tiger");
+    resource.setChallengeResponse(authentication);
 
-        try {
-            // Send the HTTP GET request
-            resource.get();
-            // Output the response entity on the JVM console
-            resource.getResponseEntity().write(System.out);
-        } catch (Exception e) {
-            if (resource.getStatus().equals(Status.CLIENT_ERROR_UNAUTHORIZED)) {
-                // Unauthorized access
-                System.out
-                        .println("Access unauthorized by the server, check your credentials");
-            } else {
-                // Unexpected status
-                System.out.println("An unexpected status was returned: "
-                        + resource.getStatus());
-            }
+    try {
+        // Send the HTTP GET request
+        resource.get();
+        // Output the response entity on the JVM console
+        resource.getResponseEntity().write(System.out);
+    } catch (Exception e) {
+        if (resource.getStatus().equals(Status.CLIENT_ERROR_UNAUTHORIZED)) {
+            // Unauthorized access
+            System.out
+                    .println("Access unauthorized by the server, check your credentials");
+        } else {
+            // Unexpected status
+            System.out.println("An unexpected status was returned: "
+                    + resource.getStatus());
         }
     }
+}
 </code></pre>
 
 You can change the user ID or password sent by this test client in order
@@ -299,8 +299,7 @@ From an org.restlet.data.Request, the login/password can be retrieved
 using these methods:
 
  - Request.getChallengeResponse().getIdentifier() : String    // LOGIN\
-  - Request.getChallengeResponse().getSecret() : String        //
-PASSWORD
+ - Request.getChallengeResponse().getSecret() : String        //PASSWORD
 
 The HTTP server connectors currently only support HTTP BASIC
 authentication (the most widely used).

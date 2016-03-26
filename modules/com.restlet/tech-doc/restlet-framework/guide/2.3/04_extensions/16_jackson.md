@@ -13,63 +13,63 @@ It also provides a plugin for the ConverterService which will automatically seri
 
 Here is an example server resource:
 
-<pre class="language-java"><code class="language-java">    import org.restlet.Server;
-    import org.restlet.data.Protocol;
-    import org.restlet.resource.Get;
-    import org.restlet.resource.Put;
-    import org.restlet.resource.ServerResource;
+<pre class="language-java"><code class="language-java">import org.restlet.Server;
+import org.restlet.data.Protocol;
+import org.restlet.resource.Get;
+import org.restlet.resource.Put;
+import org.restlet.resource.ServerResource;
 
-    public class TestServer extends ServerResource {
+public class TestServer extends ServerResource {
 
-        private static volatile Customer myCustomer = Customer.createSample();
+    private static volatile Customer myCustomer = Customer.createSample();
 
-        public static void main(String[] args) throws Exception {
-            new Server(Protocol.HTTP, 8182, TestServer.class).start();
-        }
-
-        @Get
-        public Customer retrieve() {
-            return myCustomer;
-        }
-
-        @Put
-        public void store(Customer customer) {
-            myCustomer = customer;
-        }
-
+    public static void main(String[] args) throws Exception {
+        new Server(Protocol.HTTP, 8182, TestServer.class).start();
     }
+
+    @Get
+    public Customer retrieve() {
+        return myCustomer;
+    }
+
+    @Put
+    public void store(Customer customer) {
+        myCustomer = customer;
+    }
+
+}
 </code></pre>
 
 Here is the matching client resource:
 
-<pre class="language-java"><code class="language-java">    import org.restlet.resource.ClientResource;
-    import org.restlet.resource.ResourceException;
+<pre class="language-java"><code class="language-java">import org.restlet.resource.ClientResource;
+import org.restlet.resource.ResourceException;
 
-    public class TestClient {
+public class TestClient {
 
-        /**
-         * @param args
-         * @throws ResourceException
-         */
-        public static void main(String[] args) throws Exception {
+    /**
+     * @param args
+     * @throws ResourceException
+     */
+    public static void main(String[] args) throws Exception {
 
-            ClientResource cr = new ClientResource("http://localhost:8182");
+        ClientResource cr = new ClientResource("http://localhost:8182");
 
-            // Retrieve a representation
-            Customer customer = cr.get(Customer.class);
-            System.out.println(customer);
+        // Retrieve a representation
+        Customer customer = cr.get(Customer.class);
+        System.out.println(customer);
 
-            // Update the target resource
-            customer.setFirstName("John");
-            customer.setLastName("Doe");
-            cr.put(customer);
+        // Update the target resource
+        customer.setFirstName("John");
+        customer.setLastName("Doe");
+        cr.put(customer);
 
-            // Retrieve the updated version
-            customer = cr.get(Customer.class);
-            System.out.println(customer);
-        }
-
+        // Retrieve the updated version
+        customer = cr.get(Customer.class);
+        System.out.println(customer);
     }
+
+}
 </code></pre>
 
 Note that our Customer and Address classes are just regular serializablecbeans, with no special parent classes and no special annotations.

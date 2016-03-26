@@ -30,13 +30,13 @@ Make your application class extend org.restlet.ext.swagger.SwaggerApplication in
 By default, the Swagger documentation will be available on the path "/api-docs" of your API. If you want to change this path, you can specify it manually in the method _createInboundRoot_:
 
 <pre class="language-java"><code class="language-java">public Restlet createInboundRoot() {
-        // Router for the API's resources
-        Router apiRouter = createApiRouter();
-        attachSwaggerSpecificationRestlet(apiRouter, "/docs");
-        // Protect the set of resources
-        ChallengeAuthenticator guard = createApiGuard(apiRouter);
-        return guard;
-    }
+    // Router for the API's resources
+    Router apiRouter = createApiRouter();
+    attachSwaggerSpecificationRestlet(apiRouter, "/docs");
+    // Protect the set of resources
+    ChallengeAuthenticator guard = createApiGuard(apiRouter);
+    return guard;
+}
 </code></pre>
 
 Here, you specify that the Swagger definition will be provided on the path "/docs".
@@ -48,28 +48,27 @@ If you want to display a definition edited manually, the SwaggerApplication can 
 See sample implementation below:
 
 <pre class="language-java"><code class="language-java">@Override
-    public SwaggerSpecificationRestlet getSwaggerSpecificationRestlet(
-            Context context) {
-        return new SwaggerSpecificationRestlet(getContext()) {
-            @Override
-            public Representation getApiDeclaration(String category) {
-                JacksonRepresentation<ApiDeclaration> result = new JacksonRepresentation<ApiDeclaration>(
-                        new FileRepresentation("/path/to/my/repo/" + category,
-                                MediaType.APPLICATION_JSON),
+public SwaggerSpecificationRestlet getSwaggerSpecificationRestlet(
+        Context context) {
+    return new SwaggerSpecificationRestlet(getContext()) {
+        @Override
+        public Representation getApiDeclaration(String category) {
+            JacksonRepresentation<ApiDeclaration> result = new JacksonRepresentation<ApiDeclaration>(
+                    new FileRepresentation("/path/to/my/repo/" + category,
+                            MediaType.APPLICATION_JSON),
                         ApiDeclaration.class);
-                return result;
-            }
-
-            @Override
-            public Representation getResourceListing() {
-                JacksonRepresentation<ApiDeclaration> result = new JacksonRepresentation<ApiDeclaration>(
-                        new FileRepresentation("/path/to/my/repo/api-docs",
-                                MediaType.APPLICATION_JSON),
-                        ApiDeclaration.class);
-                return result;
-            }
-        };
-    }
+            return result;
+        }
+        @Override
+        public Representation getResourceListing() {
+            JacksonRepresentation<ApiDeclaration> result = new JacksonRepresentation<ApiDeclaration>(
+                    new FileRepresentation("/path/to/my/repo/api-docs",
+                            MediaType.APPLICATION_JSON),
+                    ApiDeclaration.class);
+            return result;
+        }
+    };
+}
 </code></pre>
 
 # Swagger-UI

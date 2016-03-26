@@ -22,16 +22,16 @@ a text field ( called "textField"). If you want to transfer them
 respectively to attributes named "selectAttribute" and "textAttribute",
 just proceed as follow.
 
-<pre class="language-java"><code class="language-java">    @Override
-    public Restlet createInboundRoot() {
-         Extractor extractor = new Extractor(getContext()); 
-         extractor.extractFromEntity("selectAttribute", "selectField", true);
-         extractor.extractFromEntity("textAttribute", "textField", false);
+<pre class="language-java"><code class="language-java">@Override
+public Restlet createInboundRoot() {
+     Extractor extractor = new Extractor(getContext()); 
+     extractor.extractFromEntity("selectAttribute", "selectField", true);
+     extractor.extractFromEntity("textAttribute", "textField", false);
 
-         extractor.setNext(...)
+     extractor.setNext(...)
 
-         return extractor;
-    }
+     return extractor;
+}
 </code></pre>
 
 You will get a String value in the "selectAttribute" (the selected
@@ -40,22 +40,22 @@ option), and a Form object which is a collection of key/value pairs
 
 Here is sample code which helps to retrieve some attributes:
 
-<pre class="language-java"><code class="language-java">    // Get the map of request attributes
-    Map<String, Object> map = request.getAttributes();
+<pre class="language-java"><code class="language-java">// Get the map of request attributes
+Map<String, Object> map = request.getAttributes();
 
-    // Retrieve the "selectAttribute" value
-    String stringValue = (String) map.get("selectAttribute");
-    System.out.println(" value => " + stringValue);
+// Retrieve the "selectAttribute" value
+String stringValue = (String) map.get("selectAttribute");
+System.out.println(" value => " + stringValue);
 
-    // Retrieve the "textAttribute" collection of parameters
-    Object object = map.get("textAttribute");
-    if(object != null){
-        if(object instanceof Form){
-            Form form = (Form) object;
-            for (Parameter parameter : form) {
-                System.out.print("parameter " + parameter.getName());
-                System.out.println("/ " + parameter.getValue());
-            }
+// Retrieve the "textAttribute" collection of parameters
+Object object = map.get("textAttribute");
+if(object != null){
+    if(object instanceof Form){
+        Form form = (Form) object;
+        for (Parameter parameter : form) {
+            System.out.print("parameter " + parameter.getName());
+            System.out.println("/ " + parameter.getValue());
         }
     }
+}
 </code></pre>

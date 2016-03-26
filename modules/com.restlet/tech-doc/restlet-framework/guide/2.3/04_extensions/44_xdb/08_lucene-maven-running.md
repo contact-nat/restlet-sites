@@ -84,7 +84,7 @@ Directory src/main/scripts have several .txt file which includes HTTP content in
 
 
 
-<pre class="language-bash"><code class="language-bash">[mochoa@mochoa lucene-restlet]$ cat src/main/scripts/test_get_scott.txt
+<pre><code class="language-bash">[mochoa@mochoa lucene-restlet]$ cat src/main/scripts/test_get_scott.txt
 GET /lucene/ HTTP/1.0
 Authorization: Basic c2NvdHQ6dGlnZXI=
 Host: localhost:8080
@@ -108,18 +108,17 @@ Content-Type: application/atomsvc+xml; charset=ISO-8859-1
 Vary: Accept-Charset, Accept-Encoding, Accept-Language, Accept
 Content-Length: 330
 Expires: Wed, 18 Jun 2008 23:08:16 GMT
+</code>
 
-
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<service xmlns="http://purl.org/atom/app#">
-   <workspace title="Lucene Web Service">
-         <collection href="SOURCE_BIG_LIDX/" title="Index Name: SOURCE_BIG_LIDX status: VALID">
-              <member-type>entry</member-type>
-         </collection>
-   </workspace>
-</service>
-Connection closed by foreign host.
-
+<code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;service xmlns=&quot;http://purl.org/atom/app#&quot;&gt;
+   &lt;workspace title=&quot;Lucene Web Service&quot;&gt;
+         &lt;collection href=&quot;SOURCE_BIG_LIDX/&quot; title=&quot;Index Name: SOURCE_BIG_LIDX status: VALID&quot;&gt;
+              &lt;member-type&gt;entry&lt;/member-type&gt;
+         &lt;/collection&gt;
+   &lt;/workspace&gt;
+&lt;/service&gt;
+</code><code class="language-bash">Connection closed by foreign host.
 </code></pre>
 
 

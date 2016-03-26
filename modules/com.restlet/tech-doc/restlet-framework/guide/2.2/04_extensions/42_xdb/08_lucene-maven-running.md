@@ -67,6 +67,7 @@ INFO: efective user is: __LUCENE__
 
 Jun 19, 2008 9:24:12 AM com.noelios.restlet.LogFilter afterHandle
 INFO: 2008-06-19        09:24:12        -        -        -       8080     GET     /lucene/         -       200      157     -        704     http://localhost:8088 -       -
+
 </code></pre>
 
 
@@ -107,9 +108,9 @@ Content-Type: application/atomsvc+xml; charset=ISO-8859-1
 Vary: Accept-Charset, Accept-Encoding, Accept-Language, Accept
 Content-Length: 330
 Expires: Wed, 18 Jun 2008 23:08:16 GMT
+</code>
 
-
-</code><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+<code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
 &lt;service xmlns=&quot;http://purl.org/atom/app#&quot;&gt;
    &lt;workspace title=&quot;Lucene Web Service&quot;&gt;
          &lt;collection href=&quot;SOURCE_BIG_LIDX/&quot; title=&quot;Index Name: SOURCE_BIG_LIDX status: VALID&quot;&gt;
@@ -117,7 +118,7 @@ Expires: Wed, 18 Jun 2008 23:08:16 GMT
          &lt;/collection&gt;
    &lt;/workspace&gt;
 &lt;/service&gt;
-Connection closed by foreign host.
+</code><code class="language-bash">Connection closed by foreign host.
 </code></pre>
 
 
@@ -125,6 +126,7 @@ Note that the Authorization header have a B64 encoding information of scott:tige
 
 
 <pre class="language-sql"><code class="language-sql">SQL> create table test_source_big as (select * from all_source);
+
 
 SQL> create index source_big_lidx on test_source_big(text)
 indextype is lucene.LuceneIndex
@@ -146,6 +148,7 @@ Install required libraries from JMeter distribution
 mvn install:install-file -DgroupId=org.apache.jorphan -DartifactId=jorphan -Dversion=2.2 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/jorphan.jar
 mvn install:install-file -DgroupId=org.mozilla.javascript -DartifactId=javascript -Dversion=1.0 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/js_rhino1_6R5.jar  
 mvn install:install-file -DgroupId=jcharts -DartifactId=jcharts -Dversion=0.7.5 -Dpackaging=jar -Dfile=/usr/local/jakarta-jmeter-2.3.1/lib/jCharts-0.7.5.jar  
+
 </code></pre>
 
 
@@ -159,8 +162,6 @@ pom.xml file modifications
       &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
     &lt;/dependency&gt;
 ....
-
-
       &lt;plugin&gt;
         &lt;groupId&gt;org.apache.jmeter&lt;/groupId&gt;
         &lt;artifactId&gt;maven-jmeter-plugin&lt;/artifactId&gt;

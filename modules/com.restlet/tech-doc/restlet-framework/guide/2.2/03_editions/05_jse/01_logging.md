@@ -10,7 +10,7 @@ class](http://docs.oracle.com/javase/6/docs/api/java/util/logging/LogManager.htm
 For example, to indicate the location of your logging properties file,
 you should add the following parameter to your JVM:
 
-<pre class="language-bash"><code class="language-bash">    -Djava.util.logging.config.file="/home/myApp/config/myLogging.properties"
+<pre class="language-bash"><code class="language-bash">-Djava.util.logging.config.file="/home/myApp/config/myLogging.properties"
 </code></pre>
 
 When developing your Restlet code, you should always use the current
@@ -129,39 +129,36 @@ As a starting point for your own logging properties file, here is the
 one we use on our Restlet base Web server. Feel free to copy and paste
 as needed.
 
-<pre class="language-ini"><code class="language-ini">    # ================================
-    # ==                            ==
-    # ==   Web Logging Properties   ==
-    # ==                            ==
+<pre class="language-ini"><code class="language-ini"># ================================
+# ==                            ==
+# ==   Web Logging Properties   ==
+# ==                            ==
     # ================================
 
-
+# ------------------
+# General properties
     # ------------------
-    # General properties
-    # ------------------
 
-
-    # This defines a whitespace separated list of class names for handler classes to load and register as handlers on
-    # the root Logger (the Logger named ""). Each class name must be for a Handler class which has a default constructor.
-    # Note that these Handlers may be created lazily, when they are first used.
-    handlers=java.util.logging.FileHandler
+# This defines a whitespace separated list of class names for handler classes to load and register as handlers on
+# the root Logger (the Logger named ""). Each class name must be for a Handler class which has a default constructor.
+# Note that these Handlers may be created lazily, when they are first used.
+handlers=java.util.logging.FileHandler
 </code></pre>
 
 In this first section, we declare one default handler that will receive
 the log records. It is a file handler that will be configured below.
 
-<pre class="language-ini"><code class="language-ini">    # ------------------
-    # Loggers properties
-    # ------------------
+<pre class="language-ini"><code class="language-ini"># ------------------
+# Loggers properties
+# ------------------
+.level=WARNING
+org.mortbay.level=WARNING
+org.restlet.level=WARNING
+com.noelios.level=WARNING
 
-    .level=WARNING
-    org.mortbay.level=WARNING
-    org.restlet.level=WARNING
-    com.noelios.level=WARNING
-
-    com.noelios.web.WebComponent.www.level=INFO
-    com.noelios.web.WebComponent.www.handlers=com.noelios.restlet.util.AccessLogFileHandler
-    com.noelios.web.WebComponent.www.useParentHandlers=false
+com.noelios.web.WebComponent.www.level=INFO
+com.noelios.web.WebComponent.www.handlers=com.noelios.restlet.util.AccessLogFileHandler
+com.noelios.web.WebComponent.www.useParentHandlers=false
 </code></pre>
 
 In this second section, we indicate that by default we are only
@@ -174,107 +171,107 @@ We also configured a logger for the WWW access log of our Restlet
 component. For information, our Component subclass has this code in its
 constructor:
 
-<pre class="language-java"><code class="language-java">    getLogService().setLoggerName("com.noelios.web.WebComponent.www");
+<pre class="language-java"><code class="language-java">getLogService().setLoggerName("com.noelios.web.WebComponent.www");
 </code></pre>
 
 Also note that we use a specific handler for this logger, the
 AccessLogFileHandler which is provided in the NRE. It can be easily
 configurer to produce Apache-style HTTP log files.
 
-<pre class="language-ini"><code class="language-ini">    # -------------------------
-    # ConsoleHandler properties
-    # -------------------------
+<pre class="language-ini"><code class="language-ini"># -------------------------
+# ConsoleHandler properties
+# ------------------------
 
-    # Specifies the default level for the Handler  (defaults to Level.INFO).
-    # java.util.logging.ConsoleHandler.level=WARNING
+# Specifies the default level for the Handler  (defaults to Level.INFO).
+# java.util.logging.ConsoleHandler.level=WARNIN
 
-    # Specifies the name of a Filter class to use (defaults to no Filter).
-    # java.util.logging.ConsoleHandler.filter=
+# Specifies the name of a Filter class to use (defaults to no Filter).
+# java.util.logging.ConsoleHandler.filter
 
-    # Specifies the name of a Formatter class to use (defaults to java.util.logging.SimpleFormatter).
-    # java.util.logging.ConsoleHandler.formatter=
+# Specifies the name of a Formatter class to use (defaults to java.util.logging.SimpleFormatter).
+# java.util.logging.ConsoleHandler.formatter=
 
-    # The name of the character set encoding to use (defaults to the default platform encoding).
-    # java.util.logging.ConsoleHandler.encoding=
+# The name of the character set encoding to use (defaults to the default platform encoding).
+# java.util.logging.ConsoleHandler.encoding=
 </code></pre>
 
 In the section above we have disabled the default ConsoleHandler
 configuration as we don't use it on our server-side application.
 
-<pre class="language-ini"><code class="language-ini">    # ------------------------------
-    # General FileHandler properties
-    # ------------------------------
+<pre class="language-ini"><code class="language-ini"># ------------------------------
+# General FileHandler properties
+# ------------------------------
 
-    # Specifies the default level for the Handler  (defaults to Level.ALL).
-    # java.util.logging.FileHandler.level=ALL
+# Specifies the default level for the Handler  (defaults to Level.ALL).
+# java.util.logging.FileHandler.level=ALL
 
-    # Specifies the name of a Filter class to use (defaults to no Filter).
-    # java.util.logging.FileHandler.filter=
+# Specifies the name of a Filter class to use (defaults to no Filter).
+# java.util.logging.FileHandler.filter=
 
-    # Specifies the name of a Formatter class to use (defaults to java.util.logging.XMLFormatter)
-    java.util.logging.FileHandler.formatter=java.util.logging.SimpleFormatter
+# Specifies the name of a Formatter class to use (defaults to java.util.logging.XMLFormatter)
+java.util.logging.FileHandler.formatter=java.util.logging.SimpleFormatter
 
-    # The name of the character set encoding to use (defaults to the default platform encoding).
-    # java.util.logging.FileHandler.encoding=
+# The name of the character set encoding to use (defaults to the default platform encoding).
+# java.util.logging.FileHandler.encoding=
 
-    # Specifies an approximate maximum amount to write (in bytes) to any one file.
-    # If this is zero, then there is no limit. (Defaults to no limit).
-    java.util.logging.FileHandler.limit=10000000
+# Specifies an approximate maximum amount to write (in bytes) to any one file.
+# If this is zero, then there is no limit. (Defaults to no limit).
+java.util.logging.FileHandler.limit=10000000
 
-    # Specifies how many output files to cycle through (defaults to 1).
-    java.util.logging.FileHandler.count=100
+# Specifies how many output files to cycle through (defaults to 1).
+java.util.logging.FileHandler.count=100
 
-    # Specifies a pattern for generating the output file name. (Defaults to "%h/java%u.log").
-    # A pattern consists of a string that includes the following special components that will be replaced at runtime:
-    #    "/" the local pathname separator
-    #    "%t" the system temporary directory
-    #    "%h" the value of the "user.home" system property
-    #    "%g" the generation number to distinguish rotated logs
-    #    "%u" a unique number to resolve conflicts
-    #    "%%" translates to a single percent sign "%"
-    java.util.logging.FileHandler.pattern=/home/prod/data/log/WebComponent-app-%u-%g.log
+# Specifies a pattern for generating the output file name. (Defaults to "%h/java%u.log").
+# A pattern consists of a string that includes the following special components that will be replaced at runtime:
+#    "/" the local pathname separator
+#    "%t" the system temporary directory
+#    "%h" the value of the "user.home" system property
+#    "%g" the generation number to distinguish rotated logs
+#    "%u" a unique number to resolve conflicts
+#    "%%" translates to a single percent sign "%"
+java.util.logging.FileHandler.pattern=/home/prod/data/log/WebComponent-app-%u-%g.log
 
-    # Specifies whether the FileHandler should append onto any existing files (defaults to false).
-    # java.util.logging.FileHandler.append=
+# Specifies whether the FileHandler should append onto any existing files (defaults to false).
+# java.util.logging.FileHandler.append=
 </code></pre>
 
 Here we specify the file size limit, the number of rotation files (100)
 and the file name template.
 
-<pre class="language-ini"><code class="language-ini">    # -------------------------
-    # LogFileHandler properties
-    # -------------------------
+<pre class="language-ini"><code class="language-ini"># -------------------------
+# LogFileHandler properties
+# -------------------------
 
-    # Specifies the default level for the Handler  (defaults to Level.ALL).
-    # org.restlet.engine.log.AccessLogFileHandler.level=ALL
+# Specifies the default level for the Handler  (defaults to Level.ALL).
+# org.restlet.engine.log.AccessLogFileHandler.level=ALL
 
-    # Specifies the name of a Filter class to use (defaults to no Filter).
-    # org.restlet.engine.log.AccessLogFileHandler.filter=
+# Specifies the name of a Filter class to use (defaults to no Filter).
+# org.restlet.engine.log.AccessLogFileHandler.filter=
 
-    # Specifies the name of a Formatter class to use (defaults to java.util.logging.XMLFormatter)
-    org.restlet.engine.log.AccessLogFileHandler.formatter=com.noelios.restlet.util.AccessLogFormatter
+# Specifies the name of a Formatter class to use (defaults to java.util.logging.XMLFormatter)
+org.restlet.engine.log.AccessLogFileHandler.formatter=com.noelios.restlet.util.AccessLogFormatter
 
-    # The name of the character set encoding to use (defaults to the default platform encoding).
-    # org.restlet.engine.log.AccessLogFileHandler.encoding=
+# The name of the character set encoding to use (defaults to the default platform encoding).
+# org.restlet.engine.log.AccessLogFileHandler.encoding=
 
-    # Specifies an approximate maximum amount to write (in bytes) to any one file.
-    # If this is zero, then there is no limit. (Defaults to no limit).
-    org.restlet.engine.log.AccessLogFileHandler.limit=10000000
+# Specifies an approximate maximum amount to write (in bytes) to any one file.
+# If this is zero, then there is no limit. (Defaults to no limit).
+org.restlet.engine.log.AccessLogFileHandler.limit=10000000
 
-    # Specifies how many output files to cycle through (defaults to 1).
-    org.restlet.engine.log.AccessLogFileHandler.count=100
+# Specifies how many output files to cycle through (defaults to 1).
+org.restlet.engine.log.AccessLogFileHandler.count=100
 
-    # Specifies a pattern for generating the output file name. (Defaults to "%h/java%u.log").
-    # A pattern consists of a string that includes the following special components that will be replaced at runtime:
-    #    "/" the local pathname separator
-    #    "%t" the system temporary directory
-    #    "%h" the value of the "user.home" system property
-    #    "%g" the generation number to distinguish rotated logs
-    #    "%u" a unique number to resolve conflicts
-    #    "%%" translates to a single percent sign "%" .pattern=/home/prod/data/log/WebComponent-www-%u-%g.log
+# Specifies a pattern for generating the output file name. (Defaults to "%h/java%u.log").
+# A pattern consists of a string that includes the following special components that will be replaced at runtime:
+#    "/" the local pathname separator
+#    "%t" the system temporary directory
+#    "%h" the value of the "user.home" system property
+#    "%g" the generation number to distinguish rotated logs
+#    "%u" a unique number to resolve conflicts
+#    "%%" translates to a single percent sign "%" .pattern=/home/prod/data/log/WebComponent-www-%u-%g.log
 
-    # Specifies whether the FileHandler should append onto any existing files (defaults to false).
-    # org.restlet.util.AccessLogFileHandler.append=
+# Specifies whether the FileHandler should append onto any existing files (defaults to false).
+# org.restlet.util.AccessLogFileHandler.append=
 </code></pre>
 
 This is similar to the previous section, but specific to our
@@ -296,8 +293,8 @@ This bridge is [provided by the SLF4J
 project](http://www.slf4j.org/legacy.html).
 Once it is installed, you will just need to add these lines of code:
 
-<pre class="language-java"><code class="language-java">     import org.slf4j.bridge.SLF4JBridgeHandler;
-     SLF4JBridgeHandler.install();
+<pre class="language-java"><code class="language-java">import org.slf4j.bridge.SLF4JBridgeHandler;
+SLF4JBridgeHandler.install();
 </code></pre>
 
 Then, you can drop the JAR from SLF4J corresponding to the target
@@ -311,10 +308,10 @@ Commons Logging to SLF4J and keep all log consistent.
 In addition, if you want to disable the usual console outputs, you could
 add those lines:
 
-<pre class="language-java"><code class="language-java">    java.util.logging.Logger rootLogger = LogManager.getLogMan​ager().getLogger(​"");
-    Handler[] handlers = rootLogger.getHandlers();
-    rootLogger.removeHan​dler(handlers[0]);
-    SLF4JBridgeHandler.install();
+<pre class="language-java"><code class="language-java">java.util.logging.Logger rootLogger = LogManager.getLogMan​ager().getLogger(​"");
+Handler[] handlers = rootLogger.getHandlers();
+rootLogger.removeHan​dler(handlers[0]);
+SLF4JBridgeHandler.install();
 </code></pre>
 
 ## Restlet LoggerFacade for SLF4J
@@ -330,7 +327,7 @@ A special subclass for SLF4J is even provided in the
 "org.restlet.ext.slf4j" extension. In order to install it, you need to
 add this system property
 
-<pre class="language-ini"><code class="language-ini">    org.restlet.engine.loggerFacadeClass=org.restlet.ext.slf4j.Slf4jLoggerFacade
+<pre class="language-ini"><code class="language-ini">org.restlet.engine.loggerFacadeClass=org.restlet.ext.slf4j.Slf4jLoggerFacade
 </code></pre>
 
 You can set this property on the command line with the "-D" prefix, or

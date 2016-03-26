@@ -22,15 +22,15 @@ specification, [section
 
 ## Usage example
 
-<pre class="language-java"><code class="language-java">    Representation file = new FileRepresentation(***);
+<pre class="language-java"><code class="language-java">Representation file = new FileRepresentation(***);
 
-    FormDataSet form = new FormDataSet();
-    form.setMultipart(true);
-    form.getEntries().add(new FormData("number", "5555555555"));
-    form.getEntries().add(new FormData("clip", "rickroll"));
-    form.getEntries().add(new FormData("upload_file", file));
-    form.getEntries().add(new FormData("tos", "agree"));
+FormDataSet form = new FormDataSet();
+form.setMultipart(true);
+form.getEntries().add(new FormData("number", "5555555555"));
+form.getEntries().add(new FormData("clip", "rickroll"));
+form.getEntries().add(new FormData("upload_file", file));
+form.getEntries().add(new FormData("tos", "agree"));
 
-    ClientResource cr = new ClientResource("http://mydomain.com/upload");
-    cr.post(form);
+ClientResource cr = new ClientResource("http://mydomain.com/upload");
+cr.post(form);
 </code></pre>

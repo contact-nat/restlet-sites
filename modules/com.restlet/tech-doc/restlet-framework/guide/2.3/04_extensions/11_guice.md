@@ -31,19 +31,18 @@ When using this approach:
 
 In the Finder factory approach, inject FinderFactory into contexts where routing to resources is initialized, e.g., createInboundRoot(), and use FinderFactory.finder(Class) in calls to Router.attach() instead of the plain server resource class name. For example:
 
-<pre class="language-java"><code class="language-java">   // Binding in Guice:
-   bind(ServerResource.class)
-       .annotatedWith(Hello.class)
-       .to(HelloServerResource.class);
+<pre class="language-java"><code class="language-java">// Binding in Guice:
+bind(ServerResource.class)
+     .annotatedWith(Hello.class)
+     .to(HelloServerResource.class);
 
-   // In createInboundRoot():
-   FinderFactory finderFactory = ... injected somehow ...;
+// In createInboundRoot():
+FinderFactory finderFactory = ... injected somehow ...;
 
-   // Attachment with no coupling to concrete resource type:
-   router.attach("/hello", finderFactory.finder(ServerResource.class, Hello.class);
-
-   // Attachment with direct knowledge of concrete resource type:
-   router.attach("/bye", finderFactory.finder(ByeServerResource.class);
+// Attachment with no coupling to concrete resource type:
+router.attach("/hello", finderFactory.finder(ServerResource.class, Hello.class);
+// Attachment with direct knowledge of concrete resource type:
+router.attach("/bye", finderFactory.finder(ByeServerResource.class);
 </code></pre>
 
 To use a Guice-enabled FinderFactory, install a RestletGuice.Module when creating the Injector. (RestletGuice has convenience methods to install such a module that parallel those in the Guice class.)
@@ -104,8 +103,8 @@ To avoid coupling a knowledge of a specific application subtype in this setting,
 
 Using the @Named qualifier trades some type-safety for convenience:
 
-<pre class="language-java"><code class="language-java">   @Inject
-   MyComponent(@Named(FOO) Application fooApp, @Named(BAR) Application barApp) ...
+<pre class="language-java"><code class="language-java">@Inject
+MyComponent(@Named(FOO) Application fooApp, @Named(BAR) Application barApp) ...
 </code></pre>
 
 [Javadocs](javadocs://jse/ext/org/restlet/ext/guice/package-summary.html).

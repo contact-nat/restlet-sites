@@ -22,25 +22,25 @@ project structure. We define the name of the artifact and the group
 some skeleton java source files. We will delete the App and AppTest
 source files since we will be creating our own classes.
 
-<pre class="language-bash"><code class="language-bash">   mvn archetype:create -DgroupId=com.mycompany.basecamp -DartifactId=restlet-basecamp
+<pre class="language-bash"><code class="language-bash">mvn archetype:create -DgroupId=com.mycompany.basecamp -DartifactId=restlet-basecamp
 
-    restlet-basecamp/
-    restlet-basecamp/pom.xml
-    restlet-basecamp/src
-    restlet-basecamp/src/main
-    restlet-basecamp/src/main/java
-    restlet-basecamp/src/main/java/com
-    restlet-basecamp/src/main/java/com/mycompany
-    restlet-basecamp/src/main/java/com/mycompany/restlet
-    restlet-basecamp/src/main/java/com/mycompany/restlet/basecamp
-    restlet-basecamp/src/main/java/com/mycompany/restlet/basecamp/App.java  
-    restlet-basecamp/src/test
-    restlet-basecamp/src/test/java
-    restlet-basecamp/src/test/java/com
-    restlet-basecamp/src/test/java/com/mycompany
-    restlet-basecamp/src/test/java/com/mycompany/restlet
-    restlet-basecamp/src/test/java/com/mycompany/restlet/basecamp
-    restlet-basecamp/src/test/java/com/mycompany/restlet/basecamp/AppTest.java
+restlet-basecamp/
+restlet-basecamp/pom.xml
+restlet-basecamp/src
+restlet-basecamp/src/main
+restlet-basecamp/src/main/java
+restlet-basecamp/src/main/java/com
+restlet-basecamp/src/main/java/com/mycompany
+restlet-basecamp/src/main/java/com/mycompany/restlet
+restlet-basecamp/src/main/java/com/mycompany/restlet/basecamp
+restlet-basecamp/src/main/java/com/mycompany/restlet/basecamp/App.java  
+restlet-basecamp/src/test
+restlet-basecamp/src/test/java
+restlet-basecamp/src/test/java/com
+restlet-basecamp/src/test/java/com/mycompany
+restlet-basecamp/src/test/java/com/mycompany/restlet
+restlet-basecamp/src/test/java/com/mycompany/restlet/basecamp
+restlet-basecamp/src/test/java/com/mycompany/restlet/basecamp/AppTest.java
 </code></pre>
 
 ## Step 2: Configure the POM
@@ -52,71 +52,64 @@ particular the Spring and Servlet extension packages.  It also defines
 the Jetty plugin since we will be running this web service in an
 embedded Jetty server.
 
-<pre class="language-markup"><code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-    &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-      xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
-
-      &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-      &lt;groupId&gt;com.mycompany.restlet.basecamp&lt;/groupId&gt;
-      &lt;artifactId&gt;restlet-basecamp&lt;/artifactId&gt;
-      &lt;packaging&gt;war&lt;/packaging&gt;
-      &lt;version&gt;1.5&lt;/version&gt;
-      &lt;name&gt;Bootstrapping Restlet Project&lt;/name&gt;
-
-      &lt;repositories&gt;
-        &lt;repository&gt;
-          &lt;id&gt;restlet&lt;/id&gt;
-          &lt;url&gt;http://maven.restlet.com/&lt;/url&gt;
-        &lt;/repository&gt;
-      &lt;/repositories&gt;
-
-      &lt;dependencies&gt;
-        &lt;dependency&gt;
-          &lt;groupId&gt;org.restlet.jee&lt;/groupId&gt;
-          &lt;artifactId&gt;org.restlet&lt;/artifactId&gt;
-          &lt;version&gt;2.0.1&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-          &lt;groupId&gt;org.restlet.jee&lt;/groupId&gt;
-          &lt;artifactId&gt;org.restlet.ext.servlet&lt;/artifactId&gt;
-          &lt;version&gt;2.0.1&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-          &lt;groupId&gt;org.restlet.jee&lt;/groupId&gt;
-          &lt;artifactId&gt;org.restlet.ext.spring&lt;/artifactId&gt;
-          &lt;version&gt;2.0.1&lt;/version&gt;
-        &lt;/dependency&gt;
-      &lt;/dependencies&gt;
-
-      &lt;build&gt;
-        &lt;finalName&gt;basecamp&lt;/finalName&gt;
-        &lt;plugins&gt;
-          &lt;plugin&gt;
-            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-            &lt;configuration&gt;
-              &lt;source&gt;1.5&lt;/source&gt;
-              &lt;target&gt;1.5&lt;/target&gt;
-            &lt;/configuration&gt;
-          &lt;/plugin&gt;
-
-          &lt;plugin&gt;
-            &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
-            &lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;
-            &lt;version&gt;6.1.25&lt;/version&gt;
-            &lt;configuration&gt;
-              &lt;contextPath&gt;${basecamp.server.contextpath}&lt;/contextPath&gt;
-              &lt;scanIntervalSeconds&gt;10&lt;/scanIntervalSeconds&gt;
-              &lt;webXml&gt;${project.build.directory}/${project.build.finalName}/WEB-INF/web.xml&lt;/webXml&gt;
-            &lt;/configuration&gt;
-          &lt;/plugin&gt;
-        &lt;/plugins&gt;
-      &lt;/build&gt;
-
-      &lt;properties&gt;
-        &lt;basecamp.server.contextpath&gt;basecamp&lt;/basecamp.server.contextpath&gt;
-      &lt;/properties&gt;
-    &lt;/project&gt;
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.mycompany.restlet.basecamp&lt;/groupId&gt;
+  &lt;artifactId&gt;restlet-basecamp&lt;/artifactId&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+  &lt;version&gt;1.5&lt;/version&gt;
+  &lt;name&gt;Bootstrapping Restlet Project&lt;/name&gt;
+  &lt;repositories&gt;
+    &lt;repository&gt;
+      &lt;id&gt;restlet&lt;/id&gt;
+      &lt;url&gt;http://maven.restlet.com/&lt;/url&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.restlet.jee&lt;/groupId&gt;
+      &lt;artifactId&gt;org.restlet&lt;/artifactId&gt;
+      &lt;version&gt;2.0.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.restlet.jee&lt;/groupId&gt;
+      &lt;artifactId&gt;org.restlet.ext.servlet&lt;/artifactId&gt;
+      &lt;version&gt;2.0.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.restlet.jee&lt;/groupId&gt;
+      &lt;artifactId&gt;org.restlet.ext.spring&lt;/artifactId&gt;
+      &lt;version&gt;2.0.1&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  &lt;build&gt;
+    &lt;finalName&gt;basecamp&lt;/finalName&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+        &lt;configuration&gt;
+          &lt;source&gt;1.5&lt;/source&gt;
+          &lt;target&gt;1.5&lt;/target&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;
+        &lt;version&gt;6.1.25&lt;/version&gt;
+        &lt;configuration&gt;
+          &lt;contextPath&gt;${basecamp.server.contextpath}&lt;/contextPath&gt;
+          &lt;scanIntervalSeconds&gt;10&lt;/scanIntervalSeconds&gt;
+          &lt;webXml&gt;${project.build.directory}/${project.build.finalName}/WEB-INF/web.xml&lt;/webXml&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+  &lt;properties&gt;
+    &lt;basecamp.server.contextpath&gt;basecamp&lt;/basecamp.server.contextpath&gt;
+  &lt;/properties&gt;
+&lt;/project&gt;
 </code></pre>
 
 ## Step 3: Create the BaseCampResource
@@ -126,18 +119,18 @@ extends ServerResource and responds to the HTTP GET method. Note the use
 of annotations, which is part of  the Restlet Framework.  For the
 purpose of this document we will only define this simple resource.
 
-<pre class="language-java"><code class="language-java">    package com.mycompany.restlet.basecamp.resource.demo;
+<pre class="language-java"><code class="language-java">package com.mycompany.restlet.basecamp.resource.demo;
 
-    import org.restlet.resource.Get;
-    import org.restlet.resource.ServerResource;
+import org.restlet.resource.Get;
+import org.restlet.resource.ServerResource;
 
-    public class BaseCampResource extends ServerResource {
+public class BaseCampResource extends ServerResource {
 
-      @Get
-      public String getResource()  {
+    @Get
+    public String getResource()  {
         return "Hello World!";
-      }
     }
+}
 </code></pre>
 
 ## Step 4: Create the BaseCampApplication
@@ -147,12 +140,12 @@ BaseCampApplication, which extends the core framework class. It's not
 really required for this example but if you need to override base class
 behaviour this is how you would go about it.
 
-<pre class="language-java"><code class="language-java">    package com.mycompany.restlet.basecamp.application;
+<pre class="language-java"><code class="language-java">package com.mycompany.restlet.basecamp.application;
 
-    import org.restlet.Application;
+import org.restlet.Application;
 
-    public class BaseCampApplication extends Application {
-    }
+public class BaseCampApplication extends Application {
+}
 </code></pre>
 
 ## Step 5: Sprinkle Some Spring
@@ -172,23 +165,20 @@ various components.
     resource and as such is registered with the router. In this example
     we only define one resource and one route.
 
-<pre class="language-markup"><code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-    &lt;!DOCTYPE beans PUBLIC &quot;-//SPRING//DTD BEAN 2.0//EN&quot; &quot;http://www.springframework.org/dtd/spring-beans-2.0.dtd&quot;&gt;
-    &lt;beans&gt;
-      &lt;bean id=&quot;basecampComponent&quot; class=&quot;org.restlet.ext.spring.SpringComponent&quot;&gt;
-        &lt;property name=&quot;defaultTarget&quot; ref=&quot;basecampAppliction&quot; /&gt;
-      &lt;/bean&gt;
-
-      &lt;bean id=&quot;basecampAppliction&quot; class=&quot;com.mycompany.restlet.basecamp.application.BaseCampApplication&quot;&gt;
-        &lt;property name=&quot;root&quot; ref=&quot;router&quot; /&gt;
-      &lt;/bean&gt;
-
-      &lt;!--  Define the router --&gt;
-      &lt;bean name=&quot;router&quot; class=&quot;org.restlet.ext.spring.SpringBeanRouter&quot; /&gt;
-
-      &lt;!-- Define all the routes --&gt;
-      &lt;bean name=&quot;/hello&quot; class=&quot;com.mycompany.restlet.basecamp.resource.demo.BaseCampResource&quot; scope=&quot;prototype&quot; autowire=&quot;byName&quot; /&gt;
-    &lt;/beans&gt;
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE beans PUBLIC &quot;-//SPRING//DTD BEAN 2.0//EN&quot; &quot;http://www.springframework.org/dtd/spring-beans-2.0.dtd&quot;&gt;
+&lt;beans default-lazy-init=&quot;false&quot; default-autowire=&quot;no&quot; default-dependency-check=&quot;none&quot; default-merge=&quot;false&quot;&gt;
+  &lt;bean id=&quot;basecampComponent&quot; class=&quot;org.restlet.ext.spring.SpringComponent&quot; lazy-init=&quot;default&quot; autowire=&quot;default&quot; dependency-check=&quot;default&quot;&gt;
+    &lt;property name=&quot;defaultTarget&quot; ref=&quot;basecampAppliction&quot; /&gt;
+  &lt;/bean&gt;
+  &lt;bean id=&quot;basecampAppliction&quot; class=&quot;com.mycompany.restlet.basecamp.application.BaseCampApplication&quot; lazy-init=&quot;default&quot; autowire=&quot;default&quot; dependency-check=&quot;default&quot;&gt;
+    &lt;property name=&quot;root&quot; ref=&quot;router&quot; /&gt;
+  &lt;/bean&gt;
+  &lt;!--  Define the router --&gt;
+  &lt;bean name=&quot;router&quot; class=&quot;org.restlet.ext.spring.SpringBeanRouter&quot; lazy-init=&quot;default&quot; autowire=&quot;default&quot; dependency-check=&quot;default&quot; /&gt;
+  &lt;!-- Define all the routes --&gt;
+  &lt;bean name=&quot;/hello&quot; class=&quot;com.mycompany.restlet.basecamp.resource.demo.BaseCampResource&quot; scope=&quot;prototype&quot; autowire=&quot;byName&quot; lazy-init=&quot;default&quot; dependency-check=&quot;default&quot; /&gt;
+&lt;/beans&gt;
 </code></pre>
 
 ## Step 6: Set up the web.xml
@@ -198,36 +188,30 @@ The important parts are the **context-param** entries. One points to the
 the SpringComponent class instance in our application context and the
 other points to the location of the application context file.
 
-<pre class="language-markup"><code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-    &lt;web-app id=&quot;restlet-basecamp&quot; version=&quot;2.4&quot; xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-      xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;&gt;
-      &lt;display-name&gt;Restlet Basecamp&lt;/display-name&gt;
-
-      &lt;listener&gt;
-        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
-      &lt;/listener&gt;
-
-      &lt;context-param&gt;
-        &lt;param-name&gt;org.restlet.component&lt;/param-name&gt;
-        &lt;param-value&gt;basecampComponent&lt;/param-value&gt;
-      &lt;/context-param&gt;
-      &lt;context-param&gt;
-        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-        &lt;param-value&gt;WEB-INF/applicationContext.xml&lt;/param-value&gt;
-      &lt;/context-param&gt;
-
-      &lt;servlet&gt;
-        &lt;servlet-name&gt;basecamp&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;org.restlet.ext.spring.SpringServerServlet&lt;/servlet-class&gt;
-        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-      &lt;/servlet&gt;
-
-      &lt;servlet-mapping&gt;
-        &lt;servlet-name&gt;basecamp&lt;/servlet-name&gt;
-        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-      &lt;/servlet-mapping&gt;
-
-    &lt;/web-app&gt;
+<pre class="language-markup"><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; id=&quot;restlet-basecamp&quot; version=&quot;2.4&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;&gt;
+  &lt;display-name&gt;Restlet Basecamp&lt;/display-name&gt;
+  &lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+  &lt;/listener&gt;
+  &lt;context-param&gt;
+    &lt;param-name&gt;org.restlet.component&lt;/param-name&gt;
+    &lt;param-value&gt;basecampComponent&lt;/param-value&gt;
+  &lt;/context-param&gt;
+  &lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;WEB-INF/applicationContext.xml&lt;/param-value&gt;
+  &lt;/context-param&gt;
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;basecamp&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.restlet.ext.spring.SpringServerServlet&lt;/servlet-class&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;basecamp&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
 </code></pre>
 
 ## Step 7: Build It
@@ -235,50 +219,50 @@ other points to the location of the application context file.
 To create the war file execute '**mvn package'** in your shell. The war
 file will in the **target** subdirectory.
 
-<pre class="language-bash"><code class="language-bash">    jima:restlet-basecamp jima$ mvn package
+<pre class="language-bash"><code class="language-bash">jima:restlet-basecamp jima$ mvn package
 
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Building Bootstrapping Restlet Project
-    [INFO]    task-segment: [package]
-    [INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bootstrapping Restlet Project
+[INFO]    task-segment: [package]
+[INFO] ------------------------------------------------------------------------
 
-    [INFO] [resources:resources {execution: default-resources}]
-    [INFO] Copying 0 resource
-    [INFO] [compiler:compile {execution: default-compile}]
-    [INFO] Nothing to compile - all classes are up to date
-    [INFO] [resources:testResources {execution: default-testResources}]
-    [INFO] Copying 0 resource
-    [INFO] [compiler:testCompile {execution: default-testCompile}]
-    [INFO] Nothing to compile - all classes are up to date
-    [INFO] [surefire:test {execution: default-test}]
-    [INFO] Surefire report directory: /Users/jima/projects/restlet-basecamp/restlet-basecamp/target/surefire-reports
+[INFO] [resources:resources {execution: default-resources}]
+[INFO] Copying 0 resource
+[INFO] [compiler:compile {execution: default-compile}]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] [resources:testResources {execution: default-testResources}]
+[INFO] Copying 0 resource
+[INFO] [compiler:testCompile {execution: default-testCompile}]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] [surefire:test {execution: default-test}]
+[INFO] Surefire report directory: /Users/jima/projects/restlet-basecamp/restlet-basecamp/target/surefire-reports
 
-    -------------------------------------------------------
-     T E S T S
-    -------------------------------------------------------
-    There are no tests to run.
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
 
-    Results :
+Results :
 
-    Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 
-    [INFO] [war:war {execution: default-war}]
-    [INFO] Packaging webapp
-    [INFO] Assembling webapp[restlet-basecamp] in [/Users/jima/projects/restlet-basecamp/restlet-basecamp/target/summer]
-    [INFO] Dependency[Dependency {groupId=org.restlet.jee, artifactId=org.restlet, version=2.0.1, type=jar}] has changed (was Dependency {groupId=org.restlet.jee, artifactId=org.restlet, version=2.0.1, type=jar}).
-    [INFO] Dependency[Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.servlet, version=2.0.1, type=jar}] has changed (was Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.servlet, version=2.0.1, type=jar}).
-    [INFO] Dependency[Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.spring, version=2.0.1, type=jar}] has changed (was Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.spring, version=2.0.1, type=jar}).
-    [INFO] Processing war project
-    [INFO] Copying webapp resources[/Users/jima/projects/restlet-basecamp/restlet-basecamp/src/main/webapp]
-    [INFO] Webapp assembled in[112 msecs]
-    [INFO] Building war: /Users/jima/projects/restlet-basecamp/restlet-basecamp/target/summer.war
-    [INFO] ------------------------------------------------------------------------
-    [INFO] BUILD SUCCESSFUL
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 4 seconds
-    [INFO] Finished at: Tue Nov 09 21:30:38 EST 2010
-    [INFO] Final Memory: 18M/81M
-    [INFO] ------------------------------------------------------------------------
+[INFO] [war:war {execution: default-war}]
+[INFO] Packaging webapp
+[INFO] Assembling webapp[restlet-basecamp] in [/Users/jima/projects/restlet-basecamp/restlet-basecamp/target/summer]
+[INFO] Dependency[Dependency {groupId=org.restlet.jee, artifactId=org.restlet, version=2.0.1, type=jar}] has changed (was Dependency {groupId=org.restlet.jee, artifactId=org.restlet, version=2.0.1, type=jar}).
+[INFO] Dependency[Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.servlet, version=2.0.1, type=jar}] has changed (was Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.servlet, version=2.0.1, type=jar}).
+[INFO] Dependency[Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.spring, version=2.0.1, type=jar}] has changed (was Dependency {groupId=org.restlet.jee, artifactId=org.restlet.ext.spring, version=2.0.1, type=jar}).
+[INFO] Processing war project
+[INFO] Copying webapp resources[/Users/jima/projects/restlet-basecamp/restlet-basecamp/src/main/webapp]
+[INFO] Webapp assembled in[112 msecs]
+[INFO] Building war: /Users/jima/projects/restlet-basecamp/restlet-basecamp/target/summer.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4 seconds
+[INFO] Finished at: Tue Nov 09 21:30:38 EST 2010
+[INFO] Final Memory: 18M/81M
+[INFO] ------------------------------------------------------------------------
 </code></pre>
 
 ## Step 8: Run It
@@ -288,17 +272,17 @@ To run the web service in an embedded jetty server simple execute 
 then run it up inside a jetty servlet container. The web service will be
 available on **localhost:8080** with a root context of '**/basecamp**'
 
-<pre class="language-bash"><code class="language-bash">    jima:restlet-basecamp jima$ mvn jetty:run-war
+<pre class="language-bash"><code class="language-bash">jima:restlet-basecamp jima$ mvn jetty:run-war
 
-    [INFO] [jetty:run-war {execution: default-cli}]
-    [INFO] Configuring Jetty for project: Bootstrapping Restlet Project
-    [INFO] Context path = /basecamp
-    [INFO] Tmp directory =  determined at runtime
-    [INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
-    [INFO] Web overrides =  none
-    [INFO] Starting jetty 6.1.25 ...
-    [INFO] Started Jetty Server
-    [INFO] Starting scanner at interval of 10 seconds.
+[INFO] [jetty:run-war {execution: default-cli}]
+[INFO] Configuring Jetty for project: Bootstrapping Restlet Project
+[INFO] Context path = /basecamp
+[INFO] Tmp directory =  determined at runtime
+[INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] Starting jetty 6.1.25 ...
+[INFO] Started Jetty Server
+[INFO] Starting scanner at interval of 10 seconds.
 </code></pre>
 
 If you now go to your web browser and enter the following URL the
@@ -328,16 +312,16 @@ the web service respectively.
 An minimal configured tomcat maven plugin is shown below but you should
 consult the documentation for the finer details.
 
-<pre class="language-markup"><code class="language-markup">          &lt;plugin&gt;
-            &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-            &lt;artifactId&gt;tomcat-maven-plugin&lt;/artifactId&gt;
-            &lt;configuration&gt;
-              &lt;server&gt;${tomcat.server}&lt;/server&gt;
-              &lt;url&gt;${tomcat.server.manager}&lt;/url&gt;
-              &lt;warFile&gt;${project.build.directory}/${project.build.finalName}.war&lt;/warFile&gt;
-              &lt;path&gt;${basecamp.server.contextpath}&lt;/path&gt;
-            &lt;/configuration&gt;
-          &lt;/plugin&gt;
+<pre class="language-markup"><code class="language-markup">&lt;plugin&gt;
+  &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+  &lt;artifactId&gt;tomcat-maven-plugin&lt;/artifactId&gt;
+  &lt;configuration&gt;
+    &lt;server&gt;${tomcat.server}&lt;/server&gt;
+    &lt;url&gt;${tomcat.server.manager}&lt;/url&gt;
+    &lt;warFile&gt;${project.build.directory}/${project.build.finalName}.war&lt;/warFile&gt;
+    &lt;path&gt;${basecamp.server.contextpath}&lt;/path&gt;
+  &lt;/configuration&gt;
+&lt;/plugin&gt;
 </code></pre>
 
 # Resources

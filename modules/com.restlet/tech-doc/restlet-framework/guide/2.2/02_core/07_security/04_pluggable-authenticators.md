@@ -5,7 +5,7 @@ scheme. Let's say you have defined your own challenge scheme called
 "MySCHEME". Basically, the server's response to unauthenticated request
 will contain a WWW-Authenticate header as follow:
 
-<pre class="language-bash"><code class="language-bash">    WWW-Authentication: MySCHEME realm=”<realm>”
+<pre class="language-bash"><code class="language-bash">WWW-Authentication: MySCHEME realm=”<realm>”
 </code></pre>
 
 ## Definition of the custom challenge scheme
@@ -13,7 +13,7 @@ will contain a WWW-Authenticate header as follow:
 You will first need to declare your own ChallengeScheme, certainly as a
 static member:
 
-<pre class="language-java"><code class="language-java">    public static ChallengeScheme MySCHEME = new ChallengeScheme("This is my own challenge scheme", "MySCHEME");
+<pre class="language-java"><code class="language-java">public static ChallengeScheme MySCHEME = new ChallengeScheme("This is my own challenge scheme", "MySCHEME");
 </code></pre>
 
 ## Definition of the custom authentication helper
@@ -31,7 +31,7 @@ and need to be registered by the engine.
 
 The registration can be done manually:
 
-<pre class="language-java"><code class="language-java">    Engine.getInstance().getRegisteredAuthenticators().add(new MyCustomAuthenticationHelper());
+<pre class="language-java"><code class="language-java">Engine.getInstance().getRegisteredAuthenticators().add(new MyCustomAuthenticationHelper());
 </code></pre>
 
 or "magically" by creating a service file located in the
@@ -42,9 +42,9 @@ line of text which is the full path of the the helper class.
 Then, the helper must declare its support of a ChallengeScheme. This is
 done in the constructor:
 
-<pre class="language-java"><code class="language-java">        public MyCustomAuthenticationHelper() {
-            super(ChallengeScheme.CUSTOM, false, true);
-        }
+<pre class="language-java"><code class="language-java">public MyCustomAuthenticationHelper() {
+    super(ChallengeScheme.CUSTOM, false, true);
+}
 </code></pre>
 
 The two boolean values correspond to the support of the client and
@@ -60,20 +60,19 @@ implementation of the following methods:
     ChallengeWriter. By default, nothing is done which results in the
     following header:
 
-<!-- -->
-
-    WWW-Authentication: MySCHEME
+<pre class="language-bash"><code class="language-bash">WWW-Authentication: MySCHEME
+</code></pre>
 
 In order to add the realm, proceed as follow:
 
-<pre class="language-java"><code class="language-java">        public void formatRawRequest(ChallengeWriter cw,
-                                     ChallengeRequest challenge,
-                                     Response response,
-                                     Series<Parameter> httpHeaders) throws IOException {
-            if (challenge.getRealm() != null) {
-                cw.appendQuotedChallengeParameter("realm", challenge.getRealm());
-            }
-        }
+pre class="language-java"><code class="language-java">public void formatRawRequest(ChallengeWriter cw,
+                             ChallengeRequest challenge,
+                             Response response,
+                             Series<Parameter> httpHeaders) throws IOException {
+    if (challenge.getRealm() != null) {
+        cw.appendQuotedChallengeParameter("realm", challenge.getRealm());
+    }
+}
 </code></pre>
 
 -   parseResponse(ChallengeResponse, Request, Series\<Parameter\>) which

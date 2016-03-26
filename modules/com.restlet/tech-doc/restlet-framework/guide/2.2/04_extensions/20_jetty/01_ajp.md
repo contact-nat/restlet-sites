@@ -15,64 +15,65 @@ This page needs to be updated for Restlet 2.x
 
 ### JettyAJPApplication.Class
 
-    package com.bjinfotech.restlet.practice.demo.microblog;
+<pre><code class="language-java">package com.bjinfotech.restlet.practice.demo.microblog;
 
-    import org.restlet.Application;
-    import org.restlet.Component;
-    import org.restlet.Directory;
-    import org.restlet.Restlet;
-    import org.restlet.Router;
-    import org.restlet.Server;
-    import org.restlet.data.Protocol;
-    import com.noelios.restlet.ext.jetty.AjpServerHelper;
-    import com.noelios.restlet.ext.jetty.HttpServerHelper;
-    import com.noelios.restlet.ext.jetty.JettyServerHelper;
+import org.restlet.Application;
+import org.restlet.Component;
+import org.restlet.Directory;
+import org.restlet.Restlet;
+import org.restlet.Router;
+import org.restlet.Server;
+import org.restlet.data.Protocol;
+import com.noelios.restlet.ext.jetty.AjpServerHelper;
+import com.noelios.restlet.ext.jetty.HttpServerHelper;
+import com.noelios.restlet.ext.jetty.JettyServerHelper;
 
-    public class JettyAJPApplication extends Application {
-        public static void main(String[] argv) throws Exception{
-            Component component=new Component();
+public class JettyAJPApplication extends Application {
+    public static void main(String[] argv) throws Exception{
+        Component component=new Component();
 
-            Application application=new Application(component.getContext()){
-                @Override
-                public Restlet createRoot(){
-                    final String DIR_ROOT_URI="file:///E:/eclipse3.1RC3/workspace/RestletPractice/static_files/";
+        Application application=new Application(component.getContext()){
+            @Override
+            public Restlet createRoot(){
+                final String DIR_ROOT_URI="file:///E:/eclipse3.1RC3/workspace/RestletPractice/static_files/";
 
-                    Router router=new Router(getContext());
-                    Directory dir=new Directory(getContext(),DIR_ROOT_URI);
-                    dir.setListingAllowed(true);
-                    dir.setDeeplyAccessible(true);
-                    dir.setNegotiateContent(true);
-                    router.attach("/www/",dir);
-                    return router;
-                }
-            };
+                Router router=new Router(getContext());
+                Directory dir=new Directory(getContext(),DIR_ROOT_URI);
+                dir.setListingAllowed(true);
+                dir.setDeeplyAccessible(true);
+                dir.setNegotiateContent(true);
+                router.attach("/www/",dir);
+                return router;
+            }
+        };
 
-            ...
-            //create embedding jetty server
-            Server embedingJettyServer=new Server(
-                    component.getContext(),
-                    Protocol.HTTP,
-                    8182,
-                    component
-                );
-            //construct and start JettyServerHelper
-            JettyServerHelper jettyServerHelper=new HttpServerHelper(embedingJettyServer);
-            jettyServerHelper.start();
+        ...
+        //create embedding jetty server
+        Server embedingJettyServer=new Server(
+                component.getContext(),
+                Protocol.HTTP,
+                8182,
+                component
+            );
+        //construct and start JettyServerHelper
+        JettyServerHelper jettyServerHelper=new HttpServerHelper(embedingJettyServer);
+        jettyServerHelper.start();
 
-            //create embedding AJP Server
-            Server embedingJettyAJPServer=new Server(
-                    component.getContext(),
-                    Protocol.HTTP,
-                    8183,
-                    component
-                );
+        //create embedding AJP Server
+        Server embedingJettyAJPServer=new Server(
+                component.getContext(),
+                Protocol.HTTP,
+                8183,
+                component
+            );
 
-            //construct and start AjpServerHelper
-            AjpServerHelper ajpServerHelper=new AjpServerHelper(embedingJettyAJPServer);
-            ajpServerHelper.start();
+        //construct and start AjpServerHelper
+        AjpServerHelper ajpServerHelper=new AjpServerHelper(embedingJettyAJPServer);
+        ajpServerHelper.start();
 
-        }
     }
+}
+</code></pre>
 
 ### Running JettyAJPApplication
 
@@ -95,17 +96,18 @@ This page needs to be updated for Restlet 2.x
 -   add the entry below in your httpd.conf apache configuration file
     located in \<apache-root\>/conf/ directory:
 
-            <IfModule !mod_jk.c>
-                 LoadModule jk_module  modules/mod_jk.so
-            </IfModule>
+<pre><code class="language-none">&lt;IfModule !mod_jk.c&gt;
+     LoadModule jk_module  modules/mod_jk.so
+&lt;/IfModule&gt;
 
-            <IfModule mod_jk.c>
-                 JkWorkersFile "conf/worker.properties"
-                 JkLogFile "logs/mod_jk.log"
-                 JkLogLevel info
-                 JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
-                 JkOptions +ForwardKeySize +ForwardURICompat
-            </IfModule>
+&lt;IfModule mod_jk.c&gt;
+     JkWorkersFile &quot;conf/worker.properties&quot;
+     JkLogFile &quot;logs/mod_jk.log&quot;
+     JkLogLevel info
+     JkLogStampFormat &quot;[%a %b %d %H:%M:%S %Y] &quot;
+     JkOptions +ForwardKeySize +ForwardURICompat
+&lt;/IfModule&gt;
+</code></pre>
 
 -   **LoadModule jk\_module modules/mod\_jk.so** tells your apache
     server to load the mod\_jk libray and where it is located.
@@ -118,14 +120,14 @@ After adding the mod\_jk configuration you may add a **VirtualHost**
 Entry in the same file (httpd.conf) as long as its located below your
 mod\_jk configuration entry:
 
-         <VirtualHost host:*>
-             ServerName yourserver
-              ServerAdmin user@yourserver
-              ## you may add further entries concerning log-files, log-level, URL-rewriting, ...
-              ## pass requests through to jetty worker
-         JkMount /* jetty
-         </VirtualHost>
-
+<pre><code class="language-none">&lt;VirtualHost host:*&gt;
+     ServerName yourserver
+      ServerAdmin user@yourserver
+      ## you may add further entries concerning log-files, log-level, URL-rewriting, ...
+      ## pass requests through to jetty worker
+JkMount /* jetty
+&lt;/VirtualHost&gt;
+</code></pre>
 -   Add a worker file **worker.properties** in your
     \<apache-root\>/conf/
 -   add the entries below, and make sure to specify your ip-address or

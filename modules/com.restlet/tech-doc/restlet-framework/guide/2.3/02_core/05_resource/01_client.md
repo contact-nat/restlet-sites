@@ -8,12 +8,12 @@ read the [first client](guide:///introduction/first-steps/first-client "First cl
 You can get automatic conversion for retrieved representations like
 this:
 
-<pre class="language-java"><code class="language-java">      String myString = myClientResource.get(String.class);
+<pre class="language-java"><code class="language-java">String myString = myClientResource.get(String.class);
 </code></pre>
 
 For sent representations:
 
-<pre class="language-java"><code class="language-java">      myClientResource.put(myString);
+<pre class="language-java"><code class="language-java">myClientResource.put(myString);
 </code></pre>
 
 There is even a more transparent way if you define an annotated Java
@@ -21,7 +21,7 @@ interface (using the Restlet @Get, @Put, etc. annotations). Once it is
 defined, you can use it on the server side in your ServerResource
 subclasses or on the client side to consume it:
 
-<pre class="language-java"><code class="language-java">      MyAnnotatedInterface myClient = myClientResource.wrap(MyAnnotatedInterface.class);
+<pre class="language-java"><code class="language-java">MyAnnotatedInterface myClient = myClientResource.wrap(MyAnnotatedInterface.class);
 </code></pre>
 
 In this case, automatic conversion is handled for you. By default, the
@@ -41,107 +41,107 @@ server resources.
 First, we define the contract between the client and the server as a
 Java interface:
 
-<pre class="language-java"><code class="language-java">    package annos;
+<pre class="language-java"><code class="language-java">package annos;
 
-    import org.restlet.resource.Delete;
-    import org.restlet.resource.Get;
-    import org.restlet.resource.Post;
-    import org.restlet.resource.Put;
+import org.restlet.resource.Delete;
+import org.restlet.resource.Get;
+import org.restlet.resource.Post;
+import org.restlet.resource.Put;
 
-    import client.Customer;
+import client.Customer;
 
-    public interface TestResource {
+public interface TestResource {
 
-        @Get
-        public Customer retrieve();
+    @Get
+    public Customer retrieve();
 
-        @Put
-        public void store(Customer customer);
+    @Put
+    public void store(Customer customer);
 
-        @Post
-        public void stop() throws Exception;
+    @Post
+    public void stop() throws Exception;
 
-        @Delete
-        public void remove() throws Exception;
+    @Delete
+    public void remove() throws Exception;
 
-    }
+}
 </code></pre>
 
 ## Server side implementation
 
 Then, we implement is in a subclass of ServerResource
 
-<pre class="language-java"><code class="language-java">    package annos;
+<pre class="language-java"><code class="language-java">package annos;
 
-    import org.restlet.Context;
-    import org.restlet.Server;
-    import org.restlet.data.Protocol;
-    import org.restlet.resource.ServerResource;
+import org.restlet.Context;
+import org.restlet.Server;
+import org.restlet.data.Protocol;
+import org.restlet.resource.ServerResource;
 
-    import client.Customer;
+import client.Customer;
 
-    public class TestServerResource extends ServerResource implements TestResource {
+public class TestServerResource extends ServerResource implements TestResource {
 
-        private static volatile Customer myCustomer = Customer.createSample();
+    private static volatile Customer myCustomer = Customer.createSample();
 
-        private static final Server server = new Server(Protocol.HTTP, 8182,
-                TestServerResource.class);
+    private static final Server server = new Server(Protocol.HTTP, 8182,
+            TestServerResource.class);
 
-        public static void main(String[] args) throws Exception {
-            Context ctx = new Context();
-            server.setContext(ctx);
-            server.getContext().getParameters().add("keystorePassword", "password");
-            server.start();
-        }
-
-        public Customer retrieve() {
-            System.out.println("GET request received");
-            return myCustomer;
-        }
-
-        public void store(Customer customer) {
-            System.out.println("PUT request received");
-            myCustomer = customer;
-        }
-
-        public void stop() throws Exception {
-            System.out.println("POST request received");
-            server.stop();
-        }
-
-        public void remove() throws Exception {
-            System.out.println("DELETE request received");
-            myCustomer = null;
-        }
-
+    public static void main(String[] args) throws Exception {
+        Context ctx = new Context();
+        server.setContext(ctx);
+        server.getContext().getParameters().add("keystorePassword", "password");
+        server.start();
     }
+
+    public Customer retrieve() {
+        System.out.println("GET request received");
+        return myCustomer;
+    }
+
+    public void store(Customer customer) {
+        System.out.println("PUT request received");
+        myCustomer = customer;
+    }
+
+    public void stop() throws Exception {
+        System.out.println("POST request received");
+        server.stop();
+    }
+
+    public void remove() throws Exception {
+        System.out.println("DELETE request received");
+        myCustomer = null;
+    }
+
+}
 </code></pre>
 
 ## Client-side consumption
 
 Finally, we can consume it via the ClientResource class:
 
-<pre class="language-java"><code class="language-java">    package annos;
+<pre class="language-java"><code class="language-java">package annos;
 
-    import org.restlet.resource.ClientResource;
+ import org.restlet.resource.ClientResource;
 
-    import client.Customer;
+ import client.Customer;
 
-    public class TestClientResource {
+ public class TestClientResource {
 
-        public static void main(String[] args) throws Exception {
-            ClientResource clientResource = new ClientResource(
-                "http://localhost:8182/rest/test");
-            TestResource testResource = clientResource.wrap(TestResource.class);
+     public static void main(String[] args) throws Exception {
+         ClientResource clientResource = new ClientResource(
+             "http://localhost:8182/rest/test");
+         TestResource testResource = clientResource.wrap(TestResource.class);
 
-            // Retrieve the JSON value
-            Customer result = testResource.retrieve();
+         // Retrieve the JSON value
+         Customer result = testResource.retrieve();
 
-            if (result != null) {
-                System.out.println(result);
-            }
-        }
-    }
+         if (result != null) {
+             System.out.println(result);
+         }
+     }
+ }
 </code></pre>
 
 # Consuming response entities

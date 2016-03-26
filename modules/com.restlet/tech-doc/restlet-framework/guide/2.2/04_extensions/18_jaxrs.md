@@ -46,29 +46,29 @@ First create an easy root resource class: Create a new java class named
 **EasyRootResource** in the previously created package and insert the
 following source  code:
 
-<pre class="language-java"><code class="language-java">    package test.restlet.jaxrs;
+<pre class="language-java"><code class="language-java">package test.restlet.jaxrs;
 
-    import javax.ws.rs.GET;
-    import javax.ws.rs.Path;
-    import javax.ws.rs.Produces;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
-    @Path("easy")
-    public class EasyRootResource {
+@Path("easy")
+public class EasyRootResource {
 
-        @GET
-        @Produces("text/html")
-        public String getHtml() {
-            return "<html><head></head><body>\n"
-                    + "This is an easy resource (as html text).\n"
-                    + "</body></html>";
-        }
-
-        @GET
-        @Produces("text/plain")
-        public String getPlain() {
-            return "This is an easy resource (as plain text)";
-        }
+    @GET
+    @Produces("text/html")
+    public String getHtml() {
+        return "<html><head></head><body>\n"
+                + "This is an easy resource (as html text).\n"
+                + "</body></html>";
     }
+
+    @GET
+    @Produces("text/plain")
+    public String getPlain() {
+        return "This is an easy resource (as plain text)";
+    }
+}
 </code></pre>
 
 ## Create Application
@@ -78,20 +78,20 @@ JAX-RS runtime you integrate these classes to an Application. Create a
 new class **ExampleApplication** in the same package with the following
 content:
 
-<pre class="language-java"><code class="language-java">    package test.restlet.jaxrs;
+<pre class="language-java"><code class="language-java">package test.restlet.jaxrs;
 
-    import java.util.HashSet;
-    import java.util.Set;
-    import javax.ws.rs.core.Application;
+import java.util.HashSet;
+import java.util.Set;
+import javax.ws.rs.core.Application;
 
-    public class ExampleApplication extends Application {
+public class ExampleApplication extends Application {
 
-        public Set<Class<?>> getClasses() {
-            Set<Class<?>> rrcs = new HashSet<Class<?>>();
-            rrcs.add(EasyRootResource.class);
-            return rrcs;
-        }
+    public Set<Class<?>> getClasses() {
+        Set<Class<?>> rrcs = new HashSet<Class<?>>();
+        rrcs.add(EasyRootResource.class);
+        return rrcs;
     }
+}
 </code></pre>
 
 The root resource class and the Application is specified by the JAX-RS
@@ -107,16 +107,16 @@ A JAX-RS server using the Restlet JAX-RS extension is set up like any
 Restlet server. Create a third class in the same package, named
 **ExampleServer**:
 
-<pre class="language-java"><code class="language-java">    package test.restlet.jaxrs;
+<pre class="language-java"><code class="language-java">package test.restlet.jaxrs;
 
-    import org.restlet.Component;
-    import org.restlet.Server;
-    import org.restlet.data.Protocol;
-    import org.restlet.ext.jaxrs.JaxRsApplication;
+import org.restlet.Component;
+import org.restlet.Server;
+import org.restlet.data.Protocol;
+import org.restlet.ext.jaxrs.JaxRsApplication;
 
-    public class ExampleServer {
+public class ExampleServer {
 
-        public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
             // create Component (as ever for Restlet)
             Component comp = new Component();
             Server server = comp.getServers().add(Protocol.HTTP, 8182);
@@ -138,7 +138,7 @@ Restlet server. Create a third class in the same package, named
             comp.stop();
             System.out.println("Server stopped");
         }
-    }
+}
 </code></pre>
 
 Start this class, open a browser and request
@@ -166,15 +166,15 @@ If you want to run the JAX-RS Application in a Servlet Container, create
 a subclass of the JaxRsApplication. In the constructor you could attach
 the Application and sets the Guard and the RoleChecker (if needed).
 
-<pre class="language-java"><code class="language-java">    public class MyJaxRsApplication extends JaxRsApplication {
+<pre class="language-java"><code class="language-java">public class MyJaxRsApplication extends JaxRsApplication {
 
-        public MyJaxRsApplication(Context context) {
-            super(context);
-            this.add(new ExampleApplication());
-            this.setGuard(...); // if needed
-            this.setRoleChecker(...); // if needed
-        }
-    }
+    public MyJaxRsApplication(Context context) {
+        super(context);
+        this.add(new ExampleApplication());
+        this.setGuard(...); // if needed
+        this.setRoleChecker(...); // if needed
+    }
+}
 </code></pre>
 
 For details to run this Application in a Servet Container take a look at
@@ -183,10 +183,10 @@ FAQ](guide:///appendices/faq "FAQ").
 
 You could use this subclass also in the example above:
 
-<pre class="language-java"><code class="language-java">            // create JAX-RS runtime environment
-            Application application = new MyJaxRsApplication(comp.getContext());
+<pre class="language-java"><code class="language-java">// create JAX-RS runtime environment
+Application application = new MyJaxRsApplication(comp.getContext());
 
-            // if you use this kind, you don't need to attach the Application again.
+// if you use this kind, you don't need to attach the Application again.
 </code></pre>
 
 Comments are welcome to the [Restlet mailing

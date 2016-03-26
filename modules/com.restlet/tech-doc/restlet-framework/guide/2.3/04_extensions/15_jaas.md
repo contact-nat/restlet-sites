@@ -20,36 +20,39 @@ For additional details, please consult the
 This extension can be used for LDAP authentication, for example.
 Considering this JAAS configuration:
 
-<pre class="language-java"><code class="language-java">      BasicJaasAuthenticationApplication {
-        com.sun.security.auth.module.LdapLoginModule REQUIRED
+<pre class="language-java"><code class="language-java">BasicJaasAuthenticationApplication {
+  com.sun.security.auth.module.LdapLoginModule REQUIRED
 
-            userProvider="ldap://ldap.example.net/"
+      userProvider="ldap://ldap.example.net/"
 
-            authIdentity="uid={USERNAME},ou=people,dc=example,dc=net"
+      authIdentity="uid={USERNAME},ou=people,dc=example,dc=net"
 
-      };
+};
 </code></pre>
 
 Using a verifier configured like this:
 
-<pre class="language-java"><code class="language-java">      JaasVerifier verifier = new JaasVerifier("BasicJaasAuthenticationApplication");
-      verifier.setConfiguration(jaasConfig);
-      verifier.setUserPrincipalClassName("com.sun.security.auth.UserPrincipal");
-      authenticator.setVerifier(verifier);
+<pre class="language-java"><code class="language-java">JaasVerifier verifier = new JaasVerifier("BasicJaasAuthenticationApplication");
+verifier.setConfiguration(jaasConfig);
+verifier.setUserPrincipalClassName("com.sun.security.auth.UserPrincipal");
+authenticator.setVerifier(verifier);
 </code></pre>
 
 A successful JAAS login will add principals like these to the subject:
 
-       [LdapLoginModule] added LdapPrincipal "uid=bruno,ou=people,dc=example,dc=net"
+<pre><code class="language-none">[LdapLoginModule] added LdapPrincipal "uid=bruno,ou=people,dc=example,dc=net"
+</code></pre>
 
 to Subject
 
-       [LdapLoginModule] added UserPrincipal "bruno" to Subject
+<pre><code class="language-none">[LdapLoginModule] added UserPrincipal "bruno" to Subject
+</code></pre>
 
 Thus, the resulting principals in ClientInfo are:
 
-      LdapPrincipal with name: "uid=bruno,ou=people,dc=example,dc=net"
-      UserPrincipal with name: "bruno"
+<pre><code class="language-none">LdapPrincipal with name: "uid=bruno,ou=people,dc=example,dc=net"
+UserPrincipal with name: "bruno"
+</code></pre>
 
 A new user is created based on the first UserPrincipal name: 'bruno' in
 this example.

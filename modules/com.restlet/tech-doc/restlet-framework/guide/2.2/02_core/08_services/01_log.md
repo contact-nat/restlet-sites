@@ -17,7 +17,7 @@ java.util.logging framework by modifying the Component's "logService"
 property. In order to fully configure the logging, you need to declare a
 configuration file by setting a system property like:
 
-<pre class="language-java"><code class="language-java">    System.setProperty("java.util.logging.config.file", "/your/path/logging.config"); 
+<pre class="language-java"><code class="language-java">System.setProperty("java.util.logging.config.file", "/your/path/logging.config"); 
 </code></pre>
 
 For details on the configuration file format, please check the [JDK's
@@ -35,13 +35,13 @@ This is a simple template which leverages the variables listed here
 
 Here is a sample template and a sample log trace.
 
-<pre class="language-java"><code class="language-java">    Component c = new Component();
-    c.getServers().add(Protocol.HTTP, 8182);
-    c.getDefaultHost().attach(new MyApplication());
+<pre class="language-java"><code class="language-java">Component c = new Component();
+c.getServers().add(Protocol.HTTP, 8182);
+c.getDefaultHost().attach(new MyApplication());
 
-    c.getLogService().setResponseLogFormat("{ciua} {cri} {ra} {m} {rp} {rq} {S} {ES} {es} {hh} {cig} {fi}");
+c.getLogService().setResponseLogFormat("{ciua} {cri} {ra} {m} {rp} {rq} {S} {ES} {es} {hh} {cig} {fi}");
 
-    c.start();
+c.start();
 </code></pre>
 
 This log format displays the following data:

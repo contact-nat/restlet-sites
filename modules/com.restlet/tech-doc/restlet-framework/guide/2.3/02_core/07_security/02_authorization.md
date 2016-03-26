@@ -31,138 +31,138 @@ in your build path.
 
 Main class for role authorization example:
 
-<pre class="language-java"><code class="language-java">    public class MyApiWithRoleAuthorization extends Application {
+<pre class="language-java"><code class="language-java">public class MyApiWithRoleAuthorization extends Application {
 
-	    //Define role names
-	    public static final String ROLE_USER = "user";
-	    public static final String ROLE_OWNER = "owner";
+    //Define role names
+    public static final String ROLE_USER = "user";
+    public static final String ROLE_OWNER = "owner";
 
-	    @Override
-	    public Restlet createInboundRoot() {
-	        //Create the authenticator, the authorizer and the router that will be protected
-	        ChallengeAuthenticator authenticator = createAuthenticator();
-	        RoleAuthorizer authorizer = createRoleAuthorizer();
-	        Router router = createRouter();
+    @Override
+    public Restlet createInboundRoot() {
+        //Create the authenticator, the authorizer and the router that will be protected
+        ChallengeAuthenticator authenticator = createAuthenticator();
+        RoleAuthorizer authorizer = createRoleAuthorizer();
+        Router router = createRouter();
 
-	    	Router baseRouter = new Router(getContext());
+    	Router baseRouter = new Router(getContext());
 
-	        //Protect the resource by enforcing authentication then authorization
-	        authorizer.setNext(Resource0.class);
-	        authenticator.setNext(baseRouter);
+        //Protect the resource by enforcing authentication then authorization
+        authorizer.setNext(Resource0.class);
+        authenticator.setNext(baseRouter);
 
-	    	//Protect only the private resources with authorizer
-	    	//You could use several different authorizers to authorize different roles
-	    	baseRouter.attach("/resourceTypePrivate", authorizer);
-	    	baseRouter.attach("/resourceTypePublic", router);
-	        return authenticator;
-	    }
+    	//Protect only the private resources with authorizer
+    	//You could use several different authorizers to authorize different roles
+    	baseRouter.attach("/resourceTypePrivate", authorizer);
+    	baseRouter.attach("/resourceTypePublic", router);
+        return authenticator;
+    }
 
-	    private ChallengeAuthenticator createAuthenticator() {
-	        ChallengeAuthenticator guard = new ChallengeAuthenticator(
-	                getContext(), ChallengeScheme.HTTP_BASIC, "realm");
+    private ChallengeAuthenticator createAuthenticator() {
+        ChallengeAuthenticator guard = new ChallengeAuthenticator(
+                getContext(), ChallengeScheme.HTTP_BASIC, "realm");
 
-	        //Create in-memory users with roles
-	        MemoryRealm realm = new MemoryRealm();
-	        User user = new User("user", "user");
-	        realm.getUsers().add(user);
-	        realm.map(user, Role.get(this, ROLE_USER));
-	        User owner = new User("owner", "owner");
-	        realm.getUsers().add(owner);
-	        realm.map(owner, Role.get(this, ROLE_OWNER));
+        //Create in-memory users with roles
+        MemoryRealm realm = new MemoryRealm();
+        User user = new User("user", "user");
+        realm.getUsers().add(user);
+        realm.map(user, Role.get(this, ROLE_USER));
+        User owner = new User("owner", "owner");
+        realm.getUsers().add(owner);
+        realm.map(owner, Role.get(this, ROLE_OWNER));
 
-	        //Attach verifier to check authentication and enroler to determine roles
-	        guard.setVerifier(realm.getVerifier());
-	        guard.setEnroler(realm.getEnroler());
-	        return guard;
-	    }
+        //Attach verifier to check authentication and enroler to determine roles
+        guard.setVerifier(realm.getVerifier());
+        guard.setEnroler(realm.getEnroler());
+        return guard;
+    }
 
-	    private RoleAuthorizer createRoleAuthorizer() {
-	    	//Authorize owners and forbid users on roleAuth's children
-	    	RoleAuthorizer roleAuth = new RoleAuthorizer();
-	    	roleAuth.getAuthorizedRoles().add(Role.get(this, ROLE_OWNER));
-	    	roleAuth.getForbiddenRoles().add(Role.get(this, ROLE_USER));
-	    	return roleAuth;
-	    }
+    private RoleAuthorizer createRoleAuthorizer() {
+    	//Authorize owners and forbid users on roleAuth's children
+    	RoleAuthorizer roleAuth = new RoleAuthorizer();
+    	roleAuth.getAuthorizedRoles().add(Role.get(this, ROLE_OWNER));
+    	roleAuth.getForbiddenRoles().add(Role.get(this, ROLE_USER));
+    	return roleAuth;
+    }
 
-	    private Router createRouter() {
-	        //Attach Server Resources to given URL
-	        Router router = new Router(getContext());
-	        router.attach("/resource1/", Resource1.class);
-	        router.attach("/resource2/", Resource2.class);
-	        return router;
-	    }
+    private Router createRouter() {
+        //Attach Server Resources to given URL
+        Router router = new Router(getContext());
+        router.attach("/resource1/", Resource1.class);
+        router.attach("/resource2/", Resource2.class);
+        return router;
+    }
 
-	    public static void main(String[] args) throws Exception {
-	        //Attach application to http://localhost:9000/v1
-	        Component c = new Component();
-	        c.getServers().add(Protocol.HTTP, 9000);
-	        c.getDefaultHost().attach("/v1", new MyApiWithRoleAuthorization());
-	        c.start();
-	    }
-	}
+    public static void main(String[] args) throws Exception {
+        //Attach application to http://localhost:9000/v1
+        Component c = new Component();
+        c.getServers().add(Protocol.HTTP, 9000);
+        c.getDefaultHost().attach("/v1", new MyApiWithRoleAuthorization());
+        c.start();
+    }
+}
 </code></pre>
 
 Resources classes, call them Resource1, Resource2 etc... and copy-paste
 their content from here:
 
-<pre class="language-java"><code class="language-java">    public class Resource0 extends ServerResource{
+<pre class="language-java"><code class="language-java">public class Resource0 extends ServerResource{
 
-        @Get
-    	public String represent() throws Exception {
-    		return this.getClass().getSimpleName() + " found !";
-    	}
+    @Get
+	public String represent() throws Exception {
+		return this.getClass().getSimpleName() + " found !";
+	}
 
-    	@Post
-    	public String add() {
-    		return this.getClass().getSimpleName() + " posted !";
-    	}
+	@Post
+	public String add() {
+		return this.getClass().getSimpleName() + " posted !";
+	}
 
-    	@Put
-    	public String change() {
-    		return this.getClass().getSimpleName() + " changed !";
-    	}
+	@Put
+	public String change() {
+		return this.getClass().getSimpleName() + " changed !";
+	}
 
-    	@Patch
-    	public String partiallyChange() {
-    		return this.getClass().getSimpleName() + " partially changed !";
-    	}
+	@Patch
+	public String partiallyChange() {
+		return this.getClass().getSimpleName() + " partially changed !";
+	}
 
-    	@Delete
-    	public String destroy() {
-    		return this.getClass().getSimpleName() + " deleted!";
-    	}
-    }
+	@Delete
+	public String destroy() {
+		return this.getClass().getSimpleName() + " deleted!";
+	}
+}
 </code></pre>
 
 Main class for method authorization example, use the last class and replace
 its createInboundRoot and createRoleAuthorizer with the methods below:
 
-<pre class="language-java"><code class="language-java">    @Override
-    public Restlet createInboundRoot() {
-        //ChallengeAuthenticator
-        ChallengeAuthenticator ca = createAuthenticator();
-        ca.setOptional(true);
+<pre class="language-java"><code class="language-java">@Override
+public Restlet createInboundRoot() {
+    //ChallengeAuthenticator
+    ChallengeAuthenticator ca = createAuthenticator();
+    ca.setOptional(true);
 
-        //MethodAuthorizer
-        MethodAuthorizer ma = createMethodAuthorizer();
-        ca.setNext(ma);
+    //MethodAuthorizer
+    MethodAuthorizer ma = createMethodAuthorizer();
+    ca.setNext(ma);
 
-        //Router
-        ma.setNext(createRouter());
-        return ca;
-    }
+    //Router
+    ma.setNext(createRouter());
+    return ca;
+}
 
-    private MethodAuthorizer createMethodAuthorizer() {
-        //Authorize GET for anonymous users and GET, POST, PUT, DELETE for
-        //authenticated users
-    	MethodAuthorizer methodAuth = new MethodAuthorizer();
-    	methodAuth.getAnonymousMethods().add(Method.GET);
-    	methodAuth.getAuthenticatedMethods().add(Method.GET);
-    	methodAuth.getAuthenticatedMethods().add(Method.POST);
-    	methodAuth.getAuthenticatedMethods().add(Method.PUT);
-    	methodAuth.getAuthenticatedMethods().add(Method.DELETE);
-    	return methodAuth;
-    }
+private MethodAuthorizer createMethodAuthorizer() {
+    //Authorize GET for anonymous users and GET, POST, PUT, DELETE for
+    //authenticated users
+	MethodAuthorizer methodAuth = new MethodAuthorizer();
+	methodAuth.getAnonymousMethods().add(Method.GET);
+	methodAuth.getAuthenticatedMethods().add(Method.GET);
+	methodAuth.getAuthenticatedMethods().add(Method.POST);
+	methodAuth.getAuthenticatedMethods().add(Method.PUT);
+	methodAuth.getAuthenticatedMethods().add(Method.DELETE);
+	return methodAuth;
+}
 </code></pre>
 
 # Fine-grained authorization
@@ -174,53 +174,53 @@ can leverage the ServerResource\#isInRole() method.
 
 Create a simple server as below:
 
-<pre class="language-java"><code class="language-java">    public class ApiWithFineGrainedAuthorization extends Application {
+<pre class="language-java"><code class="language-java">public class ApiWithFineGrainedAuthorization extends Application {
 
-        @Override
-    	public org.restlet.Restlet createInboundRoot() {
-    		Router root = new Router(getContext());
-    		root.attach("/resource1", ResourceFineGrained.class);
-    		return root;
-    	}
+    @Override
+	public org.restlet.Restlet createInboundRoot() {
+		Router root = new Router(getContext());
+		root.attach("/resource1", ResourceFineGrained.class);
+		return root;
+	}
 
-    	public static void main(String[] args) throws Exception {
-    		//Attach application to http://localhost:9000/v1
-            Component c = new Component();
-            c.getServers().add(Protocol.HTTP, 9000);
-            c.getDefaultHost().attach("/v1", new MyApiWithMethodAuthorization());
-            c.start();
-    	}
-    }
+	public static void main(String[] args) throws Exception {
+		//Attach application to http://localhost:9000/v1
+        Component c = new Component();
+        c.getServers().add(Protocol.HTTP, 9000);
+        c.getDefaultHost().attach("/v1", new MyApiWithMethodAuthorization());
+        c.start();
+	}
+}
 </code></pre>
 
 With a resource like this:
 
-<pre class="language-java"><code class="language-java">    public class ResourceFineGrained extends ServerResource {
+<pre class="language-java"><code class="language-java">public class ResourceFineGrained extends ServerResource {
 
-        @Get
-        public String represent() throws ResourceException {
-    		if (!getRequest().getProtocol().equals(Protocol.HTTPS)) {
-    			throw new ResourceException(new Status(426, "Upgrade required", "You should switch to HTTPS", ""));
-    		}
-            return this.getClass().getSimpleName() + " found !";
-    	}
+    @Get
+    public String represent() throws ResourceException {
+		if (!getRequest().getProtocol().equals(Protocol.HTTPS)) {
+			throw new ResourceException(new Status(426, "Upgrade required", "You should switch to HTTPS", ""));
+		}
+        return this.getClass().getSimpleName() + " found !";
+	}
 
-    	@Post
-    	public String postMe() {
-    		if (!isInRole(MyApiWithRoleAuthorization.ROLE_OWNER)) {
-    			throw new ResourceException(Status.CLIENT_ERROR_FORBIDDEN);
-    		}
-    		return this.getClass().getSimpleName() + " posted !";
-    	}
+	@Post
+	public String postMe() {
+		if (!isInRole(MyApiWithRoleAuthorization.ROLE_OWNER)) {
+			throw new ResourceException(Status.CLIENT_ERROR_FORBIDDEN);
+		}
+		return this.getClass().getSimpleName() + " posted !";
+	}
 
-    	@Patch
-    	public String patchMe() {
-    		if (!getClientInfo().isAuthenticated()) {
-    			throw new ResourceException(Status.CLIENT_ERROR_METHOD_NOT_ALLOWED);
-    		}
-    		return this.getClass().getSimpleName() + " patched !";
-    	}
-    }
+	@Patch
+	public String patchMe() {
+		if (!getClientInfo().isAuthenticated()) {
+			throw new ResourceException(Status.CLIENT_ERROR_METHOD_NOT_ALLOWED);
+		}
+		return this.getClass().getSimpleName() + " patched !";
+	}
+}
 </code></pre>
 
 For a call to [http://localhost:9000/v1/resourceTypePublic/resource1/](http://localhost:9000/v1/resourceTypePublic/resource1/)

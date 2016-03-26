@@ -26,64 +26,64 @@ automatically updated with the value of the URI template variables!
 
 See the implementation code below. In a real application, you will probably want to create separate subclasses instead of the anonymous ones we use here:
 
-<pre class="language-java"><code class="language-java">    // Create a root router
-    Router router = new Router(getContext());
+<pre class="language-java"><code class="language-java">// Create a root router
+Router router = new Router(getContext());
 
-    // Create a simple password verifier
-    MapVerifier verifier = new MapVerifier();
-    verifier.getLocalSecrets().put("scott", "tiger".toCharArray());
+// Create a simple password verifier
+MapVerifier verifier = new MapVerifier();
+verifier.getLocalSecrets().put("scott", "tiger".toCharArray());
 
-    // Create a Guard
-    // Attach a guard to secure access to the directory
-    ChallengeAuthenticator guard = new ChallengeAuthenticator(getContext(),
-            ChallengeScheme.HTTP_BASIC, "Tutorial");
-    guard.setVerifier(verifier);
-    router.attach("/docs/", guard).setMatchingMode(
-            Template.MODE_STARTS_WITH);
+// Create a Guard
+// Attach a guard to secure access to the directory
+ChallengeAuthenticator guard = new ChallengeAuthenticator(getContext(),
+        ChallengeScheme.HTTP_BASIC, "Tutorial");
+guard.setVerifier(verifier);
+router.attach("/docs/", guard).setMatchingMode(
+        Template.MODE_STARTS_WITH);
 
-    // Create a directory able to expose a hierarchy of files
-    Directory directory = new Directory(getContext(), ROOT_URI);
-    guard.setNext(directory);
+// Create a directory able to expose a hierarchy of files
+Directory directory = new Directory(getContext(), ROOT_URI);
+guard.setNext(directory);
 
-    // Create the account handler
-    Restlet account = new Restlet() {
-        @Override
-        public void handle(Request request, Response response) {
-            // Print the requested URI path
-            String message = "Account of user \""
-                    + request.getAttributes().get("user") + "\"";
-            response.setEntity(message, MediaType.TEXT_PLAIN);
-        }
-    };
-
-    // Create the orders handler
-    Restlet orders = new Restlet(getContext()) {
-        @Override
-        public void handle(Request request, Response response) {
-            // Print the user name of the requested orders
-            String message = "Orders of user \""
-                    + request.getAttributes().get("user") + "\"";
-            response.setEntity(message, MediaType.TEXT_PLAIN);
-        }
-    };
-
-    // Create the order handler
-    Restlet order = new Restlet(getContext()) {
-        @Override
-        public void handle(Request request, Response response) {
-            // Print the user name of the requested orders
-            String message = "Order \""
-                + request.getAttributes().get("order")
-                + "\" for user \""
+// Create the account handler
+Restlet account = new Restlet() {
+    @Override
+    public void handle(Request request, Response response) {
+        // Print the requested URI path
+        String message = "Account of user \""
                 + request.getAttributes().get("user") + "\"";
-            response.setEntity(message, MediaType.TEXT_PLAIN);
-        }
-    };
+        response.setEntity(message, MediaType.TEXT_PLAIN);
+    }
+};
 
-    // Attach the handlers to the root router
-    router.attach("/users/{user}", account);
-    router.attach("/users/{user}/orders", orders);
-    router.attach("/users/{user}/orders/{order}", order);
+// Create the orders handler
+Restlet orders = new Restlet(getContext()) {
+    @Override
+    public void handle(Request request, Response response) {
+        // Print the user name of the requested orders
+        String message = "Orders of user \""
+                + request.getAttributes().get("user") + "\"";
+        response.setEntity(message, MediaType.TEXT_PLAIN);
+    }
+};
+
+// Create the order handler
+Restlet order = new Restlet(getContext()) {
+    @Override
+    public void handle(Request request, Response response) {
+        // Print the user name of the requested orders
+        String message = "Order \""
+            + request.getAttributes().get("order")
+            + "\" for user \""
+            + request.getAttributes().get("user") + "\"";
+        response.setEntity(message, MediaType.TEXT_PLAIN);
+    }
+};
+
+// Attach the handlers to the root router
+router.attach("/users/{user}", account);
+router.attach("/users/{user}/orders", orders);
+router.attach("/users/{user}/orders/{order}", order);
 </code></pre>
 
 >**Note** that the routing assumes that your request contains an absolute

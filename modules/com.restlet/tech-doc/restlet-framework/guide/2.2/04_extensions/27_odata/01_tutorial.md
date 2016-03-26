@@ -48,7 +48,7 @@ Restlet team Restlet team worked with Microsoft in order to provide a
 new Restlet extension that will provide several high level features for
 accessing WCF Data Services.
 
-##### Figure 1 - The WCF Data Services Framework Architecture
+## Figure 1 - The WCF Data Services Framework Architecture
 
 Initially known as “Astoria” then ADO.NET Data Services, the WCF Data
 Services technology has become the preferred way to RESTfully expose
@@ -76,10 +76,9 @@ Item is simply defined by an “ID” and a “Description”. Cafe and Item are
 linked, for intentional simplification, in a “one to one” association.
 That is to say, a “Cafe” has one attribute called “Item”.
 
-##### Figure 2 - Class diagram of the TestAssociationOneToOne service
+## Figure 2 - Class diagram of the TestAssociationOneToOne service
 
-Code generation
-===============
+# Code generation
 
 From the client perspective, if you want to handle the declared
 entities, you will have to create a class for each entity, defines their
@@ -88,12 +87,12 @@ their type. Thanks to the Restlet extension, a generation tool will make
 your life easier. It will take care of this task for you, and generate
 the whole set of Java classes with correct types.
 
-##### Figure 3 - Overview of code generation
+## Figure 3 - Overview of code generation
 
 Just note the URI of the target service, and specify the directory where
 you would like to generate the code:
 
-<pre class="language-bash"><code class="language-bash">    java -jar org.restlet.ext.odata.jar http://restlet.cloudapp.net/TestAssociationOneToOne.svc/ ~/workspace/testADO
+<pre class="language-bash"><code class="language-bash">java -jar org.restlet.ext.odata.jar http://restlet.cloudapp.net/TestAssociationOneToOne.svc/ ~/workspace/testADO
 </code></pre>
 
 Please note that this feature requires the use of the core Restlet, and
@@ -113,17 +112,17 @@ You can also used the full command line that includes the list of
 required archives for the class path argument (nb: take care of the OS
 specific classpath separator) and the name of the main class:
 
-<pre class="language-bash"><code class="language-bash">    java -cp org.restlet.jar:org.restlet.ext.xml.jar:org.restlet.ext.atom.jar:org.restlet.ext.freemarker.jar:org.restlet.ext.odata.jar:org.freemarker.jar org.restlet.ext.odata.Generator
+<pre class="language-bash"><code class="language-bash">java -cp org.restlet.jar:org.restlet.ext.xml.jar:org.restlet.ext.atom.jar:org.restlet.ext.freemarker.jar:org.restlet.ext.odata.jar:org.freemarker.jar org.restlet.ext.odata.Generator
      http://restlet.cloudapp.net/TestAssociationOneToOne.svc/
      ~/workspace/testADO
 </code></pre>
 
 This will generate the following java classes and directory:
 
-<pre class="language-bash"><code class="language-bash">    testAssociationOneToOne/
-      +-- Cafe.java
-      +-- Item.java
-    TestAssociationOneToOneQuery.java
+<pre class="language-bash"><code class="language-bash">testAssociationOneToOne/
+  +-- Cafe.java
+  +-- Item.java
+TestAssociationOneToOneQuery.java
 </code></pre>
 
 The classes that correspond to entities are generated in their
@@ -148,7 +147,7 @@ Enclosing schema namespace | Package name
 Entity property | Member variable with getter and setter
 EDM data type | Java primitive types and classes
 
-##### Transformation table from WCF concepts to Java equivalent concepts
+## Transformation table from WCF concepts to Java equivalent concepts
 
 Regarding the conversion of the data type, an equivalence table has been
 established as follow:
@@ -168,7 +167,7 @@ Int64 | long
 Byte | byte
 String | java.lang.String
 
-##### Data type conversion table
+## Data type conversion table
 
 We have finished for now of the theoretical aspects; let's see how to
 use the generated classes.
@@ -178,22 +177,22 @@ use the generated classes.
 The code below gets the whole set of Cafe entities and displays some of
 their properties. It will display this kind of output on the console:
 
-<pre class="language-bash"><code class="language-bash">    id: 1
-    name: Le Café Louis
-    id: 2
-    name: Le Petit Marly
+<pre class="language-bash"><code class="language-bash">id: 1
+name: Le Café Louis
+id: 2
+name: Le Petit Marly
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    TestAssociationOneToOneService service = new TestAssociationOneToOneService();
-    Query<Cafe> query = service.createCafeQuery("/Cafes");
+<pre class="language-java"><code class="language-java">TestAssociationOneToOneService service = new TestAssociationOneToOneService();
+Query<Cafe> query = service.createCafeQuery("/Cafes");
 
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“name: ” + Cafe.getName());
-    }
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“name: ” + Cafe.getName());
+}
 </code></pre>
 
-##### Retrieve the set of “Cafe” entities.
+## Retrieve the set of “Cafe” entities.
 
 The first step is the creation of a new service. This is the only
 required action, and it must be done once, but prior to any other one.
@@ -206,89 +205,89 @@ over the iterator and access to each “Cafe” instance.
 
 Here is the content of the HTTP request:
 
-<pre class="language-bash"><code class="language-bash">    GET /TestAssociationOneToOne.svc/Cafes HTTP/1.1
-    Host: restlet.cloudapp.net
-    User-Agent: Noelios-Restlet/2.0snapshot
-    Accept: */*
-    Connection: close
+<pre class="language-bash"><code class="language-bash">GET /TestAssociationOneToOne.svc/Cafes HTTP/1.1
+Host: restlet.cloudapp.net
+User-Agent: Noelios-Restlet/2.0snapshot
+Accept: */*
+Connection: close
 </code></pre>
 
 And here is the response of the server including both response headers
 and entity:
 
-<pre><code class="language-bash">    HTTP/1.1 200 OK
-    Cache-Control: no-cache
-    Content-Type: application/atom+xml;charset=utf-8
-    Server: Microsoft-IIS/7.0
-    DataServiceVersion: 1.0;
-    X-AspNet-Version: 2.0.50727
-    X-Powered-By: ASP.NET
-    Date: Fri, 24 Jul 2009 14:21:20 GMT
-    Connection: close
-    Content-Length: 2221
-    </code>
-    <code class="language-markup">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;
-    &lt;feed xml:base=&quot;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/&quot;
-          xmlns:d=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;
-          xmlns:m=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/metadata&quot; xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
-      &lt;title type=&quot;text&quot;&gt;Cafes&lt;/title&gt;
-      &lt;id&gt;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/Cafes&lt;/id&gt;
-      &lt;updated&gt;2009-07-24T14:21:20Z&lt;/updated&gt;
-      &lt;link rel=&quot;self&quot; title=&quot;Cafes&quot; href=&quot;Cafes&quot; /&gt;
-      &lt;entry&gt;
-        &lt;id&gt;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/Cafes(&apos;1&apos;)&lt;/id&gt;
-        &lt;title type=&quot;text&quot;&gt;&lt;/title&gt;
-        &lt;updated&gt;2009-07-24T14:21:20Z&lt;/updated&gt;
-        &lt;author&gt;
-          &lt;name /&gt;
-        &lt;/author&gt;
-        &lt;link rel=&quot;edit&quot; title=&quot;Cafe&quot; href=&quot;Cafes(&apos;1&apos;)&quot; /&gt;
-        &lt;link rel=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/related/Item&quot;
-              type=&quot;application/atom+xml;type=entry&quot; title=&quot;Item&quot; href=&quot;Cafes(&apos;1&apos;)/Item&quot; /&gt;
-        &lt;category term=&quot;TestAssociationOneToOne.Cafe&quot; scheme=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/scheme&quot; /&gt;
-        &lt;content type=&quot;application/xml&quot;&gt;
-          &lt;m:properties&gt;
-            &lt;d:ID&gt;1&lt;/d:ID&gt;
-            &lt;d:Name&gt;Le Caf&eacute; Louis&lt;/d:Name&gt;
-            &lt;d:ZipCode m:type=&quot;Edm.Int32&quot;&gt;92300&lt;/d:ZipCode&gt;
-            &lt;d:City&gt;Levallois-Peret&lt;/d:City&gt;
-          &lt;/m:properties&gt;
-        &lt;/content&gt;
-      &lt;/entry&gt;
-      &lt;entry&gt;
-        &lt;id&gt;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/Cafes(&apos;2&apos;)&lt;/id&gt;
-        &lt;title type=&quot;text&quot;&gt;&lt;/title&gt;
-        &lt;updated&gt;2009-07-24T14:21:20Z&lt;/updated&gt;
-        &lt;author&gt;
-          &lt;name /&gt;
-        &lt;/author&gt;
-        &lt;link rel=&quot;edit&quot; title=&quot;Cafe&quot; href=&quot;Cafes(&apos;2&apos;)&quot; /&gt;
-        &lt;link rel=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/related/Item&quot;
-              type=&quot;application/atom+xml;type=entry&quot; title=&quot;Item&quot; href=&quot;Cafes(&apos;2&apos;)/Item&quot; /&gt;
-        &lt;category term=&quot;TestAssociationOneToOne.Cafe&quot; scheme=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/scheme&quot; /&gt;
-        &lt;content type=&quot;application/xml&quot;&gt;
-          &lt;m:properties&gt;
-            &lt;d:ID&gt;2&lt;/d:ID&gt;
-            &lt;d:Name&gt;Le Petit Marly&lt;/d:Name&gt;
-            &lt;d:ZipCode m:type=&quot;Edm.Int32&quot;&gt;78310&lt;/d:ZipCode&gt;
-            &lt;d:City&gt;Marly Le Roi&lt;/d:City&gt;
-          &lt;/m:properties&gt;
-        &lt;/content&gt;
-      &lt;/entry&gt;
-    &lt;/feed&gt;
+<pre><code class="language-bash">HTTP/1.1 200 OK
+Cache-Control: no-cache
+Content-Type: application/atom+xml;charset=utf-8
+Server: Microsoft-IIS/7.0
+DataServiceVersion: 1.0;
+X-AspNet-Version: 2.0.50727
+X-Powered-By: ASP.NET
+Date: Fri, 24 Jul 2009 14:21:20 GMT
+Connection: close
+Content-Length: 2221
+
+</code><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;feed xml:base=&quot;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/&quot;
+      xmlns:d=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;
+      xmlns:m=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/metadata&quot; xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
+  &lt;title type=&quot;text&quot;&gt;Cafes&lt;/title&gt;
+  &lt;id&gt;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/Cafes&lt;/id&gt;
+  &lt;updated&gt;2009-07-24T14:21:20Z&lt;/updated&gt;
+  &lt;link rel=&quot;self&quot; title=&quot;Cafes&quot; href=&quot;Cafes&quot; /&gt;
+  &lt;entry&gt;
+    &lt;id&gt;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/Cafes(&apos;1&apos;)&lt;/id&gt;
+    &lt;title type=&quot;text&quot;&gt;&lt;/title&gt;
+    &lt;updated&gt;2009-07-24T14:21:20Z&lt;/updated&gt;
+    &lt;author&gt;
+      &lt;name /&gt;
+    &lt;/author&gt;
+    &lt;link rel=&quot;edit&quot; title=&quot;Cafe&quot; href=&quot;Cafes(&apos;1&apos;)&quot; /&gt;
+    &lt;link rel=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/related/Item&quot;
+          type=&quot;application/atom+xml;type=entry&quot; title=&quot;Item&quot; href=&quot;Cafes(&apos;1&apos;)/Item&quot; /&gt;
+    &lt;category term=&quot;TestAssociationOneToOne.Cafe&quot; scheme=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/scheme&quot; /&gt;
+    &lt;content type=&quot;application/xml&quot;&gt;
+      &lt;m:properties&gt;
+        &lt;d:ID&gt;1&lt;/d:ID&gt;
+        &lt;d:Name&gt;Le Caf&eacute; Louis&lt;/d:Name&gt;
+        &lt;d:ZipCode m:type=&quot;Edm.Int32&quot;&gt;92300&lt;/d:ZipCode&gt;
+        &lt;d:City&gt;Levallois-Peret&lt;/d:City&gt;
+      &lt;/m:properties&gt;
+    &lt;/content&gt;
+  &lt;/entry&gt;
+  &lt;entry&gt;
+    &lt;id&gt;http://restlet.cloudapp.net/TestAssociationOneToOne.svc/Cafes(&apos;2&apos;)&lt;/id&gt;
+    &lt;title type=&quot;text&quot;&gt;&lt;/title&gt;
+    &lt;updated&gt;2009-07-24T14:21:20Z&lt;/updated&gt;
+    &lt;author&gt;
+      &lt;name /&gt;
+    &lt;/author&gt;
+    &lt;link rel=&quot;edit&quot; title=&quot;Cafe&quot; href=&quot;Cafes(&apos;2&apos;)&quot; /&gt;
+    &lt;link rel=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/related/Item&quot;
+          type=&quot;application/atom+xml;type=entry&quot; title=&quot;Item&quot; href=&quot;Cafes(&apos;2&apos;)/Item&quot; /&gt;
+    &lt;category term=&quot;TestAssociationOneToOne.Cafe&quot; scheme=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/scheme&quot; /&gt;
+    &lt;content type=&quot;application/xml&quot;&gt;
+      &lt;m:properties&gt;
+        &lt;d:ID&gt;2&lt;/d:ID&gt;
+        &lt;d:Name&gt;Le Petit Marly&lt;/d:Name&gt;
+        &lt;d:ZipCode m:type=&quot;Edm.Int32&quot;&gt;78310&lt;/d:ZipCode&gt;
+        &lt;d:City&gt;Marly Le Roi&lt;/d:City&gt;
+      &lt;/m:properties&gt;
+    &lt;/content&gt;
+  &lt;/entry&gt;
+&lt;/feed&gt;
 </code></pre>
 
 Getting the set of defined “Item” is quite similar:
 
-<pre class="language-java"><code class="language-java">    Query<Item> queryItem = service.createItemQuery("/Items");
+<pre class="language-java"><code class="language-java">Query<Item> queryItem = service.createItemQuery("/Items");
 
-    for (Item Item : queryItem) {
-        System.out.println(“id: ” + Item.getID());
-        System.out.println(“desc.: ” + Item.getDescription());
-    }
+for (Item Item : queryItem) {
+    System.out.println(“id: ” + Item.getID());
+    System.out.println(“desc.: ” + Item.getDescription());
+}
 </code></pre>
 
-##### Retrieve the set of “Item” entities.
+## Retrieve the set of “Item” entities.
 
 Please note that for the rest of the document, we assume the “service”
 object has already been instantiated.
@@ -300,18 +299,18 @@ say, the one which identifier is equal to “1”. As for the set of
 entities, you just have to create a new query, with a new parameter. The
 code below should produce this output:
 
-<pre class="language-bash"><code class="language-bash">    id: 1  
-    name: Le Café Louis
+<pre><code class="language-bash">id: 1  
+name: Le Café Louis
+</code>
+
+<code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
+
+Cafe Cafe = query.iterator().next();
+System.out.println(“id: ” + Cafe.getID());
+System.out.println(“name: ” + Cafe.getName());
 </code></pre>
 
-<pre class="language-bash"><code class="language-bash">    Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
-
-    Cafe Cafe = query.iterator().next();
-    System.out.println(“id: ” + Cafe.getID());
-    System.out.println(“name: ” + Cafe.getName());
-</code></pre>
-
-##### Retrieve the “Cafe” by its identifier.
+## Retrieve the “Cafe” by its identifier.
 
 As for a set of entities, you have to create a new query, and precise
 the identifier of the target resource. WCF adopts its own naming
@@ -327,16 +326,16 @@ Let's complete the current list of entities and add a new one. This
 process is quite simple and just requires you to firstly create and
 complete the new entity, then invoke the “addEntity” method as follow.
 
-<pre class="language-java"><code class="language-java">    Cafe Cafe = new Cafe();
-    Cafe.setID("3");
-    Cafe.setZipCode(12345);
-    Cafe.setName("Bar des sports");
-    Cafe.setCity("Paris");
+<pre class="language-java"><code class="language-java">Cafe Cafe = new Cafe();
+Cafe.setID("3");
+Cafe.setZipCode(12345);
+Cafe.setName("Bar des sports");
+Cafe.setCity("Paris");
 
-    service.addEntity(Cafe);
+service.addEntity(Cafe);
 </code></pre>
 
-##### Add a new Cafe.
+## Add a new Cafe
 
 The generated subclass of Service contains a dedicated method for each
 declared entities. In our case, there are two of them, one for the Cafe
@@ -345,26 +344,26 @@ POST request to the corresponding entity set resource. For example,
 adding a new Café sends a POST request to the “/Cafes” resource. Here is
 the sample content of such generated request:
 
-<pre><code class="language-bash">    POST /TestAssociationOneToOne.svc/Cafes HTTP/1.1
-    Host: restlet.cloudapp.net
-    User-Agent: Noelios-Restlet/2.0snapshot
-    Accept: */*
-    Content-Type: application/atom+xml
-    Transfer-Encoding: chunked
-    Connection: close
+<pre><code class="language-bash">POST /TestAssociationOneToOne.svc/Cafes HTTP/1.1
+Host: restlet.cloudapp.net
+User-Agent: Noelios-Restlet/2.0snapshot
+Accept: */*
+Content-Type: application/atom+xml
+Transfer-Encoding: chunked
+Connection: close
 
-    281</code>
-    <code class="language-markup">    &lt;?xml version=&quot;1.0&quot; standalone=&apos;yes&apos;?&gt;
-    &lt;entry xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
-       &lt;content type=&quot;application/xml&quot;&gt;&lt;properties xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/metadata&quot;&gt;
-    &lt;ZipCode xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;12345&lt;/ZipCode&gt;
-    &lt;ID xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;3&lt;/ID&gt;
-    &lt;Name xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;Bar des sports&lt;/Name&gt;
-    &lt;City xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;Paris&lt;/City&gt;
-    &lt;Article xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;/&gt;&lt;/properties&gt;&lt;/content&gt;
-    &lt;/entry&gt;
+281</code>
+<code class="language-markup">&lt;?xml version=&quot;1.0&quot; standalone=&apos;yes&apos;?&gt;
+&lt;entry xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
+   &lt;content type=&quot;application/xml&quot;&gt;&lt;properties xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices/metadata&quot;&gt;
+&lt;ZipCode xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;12345&lt;/ZipCode&gt;
+&lt;ID xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;3&lt;/ID&gt;
+&lt;Name xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;Bar des sports&lt;/Name&gt;
+&lt;City xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;&gt;Paris&lt;/City&gt;
+&lt;Article xmlns=&quot;http://schemas.microsoft.com/ado/2007/08/dataservices&quot;/&gt;&lt;/properties&gt;&lt;/content&gt;
+&lt;/entry&gt;
 
-    0
+0
 </code></pre>
 
 Before using this feature, ensure that you provide a correctly
@@ -379,15 +378,15 @@ of its properties. The sample code below illustrates this with the “Nom”
 property. It simply uses the “updateEntity” method. You can check that
 the value has really been taken into account by making a new query.
 
-<pre class="language-bash"><code class="language-bash">    Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
 
-    Cafe Cafe = query.iterator().next();
-    Cafe.setNom("Bar des sports");
+Cafe Cafe = query.iterator().next();
+Cafe.setNom("Bar des sports");
 
-    service.updateEntity(Cafe);
+service.updateEntity(Cafe);
 </code></pre>
 
-##### Update a Cafe.
+## Update a Cafe
 
 Under the hood, a PUT request is sent to the corresponding Web resource.
 
@@ -397,13 +396,13 @@ Let's finish the tour of the basic operations with the deletion of an
 entity. You just need to wall the deleteEntity method as shown just
 below.
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
-    Cafe Cafe = query.iterator().next();
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes('1')");
+Cafe Cafe = query.iterator().next();
 
-    service.deleteEntity(Cafe);
+service.deleteEntity(Cafe);
 </code></pre>
 
-##### Delete a Cafe.
+## Delete a Cafe.
 
 Basically, this operation requires a valid Java Object instance
 correctly identified: that is to say, the attribute that serves as
@@ -418,26 +417,26 @@ Item property was always null. By default, associations are not
 expanded, but they can be. If you run the following code, you will get
 this kind of trace at the console.
 
-<pre class="language-bash"><code class="language-bash">    Cafe
-    id: 1
-    name: Le Café Louis
-    Item
-    id: 1
-    Description: Poulet au curry
+<pre class="language-bash"><code class="language-bash">Cafe
+id: 1
+name: Le Café Louis
+Item
+id: 1
+Description: Poulet au curry
 </code></pre>
 
-<pre class="language-bash"><code class="language-bash">    Query<Cafe> query = service.createCafeQuery("/Cafes('1')").expand("Item");
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes('1')").expand("Item");
 
-    Cafe Cafe = query.next();
-    System.out.println("Cafe");
-    System.out.println(“id: ” + Cafe.getID());
-    System.out.println(“name: ” + Cafe.getName());
-    System.out.println("Item");
-    System.out.println(“id: ” + Cafe.getItem().getID());
-    System.out.println(“Description: ” + Cafe.getItem().getDescription());
+Cafe Cafe = query.next();
+System.out.println("Cafe");
+System.out.println(“id: ” + Cafe.getID());
+System.out.println(“name: ” + Cafe.getName());
+System.out.println("Item");
+System.out.println(“id: ” + Cafe.getItem().getID());
+System.out.println(“Description: ” + Cafe.getItem().getDescription());
 </code></pre>
 
-##### Retrieve a “Cafe” by its identifier, with the associated Item in one request.
+## Retrieve a “Cafe” by its identifier, with the associated Item in one request.
 
 Instead of just creating a query as seen above, you can complete it by
 calling the “expand” method. It takes one parameter which is the name of
@@ -458,21 +457,21 @@ attribute. For example, once applied to the set of all Items provided by
 our sample OData service, the following code should display at the
 console this king of trace:
 
-<pre class="language-bash"><code class="language-bash">    id: 2   
-    description: Pâté
-    id: 1
-    description: Poulet au curry
+<pre class="language-bash"><code class="language-bash">id: 2   
+description: Pâté
+id: 1
+description: Poulet au curry
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    Query<Item> query = service.createItemQuery("/Items").orderby("Description");
+<pre class="language-java"><code class="language-java">Query<Item> query = service.createItemQuery("/Items").orderby("Description");
 
-    for (Item Item : query) {
-        System.out.println(“id: ” + Item.getID());
-        System.out.println(“description: ” + Item.getDescription());
-    }
+ for (Item Item : query) {
+     System.out.println(“id: ” + Item.getID());
+     System.out.println(“description: ” + Item.getDescription());
+ }
 </code></pre>
 
-##### Order a set of entities.
+### Order a set of entities
 
 Just as the “expand” method, it takes one parameter which is the name of
 the property used to order the set of results.
@@ -493,19 +492,19 @@ Let's illustrate its use by limiting the set of Cafe objects to the one
 list of current Cafes, the following code will produce this display on
 the console:
 
-<pre class="language-bash"><code class="language-bash">    id: 1  
-    nom: Le Café Louis
+<pre class="language-bash"><code class="language-bash">id: 1  
+nom: Le Café Louis
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes").filter("Name eq 'Le Café Louis'");
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").filter("Name eq 'Le Café Louis'");
 
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“nom: ” + Cafe.getNom());
-    }
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“nom: ” + Cafe.getNom());
+}
 </code></pre>
 
-##### Filter a set of entities
+### Filter a set of entities
 
 ## Skip
 
@@ -517,19 +516,19 @@ Let's say you want to omit the first “Cafe” of the list, just call the
 “skip” method as shown in the sample code below. It should display this
 kind of trace at the console.
 
-<pre class="language-bash"><code class="language-bash">    id: 2  
-    name: Le Petit Marly
+<pre class="language-bash"><code class="language-bash">id: 2  
+name: Le Petit Marly
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes").skip(1);
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").skip(1);
 
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“name: ” + Cafe.getName());
-    }
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“name: ” + Cafe.getName());
+}
 </code></pre>
 
-##### Skip the first entity
+### Skip the first entity
 
 ## Top
 
@@ -537,19 +536,19 @@ Just as the “skip” method, “top” takes a number parameter which
 represents the maximum number of results that the query will return. Its
 use is very simple as shown below:
 
-<pre class="language-bash"><code class="language-bash">    id: 1
-    name: Le Café Louis
+<pre class="language-bash"><code class="language-bash">id: 1
+name: Le Café Louis
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes").top(1);
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").top(1);
 
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“name: ” + Cafe.getName());
-    }
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“name: ” + Cafe.getName());
+}
 </code></pre>
 
-##### Limit the number of returned entities.
+### Limit the number of returned entities.
 
 The “skip” and “top” can be used together for paging a set of results.
 
@@ -568,42 +567,42 @@ that these entities are only populated with the selected properties.\
  For example, the following code will only get the name of the Cafe
 entities:
 
-<pre class="language-bash"><code class="language-bash">    id: null
-    name: Le Café Louis
+<pre class="language-bash"><code class="language-bash">id: null
+name: Le Café Louis
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes").top(1).select("Name");
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").top(1).select("Name");
 
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“name: ” + Cafe.getName());
-    }
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“name: ” + Cafe.getName());
+}
 </code></pre>
 
-##### Limit the number of returned properties.
+## Limit the number of returned properties
 
 This applies also to associated entities, as far as the association is
 expanded:
 
-<pre class="language-bash"><code class="language-bash">    id: null
-    name: Le Café Louis
-    Item
-    id: null
-    Description: Poulet au curry
+<pre class="language-bash"><code class="language-bash">id: null
+name: Le Café Louis
+Item
+id: null
+Description: Poulet au curry
 </code></pre>
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes").top(1).expand("Item").select("Name,Item.Description");
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").top(1).expand("Item").select("Name,Item.Description");
 
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“name: ” + Cafe.getName());
-        System.out.println("Item");
-        System.out.println(“id: ” + Cafe.getItem().getID());
-        System.out.println(“Description: ” + Cafe.getItem().getDescription());
-    }
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“name: ” + Cafe.getName());
+    System.out.println("Item");
+    System.out.println(“id: ” + Cafe.getItem().getID());
+    System.out.println(“Description: ” + Cafe.getItem().getDescription());
+}
 </code></pre>
 
-##### Limit the number of returned properties.
+## Limit the number of returned properties
 
 # Server-side paging
 
@@ -633,12 +632,12 @@ segment (set the parameter to "false", this is the value by default).
 The following sample code illustrates how to get the count using the
 *inlinecount* query parameter.
 
-<pre class="language-java"><code class="language-java">    Query<Cafe> query = service.createCafeQuery("/Cafes").inlineCount(true);
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").inlineCount(true);
 
-    System.out.println("Number of entities: " + query.getCount());
+System.out.println("Number of entities: " + query.getCount());
 </code></pre>
 
-##### Get the number of Cafes.
+## Get the number of Cafes
 
 Please note that the *inlinecount* query parameter is not supported by
 every service.
@@ -685,21 +684,22 @@ all communications with the target service. This is generally done once,
 after the instantiation of the service. Here is an illustration of how
 to set the credentials:
 
-<pre class="language-java"><code class="language-java">    service.setCredentials(
-            new ChallengeResponse(ChallengeScheme.HTTP_BASIC,
-                            "login",
-                            "password")
-            );
-
-    Query<Cafe> query = service.createCafeQuery("/Cafes").top(1);
-
-    for (Cafe Cafe : query) {
-        System.out.println(“id: ” + Cafe.getID());
-        System.out.println(“nname: ” + Cafe.getName());
-    }
+<pre class="language-bash"><code class="language-bash">service.setCredentials(
+    new ChallengeResponse(ChallengeScheme.HTTP_BASIC,
+                    "login",
+                    "password")
+    );
 </code></pre>
 
-##### Add credentials to access a secured service.
+<pre class="language-java"><code class="language-java">Query<Cafe> query = service.createCafeQuery("/Cafes").top(1);
+
+for (Cafe Cafe : query) {
+    System.out.println(“id: ” + Cafe.getID());
+    System.out.println(“nname: ” + Cafe.getName());
+}
+</code></pre>
+
+## Add credentials to access a secured service.
 
 Note that Restlet framework supports a wide set of security schemes,
 including HTTP BASIC, HTTP DIGEST, Windows Shared Key and Shared Key
@@ -737,3 +737,4 @@ OData services. We hope that you found it simple and useful to follow to
 read. It is a good demonstration of how adopting of REST and related
 standards such as HTTP and Atom facilitates the interoperability across
 programming languages and executions environments.
+
