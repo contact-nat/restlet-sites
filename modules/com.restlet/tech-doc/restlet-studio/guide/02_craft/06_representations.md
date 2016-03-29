@@ -30,13 +30,13 @@ Click on the appropriate representation in the **Representations** section.
 
 Select the appropriate property in the central panel and change the elements you need to modify.
 
-# Add a variant
+# Add a Format
 
 Click on the appropriate Representation in the **Representations** section.  
 Click on the **+** button on the right of the Representation.
 
 ![+](images/plus-button.jpg "+")
 
-In the **Add a variant** window, select the variant type you want to add.
+In the **Add a format** window, select the format **Type** you want to add.
 
-![Add a variant](images/add-variant.jpg "Add a variant")
+![Add a variant](images/add-format.jpg "Add a variant")
