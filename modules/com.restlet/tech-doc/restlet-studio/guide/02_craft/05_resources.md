@@ -26,9 +26,7 @@ Click on the **+** button on the right of the Resource.
 
 ![methods](images/methods.jpg "methods")
 
-Fill in the **Add a method** window and click on the **Add** button.
-
-![Add a method](images/add-method.jpg "Add a method")
+>**Note:** Clicking on the **+** button will successively add the missing methods in the following default order: GET, POST, PUT, DELETE, PATCH, OPTIONS.
 
 ## <a class="anchor" name="path-variable"></a>Add a path variable
 
