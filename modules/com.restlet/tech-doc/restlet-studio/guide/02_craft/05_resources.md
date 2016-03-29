@@ -42,7 +42,14 @@ Add your path variable to your **Relative path** between curly brackets.
 
 ![Add variable to relative path](images/add-path-variable-to-relative-path.jpg "Add variable to relative path")
 
+## Add an input payload
 
+POST, PUT and PATCH operations allow you to add payloads as input.
+
+From the **Resources** section, select an operation (POST, PUT or PATCH).  
+In the main pane, select the representation you want to add as an **Input** from the drop-down menu and click **Save**.
+
+![Input payload](images/input-payload.jpg "Input payload")
 
 # Add a Section
 
