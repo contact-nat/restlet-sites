@@ -75,6 +75,7 @@ Create a pom.xml file with the following content:
              &lt;/goals&gt;
  &lt;configuration&gt;
  &Tab;&Tab;&lt;file&gt;/home/filip/dhc-test-1.json&lt;/file&gt;
+    &lt;licenseKey&gt;ENTER_YOUR_LICENSE_KEY_HERE&lt;/licenseKey&gt;
  &lt;/configuration&gt;
            &lt;/execution&gt;
          &lt;/executions&gt;
@@ -88,7 +89,7 @@ Create a pom.xml file with the following content:
            &lt;name&gt;Nexus Release Repository&lt;/name&gt;
            &lt;url&gt;http://maven.restlet.com&lt;/url&gt;
        &lt;/pluginRepository&gt;
-   &lt;/pluginrepositories&gt;
+   &lt;/pluginRepositories&gt;
 &lt;/project&gt;
 </code></pre>
 
