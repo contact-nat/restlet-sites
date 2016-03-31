@@ -1,6 +1,12 @@
 v3.26.1
 
 - DHC - Escaped code to fix code block display
+- Fixed RF doc
+- DOC-45 DHC - Added details on maven plugin configuration
+- DOC-39 RS - Swagger import: replace or merge
+- DOC-40 RS - Add a method without a modal
+- DOC-41 RS - input payload for PATCH operations
+- DOC-43 RS - "Formats" replace "Variants"
 
 v3.26.0
 
@@ -16,7 +22,7 @@ v3.24.2
 - Added Free Trial to DHC and RS
 - DHC - Removed limitation on number of calls
 
-v3.24.1
+v3.24.1(§§§§§§§§tfc)
 
 - Updated maven plugin version number
 
