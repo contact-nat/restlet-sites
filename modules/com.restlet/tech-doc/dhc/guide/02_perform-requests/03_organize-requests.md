@@ -5,10 +5,10 @@ Of course you can define one-shot requests, but another interesting approach con
 DHC allows you to build projects inside your drive.
 The different items you can save in your drive follow this pattern:
 
-<i class="fa fa-cloud"></i>project  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog"></i>service  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-rocket"></i>scenario  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i>request
+<i class="fa fa-cloud"></i>&nbsp;&nbsp;project  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog"></i>&nbsp;&nbsp;service  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-rocket"></i>&nbsp;&nbsp;scenario  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;request
 
 >**Note:** Each item can be created at the root of your drive. A [scenario](/technical-resources/dhc/guide/run-tests/run-tests "scenario") can only contain requests.
 
