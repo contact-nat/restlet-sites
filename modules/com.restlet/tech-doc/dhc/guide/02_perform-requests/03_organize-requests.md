@@ -1,27 +1,58 @@
-Of course you can define one-shot requests, but another interesting approach consists of reusing and even sharing them. DHC by Restlet offers an interesting feature to do this.
+Of course you can define one-shot requests, but another interesting approach consists of reusing and even sharing them.
 
-# Leverage projects and services
+# Description
 
-Once a request is created and named, DHC by Restlet lets you save it. The tool provides the following structure to organize your requests: the first level consists of projects which provide a high-level container. They can contain a set of services that in turn contain requests.
+DHC allows you to build projects inside your drive.
+The different items you can save in your drive follow this pattern:
 
-Such elements are created when you import requests or when you save requests. DHC gives you the ability to create your own projects and services if none match.
+<i class="fa fa-cloud"></i>project  
+    <i class="fa fa-cog"></i>service  
+        <i class="fa fa-rocket"></i>scenario  
+            <i class="fa fa-paper-plane"></i>request
 
-![Save request](images/19-save-request.jpg "Save request")
+>**Note:** Each item can be created at the root of your drive. A [scenario](/technical-resources/dhc/guide/run-tests/run-tests "scenario") can only contain requests.
 
-# Document projects, services and requests
+# Save your requests inside projects
 
-At each level (project and service), you can add documentation. When clicking on the overview element in the left menu, related hints are displayed in the right panel. Navigation is supported at this level making it possible to walk through the project.
+Once a request is created and named, DHC by Restlet lets you save it.  
+You can save it at the root of your drive or you can classify your requests inside structured projects (folders) and services (subfolders).
 
-![Documentation](images/20-documentation.jpg "Documentation")
+To save your request inside a project:
 
->**Note:** For request, there is no **Description** field but the name should be self descriptive in order to tell what the request actually does.
+Create your request.  
+Enter a name in the input field on top of the screen.  
+Click **Save** on the right of this field.  
 
-![Documentation](images/21-documentation-service.jpg "Documentation")
+## Save your request in an existing project
+
+Select **My drive** in the **Path** drop-down menu.
+Select the appropriate project (and possibly the service) in which you want to save your request and click **Save**.
+
+![Save request](images/save-request-existing-project.jpg "Save request")
+
+>**Note:** The **Path** displays as you browse through your drive and it is clickable.
+![Save request](images/save-request-path.jpg "Save request")
+
+## Save your request in a new project
+
+Select **My drive** in the **Path** drop-down menu.
+Click **Create** and select **Project**.
+
+![Save request](images/save-request-in-new-project.jpg "Save request")
+
+Enter a name for your **Project** and click **Add**.
+
+![Save request](images/save-request-add-project.jpg "Save request")
+
+>**Note:** You can then just as well add a Service and a Scenario inside that project.
+![Save request](images/save-request-path2.jpg "Save request")
+
+Click **Save** to add the request in your new project.
 
 # Export requests as code
 
-DHC by Restlet provides the ability to export the request as code in curl language. This is very convenient for developers who like command-line approach. They do not need to build it with different options: working command is directly provided.
+DHC allows you to export the request as code in curl language. This can be very handy if you like to work in command-line.
 
-Click on the **2 Code** button right around the request name to get the corresponding curl code.
+Click on the **2 Code** button on top right of the screen to get the corresponding curl code.
 
 ![Request 2 Code](images/18-request2code.jpg "Request 2 Code")
