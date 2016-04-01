@@ -48,7 +48,7 @@ Ex.1: a context variables declaration
 json_value = { "a" : { "b" : "test" }}
 </code></pre>
 
-You can turn a reference into a context variable by declaring the variable name as an identifier (see [Grammar](/technical-resources/dhc/guide/expressions/grammar "Grammar rules") section) or as a string. If a variable value is a ```JSON object``` then you can also reference the ```JSON object``` properties and sub-properties.
+You can turn a reference into a context variable by declaring the variable name as an identifier (see [Grammar](./grammar "Grammar rules") section) or as a string. If a variable value is a ```JSON object``` then you can also reference the ```JSON object``` properties and sub-properties.
 
 Ex.2: a variable name as an identifier
 

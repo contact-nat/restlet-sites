@@ -28,7 +28,7 @@ If you subscribed to a Team plan or a Scale plan, then you can add members to yo
 
 The **Team** tab gives you a list of the different members of your team (with their email address and provider). You appear as the *owner* and your team members can be removed from the team.  
 
-Provided your [plan](/technical-resources/dhc/guide/get-started/subscribe "plans") allows it, you can add new members by entering their email address in the input field at the bottom of the page.
+Provided your [plan](./subscribe "plans") allows it, you can add new members by entering their email address in the input field at the bottom of the page.
 A progress bar indicates whether you can still add new members e.g. 2/5.
 
 # Sign out
