@@ -36,7 +36,7 @@ Here are a few tips to help you work with XML payloads:
 
 - ```list``` identifies the root object of the XML content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
 
-- The dot sign ```.``` allows you to get attributes of an object. This can be done recursively according to the depth of the data graph.
+- The slash sign ```/``` allows you to get attributes of an object. This can be done recursively according to the depth of the data graph.
 
 - The square brackets ```[]``` target arrays and allow the selection of a particular element in them.
 
