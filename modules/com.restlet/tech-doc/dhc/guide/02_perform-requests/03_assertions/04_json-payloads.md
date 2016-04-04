@@ -1,14 +1,14 @@
+When selecting **JSON Body** or **XML Body**, assertions can leverage JSON path pr XPath expressions to use and check specific parts of the content. This expression language is natural and enables you to browse data graph easily.
+
 # Use JSON path for JSON payloads
 
-When selecting JSON body, assertions can leverage JSON path expressions to use and check specific parts of the content. Stefan Goessner provides a great introduction in his article JSON Path – Xpath for JSON. This expression language is natural and enables you to browse data graph easily.
+Here are a few hints to help you use JSON payloads:
 
-Here are the main elements:
+- The dollar sign ```$``` identifies the root object of the JSON content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
 
-- The starting point is the expression “$” that identifies the root object of the JSON content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
+- The dot sign ```.``` allows you to get attributes of an object. This can be done recursively according to the depth of the data graph.
 
-- The point allows you to get an attribute of an object. This can be done recursively according to the depth of the data graph.
-
-- The square brackets target arrays and allow the selection of a particular element in them.
+- The square brackets ```[]``` target arrays and allow the selection of a particular element in them.
 
 The following sample describes how to test the value of a list contained in arrays. The JSON body used contains a list of maps, each map has a **sources** field. This field corresponds to a list of sources and has an id attribute.
 
@@ -30,6 +30,20 @@ The value to check can be valid JSON content. DHC automatically parses it and ch
 The following sample describes how to check the content of an array:
 ![JSON value](images/10-json-value.jpg "JSON value")
 
-# Use XPath for XML payloads
+# <a class="anchor" name="xpath"></a>Use XPath for XML payloads
 
-More information very soon.
+Here are a few tips to help you work with XML payloads:
+
+- ```list``` identifies the root object of the XML content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
+
+- The dot sign ```.``` allows you to get attributes of an object. This can be done recursively according to the depth of the data graph.
+
+- The square brackets ```[]``` target arrays and allow the selection of a particular element in them.
+
+- ```text()``` will allow you to enter text expressions.
+
+In the following example, the expression **list/Company[1]/address/city/text()** corresponds to the city contained in the address of the first Company.
+
+![XML value](images/xml-payload.jpg "XML value")
+
+For more information on XML Path language, head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">W3C recommendations</a>.
