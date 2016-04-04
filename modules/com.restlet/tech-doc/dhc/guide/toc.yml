@@ -5,8 +5,8 @@ toc:
   - file: 01_install.md
     id: install
     link_url: /01_get-started/01_install.md
-    long-title: Install DHC by Restlet
-    title: Install DHC
+    long-title: Launch DHC by Restlet
+    title: Launch DHC
     url: /get-started/install
   - file: 02_sign-in.md
     id: sign-in
