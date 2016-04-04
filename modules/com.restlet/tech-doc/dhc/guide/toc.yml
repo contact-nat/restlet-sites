@@ -80,7 +80,7 @@ toc:
       id: expressions
       link_url: /02_perform-requests/03_assertions/05_expressions.md
       long-title: Leverage expressions in assertions
-      title: Expressions
+      title: Expressions in assertions
       url: /perform-requests/assertions/expressions
     long-title: Use assertions
     title: Use assertions
@@ -133,7 +133,7 @@ toc:
   - file: 01_synchronize-data.md
     id: synchronize-data
     link_url: /03_drive/01_synchronize-data.md
-    long-title: Sunchronize your data
+    long-title: Synchronize your data
     title: Synchronize data
     url: /drive/synchronize-data
   - file: 02_organize-requests.md
@@ -167,6 +167,34 @@ toc:
     title: Import & export requests
   long-title: Manage your drive
   title: Manage your drive
+- dir: 04_run-tests
+  id: run-tests
+  items:
+  - file: 01_scenarios.md
+    id: scenarios
+    link_url: /04_run-tests/01_scenarios.md
+    long-title: Create scenarios
+    title: Create scenarios
+    url: /run-tests/scenarios
+  - dir: 02_automate-tests
+    id: automate-tests
+    items:
+    - file: 01_test-reports-maven.md
+      id: test-reports-maven
+      link_url: /04_run-tests/02_automate-tests/01_test-reports-maven.md
+      long-title: Get test reports with Maven plugin
+      title: Get test reports
+      url: /run-tests/automate-tests/test-reports-maven
+    - file: 02_jenkins-ci.md
+      id: jenkins-ci
+      link_url: /04_run-tests/02_automate-tests/02_jenkins-ci.md
+      long-title: Run tests in continuous integration
+      title: Run tests in CI
+      url: /run-tests/automate-tests/jenkins-ci
+    long-title: Automate tests
+    title: Automate tests
+  long-title: Run tests scenarios
+  title: Run tests
 - dir: 05_share
   id: share
   items:
