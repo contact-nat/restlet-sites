@@ -130,12 +130,12 @@ toc:
 - dir: 03_drive
   id: drive
   items:
-  - file: 01_save-requests.md
-    id: save-requests
-    link_url: /03_drive/01_save-requests.md
-    long-title: Save requests
-    title: Save requests
-    url: /drive/save-requests
+  - file: 01_synchronize-data.md
+    id: synchronize-data
+    link_url: /03_drive/01_synchronize-data.md
+    long-title: Sunchronize your data
+    title: Synchronize data
+    url: /drive/synchronize-data
   - file: 02_organize-requests.md
     id: organize-requests
     link_url: /03_drive/02_organize-requests.md
@@ -151,18 +151,18 @@ toc:
       long-title: Overview
       title: Overview
       url: /drive/import-export/overview
-    - file: 02_import-export-policy.md
-      id: import-export-policy
-      link_url: /03_drive/03_import-export/02_import-export-policy.md
-      long-title: Import and export policy
-      title: Import & export policy
-      url: /drive/import-export/import-export-policy
-    - file: 03_data-format.md
-      id: data-format
-      link_url: /03_drive/03_import-export/03_data-format.md
-      long-title: Import and export data format
-      title: Import & export data format
-      url: /drive/import-export/data-format
+    - file: 02_import-projects.md
+      id: import-projects
+      link_url: /03_drive/03_import-export/02_import-projects.md
+      long-title: Import projects
+      title: Import projects
+      url: /drive/import-export/import-projects
+    - file: 03_export-projects.md
+      id: export-projects
+      link_url: /03_drive/03_import-export/03_export-projects.md
+      long-title: Export projects
+      title: Export projects
+      url: /drive/import-export/export-projects
     long-title: Import & export requests
     title: Import & export requests
   long-title: Manage your drive
