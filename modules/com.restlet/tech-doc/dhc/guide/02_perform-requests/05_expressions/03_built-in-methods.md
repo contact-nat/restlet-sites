@@ -1,8 +1,14 @@
-# jsonPath( ‘selector’ )
+# Introduction
+
+Here is a non exhaustive list of the expressions that can be used in methods within DHC.
+
+# Methods
+
+## jsonPath( ‘selector’ )
 
 see JSON Path Specification
 
-# random([max])
+## random([max])
 
 It returns a random integer between ```0``` and ```MAX```. (default max = ```1000000000```).
 
@@ -10,7 +16,7 @@ It returns a random integer between ```0``` and ```MAX```. (default max = ```100
 Result:         43242
 </code></pre>
 
-# md5()
+## md5()
 
 It calculates MD5 hash from a value.
 
@@ -25,7 +31,7 @@ Ex.2 calculate MD5 hash from request text body
 <pre class="language-javascript"><code class="language-javascript">{"Create User".request.body.md5()}
 </code></pre>
 
-# base64()
+## base64()
 
 It encodes a value as Base64.
 
@@ -35,7 +41,7 @@ Ex. 1 basic authorization
 Result:     dXNlcm5hbWU6cGFzc3dvcmQ=
 </code></pre>
 
-# uuid()
+## uuid()
 
 It generates UUID.
 
@@ -43,7 +49,7 @@ It generates UUID.
 Result:      3D130C51-FD24-43CD-9FE1-687F9E438682
 </code></pre>
 
-# string([‘quote’])
+## string([‘quote’])
 
 It prints a value as a quoted string e.g. JSON String.
 
@@ -54,7 +60,7 @@ Expression:  {"test".string("'")}
 Result:      'test'
 </code></pre>
 
-# substring(start, end)
+## substring(start, end)
 
 It prints a substring value.
 
@@ -63,16 +69,16 @@ Result:      23  Expression:  {"123".substring(1, 2)}
 Result:      2
 </code></pre>
 
-# hmac(cipher, secret, [output=Base64])
+## hmac(cipher, secret, [output=Base64])
 
 It calculates HMAC.
 
-## Arguments
+### Arguments
 
 cipher = SHA1 | SHA224 | SHA256 | SHA384 | SHA512  
 output = Base64 | Hex
 
-## Examples
+### Examples
 
 <pre class="language-none"><code class="language-none">Expression:  {"test".hmac("sha256", "secret", "Base64")}
 Result:      Aymga2LNFrM+tnkr6MYLFY2Jou46h2/Omogeu0iMCRQ=
@@ -82,7 +88,7 @@ Result:      Aymga2LNFrM+tnkr6MYLFY2Jou46h2/Omogeu0iMCRQ=
 Result:      1aa349585ed7ecbd3b9c486a30067e395ca4b356
 </code></pre>
 
-# timestamp()
+## timestamp()
 
 It returns the number of milliseconds since January 1, 1970, 00:00:00 GMT.
 
@@ -90,7 +96,7 @@ It returns the number of milliseconds since January 1, 1970, 00:00:00 GMT.
 Result:      1441975942686
 </code></pre>
 
-# lower()
+## lower()
 
 It converts all the characters to lower case using the rules of the default locale.
 
@@ -98,7 +104,7 @@ It converts all the characters to lower case using the rules of the default loca
 Result:      abc
 </code></pre>
 
-# upper()
+## upper()
 
 It converts all the characters to upper case using the rules of the default locale.
 
