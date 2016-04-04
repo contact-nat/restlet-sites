@@ -1,3 +1,5 @@
+# Use JSON path for JSON payloads
+
 When selecting JSON body, assertions can leverage JSON path expressions to use and check specific parts of the content. Stefan Goessner provides a great introduction in his article JSON Path – Xpath for JSON. This expression language is natural and enables you to browse data graph easily.
 
 Here are the main elements:
@@ -27,3 +29,7 @@ The value to check can be valid JSON content. DHC automatically parses it and ch
 
 The following sample describes how to check the content of an array:
 ![JSON value](images/10-json-value.jpg "JSON value")
+
+# Use XPath for XML payloads
+
+More information very soon.

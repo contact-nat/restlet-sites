@@ -73,8 +73,8 @@ toc:
     - file: 04_json-payloads.md
       id: json-payloads
       link_url: /02_perform-requests/03_assertions/04_json-payloads.md
-      long-title: Use JSON path for JSON payloads
-      title: JSON payloads
+      long-title: Use JSON path & XPath in payloads
+      title: JSON & XML payloads
       url: /perform-requests/assertions/json-payloads
     - file: 05_expressions.md
       id: expressions
@@ -102,19 +102,19 @@ toc:
     - file: 02_references.md
       id: references
       link_url: /02_perform-requests/05_expressions/02_references.md
-      long-title: References
+      long-title: Declare references
       title: References
       url: /perform-requests/expressions/references
     - file: 03_built-in-methods.md
       id: built-in-methods
       link_url: /02_perform-requests/05_expressions/03_built-in-methods.md
-      long-title: Built-in methods
+      long-title: Use built-in methods
       title: Built-in methods
       url: /perform-requests/expressions/built-in-methods
     - file: 04_grammar.md
       id: grammar
       link_url: /02_perform-requests/05_expressions/04_grammar.md
-      long-title: Grammar
+      long-title: Leran DHC grammar
       title: Grammar
       url: /perform-requests/expressions/grammar
     long-title: Transform data through expressions
