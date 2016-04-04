@@ -25,3 +25,7 @@ DHC is available also as a service. This permission allows data exchange between
 # Launch DHC from your website
 
 DHC allows you to insert a button in your website that will directly launch DHC. More information very soon.
+
+<!--
+Note: Process might change due to Google legacy packaged apps policy. Packaged apps are not allowed to inject javascript into third-party pages (that’s what we are doing today with current legacy packaged app) and Google might force us to move to packaged app format.
+-->
