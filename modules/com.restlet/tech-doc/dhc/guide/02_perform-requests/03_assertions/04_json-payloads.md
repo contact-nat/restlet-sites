@@ -1,4 +1,4 @@
-When selecting **JSON Body** or **XML Body**, assertions can leverage JSON path pr XPath expressions to use and check specific parts of the content. This expression language is natural and enables you to browse data graph easily.
+When selecting **JSON Body** or **XML Body**, assertions can leverage JSON path or XPath expressions to use and check specific parts of the content. This expression language is natural and enables you to browse data graph easily.
 
 # Use JSON path for JSON payloads
 
