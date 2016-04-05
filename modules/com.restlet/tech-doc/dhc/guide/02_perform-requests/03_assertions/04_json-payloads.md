@@ -6,7 +6,7 @@ Here are a few hints to help you use JSON payloads:
 
 - The dollar sign ```$``` identifies the root object of the JSON content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
 
-- The dot sign ```.``` allows you to get attributes of an object. This can be done recursively according to the depth of the data graph.
+- The dot sign ```.``` allows you to get attributes of an object or to go deeper in the tree.
 
 - The square brackets ```[]``` target arrays and allow the selection of a particular element in them.
 
@@ -32,18 +32,24 @@ The following sample describes how to check the content of an array:
 
 # <a class="anchor" name="xpath"></a>Use XPath for XML payloads
 
+Note that XPath expressions have a directory-path-like syntax.
+
 Here are a few tips to help you work with XML payloads:
 
-- ```list``` identifies the root object of the XML content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
+- A single ```/``` selects from the root node.
 
-- The slash sign ```/``` allows you to get attributes of an object. This can be done recursively according to the depth of the data graph.
+- ```/list``` identifies the "list object" at the top level of the XML document. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
 
-- The square brackets ```[]``` target arrays and allow the selection of a particular element in them.
+- The slash sign ```/``` allows you to get attributes of an object or to go deeper in the tree.
 
-- ```text()``` will allow you to enter text expressions.
+- The square brackets ```[]``` enable to select a specific item in an array by its position. Please note that the index starts from 1.
 
-In the following example, the expression **list/Company[1]/address/city/text()** corresponds to the city contained in the address of the first Company.
+- ```/text()``` allows you to get a node inner text.
+
+- ```//``` selects nodes in the document from the current node that match the selection no matter where they are.
+
+In the following example, the expression **/list/Company[1]/address/city/text()** corresponds to the name of the city contained in the address of the first Company.
 
 ![XML value](images/xml-payload.jpg "XML value")
 
-For more information on XML Path language, head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">W3C recommendations</a>.
+For more information on the <a href="http://www.w3schools.com/xsl/xpath_syntax.asp" target="_blank">XPath syntax</a>, head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">official W3C specification</a>.
