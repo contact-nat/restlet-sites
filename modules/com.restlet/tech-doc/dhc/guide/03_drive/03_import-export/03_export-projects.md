@@ -1,12 +1,12 @@
-Coming soon
+DHC allows you to export your projects/services/scenarios or even your whole drive.
 
+The export feature is accessible from the **Repository** tab.  
+Click **Export** at the bottom of the left panel.
 
-The import / export feature of DHC by Restlet can be accessed via the **Repository** tab. A check icon displays as the mouse is over the **My Drive** entry, as shown below:
+![Export](images/export-from-repo-tab.jpg "Export")
 
-![Select export](images/25-select-export.jpg "Select export")
+Enter a **Filename** for the JSON file that will be exported.  
+Select the items you want to export in that file.  
+Click **Export**.
 
-# Export requests
-
-The same approach is possible when exporting a set of requests, as shown below:
-
-![Data export](images/27-data-export.jpg "Data export")
+![Data export](images/data-export.jpg "Data export")
