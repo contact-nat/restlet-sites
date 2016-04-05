@@ -24,20 +24,22 @@ DHC is available also as a service. This permission allows data exchange between
 
 # <a class="anchor" name="try-it-out-with-dhc"></a>Launch DHC from your website
 
+DHC allows you to insert a button in your website that will launch your request directly in DHC.
+
+>**Note:** This process might change due to Google legacy packaged apps policy.
+
 <!--
 Note: Process might change due to Google legacy packaged apps policy. Packaged apps are not allowed to inject javascript into third-party pages (that’s what we are doing today with current legacy packaged app) and Google might force us to move to packaged app format.
 -->
-
-DHC allows you to insert a button in your website that will launch your request directly in DHC.
 
 ## Instruct DHC with a meta tag
 
 Create an html page that contains a **meta tag** that will load DHC script.
 
 <pre class="language-markup"><code class="language-markup">&lt;meta
-name=&CloseCurlyDoubleQuote;dhc-aware-page&CloseCurlyDoubleQuote;
-data-indicator-element-id=&CloseCurlyDoubleQuote;id_element&CloseCurlyDoubleQuote;
-data-console-debug=&CloseCurlyDoubleQuote;true&CloseCurlyDoubleQuote;
+name=&quot;dhc-aware-page&quot;
+data-indicator-element-id=&quot;id_element&quot;
+data-console-debug=&quot;true&quot;
 &gt;
 </code></pre>
 
@@ -51,7 +53,7 @@ To instruct DHC to open a new request, your webpage must call the **window.postM
 
 <pre class="language-markup"><code class="language-markup">{
       target : &lt;id of extension&gt;,
-      type : &CloseCurlyDoubleQuote;openRequest&CloseCurlyDoubleQuote;,
+      type : &quot;openRequest&quot;,
       targetTab:&lt;name of target tab&gt;,
       payloadType: &lt;type of payload&gt;
       payload : &lt;payload&gt;
