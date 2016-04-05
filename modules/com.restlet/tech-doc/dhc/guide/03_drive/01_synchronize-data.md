@@ -14,6 +14,8 @@ Click on the synchronization button on top right of your screen and click **Enab
 
 ![Synchronization button](images/synchronization-button.jpg "Synchronization button")
 
+The synchronization button turns green when cloud synchronization is enabled.
+
 ## Disable cloud synchronization
 
 To disable cloud synchronization, click on **Settings** on the top menu bar and select **Cloud synchronization** from the **General** tab.
