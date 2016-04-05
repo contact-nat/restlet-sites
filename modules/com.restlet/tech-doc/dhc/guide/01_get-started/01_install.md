@@ -51,7 +51,7 @@ data-console-debug=&quot;true&quot;
 
 To instruct DHC to open a new request, your webpage must call the **window.postMessage** script with the following message object (all properties are required):
 
-<pre class="language-markup"><code class="language-markup">{
+<pre class="language-javascript"><code class="language-javascript">{
       target : &lt;id of extension&gt;,
       type : &quot;openRequest&quot;,
       targetTab:&lt;name of target tab&gt;,
@@ -68,7 +68,7 @@ JSON.parse(document.getElementById(<id of  indicator element>).textContent).exte
 
 Example:
 
-<pre class="language-markup"><code class="language-markup">{
+<pre class="language-javascript"><code class="language-javascript">{
    body: {
        bodyType: "Text"
    },
@@ -106,7 +106,7 @@ Example:
 
 Create a webpage that contains an input area pre-filled with your payload and a button to launch your request with DHC in a new tab.
 
-<pre class="language-markup"><code class="language-markup">&lt;!DOCTYPE html&gt;
+<pre class="language-javascript"><code class="language-javascript">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 
