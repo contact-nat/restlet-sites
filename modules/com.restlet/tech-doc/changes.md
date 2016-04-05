@@ -1,3 +1,11 @@
+v3.27.0
+
+- DHC: added details to maven plugin configuration
+- RS: Swagger import replace or merge
+- RS: Add a method without a modal
+- RS: Add an input payload for patch operations
+- RS: Formats replace Variants
+
 v3.26.1
 
 - DHC - Escaped code to fix code block display
