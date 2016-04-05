@@ -1,25 +1,6 @@
 # Introduction
 
-Coming soon
-
-# Import & export policy
-
-## Update
-
-Imports new requests and updates existing requests only if the import contains  newer version.  
-
-## Override
-
-Imports new requests and overrides all existing requests.  
-
-## Preserve
-
-Imports new requests and never touches existing requests.
-
-
-# DHC import & export data format
-
-DHC import and export use JSON of the structure described below.
+DHC import and export use JSON with the structure described below.
 
 ## Container
 
@@ -40,7 +21,7 @@ A node represents one the following entities:
 - a project
 - a context
 
-Each node has an id which is UUID that never changes. You can rename an entity but the id remains the same.
+Each node has an id which is a UUID that never changes. You can rename an entity but the id remains the same.
 
 A node can have a parent node optionally. The parent node is referenced by the id.
 

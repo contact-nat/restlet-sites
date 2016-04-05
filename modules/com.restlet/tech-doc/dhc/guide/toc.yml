@@ -145,24 +145,24 @@ toc:
   - dir: 03_import-export
     id: import-export
     items:
-    - file: 01_overview.md
-      id: overview
-      link_url: /03_drive/03_import-export/01_overview.md
-      long-title: Overview
-      title: Overview
-      url: /drive/import-export/overview
-    - file: 02_import-projects.md
+    - file: 01_import-projects.md
       id: import-projects
-      link_url: /03_drive/03_import-export/02_import-projects.md
+      link_url: /03_drive/03_import-export/01_import-projects.md
       long-title: Import projects
       title: Import projects
       url: /drive/import-export/import-projects
-    - file: 03_export-projects.md
+    - file: 02_export-projects.md
       id: export-projects
-      link_url: /03_drive/03_import-export/03_export-projects.md
+      link_url: /03_drive/03_import-export/02_export-projects.md
       long-title: Export projects
       title: Export projects
       url: /drive/import-export/export-projects
+    - file: 03_data-structure.md
+      id: data-structure
+      link_url: /03_drive/03_import-export/03_data-structure.md
+      long-title: Import and export data structure
+      title: Data structure
+      url: /drive/import-export/data-structure
     long-title: Import & export requests
     title: Import & export requests
   long-title: Manage your drive
