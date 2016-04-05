@@ -36,7 +36,7 @@ Create an html page that contains a **meta tag** that will load DHC script.
 
 <pre class="language-markup"><code class="language-markup">&lt;meta
 name=&CloseCurlyDoubleQuote;dhc-aware-page&CloseCurlyDoubleQuote;
-data-indicator-element-id=&CloseCurlyDoubleQuote;&lt;id element&gt;&CloseCurlyDoubleQuote;
+data-indicator-element-id=&CloseCurlyDoubleQuote;[id element]&CloseCurlyDoubleQuote;
 data-console-debug=&CloseCurlyDoubleQuote;true&CloseCurlyDoubleQuote;
 &gt;
 </code></pre>
@@ -104,32 +104,32 @@ Example:
 
 Create a webpage that contains an input area pre-filled with your payload and a button to launch your request with DHC in a new tab.
 
-<pre class="language-markup"><code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
+<pre class="language-markup"><code class="language-markup"><!DOCTYPE html>
+<html lang="en">
+<head>
 
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    <meta charset="UTF-8">
 
-    &lt;!--This tag instructs DHC to provide api to this page--&gt;
-    &lt;meta name=&quot;dhc-aware-page&quot;
-          data-console-debug=&quot;true&quot;
-          data-indicator-element-id=&quot;testDhc&quot;&gt;
+    <!--This tag instructs DHC to provide api to this page-->
+    <meta name="dhc-aware-page"
+          data-console-debug="true"
+          data-indicator-element-id="testDhc">
 
-    &lt;title&gt;Dhc integration example&lt;/title&gt;
-    &lt;style type=&quot;text/css&quot;&gt;
+    <title>Dhc integration example</title>
+    <style type="text/css">
         input{
             width:200pt
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
+    </style>
+</head>
+<script type="text/javascript">
 
     //short hand function for sending messages to dhc
     function openRequestInDhc(dhcInfo,targetTab,payload){
         var message = {
             target:dhcInfo.extensionId, //required
-            type:&quot;openRequest&quot;,//required
-            payloadType:&quot;dhc&quot;,//required,
+            type:"openRequest",//required
+            payloadType:"dhc",//required,
             targetTab:targetTab,
             payload:JSON.parse(payload)
         };
@@ -137,74 +137,74 @@ Create a webpage that contains an input area pre-filled with your payload and a 
     }
 
     //wait until document loads so DHC has a chance to create info tag
-    window.addEventListener(&quot;load&quot;,function(){
-        var dhcTag = document.getElementById(&quot;testDhc&quot;); //lookup the tag using the id we&apos;ve provided in meta tag
-        var dhcStatusDisplay = document.getElementById(&quot;status&quot;);
+    window.addEventListener("load",function(){
+        var dhcTag = document.getElementById("testDhc"); //lookup the tag using the id we've provided in meta tag
+        var dhcStatusDisplay = document.getElementById("status");
 
         if(!dhcTag){
             //no indicator tag - no dhc
-            dhcStatusDisplay.textContent = &quot;DHC is not installed. Install DHC by going to the &quot; +
-                    &quot;chrome://extensions click on &apos;Enable Developer Mode&apos; then load unpacked extension, go back here and refresh the page&quot;;
+            dhcStatusDisplay.textContent = "DHC is not installed. Install DHC by going to the " +
+                    "chrome://extensions click on 'Enable Developer Mode' then load unpacked extension, go back here and refresh the page";
             return;
         }
         //parse dhc info into json
         var dhcInfo = JSON.parse(dhcTag.textContent);
-        dhcStatusDisplay.textContent = &quot;DHC is installed, click button below to open request in DHC&quot;;
+        dhcStatusDisplay.textContent = "DHC is installed, click button below to open request in DHC";
 
         //prepare ui
 
-        var payload = document.createElement(&quot;textarea&quot;);
+        var payload = document.createElement("textarea");
         payload.value = JSON.stringify({
             body: {
-                bodyType: &quot;Text&quot;
+                bodyType: "Text"
             },
-            description: &quot;Random Description&quot;,
+            description: "Random Description",
             headers: [
                 {
-                    name:&quot;Accept&quot;,
-                    value:&quot;*/*&quot;,
+                    name:"Accept",
+                    value:"*/*",
                     enabled:true
                 },
                 {
-                    name:&quot;Accept&quot;,
-                    value:&quot;text/html&quot;,
+                    name:"Accept",
+                    value:"text/html",
                     enabled:false
                 }
             ],
-            headersType: &quot;Form&quot;,
+            headersType: "Form",
             method: {
-                &quot;link&quot;: &quot;&quot;,
-                &quot;name&quot;: &quot;POST&quot;,
-                &quot;requestBody&quot;: true
+                "link": "",
+                "name": "POST",
+                "requestBody": true
             },
-            name: &quot;Execute DQL&quot;,
+            name: "Execute DQL",
             uri: {
-                &quot;path&quot;: &quot;google.com&quot;,
-                &quot;scheme&quot;: {
-                    &quot;name&quot;: &quot;http&quot;,
-                    &quot;version&quot;: &quot;V11&quot;
+                "path": "google.com",
+                "scheme": {
+                    "name": "http",
+                    "version": "V11"
                 }
             }
-        },null,&quot;\t&quot;);
-        var send = document.createElement(&quot;button&quot;);
-        send.textContent = &quot;Open Request&quot;;
+        },null,"\t");
+        var send = document.createElement("button");
+        send.textContent = "Open Request";
 
 
         document.body.appendChild(payload);
         document.body.appendChild(send);
-        send.addEventListener(&quot;click&quot;,function(){
+        send.addEventListener("click",function(){
             openRequestInDhc(dhcInfo,null,payload.value);
         });
 
 
 
     });
-&lt;/script&gt;
-&lt;body&gt;
+</script>
+<body>
 
 
-&lt;div id=&quot;status&quot;&gt;Checking Dhc Status&lt;/div&gt;
+<div id="status">Checking Dhc Status</div>
 
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 </code></pre>
