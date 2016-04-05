@@ -36,7 +36,7 @@ Create an html page that contains a **meta tag** that will load DHC script.
 
 <pre class="language-markup"><code class="language-markup">&lt;meta
 name=&CloseCurlyDoubleQuote;dhc-aware-page&CloseCurlyDoubleQuote;
-data-indicator-element-id=&CloseCurlyDoubleQuote;[id element]&CloseCurlyDoubleQuote;
+data-indicator-element-id=&CloseCurlyDoubleQuote;id element&CloseCurlyDoubleQuote;
 data-console-debug=&CloseCurlyDoubleQuote;true&CloseCurlyDoubleQuote;
 &gt;
 </code></pre>
