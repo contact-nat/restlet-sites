@@ -52,9 +52,9 @@ data-console-debug=&quot;true&quot;
 To instruct DHC to open a new request, your webpage must call the **window.postMessage** script with the following message object (all properties are required):
 
 <pre class="language-javascript"><code class="language-javascript">{
-      target : &quot;&lt;id_of_extension&gt;&quot;,
+      target : &quot;aejoelaoggembcahagimdiliamlcdmfm&quot;,
       type : &quot;openRequest&quot;,
-      targetTab:&quot;&lt;name_of_target_tab&gt;&quot;,
+      targetTab: &quot;&lt;name_of_target_tab&gt;&quot;,
       payloadType: &quot;&lt;type_of_payload&gt;&quot;,
       payload : &quot;&lt;payload&gt;&quot;
 }
