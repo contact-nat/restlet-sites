@@ -130,16 +130,16 @@ toc:
 - dir: 03_drive
   id: drive
   items:
-  - file: 01_synchronize-data.md
-    id: synchronize-data
-    link_url: /03_drive/01_synchronize-data.md
-    long-title: Synchronize your data
-    title: Synchronize data
-    url: /drive/synchronize-data
+  - file: 01_create-new-item.md
+    id: create-new-item
+    link_url: /03_drive/01_create-new-item.md
+    long-title: Create a new item in your Drive
+    title: Create new item
+    url: /drive/create-new-item
   - file: 02_organize-requests.md
     id: organize-requests
     link_url: /03_drive/02_organize-requests.md
-    long-title: Organize requests
+    long-title: Organize your requests in projects
     title: Organize requests
     url: /drive/organize-requests
   - dir: 03_import-export
@@ -165,6 +165,12 @@ toc:
       url: /drive/import-export/data-structure
     long-title: Import & export requests
     title: Import & export requests
+  - file: 04_synchronize-data.md
+    id: synchronize-data
+    link_url: /03_drive/04_synchronize-data.md
+    long-title: Synchronize your data
+    title: Synchronize data
+    url: /drive/synchronize-data
   long-title: Manage your drive
   title: Manage your drive
 - dir: 04_run-tests
