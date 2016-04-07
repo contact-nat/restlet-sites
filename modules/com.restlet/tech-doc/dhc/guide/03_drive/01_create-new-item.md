@@ -10,7 +10,9 @@ The different items you can save in your drive follow this pattern:
 
 >**Note:** Each item can be created at the root of your drive. A [scenario](/technical-resources/dhc/guide/run-tests/scenarios "scenario") can only contain requests.
 
-# Create a new project
+# Create a new item
+
+## Create a new project
 
 From the **Repository** tab, click on **+Add** at the bottom of the left panel and select <i class="fa fa-cloud"></i>&nbsp;**Project**.
 
@@ -18,7 +20,7 @@ From the **Repository** tab, click on **+Add** at the bottom of the left panel a
 
 Enter a **Name** for your project. It is created at the root of your Drive.
 
-# Create a new service
+## Create a new service
 
 From the **Repository** tab, click on **+Add** at the bottom of the left panel and select <i class="fa fa-cog"></i>&nbsp;**Service**.
 
@@ -26,7 +28,7 @@ From the **Repository** tab, click on **+Add** at the bottom of the left panel a
 
 Enter a **Name** for your service and browse through your Drive to choose where to save it (at the root or inside an existing project in your Drive).
 
-# Create a new scenario
+## Create a new scenario
 
 From the **Repository** tab, click on **+Add** at the bottom of the left panel and select <i class="fa fa-rocket"></i>&nbsp;**[Scenario](/technical-resources/dhc/guide/run-tests/scenarios "Scenario")**.
 
@@ -34,10 +36,19 @@ From the **Repository** tab, click on **+Add** at the bottom of the left panel a
 
 Enter a **Name** for your scenario and browse through your Drive to choose where to save it (at the root or inside an existing project or service in your Drive).
 
-# Create a new request
+## Create a new request
 
 From the **Repository** tab, click on **+Add** at the bottom of the left panel and select <i class="fa fa-paper-plane"></i>&nbsp;**Request**.
 
 ![Add new request](images/add-new-request.jpg "Add new request")
 
 Enter a **Name** for your request and browse through your Drive to choose where to save it (at the root or inside an existing project, service or scenario in your Drive).
+
+# <a class="anchor" name="clone"></a>Clone an item
+
+Instead of starting an item (project, service, scenario or request) from scratch, you can clone an item from your Drive.
+From the **Repository** tab, click on the three dots on the right of the item you want to clone and select **Clone**.
+
+![Clone item](images/clone-item.jpg "Clone item")
+
+Enter a **Name** for your item and browse through your Drive to choose where to save it (at the root or inside an existing project, service or scenario in your Drive depending on the type of item you are creating).
