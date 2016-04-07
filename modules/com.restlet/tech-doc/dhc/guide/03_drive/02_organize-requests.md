@@ -10,7 +10,7 @@ The different items you can save in your drive follow this pattern:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-rocket"></i>&nbsp;&nbsp;scenario  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;request
 
->**Note:** Each item can be created at the root of your drive. A [scenario](/technical-resources/dhc/guide/run-tests/run-tests "scenario") can only contain requests.
+>**Note:** Each item can be created at the root of your drive. A [scenario](/technical-resources/dhc/guide/run-tests/scenarios "scenario") can only contain requests.
 
 # Save your requests inside projects
 
