@@ -38,7 +38,7 @@ Create an html page that contains a **meta tag** that will load DHC script.
 
 <pre class="language-markup"><code class="language-markup">&lt;meta
 name=&quot;dhc-aware-page&quot;
-data-indicator-element-id=&quot;id_element&quot;
+data-indicator-element-id=&quot;&lt;id_element&gt;&quot;
 data-console-debug=&quot;true&quot;
 &gt;
 </code></pre>
@@ -51,12 +51,12 @@ data-console-debug=&quot;true&quot;
 
 To instruct DHC to open a new request, your webpage must call the **window.postMessage** script with the following message object (all properties are required):
 
-<pre class="language-markup"><code class="language-markup">{
-      target : &lt;id of extension&gt;,
+<pre class="language-javascript"><code class="language-javascript">{
+      target : &quot;&lt;id_of_extension&gt;&quot;,
       type : &quot;openRequest&quot;,
-      targetTab:&lt;name of target tab&gt;,
-      payloadType: &lt;type of payload&gt;
-      payload : &lt;payload&gt;
+      targetTab:&quot;&lt;name_of_target_tab&gt;&quot;,
+      payloadType: &quot;&lt;type_of_payload&gt;&quot;,
+      payload : &quot;&lt;payload&gt;&quot;
 }
 </code></pre>
 
