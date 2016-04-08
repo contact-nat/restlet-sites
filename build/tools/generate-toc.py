@@ -6,23 +6,21 @@ import os
 import yaml
 import re
 import sys
-
+import shutil
 
 def main():
     parser = argparse.ArgumentParser(description='Create ToC (toc.yml) from a given path. '
                                                  'All files & folders must begin with xx_name.')
     parser.add_argument('--path', '-p',  type=str, help='Path to scan. If not provided takes current path.')
     parser.add_argument('--markdown', '-m',  action='store_true', help='If provided, return a markdown file.')
-    parser.add_argument('--gwtsources', '-gs',  action='store_true', help='If provided, return a list of GWT sources.')
-    parser.add_argument('--gwtpanel', '-gp',  action='store_true', help='If provided, return a list of GWT sources.')
-    parser.add_argument('--gwtjsonindex', '-gj',  action='store_true', help='If provided, return a list of GWT sources.')
+    parser.add_argument('--dhcjsonindex', '-dhci',  action='store_true', help='If provided, return a JSON representation of the dhc help guide.')
+    parser.add_argument('--dhcfiles', '-dhcf',  type=str, help='Path of the DHC help guide to scan. If not provided takes current path.')
 
     args = parser.parse_args()
     path = args.path
     markdown = args.markdown
-    gwtsources = args.gwtsources
-    gwtpanel = args.gwtpanel
-    gwtjsonindex = args.gwtjsonindex
+    dhcjsonindex = args.dhcjsonindex
+    dhcfiles = args.dhcfiles
 
     if path is None:
         path = os.getcwd()
@@ -34,12 +32,10 @@ def main():
 
     if markdown:
         convert_to_markdown(document)
-    elif gwtsources:
-        convert_to_gwt_sources(document)
-    elif gwtpanel:
-        convert_to_gwt_panel(document)
-    elif gwtjsonindex:
-        convert_to_gwt_json_index(document)
+    elif dhcjsonindex:
+        convert_to_dhc_json_index(document)
+    elif dhcfiles:
+        convert_to_dhc_files(document, path, dhcfiles)
     else:
         print yaml.dump(obj, default_flow_style=False)
 
@@ -68,18 +64,19 @@ def scan_dir(path, document, path_to_display, link_url):
 
 
 def add_dir(path, document, yml_path, path_to_display, link_url):
-
     to_add = yaml.load(open(yml_path, 'r'))
     document.append(to_add)
 
     basename = os.path.basename(path)
     to_add['dir'] = basename
-
     try:
         to_add['id'] = re.match(r'[0-9]*_(.*)', basename).group(1)
     except Exception:
         sys.stderr.write('Error with folder %s. Wrong regexp.' % path)
         sys.exit(1)
+
+    to_add['sourcepath'] = path
+    to_add['targetpath'] = "%s/%s" % (path_to_display, to_add['id'])
 
     items_next = []
     to_add['items'] = items_next
@@ -123,37 +120,10 @@ def print_line_as_markdown(line, indentation):
         # Is file
         print '%s* [%s](%s)' % (indentation, line['title'], line['link_url'])
 
-def convert_to_gwt_sources(document):
-    indentation = '    '
-    for line in document:
-        print_line_as_gwt_sources(line, indentation)
-
-def print_line_as_gwt_sources(line, indentation):
-    if 'dir' in line.keys():
-        for item in line['items']:
-            print_line_as_gwt_sources(item, indentation)
-    elif 'file' in line.keys():
-        # Is file
-        print '%s@Source("%s")' % (indentation, line['link_url'][1:])
-        print '%sTextResource %s();' % (indentation, line['url'].replace("/", "_").replace("-", "_"))
-
-def convert_to_gwt_panel(document):
-    indentation = '    '
-    for line in document:
-        print_line_as_gwt_panel(line, indentation, "/")
-def print_line_as_gwt_panel(line, indentation, dir):
-    if 'dir' in line.keys():
-        # Is directory
-        print '%s%s.addItem("%s", "%s", null)' % (indentation, indentation, line['title'], dir + line['id'])
-        for item in line['items']:
-            print_line_as_gwt_panel(item, indentation, dir + line['id'] + "/")
-    elif 'file' in line.keys():
-        # Is file
-        print '%s%s.addItem("%s", "%s", toHTML(DocsResources.INSTANCE.%s()))' % (indentation, indentation, line['title'], line['url'], line['url'].replace("/", "_").replace("-", "_"))
-
-def convert_to_gwt_json_index(document):
+def convert_to_dhc_json_index(document):
     indentation = '    '
     listHelpPages = []
+    listHelpPages.append('{"dir": false, "title":"%s", "path": "%s"}' % ("User Guide", "/index"))
     for line in document:
         print_line_as_gwt_json_index(listHelpPages, line, "/")
     print '[\n%s\n]' % (",\n".join(listHelpPages))
@@ -167,6 +137,35 @@ def print_line_as_gwt_json_index(listHelpPages, line, dir):
     elif 'file' in line.keys():
         # Is file
         listHelpPages.append('{"dir": false, "title":"%s", "path": "%s"}' % (line['title'], line['url']))
- 
+
+def convert_to_dhc_files(document, sourcepath, dhcfiles):
+    sourceFile = os.path.join(sourcepath, "index.md")
+    destFile = os.path.join(dhcfiles, 'index.md')
+    ensure_dir(destFile)
+    shutil.copyfile(sourceFile, destFile)
+    if os.path.exists(os.path.join(sourcepath, 'images')):
+        shutil.copytree(os.path.join(sourcepath, 'images'), os.path.join(dhcfiles, 'images'))
+    
+    for line in document:
+        copy_to_gwt_md_files(line, sourcepath, dhcfiles)
+
+def copy_to_gwt_md_files(line, sourcepath, dhcfiles):
+    if 'dir' in line.keys():
+        imagesDir = os.path.join(line['sourcepath'], 'images');
+        if os.path.exists(imagesDir):
+            shutil.copytree(imagesDir, os.path.join(dhcfiles, line['targetpath'][1:], 'images'))
+        for item in line['items']:
+            copy_to_gwt_md_files(item, sourcepath, dhcfiles)
+    if 'file' in line.keys():
+        sourceFile = os.path.join(sourcepath, line['link_url'][1:])
+        destFile = os.path.join(dhcfiles, '%s.md' % (line['url'][1:]))
+        ensure_dir(destFile)
+        shutil.copyfile(sourceFile, destFile)
+
+def ensure_dir(f):
+    d = os.path.dirname(f)
+    if not os.path.exists(d):
+        os.makedirs(d)
+
 if __name__ == "__main__":
     main()
