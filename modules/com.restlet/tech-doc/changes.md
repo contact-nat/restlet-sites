@@ -1,3 +1,25 @@
+v3.27.1
+
+DHC User Guide:
+- Re-organized Table of Contents
+- DOC-46 Import swagger 2.0
+- DOC-47 XPath
+- DOC-48 Clone item
+- DOC-49 Create new item
+- DOC-51 "Try it out with DHC" button
+- DOC-52 Work with History
+- DOC-53 Data sync
+- DOC-54 Import & export projects
+
+
+v3.27.0
+
+- DHC: added details to maven plugin configuration
+- RS: Swagger import replace or merge
+- RS: Add a method without a modal
+- RS: Add an input payload for patch operations
+- RS: Formats replace Variants
+
 v3.26.1
 
 - DHC - Escaped code to fix code block display
@@ -22,7 +44,7 @@ v3.24.2
 - Added Free Trial to DHC and RS
 - DHC - Removed limitation on number of calls
 
-v3.24.1(§§§§§§§§tfc)
+v3.24.1
 
 - Updated maven plugin version number
 
