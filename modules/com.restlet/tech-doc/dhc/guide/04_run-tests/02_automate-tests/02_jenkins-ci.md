@@ -1,4 +1,4 @@
-With the [Maven plugin](/technical-resources/dhc/guide/run-tests/automate-tests/test-reports-maven "Maven plugin"), we have taken a step towards industrialization. We can go even further by integrating it within continuous integration with tools like *Jenkins*. This will allow us to automate builds and test executions.
+With the [Maven plugin](./test-reports-maven "Maven plugin"), we have taken a step towards industrialization. We can go even further by integrating it within continuous integration with tools like *Jenkins*. This will allow us to automate builds and test executions.
 
 To bring DHC into Jenkins:
 

@@ -22,4 +22,4 @@ Select several requests from the History panel and click the **Save** button.
 
 ![Save selected requests](images/save-selected-requests.jpg "Save selected requests")
 
-You can then save the selected requests in a new or an existing item (project, service or scenario). For more information on how to create a new item, head over to the [Organize requests in projects](/technical-resources/dhc/guide/drive/organize-requests "Organize requests in projects") section of the user guide.
+You can then save the selected requests in a new or an existing item (project, service or scenario). For more information on how to create a new item, head over to the [Organize requests in projects](../drive/organize-requests "Organize requests in projects") section of the user guide.

@@ -8,7 +8,7 @@ The different items you can save in your drive follow this pattern:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-rocket"></i>&nbsp;&nbsp;scenario  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;request
 
->**Note:** Each item can be created at the root of your drive. A [scenario](/technical-resources/dhc/guide/run-tests/scenarios "scenario") can only contain requests.
+>**Note:** Each item can be created at the root of your drive. A [scenario](../run-tests/scenarios "scenario") can only contain requests.
 
 # Create a new item
 
@@ -30,7 +30,7 @@ Enter a **Name** for your service and browse through your Drive to choose where 
 
 ## Create a new scenario
 
-From the **Repository** tab, click on **+Add** at the bottom of the left panel and select <i class="fa fa-rocket"></i>&nbsp;**[Scenario](/technical-resources/dhc/guide/run-tests/scenarios "Scenario")**.
+From the **Repository** tab, click on **+Add** at the bottom of the left panel and select <i class="fa fa-rocket"></i>&nbsp;**[Scenario](../run-tests/scenarios "Scenario")**.
 
 ![Add new scenario](images/add-new-scenario.jpg "Add new scenario")
 
