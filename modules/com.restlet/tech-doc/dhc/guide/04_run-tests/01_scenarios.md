@@ -10,9 +10,7 @@ Create a request an save it by clicking the **Save** button.
 
 ![Save request button](images/save-request-button.jpg "Save request button")
 
-Save your request inside a scenario: click the **Create** drop-down menu and select **Scenario**. [ ![Happy Easter][1]][2]
-[1]: images/sparky_egg_hidden.png
-[2]: https://restlet.com/sparky-across-the-ages
+Save your request inside a scenario: click the **Create** drop-down menu and select **Scenario**.
 
 ![Create scenario](images/create-scenario.jpg "Create scenario")
 
