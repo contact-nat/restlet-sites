@@ -28,7 +28,7 @@ create this new classloader:
 
 Now you just need to call this line before using the Restlet API:
 
-<pre class="language-java"><code class="language-java"    Engine.setInstance(new AppletEngine());
+<pre class="language-java"><code class="language-java">Engine.setInstance(new AppletEngine());
 </code></pre>
 
 # <a name="solve-405-status-code-responses"></a>Solve 405 status code responses
