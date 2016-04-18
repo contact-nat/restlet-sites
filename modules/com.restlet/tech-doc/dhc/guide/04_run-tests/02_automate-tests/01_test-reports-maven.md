@@ -65,7 +65,7 @@ Create a pom.xml file with the following content:
        &lt;plugin&gt;
          &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
          &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-         &lt;version&gt;1.1.0.1&lt;/version&gt;
+         &lt;version&gt;1.2.7&lt;/version&gt;
     &lt;executions&gt;
            &lt;execution&gt;
              &lt;phase&gt;test&lt;/phase&gt;
@@ -120,7 +120,7 @@ Create a pom.xml file with the following content:
                      &lt;plugin&gt;
                          &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
                          &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-                         &lt;version&gt;1.1.0.1&lt;/version&gt;
+                         &lt;version&gt;1.2.7&lt;/version&gt;
                          &lt;executions&gt;
                              &lt;execution&gt;
                                  &lt;phase&gt;integration-test&lt;/phase&gt;
