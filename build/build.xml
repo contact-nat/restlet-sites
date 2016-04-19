@@ -428,5 +428,43 @@
 		<zip destfile="${dist}/${dist-path}.zip" basedir="${dist}" includes="${dist-path}/**/*" />
 	</target>
 
+	<target name="generate-dhc-help" description="Generate the DHC help artefact">
+		<delete dir="${temp}/dhc-help" />
+		<mkdir dir="${temp}/dhc-help" />
+		<delete dir="${temp}/dhc-help-md" />
+		<mkdir dir="${temp}/dhc-help-md" />
+		<exec executable="python" output="${temp}/dhc-help/index.json">
+			<arg value="tools/generate-toc.py" />
+			<arg value="--path" />
+			<arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
+			<arg value="--dhcjsonindex" />
+		</exec>
+		<exec executable="python">
+			<arg value="tools/generate-toc.py" />
+			<arg value="--path" />
+			<arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
+			<arg value="--dhcfiles" />
+			<arg value="${temp}/dhc-help-md" />
+		</exec>
+		<java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
+			<arg value="${temp}/dhc-help-md" />
+			<arg value="${temp}/dhc-help" />
+		</java>
+	</target>
+
+	<target name="package-dhc-help" depends="generate-dhc-help" description="Package the DHC help artefact">
+		<jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
+		<exec executable="mvn">
+			<arg value="deploy:deploy-file" />
+			<arg value="-DgroupId=com.restlet.dhc" />
+			<arg value="-DartifactId=dhc-help" />
+			<arg value="-Dversion=1.0.0-SNAPSHOT" />
+			<arg value="-DgeneratePom=true" />
+			<arg value="-Dpackaging=jar" />
+			<arg value="-DrepositoryId=nexus-snapshots" />
+			<arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
+			<arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
+		</exec>
+	</target>
 
 </project>
