@@ -14,7 +14,7 @@ def main():
     parser.add_argument('--path', '-p',  type=str, help='Path to scan. If not provided takes current path.')
     parser.add_argument('--markdown', '-m',  action='store_true', help='If provided, return a markdown file.')
     parser.add_argument('--dhcjsonindex', '-dhci',  action='store_true', help='If provided, return a JSON representation of the dhc help guide.')
-    parser.add_argument('--dhcfiles', '-dhcf',  type=str, help='Path of the DHC help guide to scan. If not provided takes current path.')
+    parser.add_argument('--dhcfiles', '-dhcf',  type=str, help='Path where the DHC help files are saved (including images). If not provided takes current path.')
 
     args = parser.parse_args()
     path = args.path
@@ -121,19 +121,18 @@ def print_line_as_markdown(line, indentation):
         print '%s* [%s](%s)' % (indentation, line['title'], line['link_url'])
 
 def convert_to_dhc_json_index(document):
-    indentation = '    '
     listHelpPages = []
     listHelpPages.append('{"dir": false, "title":"%s", "path": "%s"}' % ("User Guide", "/index"))
     for line in document:
-        print_line_as_gwt_json_index(listHelpPages, line, "/")
+        print_line_as_dhc_json_index(listHelpPages, line, "/")
     print '[\n%s\n]' % (",\n".join(listHelpPages))
 
-def print_line_as_gwt_json_index(listHelpPages, line, dir):
+def print_line_as_dhc_json_index(listHelpPages, line, dir):
     if 'dir' in line.keys():
         # Is directory
         listHelpPages.append('{"dir": true, "title":"%s", "path": "%s"}' % (line['title'], dir + line['id']))
         for item in line['items']:
-            print_line_as_gwt_json_index(listHelpPages, item, dir + line['id'] + "/")
+            print_line_as_dhc_json_index(listHelpPages, item, dir + line['id'] + "/")
     elif 'file' in line.keys():
         # Is file
         listHelpPages.append('{"dir": false, "title":"%s", "path": "%s"}' % (line['title'], line['url']))
@@ -147,15 +146,15 @@ def convert_to_dhc_files(document, sourcepath, dhcfiles):
         shutil.copytree(os.path.join(sourcepath, 'images'), os.path.join(dhcfiles, 'images'))
     
     for line in document:
-        copy_to_gwt_md_files(line, sourcepath, dhcfiles)
+        copy_to_dhc_files(line, sourcepath, dhcfiles)
 
-def copy_to_gwt_md_files(line, sourcepath, dhcfiles):
+def copy_to_dhc_files(line, sourcepath, dhcfiles):
     if 'dir' in line.keys():
         imagesDir = os.path.join(line['sourcepath'], 'images');
         if os.path.exists(imagesDir):
             shutil.copytree(imagesDir, os.path.join(dhcfiles, line['targetpath'][1:], 'images'))
         for item in line['items']:
-            copy_to_gwt_md_files(item, sourcepath, dhcfiles)
+            copy_to_dhc_files(item, sourcepath, dhcfiles)
     if 'file' in line.keys():
         sourceFile = os.path.join(sourcepath, line['link_url'][1:])
         destFile = os.path.join(dhcfiles, '%s.md' % (line['url'][1:]))
