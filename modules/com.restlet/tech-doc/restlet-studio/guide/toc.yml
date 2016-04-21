@@ -94,18 +94,18 @@ toc:
     long-title: Visualize your API definition
     title: Visualize
     url: /translate/visualize
-  - file: 02_import-swagger.md
-    id: import-swagger
-    link_url: /03_translate/02_import-swagger.md
+  - file: 02_swagger.md
+    id: swagger
+    link_url: /03_translate/02_swagger.md
     long-title: Import & export Swagger definitions
     title: Swagger
-    url: /translate/import-swagger
-  - file: 03_export-raml.md
-    id: export-raml
-    link_url: /03_translate/03_export-raml.md
+    url: /translate/swagger
+  - file: 03_raml.md
+    id: raml
+    link_url: /03_translate/03_raml.md
     long-title: Import & export RAML definitions
     title: RAML 0.8
-    url: /translate/export-raml
+    url: /translate/raml
   long-title: Translate between API languages
   sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/03_translate
   targetpath: /translate
@@ -175,12 +175,12 @@ toc:
 - dir: 06_share
   id: share
   items:
-  - file: 01_share-apis.md
-    id: share-apis
-    link_url: /06_share/01_share-apis.md
+  - file: 01_manage-team.md
+    id: manage-team
+    link_url: /06_share/01_manage-team.md
     long-title: Manage your team
     title: Manage your team
-    url: /share/share-apis
+    url: /share/manage-team
   - file: 02_manage-apis.md
     id: manage-apis
     link_url: /06_share/02_manage-apis.md
