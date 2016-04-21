@@ -45,6 +45,8 @@ toc:
     title: Ready! API plugin
     url: /get-started/ready-api
   long-title: Get started
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/01_get-started
+  targetpath: /get-started
   title: Get started
 - dir: 02_craft
   id: craft
@@ -80,6 +82,8 @@ toc:
     title: Representations
     url: /craft/representations
   long-title: Craft an API
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/02_craft
+  targetpath: /craft
   title: Craft an API
 - dir: 03_translate
   id: translate
@@ -103,6 +107,8 @@ toc:
     title: RAML 0.8
     url: /translate/export-raml
   long-title: Translate between API languages
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/03_translate
+  targetpath: /translate
   title: Translate between API languages
 - dir: 04_download-sdk
   id: download-sdk
@@ -138,6 +144,8 @@ toc:
     title: Node.js
     url: /download-sdk/node-js
   long-title: Download client SDKs
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/04_download-sdk
+  targetpath: /download-sdk
   title: Download client SDKs
 - dir: 05_download-skeleton
   id: download-skeleton
@@ -161,6 +169,8 @@ toc:
     title: Node.js
     url: /download-skeleton/node-js
   long-title: Download server skeletons
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/05_download-skeleton
+  targetpath: /download-skeleton
   title: Download server skeletons
 - dir: 06_share
   id: share
@@ -168,8 +178,8 @@ toc:
   - file: 01_share-apis.md
     id: share-apis
     link_url: /06_share/01_share-apis.md
-    long-title: Share your APIs
-    title: Share your APIs
+    long-title: Manage your team
+    title: Manage your team
     url: /share/share-apis
   - file: 02_manage-apis.md
     id: manage-apis
@@ -177,6 +187,8 @@ toc:
     long-title: Manage your APIs
     title: Manage your APIs
     url: /share/manage-apis
-  long-title: Share your APIs
-  title: Share your APIs
+  long-title: Share APIs
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/06_share
+  targetpath: /share
+  title: Share APIs
 
