@@ -11,9 +11,14 @@ Click on the **API** menu and select **Import RAML 0.8**.
 ![Import RAML 0.8](images/import-raml.jpg "Import RAML 0.8")
 
 Select the .yml file that contains your API declaration.  
-Select the appropriate radio button to **Replace** your current definition or to **Merge** it with the one you want to **Import**.
 
 >**Note:** You can import a multi-file definition by uploading a zip archive. Click on **Choose a file** and browse to the zip archive you have chosen. From the **Main definition file** drop-down menu, select the  main file at the root of your API definition.
+
+Select the appropriate radio button to **Replace** your current definition or to **Merge** it with the one you want to **Import**.
+
+>**Note:** Restlet Studio informs you if some errors were detected in your RAML definition.
+
+
 
 # View the RAML definition of your API
 
