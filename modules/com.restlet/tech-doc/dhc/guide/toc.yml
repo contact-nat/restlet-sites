@@ -33,6 +33,8 @@ toc:
     title: Access account info
     url: /get-started/account-info
   long-title: Get started with DHC by Restlet
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/01_get-started
+  targetpath: /get-started
   title: Get started
 - dir: 02_perform-requests
   id: perform-requests
@@ -83,6 +85,8 @@ toc:
       title: Expressions in assertions
       url: /perform-requests/assertions/expressions
     long-title: Use assertions
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/02_perform-requests/03_assertions
+    targetpath: /perform-requests/assertions
     title: Use assertions
   - file: 04_history.md
     id: history
@@ -118,6 +122,8 @@ toc:
       title: Grammar
       url: /perform-requests/expressions/grammar
     long-title: Transform data through expressions
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/02_perform-requests/05_expressions
+    targetpath: /perform-requests/expressions
     title: Use expressions
   - file: 06_context-attributes.md
     id: context-attributes
@@ -126,6 +132,8 @@ toc:
     title: Use context attributes
     url: /perform-requests/context-attributes
   long-title: Perform requests with DHC by Restlet
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/02_perform-requests
+  targetpath: /perform-requests
   title: Perform requests
 - dir: 03_drive
   id: drive
@@ -136,42 +144,52 @@ toc:
     long-title: Create a new item in your Drive
     title: Create new item
     url: /drive/create-new-item
-  - file: 02_organize-requests.md
+  - file: 02_search-item.md
+    id: search-item
+    link_url: /03_drive/02_search-item.md
+    long-title: Search an item in your drive
+    title: Search item
+    url: /drive/search-item
+  - file: 03_organize-requests.md
     id: organize-requests
-    link_url: /03_drive/02_organize-requests.md
+    link_url: /03_drive/03_organize-requests.md
     long-title: Organize your requests in projects
     title: Organize requests
     url: /drive/organize-requests
-  - dir: 03_import-export
+  - dir: 04_import-export
     id: import-export
     items:
     - file: 01_import-projects.md
       id: import-projects
-      link_url: /03_drive/03_import-export/01_import-projects.md
+      link_url: /03_drive/04_import-export/01_import-projects.md
       long-title: Import projects
       title: Import projects
       url: /drive/import-export/import-projects
     - file: 02_export-projects.md
       id: export-projects
-      link_url: /03_drive/03_import-export/02_export-projects.md
+      link_url: /03_drive/04_import-export/02_export-projects.md
       long-title: Export projects
       title: Export projects
       url: /drive/import-export/export-projects
     - file: 03_data-structure.md
       id: data-structure
-      link_url: /03_drive/03_import-export/03_data-structure.md
+      link_url: /03_drive/04_import-export/03_data-structure.md
       long-title: Import and export data structure
       title: Data structure
       url: /drive/import-export/data-structure
     long-title: Import & export requests
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/03_drive/04_import-export
+    targetpath: /drive/import-export
     title: Import & export requests
-  - file: 04_synchronize-data.md
+  - file: 05_synchronize-data.md
     id: synchronize-data
-    link_url: /03_drive/04_synchronize-data.md
+    link_url: /03_drive/05_synchronize-data.md
     long-title: Synchronize your data
     title: Synchronize data
     url: /drive/synchronize-data
   long-title: Manage your drive
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/03_drive
+  targetpath: /drive
   title: Manage your drive
 - dir: 04_run-tests
   id: run-tests
@@ -198,8 +216,12 @@ toc:
       title: Run tests in CI
       url: /run-tests/automate-tests/jenkins-ci
     long-title: Automate tests
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/04_run-tests/02_automate-tests
+    targetpath: /run-tests/automate-tests
     title: Automate tests
   long-title: Run tests scenarios
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/04_run-tests
+  targetpath: /run-tests
   title: Run tests
 - dir: 05_share
   id: share
@@ -217,5 +239,7 @@ toc:
     title: Share your projects
     url: /share/share-projects
   long-title: Share your projects
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/05_share
+  targetpath: /share
   title: Share your projects
 
