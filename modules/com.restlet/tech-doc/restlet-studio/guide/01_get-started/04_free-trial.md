@@ -17,7 +17,7 @@ You can upgrade to a permanent Plan at any time. After 14 days, if you did not u
 
 The **Plans & Pricing** page, accessible from the **Pricing** menu, indicates the number of days left in your free trial.
 
-To start a Free Trial, click on **Pricing** on top right of your screen.
+<a href="https://studio.restlet.com/start-trial" target="_blank">Start a free trial of Restlet Studio now.</a>  
 Click on **Start Free Trial**.
 
 ![Restlet Studio Free Trial](images/r-s-free-trial.jpg "Restlet Studio Free Trial")
