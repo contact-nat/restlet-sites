@@ -6,6 +6,7 @@ v3.28.0
 - DOC-61 RS General information panel
 - DOC-62 RS Added View team button
 - DOC-59 RS & AS Added direct links to free trial
+- DOC-60  Added search item page
 
 v3.27.1
 

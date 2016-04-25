@@ -72,16 +72,19 @@ Each .md file has an associated .yml file (e.g. 01_sign-in.md file has its 01_si
 ## c. Add resources
 
 ### Insert screenshots
-screenshots are left-aligned
+Screenshots are left-aligned.  
 Screenshots are named following the syntax below:
-“add-entity.jpg”
-Screenshots are saved in jpg format.
-Highlight the part of interest in a square and darken the rest of the screenshot.
+“add-entity.jpg”  
+Screenshots are saved in jpg format.  
+Highlight the part of interest in a square and darken the rest of the screenshot.  
+If the area we want to highlight is hardly visible, add a red arrow (Skitch funky arrow medium size).
 
 ### Insert images
 To insert images in the documentation pages, create a folder called “images” at the same level than the .md file and follow the syntax below to call your image:
+
 ![Add an entity](images/add-an-entity.png "Add an Entity")
-The text in square brackets will display on the page as a clickable link.
+
+The text in square brackets will display on the page as a clickable link.  
 The text in quotes displays in the tooltip.
 
 #### Insert clickable images
@@ -152,3 +155,8 @@ You will need to [synchronize](/technical-resources/apispark/guide/create/overvi
 
 ### Part 4
 <h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
+
+# 3. Documentation management
+
+## Fill in the changes file
+Each tag content is specified in the changes file located in tech-doc folder.
