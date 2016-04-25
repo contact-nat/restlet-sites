@@ -1,3 +1,12 @@
+v3.28.0
+
+- DOC-56 DHC Updated Maven plugin version
+- DOC-57 RS Share page becomes Team page/menu
+- DOC-58 RS Improved imports (RAML)
+- DOC-61 RS General information panel
+- DOC-62 RS Added View team button
+- DOC-59 RS & AS Added direct links to free trial
+
 v3.27.1
 
 DHC User Guide:
