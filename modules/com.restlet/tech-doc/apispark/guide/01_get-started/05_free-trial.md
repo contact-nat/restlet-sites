@@ -19,4 +19,4 @@ You can upgrade to a permanent Plan at any time. After 14 days, if you did not u
 
 The **Pricing** page indicates the number of days left in your free trial. To access it, click on your username on top right of your screen and select **Account**. From the **Account** page, select the **Pricing** tab.
 
-To start a Free Trial, click on **Start Free Trial** from the **Pricing** page.
+<a href="https://apispark.restlet.com/start-trial" target="_blank">Start a free trial now!</a>
