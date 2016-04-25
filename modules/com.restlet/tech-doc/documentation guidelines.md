@@ -41,7 +41,6 @@ the console (instead of web IDE)
 the Dashboard
 
 
-
 # 2. Technical Aspects
 
 ## a. Write content in Markdown language
@@ -73,11 +72,11 @@ Each .md file has an associated .yml file (e.g. 01_sign-in.md file has its 01_si
 ## c. Add resources
 
 ### Insert screenshots
-surround the interesting part in a red rectangle with round corners (size 3)
 screenshots are left-aligned
 Screenshots are named following the syntax below:
 “add-entity.jpg”
 Screenshots are saved in jpg format.
+Highlight the part of interest in a square and darken the rest of the screenshot.
 
 ### Insert images
 To insert images in the documentation pages, create a folder called “images” at the same level than the .md file and follow the syntax below to call your image:
