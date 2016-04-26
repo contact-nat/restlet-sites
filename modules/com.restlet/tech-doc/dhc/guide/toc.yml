@@ -2,12 +2,12 @@ toc:
 - dir: 01_get-started
   id: get-started
   items:
-  - file: 01_install.md
-    id: install
-    link_url: /01_get-started/01_install.md
+  - file: 01_launch.md
+    id: launch
+    link_url: /01_get-started/01_launch.md
     long-title: Launch DHC by Restlet
     title: Launch DHC
-    url: /get-started/install
+    url: /get-started/launch
   - file: 02_sign-in.md
     id: sign-in
     link_url: /01_get-started/02_sign-in.md
