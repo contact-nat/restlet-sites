@@ -1,4 +1,4 @@
-Restlet Studio allows you to create several APIs and to [share them with members of your team](/technical-resources/restlet-studio/guide/share/manage team "share") them with members of your team. Your **APIs** page allows you to manage your APIs.
+Restlet Studio allows you to create several APIs and to [share them with members of your team](/technical-resources/restlet-studio/guide/share/manage-team "share"). Your **APIs** page allows you to manage your APIs.
 
 The **All** tab gives you the list of all the APIs you have access to (yours and those of your team).
 
