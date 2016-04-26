@@ -1,6 +1,7 @@
 v3.28.1
 
 - RS Fixed broken link
+- DHC Removed useless character
 
 
 v3.28.0
