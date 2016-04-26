@@ -110,6 +110,7 @@ http://johannesluderschmidt.de/creating-animated-gifs-from-the-command-line-in-m
 To insert external links, we follow the syntax below:
 <a href="http://support.restlet.com/" target="_blank">Help Desk</a>
  target="_blank" is added to open in a new window.
+
 #### Internal links
 To insert internal links (links to another section of the documentation), we follow the syntax below:
 [Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall settings")
@@ -118,6 +119,13 @@ The text in quotes displays in the tooltip.
 ##### Insert links with customizable parts
 Use {customizable part} rather than <customizable part> which will not display:
 https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview
+
+##### Internal links in DHC doc
+As DHC doc is also integrated into the product, we need internal links to be relative links (rather than absolute links).  
+So we will not write "/technical-resources/dhc/guide/drive/search-item" but "./drive/search-item" (if in current folder)  
+>**Note:**
+./ means current folder  
+../ means previous folder
 
 ### Insert manual anchors
 
