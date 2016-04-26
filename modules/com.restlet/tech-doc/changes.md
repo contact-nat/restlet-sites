@@ -1,3 +1,8 @@
+v3.28.1
+
+- RS Fixed broken link
+
+
 v3.28.0
 
 - DOC-56 DHC Updated Maven plugin version
