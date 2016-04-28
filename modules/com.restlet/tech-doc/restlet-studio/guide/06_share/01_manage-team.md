@@ -2,7 +2,7 @@ Restlet Studio allows you to share your APIs with members of your team (if you s
 
 # View your teams
 
-Click on the **APIs** menu and select **Team** (or click the *View team* button).  
+To navigate to your **Team** page, make sure you are signed in, then click on your username on top right of your screen and select **Team** (or click the *View team* button).  
 
 ![View team](images/view-team-button.jpg "View team")
 
@@ -18,7 +18,7 @@ The **Members** displayed underneath are those of the team selected above.
 
 # Add users to your team
 
-Click on the **APIs** menu and select **Team** (or click the *View team* button).  
+Click on your username on top right of your screen and select **Team** (or click the *View team* button).  
 In the **Add users to your team** field, enter the email address of a user you want to add to your team and click **Add**.
 
 ![Add user to team](images/add-user-to-team.jpg "Add user to team")
