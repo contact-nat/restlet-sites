@@ -187,6 +187,12 @@ toc:
     long-title: Manage your APIs
     title: Manage your APIs
     url: /share/manage-apis
+  - file: 03_change-api-visibility.md
+    id: change-api-visibility
+    link_url: /06_share/03_change-api-visibility.md
+    long-title: Change an API visibility
+    title: Change API visibility
+    url: /share/change-api-visibility
   long-title: Share APIs
   sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/restlet-studio/guide/06_share
   targetpath: /share
