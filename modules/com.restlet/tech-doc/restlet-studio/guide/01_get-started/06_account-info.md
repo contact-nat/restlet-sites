@@ -1,14 +1,16 @@
 All your Restlet Studio account details are available on the **Account** page.
 
-To navigate to your **Account** page, make sure you are signed in, then click on your username on top right of your screen and select **My account**.
+To navigate to your **Account** page, make sure you are signed in, then click on your username on top right of your screen and select **Account**.
 
-![My account](images/my-account.jpg "My account")
+![Account](images/my-account.jpg "Account")
 
-Your **Account** page is divided into 2 sections:  
+Your **Account** page is divided into 3 sections:  
 
 - the **Account** section provides your account details.  
 
 - the **Plan** section provides information about the plan you selected and allows you to change plan or modify your billing details.
+
+- the **Billing information** section allows you to view and/or modify your billing information.
 
 # Account
 
@@ -23,28 +25,29 @@ Your **Account** page is divided into 2 sections:
 
 # Plan
 
-## Description
 
 ![Plan](images/account-page-plan.jpg "Plan")
 
  * **My plan**:
 - name of plan / price per month,
 - **Change plan** link.
- * **Card**:
-- partially hidden credit card number and type of card,
-- **Change card** link.
- * **Expiration date**: credit card expiration date in month/year format
+
 
 ## Change plan
-
-![Change plan](images/change-plan.jpg "Change plan")
 
 You can downgrade or upgrade plan directly from your **Account** page.  
 Click on the **Change plan** link.  
 From the **Plans & Pricing** page, click on the appropriate **Downgrade** or **Upgrade** button and follow the confirmation messages.
 
-## Change card
+# Billing information
 
-![Change card](images/change-card.jpg "Change card")
+![Change card](images/account-page-billing-info.jpg "Change card")
+
+ * **Card**:
+- partially hidden credit card number and type of card,
+- **Change card** link.
+ * **Expiration date**: credit card expiration date in month/year format
+
+## Change card
 
 If you need to change the credit card you saved in your billing details, click on the **Change card** link and enter your new credit card details in the **Change credit card** window.

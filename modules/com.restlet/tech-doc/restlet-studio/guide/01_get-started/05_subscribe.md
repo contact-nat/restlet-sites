@@ -24,6 +24,4 @@ The **Plans & Pricing** page gives you snapshot of what each plan allows you to 
 You will then need to enter your credit card details unless you have done it already.  
 You can also enter a new credit card by clicking **No, change card**.
 
-![Change credit card](images/change-credit-card.jpg "Change credit card")
-
 Click on **Purchase** to confirm. A message will give you a recap of what this new plan allows you to do.
