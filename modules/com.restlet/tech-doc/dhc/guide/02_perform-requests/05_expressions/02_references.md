@@ -1,13 +1,15 @@
 # Introduction
 
-You can declare a reference on:  
-- a context variable,  
-- saved request data  
-- and on a response to the saved request.
+You can declare a reference on:
+
+* a context variable,
+* saved request data
+* and on a response to the saved request.
 
 The reference declaration is written:
-- as a string (single or double quoted),  
-- or as an identifier (see grammar rule id).
+
+* as a string (single or double quoted),
+* or as an identifier (see grammar rule id).
 
 If the referenced value is JSON object, then you can use ```JsonPath``` method or dot notation to get the object properties.
 
