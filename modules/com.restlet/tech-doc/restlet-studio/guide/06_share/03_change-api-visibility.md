@@ -6,6 +6,9 @@ So you can decide to create an API definition and keep it private by setting its
 
 The API visibility can be modified from the [General information panel](/technical-resources/restlet-studio/guide/craft/general-info "General information panel") or from the [APIs page](/technical-resources/restlet-studio/guide/share/manage-apis "APIs page").
 
+
+>**Note:** Sharing APIs is only available with a Team or a Scale plan. Downgrading to Solo plan will automatically make all your APIs private.
+
 # Change visibility
 
 Navigate to the General Information section of an API or to your APIs page (**APIs** / **My APIs**).  
