@@ -17,7 +17,7 @@ Click on the **Add** button of the **Resources** section.
 
 Fill in the **Add a resource** window and click on the **Add** button. The new resource displays in the **Resources** section.
 
->**Note:** The **Relative path** and **Name** fields are required and must be Java class compliant.
+>**Note:** The **Relative path** field is required and as the **Name** field, it must be Java class compliant.
 
 ## Add a Method
 
