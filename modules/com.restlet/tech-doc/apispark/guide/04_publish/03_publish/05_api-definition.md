@@ -58,34 +58,18 @@ The **Swagger 1.2** definition for the Contacts API looks like this:
 
 What's great with these formats is that there are more and more tools which understand them.
 
-## Swagger
+## Swagger UI
 
 **Swagger** is an API description language that comes with a number of tools including Swagger UI and Swagger Code Generator. Swagger UI provides a nice HTML presentation of your API’s contract and allows you to test your API by calling it. The Swagger Code Generator generates client kits for your API in several languages.
 
-### Access Swagger UI demo
+APISpark provides you with a **swagger** UI "Try it out" button that allows you to  launch requests to your API in a new tab in Swagger UI. If you have activated authentication, your credentials are automatically prefilled.
 
-From an API's **General information** panel, you can get the Swagger definition link to access Swagger UI.
+![Swagger UI](images/swagger-ui.jpg "Swagger UI")
 
-Copy the Swagger link from the **Export your API** section and paste it in
-<a href="
-http://petstore.swagger.wordnik.com" target="_blank">Swagger UI demo</a>.
+## DHC
 
-![Swagger URL](images/swagger-url.jpg "Swagger URL")
+Restlet also provides an API testing tool called DHC. You can either launch <a href="https://dhc.restlet.com/" target="_blank">DHC online service</a> or <a href="https://chrome.google.com/webstore/detail/dhc-rest-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install DHC Chrome application</a>.
 
-> **Note:** Your API documentation must be public as seen on the [Documentation](/technical-resources/apispark/guide/publish/publish/documentation "Documentation") page.
+Pick up your endpoint URI and your credentials from the **Endpoints** section of APISpark and launch your request in DHC.
 
-The screenshot below is an example of what the Swagger UI looks like.  
-
-![Swagger](images/swagger-ui.jpg "Swagger")
-
-## Postman
-
-The *Postman* application can import RAML or Swagger definition to a Postman collection.
-
-From the main window,
-
-![Import in Postman](images/postman-import.png "Import in Postman")
-
-select the **Import** menu on top of the screen to open the import popup.
-
-![Import popup](images/postman-import-popup.png "Import popup")
+![Request in DHC](images/dhc-request.jpg "Request in DHC")
