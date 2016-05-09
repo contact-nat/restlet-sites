@@ -39,12 +39,12 @@ In this example, we are using a so called "petstore" API that references pets an
 ### Process
 Launch a GET request to retrieve the pets with *pending* status.
 
+<pre class="language-bash"><code class="language-bash">http://petstore.swagger.io/v2/pet/findByStatus?status=pending
+</code></pre>
+
 ![expression builder](images/expression-builder1.jpg "expression builder")
 
 Launch another request to get the first pet of the list of pending pets by retrieving the id from the result of your first request with ```/pets/{petId}```.
-
-<pre class="language-bash"><code class="language-bash">http://petstore.swagger.io/v2/pet/findByStatus?status=pending
-</code></pre>
 
 To do this, click at the end of the URL field and click the magic wand <i class="fa fa-magic"></i>.
 
@@ -56,7 +56,7 @@ You can now build your expression with the expression builder: select your API f
 
 ![expression builder](images/expression-builder5.jpg "expression builder")
 
-Your expression displays at the bottom of the **Expression builder** pop up as you are building it. Click **Build**.
+Your expression displays at the bottom of the **Expression builder** pop-up as you are building it. Click **Build**.
 
 <pre class="language-bash"><code class="language-bash">{"Swagger Petstore"."/pet/findByStatus"."findPetsByStatus"."response"."body"."0"."id"}
 </code></pre>
@@ -72,18 +72,18 @@ You can also build your expressions by hand in curly brackets.
 
 ## Ex 2: an expression declarations
 
-<pre class="language-bash"><code class="language-bash">{host}
+<pre class="language-bash"><code class="language-bash">${"host"}
 
-{"host"}{"path"}
+${"host"}${"path"}
 
-{"scheme"}{"host"}{"path"}
+${"scheme"}${"host"}${"path"}
 
-text{random()}other text{random()}
+text${random()}other text${random()}
 </code></pre>
 
 You can also use built-in methods to transform values.
 
 ## Ex 3: calculate MD5 hash from text or JSON response body
 
-<pre class="language-bash"><code class="language-bash">{"Saved Request #1"."body".md5()}
+<pre class="language-bash"><code class="language-bash">${"Saved Request #1"."body".md5()}
 </code></pre>
