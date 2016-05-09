@@ -73,6 +73,7 @@ Each .md file has an associated .yml file (e.g. 01_sign-in.md file has its 01_si
 
 ### Insert screenshots
 Screenshots are left-aligned.  
+They must be 700px wide.
 Screenshots are named following the syntax below:
 “add-entity.jpg”  
 Screenshots are saved in jpg format.  
