@@ -1,3 +1,17 @@
+v3.29.0
+
+- DOC-65 RS Team page is now accessible from username/Team
+- DOC-66 RS General information panel update
+- RS Added API visibility page
+- DOC-76 DHC Visual expression builder
+- DOC-64 RS API creation pop up
+- DOC-67 APIs page changes
+- AS Replaced Postman example by DHC in API definition page
+- DOC-71 & 68 RS Collection replaced by List & Operation replaces Method
+- DOC-70 Resource name is not required anymore
+- DOC-72 Update Add resource screenshot
+
+
 v3.28.1
 
 - RS Fixed broken link
