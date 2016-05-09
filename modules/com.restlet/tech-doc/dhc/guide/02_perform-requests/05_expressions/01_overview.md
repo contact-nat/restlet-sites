@@ -3,7 +3,7 @@
 Expressions allow you to get and transform existing data from:  
 - a context,  
 - requests stored in a repository,  
-- the last response on/to the stored requests (if a response exists)
+- the last response on/to the stored requests (if a response exists).
 
 You can put expressions in:  
 - URL,  
@@ -11,7 +11,7 @@ You can put expressions in:
 - header values,  
 - text body,  
 - form items values,  
-- assertions values
+- assertions values.
 
 There is no limit on how many expressions you can use in one declaration.  
 Expressions can be freely mixed with a plain text.
