@@ -1,0 +1,1 @@
+Clicking on the name of your scenario in the left panel will show the overview where you can run, re-order, rename and describe your scenario. You can also automatize the process by launching your scenarios via the [Maven plugin](https://restlet.com/technical-resources/dhc/guide/run-tests/automate-tests/test-reports-maven).
