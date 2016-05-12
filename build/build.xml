@@ -1,64 +1,64 @@
 <?xml version="1.0"?>
 
 <!-- ==============================================
-Web build file  -  Copyright 2005-2014 Restlet
-============================================== -->
+     Web build file  -  Copyright 2005-2014 Restlet
+     ============================================== -->
 
 <project name="Web" default="rebuild">
-  <import file="${forge-home}/forge-tools.xml" optional="true" />
-  <tstamp>
-    <format property="build.date" pattern="yyyyMMdd-HHmm" />
-  </tstamp>
+	<import file="${forge-home}/forge-tools.xml" optional="true" />
+	<tstamp>
+		<format property="build.date" pattern="yyyyMMdd-HHmm" />
+	</tstamp>
 
-  <!-- Set global names -->
-  <property file="custom.properties" />
-  <property file="build.properties" />
-  <property name="author" value="Jerome Louvel" />
+	<!-- Set global names -->
+	<property file="custom.properties" />
+	<property file="build.properties" />
+	<property name="author" value="Jerome Louvel" />
 
-  <!-- Set global paths -->
-  <property name="temp" location="temp" />
-  <property name="tools" location="tools" />
-  <property name="javadocs" value="${temp}/javadocs" />
-  <property name="classes" value="${temp}/classes" />
-  <property name="bin" location="bin" />
-  <property name="config" value="${bin}/config" />
-  <property name="dist" location="dist" />
-  <property name="dist-path" value="web-${version-compact}" />
-  <property name="tmpl" location="tmpl" />
-  <property name="data" location="prod/data" />
-  <property name="docs" location="docs" />
-  <property name="src" location="../modules/com.restlet.frontend/src" />
-  <property name="lib" location="../librairies" />
-  <property name="mods" location="../modules" />
+	<!-- Set global paths -->
+	<property name="temp" location="temp" />
+	<property name="tools" location="tools" />
+	<property name="javadocs" value="${temp}/javadocs" />
+	<property name="classes" value="${temp}/classes" />
+	<property name="bin" location="bin" />
+	<property name="config" value="${bin}/config" />
+	<property name="dist" location="dist" />
+	<property name="dist-path" value="web-${version-compact}" />
+	<property name="tmpl" location="tmpl" />
+	<property name="data" location="prod/data" />
+	<property name="docs" location="docs" />
+	<property name="src" location="../modules/com.restlet.frontend/src" />
+	<property name="lib" location="../librairies" />
+	<property name="mods" location="../modules" />
 
-  <property name="www" value="www" />
-  <property name="restlet-com" value="${www}/restlet-com" />
+	<property name="www" value="www" />
+	<property name="restlet-com" value="${www}/restlet-com" />
 
-  <!-- Create the time stamp -->
-  <tstamp />
-  <!-- Set the property that will enable the Javadoc target -->
-  <condition property="do-javadoc">
-    <istrue value="${javadoc}" />
-  </condition>
-  <!-- Set the property that will enable the Package target -->
-  <condition property="do-package">
-    <istrue value="${package}" />
-  </condition>
-  <!-- Set the property that will enable the Integrate target -->
-  <condition property="do-integrate">
-    <istrue value="${integrate}" />
-  </condition>
+    <!-- Create the time stamp -->
+     <tstamp />
+     <!-- Set the property that will enable the Javadoc target -->
+     <condition property="do-javadoc">
+         <istrue value="${javadoc}" />
+     </condition>
+     <!-- Set the property that will enable the Package target -->
+     <condition property="do-package">
+         <istrue value="${package}" />
+     </condition>
+     <!-- Set the property that will enable the Integrate target -->
+     <condition property="do-integrate">
+         <istrue value="${integrate}" />
+     </condition>
+	
+	<property file="${tmpl}/config/config.${envt}.properties" />
 
-  <property file="${tmpl}/config/config.${envt}.properties" />
+	<!-- Current year -->
+	<tstamp>
+		<format property="current-year" pattern="yyyy" />
+	</tstamp>
 
-  <!-- Current year -->
-  <tstamp>
-    <format property="current-year" pattern="yyyy" />
-  </tstamp>
-
-  <!-- Used to parse the unique json data base. -->
-  <script language="javascript">
-    <![CDATA[
+	<!-- Used to parse the unique json data base. -->
+	<script language="javascript">
+		<![CDATA[
     importClass(java.io.File);
     importClass(java.io.FileReader);
     importClass(java.io.BufferedReader);
@@ -74,7 +74,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     var line = null;
     var json = "";
     while ((line = br.readLine()) != null) {
-    json += line;
+	json += line;
 
     }
     var versions = eval("(" + json + ")");
@@ -87,415 +87,384 @@ Web build file  -  Copyright 2005-2014 Restlet
     line = null;
     json = "";
     while ((line = br.readLine()) != null) {
-    json += line;
+	json += line;
 
     }
     // Evaluate the serialized JSON
     var echo = Web.createTask("echo");
     var struct = eval("(" + json + ")");
     for (i in struct) {
-    var versionType = struct[i].id;
-    var version = struct[i].version;
-    for (j in versions) {
-    if (versions[j].id == version) {
-    echo.setMessage(versionType + "=" + version);
-    echo.perform();
-    Web.setProperty(versionType + ".restlet-version-minor", versions[j].minorVersion);
-    Web.setProperty(versionType + ".restlet-release-date", versions[j].published);
-    Web.setProperty(versionType + ".restlet-version-compact", versions[j].fullVersionCompact);
-    }
-    }
+        var versionType = struct[i].id;
+        var version = struct[i].version;
+        for (j in versions) {
+            if (versions[j].id == version) {
+                echo.setMessage(versionType + "=" + version);
+                echo.perform();
+                Web.setProperty(versionType + ".restlet-version-minor", versions[j].minorVersion);
+                Web.setProperty(versionType + ".restlet-release-date", versions[j].published);
+                Web.setProperty(versionType + ".restlet-version-compact", versions[j].fullVersionCompact);
+            }
+        }
     }
 
     ]]>
-  </script>
+	</script>
 
-  <path id="main.path">
-    <fileset dir="${lib}" includes="**/*.jar" />
-  </path>
+	<path id="main.path">
+		<fileset dir="${lib}" includes="**/*.jar" />
+	</path>
 
-  <path id="fmpp.path">
-    <pathelement location="tools/fmpp/bsh.jar" />
-    <pathelement location="tools/fmpp/fmpp.jar" />
-    <pathelement location="tools/fmpp/freemarker.jar" />
-    <pathelement location="tools/fmpp/oro.jar" />
-    <pathelement location="tools/fmpp/resolver.jar" />
-  </path>
+	<path id="fmpp.path">
+		<pathelement location="tools/fmpp/bsh.jar" />
+		<pathelement location="tools/fmpp/fmpp.jar" />
+		<pathelement location="tools/fmpp/freemarker.jar" />
+		<pathelement location="tools/fmpp/oro.jar" />
+		<pathelement location="tools/fmpp/resolver.jar" />
+	</path>
 
-  <!-- =================== -->
-  <!-- ===  Ant Tasks  === -->
-  <!-- =================== -->
-  <!-- FMPP (FreeMarker-based text file PreProcessor) -->
-  <taskdef name="fmpp" classname="fmpp.tools.AntTask" classpathref="fmpp.path" />
+	<!-- =================== -->
+	<!-- ===  Ant Tasks  === -->
+	<!-- =================== -->
+	<!-- FMPP (FreeMarker-based text file PreProcessor) -->
+	<taskdef name="fmpp" classname="fmpp.tools.AntTask" classpathref="fmpp.path" />
 
-  <!-- ==================== -->
-  <!-- ===  Ant Macros  === -->
-  <!-- ==================== -->
-  <macrodef name="generate-guide" description="Generate the source code for a specific user guide version.">
-    <attribute name="version" />
-    <sequential>
-      <!-- deal with the "guide" links -->
-      <replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" flags="g">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- deal with the "javadocs" links -->
-      <replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- deal with the "source" links -->
-      <replaceregexp match="github://(.\..)/(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/\1/modules/\2" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- deal with the "source" links -->
-      <replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <replaceregexp match="\$\{restlet-version-minor\}" replace="@{version}" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- Add the last update date to the guide -->
-      <exec executable="git" outputproperty="git.revision.date">
-        <arg value="log" />
-        <arg value="-n1" />
-        <arg value="--date=rfc" />
-        <arg value="--format=Last update: %ad" />
-        <arg value="${mods}/com.restlet/tech-doc/restlet-framework/guide/@{version}" />
-      </exec>
-      <echo file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" append="true">${git.revision.date}</echo>
-    </sequential>
-  </macrodef>
-
-
-  <macrodef name="generate-guide-pdf" description="Generate the source code for a specific user guide version.">
-    <attribute name="version" />
-    <sequential>
-      <!-- deal with the "guide" links -->
-      <replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- deal with the "javadocs" links -->
-      <replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- deal with the "source" links -->
-      <replaceregexp match="github://(.\..)/(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/\1/modules/\2" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- deal with the "source" links -->
-      <replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
-        <fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
-      </replaceregexp>
-      <!-- Add the last update date to the guide -->
-      <exec executable="git" outputproperty="git.revision.date">
-        <arg value="log" />
-        <arg value="-n1" />
-        <arg value="--date=rfc" />
-        <arg value="--format=Last update: %ad" />
-        <arg value="${mods}/com.restlet/tech-doc/restlet-framework/guide/@{version}" />
-      </exec>
-      <echo file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" append="true">${git.revision.date}</echo>
-    </sequential>
-  </macrodef>
+	<!-- ==================== -->
+	<!-- ===  Ant Macros  === -->
+	<!-- ==================== -->
+	<macrodef name="generate-guide" description="Generate the source code for a specific user guide version.">
+		<attribute name="version" />
+		<sequential>
+			<!-- deal with the "guide" links -->
+			<replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" flags="g">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "javadocs" links -->
+			<replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "source" links -->
+			<replaceregexp match="github://(.\..)/(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/\1/modules/\2" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "source" links -->
+			<replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<replaceregexp match="\$\{restlet-version-minor\}" replace="@{version}" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- Add the last update date to the guide -->
+			<exec executable="git" outputproperty="git.revision.date">
+			    <arg value="log" />
+			    <arg value="-n1" />
+			    <arg value="--date=rfc" />
+			    <arg value="--format=Last update: %ad" />
+			    <arg value="${mods}/com.restlet/tech-doc/restlet-framework/guide/@{version}" />
+			</exec>
+			<echo file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" append="true">${git.revision.date}</echo>
+		</sequential>
+	</macrodef>
 
 
-  <macrodef name="generate-tutorial" description="Generate the source code for a specific tutorial version.">
-    <attribute name="version" />
-    <sequential>
-      <!-- generate version related properties -->
-      <ant antfile="${tmpl}/config/generate-config.xml" target="generate-config" inheritAll="false">
-        <property name="restlet.version" value="@{version}" />
-        <property name="tmpl" value="${tmpl}" />
-        <property name="temp" value="${temp}" />
-        <property name="file.model" value="${temp}/model.tutorial.@{version}.properties" />
-      </ant>
-      <!-- parse the files according to this version properties -->
-      <replace dir="${temp}/owr/tech-doc/restlet-framework/tutorial/@{version}" replacefilterfile="${temp}/model.tutorial.@{version}.properties" />
-
-      <mkdir dir="${temp}/toc" />
-      <exec executable="sh" osfamily="unix">
-        <arg value="${tools}/get-title.sh" />
-        <arg value="${temp}/owr/tech-doc/restlet-framework/tutorial/@{version}/index.md" />
-        <arg value="${temp}/toc/toc.tutorial.@{version}.properties" />
-      </exec>
-
-      <!-- shift templates according to the current version -->
-      <copy file="${tmpl}/md/tutorial.tmpl" tofile="${temp}/toc/tutorial.@{version}.tmpl">
-        <filterchain>
-          <replacestring from="@version@" to="@{version}" />
-        </filterchain>
-      </copy>
-      <!-- cope with marked down files and add decoration -->
-      <exec executable="sh" osfamily="unix">
-        <arg value="${tmpl}/md/unixtohtml.sh" />
-        <arg value="${temp}/owr/tech-doc/restlet-framework/tutorial/@{version}" />
-        <arg value="${temp}/toc/tutorial.@{version}.tmpl" />
-      </exec>
-      <!-- complete properties with this version''s set of properties, before we cope with the wwhole page decoration -->
-      <concat append="true" destfile="${temp}/toc/toc.properties">
-        <filelist files="${temp}/toc/toc.tutorial.@{version}.properties" />
-      </concat>
-    </sequential>
-  </macrodef>
-
-  <macrodef name="generate-file" description="Generate the source code for a specific file.">
-    <attribute name="source" />
-    <attribute name="target" />
-    <attribute name="raw" />
-    <sequential>
-      <!-- cope with marked down file and add decoration -->
-      <exec executable="sh" osfamily="unix">
-        <arg value="${tmpl}/md/unixtohtml.sh" />
-        <arg value="${temp}/owr/@{source}" />
-        <arg value="${temp}/owr/@{target}" />
-        <arg value="${tmpl}/md/singlefile-@{raw}.tmpl" />
-      </exec>
-    </sequential>
-  </macrodef>
-
-  <!-- ===================== -->
-  <!-- ===  Ant Targets  === -->
-  <!-- ===================== -->
-
-  <!-- GENERAL targets -->
-  <target name="build" depends="generate, verify, integrate, stage, package" description="Full build." />
-  <target name="rebuild" depends="clean, generate, verify, integrate, stage, package" description="Full build from scratch." />
-
-  <!-- CLEAN target -->
-  <target name="clean" depends="clean-temp, clean-dist" description="Clean the staging area." />
-
-  <!-- CLEAN-DIST target -->
-  <target name="clean-dist" description="Clean distributions files.">
-    <delete includeEmptyDirs="true" verbose="false" quiet="false" failonerror="false">
-      <fileset dir="${dist}">
-        <include name="*/${dist-path}/**/*" />
-        <include name="*/${dist-path}" />
-      </fileset>
-    </delete>
-
-    <delete includeEmptyDirs="true" verbose="false" quiet="false" failonerror="false">
-      <fileset dir="${dist}" />
-    </delete>
-  </target>
-
-  <!-- CLEAN-TEMP target -->
-  <target name="clean-temp" description="Clean temporary build files.">
-    <!-- Delete the classes and Javadoc directories -->
-    <delete includeEmptyDirs="true" verbose="false" quiet="false" failonerror="false">
-      <fileset dir="${temp}" />
-    </delete>
-  </target>
-
-  <!-- GENERATE target -->
-  <target name="generate" depends="generate-classes, generate-templates, generate-javadocs" description="Generate files." />
-
-  <target name="generate-classes" description="Compile the source files.">
-    <!-- Create the classes directory used by compiler -->
-    <mkdir dir="${classes}" />
-
-    <!-- Compiles source files -->
-    <javac compiler="javac1.6" debug="true" srcdir="${src}" destdir="${classes}" classpathref="main.path" />
-  </target>
-
-  <target name="generate-templates" description="Generate template-based files.">
-    <!-- generate static files for the site : restlet.com, user guide generated with pandoc -->
-    <delete dir="${temp}/owr" />
-    <mkdir dir="${temp}/owr" />
-    <copy todir="${temp}/owr">
-      <fileset dir="../modules/com.restlet/" />
-    </copy>
-
-    <!-- Add the last update date to the guides -->
-    <exec executable="git" outputproperty="apispark.guide.revision.date">
-      <arg value="log" />
-      <arg value="-n1" />
-      <arg value="--date=rfc" />
-      <arg value="--format=Last update: %ad" />
-      <arg value="${mods}/com.restlet/tech-doc/apispark/guide" />
-    </exec>
-    <echo file="${temp}/owr/tech-doc/apispark/guide/index.md" append="true">${apispark.guide.revision.date}</echo>
-    <exec executable="git" outputproperty="studio.guide.revision.date">
-      <arg value="log" />
-      <arg value="-n1" />
-      <arg value="--date=rfc" />
-      <arg value="--format=Last update: %ad" />
-      <arg value="${mods}/com.restlet/tech-doc/restlet-studio/guide" />
-    </exec>
-    <echo file="${temp}/owr/tech-doc/restlet-studio/guide/index.md" append="true">${studio.guide.revision.date}</echo>
-    <generate-guide version="2.2" />
-    <generate-guide version="2.3" />
-    <replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
-      <fileset dir="${temp}/owr" includes="**/*" />
-    </replaceregexp>
-    <replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/${stable.restlet-version-minor}/\1" byline="true">
-      <fileset dir="${temp}/owr" includes="**/*" />
-    </replaceregexp>
+	<macrodef name="generate-guide-pdf" description="Generate the source code for a specific user guide version.">
+		<attribute name="version" />
+		<sequential>
+			<!-- deal with the "guide" links -->
+			<replaceregexp match="guide://" replace="/technical-resources/restlet-framework/guide/@{version}" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "javadocs" links -->
+			<replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/@{version}/\1" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "source" links -->
+			<replaceregexp match="github://(.\..)/(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/\1/modules/\2" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- deal with the "source" links -->
+			<replaceregexp match="github://(.*)" replace="https://github.com/restlet/restlet-framework-java/tree/@{version}/modules/\1" byline="true">
+				<fileset dir="${temp}/owr/tech-doc/restlet-framework/guide/@{version}" includes="**/*" />
+			</replaceregexp>
+			<!-- Add the last update date to the guide -->
+			<exec executable="git" outputproperty="git.revision.date">
+			    <arg value="log" />
+			    <arg value="-n1" />
+			    <arg value="--date=rfc" />
+			    <arg value="--format=Last update: %ad" />
+			    <arg value="${mods}/com.restlet/tech-doc/restlet-framework/guide/@{version}" />
+			</exec>
+			<echo file="${temp}/owr/tech-doc/restlet-framework/guide/@{version}/index.md" append="true">${git.revision.date}</echo>
+		</sequential>
+	</macrodef>
 
 
-    <fmpp sourceRoot="${temp}/owr" outputRoot="${temp}/${restlet-com}" modes="ignore(**/.svn,**/Thumbs.db)" quiet="reallyQuiet">
-      <data expandProperties="yes">
-        labels:xml(labels.xml)
-        hierarchy:xml(hierarchy.xml)
-        restletDistributions: text(data/distributions.json)
-        restletVersions: text(data/versions.json)
-        restletQualifiers: text(data/qualifiers.json)
-        restletEditions: text(data/editions.json)
-        restletContributors: slicedText(data/contributors.txt)
-        language: en
-        ant: antProperties()
+	<macrodef name="generate-tutorial" description="Generate the source code for a specific tutorial version.">
+		<attribute name="version" />
+		<sequential>
+			<!-- generate version related properties -->
+			<ant antfile="${tmpl}/config/generate-config.xml" target="generate-config" inheritAll="false">
+				<property name="restlet.version" value="@{version}" />
+				<property name="tmpl" value="${tmpl}" />
+				<property name="temp" value="${temp}" />
+				<property name="file.model" value="${temp}/model.tutorial.@{version}.properties" />
+			</ant>
+			<!-- parse the files according to this version properties -->
+			<replace dir="${temp}/owr/tech-doc/restlet-framework/tutorial/@{version}" replacefilterfile="${temp}/model.tutorial.@{version}.properties" />
 
-      </data>
-      <borders>
-        <![CDATA[border('<#include "/header.ftl"/>', '<#include "/footer.ftl"/>', **/*.html)]]>
-      </borders>
-      <include name="**/*" />
-      <exclude name="**/*.ftl" />
-      <exclude name="**/tech-doc/**" />
-    </fmpp>
-    <copy todir="${temp}/${restlet-com}/tech-doc/">
-      <fileset dir="${temp}/owr/tech-doc" />
-    </copy>
-    <delete dir="${temp}/owr" />
-  </target>
+			<mkdir dir="${temp}/toc" />
+			<exec executable="sh" osfamily="unix">
+				<arg value="${tools}/get-title.sh" />
+				<arg value="${temp}/owr/tech-doc/restlet-framework/tutorial/@{version}/index.md" />
+				<arg value="${temp}/toc/toc.tutorial.@{version}.properties" />
+			</exec>
 
-  <target name="generate-javadocs" if="do-javadoc" description="Generate the Javadocs.">
-    <delete dir="${javadocs}" verbose="false" quiet="true" includeEmptyDirs="true" />
+			<!-- shift templates according to the current version -->
+			<copy file="${tmpl}/md/tutorial.tmpl" tofile="${temp}/toc/tutorial.@{version}.tmpl">
+				<filterchain>
+					<replacestring from="@version@" to="@{version}" />
+				</filterchain>
+			</copy>
+			<!-- cope with marked down files and add decoration -->
+			<exec executable="sh" osfamily="unix">
+				<arg value="${tmpl}/md/unixtohtml.sh" />
+				<arg value="${temp}/owr/tech-doc/restlet-framework/tutorial/@{version}" />
+				<arg value="${temp}/toc/tutorial.@{version}.tmpl" />
+			</exec>
+			<!-- complete properties with this version''s set of properties, before we cope with the wwhole page decoration -->
+			<concat append="true" destfile="${temp}/toc/toc.properties">
+				<filelist files="${temp}/toc/toc.tutorial.@{version}.properties" />
+			</concat>
+		</sequential>
+	</macrodef>
 
-    <javadoc packagenames="com.restlet.*" sourcepath="${src}" destdir="${javadocs}" classpathref="main.path" author="true" version="true" use="true" windowtitle="Restlet Web server ${version-full}" doctitle="Restlet Web server ${version-full}" overview="${tmpl}/javadocs/overview.html" stylesheetfile="${tmpl}/javadocs/stylesheet.css" verbose="false">
-      <bottom><![CDATA[<i>Copyright &#169; 2005-${current-year} Restlet. All Rights Reserved.</i>]]></bottom>
-      <tag name="associates" scope="all" description="Design stereotype: " enabled="false" />
-      <tag name="clientCardinality" scope="all" description="Design stereotype: " enabled="false" />
-      <tag name="label" scope="all" description="Design stereotype: " enabled="false" />
-      <tag name="stereotype" scope="all" description="Design stereotype: " enabled="false" />
-      <tag name="supplierCardinality" scope="all" description="Design stereotype: " enabled="false" />
+	<macrodef name="generate-file" description="Generate the source code for a specific file.">
+		<attribute name="source" />
+		<attribute name="target" />
+		<attribute name="raw" />
+		<sequential>
+			<!-- cope with marked down file and add decoration -->
+			<exec executable="sh" osfamily="unix">
+				<arg value="${tmpl}/md/unixtohtml.sh" />
+				<arg value="${temp}/owr/@{source}" />
+				<arg value="${temp}/owr/@{target}" />
+				<arg value="${tmpl}/md/singlefile-@{raw}.tmpl" />
+			</exec>
+		</sequential>
+	</macrodef>
 
-      <link href="http://docs.oracle.com/javase/6/docs/api/" />
-      <link href="http://restlet.com/documentation/${testing.restlet-version-minor}/api/" />
-    </javadoc>
-  </target>
+	<!-- ===================== -->
+	<!-- ===  Ant Targets  === -->
+	<!-- ===================== -->
 
-  <!-- VERIFY target -->
-  <target name="verify" description="Verify build." />
+	<!-- GENERAL targets -->
+	<target name="build" depends="generate, verify, integrate, stage, package" description="Full build." />
+	<target name="rebuild" depends="clean, generate, verify, integrate, stage, package" description="Full build from scratch." />
 
-  <!-- INTEGRATE target -->
-  <target name="integrate" if="do-integrate" description="Dependencies with other projects." />
+	<!-- CLEAN target -->
+	<target name="clean" depends="clean-temp, clean-dist" description="Clean the staging area." />
 
-  <!-- STAGE target -->
-  <target name="stage" description="Stage the packaging step.">
-    <mkdir dir="${dist}/${dist-path}/config" />
-    <mkdir dir="${dist}/${dist-path}/bin" />
-    <mkdir dir="${dist}/${dist-path}/lib" />
-    <mkdir dir="${dist}/${dist-path}/${restlet-com}" />
+	<!-- CLEAN-DIST target -->
+	<target name="clean-dist" description="Clean distributions files.">
+		<delete includeEmptyDirs="true" verbose="false" quiet="false" failonerror="false">
+			<fileset dir="${dist}">
+				<include name="*/${dist-path}/**/*" />
+				<include name="*/${dist-path}" />
+			</fileset>
+		</delete>
 
-    <!-- Put everything in ${classes} into the JAR file -->
-    <jar jarfile="${dist}/${dist-path}/lib/com.restlet.frontend.jar" basedir="${classes}" includes="com/restlet/frontend/**" />
+		<delete includeEmptyDirs="true" verbose="false" quiet="false" failonerror="false">
+			<fileset dir="${dist}" />
+		</delete>
+	</target>
 
-    <!-- Copy the Web directories -->
-    <copy todir="${dist}/${dist-path}/${restlet-com}">
-      <fileset dir="${temp}/${restlet-com}" />
-    </copy>
-    <!-- Copy the config file -->
-    <copy todir="${dist}/${dist-path}/config">
-      <fileset dir="${config}" excludes="**/.svn,**/Thumbs.db" />
-      <fileset dir="${src}/config" excludes="**/.svn,**/Thumbs.db" />
-    </copy>
-    <copy todir="${dist}/${dist-path}/bin">
-      <fileset dir="${bin}" excludes="**/.svn,**/Thumbs.db, conf/" />
-    </copy>
-    <chmod file="${dist}/${dist-path}/bin/linux/wrapper" perm="ug+x" />
+	<!-- CLEAN-TEMP target -->
+	<target name="clean-temp" description="Clean temporary build files.">
+		<!-- Delete the classes and Javadoc directories -->
+		<delete includeEmptyDirs="true" verbose="false" quiet="false" failonerror="false">
+			<fileset dir="${temp}" />
+		</delete>
+	</target>
 
-    <!-- Copy the librairies file -->
-    <copy todir="${dist}/${dist-path}/lib" flatten="true">
-      <fileset dir="../librairies">
-        <include name="**/*.jar" />
-        <exclude name="*tanuki*/**" />
-      </fileset>
-    </copy>
-    <copy todir="${dist}/${dist-path}/lib/wrapper" flatten="true">
-      <fileset dir="../librairies">
-        <include name="*tanuki*/*wrapper*" />
-      </fileset>
-    </copy>
-  </target>
+	<!-- GENERATE target -->
+	<target name="generate" depends="generate-classes, generate-templates, generate-javadocs" description="Generate files." />
 
-  <!-- PACKAGE target -->
-  <target name="package" if="do-package" description="Generate the distribution.">
-    <zip destfile="${dist}/${dist-path}.zip" basedir="${dist}" includes="${dist-path}/**/*" />
-  </target>
+	<target name="generate-classes" description="Compile the source files.">
+		<!-- Create the classes directory used by compiler -->
+		<mkdir dir="${classes}" />
 
-  <target name="generate-dhc-help" description="Generate the DHC help artefact">
-    <delete dir="${temp}/dhc-help" />
-    <mkdir dir="${temp}/dhc-help" />
-    <delete dir="${temp}/dhc-help-md" />
-    <mkdir dir="${temp}/dhc-help-md" />
-    <exec executable="python" output="${temp}/dhc-help/index.json">
-      <arg value="tools/generate-toc.py" />
-      <arg value="--path" />
-      <arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
-      <arg value="--dhcjsonindex" />
-    </exec>
-    <exec executable="python">
-      <arg value="tools/generate-toc.py" />
-      <arg value="--path" />
-      <arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
-      <arg value="--dhcfiles" />
-      <arg value="${temp}/dhc-help-md" />
-    </exec>
-    <java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
-      <arg value="${temp}/dhc-help-md" />
-      <arg value="${temp}/dhc-help" />
-    </java>
-  </target>
+		<!-- Compiles source files -->
+		<javac compiler="javac1.6" debug="true" srcdir="${src}" destdir="${classes}" classpathref="main.path" />
+	</target>
 
-  <target name="package-dhc-help" depends="generate-dhc-help" description="Package the DHC help artefact">
-    <jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
-    <exec executable="mvn">
-      <arg value="deploy:deploy-file" />
-      <arg value="-DgroupId=com.restlet.dhc" />
-      <arg value="-DartifactId=dhc-help" />
-      <arg value="-Dversion=1.0.0-SNAPSHOT" />
-      <arg value="-DgeneratePom=true" />
-      <arg value="-Dpackaging=jar" />
-      <arg value="-DrepositoryId=nexus-snapshots" />
-      <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
-      <arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
-    </exec>
-  </target>
+	<target name="generate-templates" description="Generate template-based files.">
+		<!-- generate static files for the site : restlet.com, user guide generated with pandoc -->
+		<delete dir="${temp}/owr" />
+		<mkdir dir="${temp}/owr" />
+		<copy todir="${temp}/owr">
+			<fileset dir="../modules/com.restlet/" />
+		</copy>
 
-  <target name="generate-dhc-tips" description="Generate the DHC tips artefact">
-    <delete dir="${temp}/dhc-tips" />
-    <mkdir dir="${temp}/dhc-tips" />
-    <copy todir="${temp}/dhc-tips-md">
-      <fileset dir="${mods}/com.restlet/tech-doc/dhc/tips"/>
-    </copy>
-    <java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
-      <arg value="${temp}/dhc-tips-md" />
-      <arg value="${temp}/dhc-tips" />
-    </java>
-    <exec executable="python" output="${temp}/dhc-tips/tips.json">
-      <arg value="tools/generate-tips.py" />
-      <arg value="--path" />
-      <arg value="${temp}/dhc-tips" />
-    </exec>
-  </target>
+		<!-- Add the last update date to the guides -->
+		<exec executable="git" outputproperty="apispark.guide.revision.date">
+			<arg value="log" />
+			<arg value="-n1" />
+			<arg value="--date=rfc" />
+			<arg value="--format=Last update: %ad" />
+			<arg value="${mods}/com.restlet/tech-doc/apispark/guide" />
+		</exec>
+		<echo file="${temp}/owr/tech-doc/apispark/guide/index.md" append="true">${apispark.guide.revision.date}</echo>
+		<exec executable="git" outputproperty="studio.guide.revision.date">
+			<arg value="log" />
+			<arg value="-n1" />
+			<arg value="--date=rfc" />
+			<arg value="--format=Last update: %ad" />
+			<arg value="${mods}/com.restlet/tech-doc/restlet-studio/guide" />
+		</exec>
+		<echo file="${temp}/owr/tech-doc/restlet-studio/guide/index.md" append="true">${studio.guide.revision.date}</echo>
+		<generate-guide version="2.2" />
+		<generate-guide version="2.3" />
+		<replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
+			<fileset dir="${temp}/owr" includes="**/*" />
+		</replaceregexp>
+		<replaceregexp match="javadocs://(.*)" replace="/technical-resources/restlet-framework/javadocs/${stable.restlet-version-minor}/\1" byline="true">
+			<fileset dir="${temp}/owr" includes="**/*" />
+		</replaceregexp>
 
-  <target name="package-dhc-tips" depends="generate-dhc-tips" description="Package the DHC tips artefact">
-    <exec executable="mvn">
-      <arg value="deploy:deploy-file" />
-      <arg value="-DgroupId=com.restlet.dhc" />
-      <arg value="-DartifactId=dhc-tips" />
-      <arg value="-Dversion=1.0.0-SNAPSHOT" />
-      <arg value="-DgeneratePom=true" />
-      <arg value="-Dpackaging=json" />
-      <arg value="-DrepositoryId=nexus-snapshots" />
-      <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
-      <arg value="-Dfile=${temp}/dhc-tips/tips.json" />
-    </exec>
-  </target>
+
+		<fmpp sourceRoot="${temp}/owr" outputRoot="${temp}/${restlet-com}" modes="ignore(**/.svn,**/Thumbs.db)" quiet="reallyQuiet">
+			<data expandProperties="yes">
+				labels:xml(labels.xml)
+				hierarchy:xml(hierarchy.xml)
+				restletDistributions: text(data/distributions.json)
+				restletVersions: text(data/versions.json)
+				restletQualifiers: text(data/qualifiers.json)
+				restletEditions: text(data/editions.json)
+				restletContributors: slicedText(data/contributors.txt)
+				language: en
+				ant: antProperties()
+                
+			</data>
+			<borders>
+				<![CDATA[border('<#include "/header.ftl"/>', '<#include "/footer.ftl"/>', **/*.html)]]>
+			</borders>
+			<include name="**/*" />
+			<exclude name="**/*.ftl" />
+			<exclude name="**/tech-doc/**" />
+		</fmpp>
+		<copy todir="${temp}/${restlet-com}/tech-doc/">
+			<fileset dir="${temp}/owr/tech-doc" />
+		</copy>
+		<delete dir="${temp}/owr" />
+	</target>
+
+	<target name="generate-javadocs" if="do-javadoc" description="Generate the Javadocs.">
+		<delete dir="${javadocs}" verbose="false" quiet="true" includeEmptyDirs="true" />
+
+		<javadoc packagenames="com.restlet.*" sourcepath="${src}" destdir="${javadocs}" classpathref="main.path" author="true" version="true" use="true" windowtitle="Restlet Web server ${version-full}" doctitle="Restlet Web server ${version-full}" overview="${tmpl}/javadocs/overview.html" stylesheetfile="${tmpl}/javadocs/stylesheet.css" verbose="false">
+            <bottom><![CDATA[<i>Copyright &#169; 2005-${current-year} Restlet. All Rights Reserved.</i>]]></bottom>
+			<tag name="associates" scope="all" description="Design stereotype: " enabled="false" />
+			<tag name="clientCardinality" scope="all" description="Design stereotype: " enabled="false" />
+			<tag name="label" scope="all" description="Design stereotype: " enabled="false" />
+			<tag name="stereotype" scope="all" description="Design stereotype: " enabled="false" />
+			<tag name="supplierCardinality" scope="all" description="Design stereotype: " enabled="false" />
+
+			<link href="http://docs.oracle.com/javase/6/docs/api/" />
+			<link href="http://restlet.com/documentation/${testing.restlet-version-minor}/api/" />
+		</javadoc>
+	</target>
+
+	<!-- VERIFY target -->
+	<target name="verify" description="Verify build." />
+
+	<!-- INTEGRATE target -->
+	<target name="integrate" if="do-integrate" description="Dependencies with other projects." />
+
+	<!-- STAGE target -->
+	<target name="stage" description="Stage the packaging step.">
+		<mkdir dir="${dist}/${dist-path}/config" />
+		<mkdir dir="${dist}/${dist-path}/bin" />
+		<mkdir dir="${dist}/${dist-path}/lib" />
+		<mkdir dir="${dist}/${dist-path}/${restlet-com}" />
+
+		<!-- Put everything in ${classes} into the JAR file -->
+		<jar jarfile="${dist}/${dist-path}/lib/com.restlet.frontend.jar" basedir="${classes}" includes="com/restlet/frontend/**" />
+
+		<!-- Copy the Web directories -->
+		<copy todir="${dist}/${dist-path}/${restlet-com}">
+			<fileset dir="${temp}/${restlet-com}" />
+		</copy>
+		<!-- Copy the config file -->
+		<copy todir="${dist}/${dist-path}/config">
+			<fileset dir="${config}" excludes="**/.svn,**/Thumbs.db" />
+			<fileset dir="${src}/config" excludes="**/.svn,**/Thumbs.db" />
+		</copy>
+		<copy todir="${dist}/${dist-path}/bin">
+			<fileset dir="${bin}" excludes="**/.svn,**/Thumbs.db, conf/" />
+		</copy>
+		<chmod file="${dist}/${dist-path}/bin/linux/wrapper" perm="ug+x" />
+
+		<!-- Copy the librairies file -->
+		<copy todir="${dist}/${dist-path}/lib" flatten="true">
+			<fileset dir="../librairies">
+				<include name="**/*.jar" />
+				<exclude name="*tanuki*/**" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}/${dist-path}/lib/wrapper" flatten="true">
+			<fileset dir="../librairies">
+				<include name="*tanuki*/*wrapper*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- PACKAGE target -->
+	<target name="package" if="do-package" description="Generate the distribution.">
+		<zip destfile="${dist}/${dist-path}.zip" basedir="${dist}" includes="${dist-path}/**/*" />
+	</target>
+
+	<target name="generate-dhc-help" description="Generate the DHC help artefact">
+		<delete dir="${temp}/dhc-help" />
+		<mkdir dir="${temp}/dhc-help" />
+		<delete dir="${temp}/dhc-help-md" />
+		<mkdir dir="${temp}/dhc-help-md" />
+		<exec executable="python" output="${temp}/dhc-help/index.json">
+			<arg value="tools/generate-toc.py" />
+			<arg value="--path" />
+			<arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
+			<arg value="--dhcjsonindex" />
+		</exec>
+		<exec executable="python">
+			<arg value="tools/generate-toc.py" />
+			<arg value="--path" />
+			<arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
+			<arg value="--dhcfiles" />
+			<arg value="${temp}/dhc-help-md" />
+		</exec>
+		<java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
+			<arg value="${temp}/dhc-help-md" />
+			<arg value="${temp}/dhc-help" />
+		</java>
+	</target>
+
+	<target name="package-dhc-help" depends="generate-dhc-help" description="Package the DHC help artefact">
+		<jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
+		<exec executable="mvn">
+			<arg value="deploy:deploy-file" />
+			<arg value="-DgroupId=com.restlet.dhc" />
+			<arg value="-DartifactId=dhc-help" />
+			<arg value="-Dversion=1.0.0-SNAPSHOT" />
+			<arg value="-DgeneratePom=true" />
+			<arg value="-Dpackaging=jar" />
+			<arg value="-DrepositoryId=nexus-snapshots" />
+			<arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
+			<arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
+		</exec>
+	</target>
 
 </project>
