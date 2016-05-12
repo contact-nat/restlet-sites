@@ -26,29 +26,29 @@ Italics for words we want to highlight.
 ## b.  Use a specific terminology
 
 ### Name APISpark cells
-web API
-Entity Store
-File Store
-Descriptors
-Connectors
+web API  
+Entity Store  
+File Store  
+Descriptors  
+Connectors  
 
 ### Name screen sections/buttons
 <add screenshot>
-action button
-Entities section
-Settings tab
-the console (instead of web IDE)
-the Dashboard
+action button  
+Entities section  
+Settings tab  
+the console (instead of web IDE)  
+the Dashboard  
 
 
 # 2. Technical Aspects
 
 ## a. Write content in Markdown language
-Documentation is written in Markdown language. You can use tools such as MarkdownPad or Atom to edit it easily.
-Use # for H1 title, ## for H2 title.
-For **bold** characters.
-For *italics*.
-For more information: https://github.com/restlet/restlet-sites/blob/proxy-mode/modules/com.restlet/tech-doc/guidelines/syntax.md
+Documentation is written in Markdown language. You can use tools such as MarkdownPad or Atom to edit it easily.  
+Use # for H1 title, ## for H2 title.  
+For **bold** characters.  
+For *italics*.  
+For more information:   https://github.com/restlet/restlet-sites/blob/proxy-mode/modules/com.restlet/tech-doc/guidelines/syntax.md
 
 ## b. Follow the existing Structure
 
@@ -69,15 +69,19 @@ This .yml file generates the associated menu in the ToC.
 .md files contain the documentation content.
 Each .md file has an associated .yml file (e.g. 01_sign-in.md file has its 01_sign-in.yml file) in order to display as an item in the ToC.
 
-## c. Add resources
+
+## c. Generate Table of Contents
+Launch local scripts to generate the appropriate ToC.
+
+## d. Add resources
 
 ### Insert screenshots
 Screenshots are left-aligned.  
-They must be 700px wide.
-Screenshots are named following the syntax below:
+They must be 700px wide.  
+Screenshots are named following the syntax below:  
 “add-entity.jpg”  
 Screenshots are saved in jpg format.  
-Highlight the part of interest in a square and darken the rest of the screenshot.  
+Highlight the part of interest in a square and darken the rest of the screenshot.   
 If the area we want to highlight is hardly visible, add a red arrow (Skitch funky arrow medium size).
 
 ### Insert images
@@ -98,13 +102,9 @@ The text in quotes displays in the tooltip.
 
 #### Insert animated GIFs
 
-An animated GIF works like a flip-book, i.e. you need source images that can be stringed together to an animated GIF. In order to work with the following command, name your source images ‘source1.jpg’, ‘source2.jpg’ and so on. After you created the source images, ‘cd’ in the Terminal to their folder. If you don’t know how to ‘cd’: Type ‘cd’ followed by a space and then drag the folder with the source images to the Terminal and hit ‘Enter’. Now copy, paste and execute this command in the Terminal:
-
-convert -delay 35 -loop 0 source*.jpg animated.gif
-
-Play around with the delay parameter in order to see how the animated GIF changes.
-
-http://johannesluderschmidt.de/creating-animated-gifs-from-the-command-line-in-mac-os-x-using-convert/2732/
+Insert animated GIFs in tutorials only.  
+Tool: LICEcap (available on mac as well).  
+GIF size: 1065x510
 
 ### Insert links
 #### External links
@@ -113,17 +113,19 @@ To insert external links, we follow the syntax below:
  target="_blank" is added to open in a new window.
 
 #### Internal links
-To insert internal links (links to another section of the documentation), we follow the syntax below:
-[Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall settings")
-The text in square brackets will display on the page as a clickable link.
-The text in quotes displays in the tooltip.
+To insert internal links (links to another section of the documentation), we follow the syntax below:  
+[Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall settings")  
+The text in square brackets will display on the page as a clickable link.  
+The text in quotes displays in the tooltip.  
+
 ##### Insert links with customizable parts
 Use {customizable part} rather than <customizable part> which will not display:
 https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview
 
 ##### Internal links in DHC doc
 As DHC doc is also integrated into the product, we need internal links to be relative links (rather than absolute links).  
-So we will not write "/technical-resources/dhc/guide/drive/search-item" but "./drive/search-item" (if in current folder)  
+So we will not write "/technical-resources/dhc/guide/drive/search-item"  
+but "./drive/search-item" (if in current folder)  
 >**Note:**
 ./ means current folder  
 ../ means previous folder
@@ -145,7 +147,9 @@ You will need to [synchronize](/technical-resources/apispark/guide/create/overvi
 
 --> Add <a class="anchor" name="synchronize"></a> where you want to redirect the user
 
-## c. Tutorial titles
+## e. Tutorial titles
+
+Insert specific icons in tutorials according to the titles
 
 ### Introduction
 <h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
