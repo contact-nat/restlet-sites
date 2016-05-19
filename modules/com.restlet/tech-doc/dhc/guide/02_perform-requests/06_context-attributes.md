@@ -4,8 +4,6 @@ DHC provides an interesting and powerful feature to use variables in requests. T
 
 ![Documentation](images/23-context.jpg "Documentation")
 
-![Documentation](images/22-prod.jpg "Documentation")
-
 A toolbar is available at the bottom of the left panel to manage the contexts:
 
 ![Documentation](images/22-toolbar.jpg "Documentation")
