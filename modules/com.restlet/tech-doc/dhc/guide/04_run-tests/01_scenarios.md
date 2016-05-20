@@ -26,7 +26,7 @@ Save several requests inside your scenario.
 
 # Launch a test scenario
 
-From the left panel, click on the **Overview** item underneath your Scenario name.
+From the left panel, click on the eye icon <i class="fa fa-eye"></i> on the right of your Scenario name.
 
 ![Overview](images/scenario-overview.jpg "Overview")
 
