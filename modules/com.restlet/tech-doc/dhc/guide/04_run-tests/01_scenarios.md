@@ -34,6 +34,7 @@ In the central panel, click **Run scenario**.
 
 ![Run scenario](images/run-scenario.jpg "Run scenario")
 
-Your requests launch automatically one after the other.
+Your requests launch automatically one after the other.  
+You can see the result of each request and click on a specific one if e.g. you want to know more about why it failed.
 
 ![Run scenario](images/run-scenario-result.jpg "Run scenario")
