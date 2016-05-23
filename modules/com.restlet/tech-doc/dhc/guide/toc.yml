@@ -118,7 +118,7 @@ toc:
     - file: 04_grammar.md
       id: grammar
       link_url: /02_perform-requests/05_expressions/04_grammar.md
-      long-title: Leran DHC grammar
+      long-title: Learn DHC grammar
       title: Grammar
       url: /perform-requests/expressions/grammar
     long-title: Transform data through expressions
