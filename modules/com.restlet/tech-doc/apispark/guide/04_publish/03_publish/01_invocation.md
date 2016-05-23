@@ -234,6 +234,8 @@ Configuring server and client-side caching will allow you to improve response ti
 
 This feature is disabled by default. If you want to specify how long GET responses should be cached by our HTTP client and the APISpark server-side cache, select the **Enabled** checkbox and specify the time in minutes, hours, days or months.
 
+You will need to redeploy your API once you have configured your cache in order for your modifications to be saved.
+
 ![response caching](images/response-caching.jpg "response caching")
 
 # HTTP response codes
