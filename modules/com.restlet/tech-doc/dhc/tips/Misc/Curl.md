@@ -1,0 +1,1 @@
+You can easily launch your request from a terminal if you have [cURL ](https://curl.haxx.se/) installed. Click on the <span style=”background-color: grey”><i class="fa fa-file-text"></i> 2code</span> icon and you will be provided the curl command to copy-paste.
