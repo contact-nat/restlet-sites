@@ -12,6 +12,7 @@ Web build file  -  Copyright 2005-2014 Restlet
 
   <!-- Set global names -->
   <property file="custom.properties" />
+  <property file="rf-version.properties" />
   <property file="build.properties" />
   <property name="author" value="Jerome Louvel" />
 
@@ -55,60 +56,6 @@ Web build file  -  Copyright 2005-2014 Restlet
   <tstamp>
     <format property="current-year" pattern="yyyy" />
   </tstamp>
-
-  <!-- Used to parse the unique json data base. -->
-  <script language="javascript">
-    <![CDATA[
-    importClass(java.io.File);
-    importClass(java.io.FileReader);
-    importClass(java.io.BufferedReader);
-    importClass(java.io.FileWriter);
-    importClass(java.io.BufferedWriter);
-
-    var file = null;
-
-    // 1- Read the versions structure
-    file = new File("../modules/com.restlet/data/versions.json");
-    fr = new FileReader(file);
-    br = new BufferedReader(fr);
-    var line = null;
-    var json = "";
-    while ((line = br.readLine()) != null) {
-    json += line;
-
-    }
-    var versions = eval("(" + json + ")");
-
-    // 1- Read the qualifiers structure
-    file = new File("../modules/com.restlet/data/qualifiers.json");
-    fr = new FileReader(file);
-    br = new BufferedReader(fr);
-
-    line = null;
-    json = "";
-    while ((line = br.readLine()) != null) {
-    json += line;
-
-    }
-    // Evaluate the serialized JSON
-    var echo = Web.createTask("echo");
-    var struct = eval("(" + json + ")");
-    for (i in struct) {
-    var versionType = struct[i].id;
-    var version = struct[i].version;
-    for (j in versions) {
-    if (versions[j].id == version) {
-    echo.setMessage(versionType + "=" + version);
-    echo.perform();
-    Web.setProperty(versionType + ".restlet-version-minor", versions[j].minorVersion);
-    Web.setProperty(versionType + ".restlet-release-date", versions[j].published);
-    Web.setProperty(versionType + ".restlet-version-compact", versions[j].fullVersionCompact);
-    }
-    }
-    }
-
-    ]]>
-  </script>
 
   <path id="main.path">
     <fileset dir="${lib}" includes="**/*.jar" />
