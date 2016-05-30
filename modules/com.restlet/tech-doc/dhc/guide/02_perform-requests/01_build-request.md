@@ -117,7 +117,3 @@ DHC by Restlet also allows you to disable some elements in lists (query paramete
 This screenshot shows you a request for which the header is disabled (checkbox deselected):
 
 ![Disable query parameters & headers](images/08-post-disable-headers.jpg "Disable query parameters & headers")
-
-## Switch mode
-
-You can also switch mode to edit and display things. This is very useful e.g. when you have access to the raw content or when managing it using a form view.
