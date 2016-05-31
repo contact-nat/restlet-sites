@@ -17,7 +17,7 @@ Navigate to the **Members** tab, and click on the **Add** button.
 
 ![Add a member to your Descriptor](images/add-member.jpg "Add a member to your Descriptor")
 
-For more information on Team work, jump to our [Team work](/technical-resources/apispark/guide/explore/team-work "Team work") section of the User Guide.
+For more information on Team work, jump to our [Add team members](/technical-resources/apispark/guide/share/add-members "Add team members") section of the User Guide.
 
 ## Make it public
 
