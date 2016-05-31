@@ -45,6 +45,8 @@ toc:
     title: Access account info
     url: /get-started/account-info
   long-title: Get started with APISpark
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/01_get-started
+  targetpath: /get-started
   title: Get started
 - dir: 02_explore
   id: explore
@@ -86,6 +88,8 @@ toc:
     title: Team work
     url: /explore/team-work
   long-title: Explore APISpark concepts and basics
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/02_explore
+  targetpath: /explore
   title: Explore APISpark concepts
 - dir: 03_create
   id: create
@@ -124,6 +128,8 @@ toc:
       title: Representations
       url: /create/edit/representations
     long-title: Edit your local web API
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/03_create/02_edit
+    targetpath: /create/edit
     title: Edit a local web API
   - file: 03_sync-api-store.md
     id: sync-api-store
@@ -138,6 +144,8 @@ toc:
     title: Test a web API
     url: /create/test
   long-title: Create complete web APIs
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/03_create
+  targetpath: /create
   title: Create web APIs
 - dir: 04_publish
   id: publish
@@ -170,6 +178,8 @@ toc:
       title: Firewall settings
       url: /publish/secure/firewall-settings
     long-title: Secure a web API
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/04_publish/02_secure
+    targetpath: /publish/secure
     title: Secure a web API
   - dir: 03_publish
     id: publish
@@ -205,6 +215,8 @@ toc:
       title: API definition
       url: /publish/publish/api-definition
     long-title: Publish a web API
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/04_publish/03_publish
+    targetpath: /publish/publish
     title: Publish a web API
   - dir: 04_manage
     id: manage
@@ -222,8 +234,12 @@ toc:
       title: Community management
       url: /publish/manage/community-management
     long-title: Manage a web API
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/04_publish/04_manage
+    targetpath: /publish/manage
     title: Manage a web API
   long-title: Secure, publish and manage web APIs
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/04_publish
+  targetpath: /publish
   title: Publish and consume
 - dir: 05_store
   id: store
@@ -256,6 +272,8 @@ toc:
       title: Edit & backup data
       url: /store/entity-stores/edit-data
     long-title: Entity Stores
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/05_store/02_entity-stores
+    targetpath: /store/entity-stores
     title: Entity Stores
   - file: 03_file-stores.md
     id: file-stores
@@ -291,8 +309,12 @@ toc:
       title: GitHub Wrapper
       url: /store/wrappers/github
     long-title: Wrappers (externally stored data)
+    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/05_store/04_wrappers
+    targetpath: /store/wrappers
     title: Wrappers
   long-title: Store data for APIs in APISpark Data Stores
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/05_store
+  targetpath: /store
   title: Store data
 - dir: 06_document
   id: document
@@ -316,6 +338,8 @@ toc:
     title: Download & Share documentation
     url: /document/download-documentation
   long-title: Document existing web APIs through APISpark Descriptors
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/06_document
+  targetpath: /document
   title: Document web APIs
 - dir: 07_manage
   id: manage
@@ -333,5 +357,26 @@ toc:
     title: Configure the remote agent
     url: /manage/remote-agent
   long-title: Manage existing web APIs with APISpark Connectors
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/07_manage
+  targetpath: /manage
   title: Manage web APIs
+- dir: 08_share
+  id: share
+  items:
+  - file: 01_add-members.md
+    id: add-members
+    link_url: /08_share/01_add-members.md
+    long-title: Add members to your team
+    title: Add team members
+    url: /share/add-members
+  - file: 02_sharing-settings.md
+    id: sharing-settings
+    link_url: /08_share/02_sharing-settings.md
+    long-title: Change your Sharing settings
+    title: Change sharing settings
+    url: /share/sharing-settings
+  long-title: Share your cells
+  sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/08_share
+  targetpath: /share
+  title: Share cells
 
