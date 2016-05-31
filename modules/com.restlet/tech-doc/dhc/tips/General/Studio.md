@@ -1,1 +1,1 @@
-DHC is one of three tools on the Restlet platform, why not check out [Restlet Studio](https://restlet.com/products/restlet-studio/) - our Visual web API Designer?
+DHC is one of three tools on the Restlet platform, why not check out <a href="https://restlet.com/products/restlet-studio/" target="_blank">Restlet Studio</a> - our Visual web API Designer?
