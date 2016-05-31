@@ -81,12 +81,6 @@ toc:
     long-title: APISpark cell revision management
     title: Revisions
     url: /explore/revisions
-  - file: 06_team-work.md
-    id: team-work
-    link_url: /02_explore/06_team-work.md
-    long-title: APISpark members and roles management
-    title: Team work
-    url: /explore/team-work
   long-title: Explore APISpark concepts and basics
   sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/apispark/guide/02_explore
   targetpath: /explore

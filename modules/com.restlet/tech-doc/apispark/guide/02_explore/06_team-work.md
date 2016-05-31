@@ -5,6 +5,8 @@ APISpark is built to support team-based collaboration on API projects.
 
 Collaboration in APISpark is based on the capacity to share a cell with other members, and to attribute specific roles to team members based on the functions they carry out.
 
+<!---
+
 # Cell Roles
 
 A member can have one of five roles on a cell.
@@ -44,6 +46,8 @@ A Developer has rights to the design-time and development aspects of a cell.
 ### User
 
 A User can consult basic information about a web API and be given runtime access rights by being added to a member group.
+
+--->
 
 
 # Managing members
