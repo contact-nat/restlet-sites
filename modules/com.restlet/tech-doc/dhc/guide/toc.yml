@@ -32,6 +32,12 @@ toc:
     long-title: Access your account details
     title: Access account info
     url: /get-started/account-info
+  - file: 06_tips.md
+    id: tips
+    link_url: /01_get-started/06_tips.md
+    long-title: Tips on how to use DHC
+    title: Find tips
+    url: /get-started/tips
   long-title: Get started with DHC by Restlet
   sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/01_get-started
   targetpath: /get-started
