@@ -26,10 +26,7 @@ Save several requests inside your scenario.
 
 # Launch a test scenario
 
-From the left panel, click on the eye icon <i class="fa fa-eye"></i> on the right of your Scenario name.
-
-![Overview](images/scenario-overview.jpg "Overview")
-
+From the left panel, click on your Scenario name.  
 In the central panel, click **Run scenario**.
 
 ![Run scenario](images/run-scenario.jpg "Run scenario")
