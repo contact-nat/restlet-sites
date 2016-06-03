@@ -43,7 +43,7 @@ HAR is used by the Chrome browser to export requests executed from the browser.
 
 ## HAR import example
 
-You may be willing to import the requests from a webpage. Let's try it with our restlet.com webpage:  
+You may be willing to import requests from a webpage. Let's try it with our restlet.com webpage:  
 
 From Chrome's **Network** tab, right click and select **Copy all as HAR**.
 
