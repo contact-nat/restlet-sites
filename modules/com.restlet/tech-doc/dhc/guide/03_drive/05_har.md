@@ -1,10 +1,10 @@
 # Introduction
 
-DHC allows you to import a definition in HAR 1.2 format. HAR (HTTP Archive format) is a JSON-formatted archive file format for logging of a web browser's interaction with a site.
+DHC allows you to import a definition in HAR 1.2 format. HAR (HTTP Archive format) is a JSON-formatted archive file format for logging of a web browser's interaction with a site. HAR is used by the Chrome browser to export requests executed from the browser.
 
 HAR import allows users to import a full set of requests easily using the HAR format.
 
-HAR is used by the Chrome browser to export requests executed from the browser.
+You can import a HAR API definition from a JSON file, a URL or directly from raw text.
 
 >**Note:** This feature is available from the Solo plan.
 
