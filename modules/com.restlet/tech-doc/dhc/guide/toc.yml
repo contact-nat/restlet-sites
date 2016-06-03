@@ -187,12 +187,36 @@ toc:
     sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/03_drive/04_import-export
     targetpath: /drive/import-export
     title: Import & export requests
-  - file: 05_synchronize-data.md
+  - file: 04_swagger.md
+    id: swagger
+    link_url: /03_drive/04_swagger.md
+    long-title: Import Swagger 2.0
+    title: Import Swagger 2.0
+    url: /drive/swagger
+  - file: 05_har.md
+    id: har
+    link_url: /03_drive/05_har.md
+    long-title: Import HAR 1.2
+    title: Import HAR 1.2
+    url: /drive/har
+  - file: 06_export-import-repo.md
+    id: export-import-repo
+    link_url: /03_drive/06_export-import-repo.md
+    long-title: Export & import your repository
+    title: Export & import repository
+    url: /drive/export-import-repo
+  - file: 07_synchronize-data.md
     id: synchronize-data
-    link_url: /03_drive/05_synchronize-data.md
+    link_url: /03_drive/07_synchronize-data.md
     long-title: Synchronize your data
     title: Synchronize data
     url: /drive/synchronize-data
+  - file: 08_export-as-code.md
+    id: export-as-code
+    link_url: /03_drive/08_export-as-code.md
+    long-title: Export requests as code
+    title: Export requests as code
+    url: /drive/export-as-code
   long-title: Manage your drive
   sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/03_drive
   targetpath: /drive
