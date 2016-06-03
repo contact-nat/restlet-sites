@@ -162,31 +162,6 @@ toc:
     long-title: Organize your requests in projects
     title: Organize requests
     url: /drive/organize-requests
-  - dir: 04_import-export
-    id: import-export
-    items:
-    - file: 01_import-projects.md
-      id: import-projects
-      link_url: /03_drive/04_import-export/01_import-projects.md
-      long-title: Import projects
-      title: Import projects
-      url: /drive/import-export/import-projects
-    - file: 02_export-projects.md
-      id: export-projects
-      link_url: /03_drive/04_import-export/02_export-projects.md
-      long-title: Export projects
-      title: Export projects
-      url: /drive/import-export/export-projects
-    - file: 03_data-structure.md
-      id: data-structure
-      link_url: /03_drive/04_import-export/03_data-structure.md
-      long-title: Import and export data structure
-      title: Data structure
-      url: /drive/import-export/data-structure
-    long-title: Import & export requests
-    sourcepath: /Users/flaunay/Github/modules/com.restlet/tech-doc/dhc/guide/03_drive/04_import-export
-    targetpath: /drive/import-export
-    title: Import & export requests
   - file: 04_swagger.md
     id: swagger
     link_url: /03_drive/04_swagger.md
