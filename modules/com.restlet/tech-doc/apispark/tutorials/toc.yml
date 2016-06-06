@@ -53,9 +53,9 @@ toc:
   long-title: Expose files from an AWS S3 bucket as an API
   title: AWS S3 bucket to API
   url: /awss3-bucket-to-api
-- file: 15_angular-sdk.md
+- file: 10_angular-sdk.md
   id: angular-sdk
-  link_url: /15_angular-sdk.md
+  link_url: /10_angular-sdk.md
   long-title: Request your API using Angular SDK
   title: API requests through Angular SDK
   url: /angular-sdk
