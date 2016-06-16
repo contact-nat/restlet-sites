@@ -106,10 +106,10 @@ The following examples will focus on the configuration block which can be found 
 In DHC, the user is able to add variables to a context. If this functionality was used to build the scenario then it is possible to indicate to the ```maven-plugin``` which context should be used.
 For instance if a scenario is based on the ```localhost``` context then the following configuration block would be used:
 
-<pre class="language-markup"><code class="language-markup"><configuration>
-<file>${project.basedir}/test.json</file>
-<context>localhost</context>
-</configuration>
+<pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
+&lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
+&lt;context&gt;localhost&lt;/context&gt;
+&lt;/configuration&gt;
 </code></pre>
 
 ### Override context variables
@@ -118,14 +118,14 @@ The user can also override a context variable.
 
 Let's imagine that the API ```port``` is not the same on the test environment as on the development environment, then it is possible to override the context ```port``` variable to provide the right value: ```13337```. This is done by using the following configuration:
 
-<pre class="language-markup"><code class="language-markup"><configuration>
-<file>${project.basedir}/test.json</file>
-<context>localhost</context>
-<variables>
-<property>
-<name>port</name>
-<value>13337</value>
-</property>
-</variables>
-</configuration>
+<pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
+&lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
+&lt;context&gt;localhost&lt;/context&gt;
+&lt;variables&gt;
+&lt;property&gt;
+&lt;name&gt;port&lt;/name&gt;
+&lt;value&gt;13337&lt;/value&gt;
+&lt;/property&gt;
+&lt;/variables&gt;
+&lt;/configuration&gt;
 </code></pre>
