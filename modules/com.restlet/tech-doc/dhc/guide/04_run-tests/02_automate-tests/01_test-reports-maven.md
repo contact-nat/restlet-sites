@@ -65,7 +65,7 @@ Create a pom.xml file with the following content:
        &lt;plugin&gt;
          &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
          &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-         &lt;version&gt;1.2.7&lt;/version&gt;
+         &lt;version&gt;1.2.10.2&lt;/version&gt;
     &lt;executions&gt;
            &lt;execution&gt;
              &lt;phase&gt;test&lt;/phase&gt;
@@ -99,53 +99,33 @@ Launch ```> mvn install```.
 
 ## In-build API test use case
 
-In this example, we added variables and profile.
+The following examples will focus on the configuration block which can be found in the previous example.
 
-Create a pom.xml file with the following content:
+### Use a specific context
 
-<pre class="language-markup"><code class="language-markup">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
-&Tab;&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-&Tab;&lt;groupId&gt;com.example&lt;/groupId&gt;
-&Tab;&lt;artifactId&gt;my-first-api-test&lt;/artifactId&gt;
-&Tab;&lt;version&gt;1.2.3&lt;/version&gt;
-&Tab;&lt;name&gt;myProject&lt;/name&gt;
-...
+In DHC, the user is able to add variables to a context. If this functionality was used to build the scenario then it is possible to indicate to the ```maven-plugin``` which context should be used.
+For instance if a scenario is based on the ```localhost``` context then the following configuration block would be used:
 
-     &lt;profiles&gt;
-         &lt;profile&gt;
-             &lt;id&gt;it&lt;/id&gt;
-             &lt;build&gt;
-                 &lt;plugins&gt;
-                      &hellip;.
-                     &lt;plugin&gt;
-                         &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
-                         &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-                         &lt;version&gt;1.2.7&lt;/version&gt;
-                         &lt;executions&gt;
-                             &lt;execution&gt;
-                                 &lt;phase&gt;integration-test&lt;/phase&gt;
-
-                                 &lt;goals&gt;
-                                     &lt;goal&gt;test&lt;/goal&gt;
-                                 &lt;/goals&gt;
-                                 &lt;configuration&gt;
-                                     &lt;file&gt;${project.basedir}/src/test/resources/assertions.json&lt;/file&gt;
-                                     &lt;context&gt;localhost&lt;/context&gt;
-                                     &lt;variables&gt;
-                                     &Tab;&lt;property&gt;
-                                     &Tab;&Tab;&lt;name&gt;port&lt;/name&gt;
-                                     &Tab;&Tab;&lt;value&gt;13337&lt;/value&gt;
-                                     &Tab;&lt;/property&gt;
-                                     &lt;/variables&gt;
-                                 &lt;/configuration&gt;
-                             &lt;/execution&gt;
-                         &lt;/executions&gt;
-                     &lt;/plugin&gt;
-                 &lt;/plugins&gt;
-             &lt;/build&gt;
-         &lt;/profile&gt;
-     &lt;/profiles&gt;
-&lt;/project&gt;
+<pre class="language-markup"><code class="language-markup"><configuration>
+<file>${project.basedir}/test.json</file>
+<context>localhost</context>
+</configuration>
 </code></pre>
 
-Launch ```> mvn clean install -P it```.
+### Override context variables
+
+The user can also override a context variable.
+
+Let's imagine that the API ```port``` is not the same on the test environment as on the development environment, then it is possible to override the context ```port``` variable to provide the right value: ```13337```. This is done by using the following configuration:
+
+<pre class="language-markup"><code class="language-markup"><configuration>
+<file>${project.basedir}/test.json</file>
+<context>localhost</context>
+<variables>
+<property>
+<name>port</name>
+<value>13337</value>
+</property>
+</variables>
+</configuration>
+</code></pre>
