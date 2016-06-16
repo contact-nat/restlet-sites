@@ -6,9 +6,9 @@ Runtime access means controlling which of your API's methods can be invoked by w
 
 Runtime access permissions to APISpark APIs are defined by assigning method access rights to member groups.
 
-You have the choice to build the member groups that correspond to your needs. For example, you might create a group to which you will give read-only rights on your API, and another to which you will give read-write access.
+You have the choice to build the member groups that correspond to your needs.
 
-Alternatively, you might create groups for specific categories of users, depending for example on the rate limitation you wish to apply (see the [Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall settings") page on how to configure rate limitations).
+For example, you might create groups for specific categories of users, depending for example on the rate limitation you wish to apply (see the [Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall settings") page on how to configure rate limitations).
 
 When you create a new web API, two default groups will be created: *Testers* and *Consumers*. As the API creator, you will automatically be added to the *Testers* group so that you can invoke and test your API. The *Consumers* group is designed for the consumers of your API.
 
@@ -33,14 +33,7 @@ You can manage a group's members by selecting the group from the left panel of t
 
 Add members to a group by clicking on the **+ Add a member** button of the selected group.
 
-> Note: you can only add a member to a group if s/he has already been added as a member of your API. The process of adding member to any cell is described in the [Team Work](/technical-resources/apispark/guide/explore/team-work "Team Work") page.
-
-
-## Set your consumer members' role to User
-
-Cell members destined to consume your API should be given role *User*. This means the member will be able to consult the API's documentation, but will not be able to modify the API in any way.
-
-By default, new members are given role *User*.
+> Note: you can only add a member to a group if s/he has already been added as a member of your API. The process of adding member to any cell is described in the [Add team members](/technical-resources/apispark/guide/share/add-members "Add team members") page.
 
 # Creating App accounts
 
@@ -52,9 +45,9 @@ To create a new App member on a Full Stack API (or Connector):
 
 From the web API **Overview** page, click on the **Members** tab.  
 In the **Members** section, click on the **Add** button.  
-In the window that displays, select **New local member** from the **Member** drop-down menu.
+In the window that displays, select **New app account** from the **Member** drop-down menu.
 
-![Add a new local member](images/add-new-local-member.jpg "Add a new local member")
+![New app account](images/new-app-account.jpg "New app account")
 
 Enter the App account details: **First name**, **Last name**, **Email**, **Username** and **Secret key** (all fields are required except **Email**).
 
@@ -64,5 +57,4 @@ The new account will automatically be added as a member of the API.
 You can now also add this account as a member of other APIs by searching for an existing member.
 
 >**Note:** The **Username** must be a unique identifier across the APISpark platform (a message will inform you in case the **Username** you chose is already taken). This **Username** may only contain alphanumeric characters, hyphens and underscores, and cannot begin with an hyphen or underscore.  
-The **Secret key** entered must contain at least 8 characters.  
-App members are automatically assigned the *User* role.
+The **Secret key** entered must contain at least 8 characters.

@@ -1,3 +1,18 @@
+v3.31.0
+
+- DHC Updated screenshots
+- DHC Added eye icon
+- DHC Added links to expression builder
+- AS Added info on caching
+- AS Added Share section
+- AS Removed Team work page
+- AS Updated User groups section
+- DHC Added Tips tab
+- DHC Updated access to the Overview
+- DHC Added HAR imports
+- DHC Updated "Perform requests" section structure
+- RS Response modeling
+
 v3.29.0
 
 - DOC-65 RS Team page is now accessible from username/Team

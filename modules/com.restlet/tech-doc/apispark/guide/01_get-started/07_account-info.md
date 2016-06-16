@@ -66,7 +66,7 @@ APISpark allows you to share your APIs with members of your team (if you subscri
 
 ## Add users to your team
 
-For more information on how to add members to your team, jump to the [Team work](/technical-resources/apispark/guide/explore/team-work "Team work") section of our user guide.
+For more information on how to add members to your team, jump to the [Add team members](/technical-resources/apispark/guide/share/add-members "Add team members") section of our user guide.
 
 # Domains tab
 

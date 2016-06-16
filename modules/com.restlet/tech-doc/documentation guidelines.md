@@ -3,19 +3,20 @@
 ## a. Follow a homogenous speech style
 
 ### No contractions
-We do not use contractions such as “we don’t”, “we’ll” or “we haven’t”.
+We do not use contractions such as “we don’t”, “we’ll” or “we haven’t” in the User Guide as we would do in a blog post.  
 We write the whole sentence instead: “we do not”, “we will” or “we have not”.
 
 ### Friendly language
-We use friendly, casual language such as:
-“Jump to the next section!”
-“Congrats, you have completed your first tutorial!”
+We use friendly, casual language (but not to casual!) such as:  
+“Jump to the next section!”  
+“Congrats, you have completed your first tutorial!”  
 “Let’s get right to it!”
 
 ### Level of accuracy
 #### in our User guide
-We do not use numbered list inside the user guide.
+We do not use numbered list inside the user guide.  
 We do not detail all the steps such as “In the Create a web API window, enter a name in the Name field and click on the Ok button”. In this example, this would be enough: “Enter a Name for your API”.
+
 #### in our Tutorials
 We do use numbered list inside our tutorials which are step-by-step user guides.
 
@@ -52,7 +53,8 @@ For more information:   https://github.com/restlet/restlet-sites/blob/proxy-mode
 
 ## b. Follow the existing Structure
 
-The documentation is a set of .md and .yml files classified in folders. Folders, .yml and .md files are prefixed by a number in order to display in a defined order e.g. 02_explore.
+The documentation is a set of .md and .yml files classified in folders.  
+Folders, .yml and .md files are prefixed by a number in order to display in a defined order e.g. 02_explore.
 
 ### Folders
 Folders display as menus in the Table of Contents (ToC).
@@ -171,5 +173,15 @@ Insert specific icons in tutorials according to the titles
 
 # 3. Documentation management
 
+## Create a new tag before pushing doc to production
+
+Create a tag from SourceTree.  
+The tag name should follow this structure (and is inspired from the product version):
+v1.32.2
+
 ## Fill in the changes file
 Each tag content is specified in the changes file located in tech-doc folder.
+
+## Former features
+
+Some parts of the user guide / tutorials were removed as some features were removed. You will find some of the removed pages in the tag called "removed_unused_files"

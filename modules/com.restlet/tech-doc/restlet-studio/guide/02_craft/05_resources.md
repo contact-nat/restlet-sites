@@ -28,6 +28,13 @@ Click on the **+** button on the right of the Resource.
 
 >**Note:** Clicking on the **+** button will successively add the missing methods in the following default order: GET, POST, PUT, DELETE, PATCH, OPTIONS.
 
+### Add a Response
+
+Click on the appropriate method from the left panel.  
+Click the **+ Add a response** button from the main panel.
+
+![response](images/add-response.jpg "response")
+
 ## <a class="anchor" name="path-variable"></a>Add a path variable
 
 To add a path variable to a resource, select the appropriate resource from the left panel and click **Add a path variable**.  
