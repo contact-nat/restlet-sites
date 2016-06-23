@@ -1,3 +1,9 @@
+v3.32.0
+
+- DHC Updated Build Requests screenshots
+- DHC Updated Maven & Jenkins pages
+- Removed ToC files since ToC is now automatically generated
+
 v3.31.0
 
 - DHC Updated screenshots
