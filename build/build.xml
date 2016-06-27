@@ -49,6 +49,14 @@ Web build file  -  Copyright 2005-2014 Restlet
   <condition property="do-integrate">
     <istrue value="${integrate}" />
   </condition>
+  <!-- Set the property that will enable the dhc-snapshot target -->
+  <condition property="do-dhc-snapshot">
+    <istrue value="${dhc-snapshot}" />
+  </condition>
+  <!-- Set the property that will enable the dhc-release target -->
+  <condition property="do-dhc-release">
+    <istrue value="${dhc-release}" />
+  </condition>
 
   <property file="${tmpl}/config/config.${envt}.properties" />
 
@@ -375,7 +383,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     <zip destfile="${dist}/${dist-path}.zip" basedir="${dist}" includes="${dist-path}/**/*" />
   </target>
 
-  <target name="package-dhc-doc" depends="package-dhc-help,package-dhc-tips" description="Package the DHC docs">
+  <target name="package-dhc-doc" depends="package-dhc-help-release,package-dhc-help-snapshot,package-dhc-tips-release,package-dhc-tips-snapshot" description="Package the DHC docs">
   </target>
 
   <target name="generate-dhc-help" description="Generate the DHC help artefact">
@@ -402,7 +410,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </java>
   </target>
 
-  <target name="package-dhc-help" depends="generate-dhc-help" description="Package the DHC help artefact">
+  <target name="package-dhc-help-snapshot" if="do-dhc-snapshot" depends="generate-dhc-help" description="Package the DHC help artefact">
     <jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
@@ -413,6 +421,21 @@ Web build file  -  Copyright 2005-2014 Restlet
       <arg value="-Dpackaging=jar" />
       <arg value="-DrepositoryId=nexus-snapshots" />
       <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
+      <arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
+    </exec>
+  </target>
+
+  <target name="package-dhc-help-release" if="do-dhc-release" depends="generate-dhc-help" description="Package the DHC help artefact">
+    <jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
+    <exec executable="mvn">
+      <arg value="deploy:deploy-file" />
+      <arg value="-DgroupId=com.restlet.dhc" />
+      <arg value="-DartifactId=dhc-help" />
+      <arg value="-Dversion=${dhc-doc-version}" />
+      <arg value="-DgeneratePom=true" />
+      <arg value="-Dpackaging=jar" />
+      <arg value="-DrepositoryId=nexus-releases" />
+      <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/releases/" />
       <arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
     </exec>
   </target>
@@ -434,7 +457,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </exec>
   </target>
 
-  <target name="package-dhc-tips" depends="generate-dhc-tips" description="Package the DHC tips artefact">
+  <target name="package-dhc-tips-snapshot" if="do-dhc-snapshot" depends="generate-dhc-tips" description="Package the DHC tips artefact">
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
       <arg value="-DgroupId=com.restlet.dhc" />
@@ -444,6 +467,20 @@ Web build file  -  Copyright 2005-2014 Restlet
       <arg value="-Dpackaging=json" />
       <arg value="-DrepositoryId=nexus-snapshots" />
       <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
+      <arg value="-Dfile=${temp}/dhc-tips/tips.json" />
+    </exec>
+  </target>
+
+  <target name="package-dhc-tips-release" if="do-dhc-release" depends="generate-dhc-tips" description="Package the DHC tips artefact">
+    <exec executable="mvn">
+      <arg value="deploy:deploy-file" />
+      <arg value="-DgroupId=com.restlet.dhc" />
+      <arg value="-DartifactId=dhc-tips" />
+      <arg value="-Dversion=${dhc-doc-version}" />
+      <arg value="-DgeneratePom=true" />
+      <arg value="-Dpackaging=json" />
+      <arg value="-DrepositoryId=nexus-releases" />
+      <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/releases/" />
       <arg value="-Dfile=${temp}/dhc-tips/tips.json" />
     </exec>
   </target>
