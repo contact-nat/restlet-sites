@@ -177,7 +177,7 @@ Insert specific icons in tutorials according to the titles
 
 Create a tag from SourceTree.  
 The tag name should follow this structure (and is inspired from the product version):
-v1.32.2
+1.32.2 (structure used to be v3.30.0)
 
 ## Fill in the changes file
 Each tag content is specified in the changes file located in tech-doc folder.
