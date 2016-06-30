@@ -71,11 +71,7 @@ This .yml file generates the associated menu in the ToC.
 .md files contain the documentation content.
 Each .md file has an associated .yml file (e.g. 01_sign-in.md file has its 01_sign-in.yml file) in order to display as an item in the ToC.
 
-
-## c. Generate Table of Contents
-Launch local scripts to generate the appropriate ToC.
-
-## d. Add resources
+## c. Add resources
 
 ### Insert screenshots
 Screenshots are left-aligned.  
@@ -149,7 +145,7 @@ You will need to [synchronize](/technical-resources/apispark/guide/create/overvi
 
 --> Add <a class="anchor" name="synchronize"></a> where you want to redirect the user
 
-## e. Tutorial titles
+## d. Tutorial titles
 
 Insert specific icons in tutorials according to the titles
 
