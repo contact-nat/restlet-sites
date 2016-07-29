@@ -1,6 +1,3 @@
-
-![Restlet Studio](images/Restlet_Studio_logo.png "Restlet Studio")
-
 <center>**RETURNING SOON!**</center>
 
-<center>![Sparky](images/mascot-footer.png "sparky")</center>
+<center>![Sparky](images/apispark_sparky_flying.png "sparky")</center>
