@@ -69,36 +69,44 @@ JSON.parse(document.getElementById(<id of  indicator element>).textContent).exte
 Example:
 
 <pre class="language-javascript"><code class="language-javascript">{
-   body: {
-       bodyType: "Text"
-   },
-   description: "Random Description",
-   headers: [
-       {
-           name:"Accept",
-           value:"*/*",
-           enabled:true
-       },
-       {
-           name:"Accept",
-           value:"text/html",
-           enabled:false
-       }
-   ],
-   headersType: "Form",
-   method: {
-       "link": "",
-       "name": "POST",
-       "requestBody": true
-   },
-   name: "Execute DQL",
-   uri: {
-       "path": "google.com",
-       "scheme": {
-           "name": "http",
-           "version": "V11"
-       }
-   }
+    "name": "Post example on HTTP Bin",
+    "headers": [
+        {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json"
+        }
+    ],
+    "type": "Request",
+    "method": {
+        "requestBody": true,
+        "link": "",
+        "name": "POST"
+    },
+    "body": {
+        "autoSetLength": true,
+        "textBody": "{\n  \"lastname\": \"Eastwood\",\n  \"firstname\": \"Clint\"\n}",
+        "bodyType": "Text"
+    },
+    "headersType": "Form",
+    "uri": {
+        "path": "httpbin.org/post",
+        "query": {
+            "delimiter": "&",
+            "items": [
+                {
+                    "enabled": true,
+                    "name": "details",
+                    "value": "full"
+                }
+            ]
+        },
+        "scheme": {
+            "secure": true,
+            "name": "https",
+            "version": "V11"
+        }
+    }
 }
 </code></pre>
 
@@ -157,33 +165,41 @@ Create a webpage that contains an input area pre-filled with your payload and a 
 
         var payload = document.createElement(&quot;textarea&quot;);
         payload.value = JSON.stringify({
-            body: {
-                bodyType: &quot;Text&quot;
-            },
-            description: &quot;Random Description&quot;,
-            headers: [
+            &quot;name&quot;: &quot;Post example on HTTP Bin&quot;,
+            &quot;headers&quot;: [
                 {
-                    name:&quot;Accept&quot;,
-                    value:&quot;*/*&quot;,
-                    enabled:true
-                },
-                {
-                    name:&quot;Accept&quot;,
-                    value:&quot;text/html&quot;,
-                    enabled:false
+                    &quot;enabled&quot;: true,
+                    &quot;name&quot;: &quot;Content-Type&quot;,
+                    &quot;value&quot;: &quot;application/json&quot;
                 }
             ],
-            headersType: &quot;Form&quot;,
-            method: {
+            &quot;type&quot;: &quot;Request&quot;,
+            &quot;method&quot;: {
+                &quot;requestBody&quot;: true,
                 &quot;link&quot;: &quot;&quot;,
-                &quot;name&quot;: &quot;POST&quot;,
-                &quot;requestBody&quot;: true
+                &quot;name&quot;: &quot;POST&quot;
             },
-            name: &quot;Execute DQL&quot;,
-            uri: {
-                &quot;path&quot;: &quot;google.com&quot;,
+            &quot;body&quot;: {
+                &quot;autoSetLength&quot;: true,
+                &quot;textBody&quot;: &quot;{\n  \&quot;lastname\&quot;: \&quot;Eastwood\&quot;,\n  \&quot;firstname\&quot;: \&quot;Clint\&quot;\n}&quot;,
+                &quot;bodyType&quot;: &quot;Text&quot;
+            },
+            &quot;headersType&quot;: &quot;Form&quot;,
+            &quot;uri&quot;: {
+                &quot;path&quot;: &quot;httpbin.org/post&quot;,
+                &quot;query&quot;: {
+                    &quot;delimiter&quot;: &quot;&&quot;,
+                    &quot;items&quot;: [
+                        {
+                            &quot;enabled&quot;: true,
+                            &quot;name&quot;: &quot;details&quot;,
+                            &quot;value&quot;: &quot;full&quot;
+                        }
+                    ]
+                },
                 &quot;scheme&quot;: {
-                    &quot;name&quot;: &quot;http&quot;,
+                    &quot;secure&quot;: true,
+                    &quot;name&quot;: &quot;https&quot;,
                     &quot;version&quot;: &quot;V11&quot;
                 }
             }
