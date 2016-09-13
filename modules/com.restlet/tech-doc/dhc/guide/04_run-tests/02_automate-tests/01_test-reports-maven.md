@@ -20,8 +20,7 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
 
 ## POM example
 
-<pre class="language-markup"><code class="language-markup">
-&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+<pre class="language-markup"><code class="language-markup">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
   &lt;groupId&gt;com.example&lt;/groupId&gt;
@@ -59,14 +58,15 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
     &lt;/pluginRepository&gt;
   &lt;/pluginRepositories&gt;
 &lt;/project&gt;
-</code></pre>
+</code>
+</pre>
 
 ## Plugin configuration
 
 This Maven plugin comes with a number of parameters to tweak its behavior.
 
 | Name | Type | Mandatory | Default | Description
-| :---: | :---: | :---: | :---: | :---:
+| ---- | ---- | --------- | ------- | -----------
 | **file** | File | Yes | X | file path pointing to DHC export file
 | **selectedContext** | String | No | X | a name of a context to be used
 | **licenseKey** | String | Yes | X | A valid license key
@@ -81,8 +81,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 
 To change them, modify the tag `configuration` in your pom.xml, see a configuration example below.
 
-<pre class="language-markup"><code class="language-markup">
-&lt;build&gt;
+<pre class="language-markup"><code class="language-markup">&lt;build&gt;
   &lt;plugins&gt;
     &lt;plugin&gt;
       &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
@@ -110,7 +109,8 @@ To change them, modify the tag `configuration` in your pom.xml, see a configurat
     &lt;/plugin&gt;
   &lt;/plugins&gt;
 &lt;/build&gt;
-</code></pre>
+</code>
+</pre>
 
 ## In-build API test use case
 
@@ -122,12 +122,12 @@ In DHC, the user is able to add variables to a context. If this functionality wa
 
 For instance if a scenario is based on the `localhost` context then the following configuration block would be used:
 
-<pre class="language-markup"><code class="language-markup">
-&lt;configuration&gt;
+<pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
   &lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
   &lt;context&gt;localhost&lt;/context&gt;
 &lt;/configuration&gt;
-</code></pre>
+</code>
+</pre>
 
 ### Override context variables
 
@@ -137,8 +137,7 @@ Let's imagine that the API `port` is not the same on the test environment as on 
 
 This is done by using the following configuration:
 
-<pre class="language-markup"><code class="language-markup">
-&lt;configuration&gt;
+<pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
   &lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
   &lt;context&gt;localhost&lt;/context&gt;
   &lt;variables&gt;
@@ -148,7 +147,8 @@ This is done by using the following configuration:
     &lt;/property&gt;
   &lt;/variables&gt;
 &lt;/configuration&gt;
-</code></pre>
+</code>
+</pre>
 
 # Notifications format
 
