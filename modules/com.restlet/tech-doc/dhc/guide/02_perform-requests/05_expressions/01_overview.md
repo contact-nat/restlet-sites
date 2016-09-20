@@ -25,7 +25,7 @@ DHC helps you build expressions with its expression builder. Whenever you can bu
 From the expression builder, you can select:  
 - Elements from your repository (projects, services, scenarios, etc.),  
 - Context variables,  
-- [Methods](./build-in-methods "Methods") (DHC displays only the relevant methods according to the context).
+- [Methods](./built-in-methods "Methods") (DHC displays only the relevant methods according to the context).
 
 ![expression builder](images/expression-builder-methods.jpg "expression builder")
 

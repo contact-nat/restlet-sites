@@ -30,7 +30,7 @@ The **protocol** used to interact with a server e.g. HTTP or HTTPS.
 
 HTTP **Headers** define the operating parameters of an HTTP transaction. They correspond to a list of key-value pairs.
 
->**Note:** You can easily build assertions with the [expression builder](../expressions/overview "Expression builder").
+>**Note:** You can easily build assertions with the [expression builder](./expressions/overview "Expression builder").
 
 ### Payload
 
