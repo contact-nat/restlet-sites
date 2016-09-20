@@ -86,7 +86,7 @@ To change them, modify the tag `configuration` in your pom.xml, see a configurat
     &lt;plugin&gt;
       &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
       &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-      &lt;version&gt;1.3.1&lt;/version&gt;
+      &lt;version&gt;1.3.2&lt;/version&gt;
       &lt;executions&gt;
         &lt;execution&gt;
           &lt;phase&gt;test&lt;/phase&gt;
