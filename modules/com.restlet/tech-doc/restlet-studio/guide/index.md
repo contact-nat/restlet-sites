@@ -1,3 +1,4 @@
-<center>**RETURNING SOON!**</center>
 
-<center>![Sparky](images/apispark_sparky_flying.png "sparky")</center>
+Welcome to the Restlet Studio User Guide.
+
+![DHC](images/Restlet_Studio_logo.png "Restlet Studio")
