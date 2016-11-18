@@ -1,4 +1,4 @@
-![OAI](images/openapilogo.png "OAI")  &nbsp; &nbsp; &nbsp; ![Restlet Studio](images/Restlet_Studio_logo.png "Restlet Studio") &nbsp; &nbsp; &nbsp;  ![RAML](images/ramllogo.png "RAML")
+![Import your API definitions](images/importlangs.png "Import your API definitions")
 
 Do you have an existing API definition? Not a problem, Restlet Studio allows you to import the following formats:
 * Swagger 2.0

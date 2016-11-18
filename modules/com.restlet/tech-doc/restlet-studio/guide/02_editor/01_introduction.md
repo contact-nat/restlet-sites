@@ -9,7 +9,7 @@ Like most technology, an API is a solution to a problem. In order to design the 
 * What kinds of information will consumers manipulate via the API?
 * What actions will consumers perform on the API?
 
-For example, if you are a food delivery company, you might want to build an API your  partner network that will enable them to browse and search through a database of restaurants for which you provide a delivery service.
+For example, if you are a food delivery company, you might want to build an API your for partner network that will enable them to browse and search through a database of restaurants for which you provide a delivery service.
 
 In this example, your API is targeting partners of your company. They'll need to manipulate data about restaurants, and perform search queries on the data, with certain filtering and sorting capabilities.
 
@@ -28,12 +28,16 @@ There are three key concepts used when designing an API:
 There are other elements that make up an API that are also very useful:
 
 * **Endpoints** are the main entry point for you API on the web. An endpoint is composed of a scheme such as *HTTPS*, and a host such as www.calendar-api.com.
-* **Text blocks** are different because they can be used to freely enter any text (including markdown) which can be positioned anywhere in your API design. Use text blocks for things like common introductions to groups of resources.
-* **Sections** allow you to group together resources and representations into meaningful sections. Use these to make your API design clearer and more developer friendly. You can drag and drop elements into sections in the left panel, and you can also reorder sections among each other. 
+* **Text blocks** are different because they can be used to freely enter any text (including markdown) which can be positioned anywhere in your API design. Use text blocks to explain transversal topics like authentication and error handling.
+* **Sections** are used to meaningfully group together resources and representations. Use these to make your API design clearer and more developer friendly. You can drag and drop elements into sections in the left panel, and you can also reorder sections among each other.
 
 In **Restlet Studio**, you'll be able to create these elements from the **+** menu in the left panel.
 
 ![Create something](images/createsomething.png "Create something")
+
+Operations are created by from the **+** menu next to resources in the left panel.
+
+![Create an operation](images/createoperation.png "Create an operation")
 
 Endpoints are created in the general information screen, which you can access by clicking on the name of your API at the top of the left panel.
 

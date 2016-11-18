@@ -11,6 +11,6 @@ From the settings panel, switch the **Published** button from *OFF* to *ON*.
 
 Make sure your API documentation has a valid URL by **picking a subdomain**. This is the address that will be used to access your documentation on the web.
 
-Once you have chosen a subdomain, click **Save**. Your API documenation is now published, congratulations!
+Once you have chosen a subdomain, click **Save**. Your API documentation is now published, congratulations!
 
 ![Publish your API documentation](images/publishdoc.png "Publish your API documentation")
