@@ -1,10 +1,11 @@
-![Import your API definitions](images/importlangs.png "Import your API definitions")
+![Import your API definitions](images/importlangs3.png "Import your API definitions")
 
 Do you have an existing API definition? Not a problem, Restlet Studio allows you to import the following formats:
-* Swagger 2.0
-* Swagger 1.2
-* RAML 1.0
-* RAML 0.8
+
+- Swagger 2.0
+- Swagger 1.2
+- RAML 1.0
+- RAML 0.8
 
 You can either create a new API and then import your API definition, or import directly into your currently open API and chose to either replace it or merge.
 

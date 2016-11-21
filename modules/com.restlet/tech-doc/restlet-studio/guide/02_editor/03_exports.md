@@ -1,5 +1,5 @@
 
-Restlet Studio is a popular choice for API designers who wish to create API definitions according to the OAI (formerly known as Swagger) and RAML specifications.
+Restlet Studio is a popular choice for API designers who wish to create API definitions according to the OAS (formerly known as Swagger) and RAML specifications.
 
 Restlet Studio's editor allows you to these specifications without know their complicated syntax. And from a single API design in Restlet Studio, you can export all types of API definitions.
 
