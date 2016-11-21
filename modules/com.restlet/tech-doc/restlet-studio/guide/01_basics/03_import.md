@@ -1,4 +1,4 @@
-![Import your API definitions](images/importlangs3.png "Import your API definitions")
+![Import your API definitions](images/importlangs4.png "Import your API definitions")
 
 Do you have an existing API definition? Not a problem, Restlet Studio allows you to import the following formats:
 
