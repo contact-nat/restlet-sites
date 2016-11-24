@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="715px" height="354.274px" viewBox="0 0 715 354.274" enable-background="new 0 0 715 354.274" xml:space="preserve">
+<g>
+	<g>
+		<rect x="308.36" y="118.399" fill="#FFCA00" width="83.445" height="5.382"/>
+		<rect x="308.36" y="37.672" fill="#FFCA00" width="54.526" height="5.381"/>
+		<rect x="308.36" y="102.254" fill="#FFCA00" width="83.445" height="5.381"/>
+		<rect x="308.36" y="21.527" fill="#FFCA00" width="54.526" height="5.382"/>
+		<path opacity="0.7" fill="#FFCA00" d="M382.402,0h-2.691h-76.732c-5.92,0-10.764,4.844-10.764,10.764v123.781
+			c0,5.919,4.844,10.763,10.764,10.763h100.95c5.921,0,10.765-4.844,10.765-10.763V40.364v-2.691L382.402,0z M382.402,8.072
+			l25.294,29.6h-19.912c-2.69,0-5.382-2.69-5.382-5.382V8.072z M409.312,134.545c0,2.69-2.153,5.381-5.383,5.381h-100.95
+			c-2.691,0-5.381-2.153-5.381-5.381V10.764c0-2.692,2.151-5.383,5.381-5.383h74.042v26.91c0,5.921,4.843,10.763,10.764,10.763
+			h21.527V134.545z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 321.7393 77.249)"><tspan x="0" y="0" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="34">API</tspan><tspan x="0.138" y="18" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">DESIGN</tspan></text>
+<path fill="none" stroke="#4A9ACA" stroke-width="5" stroke-miterlimit="10" d="M138.5,339.774c0,6.627-5.373,12-12,12h-112
+	c-6.627,0-12-5.373-12-12v-53c0-6.627,5.373-12,12-12h112c6.627,0,12,5.373,12,12V339.774z"/>
+<text transform="matrix(1 0 0 1 36.5884 309.4443)"><tspan x="0" y="0" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">CUSTOM </tspan><tspan x="-14.678" y="18" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">CLIENT CODE</tspan></text>
+<path fill="none" stroke="#4A9ACA" stroke-width="5" stroke-miterlimit="10" d="M311.5,338.774c0,6.627-5.373,12-12,12h-132
+	c-6.627,0-12-5.373-12-12v-53c0-6.627,5.373-12,12-12h132c6.627,0,12,5.373,12,12V338.774z"/>
+<text transform="matrix(1 0 0 1 219.1846 308.4443)"><tspan x="0" y="0" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">API </tspan><tspan x="-48.479" y="18" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">INTERFACE CODE</tspan></text>
+<path fill="none" stroke="#4A9ACA" stroke-width="5" stroke-miterlimit="10" d="M559.5,338.774c0,6.627-5.373,12-12,12h-132
+	c-6.627,0-12-5.373-12-12v-53c0-6.627,5.373-12,12-12h132c6.627,0,12,5.373,12,12V338.774z"/>
+<text transform="matrix(1 0 0 1 467.1846 308.4443)"><tspan x="0" y="0" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">API </tspan><tspan x="-48.479" y="18" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">INTERFACE CODE</tspan></text>
+<path fill="none" stroke="#4A9ACA" stroke-width="5" stroke-miterlimit="10" d="M712.5,338.774c0,6.627-5.373,12-12,12h-112
+	c-6.627,0-12-5.373-12-12v-53c0-6.627,5.373-12,12-12h112c6.627,0,12,5.373,12,12V338.774z"/>
+<text transform="matrix(1 0 0 1 610.5879 308.4443)"><tspan x="0" y="0" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">CUSTOM </tspan><tspan x="-14.678" y="18" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">CLIENT CODE</tspan></text>
+<g>
+	<g>
+		<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="321" y1="289.774" x2="325" y2="289.774"/>
+		
+			<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="10,4" x1="330" y1="289.774" x2="369" y2="289.774"/>
+		<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="371" y1="289.774" x2="375" y2="289.774"/>
+		<g>
+			<polygon fill="#2A557C" points="372,301.989 393.155,289.775 372,277.56 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="393" y1="312.774" x2="388" y2="312.774"/>
+		
+			<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="10,4" x1="384" y1="312.774" x2="345" y2="312.774"/>
+		<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="343" y1="312.774" x2="339" y2="312.774"/>
+		<g>
+			<polygon fill="#2A557C" points="342,300.56 320.845,312.773 342,324.989 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 335.876 197.5439)"><tspan x="0" y="0" fill="#2A557C" font-family="'OpenSans-Semibold'" font-size="12.2825">CODE </tspan><tspan x="-22.442" y="14.738" fill="#2A557C" font-family="'OpenSans-Semibold'" font-size="12.2825">GENERATION</tspan></text>
+<text transform="matrix(1 0 0 1 337.8662 347.4443)" fill="#2A557C" font-family="'OpenSans-Bold'" font-size="15">HTTP</text>
+<g opacity="0.5">
+	<g>
+		<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="421.3" y1="153.012" x2="423.651" y2="156.848"/>
+		
+			<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="9.0464,4.0206" x1="425.753" y1="160.276" x2="458.848" y2="214.265"/>
+		
+			<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="459.897" y1="215.979" x2="462.25" y2="219.815"/>
+		<g>
+			<polygon fill="#2A557C" points="451.221,222.812 470.499,233.275 469.924,211.346 			"/>
+		</g>
+	</g>
+</g>
+<g opacity="0.5">
+	<g>
+		<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="286.7" y1="153.012" x2="284.401" y2="156.88"/>
+		
+			<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="8.9453,3.9757" x1="282.37" y1="160.298" x2="250.38" y2="214.126"/>
+		
+			<line fill="none" stroke="#2A557C" stroke-width="5" stroke-miterlimit="10" x1="249.364" y1="215.835" x2="247.065" y2="219.703"/>
+		<g>
+			<polygon fill="#2A557C" points="239.276,211.34 238.999,233.273 258.134,222.548 			"/>
+		</g>
+	</g>
+</g>
+</svg>
