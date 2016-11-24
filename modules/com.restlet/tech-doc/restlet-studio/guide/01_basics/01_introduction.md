@@ -6,13 +6,7 @@ Thanks to its graphical user interface, Restlet Studio is also a favorite for pe
 
 Restlet Studio also features powerful **code generation** capabilities for developers who want to save time on developing the API-layer of their server or client application.
 
-png:
-
 ![Restlet Studio workflow](images/workflow-smaller.png "Restlet Studio workflow")
-
-svg:
-
-![Restlet Studio workflow](images/workflow-smaller.svg "Restlet Studio workflow")
 
 
 # About APIs

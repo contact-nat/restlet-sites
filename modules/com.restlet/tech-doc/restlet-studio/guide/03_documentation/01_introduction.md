@@ -8,10 +8,4 @@ In Restlet Studio, you work in a team of API designers that are allowed to edit 
 
 Published documentation can then be freely distributed to as many API consumers as you wish. These might be members of your team, partners, or anybody on the web.
 
-png:
-
 ![Documentation readers and writers](images/docreaderswriters.png "Documentation readers and writers")
-
-svg:
-
-![Documentation readers and writers](images/docreaderswriters.svg "Documentation readers and writers")

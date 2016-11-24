@@ -7,10 +7,4 @@ Because this code is repetitive and boring to write manually, and because it nee
 
 There are two main types of code generators available in Restlet Studio: *server skeletons* for the server-side, and *client SDKs* for the client side. Different programming languages and frameworks are supported in each case.
 
-png:
-
 ![Code generation](images/generatediag.png "Code generation")
-
-svg:
-
-![Code generation](images/generatediag.svg "Code generation")
