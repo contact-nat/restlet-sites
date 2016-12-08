@@ -32,7 +32,7 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
       &lt;plugin&gt;
         &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
         &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;1.3.4&lt;/version&gt;
+        &lt;version&gt;1.3.5.5&lt;/version&gt;
         &lt;executions&gt;
           &lt;execution&gt;
             &lt;phase&gt;test&lt;/phase&gt;
