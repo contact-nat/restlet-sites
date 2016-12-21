@@ -1,4 +1,4 @@
-As a REST client, DHC by Restlet allows you to build a request and display its response.
+As a REST client DHC by Restlet allows you to build a request and display its response.
 
 # Build a request
 
