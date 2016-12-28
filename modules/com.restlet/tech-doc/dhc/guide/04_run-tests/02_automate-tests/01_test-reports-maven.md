@@ -2,7 +2,7 @@
 
 DHC allows you to use exported tests as an input for Maven plugin which generates JUnit-like reports and allows you to hook custom URLs where to get notified before or/and after a unit test is completed.
 
-# <a class="anchor" name="getStarted"></a>Get started
+# <a class="anchor" name="getStarted"></a>Get started in seconds
 
 Open the project, service or scenario you want to test and click on the `Export to maven` button.
 
@@ -32,7 +32,7 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
       &lt;plugin&gt;
         &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
         &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;1.3.5.5&lt;/version&gt;
+        &lt;version&gt;1.4.1&lt;/version&gt;
         &lt;executions&gt;
           &lt;execution&gt;
             &lt;phase&gt;test&lt;/phase&gt;
@@ -69,7 +69,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 | ---- | ---- | --------- | ------- | -----------
 | **file** | File | Yes | X | file path pointing to DHC export file
 | **selectedContext** | String | No | X | a name of a context to be used
-| **licenseKey** | String | Yes | X | A valid license key
+| **licenseKey** | String | Yes | X | A valid license key (see [get license key](#getLicenseKey))
 | **stopOnFailure** | Boolean | No | False | stops processing build if an error/failure occurs
 | **httpClientTimeoutInMs** | Integer | False | 60000 | Time before HTTP time-out in milliseconds
 | **variables** | Properties | No | X | custom variables
@@ -81,36 +81,26 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 
 To change them, modify the tag `configuration` in your pom.xml, see a configuration example below.
 
-<pre class="language-markup"><code class="language-markup">&lt;build&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
-      &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
-      &lt;version&gt;1.4.0&lt;/version&gt;
-      &lt;executions&gt;
-        &lt;execution&gt;
-          &lt;phase&gt;test&lt;/phase&gt;
-
-          &lt;goals&gt;
-            &lt;goal&gt;test&lt;/goal&gt;
-          &lt;/goals&gt;
-          &lt;configuration&gt;
-            &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
-            &lt;selectedContext&gt;QA&lt;/selectedContext&gt;
-            &lt;licenseKey&gt;ENTER_YOUR_LICENSE_KEY_HERE&lt;/licenseKey&gt;
-            &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
-            &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
-            &lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
-            &lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
-            &lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
-          &lt;/configuration&gt;
-        &lt;/execution&gt;
-      &lt;/executions&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-&lt;/build&gt;
+<pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
+  &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+  &lt;selectedContext&gt;QA&lt;/selectedContext&gt;
+  &lt;licenseKey&gt;ENTER_YOUR_LICENSE_KEY_HERE&lt;/licenseKey&gt;
+  &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
+  &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
+  &lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
+  &lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
+  &lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
+&lt;/configuration&gt;
 </code>
 </pre>
+
+## <a class="anchor" name="getLicenseKey"></a>Get a license key
+At start, the DHC Maven plugin checks whether the user has recorded a license key. In case the license is missing or invalid, the user is asked to get one and configure it.
+Such license key is granted to users that [purchase a team plan or above](../../get-started/subscribe), and can be found in the Billing page.
+
+Just copy/paste this value as the `licenseKey` parameter of the pom.xml file:
+
+![Get license key](images/maven_plugin_get_license_key.png "Get license key")
 
 ## In-build API test use case
 
@@ -118,7 +108,7 @@ The following examples will focus on the configuration block which can be found 
 
 ### Use a specific context
 
-In DHC, the user is able to add variables to a context. If this functionality was used to build the scenario then it is possible to indicate to the `maven-plugin` which context should be used.
+In DHC, a consistent set of variables is called a "context". The user is able to setup several contexts (for example, one for the production environment, one for the local environment, etc). If this functionality was used to build the scenario then it is possible to indicate to the `maven-plugin` which context should be used.
 
 For instance if a scenario is based on the `localhost` context then the following configuration block would be used:
 

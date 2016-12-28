@@ -12,7 +12,7 @@ Your account page is composed of four tabs: **Profile**, **Billing**, **Team** a
 
  The **Profile tab** gives you information about your profile including your email address and your profile picture.
 
-# Billing
+# <a class="anchor" name="billing"></a>Billing
 
 ![Billing tab](images/billing-tab.jpg "Billing tab")
 
