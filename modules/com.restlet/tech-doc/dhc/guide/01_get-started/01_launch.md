@@ -63,7 +63,7 @@ To instruct DHC to open a new request, your webpage must call the **window.postM
 - **target**:String - id of DHC extension. Can be obtained from DHC indicator element. E.g.
 JSON.parse(document.getElementById(<id of  indicator element>).textContent).extensionId;
 - **targetTab**:String (optional) - the name of the tab where request should be opened. If not specified, new tab with DHC will be opened for each *openRequest* message. If specified, DHC will try to use previously opened tab with the same  name and will create it if such tab does not exist.
-- **payloadType**:String - the type of payload to load in DHC. Possible values: *dhc* or *systinet*. Jump to [DHC built-in documentation](../perform-requests/expressions/built-in-methods "DHC built-in documentation") for more information.
+- **payloadType**:String - the type of payload to load in DHC. Possible values: *dhc* or *systinet*. Jump to [DHC built-in documentation](../../get-started/subscribe "DHC built-in documentation") for more information.
 - **payload**:Object - payload information, specific to each payload type.
 
 Example:
