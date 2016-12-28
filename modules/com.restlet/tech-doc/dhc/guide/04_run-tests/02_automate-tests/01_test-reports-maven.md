@@ -65,11 +65,12 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
 
 This Maven plugin comes with a number of parameters to tweak its behavior.
 
+
 | Name | Type | Mandatory | Default | Description
 | ---- | ---- | --------- | ------- | -----------
 | **file** | File | Yes | X | file path pointing to DHC export file
 | **selectedContext** | String | No | X | a name of a context to be used
-| **licenseKey** | String | Yes | X | A valid license key (see [get license key](#getLicenseKey))
+| **licenseKey** | String | Yes | X | A valid license key (see the "Get a license key" paragraph below)
 | **stopOnFailure** | Boolean | No | False | stops processing build if an error/failure occurs
 | **httpClientTimeoutInMs** | Integer | False | 60000 | Time before HTTP time-out in milliseconds
 | **variables** | Properties | No | X | custom variables
@@ -78,6 +79,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 | **afterTest** | URL | No | X | URL where to send a notification after a test is completed
 | **begin** | URL | No | X | URL where to send a notification before first test is executed
 | **end** | URL | No | X | URL where to send a notification after last test is completed
+
 
 To change them, modify the tag `configuration` in your pom.xml, see a configuration example below.
 
