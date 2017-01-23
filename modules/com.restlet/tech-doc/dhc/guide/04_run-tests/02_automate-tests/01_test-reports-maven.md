@@ -1,6 +1,6 @@
 # Introduction
 
-DHC allows you to use exported tests as an input for Maven plugin which generates JUnit-like reports and allows you to hook custom URLs where to get notified before or/and after a unit test is completed.
+The Restlet Client allows you to use exported tests as an input for Maven plugin which generates JUnit-like reports and allows you to hook custom URLs where to get notified before or/and after a unit test is completed.
 
 # <a class="anchor" name="getStarted"></a>Get started in seconds
 
@@ -30,8 +30,8 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
   &lt;build&gt;
     &lt;plugins&gt;
       &lt;plugin&gt;
-        &lt;groupId&gt;com.restlet.dhc&lt;/groupId&gt;
-        &lt;artifactId&gt;dhc-maven-plugin&lt;/artifactId&gt;
+        &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
         &lt;version&gt;1.4.1&lt;/version&gt;
         &lt;executions&gt;
           &lt;execution&gt;
@@ -68,7 +68,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 
 | Name | Type | Mandatory | Default | Description
 | ---- | ---- | --------- | ------- | -----------
-| **file** | File | Yes | X | file path pointing to DHC export file
+| **file** | File | Yes | X | file path pointing to the Restlet Client export file
 | **selectedContext** | String | No | X | a name of a context to be used
 | **licenseKey** | String | Yes | X | A valid license key (see the "Get a license key" paragraph below)
 | **stopOnFailure** | Boolean | No | False | stops processing build if an error/failure occurs
@@ -97,7 +97,7 @@ To change them, modify the tag `configuration` in your pom.xml, see a configurat
 </pre>
 
 ## <a class="anchor" name="getLicenseKey"></a>Get a license key
-At start, the DHC Maven plugin checks whether the user has recorded a license key. In case the license is missing or invalid, the user is asked to get one and configure it.
+At start, the Restlet Client Maven plugin checks whether the user has recorded a license key. In case the license is missing or invalid, the user is asked to get one and configure it.
 Such license key is granted to users that [purchase a team plan or above](../../get-started/subscribe), and can be found in the Billing page.
 
 Just copy/paste this value as the `licenseKey` parameter of the pom.xml file:
@@ -110,7 +110,7 @@ The following examples will focus on the configuration block which can be found 
 
 ### Use a specific context
 
-In DHC, a consistent set of variables is called a "context". The user is able to setup several contexts (for example, one for the production environment, one for the local environment, etc). If this functionality was used to build the scenario then it is possible to indicate to the `maven-plugin` which context should be used.
+In Restlet Client, a consistent set of variables is called a "context". The user is able to setup several contexts (for example, one for the production environment, one for the local environment, etc). If this functionality was used to build the scenario then it is possible to indicate to the `maven-plugin` which context should be used.
 
 For instance if a scenario is based on the `localhost` context then the following configuration block would be used:
 
