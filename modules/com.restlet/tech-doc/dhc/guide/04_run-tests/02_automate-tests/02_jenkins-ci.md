@@ -1,6 +1,6 @@
 With the [Maven plugin](./test-reports-maven "Maven plugin"), we have taken a step towards industrialization. We can go even further by integrating it within continuous integration with tools like *Jenkins*. This will allow us to automate builds and test executions.
 
-To bring DHC into Jenkins:
+To bring the Restlet Client into Jenkins:
 
 Create a project that uses the pom.xml file previously created.  
 Select the appropriate project type (**Maven** here).
@@ -11,7 +11,7 @@ To configure where to get the source for your project, push the corresponding co
 
 ![Git repo](images/02-jenkins-create-dhc-maven2.png "Git repo")
 
-To configure the pre-build steps, define where the pom.xml file to use is located (**Root POM**) and which goals you need to execute: specify the *clean* and *test* **Goals** to run tests using the DHC Maven plugin.
+To configure the pre-build steps, define where the pom.xml file to use is located (**Root POM**) and which goals you need to execute: specify the *clean* and *test* **Goals** to run tests using the Restlet Client Maven plugin.
 
 ![Root pom & goals](images/03-jenkins-create-dhc-maven3.png "Root pom & goals")
 
