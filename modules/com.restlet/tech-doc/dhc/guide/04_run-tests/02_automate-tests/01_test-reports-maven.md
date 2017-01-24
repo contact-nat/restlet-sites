@@ -1,6 +1,6 @@
 # Introduction
 
-The Restlet Client allows you to use exported tests as an input for Maven plugin which generates JUnit-like reports and allows you to hook custom URLs where to get notified before or/and after a unit test is completed.
+Restlet Client allows you to use exported tests as an input for Maven plugin which generates JUnit-like reports and allows you to hook custom URLs where to get notified before or/and after a unit test is completed.
 
 # <a class="anchor" name="getStarted"></a>Get started in seconds
 
