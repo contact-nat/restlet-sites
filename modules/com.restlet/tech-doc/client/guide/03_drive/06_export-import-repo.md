@@ -27,7 +27,7 @@ Select the projects/services/scenarios you want to import.
 Select the [Import **Policy**](#import-policy) you want to choose.  
 Click **Import**.
 
-![Data import](images/restlet-client-repo-import.jpg "Data import")
+![Data import](images/repo-import.jpg "Data import")
 
 ## Import HP Systinet Repository
 

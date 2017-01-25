@@ -13,10 +13,10 @@ You can upgrade to a permanent Plan at any time. After 14 days, if you did not u
 
 To know the number of days left in your free trial, click on your user name on top right of your screen and select the **Billing** tab.
 
-![Days left from your Restlet Client Free Trial](images/restlet-client-free-trial-days-left.jpg "Days left from your Restlet Client Free Trial")
+![Days left from your Restlet Client Free Trial](images/free-trial-days-left.jpg "Days left from your Restlet Client Free Trial")
 
 To start a Free Trial, click on your user name on top right of your screen.
 Select the **Team** tab.
 Click on **Start Free 14-day Trial** button.
 
-![Restlet Client Free Trial](images/restlet-client-free-trial.jpg "Restlet Client Free Trial")
+![Restlet Client Free Trial](images/free-trial.jpg "Restlet Client Free Trial")

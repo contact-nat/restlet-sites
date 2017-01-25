@@ -15,7 +15,7 @@ To switch base plan level, click on the **Pricing** button on top right of your 
 
 The **Plans** page gives you a snapshot of what each plan allows you to do for what price. Depending on the Plan you subscribed to, you can click on the corresponding **Downgrade** or **Upgrade** button.
 
-![Plans and pricing page](images/restlet-client-plans-page.jpg "Plans and pricing page")
+![Plans and pricing page](images/plans-page.jpg "Plans and pricing page")
 
 You will then need to enter your credit card details unless you have done it already.  
 You can also enter a new credit card by clicking **No, change card**.  

@@ -2,4 +2,4 @@ Restlet Client allows you to export the request as code in curl language. This c
 
 Click on the **2 Code** button on top right of the screen to get the corresponding curl code.
 
-![Request 2 Code](images/18-request2code.jpg "Request 2 Code")
+![Request 2 Code](images/request2code.jpg "Request 2 Code")

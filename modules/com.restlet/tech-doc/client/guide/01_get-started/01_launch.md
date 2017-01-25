@@ -8,13 +8,13 @@ Restlet Client can be used as an online service from <a href="https://client.res
 
 ## Restlet Client online service
 
-![Restlet Client online service](images/restlet-client-online-service.jpg "Restlet Client online service")
+![Restlet Client online service](images/online-service.jpg "Restlet Client online service")
 
 ## Restlet Client Chrome application
 
 The tool is also available in your Chrome applications through chrome://apps.
 
-![Restlet Client Chrome app](images/restlet-client-chrome-app.jpg "Restlet Client Chrome app")
+![Restlet Client Chrome app](images/chrome-app.jpg "Restlet Client Chrome app")
 
 >**Note:** When installing Restlet Client Chrome app, a confirmation message displays informing you that Restlet Client requires permissions to "Read and change all your data on the websites you visit" and to "Communicate with cooperating websites".
 - Permission to "**Read and change all your data on the websites you visit**"  

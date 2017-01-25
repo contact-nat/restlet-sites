@@ -6,7 +6,7 @@ Restlet Client provides you with a **TIPS** tab that gives you useful informatio
 
 To access Restlet Client Tips, click the **TIPS** tab from the bottom panel.
 
-![Restlet Client Tips](images/restlet-client-tips.jpg "Restlet Client Tips")
+![Restlet Client Tips](images/tips.jpg "Restlet Client Tips")
 
 The buttons at the bottom of the screen allow you to browse through the different Tips available.
 

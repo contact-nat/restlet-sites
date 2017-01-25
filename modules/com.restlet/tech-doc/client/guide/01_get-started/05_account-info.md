@@ -6,7 +6,7 @@ Your account page is composed of four tabs: **Pricing**, **Account**, **Billing*
 
 # Pricing
 
-![Pricing tab](images/restlet-client-plans-page.jpg "Pricing tab")
+![Pricing tab](images/plans-page.jpg "Pricing tab")
 
 The **Pricing tab** gives you information about your current plan and allow you to **upgrade** or **downgrade** plans.
 
