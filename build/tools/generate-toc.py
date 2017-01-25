@@ -13,14 +13,14 @@ def main():
                                                  'All files & folders must begin with xx_name.')
     parser.add_argument('--path', '-p',  type=str, help='Path to scan. If not provided takes current path.')
     parser.add_argument('--markdown', '-m',  action='store_true', help='If provided, return a markdown file.')
-    parser.add_argument('--dhcjsonindex', '-dhci',  action='store_true', help='If provided, return a JSON representation of the client help guide.')
-    parser.add_argument('--dhcfiles', '-dhcf',  type=str, help='Path where the Restlet Client help files are saved (including images). If not provided takes current path.')
+    parser.add_argument('--clientjsonindex', '-clienti',  action='store_true', help='If provided, return a JSON representation of the client help guide.')
+    parser.add_argument('--clientfiles', '-clientf',  type=str, help='Path where the Restlet Client help files are saved (including images). If not provided takes current path.')
 
     args = parser.parse_args()
     path = args.path
     markdown = args.markdown
-    dhcjsonindex = args.dhcjsonindex
-    dhcfiles = args.dhcfiles
+    clientjsonindex = args.clientjsonindex
+    clientfiles = args.clientfiles
 
     if path is None:
         path = os.getcwd()
@@ -32,10 +32,10 @@ def main():
 
     if markdown:
         convert_to_markdown(document)
-    elif dhcjsonindex:
-        convert_to_dhc_json_index(document)
-    elif dhcfiles:
-        convert_to_dhc_files(document, path, dhcfiles)
+    elif clientjsonindex:
+        convert_to_client_json_index(document)
+    elif clientfiles:
+        convert_to_client_files(document, path, clientfiles)
     else:
         print yaml.dump(obj, default_flow_style=False)
 
@@ -120,44 +120,44 @@ def print_line_as_markdown(line, indentation):
         # Is file
         print '%s* [%s](%s)' % (indentation, line['title'], line['link_url'])
 
-def convert_to_dhc_json_index(document):
+def convert_to_client_json_index(document):
     listHelpPages = []
     listHelpPages.append('{"dir": false, "title":"%s", "path": "%s"}' % ("User Guide", "/index"))
     for line in document:
-        print_line_as_dhc_json_index(listHelpPages, line, "/")
+        print_line_as_client_json_index(listHelpPages, line, "/")
     print '[\n%s\n]' % (",\n".join(listHelpPages))
 
-def print_line_as_dhc_json_index(listHelpPages, line, dir):
+def print_line_as_client_json_index(listHelpPages, line, dir):
     if 'dir' in line.keys():
         # Is directory
         listHelpPages.append('{"dir": true, "title":"%s", "path": "%s"}' % (line['title'], dir + line['id']))
         for item in line['items']:
-            print_line_as_dhc_json_index(listHelpPages, item, dir + line['id'] + "/")
+            print_line_as_client_json_index(listHelpPages, item, dir + line['id'] + "/")
     elif 'file' in line.keys():
         # Is file
         listHelpPages.append('{"dir": false, "title":"%s", "path": "%s"}' % (line['title'], line['url']))
 
-def convert_to_dhc_files(document, sourcepath, dhcfiles):
+def convert_to_client_files(document, sourcepath, clientfiles):
     sourceFile = os.path.join(sourcepath, "index.md")
-    destFile = os.path.join(dhcfiles, 'index.md')
+    destFile = os.path.join(clientfiles, 'index.md')
     ensure_dir(destFile)
     shutil.copyfile(sourceFile, destFile)
     if os.path.exists(os.path.join(sourcepath, 'images')):
-        shutil.copytree(os.path.join(sourcepath, 'images'), os.path.join(dhcfiles, 'images'))
+        shutil.copytree(os.path.join(sourcepath, 'images'), os.path.join(clientfiles, 'images'))
     
     for line in document:
-        copy_to_dhc_files(line, sourcepath, dhcfiles)
+        copy_to_client_files(line, sourcepath, clientfiles)
 
-def copy_to_dhc_files(line, sourcepath, dhcfiles):
+def copy_to_client_files(line, sourcepath, clientfiles):
     if 'dir' in line.keys():
         imagesDir = os.path.join(line['sourcepath'], 'images');
         if os.path.exists(imagesDir):
-            shutil.copytree(imagesDir, os.path.join(dhcfiles, line['targetpath'][1:], 'images'))
+            shutil.copytree(imagesDir, os.path.join(clientfiles, line['targetpath'][1:], 'images'))
         for item in line['items']:
-            copy_to_dhc_files(item, sourcepath, dhcfiles)
+            copy_to_client_files(item, sourcepath, clientfiles)
     if 'file' in line.keys():
         sourceFile = os.path.join(sourcepath, line['link_url'][1:])
-        destFile = os.path.join(dhcfiles, '%s.md' % (line['url'][1:]))
+        destFile = os.path.join(clientfiles, '%s.md' % (line['url'][1:]))
         ensure_dir(destFile)
         shutil.copyfile(sourceFile, destFile)
 

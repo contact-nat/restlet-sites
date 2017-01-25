@@ -395,13 +395,13 @@ Web build file  -  Copyright 2005-2014 Restlet
       <arg value="tools/generate-toc.py" />
       <arg value="--path" />
       <arg value="${mods}/com.restlet/tech-doc/client/guide" />
-      <arg value="--dhcjsonindex" />
+      <arg value="--clientjsonindex" />
     </exec>
     <exec executable="python">
       <arg value="tools/generate-toc.py" />
       <arg value="--path" />
       <arg value="${mods}/com.restlet/tech-doc/client/guide" />
-      <arg value="--dhcfiles" />
+      <arg value="--clientfiles" />
       <arg value="${temp}/client-help-md" />
     </exec>
     <java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
