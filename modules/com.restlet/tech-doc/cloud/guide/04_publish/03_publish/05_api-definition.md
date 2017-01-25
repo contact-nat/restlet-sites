@@ -68,7 +68,7 @@ APISpark provides you with a **swagger** UI "Try it out" button that allows you 
 
 ## Restlet Client
 
-Restlet also provides an API testing tool called Restlet Client. You can either launch <a href="https://client.restlet.com/" target="_blank">Restlet Client online service</a> or <a href="https://chrome.google.com/webstore/detail/dhc-rest-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install Restlet Client Chrome application</a>.
+Restlet also provides an API testing tool called Restlet Client. You can either launch <a href="https://client.restlet.com/" target="_blank">Restlet Client online service</a> or <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install Restlet Client Chrome application</a>.
 
 Pick up your endpoint URI and your credentials from the **Endpoints** section of APISpark and launch your request in Restlet Client.
 
