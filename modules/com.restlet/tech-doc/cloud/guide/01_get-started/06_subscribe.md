@@ -6,7 +6,7 @@ As you subscribe to APISpark, you can choose between different plan levels as de
 
 Restlet offers simple, all-inclusive plans that scale with your projects and your team size.  
 Getting started is free, and switching between plans is easy.  
-All plans include access to the whole Restlet platform: Restlet Studio, Restlet Client by Restlet and APISpark.
+All plans include access to the whole Restlet platform: Restlet Studio, Restlet Client and APISpark.
 
 ## Select a plan
 

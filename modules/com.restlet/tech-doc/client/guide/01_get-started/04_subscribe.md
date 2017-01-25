@@ -5,7 +5,7 @@
 As you subscribe to Restlet Client, you can choose between different base plan levels as defined in our <a href="https://restlet.com/pricing" target="_blank">Pricing page</a>. Each level includes a number of features associated to it. Of course you can switch to a higher or lower plan at any time.
 
 Restlet offers simple, all-inclusive plans that scale with your projects and your team size.   Getting started is free, and switching between plans is easy.  
-All plans include access to the whole Restlet platform: Restlet Studio, Restlet Client by Restlet and APISpark.
+All plans include access to the whole Restlet platform: Restlet Studio, Restlet Client and APISpark.
 
 ## Select a plan
 

@@ -62,13 +62,13 @@ In the case of binary content, several modes are available to preview the conten
 
 ### Requests created from hypermedia links
 
-Restlet Client by Restlet provides support of hypermedia links within response contents by making them clickable. This way you can follow links to execute other requests very simply. When clicking on a link, a new request is automatically created.
+Restlet Client provides support of hypermedia links within response contents by making them clickable. This way you can follow links to execute other requests very simply. When clicking on a link, a new request is automatically created.
 
 ![hypermedia link request](images/16-hypermedia-link-request.jpg "hypermedia link request")
 
 ### Response toolbar
 
-Restlet Client by Restlet provides a very helpful toolbar at the response level. This allows you to leverage the response content for different use cases: re-use the response content within a new request with the **2Request** button, **Copy** or **Download** the response content.
+Restlet Client provides a very helpful toolbar at the response level. This allows you to leverage the response content for different use cases: re-use the response content within a new request with the **2Request** button, **Copy** or **Download** the response content.
 
 ![response toolbar](images/17-response-toolbar.jpg "response toolbar")
 

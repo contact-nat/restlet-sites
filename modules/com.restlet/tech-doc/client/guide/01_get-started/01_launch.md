@@ -2,15 +2,15 @@
 
 Restlet Client allows you to interact with REST services. It brings many different features that make your user experience better, save you precious time when debugging REST calls or sharing your requests with others.
 
-# Install Restlet Client by Restlet
+# Install Restlet Client
 
-Restlet Client by Restlet can be used as an online service from <a href="https://client.restlet.com/" target="_blank">client.restlet.com</a> or installed within Chrome from the <a href="https://chrome.google.com/webstore/detail/restlet-client-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">Chrome Web Store</a>.
+Restlet Client can be used as an online service from <a href="https://client.restlet.com/" target="_blank">client.restlet.com</a> or installed within Chrome from the <a href="https://chrome.google.com/webstore/detail/restlet-client-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">Chrome Web Store</a>.
 
-## Restlet Client by Restlet online service
+## Restlet Client online service
 
 ![Restlet Client online service](images/restlet-client-online-service.jpg "Restlet Client online service")
 
-## Restlet Client by Restlet Chrome application
+## Restlet Client Chrome application
 
 The tool is also available in your Chrome applications through chrome://apps.
 

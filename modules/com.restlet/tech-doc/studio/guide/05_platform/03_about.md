@@ -1,6 +1,6 @@
-# Restlet Client by Restlet
+# Restlet Client
 
-Restlet Client by Restlet is Restlet's API testing solution. If you haven't done so yet, you can <a href="https://chrome.google.com/webstore/detail/dhc-resthttp-api-client/aejoelaoggembcahagimdiliamlcdmfm">install it from the chrome store</a>.
+Restlet Client is Restlet's API testing solution. If you haven't done so yet, you can <a href="https://chrome.google.com/webstore/detail/dhc-resthttp-api-client/aejoelaoggembcahagimdiliamlcdmfm">install it from the chrome store</a>.
 
 # APISpark
 
