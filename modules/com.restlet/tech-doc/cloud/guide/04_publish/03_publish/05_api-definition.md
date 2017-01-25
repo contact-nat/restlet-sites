@@ -68,7 +68,7 @@ APISpark provides you with a **swagger** UI "Try it out" button that allows you 
 
 ## DHC
 
-Restlet also provides an API testing tool called DHC. You can either launch <a href="https://dhc.restlet.com/" target="_blank">DHC online service</a> or <a href="https://chrome.google.com/webstore/detail/dhc-rest-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install DHC Chrome application</a>.
+Restlet also provides an API testing tool called DHC. You can either launch <a href="https://client.restlet.com/" target="_blank">DHC online service</a> or <a href="https://chrome.google.com/webstore/detail/dhc-rest-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install DHC Chrome application</a>.
 
 Pick up your endpoint URI and your credentials from the **Endpoints** section of APISpark and launch your request in DHC.
 

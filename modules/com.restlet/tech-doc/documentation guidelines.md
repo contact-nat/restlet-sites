@@ -122,7 +122,7 @@ https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/ov
 
 ##### Internal links in DHC doc
 As DHC doc is also integrated into the product, we need internal links to be relative links (rather than absolute links).  
-So we will not write "/technical-resources/dhc/guide/drive/search-item"  
+So we will not write "/technical-resources/client/guide/drive/search-item"  
 but "./drive/search-item" (if in current folder)  
 >**Note:**
 ./ means current folder  

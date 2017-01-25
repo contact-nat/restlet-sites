@@ -49,13 +49,13 @@ Web build file  -  Copyright 2005-2014 Restlet
   <condition property="do-integrate">
     <istrue value="${integrate}" />
   </condition>
-  <!-- Set the property that will enable the dhc-snapshot target -->
-  <condition property="do-dhc-snapshot">
-    <istrue value="${dhc-snapshot}" />
+  <!-- Set the property that will enable the client-snapshot target -->
+  <condition property="do-client-snapshot">
+    <istrue value="${client-snapshot}" />
   </condition>
-  <!-- Set the property that will enable the dhc-release target -->
-  <condition property="do-dhc-release">
-    <istrue value="${dhc-release}" />
+  <!-- Set the property that will enable the client-release target -->
+  <condition property="do-client-release">
+    <istrue value="${client-release}" />
   </condition>
 
   <property file="${tmpl}/config/config.${envt}.properties" />
@@ -383,105 +383,105 @@ Web build file  -  Copyright 2005-2014 Restlet
     <zip destfile="${dist}/${dist-path}.zip" basedir="${dist}" includes="${dist-path}/**/*" />
   </target>
 
-  <target name="package-dhc-doc" depends="package-dhc-help-release,package-dhc-help-snapshot,package-dhc-tips-release,package-dhc-tips-snapshot" description="Package the DHC docs">
+  <target name="package-client-doc" depends="package-client-help-release,package-client-help-snapshot,package-client-tips-release,package-client-tips-snapshot" description="Package the DHC docs">
   </target>
 
-  <target name="generate-dhc-help" description="Generate the DHC help artefact">
-    <delete dir="${temp}/dhc-help" />
-    <mkdir dir="${temp}/dhc-help" />
-    <delete dir="${temp}/dhc-help-md" />
-    <mkdir dir="${temp}/dhc-help-md" />
-    <exec executable="python" output="${temp}/dhc-help/index.json">
+  <target name="generate-client-help" description="Generate the DHC help artefact">
+    <delete dir="${temp}/client-help" />
+    <mkdir dir="${temp}/client-help" />
+    <delete dir="${temp}/client-help-md" />
+    <mkdir dir="${temp}/client-help-md" />
+    <exec executable="python" output="${temp}/client-help/index.json">
       <arg value="tools/generate-toc.py" />
       <arg value="--path" />
-      <arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
+      <arg value="${mods}/com.restlet/tech-doc/client/guide" />
       <arg value="--dhcjsonindex" />
     </exec>
     <exec executable="python">
       <arg value="tools/generate-toc.py" />
       <arg value="--path" />
-      <arg value="${mods}/com.restlet/tech-doc/dhc/guide" />
+      <arg value="${mods}/com.restlet/tech-doc/client/guide" />
       <arg value="--dhcfiles" />
-      <arg value="${temp}/dhc-help-md" />
+      <arg value="${temp}/client-help-md" />
     </exec>
     <java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
-      <arg value="${temp}/dhc-help-md" />
-      <arg value="${temp}/dhc-help" />
+      <arg value="${temp}/client-help-md" />
+      <arg value="${temp}/client-help" />
     </java>
   </target>
 
-  <target name="package-dhc-help-snapshot" if="do-dhc-snapshot" depends="generate-dhc-help" description="Package the DHC help artefact">
-    <jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
+  <target name="package-client-help-snapshot" if="do-client-snapshot" depends="generate-client-help" description="Package the DHC help artefact">
+    <jar destfile="${dist}/client-help/client-help.jar" basedir="${temp}/client-help" />
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
-      <arg value="-DgroupId=com.restlet.dhc" />
-      <arg value="-DartifactId=dhc-help" />
+      <arg value="-DgroupId=com.restlet.client" />
+      <arg value="-DartifactId=client-help" />
       <arg value="-Dversion=1.0.0-SNAPSHOT" />
       <arg value="-DgeneratePom=true" />
       <arg value="-Dpackaging=jar" />
       <arg value="-DrepositoryId=nexus-snapshots" />
       <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
-      <arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
+      <arg value="-Dfile=${dist}/client-help/client-help.jar" />
     </exec>
   </target>
 
-  <target name="package-dhc-help-release" if="do-dhc-release" depends="generate-dhc-help" description="Package the DHC help artefact">
-    <jar destfile="${dist}/dhc-help/dhc-help.jar" basedir="${temp}/dhc-help" />
+  <target name="package-client-help-release" if="do-client-release" depends="generate-client-help" description="Package the DHC help artefact">
+    <jar destfile="${dist}/client-help/client-help.jar" basedir="${temp}/client-help" />
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
-      <arg value="-DgroupId=com.restlet.dhc" />
-      <arg value="-DartifactId=dhc-help" />
-      <arg value="-Dversion=${dhc-doc-version}" />
+      <arg value="-DgroupId=com.restlet.client" />
+      <arg value="-DartifactId=client-help" />
+      <arg value="-Dversion=${client-doc-version}" />
       <arg value="-DgeneratePom=true" />
       <arg value="-Dpackaging=jar" />
       <arg value="-DrepositoryId=nexus-releases" />
       <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/releases/" />
-      <arg value="-Dfile=${dist}/dhc-help/dhc-help.jar" />
+      <arg value="-Dfile=${dist}/client-help/client-help.jar" />
     </exec>
   </target>
 
-  <target name="generate-dhc-tips" description="Generate the DHC tips artefact">
-    <delete dir="${temp}/dhc-tips" />
-    <mkdir dir="${temp}/dhc-tips" />
-    <copy todir="${temp}/dhc-tips-md">
-      <fileset dir="${mods}/com.restlet/tech-doc/dhc/tips"/>
+  <target name="generate-client-tips" description="Generate the DHC tips artefact">
+    <delete dir="${temp}/client-tips" />
+    <mkdir dir="${temp}/client-tips" />
+    <copy todir="${temp}/client-tips-md">
+      <fileset dir="${mods}/com.restlet/tech-doc/client/tips"/>
     </copy>
     <java jar="${tools}/txtmark-wrapped/txtmark-wrapped.jar" fork="true">
-      <arg value="${temp}/dhc-tips-md" />
-      <arg value="${temp}/dhc-tips" />
+      <arg value="${temp}/client-tips-md" />
+      <arg value="${temp}/client-tips" />
     </java>
-    <exec executable="python" output="${temp}/dhc-tips/tips.json">
+    <exec executable="python" output="${temp}/client-tips/tips.json">
       <arg value="tools/generate-tips.py" />
       <arg value="--path" />
-      <arg value="${temp}/dhc-tips" />
+      <arg value="${temp}/client-tips" />
     </exec>
   </target>
 
-  <target name="package-dhc-tips-snapshot" if="do-dhc-snapshot" depends="generate-dhc-tips" description="Package the DHC tips artefact">
+  <target name="package-client-tips-snapshot" if="do-client-snapshot" depends="generate-client-tips" description="Package the DHC tips artefact">
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
-      <arg value="-DgroupId=com.restlet.dhc" />
-      <arg value="-DartifactId=dhc-tips" />
+      <arg value="-DgroupId=com.restlet.client" />
+      <arg value="-DartifactId=client-tips" />
       <arg value="-Dversion=1.0.0-SNAPSHOT" />
       <arg value="-DgeneratePom=true" />
       <arg value="-Dpackaging=json" />
       <arg value="-DrepositoryId=nexus-snapshots" />
       <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/snapshots/" />
-      <arg value="-Dfile=${temp}/dhc-tips/tips.json" />
+      <arg value="-Dfile=${temp}/client-tips/tips.json" />
     </exec>
   </target>
 
-  <target name="package-dhc-tips-release" if="do-dhc-release" depends="generate-dhc-tips" description="Package the DHC tips artefact">
+  <target name="package-client-tips-release" if="do-client-release" depends="generate-client-tips" description="Package the DHC tips artefact">
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
-      <arg value="-DgroupId=com.restlet.dhc" />
-      <arg value="-DartifactId=dhc-tips" />
-      <arg value="-Dversion=${dhc-doc-version}" />
+      <arg value="-DgroupId=com.restlet.client" />
+      <arg value="-DartifactId=client-tips" />
+      <arg value="-Dversion=${client-doc-version}" />
       <arg value="-DgeneratePom=true" />
       <arg value="-Dpackaging=json" />
       <arg value="-DrepositoryId=nexus-releases" />
       <arg value="-Durl=https://nexus.rest-let.com/nexus/content/repositories/releases/" />
-      <arg value="-Dfile=${temp}/dhc-tips/tips.json" />
+      <arg value="-Dfile=${temp}/client-tips/tips.json" />
     </exec>
   </target>
 
