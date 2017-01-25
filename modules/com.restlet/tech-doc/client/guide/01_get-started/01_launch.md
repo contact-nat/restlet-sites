@@ -44,7 +44,7 @@ data-console-debug=&quot;true&quot;
 </code></pre>
 
 - **name** - required parameter, value should always be *restlet-client-aware-page*.
-- **data-indicator-element-id** - optional, specifies the id of element Restlet Client will create to let the page know the availability of Restlet Client API. Default value is *dhcInfo*.
+- **data-indicator-element-id** - optional, specifies the id of element Restlet Client will create to let the page know the availability of Restlet Client API. Default value is *clientInfo*.
 - **data-console-debug** - optional parameter, if contains true, will print debug information into browser javascript console. Default value is *false*.
 
 ## Call window.postMessage script
@@ -123,9 +123,9 @@ Create a webpage that contains an input area pre-filled with your payload and a 
     &lt;!--This tag instructs Restlet Client to provide api to this page--&gt;
     &lt;meta name=&quot;restlet-client-aware-page&quot;
           data-console-debug=&quot;true&quot;
-          data-indicator-element-id=&quot;testDhc&quot;&gt;
+          data-indicator-element-id=&quot;testClient&quot;&gt;
 
-    &lt;title&gt;Dhc integration example&lt;/title&gt;
+    &lt;title&gt;Client integration example&lt;/title&gt;
     &lt;style type=&quot;text/css&quot;&gt;
         input{
             width:200pt
@@ -135,9 +135,9 @@ Create a webpage that contains an input area pre-filled with your payload and a 
 &lt;script type=&quot;text/javascript&quot;&gt;
 
     //short hand function for sending messages to restlet-client
-    function openRequestInDhc(dhcInfo,targetTab,payload){
+    function openRequestInClient(clientInfo,targetTab,payload){
         var message = {
-            target:dhcInfo.extensionId, //required
+            target:clientInfo.extensionId, //required
             type:&quot;openRequest&quot;,//required
             payloadType:&quot;restlet-client&quot;,//required,
             targetTab:targetTab,
@@ -148,18 +148,18 @@ Create a webpage that contains an input area pre-filled with your payload and a 
 
     //wait until document loads so Restlet Client has a chance to create info tag
     window.addEventListener(&quot;load&quot;,function(){
-        var dhcTag = document.getElementById(&quot;testDhc&quot;); //lookup the tag using the id we&apos;ve provided in meta tag
-        var dhcStatusDisplay = document.getElementById(&quot;status&quot;);
+        var clientTag = document.getElementById(&quot;testClient&quot;); //lookup the tag using the id we&apos;ve provided in meta tag
+        var clientStatusDisplay = document.getElementById(&quot;status&quot;);
 
-        if(!dhcTag){
+        if(!clientTag){
             //no indicator tag - no restlet-client
-            dhcStatusDisplay.textContent = &quot;Restlet Client is not installed. Install Restlet Client by going to the &quot; +
+            clientStatusDisplay.textContent = &quot;Restlet Client is not installed. Install Restlet Client by going to the &quot; +
                     &quot;chrome://extensions click on &apos;Enable Developer Mode&apos; then load unpacked extension, go back here and refresh the page&quot;;
             return;
         }
         //parse restlet-client info into json
-        var dhcInfo = JSON.parse(dhcTag.textContent);
-        dhcStatusDisplay.textContent = &quot;Restlet Client is installed, click button below to open request in Restlet Client&quot;;
+        var clientInfo = JSON.parse(clientTag.textContent);
+        clientStatusDisplay.textContent = &quot;Restlet Client is installed, click button below to open request in Restlet Client&quot;;
 
         //prepare ui
 
@@ -211,7 +211,7 @@ Create a webpage that contains an input area pre-filled with your payload and a 
         document.body.appendChild(payload);
         document.body.appendChild(send);
         send.addEventListener(&quot;click&quot;,function(){
-            openRequestInDhc(dhcInfo,null,payload.value);
+            openRequestInClient(clientInfo,null,payload.value);
         });
 
 
@@ -221,7 +221,7 @@ Create a webpage that contains an input area pre-filled with your payload and a 
 &lt;body&gt;
 
 
-&lt;div id=&quot;status&quot;&gt;Checking Dhc Status&lt;/div&gt;
+&lt;div id=&quot;status&quot;&gt;Checking Client Status&lt;/div&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
