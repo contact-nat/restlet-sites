@@ -1,6 +1,6 @@
 # Introduction
 
-Here is a non exhaustive list of the expressions that can be used in methods within DHC.
+Here is a non exhaustive list of the expressions that can be used in methods within Restlet Client.
 
 # Methods
 

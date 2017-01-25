@@ -9,7 +9,7 @@ An assertion consists of several parts:
 
 ## Part of the call to be tested
 The first part is the part of the call the assertion applies to.  
-The following parts are supported by DHC: status, header, JSON body, body and response. You can see that there are two “body” parts. As a matter of fact, the tool provides native support of JSON within body. This means that you can leverage JSON Patch to get data from JSON content.
+The following parts are supported by Restlet Client: status, header, JSON body, body and response. You can see that there are two “body” parts. As a matter of fact, the tool provides native support of JSON within body. This means that you can leverage JSON Patch to get data from JSON content.
 
 ## Optional parameter
 The second part is an optional parameter related to the first part.  
@@ -24,7 +24,7 @@ This can be raw values but also expressions.
 
 # Assertions display
 
-In the same spirit as xUnit tools in different languages, DHC uses the green color for successful assertions and the red one for failures.
+In the same spirit as xUnit tools in different languages, Restlet Client uses the green color for successful assertions and the red one for failures.
 
 The following screenshots provide a sample use of assertions within the **Assertions** tab.
 

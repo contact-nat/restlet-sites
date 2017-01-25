@@ -1,4 +1,4 @@
-DHC provides you with a **Search** field that  allows you to search items you saved in your drive from the **Repository** tab.
+Restlet Client provides you with a **Search** field that  allows you to search items you saved in your drive from the **Repository** tab.
 
 ![Search field](images/search-field.jpg "Search field")
 

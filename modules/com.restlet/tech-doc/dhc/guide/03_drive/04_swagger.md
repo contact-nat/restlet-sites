@@ -1,6 +1,6 @@
 # Introduction
 
-DHC allows you to import a Swagger 2.0 API definition from a JSON file, a URL or directly from raw text.
+Restlet Client allows you to import a Swagger 2.0 API definition from a JSON file, a URL or directly from raw text.
 
 ## from a JSON file
 

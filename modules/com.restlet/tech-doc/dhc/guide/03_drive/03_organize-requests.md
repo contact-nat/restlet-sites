@@ -2,7 +2,7 @@ Of course you can define one-shot requests, but another interesting approach con
 
 # Description
 
-DHC allows you to build projects inside your drive.
+Restlet Client allows you to build projects inside your drive.
 The different items you can save in your drive follow this pattern:
 
 <i class="fa fa-cloud"></i>&nbsp;&nbsp;project  
@@ -14,7 +14,7 @@ The different items you can save in your drive follow this pattern:
 
 # Save your requests inside projects
 
-Once a request is created and named, DHC by Restlet lets you save it.  
+Once a request is created and named, Restlet Client by Restlet lets you save it.  
 You can save it at the root of your drive or you can classify your requests inside structured projects (folders) and services (subfolders).
 
 To save your request inside a project:

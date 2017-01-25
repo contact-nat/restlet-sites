@@ -1,8 +1,8 @@
-As a REST client DHC by Restlet allows you to build a request and display its response.
+As a REST client Restlet Client by Restlet allows you to build a request and display its response.
 
 # Build a request
 
-DHC provides a dedicated area to configure your request.
+Restlet Client provides a dedicated area to configure your request.
 
 ## Request structure
 
@@ -36,7 +36,7 @@ HTTP **Headers** define the operating parameters of an HTTP transaction. They co
 
 Request **payload** corresponds to the data sent when supported. This applies to methods POST, PUT and PATCH.
 
-DHC by Restlet defines four distinct sub areas:
+Restlet Client by Restlet defines four distinct sub areas:
 
 - the request URL and method;  
 - the query parameters;  
@@ -76,7 +76,7 @@ A POST method follows the same approach but in addition a request payload can be
 
 ### Text content (text value)
 
-For formats like raw text, JSON, XML or YAML, with syntax highlighting. In this case a text area can be used. DHC by Restlet provides a set of types right below the text area to directly set the corresponding content type value.
+For formats like raw text, JSON, XML or YAML, with syntax highlighting. In this case a text area can be used. Restlet Client by Restlet provides a set of types right below the text area to directly set the corresponding content type value.
 
 This screenshot shows you a JSON payload for which the **application/json** *Content-Type* header is automatically created:
 
@@ -84,7 +84,7 @@ This screenshot shows you a JSON payload for which the **application/json** *Con
 
 ### Content from file (file value)
 
-In this case, DHC by Restlet provides an area to drag’n drop the file or select it explicitly. The tool automatically gets the associated mime type. When clicking on it, the Content-Type header is automatically created.
+In this case, Restlet Client by Restlet provides an area to drag’n drop the file or select it explicitly. The tool automatically gets the associated mime type. When clicking on it, the Content-Type header is automatically created.
 
 This screenshot shows you a File payload for which the **image/png** *Content-Type* header is automatically created:
 
@@ -92,7 +92,7 @@ This screenshot shows you a File payload for which the **image/png** *Content-Ty
 
 ### Forms (form value)
 
-DHC by Restlet supports both simple forms and multipart ones.
+Restlet Client by Restlet supports both simple forms and multipart ones.
 
 #### Simple forms
 
@@ -112,7 +112,7 @@ This screenshot shows you a multipart form payload for which the **multipart/for
 
 ## Disable query parameters or headers
 
-DHC by Restlet also allows you to disable some elements in lists (query parameters and headers) without having to remove them. This is particularly useful when building your request to tweak it and reach the expected behavior.
+Restlet Client by Restlet also allows you to disable some elements in lists (query parameters and headers) without having to remove them. This is particularly useful when building your request to tweak it and reach the expected behavior.
 
 This screenshot shows you a request for which the header is disabled (checkbox deselected):
 

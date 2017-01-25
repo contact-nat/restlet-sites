@@ -1,6 +1,6 @@
 # Introduction
 
-DHC allows you to import a definition in HAR 1.2 format. HAR (HTTP Archive format) is a JSON-formatted archive file format for logging of a web browser's interaction with a site. HAR is used by the Chrome browser to export requests executed from the browser.
+Restlet Client allows you to import a definition in HAR 1.2 format. HAR (HTTP Archive format) is a JSON-formatted archive file format for logging of a web browser's interaction with a site. HAR is used by the Chrome browser to export requests executed from the browser.
 
 HAR import allows users to import a full set of requests easily using the HAR format.
 
@@ -46,7 +46,7 @@ From Chrome's **Network** tab, right click and select **Copy all as HAR**.
 
 ![Copy all as HAR](images/copy-all-as-har.jpg "Copy all as HAR")
 
-From DHC's **Repository** tab, click **Import** and select **Import Har 1.2**.  
+From Restlet Client's **Repository** tab, click **Import** and select **Import Har 1.2**.  
 Select **Raw text** as a **Source**.  
 Paste your clipboard content in the text area below and click **Import**.
 

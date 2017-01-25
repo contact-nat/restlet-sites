@@ -1,8 +1,8 @@
-Restlet allows you to try Restlet Studio, DHC and APISpark for 14 days for free!
+Restlet allows you to try Restlet Studio, Restlet Client and APISpark for 14 days for free!
 
 You will be assigned a Team Plan.
 
-From DHC, you will access the following features:
+From Restlet Client, you will access the following features:
 
 - Unlimited test scenarios
 - Save to cloud
@@ -13,10 +13,10 @@ You can upgrade to a permanent Plan at any time. After 14 days, if you did not u
 
 To know the number of days left in your free trial, click on your user name on top right of your screen and select the **Billing** tab.
 
-![Days left from your DHC Free Trial](images/dhc-free-trial-days-left.jpg "Days left from your DHC Free Trial")
+![Days left from your Restlet Client Free Trial](images/restlet-client-free-trial-days-left.jpg "Days left from your Restlet Client Free Trial")
 
 To start a Free Trial, click on your user name on top right of your screen.
 Select the **Team** tab.
 Click on **Start Free 14-day Trial** button.
 
-![DHC Free Trial](images/dhc-free-trial.jpg "DHC Free Trial")
+![Restlet Client Free Trial](images/restlet-client-free-trial.jpg "Restlet Client Free Trial")

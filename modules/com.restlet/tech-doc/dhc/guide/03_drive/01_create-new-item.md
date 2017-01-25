@@ -1,6 +1,6 @@
 # Description
 
-DHC allows you to build projects inside your drive.
+Restlet Client allows you to build projects inside your drive.
 The different items you can save in your drive follow this pattern:
 
 <i class="fa fa-cloud"></i>&nbsp;&nbsp;project  

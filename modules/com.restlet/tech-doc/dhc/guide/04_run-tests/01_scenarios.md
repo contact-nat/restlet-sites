@@ -1,6 +1,6 @@
 # Introduction
 
-DHC allows you to launch series of tests in only one click.
+Restlet Client allows you to launch series of tests in only one click.
 
 You only need to save a series of requests inside a scenario and to launch it by clicking **Run scenario**.
 

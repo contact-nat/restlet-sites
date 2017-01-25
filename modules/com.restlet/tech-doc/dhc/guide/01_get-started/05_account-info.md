@@ -1,16 +1,20 @@
-All your DHC account details are available on the account page.
+All your Restlet Client account details are available on the account page.
 
 To navigate to the account page, make sure you are signed in, then click on your username on top right of your screen.
 
-![My account](images/my-account.jpg "My account")
+Your account page is composed of four tabs: **Pricing**, **Account**, **Billing** and **Team**.
 
-Your account page is composed of four tabs: **Profile**, **Billing**, **Team** and **Sign out**.
+# Pricing
 
-# Profile
+![Pricing tab](images/restlet-client-plans-page.jpg "Pricing tab")
 
-![Profile tab](images/profile-tab.jpg "Profile tab")
+The **Pricing tab** gives you information about your current plan and allow you to **upgrade** or **downgrade** plans.
 
- The **Profile tab** gives you information about your profile including your email address and your profile picture.
+# Account
+
+![Account tab](images/account-tab.jpg "Account tab")
+
+ The **Account tab** gives you information about your profile including your email address and your profile picture.
 
 # <a class="anchor" name="billing"></a>Billing
 
@@ -30,7 +34,3 @@ The **Team** tab gives you a list of the different members of your team (with th
 
 Provided your [plan](./subscribe "plans") allows it, you can add new members by entering their email address in the input field at the bottom of the page.
 A progress bar indicates whether you can still add new members e.g. 2/5.
-
-# Sign out
-
-Click on the **Sign out** tab to sign out.

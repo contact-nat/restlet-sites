@@ -1,12 +1,12 @@
 # Introduction
 
-DHC provides you with a **TIPS** tab that gives you useful information you may ignore on how to use DHC.
+Restlet Client provides you with a **TIPS** tab that gives you useful information you may ignore on how to use Restlet Client.
 
 # Browse through our TIPS
 
-To access DHC Tips, click the **TIPS** tab from the bottom panel.
+To access Restlet Client Tips, click the **TIPS** tab from the bottom panel.
 
-![DHC Tips](images/dhc-tips.jpg "DHC Tips")
+![Restlet Client Tips](images/restlet-client-tips.jpg "Restlet Client Tips")
 
 The buttons at the bottom of the screen allow you to browse through the different Tips available.
 
@@ -21,4 +21,4 @@ If you do not want the **TIPS** tab to display, you can deactivate it.
 
 Click on the **Settings** tab on top right of the screen. From the **General** tab, deselect the **Show tips** checkbox and **Apply** your changes.
 
-![DHC Tips](images/show-tips.jpg "DHC Tips")
+![Restlet Client Tips](images/show-tips.jpg "Restlet Client Tips")

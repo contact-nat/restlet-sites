@@ -1,4 +1,4 @@
-Here is a description of the syntax you need to follow when creating expressions within DHC. This grammar is described in Augmented Backus-Naur Form (ABNF).
+Here is a description of the syntax you need to follow when creating expressions within Restlet Client. This grammar is described in Augmented Backus-Naur Form (ABNF).
 
 <pre class="language-none"><code class="language-none">expression       = "{" *SP declaration  *SP "}"  / "${" *SP declaration  *SP "}"  
 declaration      = ( method  / index / id / string )  *("."  ( id / string / method / index))

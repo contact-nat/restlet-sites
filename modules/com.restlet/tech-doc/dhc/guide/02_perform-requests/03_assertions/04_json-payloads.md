@@ -25,7 +25,7 @@ This is the value you want to check:
 ![JSON content with array](images/09-json-value.jpg "JSON content with array")
 
 >**Note:**
-The value to check can be valid JSON content. DHC automatically parses it and checks if it matches with the content corresponding to the expression.
+The value to check can be valid JSON content. Restlet Client automatically parses it and checks if it matches with the content corresponding to the expression.
 
 The following sample describes how to check the content of an array:
 ![JSON value](images/10-json-value.jpg "JSON value")

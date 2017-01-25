@@ -1,6 +1,6 @@
 ## Display a response
 
-DHC provides a dedicated area to display the response. This area maps the different response elements. The latter is summarized in the following diagram as a reminder.
+Restlet Client provides a dedicated area to display the response. This area maps the different response elements. The latter is summarized in the following diagram as a reminder.
 
 ![Response diagram](images/response-diagram.jpg "Response diagram")
 
@@ -18,7 +18,7 @@ HTTP **Headers** define the operating parameters of an HTTP transaction. They co
 
 Response **payload** corresponds to the data received when supported. This applies to all methods except HEAD, DELETE and OPTIONS.
 
-DHC defines three distinct sub areas: the response status, the headers, and the response payload.
+Restlet Client defines three distinct sub areas: the response status, the headers, and the response payload.
 
 ### Response with payload
 
@@ -62,13 +62,13 @@ In the case of binary content, several modes are available to preview the conten
 
 ### Requests created from hypermedia links
 
-DHC by Restlet provides support of hypermedia links within response contents by making them clickable. This way you can follow links to execute other requests very simply. When clicking on a link, a new request is automatically created.
+Restlet Client by Restlet provides support of hypermedia links within response contents by making them clickable. This way you can follow links to execute other requests very simply. When clicking on a link, a new request is automatically created.
 
 ![hypermedia link request](images/16-hypermedia-link-request.jpg "hypermedia link request")
 
 ### Response toolbar
 
-DHC by Restlet provides a very helpful toolbar at the response level. This allows you to leverage the response content for different use cases: re-use the response content within a new request with the **2Request** button, **Copy** or **Download** the response content.
+Restlet Client by Restlet provides a very helpful toolbar at the response level. This allows you to leverage the response content for different use cases: re-use the response content within a new request with the **2Request** button, **Copy** or **Download** the response content.
 
 ![response toolbar](images/17-response-toolbar.jpg "response toolbar")
 

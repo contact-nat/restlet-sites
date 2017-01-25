@@ -20,12 +20,12 @@ Expressions can be freely mixed with a plain text.
 
 # Use the expression builder
 
-DHC helps you build expressions with its expression builder. Whenever you can build an expression, a magic wand icon <i class="fa fa-magic"></i> displays on the right of the field to launch the expression builder.
+Restlet Client helps you build expressions with its expression builder. Whenever you can build an expression, a magic wand icon <i class="fa fa-magic"></i> displays on the right of the field to launch the expression builder.
 
 From the expression builder, you can select:  
 - Elements from your repository (projects, services, scenarios, etc.),  
 - Context variables,  
-- [Methods](./built-in-methods "Methods") (DHC displays only the relevant methods according to the context).
+- [Methods](./built-in-methods "Methods") (Restlet Client displays only the relevant methods according to the context).
 
 ![expression builder](images/expression-builder-methods.jpg "expression builder")
 

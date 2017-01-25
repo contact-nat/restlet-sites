@@ -2,7 +2,7 @@ The first part is obviously the status one. In this case, you can choose not onl
 
 ![Status code or message](images/02-status-code.jpg "Status code or message")
 
-Regarding response headers, DHC allows you to check both their presence and their content. In the first instance, you can simply put the name of the header in the parameter field and use the **Exists** or **Does not exist** comparison operators, as shown below:
+Regarding response headers, Restlet Client allows you to check both their presence and their content. In the first instance, you can simply put the name of the header in the parameter field and use the **Exists** or **Does not exist** comparison operators, as shown below:
 
 ![Does not exist](images/04-does-not-exist.jpg "Does not exist")
 
@@ -27,7 +27,7 @@ The response payload is not empty:
 Here we check if the keyword *Restlet* is present in the response payload:
 ![Keyword in response payload](images/07-keyword-in-response-payload.jpg "Keyword in response payload")
 
-Testing text payload can be tedious if they are only considered as text. For this reason, DHC goes further by natively supporting JSON body. The latter allows to apply specific JSON path expressions. We will focus on this feature in the next section.
+Testing text payload can be tedious if they are only considered as text. For this reason, Restlet Client goes further by natively supporting JSON body. The latter allows to apply specific JSON path expressions. We will focus on this feature in the next section.
 
 Before diving into JSON payload, do not forget the support for the response itself. This allows you to apply assertions to its latency. This is particularly useful if you want to test the maximum time for a call.
 

@@ -1,6 +1,6 @@
 # Export your Repository
 
-DHC allows you to export your projects/services/scenarios or even your whole drive.
+Restlet Client allows you to export your projects/services/scenarios or even your whole drive.
 
 The export feature is accessible from the **Repository** tab.  
 Click **Export** at the bottom of the left panel.
@@ -15,23 +15,23 @@ Click **Export**.
 
 # Import your Repository
 
-## Import DHC Repository
+## Import Restlet Client Repository
 
-DHC also allows you to import your repository.
+Restlet Client also allows you to import your repository.
 
->**Note:** When importing a file in DHC, you can select which parts (projects and services) will be taken into account. This allows you to import only a subset of data.
+>**Note:** When importing a file in Restlet Client, you can select which parts (projects and services) will be taken into account. This allows you to import only a subset of data.
 
-From the **Repository** tab, click **Import** and select **Import DHC Repository**.  
-Click **Select** to pick up the file that contains your DHC repository.  
+From the **Repository** tab, click **Import** and select **Import Restlet Client Repository**.  
+Click **Select** to pick up the file that contains your Restlet Client repository.  
 Select the projects/services/scenarios you want to import.  
 Select the [Import **Policy**](#import-policy) you want to choose.  
 Click **Import**.
 
-![Data import](images/dhc-repo-import.jpg "Data import")
+![Data import](images/restlet-client-repo-import.jpg "Data import")
 
 ## Import HP Systinet Repository
 
-DHC makes an <a href="https://hpln.hp.com/group/systinet?utm_source=DHC" target="_blank">HP Systinet</a> integration available.
+Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet</a> integration available.
 
 From the **Repository** tab, click **Import** and select **Import HP Systinet Repository**.   
 Enter the **URL** that contains your repository and click **Load**.  
@@ -54,7 +54,7 @@ Imports new requests and never touches existing requests.
 
 # Data structure
 
-DHC import and export use JSON with the structure described below.
+Restlet Client import and export use JSON with the structure described below.
 
 ## Container
 
