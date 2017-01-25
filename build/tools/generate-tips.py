@@ -9,7 +9,7 @@ import sys
 import shutil
 
 def main():
-  parser = argparse.ArgumentParser(description='Aggregate HTML tips for DHC\'s did you know dialog in a JSON file.')
+  parser = argparse.ArgumentParser(description='Aggregate HTML tips for Restlet Client\'s did you know dialog in a JSON file.')
   parser.add_argument('--path', '-p',  type=str, help='Path to scan. If not provided takes current path.')
 
   args = parser.parse_args()

@@ -379,7 +379,7 @@ As you downgrade to a lower Plan, you will no longer access specific features de
 * All members will be removed from your team.
 * You will not be allowed to create as many APIs as permitted by your current plan. Existing APIs will not be affected.
 
-### Impacts on DHC
+### Impacts on Restlet Client
 
 * All members will be removed from your team.
 * Your Maven plugin license will be revoked.
@@ -392,7 +392,7 @@ As you downgrade to a lower Plan, you will no longer access specific features de
 * You will not be allowed to create as many APIs as permitted by your current plan. Existing APIs will not be affected.
 * You will no longer benefit from premium support.
 
-### Impacts on DHC
+### Impacts on Restlet Client
 
 * You will not be allowed to create as many test scenarios as permitted by your current plan. Existing test scenarios will not be affected.
 * You will no longer benefit from premium support.
@@ -406,7 +406,7 @@ As you downgrade to a lower Plan, you will no longer access specific features de
 * You will not be allowed to create as many APIs as permitted by your current plan. Existing APIs will not be affected.
 * You will no longer benefit from premium support.
 
-### Impacts on DHC
+### Impacts on Restlet Client
 
 * All members will be removed from your team.
 * You will not be allowed to create as many test scenarios as permitted by your current plan. Existing test scenarios will not be affected.

@@ -204,7 +204,7 @@ curl http://localhost:8000/swagger.json
 -->
 
 <!-- Test your API
-You can then test your API from your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [DHC](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.
+You can then test your API from your web browser or from tools such as the Chrome extensions [POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?utm_source=chrome-ntp-icon) and [Restlet Client](http://sprintapi.com/dhcs.html) that provide a graphical user interface to perform HTTP calls.
 -->
 <h1 class="numbered" id="toc_5"><i>5</i>Share your documentation</h1>
 

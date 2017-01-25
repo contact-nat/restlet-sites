@@ -7,7 +7,7 @@ You need access credentials if the API is not open to *Anyone*. Please visit the
 
 # Invoke your web API
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Swagger UI (which you can launch directly from APISpark), the Chrome extension POSTMAN or DHC that provide a graphical user interface to perform HTTP calls.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Swagger UI (which you can launch directly from APISpark), the Chrome extension POSTMAN or Restlet Client that provide a graphical user interface to perform HTTP calls.
 
 ## Invoke your web API from APISpark with the Swagger UI
 

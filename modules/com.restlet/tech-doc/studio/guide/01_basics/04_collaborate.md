@@ -1,6 +1,6 @@
 # Managing your team
 
-As a Restlet user, you'll have one team assigned to your account. This team will be used across Restlet Studio, DHC, and APISpark.
+As a Restlet user, you'll have one team assigned to your account. This team will be used across Restlet Studio, Restlet Client, and APISpark.
 
 To add people to your team, open the Team menu from the profile drop-down menu in the header bar.
 

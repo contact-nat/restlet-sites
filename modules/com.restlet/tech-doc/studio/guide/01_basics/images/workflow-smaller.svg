@@ -11,7 +11,7 @@
 	c-6.627,0-12-5.373-12-12v-49c0-6.627,5.373-12,12-12h212c6.627,0,12,5.373,12,12V177.5z"/>
 <path fill="none" stroke="#FFCA00" stroke-width="5" stroke-miterlimit="10" d="M466.5,297.5c0,6.627-5.373,12-12,12h-237
 	c-6.627,0-12-5.373-12-12v-55c0-6.627,5.373-12,12-12h237c6.627,0,12,5.373,12,12V297.5z"/>
-<text transform="matrix(1 0 0 1 266.7754 289.5)" fill="#FFCA00" font-family="'OpenSans-Bold'" font-size="15">TRY IT OUT IN DHC</text>
+<text transform="matrix(1 0 0 1 266.7754 289.5)" fill="#FFCA00" font-family="'OpenSans-Bold'" font-size="15">TRY IT OUT IN Restlet Client</text>
 <path fill="none" stroke="#4A9ACA" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="6,9" d="M120.5,116V44.5
 	c0-6.627,5.373-12,12-12H206"/>
 <path fill="none" stroke="#4A9ACA" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="6,9" d="M554.5,117V44.5

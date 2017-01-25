@@ -14,7 +14,7 @@ def main():
     parser.add_argument('--path', '-p',  type=str, help='Path to scan. If not provided takes current path.')
     parser.add_argument('--markdown', '-m',  action='store_true', help='If provided, return a markdown file.')
     parser.add_argument('--dhcjsonindex', '-dhci',  action='store_true', help='If provided, return a JSON representation of the client help guide.')
-    parser.add_argument('--dhcfiles', '-dhcf',  type=str, help='Path where the DHC help files are saved (including images). If not provided takes current path.')
+    parser.add_argument('--dhcfiles', '-dhcf',  type=str, help='Path where the Restlet Client help files are saved (including images). If not provided takes current path.')
 
     args = parser.parse_args()
     path = args.path

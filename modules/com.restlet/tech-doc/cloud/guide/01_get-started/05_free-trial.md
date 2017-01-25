@@ -1,4 +1,4 @@
-Restlet allows you to try Restlet Studio, DHC and APISpark for 14 days for free!
+Restlet allows you to try Restlet Studio, Restlet Client and APISpark for 14 days for free!
 
 You will be assigned a Team Plan.
 

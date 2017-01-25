@@ -383,10 +383,10 @@ Web build file  -  Copyright 2005-2014 Restlet
     <zip destfile="${dist}/${dist-path}.zip" basedir="${dist}" includes="${dist-path}/**/*" />
   </target>
 
-  <target name="package-client-doc" depends="package-client-help-release,package-client-help-snapshot,package-client-tips-release,package-client-tips-snapshot" description="Package the DHC docs">
+  <target name="package-client-doc" depends="package-client-help-release,package-client-help-snapshot,package-client-tips-release,package-client-tips-snapshot" description="Package the Restlet Client docs">
   </target>
 
-  <target name="generate-client-help" description="Generate the DHC help artefact">
+  <target name="generate-client-help" description="Generate the Restlet Client help artefact">
     <delete dir="${temp}/client-help" />
     <mkdir dir="${temp}/client-help" />
     <delete dir="${temp}/client-help-md" />
@@ -410,7 +410,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </java>
   </target>
 
-  <target name="package-client-help-snapshot" if="do-client-snapshot" depends="generate-client-help" description="Package the DHC help artefact">
+  <target name="package-client-help-snapshot" if="do-client-snapshot" depends="generate-client-help" description="Package the Restlet Client help artefact">
     <jar destfile="${dist}/client-help/client-help.jar" basedir="${temp}/client-help" />
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
@@ -425,7 +425,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </exec>
   </target>
 
-  <target name="package-client-help-release" if="do-client-release" depends="generate-client-help" description="Package the DHC help artefact">
+  <target name="package-client-help-release" if="do-client-release" depends="generate-client-help" description="Package the Restlet Client help artefact">
     <jar destfile="${dist}/client-help/client-help.jar" basedir="${temp}/client-help" />
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
@@ -440,7 +440,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </exec>
   </target>
 
-  <target name="generate-client-tips" description="Generate the DHC tips artefact">
+  <target name="generate-client-tips" description="Generate the Restlet Client tips artefact">
     <delete dir="${temp}/client-tips" />
     <mkdir dir="${temp}/client-tips" />
     <copy todir="${temp}/client-tips-md">
@@ -457,7 +457,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </exec>
   </target>
 
-  <target name="package-client-tips-snapshot" if="do-client-snapshot" depends="generate-client-tips" description="Package the DHC tips artefact">
+  <target name="package-client-tips-snapshot" if="do-client-snapshot" depends="generate-client-tips" description="Package the Restlet Client tips artefact">
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
       <arg value="-DgroupId=com.restlet.client" />
@@ -471,7 +471,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     </exec>
   </target>
 
-  <target name="package-client-tips-release" if="do-client-release" depends="generate-client-tips" description="Package the DHC tips artefact">
+  <target name="package-client-tips-release" if="do-client-release" depends="generate-client-tips" description="Package the Restlet Client tips artefact">
     <exec executable="mvn">
       <arg value="deploy:deploy-file" />
       <arg value="-DgroupId=com.restlet.client" />

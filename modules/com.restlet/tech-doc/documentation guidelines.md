@@ -120,8 +120,8 @@ The text in quotes displays in the tooltip.
 Use {customizable part} rather than <customizable part> which will not display:
 https://apispark.restlet.com/apis/\{cell number\}/versions/\{version number\}/overview
 
-##### Internal links in DHC doc
-As DHC doc is also integrated into the product, we need internal links to be relative links (rather than absolute links).  
+##### Internal links in Restlet Client doc
+As Restlet Client doc is also integrated into the product, we need internal links to be relative links (rather than absolute links).  
 So we will not write "/technical-resources/client/guide/drive/search-item"  
 but "./drive/search-item" (if in current folder)  
 >**Note:**
