@@ -10,9 +10,9 @@ Restlet Client can be used as an online service from <a href="https://client.res
 
 ![Restlet Client online service](images/online-service.jpg "Restlet Client online service")
 
-## Restlet Client Chrome application
+## Restlet Client Chrome extension
 
-The tool is also available in your Chrome applications through chrome://apps.
+The tool is also available for offline or online use as a Chrome extension and can be installed from the <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm">Chrome Web Store</a>.
 
 ![Restlet Client Chrome app](images/chrome-app.jpg "Restlet Client Chrome app")
 
