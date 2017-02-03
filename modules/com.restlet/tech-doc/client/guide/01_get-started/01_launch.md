@@ -1,6 +1,6 @@
 # Introduction
 
-Restlet Client allows you to interact with REST services. It brings many different features that make your user experience better, save you precious time when debugging REST calls or sharing your requests with others.
+Restlet Client (formerly known as DHC) allows you to interact with REST services. It brings many different features that make your user experience better, save you precious time when debugging REST calls or sharing your requests with others.
 
 # Install Restlet Client
 
