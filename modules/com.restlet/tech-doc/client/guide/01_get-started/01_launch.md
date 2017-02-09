@@ -37,14 +37,14 @@ Note: Process might change due to Google legacy packaged apps policy. Packaged a
 Create an html page that contains a **meta tag** that will load Restlet Client script.
 
 <pre class="language-markup"><code class="language-markup">&lt;meta
-name=&quot;restlet-client-aware-page&quot;
+name=&quot;dhc-aware-page&quot;
 data-indicator-element-id=&quot;&lt;id_element&gt;&quot;
 data-console-debug=&quot;true&quot;
 &gt;
 </code></pre>
 
-- **name** - required parameter, value should always be *restlet-client-aware-page*.
-- **data-indicator-element-id** - optional, specifies the id of element Restlet Client will create to let the page know the availability of Restlet Client API. Default value is *clientInfo*.
+- **name** - required parameter, value should always be *dhc-aware-page*.
+- **data-indicator-element-id** - optional, specifies the id of element Restlet Client will create to let the page know the availability of Restlet Client API. Default value is *dhcInfo*.
 - **data-console-debug** - optional parameter, if contains true, will print debug information into browser javascript console. Default value is *false*.
 
 ## Call window.postMessage script
@@ -63,7 +63,7 @@ To instruct Restlet Client to open a new request, your webpage must call the **w
 - **target**:String - id of Restlet Client extension. Can be obtained from Restlet Client indicator element. E.g.
 JSON.parse(document.getElementById(<id of  indicator element>).textContent).extensionId;
 - **targetTab**:String (optional) - the name of the tab where request should be opened. If not specified, new tab with Restlet Client will be opened for each *openRequest* message. If specified, Restlet Client will try to use previously opened tab with the same  name and will create it if such tab does not exist.
-- **payloadType**:String - the type of payload to load in Restlet Client. Possible values: *restlet-client* or *systinet*. Jump to [Restlet Client built-in documentation](../perform-requests/expressions/built-in-methods "Restlet Client built-in documentation") for more information.
+- **payloadType**:String - the type of payload to load in Restlet Client. Possible values: *dhc* or *systinet*. Jump to [Restlet Client built-in documentation](../perform-requests/expressions/built-in-methods "Restlet Client built-in documentation") for more information.
 - **payload**:Object - payload information, specific to each payload type.
 
 Example:
@@ -121,7 +121,7 @@ Create a webpage that contains an input area pre-filled with your payload and a 
     &lt;meta charset=&quot;UTF-8&quot;&gt;
 
     &lt;!--This tag instructs Restlet Client to provide api to this page--&gt;
-    &lt;meta name=&quot;restlet-client-aware-page&quot;
+    &lt;meta name=&quot;dhc-aware-page&quot;
           data-console-debug=&quot;true&quot;
           data-indicator-element-id=&quot;testClient&quot;&gt;
 
@@ -139,7 +139,7 @@ Create a webpage that contains an input area pre-filled with your payload and a 
         var message = {
             target:clientInfo.extensionId, //required
             type:&quot;openRequest&quot;,//required
-            payloadType:&quot;restlet-client&quot;,//required,
+            payloadType:&quot;dhc&quot;,//required,
             targetTab:targetTab,
             payload:JSON.parse(payload)
         };
