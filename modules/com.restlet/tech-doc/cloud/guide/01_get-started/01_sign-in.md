@@ -1,8 +1,4 @@
-APISpark's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
-
-To sign up, click on the **Sign in** button from the <a href="https://apispark.restlet.com/signin" target="_blank">Welcome page</a> of our website and pick a social provider to identify yourself with. Your account will automatically be created for you.
-
-![Sign in](images/sign-in-button.jpg "Sign in")
+Restlet Cloud's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
 
 # Log in with your social provider account  
 

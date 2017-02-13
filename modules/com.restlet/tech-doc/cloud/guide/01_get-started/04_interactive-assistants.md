@@ -1,5 +1,5 @@
 
-The interactive assistants are designed to accompany you while you discover the APISpark platform. You can start a tutorial at any time by clicking on the interactive assistants icon in the upper right corner of your screen.
+The interactive assistants are designed to accompany you while you discover Restlet Cloud. You can start a tutorial at any time by clicking on the interactive assistants icon in the upper right corner of your screen.
 
 ![interactive tutorial logo](images/interactiveassistantslogo.jpg "interactive tutorial logo")
 

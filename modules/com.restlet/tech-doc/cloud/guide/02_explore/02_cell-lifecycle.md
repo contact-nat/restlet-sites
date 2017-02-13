@@ -1,4 +1,4 @@
-APISpark cells are always in one of the states of the cell lifecycle.
+Restlet Cloud cells are always in one of the states of the cell lifecycle.
 
 The states of the lifecycle and the possible transitions are shown in the diagram below.
 

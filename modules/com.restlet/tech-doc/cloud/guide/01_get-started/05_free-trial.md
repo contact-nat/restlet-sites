@@ -1,12 +1,12 @@
-Restlet allows you to try Restlet Studio, Restlet Client and APISpark for 14 days for free!
+Restlet allows you to try Restlet Studio, Restlet Client and Restlet Cloud for 14 days for free!
 
 You will be assigned a Team Plan.
 
-From APISpark, you will access the following features:
+From Cloud, you will access the following features:
 
 - Cloud hosting of API
 - Authentication & authorization
-- Documentation & SDKs
+- Code generation
 - API analytics
 - Custom domains
 - Premium support
@@ -19,4 +19,4 @@ You can upgrade to a permanent Plan at any time. After 14 days, if you did not u
 
 The **Pricing** page indicates the number of days left in your free trial. To access it, click on your username on top right of your screen and select **Account**. From the **Account** page, select the **Pricing** tab.
 
-<a href="https://apispark.restlet.com/start-trial" target="_blank">Start a free trial now!</a>
+<a href="https://cloud.restlet.com/start-trial" target="_blank">Start a free trial now!</a>
