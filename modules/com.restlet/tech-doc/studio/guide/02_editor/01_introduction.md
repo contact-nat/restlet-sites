@@ -35,10 +35,6 @@ In **Restlet Studio**, you'll be able to create these elements from the **+** me
 
 ![Create something](images/createsomething.png "Create something")
 
-Operations are created by from the **+** menu next to resources in the left panel.
-
-![Create an operation](images/createoperation.png "Create an operation")
-
 Endpoints are created in the general information screen, which you can access by clicking on the name of your API at the top of the left panel.
 
 ![Endpoints](images/endpoints.png "Endpoints")

@@ -11,8 +11,8 @@ Try in Restlet Client from the editor:
 
 Try in Restlet Client from published documentation:
 
-![Try in Restlet Client from published documentation](images/tryindhchub.png "Try in Restlet Client from published documentation")
+![Try in Restlet Client from published documentation](images/trydoc.png "Try in Restlet Client from published documentation")
 
 Clicking the Try in Restlet Client button will open Restlet Client, Restlet's API testing tool, with a ready-to-go request on the chosen API operation.
 
-If you have not yet installed Restlet Client, you will be taken to the chrome store to install it. Note that once you have a Restlet account, you automatically have access to Restlet Client (APISpark) with the same account.
+If you have not yet installed Restlet Client, you will be taken to the chrome store to install it. Note that once you have a Restlet account, you automatically have access to all modules, including Restlet Client and Restlet Cloud, with the same account.
