@@ -44,7 +44,7 @@ Click on the **Deploy** button.
 
 <h1 class="numbered" id="toc_4"><i>4</i>Create and invoke your web API</h1>
 
-Once your File Store has been deployed, you can simply export it as a new web API via the cog button or import it from an existing web API. For more details on how to do this, please check out our [tutorials](/technical-resources/apispark/tutorials "tutorials").
+Once your File Store has been deployed, you can simply export it as a new web API via the cog button or import it from an existing web API. For more details on how to do this, please check out our [tutorials](/tutorials "tutorials").
 
 
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.

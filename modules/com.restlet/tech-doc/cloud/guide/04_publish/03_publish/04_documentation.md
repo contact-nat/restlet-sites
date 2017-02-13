@@ -1,13 +1,11 @@
 
 An important part of running a web API is documenting it so that consumers of your API can invoke it with ease.
 
-APISpark is very flexible in this regard and provides three different ways to document you APIs that are hosted on APISpark:
+Restlet Cloud is very flexible in this regard and provides three different ways to document you APIs that are hosted on Restlet Cloud:
 
 * Make your API documentation public
 * Download your API's documentation
 * Get the Swagger definition of your API
-
-APISpark will also provide automatic documentation for existing APIs that are not hosted by APISpark. In this case, please visit the [APISpark Descriptors](/technical-resources/apispark/guide/document/overview "APISpark Descriptors") section.
 
 # Make your API documentation public
 
@@ -23,7 +21,7 @@ Select the **Share API Overview** checkbox.
 
 # Download your API's documentation
 
-APISpark provides a way for you to download documentation for web APIs. This way you can, for example, host the documentation on your own website. <!--Documentation is provided for download in a number of different formats.-->
+Restlet Cloud provides a way for you to download documentation for web APIs. This way you can, for example, host the documentation on your own website. <!--Documentation is provided for download in a number of different formats.-->
 
 ## Add new documentation for download
 
@@ -47,10 +45,10 @@ Your documentation can now be downloaded from the **Documentation** section by s
 
 **Swagger** is an API description language that comes with a number of tools including Swagger UI. Swagger UI provides a nice HTML presentation of your API’s contract and allows you to test your API by calling it.
 
-APISpark *automatically* produces a Swagger definition for APIs it hosts. You can share the Swagger definition's URL with your users, download the Swagger definition itself, and you can even view the definition via the Swagger User Interface.
+Restlet Cloud *automatically* produces a Swagger definition for APIs it hosts. You can share the Swagger definition's URL with your users, download the Swagger definition itself, and you can even view the definition via the Swagger User Interface.
 
 The screenshot below is an example of what the Swagger UI looks like.  
 
 ![Swagger](images/swagger-ui.jpg "Swagger")
 
-For details on how to use swagger UI with your API, go to the [third party application integration](/technical-resources/apispark/guide/publish/publish/api-definition "third party application integration") page.
+For details on how to use swagger UI with your API, go to the [third party application integration](/documentation/cloud/guide/publish/publish/api-definition "third party application integration") page.

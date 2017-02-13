@@ -1,4 +1,4 @@
-APISpark allows you to adjust your Sharing settings. You may want all your cells to be shared automatically with your team or you may rather want to authorize only a selection of your members to share your cells. This can be defined from the Settings page.
+Restlet Cloud allows you to adjust your Sharing settings. You may want all your cells to be shared automatically with your team or you may rather want to authorize only a selection of your members to share your cells. This can be defined from the Settings page.
 
 # Use the default Sharing settings
 

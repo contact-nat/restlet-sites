@@ -1,5 +1,5 @@
 
-APISpark can bring additional features to your existing web API hosted outside of APISpark with the *Connector* cell.
+Restlet Cloud can bring additional features to your existing web API hosted outside of Restlet Cloud with the *Connector* cell.
 
 # Enhance your web API
 
@@ -12,16 +12,16 @@ With a *Connector*, you can add and configure the following features to your API
 
 # How does a connector work?
 
-A connector is split into two parts: a *Connector Cell* and a *APISpark Agent*.
+A connector is split into two parts: a *Connector Cell* and a *Restlet Cloud Agent*.
 
-The Connector Cell is defined in the APISpark console and holds the configuration of the desired features.
+The Connector Cell is defined in the Restlet Cloud console and holds the configuration of the desired features.
 
-The APISpark Agent is set in front of your API, accesses this configuration, acts as a Reverse Proxy and provides the features you have enabled in the APISpark console on the incoming requests of your API.
+The Restlet Cloud Agent is set in front of your API, accesses this configuration, acts as a Reverse Proxy and provides the features you have enabled in the Restlet Cloud console on the incoming requests of your API.
 
-You can either decide to host the agent on your own Information System or to host it directly on APISpark:
+You can either decide to host the agent on your own Information System or to host it directly on Restlet Cloud:
 
 ## Hosted agent
-By default, APISpark hosts the agent. A hosted agent will be running directly within APISpark and will allow you to add management features to your API by proxying its traffic. if you choose hosted agent **Deployment mode**, you will be asked to choose a domain on apispark.net. A default HTTPS endpoint will be created using that domain.
+By default, Restlet Cloud hosts the agent. A hosted agent will be running directly within Restlet Cloud and will allow you to add management features to your API by proxying its traffic. if you choose hosted agent **Deployment mode**, you will be asked to choose a domain on restlet.net. A default HTTPS endpoint will be created using that domain.
 
 ![hosted agent](images/hosted-agent-diagram.jpg "hosted agent")
 
@@ -40,8 +40,6 @@ Select the appropriate **Deployment mode**:
 
 **Hosted agent**  
 
-<iframe width="600" height="410" src="https://player.vimeo.com/video/141036085" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
 The default configuration is *Hosted agent*.
 You are prompted to give your Connector a **Name** and a **Description** (optional). The **Domain** field is filled in automatically on the basis of the **Name** entered. If the domain is not available, a message informs you that you need to choose a unique domain.
 
@@ -57,11 +55,11 @@ You will be prompted to give your Connector a **Name** and a **Description** (op
 ![Create a connector with a standalone agent](images/create-standalone-agent-connector.jpg "Create a connector with a standalone agent")
 
 
-A Connector has the same properties as a [web API](/technical-resources/apispark/guide/create/overview "Web API") except that a Connector is not hosted by the APISpark platform.
+A Connector has the same properties as a [web API](/documentation/cloud/guide/create/overview "Web API") except that a Connector is not hosted by Restlet Cloud.
 
-With a Connector you can also document your web API as with a [Descriptor](/technical-resources/apispark/guide/document/overview "Descriptor").
+With a Connector you can also document your web API as with a [Descriptor](/documentation/cloud/guide/document/overview "Descriptor").
 
-Once you have created a Connector, you can [configure it and install the Remote Agent](/technical-resources/apispark/guide/manage/remote-agent "Remote Agent") in your Information System (if you choose the standalone agent configuration), and that's all.  
+Once you have created a Connector, you can [configure it and install the Remote Agent](/documentation/cloud/guide/manage/remote-agent "Remote Agent") in your Information System (if you choose the standalone agent configuration), and that's all.  
  Your web API has new features inside without writing a line of code!
 
 ## Add a format to a representation

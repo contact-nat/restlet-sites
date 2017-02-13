@@ -1,13 +1,13 @@
 <h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
-APISpark provides a tool to manage an existing web API hosted outside of APISpark. To get a full overview of the management features available, take a look at the [related documentation](/technical-resources/apispark/guide/manage/connectors).
+APISpark provides a tool to manage an existing web API hosted outside of APISpark. To get a full overview of the management features available, take a look at the [related documentation](/documentation/cloud/guide/manage/connectors).
 
 In this scenario, we will add authenticated access to an existing web API via the APISpark tool. If you do not have a running web API, you can use our sample API hosted on APISpark.
 
 You have two options:  
-- [hosted agent](/technical-resources/apispark/tutorials/manage-api#hosted)  
+- [hosted agent](/tutorials/manage-api#hosted)  
 You can either create a connector with an agent hosted directly on APISpark or;  
-- [standalone agent](/technical-resources/apispark/tutorials/manage-api#standalone)  
+- [standalone agent](/tutorials/manage-api#standalone)  
 You can install the agent on your own infrastructure to avoid possible lag issues.
 
 
@@ -167,7 +167,7 @@ The agent is available for download from the **Agent details** page: click on th
 
 ![Download the agent](images/download-agent.jpg "Download the agent")
 
-You will download a zip file containing the jar and an empty configuration file. To learn how to configure the agent, please take a look at this [specific documentation](https://restlet.com/technical-resources/apispark/guide/manage/remote-agent) in the section **Configure the Agent**.
+You will download a zip file containing the jar and an empty configuration file. To learn how to configure the agent, please take a look at this [specific documentation](https://restlet.com/documentation/cloud/guide/manage/remote-agent) in the section **Configure the Agent**.
 
 Once your agent is configured, launch it with the following command line:
 

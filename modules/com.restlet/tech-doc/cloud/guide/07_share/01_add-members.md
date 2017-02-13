@@ -1,5 +1,5 @@
-APISpark allows you to share your cells with members of your team (if you subscribed to a Team or Scale [plan](/technical-resources/apispark/guide/get-started/subscribe "plans")).  
-You can define your [Sharing settings](/technical-resources/apispark/guide/share/sharing-settings "Sharing settings") from the Settings page.
+Restlet Cloud allows you to share your cells with members of your team (if you subscribed to a Team or Scale [plan](/documentation/cloud/guide/get-started/subscribe "plans")).  
+You can define your [Sharing settings](/documentation/cloud/guide/share/sharing-settings "Sharing settings") from the Settings page.
 
 # View your teams
 
@@ -32,7 +32,7 @@ To manage the members of a cell, navigate to the cell's **Members** tab.
 
 From here, you can add or remove members.
 
->**Note:** When you create a new cell [revision](/technical-resources/apispark/guide/explore/revisions "revision"), it is created with the same members as the former revision. But if you restore an old revision, then you restore it with the members that were associated to this old revision (you loose the members changes you made).
+>**Note:** When you create a new cell [revision](/documentation/cloud/guide/explore/revisions "revision"), it is created with the same members as the former revision. But if you restore an old revision, then you restore it with the members that were associated to this old revision (you loose the members changes you made).
 
 From the cell **Overview** page, click on the **Members** tab.  
 In the **Members** section, click on the **Add** button.  

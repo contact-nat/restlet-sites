@@ -273,7 +273,7 @@ At that point, the structure of the controller starts to appear. Many properties
 
 ### Authentication
 
-First let's add the credentials into the [run block](https://docs.angularjs.org/guide/module#module-loading-dependencies) which are required to be able to access the API if the default security has not been changed.
+First let's add the credentials into the [run block](https://docs.angularjs.org/documentation/cloud/guide/module#module-loading-dependencies) which are required to be able to access the API if the default security has not been changed.
 
 <pre class="language-javascript"><code class="language-javascript">.run(function ($http) {
 

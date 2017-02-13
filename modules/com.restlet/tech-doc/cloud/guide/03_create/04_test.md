@@ -2,16 +2,16 @@
 
 In order to test and debug a web API, a certain number of requirements must be met.
 
-The API must be deployed. Please visit the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page if you do not know how to deploy an API.  
-You need access credentials if the API is not open to *Anyone*. Please visit the [Invocation](/technical-resources/apispark/guide/publish/publish/invocation "Invocation") page if you do not know how to obtain and view your API access credentials.
+The API must be deployed. Please visit the [Cell deployment](/documentation/cloud/guide/explore/cell-deployment "Cell deployment") page if you do not know how to deploy an API.  
+You need access credentials if the API is not open to *Anyone*. Please visit the [Invocation](/documentation/cloud/guide/publish/publish/invocation "Invocation") page if you do not know how to obtain and view your API access credentials.
 
 # Invoke your web API
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Swagger UI (which you can launch directly from APISpark), the Chrome extension POSTMAN or Restlet Client that provide a graphical user interface to perform HTTP calls.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API we recommend the use of tools such as the Swagger UI (which you can launch directly from Restlet Cloud) or Restlet Client (the chrome extension) that provide a graphical user interface to perform HTTP calls.
 
-## Invoke your web API from APISpark with the Swagger UI
+## Invoke your web API from Restlet Cloud with the Swagger UI
 
-APISpark embeds the Swagger UI to allow you to call out the various resources and methods of your API directly from the platform.
+Restlet Cloud embeds the Swagger UI to allow you to call out the various resources and methods of your API directly from the platform.
 
 From the **Overview** tab of your API, select the appropriate Endpoint.  
 From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
@@ -38,16 +38,16 @@ From the **Resources** section, select a method e.g. GET.
 
 ![http snippet](images/http-snippet.jpg "http snippet")
 
->**Note:** Snippets are available for Full Stack web APIs, Descriptors and Connectors.
+>**Note:** Snippets are available for Full Stack web APIs and Connectors.
 
-## Invoke your web API with POSTMAN
+## Invoke your web API with Restlet Client
 
-When using POSTMAN, click on the **Basic Auth** tab, fill in the **Username** and **Password** fields with the information copied from your APISpark **Endpoints**.  
-Fill in the **Endpoint URI** and add the name of a resource e.g. `/contacts/ `at the end of it. (E.g. `https://employeedirectory.apispark.net/v1/contacts`).  
-To retrieve the list of contacts in JSON, click on the **Headers** button on the far right and input the **Accept** command in the **Header** field and write **application/json** in the **Value** field opposite.  
+When using Restlet Client, click on the **set an authorization** button under the list of headers, fill in the **Username** and **Password** fields with the information copied from your Restlet Cloud **Endpoints**.  
+Fill in the request path with the API's endpoint URL and the path for a resource e.g. `/contacts/ `at the end of it. (E.g. `https://employeedirectory.restlet.net/v1/contacts`).  
+To retrieve the list of contacts in JSON, make sure the **Accept** header is listed with the value at **application/json**.  
 Click on the **Send** button.
 
-![POSTMAN](images/postman.jpg "POSTMAN")
+![POSTMAN](images/client.png "Restlet Client")
 
 # <a class="anchor" name="check-messages"></a>Check your messages
 
@@ -59,7 +59,7 @@ This is a great place to go to when testing your API.
 
 ## Messages
 
-The **Messages** section in the left panel contains general messages pertaining to APISpark internal process such as version creation, and deployment.
+The **Messages** section in the left panel contains general messages pertaining to Restlet Cloud internal process such as version creation, and deployment.
 
 ## Traces
 

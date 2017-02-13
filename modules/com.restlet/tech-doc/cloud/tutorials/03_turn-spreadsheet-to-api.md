@@ -3,7 +3,7 @@
 This tutorial will show you how to create a custom web API that exposes data stored in a spreadsheet created with Google Sheets. <a href="
 http://docs.google.com/" target="_blank">Google Sheets</a> is a popular collaborative data editing tool within the Google Docs suite.  
 
-For more information, jump to the [Google Sheets section](/technical-resources/apispark/guide/store/wrappers/google-sheets "Google Sheets section") of our User Guide.
+For more information, jump to the [Google Sheets section](/documentation/cloud/guide/store/wrappers/google-sheets "Google Sheets section") of our User Guide.
 
 <h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 

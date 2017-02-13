@@ -1,12 +1,12 @@
 # Introduction
 
-APISpark features a Wrapper File Store for GitHub repositories. The GitHub Wrapper lets you expose files stored in a GitHub repository through a web API.
+Restlet Cloud features a Wrapper File Store for GitHub repositories. The GitHub Wrapper lets you expose files stored in a GitHub repository through a web API.
 
 ![GitHub to wrapper](images/github-to-wrapper.jpg "GitHub to wrapper")
 
 # Create a GitHub Wrapper
 
-To know how to create a GitHub wrapper step by step, jump to our [GitHub tutorial](/technical-resources/apispark/tutorials/github "GitHub tutorial").
+To know how to create a GitHub wrapper step by step, jump to our [GitHub tutorial](/tutorials/github "GitHub tutorial").
 
 # <a class="anchor" name="personal-access-tokens"></a>Use GitHub Personal Access Tokens
 

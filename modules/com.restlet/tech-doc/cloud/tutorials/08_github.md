@@ -31,7 +31,7 @@ Enter your GitHub account credentials. Press the **Test** button to check the co
 
 ![Setup GitHub account](images/github-account.jpg "Setup your GitHub account")
 
->**Note:** We advise you to [use personal access tokens](/technical-resources/apispark/guide/store/wrappers/github#personal-access-tokens "use personal access tokens") to import your GitHub repository.
+>**Note:** We advise you to [use personal access tokens](/documentation/cloud/guide/store/wrappers/github#personal-access-tokens "use personal access tokens") to import your GitHub repository.
 
 <h1 class="numbered" id="toc_3"><i>3</i>Import a GitHub repository</h1>
 

@@ -1,4 +1,4 @@
-The features used by the *Remote Agent* are defined on your APISpark Dashboard, on the *Connector* cell.
+The features used by the *Remote Agent* are defined on your Restlet Cloud Dashboard, on the *Connector* cell.
 
 # Configure your agent
 
@@ -15,7 +15,7 @@ Select the features you want to enable.
 
 The **Authentication** module uses the access settings defined in the **Members** tab.
 
-For more information, jump to our [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User Groups") section.
+For more information, jump to our [User Groups](/documentation/cloud/guide/publish/secure/user-groups "User Groups") section.
 
 ## Authorization module
 
@@ -29,7 +29,7 @@ To go to the **Security** tab, navigate to the **Overview** tab and select a met
 
 ![Security tab](images/method-security.jpg "Security tab")
 
-Go to the [Runtime Permissions](/technical-resources/apispark/guide/publish/secure/runtime-permissions "Runtime Permissions") section to discover how to configure the access.
+Go to the [Runtime Permissions](/documentation/cloud/guide/publish/secure/runtime-permissions "Runtime Permissions") section to discover how to configure the access.
 
 >**Note:** The **Authorization** module requires the **Authentication** module to be activated.
 
@@ -37,7 +37,7 @@ Go to the [Runtime Permissions](/technical-resources/apispark/guide/publish/secu
 
 With the **Firewall** module, you can add *Rate Limitation* or *IP Filtering* to your web API.
 
-Please go through the [Firewall settings](/technical-resources/apispark/guide/publish/secure/firewall-settings "Firewall Settings") page to add such rules.
+Please go through the [Firewall settings](/documentation/cloud/guide/publish/secure/firewall-settings "Firewall Settings") page to add such rules.
 
 ## Analytics module
 
@@ -49,7 +49,7 @@ If you enable the **Analytics** module, you activate the **Analytics** tab. This
 
 Once you have completed your settings, you need to deploy your *Connector* configuration to activate them.
 
-Click on the **Deploy** button to deploy your cell. Please go to the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") page for further information.
+Click on the **Deploy** button to deploy your cell. Please go to the [Cell deployment](/documentation/cloud/guide/explore/cell-deployment "Cell deployment") page for further information.
 
 # Install your Standalone agent
 
@@ -65,9 +65,9 @@ The agent is a standalone application and exists also as a Restlet Framework Ser
 
 ## Configure the Agent
 
-As explained before, APISpark agent uses the modules that you have enabled in your APISpark Console.
+As explained before, the Restlet Cloud agent uses the modules that you have enabled in your Restlet Cloud Console.
 
-The agent retrieves its settings from APISpark and you need to configure the agent first to communicate with your Connector cell.
+The agent retrieves its settings from Restlet Cloud and you need to configure the agent first to communicate with your Connector cell.
 
 The Standalone agent is configured from a properties file which is included in the downloaded file. This file looks like this:
 
@@ -113,7 +113,7 @@ With the standalone agent, the value of the `reverseProxy.enabled` key should be
 
 Once your configuration file is filled, you can start the agent with the command below:
 
-<pre class="language-bash"><code class="language-bash">java -jar -DapiSparkServiceConfig=/path/to/agent.properties apispark-agent.jar
+<pre class="language-bash"><code class="language-bash">java -jar -DcloudServiceConfig=/path/to/agent.properties cloud-agent.jar
 </code></pre>
 
   > Note:
@@ -124,8 +124,8 @@ Once your configuration file is filled, you can start the agent with the command
 By default the *Agent* runs on port 8000. You could change the port with the `-p` option as shown below:
 
 <pre class="language-bash"><code class="language-bash">java -jar\
-  -DapiSparkServiceConfig=/path/to/agent.properties\
-  apispark-agent.jar\
+  -DcloudServiceConfig=/path/to/agent.properties\
+  cloud-agent.jar\
   -p 3000
 </code></pre>
 
@@ -166,8 +166,8 @@ Just add the following command line parameters:
 Here is the full command line of the agent:
 
 <pre class="language-bash"><code class="language-bash">java -jar\
-  -DapiSparkServiceConfig=/path/to/agent.properties\
-  apispark-agent.jar\
+  -DcloudServiceConfig=/path/to/agent.properties\
+  cloud-agent.jar\
   --https\
   --sslKeyPassword password\
   --sslKeyStorePassword password\
