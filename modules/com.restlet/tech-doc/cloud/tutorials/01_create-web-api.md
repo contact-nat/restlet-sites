@@ -1,6 +1,6 @@
 <h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
-This tutorial will show you how to deploy your first API in 15 minutes or less. Head to our [User guide](/guide "User guide") page first if you would like to learn about the main concepts behind APISpark. Now, let’s get right to it.
+This tutorial will show you how to deploy your first API in 15 minutes or less. Head to our [User guide](/guide "User guide") page first if you would like to learn about the main concepts behind Restlet Cloud. Now, let’s get right to it.
 
 <h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
@@ -13,7 +13,7 @@ To follow this tutorial, you will need the following:
 
 ## Add a new Entity Store
 
-If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
+If you have not already done so, sign in to your Restlet Cloud account and open your **Dashboard**.
 
 Create a new Entity Store. Click on **+ Entity Store**, select the "Full stack" **Type** and enter the **Name** "myStore".
 
@@ -45,7 +45,7 @@ Click on the **Deploy** button to deploy your Entity Store.
 
 ## Add data via the Data Browser
 
-Once your Entity Store has been deployed, you can use it to store contacts. For the purpose of this tutorial, let’s add one via the APISpark Data Browser.
+Once your Entity Store has been deployed, you can use it to store contacts. For the purpose of this tutorial, let’s add one via the Restlet Cloud Data Browser.
 
 Select the Contact entity from the **Entities** menu in the left panel of the **Overview**.
 
@@ -85,7 +85,7 @@ The screenshot below shows some of the drop down menus opened to give you an ide
 
 Deploy the API by clicking the **Deploy** button.
 
-The API should now be accessible online. To reach it, use the subdomain of apispark.net that you chose when you created the API.
+The API should now be accessible online. To reach it, use the subdomain of restlet.net that you chose when you created the API.
 
 ![credentials](images/credentials.jpg "credentials")
 
@@ -93,7 +93,7 @@ The credentials required to invoke the API are located in the **Overview** tab, 
 
 <h1 class="numbered" id="toc_3"><i>3</i>Invoke the web API</h1>
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, Restlet Cloud offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
 From the **Overview** tab of your API, select the appropriate Endpoint.  
 From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
@@ -109,6 +109,6 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 
 ![Swagger Try it out button](images/01swagger-try-it-out-button.jpg "Swagger Try it out button")
 
->**Note:** APISpark lets you generate custom Client SDKs for your API. Different environments are supported including Java, Android, iOS and JavaScript (AJAX or Node.js).
+>**Note:** Restlet Cloud lets you generate custom Client SDKs for your API. Different environments are supported including Java, Android, iOS and JavaScript (AJAX or Node.js).
 
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.

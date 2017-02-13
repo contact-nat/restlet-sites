@@ -1,10 +1,10 @@
 <h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
-APISpark features a Wrapper File Store for Amazon <a href="
+Restlet Cloud features a Wrapper File Store for Amazon <a href="
 http://aws.amazon.com/s3/" target="_blank">AWS S3</a>
  buckets. The S3 Wrapper  lets you serve and store files from existing S3 buckets through a web API.
 
-This guide does not explain how to configure AWS S3, but simply lists the information you will need to collect from your AWS administrator in order to configure the APISpark S3 Wrapper.
+This guide does not explain how to configure AWS S3, but simply lists the information you will need to collect from your AWS administrator in order to configure the Restlet Cloud S3 Wrapper.
 
 <h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 

@@ -1,22 +1,22 @@
 <h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
-APISpark provides a tool to manage an existing web API hosted outside of APISpark. To get a full overview of the management features available, take a look at the [related documentation](/documentation/cloud/guide/manage/connectors).
+Restlet Cloud provides a tool to manage an existing web API hosted outside of Restlet Cloud. To get a full overview of the management features available, take a look at the [related documentation](/documentation/cloud/guide/manage/connectors).
 
-In this scenario, we will add authenticated access to an existing web API via the APISpark tool. If you do not have a running web API, you can use our sample API hosted on APISpark.
+In this scenario, we will add authenticated access to an existing web API via Restlet Cloud. If you do not have a running web API, you can use our sample API hosted on Restlet Cloud.
 
 You have two options:  
 - [hosted agent](/tutorials/manage-api#hosted)  
-You can either create a connector with an agent hosted directly on APISpark or;  
+You can either create a connector with an agent hosted directly on Restlet Cloud or;  
 - [standalone agent](/tutorials/manage-api#standalone)  
 You can install the agent on your own infrastructure to avoid possible lag issues.
 
 
 
-# <a class="anchor" name="hosted"></a>Create a connector with an agent hosted on APISpark
+# <a class="anchor" name="hosted"></a>Create a connector with an agent hosted on Restlet Cloud
 
 <h1 class="numbered" id="toc_1"><i>1</i>Create a web API Connector</h1>
 
-If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
+If you have not already done so, sign in to your Restlet account and open your **Dashboard**.
 
 Create a new Connector. Click on **+ Web API**, select the "Connector" **Type** and enter the **Name** "myConnector".
 
@@ -33,7 +33,7 @@ Click on the **Add** button to create the new web API Connector. You will be tak
 
 Click on the **Settings** tab.
 In the **Connector** section, select **Agent details**.
-Enter a **Target endpoint** (here: https://rsreferenceapi.apispark.net/v1) and click **Save**.
+Enter a **Target endpoint** (here: https://rsreferenceapi.restlet.net/v1) and click **Save**.
 
 ![Define a Target endpoint](images/target-endpoint.jpg "Define a Target endpoint")
 
@@ -58,14 +58,14 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 <h1 class="numbered" id="toc_3"><i>3</i>Import your web API definition</h1>
 
-APISpark needs your web API contract to be able to access it.
+Restlet Cloud needs your web API contract to be able to access it.
 
 Click on the cog button on top right of your screen and select Import definition.
 
 ![Import definition](images/import-definition.jpg "Import definition")
 
 In the **Import definition** wizard, select "Swagger 2.0" as a **Type** and  "URL" as a **Source**.  
-Enter your API definition in the **URL** field (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
+Enter your API definition in the **URL** field (for this tutorial, enter the following address: https://cloud.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
 
 ![Import definition wizard](images/import-def-wizard.jpg "Import definition wizard")
 
@@ -97,7 +97,7 @@ Congratulations on completing this tutorial! If you have questions or suggestion
 
 <h1 class="numbered" id="toc_1"><i>1</i>Create a web API Connector</h1>
 
-If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
+If you have not already done so, sign in to your Restlet account and open your **Dashboard**.
 
 Create a new Connector. Click on **+ Web API**, select the "Connector" **Type**, select the "Standalone agent" **Deployment mode** and enter the **Name** "myConnector".
 
@@ -136,14 +136,14 @@ Each member of the Connector can use his/her credentials to consume the API. To 
 
 <h1 class="numbered" id="toc_3"><i>3</i>Import your web API definition</h1>
 
-APISpark needs your web API contract to be able to access it.
+Restlet Cloud needs your web API contract to be able to access it.
 
 Click on the cog button on top right of your screen and select Import definition.
 
 ![Import definition](images/import-definition.jpg "Import definition")
 
 In the **Import definition** wizard, select "Swagger 2.0" as a **Type** and  "URL" as a **Source**.  
-Enter your API definition in the **URL** field (for this tutorial, enter the following address: https://apispark.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
+Enter your API definition in the **URL** field (for this tutorial, enter the following address: https://cloud.restlet.com/api/apis/5100/versions/1/swagger) and click the **Import** button.
 
 ![Import definition wizard](images/import-def-wizard.jpg "Import definition wizard")
 
@@ -159,7 +159,7 @@ You can now **Deploy** your web API Connector.
 
 If you have a web API running, make sure it is running. Otherwise just make GET calls on this sample web API:
 
-[https://rsreferenceapi.apispark.net/v1/contacts/](https://rsreferenceapi.apispark.net/v1/contacts/)
+[https://rsreferenceapi.restlet.net/v1/contacts/](https://rsreferenceapi.restlet.net/v1/contacts/)
 
 ## Launch the agent
 
@@ -171,7 +171,7 @@ You will download a zip file containing the jar and an empty configuration file.
 
 Once your agent is configured, launch it with the following command line:
 
-<pre class="language-bash"><code class="language-bash">java -jar -DapiSparkServiceConfig=/path/to/your/agent.properties apispark-agent.jar
+<pre class="language-bash"><code class="language-bash">java -jar -DcloudServiceConfig=/path/to/your/agent.properties cloud-agent.jar
 </code></pre>
 
 <h1 class="numbered" id="toc_5"><i>5</i>Invoke the Web API</h1>
