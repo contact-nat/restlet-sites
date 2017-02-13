@@ -1,3 +1,7 @@
+v3.36.0
+
+- Rebrand the Reslet modules
+
 v3.32.0
 
 - DHC Updated Build Requests screenshots
