@@ -4,7 +4,7 @@ Restlet Client (formerly known as DHC) allows you to interact with REST services
 
 # Install Restlet Client
 
-Restlet Client can be used as an online service from <a href="https://client.restlet.com/" target="_blank">client.restlet.com</a> or installed within Chrome from the <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">Chrome Web Store</a>.
+Restlet Client can be used as an online service from <a href="https://client.restlet.com/" target="_blank">client.restlet.com</a> or installed within Chrome from the <a href="https://chrome.google.com/webstore/detail/restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">Chrome Web Store</a>.
 
 ## Restlet Client online service
 
@@ -12,7 +12,7 @@ Restlet Client can be used as an online service from <a href="https://client.res
 
 ## Restlet Client Chrome extension
 
-The tool is also available for offline or online use as a Chrome extension and can be installed from the <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm">Chrome Web Store</a>.
+The tool is also available for offline or online use as a Chrome extension and can be installed from the <a href="https://chrome.google.com/webstore/detail/restlet-client/aejoelaoggembcahagimdiliamlcdmfm">Chrome Web Store</a>.
 
 ![Restlet Client Chrome app](images/chrome-app.jpg "Restlet Client Chrome app")
 

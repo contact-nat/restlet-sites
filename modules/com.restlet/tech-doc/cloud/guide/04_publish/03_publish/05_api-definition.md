@@ -68,6 +68,6 @@ Restlet Cloud provides you with a **swagger** UI "Try it out" button that allows
 
 ## Restlet Client
 
-Restlet also provides an API testing tool called Restlet Client. You can <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install Restlet Client Chrome application</a>.
+Restlet also provides an API testing tool called Restlet Client. You can <a href="https://chrome.google.com/webstore/detail/restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install Restlet Client Chrome application</a>.
 
 Pick up your endpoint URI and your credentials from the **Endpoints** section of Restlet Cloud and launch your request in Restlet Client.
