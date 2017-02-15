@@ -309,14 +309,23 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
             return super.beforeHandle(request, response);
         }
     }
-    
-	@Override
-	public Restlet createInboundRoot() {
-		Engine.setLogLevel(Level.FINEST);
-		// Create a root router
-		rootRouter = new Router(getContext());
-		rootRouter.setDefaultMatchingMode(Router.MODE_FIRST_MATCH);
-		updateRootRouter();
+
+    @Override
+    public Restlet createInboundRoot() {
+        Engine.setLogLevel(Level.FINEST);
+        // Create a root router
+        rootRouter = new Router(getContext()) {
+            @Override
+            protected TemplateRoute createRoute(final String uriPattern, final Restlet target, final int matchingMode) {
+                if (uriPattern != null && uriPattern.contains("?")) {
+                    final int index = uriPattern.indexOf('?');
+                    return new QueryTemplateRoute(super.createRoute(uriPattern.substring(0, index), target, matchingMode), new Form(uriPattern.substring(index + 1)));
+                }
+                return super.createRoute(uriPattern, target, matchingMode);
+            }
+        };
+        rootRouter.setDefaultMatchingMode(Router.MODE_FIRST_MATCH);
+        updateRootRouter();
 
 		HttpRedirectFilter redirectFilter = new HttpRedirectFilter(getContext());
 
@@ -1035,4 +1044,26 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 		}
 		return route;
 	}
+
+    private static class QueryTemplateRoute extends TemplateRoute {
+        private final TemplateRoute wrappedRoute;
+
+        private final Form queryForm;
+
+        public QueryTemplateRoute(final TemplateRoute wrappedRoute, final Form queryForm) {
+            super(wrappedRoute.getNext());
+            this.wrappedRoute = wrappedRoute;
+            this.queryForm = queryForm;
+        }
+
+        @Override
+        public float score(final Request request, final Response response) {
+            final boolean matchQueryParams = request.getResourceRef().getQueryAsForm().containsAll(queryForm);
+            if (matchQueryParams) {
+                return wrappedRoute.score(request, response);
+            }
+            return 0;
+        }
+    }
+
 }
