@@ -2,7 +2,7 @@
 
 The beauty of a RESTful API is that it can easily be invoked by a host of different devices and applications.
 
-To facilitate this, APISpark can generate server skeletons for your web APIs for a number of different environments:
+To facilitate this, Restlet Cloud can generate server skeletons for your web APIs for a number of different environments:
 
 | Server skeletons |
 | ------------- |
@@ -24,4 +24,4 @@ Click on the **Download ...** button from the central panel.
 
 ![Server skeletons](images/server-skeletons.jpg "Server skeletons")
 
-Server skeletons follow the same version creation process described in the [client SDKs section](/technical-resources/apispark/guide/publish/client-sdk "client SDKs section").
+Server skeletons follow the same version creation process described in the [client SDKs section](/documentation/cloud/guide/publish/client-sdk "client SDKs section").

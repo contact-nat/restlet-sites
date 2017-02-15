@@ -1,13 +1,13 @@
 
-APISpark supports two major types of cells: Data Stores and web APIs. Data stores serve to store structured data and static files, while web APIs are RESTful interfaces that expose resources over the Web.
+Restlet Cloud supports two major types of cells: Data Stores and web APIs. Data stores serve to store structured data and static files, while web APIs are RESTful interfaces that expose resources over the Web.
 
-These two types of cells are built to work together, and APISpark provides tools that facilitate exposing Data Stores to the Web through web APIs.
+These two types of cells are built to work together, and Restlet Cloud provides tools that facilitate exposing Data Stores to the Web through web APIs.
 
 In this section we look at different ways to automatically create a web API from existing Data Stores.
 
 # 1. Export a web API from a Data Store
 
-You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](/technical-resources/apispark/guide/store/entity-stores/model-data "Entity Store") or the [File Store](/technical-resources/apispark/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
+You can automatically export a web API from a Data Store. If you do not already have a Data Store, checkout the [Entity Store](/documentation/cloud/guide/store/entity-stores/model-data "Entity Store") or the [File Store](/documentation/cloud/guide/store/file-stores "File Store") page to see how to build the appropriate Data Store.
 
 ![Export a web API from a Data Store](images/entity-store-to-api.jpg "Export a web API from a Data Store")
 
@@ -36,25 +36,25 @@ You can change this setting afterwards from the API **Settings** tab by clicking
 ### Default permissions
 Selecting **No authentication required** means that your API default permissions for all methods are set to **Anyone**.
 
-For more information on default permissions, jump to the [Runtime permissions](/technical-resources/apispark/guide/publish/secure/runtime-permissions "Runtime permissions") section of our user guide.
+For more information on default permissions, jump to the [Runtime permissions](/documentation/cloud/guide/publish/secure/runtime-permissions "Runtime permissions") section of our user guide.
 
 ### Collection formatting
 
 By default, collections are represented as lists of items but you can change this setting to obtain a wrapper representation (an {entity}List entity is automatically created for each new entity).
 
-For more information on collection formatting, jump to the [Representations](/technical-resources/apispark/guide/create/edit/representations "Representations") section of our user guide.
+For more information on collection formatting, jump to the [Representations](/documentation/cloud/guide/create/edit/representations "Representations") section of our user guide.
 
 ### Representation formatting
 By default your API returns all values. You can change this setting to include all values except null values or all values except null and empty values.
 
-For more information on representations, jump to the [Representations](/technical-resources/apispark/guide/create/edit/representations "Representations") section of our user guide.
+For more information on representations, jump to the [Representations](/documentation/cloud/guide/create/edit/representations "Representations") section of our user guide.
 
 ### Sample data
 The sample data text area gives you an idea of the syntax of the results returned according to the collection and representation formatting selected above.
 
 # 2. Import a data store into an existing web API
 
-As a complement to the Export API feature, APISpark lets you import one or more Data Stores into an existing web API.
+As a complement to the Export API feature, Restlet Cloud lets you import one or more Data Stores into an existing web API.
 
 This has the added benefit of allowing you to import multiple Data Stores of potentially different types into a single web API.  
 

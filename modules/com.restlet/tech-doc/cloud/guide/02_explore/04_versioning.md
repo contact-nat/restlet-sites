@@ -1,4 +1,4 @@
-APISpark provides a version management system for your cells. When you create a new cell, version 1 is automatically created.
+Restlet Cloud provides a version management system for your cells. When you create a new cell, version 1 is automatically created.
 
 To add a new version of a cell, open the version drop-down menu next to the **Deploy** button and select "Add a version".
 

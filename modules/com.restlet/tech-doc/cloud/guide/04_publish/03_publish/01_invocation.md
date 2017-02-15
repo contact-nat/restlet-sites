@@ -1,11 +1,11 @@
 
 # Access an API
 
-APISpark web APIs are either *public* or *private*. This affects the way you access the Web API's documentation, including access tokens, but does not have an affect on invoking the API at runtime.
+Restlet Cloud web APIs are either *public* or *private*. This affects the way you access the Web API's documentation, including access tokens, but does not have an affect on invoking the API at runtime.
 
 ## Access a private API
 
-In order to browse a private web API's documentation and get your access tokens, you need to be a member of the API. To see how to create web API members, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
+In order to browse a private web API's documentation and get your access tokens, you need to be a member of the API. To see how to create web API members, please visit the [User Groups](/documentation/cloud/guide/publish/secure/user-groups "User groups") page.
 
 Navigate to the API's overview. If you are a member of the API, it will appear in your **Dashboard**.
 
@@ -15,7 +15,7 @@ Select an Endpoint in the left panel. The central panel displays your access tok
 
 ## Access a public API
 
-Public web APIs can be browsed by anyone, without authentication. A public API is not necessarily open to anyone at runtime. This is configured from the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
+Public web APIs can be browsed by anyone, without authentication. A public API is not necessarily open to anyone at runtime. This is configured from the [User Groups](/documentation/cloud/guide/publish/secure/user-groups "User groups") page.
 
 ## Basic authentication access tokens
 
@@ -27,17 +27,17 @@ In order to invoke an API, you must belong to one of the API's consumer groups w
 
 However, some APIs are open to anyone without authentication.
 
-To see how to configure a web API's runtime permissions, including opening an API to *anyone*, please visit the [User Groups](/technical-resources/apispark/guide/publish/secure/user-groups "User groups") page.
+To see how to configure a web API's runtime permissions, including opening an API to *anyone*, please visit the [User Groups](/documentation/cloud/guide/publish/secure/user-groups "User groups") page.
 
 ## Making HTTP calls
 
-APISpark web APIs respect the principles of REST. Therefore, CRUD operations can be performed on resources exposed by the APIs.
+Restlet Cloud web APIs respect the principles of REST. Therefore, CRUD operations can be performed on resources exposed by the APIs.
 
 ### Invoking a collection resource
 
 A collection resource is typically identified by a URL that ends in the name of a type of data, in plural.
 
-`https://contactsapi.apispark.net/v1/contacts/ `
+`https://contactsapi.restlet.net/v1/contacts/ `
 
 Sending a GET request to this URL will list all Contacts stored by the server.
 
@@ -47,7 +47,7 @@ Sending POST request to this URL with result in the creation of a new Contact, a
 
 An element resource is typically identified by a URL that ends in the name of a type of data followed by the unique identifier of the element.
 
-`https://contactsapi.apispark.net/v1/contacts/1234 `
+`https://contactsapi.restlet.net/v1/contacts/1234 `
 
 Sending a GET request to this URL will list the details of the Contact whose identifier is 1234.
 
@@ -75,10 +75,10 @@ All filter criteria in a GET request are combined with AND logic.
 
 >*Example*
 
->`GET https://contactsapi.apispark.net/v1/contacts/?age=27&firstname=roy`
+>`GET https://contactsapi.cloud.net/v1/contacts/?age=27&firstname=roy`
 
 
->**Note:** When querying an API for String values, if there is a space in the property value, the query parameter must be surrounded by double quotes e.g. `GET https://fireworks.apispark.net/v1/towns/?City="Jackson Hole"`.
+>**Note:** When querying an API for String values, if there is a space in the property value, the query parameter must be surrounded by double quotes e.g. `GET https://fireworks.restlet.net/v1/towns/?City="Jackson Hole"`.
 
 ### <a class="anchor" name="sort"></a>Sort
 
@@ -92,7 +92,7 @@ Ascending order is used by default if none is specified.
 
 >*Example*
 
->`GET https://myapi.apsipark.net/v1/messages/?$sort=creationDate ASC,size DESC`
+>`GET https://myapi.restlet.net/v1/messages/?$sort=creationDate ASC,size DESC`
 
 In this request, we sort a collection of messages by their creation date in ascending order, and then by size in descending order.
 
@@ -103,11 +103,11 @@ In case you have many entries stored in a collection, you may not want to read t
 
 >*Example*
 
->`GET https://myapi.apsipark.net/v1/messages/?$page=4&$size=100`
+>`GET https://myapi.restlet.net/v1/messages/?$page=4&$size=100`
 
 >**Note:** Page numbers start from 0.
 
-APISpark provides a total items count through headers for paginated APIs that import Entity Stores, SQL wrappers or Google Sheets wrappers. Here is a list of the available headers:
+Restlet Cloud provides a total items count through headers for paginated APIs that import Entity Stores, SQL wrappers or Google Sheets wrappers. Here is a list of the available headers:
 
 - X-Page-Count -> total number of pages  
 - X-page-Number -> page number  
@@ -230,14 +230,10 @@ In this request, in which the `$depth` parameter is set to 2, Organizations are 
 
 ## <a class="anchor" name="configure-cache"></a>Configure an API cache
 
-Configuring server and client-side caching will allow you to improve response time for your APIs. As an API is invoked, APISpark adds information in the HTTP header. The validity duration of these data can be set from your API's **Settings** tab. You can thus increase the data conservation duration and avoid performing requests on data you already collected.
+Configuring server and client-side caching will allow you to improve response time for your APIs. As an API is invoked, Restlet Cloud adds information in the HTTP header. The validity duration of these data can be set from your API's **Settings** tab. You can thus increase the data conservation duration and avoid performing requests on data you already collected.
 
-This feature is disabled by default. If you want to specify how long GET responses should be cached by our HTTP client and the APISpark server-side cache, select the **Enabled** checkbox and specify the time in minutes, hours, days or months.
+This feature is disabled by default. If you want to specify how long GET responses should be cached by our HTTP client and the Restlet Cloud server-side cache, select the **Enabled** checkbox and specify the time in minutes, hours, days or months.
 
 You will need to redeploy your API once you have configured your cache in order for your modifications to be saved.
 
 ![response caching](images/response-caching.jpg "response caching")
-
-# HTTP response codes
-
-Coming soon.

@@ -6,4 +6,4 @@ You have to deploy your Entity Store before being able to use it: a message will
 
 > **Note:** If you add entities, you need to (re)deploy your Entity Store to display them in the **Browser** tab.
 
-Once you have deployed your Entity Store, you can [Export an API](/technical-resources/apispark/guide/create/overview "Export an API").
+Once you have deployed your Entity Store, you can [Export an API](/documentation/cloud/guide/create/overview "Export an API").

@@ -28,7 +28,7 @@ If you have any doubt, go to the **Messages** tab which reports the last actions
 
 ![Messages tab](images/messages-section.jpg "Messages tab")
 
-Jump to the [Check your messages](/technical-resources/apispark/guide/create/test#check-messages "Check your messages") section of our online documentation for further information.
+Jump to the [Check your messages](/documentation/cloud/guide/create/test#check-messages "Check your messages") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
@@ -40,13 +40,13 @@ Jump to the [Check your messages](/technical-resources/apispark/guide/create/tes
 ## Deploying your API
 When you deploy a cell, APISpark generates source code, compiles and deploys it in the cloud so that it will be executed in the APISpark runtime environment. As long as you have not deployed your data stores and web APIs, they are not available to store data or receive HTTP requests.
 
-Jump to the [Cell deployment](/technical-resources/apispark/guide/explore/cell-deployment "Cell deployment") section of our online documentation for further information.
+Jump to the [Cell deployment](/documentation/cloud/guide/explore/cell-deployment "Cell deployment") section of our online documentation for further information.
 
 ## Publishing your API
 When you publish your API, you specify that it is in a stable state and is available to be used by end users or imported by other cells: you bring it into production.
 A Published cell (APIs, data stores, etc.) cannot undergo structural modifications or be deleted as this could break clients or other cells using it.
 
-Jump to the [Cell lifecycle](/technical-resources/apispark/guide/explore/cell-lifecycle "Cell lifecycle") section of our online documentation for further information.
+Jump to the [Cell lifecycle](/documentation/cloud/guide/explore/cell-lifecycle "Cell lifecycle") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
@@ -79,7 +79,7 @@ Click on the **Download...** button (working version or latest deployed version)
 
 ![Download client SDKs](images/generate-sdks.jpg "Download client SDKs")
 
-Jump to the [Generate custom client SDKs](/technical-resources/apispark/guide/publish/publish/client-sdk "Generate custom client SDKs") section of our user guide for further information.
+Jump to the [Generate custom client SDKs](/documentation/cloud/guide/publish/publish/client-sdk "Generate custom client SDKs") section of our user guide for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 
@@ -269,7 +269,7 @@ The **swagger** button is now enabled for your http endpoint.
 
 ![swagger UI button enabled](images/swaggerui-http-button-enabled.jpg "swagger UI button enabled")
 
-Jump to the [Test your API](/technical-resources/apispark/guide/create/test "Test your API") section of our online documentation for further information.
+Jump to the [Test your API](/documentation/cloud/guide/create/test "Test your API") section of our online documentation for further information.
 
 [Back to list](#list "Back to list of frequently asked questions")
 

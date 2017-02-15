@@ -1,9 +1,9 @@
 <h1 class="iconed" id="toc_0"><i class="fa fa-hand-o-right"></i>Introduction</h1>
 
 This tutorial will show you how to create a custom web API that exposes data stored in a spreadsheet created with Google Sheets. <a href="
-http://docs.google.com/" target="_blank">Google Sheets</a> is a popular collaborative data editing tool within the Google Docs suite.  
+http://docs.google.com/" target="_blank>Google Sheets</a> is a popular collaborative data editing tool within the Google Docs suite.  
 
-For more information, jump to the [Google Sheets section](/technical-resources/apispark/guide/store/wrappers/google-sheets "Google Sheets section") of our User Guide.
+For more information, jump to the [Google Sheets section](/documentation/cloud/guide/store/wrappers/google-sheets "Google Sheets section") of our User Guide.
 
 <h1 class="iconed" id="toc_0"><i class="fa fa-flag-checkered"></i>Requirements</h1>
 
@@ -32,7 +32,7 @@ We have chosen to name ours Darth Vader, 46 years old.
 
 <h1 class="numbered" id="toc_2"><i>2</i>Configure the Google Sheets Wrapper</h1>
 
-Sign in to your **APISpark** account.
+Sign in to your **Restlet** account.
 
 Click on **+ Entity Store**.
 
@@ -84,7 +84,7 @@ Deploy the API by clicking the **Deploy** button.
 
 <h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, Restlet Cloud offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
 From the **Overview** tab of your API, select the appropriate Endpoint.  
 From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
@@ -102,6 +102,6 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 
 Note that any POST requests made to the API will result in new data being created in your spreadsheet. Likewise, any data manually inserted via the spreadsheet is visible via the custom web API.
 
-APISpark lets you generate custom Client SDKs for your API. Supported environments include Java, Android, iOS and JavaScript (AJAX or Node.js).
+Restlet Cloud lets you generate custom Client SDKs for your API. Supported environments include Java, Android, iOS and JavaScript (AJAX or Node.js).
 
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.

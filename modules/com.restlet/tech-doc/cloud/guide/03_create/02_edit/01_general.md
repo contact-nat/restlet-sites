@@ -8,13 +8,13 @@ The **General information** panel provides an **Overview** tab concerning the ge
 
 # Share an API design on API Commons
 
-Once your web API has been designed, implemented and deployed, APISpark helps you share it in the <a href="http://apicommons.org/" target="_blank">API Commons</a> and participate in the effort to collaborate on and share great API designs.
+Once your web API has been designed, implemented and deployed, Restlet Cloud helps you share it in the <a href="http://apicommons.org/" target="_blank">API Commons</a> and participate in the effort to collaborate on and share great API designs.
 
 By sharing API your design *copyright free* on API Commons, you will enable other API providers to reuse it and thus contribute to the converge of API designs. This makes life easier for API consumers, and lets you take a stance as the provider of the API.
 
 ![API Commons](images/api-commons.jpg "API Commons")
 
-To register your Web API on API Commons, you need to provide the commons with an API Commons manifest. APISpark lets you automatically generate this JSON file.
+To register your Web API on API Commons, you need to provide the commons with an API Commons manifest. Restlet Cloud lets you automatically generate this JSON file.
 
 To obtain your automatically generated API manifest, navigate to the **API Commons** tab from the **General information** panel.
 

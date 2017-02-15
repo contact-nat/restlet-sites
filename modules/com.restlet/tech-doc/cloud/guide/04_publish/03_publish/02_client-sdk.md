@@ -3,12 +3,12 @@
 
 The beauty of a RESTful API is that it can easily be invoked by a host of different devices and applications.
 
-To facilitate this, APISpark can generate custom client SDKs (Software Development Kits) for your web APIs for a number of different environments:
+To facilitate this, Restlet Cloud can generate custom client SDKs (Software Development Kits) for your web APIs for a number of different environments:
 
 
 | Client SDKs |
 | ------------- |
-| [JavaScript (AngularJS)](/technical-resources/apispark/tutorials/angular-sdk) |
+| [JavaScript (AngularJS)](/tutorials/angular-sdk) |
 | Java (Restlet Framework) |
 | Android (Restlet Framework) |
 | JavaScript (Node.js) |
@@ -19,7 +19,7 @@ You can **Add** or **Delete** client SDKs from the **Client SDKs** section of th
 
 # Download client SDKs
 
-APISpark lets API team members automatically create the client kits that will be made available to consumers of the API.
+Restlet Cloud lets API team members automatically create the client kits that will be made available to consumers of the API.
 
 To download a client SDK for a web API:
 
@@ -40,7 +40,7 @@ When you create a *new version* of your API, the client SDK version is increment
 
 ![Download buttons](images/two-download-buttons.jpg "Download buttons")
 
->**Note:** Client kits of versions under development are available to give you an idea of the structure and content of the client SDKs provided by APISpark. Only client SDKs of versions deployed (revisions e.g. v1.1.0) or created (versions e.g. v2.0.0) are accessible and functional.
+>**Note:** Client kits of versions under development are available to give you an idea of the structure and content of the client SDKs provided by Restlet Cloud. Only client SDKs of versions deployed (revisions e.g. v1.1.0) or created (versions e.g. v2.0.0) are accessible and functional.
 
 
 

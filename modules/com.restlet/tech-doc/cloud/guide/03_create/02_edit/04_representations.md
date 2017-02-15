@@ -76,16 +76,16 @@ or whether you want your API to return results represented *within a wrapper* (a
 
 This setting can be changed from the **General** section of the API **Settings** tab.
 
->**Note:** You will need to [reset](/technical-resources/apispark/guide/create/sync-api-store "reset") each store import and then redeploy your API in order for your changes to be taken into account.
+>**Note:** You will need to [reset](/documentation/cloud/guide/create/sync-api-store "reset") each store import and then redeploy your API in order for your changes to be taken into account.
 
 # Formats
 
 A **Representation** has one or more **Formats** which determine how the representation is formatted, serialized, and deserialized.
 
-By default, APISpark supports 3 different types of representation formats: JSON, XML or YAML.  
+By default, Restlet Cloud supports 3 different types of representation formats: JSON, XML or YAML.  
 
 To view a representation's **Formats**, select the representation from the **Representations** section in the left panel.
 
 ![Formats](images/formats.jpg "Formats")
 
->**Note:** When you want to POST a new entry via [Postman](/technical-resources/apispark/guide/create/test "Postman") tool for example, you can use the **Sample** text area content to make sure you are using the appropriate syntax.
+>**Note:** When you want to POST a new entry via [Restlet Client](/documentation/client/guide "Restlet Client") for example, you can use the **Sample** text area content to make sure you are using the appropriate syntax.

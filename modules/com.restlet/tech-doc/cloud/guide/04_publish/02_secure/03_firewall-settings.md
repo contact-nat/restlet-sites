@@ -1,4 +1,4 @@
-APISpark allows you to determine different firewall settings from the **Settings** tab.
+Restlet Cloud allows you to determine different firewall settings from the **Settings** tab.
 
 # <a class="anchor" name="ip-filtering"></a>IP filtering
 

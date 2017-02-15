@@ -2,7 +2,7 @@ In the API ecosystem, there are several formats that allow you to describe an AP
 
 The RAML and Swagger formats are more likely to be used to get the definition of an API.
 
-With APISpark you can export your web API (or your [Descriptor](/technical-resources/apispark/guide/document/overview "Descriptor") or [Connector](/technical-resources/apispark/guide/manage/connectors "Connector") cells) to those *standard* API definition languages.
+With Restlet Cloud you can export your web API (or your [Descriptor](/documentation/cloud/guide/document/overview "Descriptor") or [Connector](/documentation/cloud/guide/manage/connectors "Connector") cells) to those *standard* API definition languages.
 
 # Export to a standard API definition language
 
@@ -62,14 +62,12 @@ What's great with these formats is that there are more and more tools which unde
 
 **Swagger** is an API description language that comes with a number of tools including Swagger UI and Swagger Code Generator. Swagger UI provides a nice HTML presentation of your API’s contract and allows you to test your API by calling it. The Swagger Code Generator generates client kits for your API in several languages.
 
-APISpark provides you with a **swagger** UI "Try it out" button that allows you to  launch requests to your API in a new tab in Swagger UI. If you have activated authentication, your credentials are automatically prefilled.
+Restlet Cloud provides you with a **swagger** UI "Try it out" button that allows you to  launch requests to your API in a new tab in Swagger UI. If you have activated authentication, your credentials are automatically prefilled.
 
 ![Swagger UI](images/swagger-ui.jpg "Swagger UI")
 
 ## Restlet Client
 
-Restlet also provides an API testing tool called Restlet Client. You can either launch <a href="https://client.restlet.com/" target="_blank">Restlet Client online service</a> or <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install Restlet Client Chrome application</a>.
+Restlet also provides an API testing tool called Restlet Client. You can <a href="https://chrome.google.com/webstore/detail/dhc-restlet-client/aejoelaoggembcahagimdiliamlcdmfm" target="_blank">install Restlet Client Chrome application</a>.
 
-Pick up your endpoint URI and your credentials from the **Endpoints** section of APISpark and launch your request in Restlet Client.
-
-![Request in Restlet Client](images/dhc-request.jpg "Request in Restlet Client")
+Pick up your endpoint URI and your credentials from the **Endpoints** section of Restlet Cloud and launch your request in Restlet Client.

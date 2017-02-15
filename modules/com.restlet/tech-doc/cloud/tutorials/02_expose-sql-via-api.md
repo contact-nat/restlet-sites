@@ -30,9 +30,9 @@ Connect the database engine using the MySQL console:
 
 Create a database and switch to it:
 
-<pre class="language-sql"><code class="language-sql">&gt;mysql&gt; create database apispark;
+<pre class="language-sql"><code class="language-sql">&gt;mysql&gt; create database restletcloud;
 Query OK, 1 row affected (0.01 sec)
-mysql&gt; use apispark;
+mysql&gt; use restletcloud;
 Database changed
 </code></pre>
 
@@ -53,15 +53,15 @@ Create an InnoDB table named T_ADDRESS with fields previously listed:
 Create a new user and grant him full rights on the database. Replace username and password by the values you like:
 
 <pre class="language-sql"><code class="language-sql">CREATE USER 'username'@'%' IDENTIFIED BY "password";
-GRANT ALL PRIVILEGES on apispark.T_CONTACT TO 'username'@'%';
+GRANT ALL PRIVILEGES on restletcloud.T_CONTACT TO 'username'@'%';
 FLUSH PRIVILEGES;
 </code></pre>
 
->**Note:** you can grant privileges on all tables by replacing T_CONTACT by \* and on all databases by replacing apispark by \*.
+>**Note:** you can grant privileges on all tables by replacing T_CONTACT by \* and on all databases by replacing restletcloud by \*.
 
 <h1 class="numbered" id="toc_2"><i>2</i>Create a SQL Wrapper</h1>
 
-If you have not already done so, sign in to your APISpark account and open your **Dashboard**.
+If you have not already done so, sign in to your Restlet account and open your **Dashboard**.
 
 Create a new Entity Store. Click on **+ Entity Store**, select the "SQL wrapper" **Type** and enter the **Name** "mySQLwrapper".
 
@@ -73,13 +73,13 @@ From the **Connection settings** section, select the appropriate **Driver** (dat
 
 Click on the **Test connection** button to test the connection.
 
->**Note:** depending on your configuration, you may need to configure your firewall in order to authorize APISpark IP addresses to access your database from the internet. Feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a> if you need help.
+>**Note:** depending on your configuration, you may need to configure your firewall in order to authorize Restlet Cloud IP addresses to access your database from the internet. Feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a> if you need help.
 
 Click on **Add** to create the Wrapper. You will be taken to the Wrapper's **Overview** tab.
 
 ![Add a Catalog](images/settings-tab.jpg "Add a Catalog")
 
-This automatically creates entities based on the imported tables. APISpark automatically renames the entities and their properties during this operation.
+This automatically creates entities based on the imported tables. Restlet Cloud automatically renames the entities and their properties during this operation.
 
 >**Note:** You can change the database you are connected to with the **Change database** button. If you want to retrieve your database original structure after you have made changes, click the **Synchronize** button. This will synchronize your Entity Store with your SQL database again.
 
@@ -111,7 +111,7 @@ Deploy the API by clicking the **Deploy** button.
 
 <h1 class="numbered" id="toc_4"><i>4</i>Invoke the Web API</h1>
 
-Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, APISpark offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
+Using a web API does not impose any particular programming language. It can even be done from a web browser. However, to test your API, Restlet Cloud offers an integration of the Swagger UI that provides a graphical user interface to perform HTTP calls.
 
 From the **Overview** tab of your API, select the appropriate Endpoint.  
 From the left panel, click on the Resource and the Method chosen and click on the **swagger** button.
@@ -129,6 +129,6 @@ Scroll down to the bottom of the page and click on the **Try it out!** button to
 
 Any POST requests made to the API will result in new data being created in your SQL database. Likewise, any data manually inserted via your SQL DBMS is visible via the custom web API.
 
->**Note:** APISpark lets you generate custom Client SDKs for you API. Supported environments include Java, Android, iOS and JavaScript (AJAX or Node.js).
+>**Note:** Restlet Cloud lets you generate custom Client SDKs for you API. Supported environments include Java, Android, iOS and JavaScript (AJAX or Node.js).
 
 Congratulations on completing this tutorial! If you have questions or suggestions, feel free to contact the <a href="http://support.restlet.com/" target="_blank">Help Desk</a>.

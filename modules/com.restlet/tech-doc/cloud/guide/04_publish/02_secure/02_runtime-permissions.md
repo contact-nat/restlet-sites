@@ -9,7 +9,7 @@ To configure default permissions for an API, go to the **Settings** tab, and sel
 ![default permissions](images/default-permissions.jpg "default permissions")
 
 >**Note:** Select the **Anyone** checkbox to give rights to anyone including anonymous users who consume public APIs.  
-Editing default permissions only affects resources that will be created afterwards. Previously created resources will stick to the former default permissions unless you [**Reset** imported store(s)](/technical-resources/apispark/guide/create/sync-api-store "Reset imported store(s)").
+Editing default permissions only affects resources that will be created afterwards. Previously created resources will stick to the former default permissions unless you [**Reset** imported store(s)](/documentation/cloud/guide/create/sync-api-store "Reset imported store(s)").
 
 ## Configure method level access
 
@@ -33,6 +33,6 @@ To configure a method's runtime access to *anyone*, in either method-level or de
 
 An API's **Overview** page contains rich documentation for consumers of the API, including **Endpoints**, **Resources**, and **Representations**.
 
-In combination with opening your API to *anyone*, you might want to make a part of your API's **Overview** publicly accessible, even to users that do not have an APISpark account.
+In combination with opening your API to *anyone*, you might want to make a part of your API's **Overview** publicly accessible, even to users that do not have a Restlet account.
 
-To see how to make your API public, please visit the [Documentation page](/technical-resources/apispark/guide/publish/publish/documentation "Documentation").
+To see how to make your API public, please visit the [Documentation page](/documentation/cloud/guide/publish/publish/documentation "Documentation").
