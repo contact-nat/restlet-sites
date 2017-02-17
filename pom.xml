@@ -15,7 +15,7 @@
     </scm>
 
     <properties>
-        <restlet.version>2.3.5</restlet.version>
+        <restlet.version>2.3.9</restlet.version>
         <!-- test dependencies -->
         <junit.version>4.12</junit.version>
         <!-- config -->
