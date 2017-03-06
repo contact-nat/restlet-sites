@@ -20,7 +20,7 @@ If you follow these guidelines when reporting an issue to us, we commit to:
 ## Scope
 
 Websites:
-* https://{subdomain}restlet.com/
+* https://restlet.com/
 * https://restlet.net/
 * https://restlet.io/
 
