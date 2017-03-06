@@ -1,6 +1,6 @@
 # Restlet Responsible Disclosure Policy
 
-## Version 0.2 (draft)
+## Version 0.3 (draft)
 
 We take the security of our systems seriously, and we value the security community. The responsible disclosure of security vulnerabilities helps us ensure the security and privacy of our users.
 
@@ -19,13 +19,13 @@ If you follow these guidelines when reporting an issue to us, we commit to:
 
 ## Scope
 
-Web sites:
-* https://apispark.restlet.com/
-* https://apispark.net/
-* http://restlet.com/ 
+Websites:
+* https://{subdomain}restlet.com/
+* https://restlet.net/
+* https://restlet.io/
 
 Products:
-* Restlet APISpark
+* Restlet Platform
 * Restlet Framework
 
 ## Out of scope  
