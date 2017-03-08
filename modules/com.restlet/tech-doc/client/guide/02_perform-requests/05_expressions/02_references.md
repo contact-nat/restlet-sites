@@ -2,7 +2,7 @@
 
 You can declare a reference on:
 
-* a context variable,
+* an environment variable,
 * saved request data
 * and on a response to the saved request.
 
@@ -13,7 +13,7 @@ The reference declaration is written:
 
 If the referenced value is JSON object, then you can use ```JsonPath``` method or dot notation to get the object properties.
 
-Ex. 1: a reference on the context variable named host
+Ex. 1: a reference on the environment variable named host
 
 <pre class="language-javascript"><code class="language-javascript">{host}
 </code></pre>
@@ -30,45 +30,45 @@ This declaration is equivalent to:
 
 References Look-up Order:
 
-1. [Context](#context "Context")
+1. [Environment](#environment "Environment")
 2. [Repository](#repository "Repository")
 
-# <a class="anchor" name="context"></a>Context
+# <a class="anchor" name="environment"></a>Environment
 
-A context is a set of variables.  
+An environment is a set of variables.  
 
 A variable value can be:  
 -  a plain text,  
 - or a ```JSON object```.  
 
-You can have as many contexts as you need and switch between them.  
-Only the selected context is effective.
+You can have as many environments as you need and switch between them.  
+Only the selected environment is effective.
 
-Ex.1: a context variables declaration
+Ex.1: an environment variables declaration
 
 <pre class="language-javascript"><code class="language-javascript">simple_value = test text
 json_value = { "a" : { "b" : "test" }}
 </code></pre>
 
-You can turn a reference into a context variable by declaring the variable name as an identifier (see [Grammar](./grammar "Grammar rules") section) or as a string. If a variable value is a ```JSON object``` then you can also reference the ```JSON object``` properties and sub-properties.
+You can turn a reference into an environment variable by declaring the variable name as an identifier (see [Grammar](./grammar "Grammar rules") section) or as a string. If a variable value is a ```JSON object``` then you can also reference the ```JSON object``` properties and sub-properties.
 
 Ex.2: a variable name as an identifier
 
-<pre class="language-none"><code class="language-none">Context:         host = http://localhost
+<pre class="language-none"><code class="language-none">Environment:         host = http://localhost
 Expression:      {host}
 Result:          http://localhost
 </code></pre>
 
 Ex.3: a variable name as a string
 
-<pre class="language-none"><code class="language-none">Context:        secret key = 1234
+<pre class="language-none"><code class="language-none">Environment:        secret key = 1234
 Expression:     {'secret key'}
 Result:         1234
 </code></pre>
 
 Ex.4: a reference on JSON value
 
-<pre class="language-none"><code class="language-none">Context:         JSON variable = { "a" : { "b" : 1 }}
+<pre class="language-none"><code class="language-none">Environment:         JSON variable = { "a" : { "b" : 1 }}
 
 Expression:      {'JSON variable'}
 Result:          { "a" : { "b" : 1 }}
@@ -82,7 +82,7 @@ Result:          1
 
 Ex.5: a reference on JSON value + JSON Path method
 
-<pre class="language-none"><code class="language-none">Context:         JSON variable = { "a" : { "b" : 1 }}
+<pre class="language-none"><code class="language-none">Environment:         JSON variable = { "a" : { "b" : 1 }}
 Expression:      {'JSON variable'.jsonPath('$.a.b')}    // equivalent to {'JSON variable'.a.b}
 Result:          1
 </code></pre>

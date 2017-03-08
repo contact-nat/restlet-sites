@@ -69,7 +69,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 | Name | Type | Mandatory | Default | Description
 | ---- | ---- | --------- | ------- | -----------
 | **file** | File | Yes | X | file path pointing to the Restlet Client export file
-| **selectedContext** | String | No | X | a name of a context to be used
+| **selectedEnvironment** | String | No | X | a name of an environment to be used
 | **licenseKey** | String | Yes | X | A valid license key (see the "Get a license key" paragraph below)
 | **stopOnFailure** | Boolean | No | False | stops processing build if an error/failure occurs
 | **httpClientTimeoutInMs** | Integer | False | 60000 | Time before HTTP time-out in milliseconds
@@ -85,7 +85,7 @@ To change them, modify the tag `configuration` in your pom.xml, see a configurat
 
 <pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
   &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
-  &lt;selectedContext&gt;QA&lt;/selectedContext&gt;
+  &lt;selectedEnvironment&gt;QA&lt;/selectedEnvironment&gt;
   &lt;licenseKey&gt;ENTER_YOUR_LICENSE_KEY_HERE&lt;/licenseKey&gt;
   &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
   &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
@@ -108,30 +108,30 @@ Just copy/paste this value as the `licenseKey` parameter of the pom.xml file:
 
 The following examples will focus on the configuration block which can be found in the previous example.
 
-### Use a specific context
+### Use a specific environment
 
-In Restlet Client, a consistent set of variables is called a "context". The user is able to setup several contexts (for example, one for the production environment, one for the local environment, etc). If this functionality was used to build the scenario then it is possible to indicate to the `maven-plugin` which context should be used.
+In Restlet Client, a consistent set of variables is called an "environment". The user is able to setup several environments (for example, one for the production environment, one for the local environment, etc). If this functionality was used to build the scenario then it is possible to indicate to the `maven-plugin` which environment should be used.
 
-For instance if a scenario is based on the `localhost` context then the following configuration block would be used:
+For instance if a scenario is based on the `localhost` environment then the following configuration block would be used:
 
 <pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
   &lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
-  &lt;context&gt;localhost&lt;/context&gt;
+  &lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
 &lt;/configuration&gt;
 </code>
 </pre>
 
-### Override context variables
+### Override environment variables
 
-The user can also override a context variable.
+The user can also override an environment variable.
 
-Let's imagine that the API `port` is not the same on the test environment as on the development environment, then it is possible to override the context `port` variable to provide the right value: `13337`.
+Let's imagine that the API `port` is not the same on the test environment as on the development environment, then it is possible to override the environment `port` variable to provide the right value: `13337`.
 
 This is done by using the following configuration:
 
 <pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
   &lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
-  &lt;context&gt;localhost&lt;/context&gt;
+  &lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
   &lt;variables&gt;
     &lt;property&gt;
       &lt;name&gt;port&lt;/name&gt;

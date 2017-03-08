@@ -73,7 +73,7 @@ A node represents one the following entities:
 - a request
 - a service
 - a project
-- a context
+- an environment
 
 Each node has an id which is a UUID that never changes. You can rename an entity but the id remains the same.
 
@@ -245,7 +245,7 @@ The comparison is one these values:
 }
 </code></pre>
 
-## Context
+## Environment
 
 <pre class="language-json"><code class="language-json">{
     "id"           : {string},

@@ -6,7 +6,7 @@ By default, your Drive (all the requests you saved) is saved locally. However yo
 
 If you enable cloud synchronization, your local projects are saved to the cloud. All the projects, requests and test scenarios saved in *My drive* will be available from any computer you log onto. This also acts as a backup mechanism. Synchronization happens approximately every minute.
 
->**Note:** Currently contexts are not synchronized.
+>**Note:** Currently environments are not synchronized.
 
 ## Enable cloud synchronization
 

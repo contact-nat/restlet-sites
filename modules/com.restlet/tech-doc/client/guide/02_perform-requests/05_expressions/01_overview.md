@@ -1,7 +1,7 @@
 # Introduction
 
 Expressions allow you to get and transform existing data from:  
-- a context,  
+- an environment,  
 - requests stored in a repository,  
 - the last response on/to the stored requests (if a response exists).
 
@@ -24,10 +24,10 @@ Restlet Client helps you build expressions with its expression builder. Whenever
 
 From the expression builder, you can select:  
 - Elements from your repository (projects, services, scenarios, etc.),  
-- Context variables,  
-- [Methods](./built-in-methods "Methods") (Restlet Client displays only the relevant methods according to the context).
+- Environment variables,  
+- [Methods](./built-in-methods "Methods") (Restlet Client displays only the relevant methods according to the environment).
 
-![expression builder](images/expression-builder-methods.jpg "expression builder")
+![expression builder](images/expression-builder-methods.png "expression builder")
 
 >**Note:** The expression will be added where you placed your cursor before clicking the magic wand icon <i class="fa fa-magic"></i>.
 

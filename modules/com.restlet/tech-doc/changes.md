@@ -1,3 +1,7 @@
+v3.37.0
+
+- Update Contexts to Environments
+
 v3.36.0
 
 - Rebrand the Reslet modules
