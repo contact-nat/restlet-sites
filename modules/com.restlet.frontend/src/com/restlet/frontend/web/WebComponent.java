@@ -112,10 +112,22 @@ public class WebComponent extends Component {
         getClients().add(Protocol.CLAP);
         getClients().add(Protocol.FILE);
         getClients().add(Protocol.RIAP);
-        
+
         Client httpClient = new Client(Arrays.asList(Protocol.HTTP, Protocol.HTTPS));
         getClients().add(httpClient);
         httpClient.getContext().getParameters().add("followRedirects", "false");
+
+//        Engine.getInstance().getRegisteredClients().clear();
+//        Engine.getInstance().getRegisteredClients().add(
+//                new org.restlet.engine.connector.HttpClientHelper(null));
+//        Engine.getInstance().getRegisteredClients().add(
+//                new org.restlet.engine.local.ClapClientHelper(null));
+//        Engine.getInstance().getRegisteredClients().add(
+//                new org.restlet.engine.local.RiapClientHelper(null));
+//        Engine.getInstance().getRegisteredClients().add(
+//                new org.restlet.engine.local.FileClientHelper(null));
+//        Engine.getInstance().getRegisteredClients().add(
+//                new org.restlet.engine.local.ZipClientHelper(null));
 
         // -----------
         // restlet.org
