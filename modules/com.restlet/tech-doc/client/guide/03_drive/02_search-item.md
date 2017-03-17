@@ -1,12 +1,14 @@
-Restlet Client provides you with a **Search** field that  allows you to search items you saved in your drive from the **Repository** tab.
+Restlet Client provides you with a **Search** field that allows you to search items in your history as well as in your repository.
 
-![Search field](images/search-field.jpg "Search field")
+![Search field](images/search.png "Search field")
 
-The Search is performed in your items (projects, services, scenarios & requests) name and description.
+In your history, the Search is performed on the HTTP method, URL of your requests and on the status of your responses.
 
-To access the description of an item, click on the corresponding eye icon <i class="fa fa-eye"></i> in the left panel. The description displays underneath the item name in the main panel.
+![Search field](images/search-history.png "Search history")
 
-![See description](images/see-description.jpg "See description")
+In the repository, the Search is performed on your item names (projects, services, scenarios & requests).
+
+![Search field](images/search-repository.png "Search repository")
 
 >**Note:** The Search returns exact matches only and is case insensitive.
 

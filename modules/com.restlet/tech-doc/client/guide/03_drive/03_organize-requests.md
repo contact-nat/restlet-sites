@@ -5,22 +5,24 @@ Of course you can define one-shot requests, but another interesting approach con
 Restlet Client allows you to build projects inside your drive.
 The different items you can save in your drive follow this pattern:
 
-<i class="fa fa-cloud"></i>&nbsp;&nbsp;project  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog"></i>&nbsp;&nbsp;service  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-rocket"></i>&nbsp;&nbsp;scenario  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;request
+![Drive items](images/drive-items.png "Drive items")
 
->**Note:** Each item can be created at the root of your drive. A [scenario](../run-tests/scenarios "scenario") can only contain requests.
+Start by creating a project at the root level of your drive. Put your scenarios and requests inside. If you need another level of hierarchy, use services.
+
+>**Note:**   
+A project can contain services, scenarios and requests  
+A service can only contain scenarios and requests  
+A [scenario](../run-tests/scenarios "scenario") can only contain requests.
 
 # Save your requests inside projects
 
 Once a request is created and named, Restlet Client lets you save it.  
-You can save it at the root of your drive or you can classify your requests inside structured projects (folders) and services (subfolders).
+You can classify your requests inside structured projects (folders) and services (subfolders).
 
 To save your request inside a project:
 
-Create your request.  
-Enter a name in the input field on top of the screen.  
+Create your request.
+Enter a name in the input field on top of the screen.
 Click **Save** on the right of this field.  
 
 ## Save your request in an existing project
