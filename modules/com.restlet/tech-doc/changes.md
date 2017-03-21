@@ -1,3 +1,7 @@
+v3.38.0
+
+- Update drive icons, history and search
+
 v3.37.0
 
 - Update Contexts to Environments
