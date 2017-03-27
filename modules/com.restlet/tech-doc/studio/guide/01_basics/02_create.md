@@ -12,4 +12,4 @@ If you're a member of one or more teams, you can directly create an API on behal
 
 # Why can't I create any more APIs?
 
-Each plan comes with a maximum number of APIs you can create. When you've reached the maximum allowed number of APIs for your plan, you will no longer be able to create new ones. You'll have to delete and existing API in order to continue, or upgrade your plan.
+Each plan comes with a maximum number of APIs you can create. When you've reached the maximum allowed number of APIs for your plan, you will no longer be able to create new ones. You'll have to upgrade your plan, or delete an existing API in order to continue.

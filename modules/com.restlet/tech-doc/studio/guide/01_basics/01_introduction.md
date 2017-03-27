@@ -1,5 +1,7 @@
 # What Restlet Studio does and for whom
 
+<iframe src="https://player.vimeo.com/video/209724104" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 Restlet Studio helps people working on two important stages of an API project: design and documentation. With an easy learning curve, even non-developers can **design an API** and **publish its documentation** with Restlet Studio. The documentation includes a button to **try in Restlet Client** which lets you immediately interact with the API.
 
 Thanks to its graphical user interface, Restlet Studio is also a favorite for people who want to **create Swagger or RAML API definitions**, without having to learn the complex syntax of these languages.

@@ -2,9 +2,9 @@
 
 Markdown is a simple markup language, which lets you enhance plain text by adding formatting to it.
 
-With markdown, you can make a boring paragraph of text stand out by adding headers, bold and italics, images, links, and all sorts of other things.
+With markdown, you can make otherwise plain text stand out by adding headers, bold and italics, images, links, and lots more.
 
-Restlet Studio makes markdown easy even for beginners. Thanks to the built in editor you don't even need to know markdown syntax in order to use it!
+Restlet Studio makes markdown easy, even for beginners. Thanks to the built in editor you don't even need to know markdown syntax in order to use it!
 
 There are different flavors of markdown, and Restlet Studio supports <a href="http://spec.commonmark.org/0.25">CommonMark</a>, <a href="https://help.github.com/articles/organizing-information-with-tables/">tables</a> and emojis, and a few others.
 

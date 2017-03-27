@@ -5,7 +5,7 @@ These tips and tricks will help you work faster on those bigger API designs.
 
 You can clone any of the resources, operations, data types, and text blocks in the left panel.
 
-There are to ways to do this. The first is to use the menu in the top right of the right panel.
+The first way to do this is to use the menu in the top right of the right panel.
 
 ![Clone from the right panel](images/cloneright.png "Clone from the right panel")
 

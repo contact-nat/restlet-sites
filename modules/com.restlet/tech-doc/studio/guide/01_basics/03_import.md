@@ -16,6 +16,6 @@ The import action is located in the the **APIs** menu.
 
 # I can't import my API definition, or some parts have been ignored
 
-Restlet Studio will try its best to import all of your API definitions. If the definition it not conform to the corresponding OAI or RAML specification, then either the entire file will be rejected, or the invalid parts of the API will be ignored.
+Restlet Studio will try its best to import all of your API definitions. If the definition does not conform to the corresponding OAI or RAML specification, then either the entire file will be rejected, or the invalid parts of the API will be ignored.
 
 Please contact support via the in-app chat widget if you are having trouble importing your API definition, we're happy to help!
