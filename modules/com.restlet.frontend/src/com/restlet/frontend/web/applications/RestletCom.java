@@ -457,25 +457,14 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
                         getLogger().info("TBOI cookie before "
                                 + cookie.getName()
                                 + " => "
-                                + cookie.getValue());
+                                + "[" + cookie.getValue() + "]");
                     }
 
-                    Series<Cookie> yo = new Series<>(Cookie.class);
-                    for (Cookie cookie : request.getCookies()) {
-                        if ("sessionid".equals(cookie.getName())) {
-                            yo.add(new Cookie(cookie.getName(), cookie.getValue()));
-                        } else if ("csrftoken".equals(cookie.getName())) {
-                            yo.add(new Cookie(cookie.getName(), cookie.getValue()));
-                            request.getHeaders().add("X-CSRFToken", cookie.getValue());
-                        }
-                    }
-
-                    request.setCookies(yo);
                     for (Cookie c : request.getCookies()) {
                         Engine.getLogger(RestletCom.class).info("TBOI cookie AFTER "
                                 + c.getName()
                                 + " => "
-                                + c.getValue());
+                                + "[" + c.getValue() + "]");
                     }
                     request.getAttributes().remove(HeaderConstants.ATTRIBUTE_HEADERS);
                     next.handle(request, response);
