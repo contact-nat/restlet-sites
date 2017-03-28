@@ -45,8 +45,6 @@ import org.restlet.service.CorsService;
 import org.restlet.service.LogService;
 import org.restlet.util.Series;
 
-import sun.rmi.log.ReliableLog.LogFile;
-
 import com.restlet.frontend.objects.framework.Distribution;
 import com.restlet.frontend.objects.framework.Edition;
 import com.restlet.frontend.objects.framework.Version;
@@ -449,13 +447,19 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
 
                     // Update the request to cleanly go to the target URI
                     request.setResourceRef(targetRef);
-                    request.getReferrerRef();
+                    getLogger().info("TBOI Referrer reference before " + request.getReferrerRef());
                     request.setReferrerRef("https://localhost:12003");
-                    getLogger().info("TBOI referrer " + request.getReferrerRef());
-                    getLogger().info("TBOI referrer " + request.getResourceRef());
+                    getLogger().info("TBOI Referrer reference AFTER " + request.getReferrerRef());
+
+                    getLogger().info("TBOI Resource reference " + request.getResourceRef());
+
                     for (Cookie cookie : request.getCookies()) {
-                        getLogger().info("TBOI cookie " + cookie.getName() + " => " + cookie.getValue());
+                        getLogger().info("TBOI cookie before "
+                                + cookie.getName()
+                                + " => "
+                                + cookie.getValue());
                     }
+
                     Series<Cookie> yo = new Series<>(Cookie.class);
                     for (Cookie cookie : request.getCookies()) {
                         if ("sessionid".equals(cookie.getName())) {
@@ -465,9 +469,10 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
                             request.getHeaders().add("X-CSRFToken", cookie.getValue());
                         }
                     }
+
                     request.setCookies(yo);
                     for (Cookie c : request.getCookies()) {
-                        Engine.getLogger(RestletCom.class).info("TBOI cookie APRES "
+                        Engine.getLogger(RestletCom.class).info("TBOI cookie AFTER "
                                 + c.getName()
                                 + " => "
                                 + c.getValue());
