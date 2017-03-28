@@ -448,7 +448,7 @@ public class RestletCom extends BaseApplication implements RefreshApplication {
                     // Update the request to cleanly go to the target URI
                     request.setResourceRef(targetRef);
                     getLogger().info("TBOI Referrer reference before " + request.getReferrerRef());
-                    request.setReferrerRef("https://localhost:12003");
+                    request.setReferrerRef("http://localhost:12003");
                     getLogger().info("TBOI Referrer reference AFTER " + request.getReferrerRef());
 
                     getLogger().info("TBOI Resource reference " + request.getResourceRef());
