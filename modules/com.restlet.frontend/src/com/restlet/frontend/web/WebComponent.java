@@ -87,6 +87,8 @@ public class WebComponent extends Component {
     public WebComponent() throws Exception {
         super();
 
+        Engine.getInstance().getRegisteredClients().add(0, new org.restlet.engine.connector.HttpClientHelper(null));
+
         getLogService().setLoggerName("com.noelios.web.WebComponent.www");
         // getLogService().setIdentityCheck(true);
 
@@ -112,7 +114,7 @@ public class WebComponent extends Component {
         getClients().add(Protocol.CLAP);
         getClients().add(Protocol.FILE);
         getClients().add(Protocol.RIAP);
-        
+
         Client httpClient = new Client(Arrays.asList(Protocol.HTTP, Protocol.HTTPS));
         getClients().add(httpClient);
         httpClient.getContext().getParameters().add("followRedirects", "false");
