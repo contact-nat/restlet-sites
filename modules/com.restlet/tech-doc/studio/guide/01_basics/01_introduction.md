@@ -1,4 +1,4 @@
-# What Restlet Studio does and for whom
+## What Restlet Studio does and for whom
 
 <iframe src="https://player.vimeo.com/video/209724104" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -13,7 +13,7 @@ Restlet Studio also features powerful **code generation** capabilities for devel
 ![Restlet Studio workflow](images/workflow-smaller.png "Restlet Studio workflow")
 
 
-# About APIs
+## About APIs
 
 APIs enable distributed software to communicate over a network by exchanging messages. REST is a popular style of APIs used today thanks to its simplicity and natural tendency to work well on the web.
 
