@@ -338,4 +338,6 @@ programmatically with the System\#setProperty() method.
 
 # Additional resources
 
--   [Java Logging API and How To Use It](http://www.crazysquirrel.com/computing/java/logging.jspx)
+-   [Java Logging tutorial](http://tutorials.jenkov.com/java-logging/index.html)
+-   [Java Logging API - Tutorial](http://www.vogella.com/tutorials/Logging/article.html)
+
