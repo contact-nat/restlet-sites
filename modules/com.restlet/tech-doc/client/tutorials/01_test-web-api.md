@@ -59,7 +59,7 @@ A good starting point is to check the response status code (for example we usual
 
 ![Add assertions](images/01_assertions.png "Add assertions")
 
-You can then go further by creating assertions on response headers and body. Head to the user guide to [learn more about assertions](https://restlet.com/documentation/client/user-guide/perform-requests/assertions/overview).
+You can then go further by creating assertions on response headers and body. Head over to the user guide to [learn more about assertions](https://restlet.com/documentation/client/user-guide/perform-requests/assertions/overview).
 
 ---
 
