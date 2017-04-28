@@ -7,7 +7,7 @@ We do not use contractions such as “we don’t”, “we’ll” or “we have
 We write the whole sentence instead: “we do not”, “we will” or “we have not”.
 
 ### Friendly language
-We use friendly, casual language (but not to casual!) such as:  
+We use friendly, casual language (but not too casual!) such as:  
 “Jump to the next section!”  
 “Congrats, you have completed your first tutorial!”  
 “Let’s get right to it!”
