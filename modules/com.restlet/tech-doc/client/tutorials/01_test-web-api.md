@@ -61,6 +61,8 @@ A good starting point is to check the response status code (for example we usual
 
 You can then go further by creating assertions on response headers and body. Head over to the user guide to [learn more about assertions](https://restlet.com/documentation/client/user-guide/perform-requests/assertions/overview).
 
+
+
 ---
 
 Congratulations, you've made it through this tutorial! You have built a first test scenario for your web API.
