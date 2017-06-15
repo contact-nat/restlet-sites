@@ -1,13 +1,14 @@
 ![OAuth 2.0 logo](images/oauth2.png "OAuth 2.0 logo")
 
-You want to design a secure API? Yes, defining your API access security is an essential requirement.
+As part of the API design process, you will need to specify which consumers can access your API (authentication) and 
+what they are allowed to do (authorization).
 
-You may want simply define a common security for all your API, or choose a finer policy with a specific security 
-for a critical resource? 
+You may want simply define a common security for your entire API, or choose a finer policy with a specific security 
+for a critical resource.
 
-You may want to give a free access to your search products operation ?
+You may also want to specify that certain operations to be freely accessible without authentication.
 
-No problem, Restlet Studio allows you to define all these cases with the main security types :
+No problem, Restlet Studio can handle all these cases with the main security types :
 
 - Basic authentication
 - Digest authentication
@@ -16,7 +17,7 @@ No problem, Restlet Studio allows you to define all these cases with the main se
 - Pass through
 - Custom / API key
 
-Let's se how to do that in Restlet Studio.
+Let's see how to do that in Restlet Studio.
 
 # How to design your API security in Restlet Studio
 
@@ -38,7 +39,9 @@ Then select your security schemes you want to apply globally in your API.
 ## Define a specific security on a resource or an operation
 
 To define a specific security for a resource, select your resource and choose your security schemes you
- want to apply to all your resource's operations. Then, you can select an operation to define its specific security.
+ want to apply to all your resource's operations.
+ 
+Alternatively, you can select an operation to define its specific security.
   
 ![Resource security panel](images/resource-security.png "Resource security panel")
 
