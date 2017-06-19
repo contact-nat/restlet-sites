@@ -32,7 +32,7 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
       &lt;plugin&gt;
         &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
         &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;2.4.1&lt;/version&gt;
+        &lt;version&gt;2.4.2&lt;/version&gt;
         &lt;executions&gt;
           &lt;execution&gt;
             &lt;phase&gt;test&lt;/phase&gt;
