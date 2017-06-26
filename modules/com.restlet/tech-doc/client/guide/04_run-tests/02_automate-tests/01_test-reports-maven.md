@@ -32,7 +32,7 @@ Place the downloaded JSON near the pom.xml you downloaded (see [get started](#ge
       &lt;plugin&gt;
         &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
         &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;2.4.2&lt;/version&gt;
+        &lt;version&gt;2.5.0&lt;/version&gt;
         &lt;executions&gt;
           &lt;execution&gt;
             &lt;phase&gt;test&lt;/phase&gt;
@@ -71,14 +71,15 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 | **file** | File | Yes | X | file path pointing to the Restlet Client export file
 | **selectedEnvironment** | String | No | X | a name of an environment to be used
 | **licenseKey** | String | Yes | X | A valid license key (see the "Get a license key" paragraph below)
-| **stopOnFailure** | Boolean | No | False | stops processing build if an error/failure occurs
-| **httpClientTimeoutInMs** | Integer | False | 60000 | Time before HTTP time-out in milliseconds
+| **stopOnFailure** | boolean | No | false | stops processing build if an error/failure occurs
+| **httpClientTimeoutInMs** | Integer | false | 60000 | Time before HTTP time-out in milliseconds
 | **variables** | Properties | No | X | custom variables
-| **xhrEmulation** | Boolean | No | True | adds headers like accept-*
+| **xhrEmulation** | boolean | No | true | Mimics the extension behaviour by adding headers automatically added by the browser, like accept-*
 | **beforeTest** | URL | No | X | URL where to send a notification before a test starts
 | **afterTest** | URL | No | X | URL where to send a notification after a test is completed
 | **begin** | URL | No | X | URL where to send a notification before first test is executed
 | **end** | URL | No | X | URL where to send a notification after last test is completed
+| **useMavenProxies** | boolean | No | false | Indicates whether or not the proxy configured in ~/.m2/settings.xml should be used for your test's HTTP calls
 
 
 To change them, modify the tag `configuration` in your pom.xml, see a configuration example below.
@@ -141,6 +142,69 @@ This is done by using the following configuration:
 &lt;/configuration&gt;
 </code>
 </pre>
+
+### Use specific proxy configuration
+
+#### Use the system proxy configuration
+
+If the proxy is configured system-wide, then just launch the plugin with a simple:
+
+<pre class="language-markup"><code class="language-markup">mvn test -Djava.net.useSystemProxies=true</code></pre>
+
+Please note that this argument is available **on recent Windows systems and on Gnome 2.x systems**, for more information refer to the official [Oracle documentation](https://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html).
+
+#### Maven proxy configuration
+
+The Maven plugin can reuse the Maven's installation proxy configuration**, defined in your settings.xml,** simply by using the following configuration:
+
+<pre class="language-markup"><code class="language-markup">&lt;configuration&gt;
+  &lt;file&gt;${project.basedir}/test.json&lt;/file&gt;
+  &lt;useMavenProxies&gt;true&lt;/useMavenProxies&gt;
+&lt;/configuration&gt;
+</code>
+</pre>
+
+**Please note that for now, the nonProxyHosts is not supported in the Maven plugin.**
+
+More information about Maven proxy configuration can be found on the dedicated [documentation](https://maven.apache.org/guides/mini/guide-proxies.html).
+
+#### JVM proxy configuration
+
+The proxy configuration can also be configured at runtime using the standard JVM arguments. For the official documentation on JVM networking arguments, please refer to [Oracle Networking Properties](https://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html).
+
+Beware that JVM proxy configuration will be applied to *all* the JVM which will impact all the requests performed even by other Maven plugins and or targets.
+
+##### HTTP proxy configuration
+
+If your proxy is using the `http` protocol then the following arguments are available:
+
+| Name | Default | Description
+| ---- | ------- | -----------
+| **http.proxyHost** | "" | The hostname, or address, of the proxy server
+| **http.proxyPort** | 80 | The port number of the proxy server
+| **http.proxyUser** | "" | If the proxy used basic authentication, the authentication's username
+| **http.proxyPassword** | "" | If the proxy used basic authentication, the authentication's password
+| **http.nonProxyHosts** | localhost&#124;127.*&#124;[::1] | **[Not supported]** Indicates the hosts that should be accessed without going through the proxy
+
+Given the previous arguments, the maven plugin can be used:
+
+<pre class="language-markup"><code class="language-markup">mvn test -Dhttp.proxyHost=192.168.1.127</code></pre>
+
+##### HTTPS proxy configuration
+
+If your proxy is using the `https` protocol then the following arguments are available:
+
+| Name | Default | Description
+| ---- | ------- | -----------
+| **https.proxyHost** | "" | The hostname, or address, of the proxy server
+| **https.proxyPort** | 443 | The port number of the proxy server
+| **http.proxyUser** | "" | If the proxy used basic authentication, the authentication's username
+| **http.proxyPassword** | "" | If the proxy used basic authentication, the authentication's password
+| **http.nonProxyHosts** | localhost&#124;127.*&#124;[::1] | **[Not supported]** Indicates the hosts that should be accessed without going through the proxy
+
+Given the previous arguments, the maven plugin can be used:
+
+<pre class="language-markup"><code class="language-markup">mvn test -Dhttps.proxyHost=192.168.1.127</code></pre>
 
 # Notifications format
 
