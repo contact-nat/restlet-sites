@@ -75,7 +75,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 | **httpClientTimeoutInMs** | Integer | false | 60000 | Time before HTTP time-out in milliseconds
 | **variables** | Properties | No | X | custom variables
 | **xhrEmulation** | boolean | No | true | Mimics the extension behaviour by adding headers automatically added by the browser, like accept-*
-| **redirections** | String | No | NONE | Indicates whether or not the maven plugin should follow the redirections as it is possible through the extension settings in the browser. Possible values are *NONE* or *ALL*
+| **followRedirects** | String | No | NONE | Indicates whether or not the Maven plugin should follow the redirections as it is possible through the extension settings in the browser. Possible values are *NONE* or *ALL*
 | **beforeTest** | URL | No | X | URL where to send a notification before a test starts
 | **afterTest** | URL | No | X | URL where to send a notification after a test is completed
 | **begin** | URL | No | X | URL where to send a notification before first test is executed
@@ -92,6 +92,7 @@ To change them, modify the tag `configuration` in your pom.xml, see a configurat
   &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
   &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
   &lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
+  &lt;followRedirects&gt;ALL&lt;/followRedirects&gt;
   &lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
   &lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
 &lt;/configuration&gt;
