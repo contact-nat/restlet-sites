@@ -75,6 +75,7 @@ This Maven plugin comes with a number of parameters to tweak its behavior.
 | **httpClientTimeoutInMs** | Integer | false | 60000 | Time before HTTP time-out in milliseconds
 | **variables** | Properties | No | X | custom variables
 | **xhrEmulation** | boolean | No | true | Mimics the extension behaviour by adding headers automatically added by the browser, like accept-*
+| **redirections** | String | No | NONE | Indicates whether or not the maven plugin should follow the redirections as it is possible through the extension settings in the browser. Possible values are *NONE* or *ALL*
 | **beforeTest** | URL | No | X | URL where to send a notification before a test starts
 | **afterTest** | URL | No | X | URL where to send a notification after a test is completed
 | **begin** | URL | No | X | URL where to send a notification before first test is executed
