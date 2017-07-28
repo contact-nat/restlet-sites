@@ -1,1 +1,1 @@
-You can easily launch your request from a terminal if you have <a href="https://curl.haxx.se/" target="_blank">cURL</a> installed. Click on the <span style=”background-color: grey”><i class="fa fa-file-text"></i> 2code</span> icon and you will be provided the curl command to copy-paste.
+You can easily launch your request from a terminal if you have <a href="https://curl.haxx.se/" target="_blank">cURL</a> installed. Click on the <span style=”background-color: grey”><i class="fa fa-file-text"></i> 2 Code</span> icon and you will be provided the curl command to copy-paste.
