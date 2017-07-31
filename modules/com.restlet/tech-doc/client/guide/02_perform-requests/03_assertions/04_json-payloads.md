@@ -2,33 +2,120 @@ When selecting **JSON Body** or **XML Body**, assertions can leverage JSON path 
 
 # Use JSON path for JSON payloads
 
+The reference documentation is located [here](http://goessner.net/articles/JsonPath/ "reference documentation of JSON Path").
+You can also find an online JSON Path evaluator [here](http://jsonpath.com/ "JSON Path online evaluator").
+
 Here are a few hints to help you use JSON payloads:
 
-- The dollar sign ```$``` identifies the root object of the JSON content. Then you can iterate over attributes and sub attributes. The language natively supports arrays.
+- The dollar sign ```$``` identifies the root object of the JSON content.
 
 - The dot sign ```.``` allows you to get attributes of an object or to go deeper in the tree.
 
-- The square brackets ```[]``` target arrays and allow the selection of a particular element in them.
+- The square brackets ```[]``` target arrays and allow the selection of a particular element in them, or a slice of them.
 
-The following sample describes how to test the value of a list contained in arrays. The JSON body used contains a list of maps, each map has a **sources** field. This field corresponds to a list of sources and has an id attribute.
+As we will see below the current implementation in Restlet Client mostly follows the reference, but differs on few points.
 
-The expression **$[0].sources** corresponds to the sources of the first element. The expression **$[0].sources.id** goes further by getting all the id fields of sources. It is then possible to get just the first one.
+## Sample expressions
+
+This paragragh lists expressions and their result agains the following sample json file:
+
+<pre class="language-json"><code class="language-json">{
+  "store": {
+        "book": [
+            {
+                "category": "reference",
+                "author": "Nigel Rees",
+                "title": "Sayings of the Century",
+                "price": 8.95
+            },
+            {
+                "category": "fiction",
+                "author": "Evelyn Waugh",
+                "title": "Sword of Honour",
+                "price": 12.99
+            },
+            {
+                "category": "fiction",
+                "author": "Herman Melville",
+                "title": "Moby Dick",
+                "isbn": "0-553-21311-3",
+                "price": 8.99
+            },
+            {
+                "category": "fiction",
+                "author": "J. R. R. Tolkien",
+                "title": "The Lord of the Rings",
+                "isbn": "0-395-19395-8",
+                "price": 22.99
+            }
+        ],
+        "bicycle": {
+            "color": "red",
+            "price": 19.95
+        }
+    }
+}</code>
+</pre>
 
 
-This screenshot shows you JSON content with an array:
-![JSON content with array](images/09-json-content-array.jpg "JSON content with array")
+Here are the sample expressions and their result.
 
-Here you can see a JSON path expression:
-![JSON path expression](images/09-json-path-expression.jpg "JSON path expression")
+| Expression | Value
+| ---------- | -----
+| $.store | The whole node "store" located under the root node
+| $.store.bicycle.color | The value of the color attribute of bicycle (i.e. `"red"`)
+| $.store.book[0] | The first "book" node in "store"
+| $.store.book[:2] | An array of the first and second "book" nodes in "store"
+| $.store.book[1:3] $.store.book[1,2] | An array of the second and third "book" nodes in "store"
+| $.store.book[1:4:1] | An array of the second, third and fourth "book" nodes in "store"
+| $.store.book[1:4:2] | An array of the second and fourth "book" nodes in "store"
+| $.store.book.[1:4:2].author | An array of the authors of the second and fourth "book" nodes in "store" (i.e.: `["Nigel Rees","Herman Melville"]`)
+| $.store.book[-1:] | An array containing the last "book" node in "store"
+| $.store.book[1].* | An array of the values of all attributes of the second book (i.e. `["reference","Nigel Rees","Sayings of the Century",8.95]`)
+| $.store.* | An array of the values of all attributes of the store (i.e. the list of books and the bicycle node)
+| $.store..price | An array of the values of all attributes "price" of the "store" node (i.e. the prices of books and bicycle `[8.95,12.99,8.99,22.99,19.95]`)
+| $.store.book.author | An array of the values of all attributes "author" of the "book" node (i.e. `["Nigel Rees","Evelyn Waugh","Herman Melville","J. R. R. Tolkien"]`)
+| $.store.book[?(@.isbn)] | An array of the books that has an attribute "isbn" (i.e. the two last books)
+| $.store.book[?(@.price<10)] | An array of the books which price is less than "10"
+| $.. | An array of all child nodes of the root node, recursively
+| $..category | An array of all values of the "category" nodes (i.e. `["reference","fiction","fiction","fiction"]`)
+| $..category[(@.length-1)] | The value of the last "category" node
 
-This is the value you want to check:
-![JSON content with array](images/09-json-value.jpg "JSON content with array")
 
->**Note:**
-The value to check can be valid JSON content. Restlet Client automatically parses it and checks if it matches with the content corresponding to the expression.
+## When Restlet Client differs from the reference
 
-The following sample describes how to check the content of an array:
-![JSON value](images/10-json-value.jpg "JSON value")
+### the "*" operator
+
+| Expression | Reference | Restlet Client
+| ---------- | --------- | --------------
+| $.store.book[*].author | An array containing the authors of all books in the store | Return empty array, use `$.store.book.author` instead
+
+
+### the ".." operator
+
+The expression `$..book` is interpreted as an array of all "book" nodes so it returns an an array containing an array, since "book" node is an array:
+
+<pre class="language-json"><code class="language-json">[
+  [
+    { "category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95 },
+    { "category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99 },
+    { "category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99 },
+    { "category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99 }
+  ]
+]
+</code></pre>
+
+
+Then the following expressions are computed differently :
+
+| Expression | Reference | Restlet Client
+| ---------- | --------- | --------------
+| $..book[0] | An array containing the first "book" node | The first element of the array, that is to say the array containing all books.
+| $..book[-1:] | An array containing the last book | Not supported as is, it works using (`$..book[0][-1:]`)
+| $..book[(@.length-1)] | An array containing the last book | Not supported as is, it works using (`$..book[0][(@.length-1)]`)
+| $..book[0,1] | An array containing the first and second book | Not supported as is, it works using (`$..book[0][0,1]`)
+| $..book[:2] | An array containing the third book | Not supported as is, it works using (`$..book[0][:2]`)
+
 
 # <a class="anchor" name="xpath"></a>Use XPath for XML payloads
 
