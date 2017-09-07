@@ -1,6 +1,6 @@
 Saving a request (seule partie sans auto save donc tout le reste en auto save idée: sauvegarder quand état stable, mode draft => discovery, structuration du drive + petit mot pour dire que ça documente l’API)
 
-<a name"first-you-discover">
+<a name"first-you-discover" />
 # First you discover
 In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
 
