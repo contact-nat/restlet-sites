@@ -70,7 +70,7 @@ Here are some sample expressions and their result.
 | $.store.book[1:3] $.store.book[1,2] | An array of the second and third "book" nodes in "store"
 | $.store.book[-1:] | An array containing the last "book" node in "store"
 | $.store.book[:2] | An array of the first and second "book" nodes in "store"
-| $.store.book.[1:4:2].author | An array of the authors of the second and fourth "book" nodes in "store" (i.e.: `["Nigel Rees","Herman Melville"]`)
+| $.store.book.[1:4:2].author | An array of the authors of the first and third "book" nodes in "store" (i.e.: `["Nigel Rees","Herman Melville"]`)
 | $.store.book[1].* | An array of the values of all attributes of the second book (i.e. `["fiction","Evelyn Waugh","Sword of Honour",12.99]`)
 | $.store..price | An array of the values of all attributes "price" of the "store" node (i.e. the prices of books and bicycle `[8.95,12.99,8.99,22.99,19.95]`)
 | $.store.book.author | An array of the values of all attributes "author" of the "book" node (i.e. `["Nigel Rees","Evelyn Waugh","Herman Melville","J. R. R. Tolkien"]`)
