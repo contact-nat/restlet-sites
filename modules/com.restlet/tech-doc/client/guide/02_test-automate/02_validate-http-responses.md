@@ -24,6 +24,7 @@ You can create dynamic assertions (that depend on the result of other requests) 
 
 Expressions unleash the full power of API testing!
 
+<a class="anchor" name="json-path"></a>
 ## JSON path
 
 The reference documentation is located [here](http://goessner.net/articles/JsonPath/ "reference documentation of JSON Path").
@@ -42,6 +43,7 @@ Here are a few hints to help you use JSON payloads:
 
 As we will see below the current implementation in Restlet Client mostly follows the reference, but differs on few points.
 
+<a class="anchor" name="sample-json-path-expressions"></a>
 ### Sample expressions
 
 This paragragh lists expressions and their result agains the following sample json file:
@@ -105,16 +107,19 @@ Here are some sample expressions and their result.
 | $..category[(@.length-1)] | The value of the last "category" node
 
 
+<a class="anchor" name="when-restlet-client-differs-from-the-reference-json-path"></a>
 ### When Restlet Client differs from the reference
 
-#### the "*" operator
+<a class="anchor" name="the-star-operator"></a>
+#### The "*" operator
 
 | Expression | Reference | Restlet Client
 | ---------- | --------- | --------------
 | $.store.book[*].author | An array containing the authors of all books in the store | Return empty array, use `$.store.book.author` instead
 
 
-#### the ".." operator
+<a class="anchor" name="the-double-dot-operator"></a>
+#### The ".." operator
 
 The expression `$..book` is interpreted as an array of all "book" nodes so it returns an an array containing an array, since "book" node is an array:
 
@@ -128,7 +133,6 @@ The expression `$..book` is interpreted as an array of all "book" nodes so it re
 ]
 </code></pre>
 
-
 Then the following expressions are computed differently :
 
 | Expression | Reference | Restlet Client
@@ -139,8 +143,7 @@ Then the following expressions are computed differently :
 | $..book[0,1] | An array containing the first and second book | Not supported as is, it works using (`$..book[0][0,1]`)
 | $..book[:2] | An array containing the third book | Not supported as is, it works using (`$..book[0][:2]`)
 
-
-
+<a class="anchor" name="xpath"></a>
 ## XPath
 
 For more information on the <a href="http://www.w3schools.com/xsl/xpath_syntax.asp" target="_blank">XPath syntax</a>, head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">official W3C specification</a>.
@@ -163,6 +166,7 @@ Here are a few tips to help you work with XML payloads:
 
 - ```//``` selects nodes in the document from the current node that match the selection no matter where they are.
 
+<a class="anchor" name="sample-xpath-expressions"></a>
 ### Sample expressions
 
 
@@ -220,9 +224,11 @@ Here are some sample expressions and their result.
 | count(//title) | The number of all "title" nodes  (i.e.: `4`)
 
 
+<a class="anchor" name="when-restlet-client-differs-from-the-reference-xpath"></a>
 ### When Restlet Client differs from the reference
 
-#### List with only one element
+<a class="anchor" name="list-with-single-element"></a>
+#### List with single element
 
 This expression computes the value of the title node of the first book: `//book[last()]/title/text()`.
 

@@ -2,14 +2,17 @@ Sending a request is good, but sometimes you will want to send a bunch in one go
 Any request containers in your repository can be run either from its overview (right-pane) or even directly from the 
 repository tree in the `Scenarios` perspective. Just click on the play button!
 
+<a class="anchor" name="differences-between-scenarios-and-other-request-containers"></a>
 ## Differences between scenarios and other request containers
 
+<a class="anchor" name="request-order"></a>
 ### Request order
 
 Especially if you are performing tests, you might want the requests to be sent in a specific order. If it is your case, 
 then all you need to do is create a scenario. Requests in scenarios can be reordered to your wishes unlike projects and
 services which will run your requests in alphabetical order of their names.
 
+<a class="anchor" name="validation"></a>
 ### Validation
 
 If you have tried running a scenario, you may have noticed green/red/yellow labels indicating its 
@@ -20,6 +23,7 @@ Then the request container is tagged as success if all its children were success
 Note that scenarios should be functionally atomic as unlike other containers, they will stop as soon as a child request 
 fails.
 
+<a class="anchor" name="manage-your-scenarios"></a>
 ## Manage your scenarios
 
 Restlet Client provides a set of features to help you create and update your scenarios faster.
