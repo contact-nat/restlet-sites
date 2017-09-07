@@ -23,6 +23,7 @@ If you subscribed to a "Team" plan, you can share your own drive. In this case, 
 Every member of your team are called Team members, and get their own copy of the shared drive.
 
 Of course a drive can store requests but also other kind of containers:
+
 * scenario: a scenario is an ordered set of requests.
 * service: a service contains either scenarios or requests. The single supported order is by type, then by name.
 * project: a project contains either scenarios, services or requests. The single supported order is by type, then by name.
