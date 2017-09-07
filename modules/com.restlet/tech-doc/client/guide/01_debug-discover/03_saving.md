@@ -1,30 +1,21 @@
 Saving a request (seule partie sans auto save donc tout le reste en auto save idée: sauvegarder quand état stable, mode draft => discovery, structuration du drive + petit mot pour dire que ça documente l’API)
 
-Quelles sont les idées fortes?
+# First you discover
+In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
 
-Bien décrire le mode discovery. Comment on y entre, son fonctionnement, et ce qu'il ne fait pas.
+This state is persisted so that you can reload Client or go back and forth to the Scenarios perspective and still recover the request as it was.
 
-La difficulté de vouloir y entrer de nouveau lorsque l'on en est sorti.
+This state is updated either manually by the user when playing with the request edition form or when loading a request from the history or the drive.
 
-Ce qui est prévu pour la suite?
+Now, let's say you want to take a snapshot of the current state and make this state persistent in order to recover it anytime.
+How can you achieve this? Just save it.
 
+At any time you can save the current and stable state into the drive.
 
+# Then you save into a drive
 
-Please remember that you enter this request editor by three ways: by reloading the Client, or by clicking on a request from the drive, or from the history.
+Let's elaborate about the notions of drive, and containers.
 
-
-
-Then any updates are not persisted directly on the source request, you can consider that this editor as permanent draft mode or a permanent discovery mode.
-
-
-
-At any time you can save the current and stable state into a persisted request.
-At any time you can open an existing and persisted request from the drive or history and start a new discovery.
-
-This is a totally distinct mode than the scenarios perspective. In this case, you edit a request and any updates are immediately propagated to the persisted entity.
-
-
-
-Selon votre navigation, il est tout à fait possible et probable que vous n'arriviez plus à récupérer l'état du draft. Si cela vous arrive, n'oubliez pas qu'il est existe un moyen hors pair de revenir à cet état: recharger l'application.
-
-
+A drive is the highest container of requests in Restlet Client.
+A drive can be local, in this case it is called "My drive".
+If you subscribed to a "Team" plan, you can share your own drive. In this case, you are
