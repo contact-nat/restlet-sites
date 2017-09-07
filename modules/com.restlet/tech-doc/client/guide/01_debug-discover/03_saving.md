@@ -1,5 +1,6 @@
 Saving a request (seule partie sans auto save donc tout le reste en auto save idée: sauvegarder quand état stable, mode draft => discovery, structuration du drive + petit mot pour dire que ça documente l’API)
 
+<a name"first-you-discover">
 # First you discover
 In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
 
@@ -29,3 +30,4 @@ Of course a drive can store requests but also other kind of containers:
 * project: a project contains either scenarios, services or requests. The single supported order is by type, then by name.
 
 When you save a request from the testing perspective, you can choose an existing container, or create a new one.
+
