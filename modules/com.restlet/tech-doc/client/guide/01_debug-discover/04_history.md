@@ -19,9 +19,15 @@ The history is a tab present in the Requests perspective available either on the
 An entry of the history contain both sent request and received response. In addition, it contains also the duration of the request.
 Entries are displayed according to the date they have been sent: the younger first, at the top of the list.
 
-In addition, entries are grouped by URL.
+In addition, entries are grouped by URL which means that any successive requests to the same urls represent only one entry in the list. This helps to keep the history synthetic.
 
 # Actions
+
+## Open request in discovery mode
+
+
+## Save request(s) to drive
+
 
  (save to drive/req depuis RP ou SP / phrase pour le save to scenario + lien vers le 3.a bootstrap a scenario)
 
