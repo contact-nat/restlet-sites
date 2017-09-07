@@ -1,5 +1,3 @@
-Saving a request (seule partie sans auto save donc tout le reste en auto save idée: sauvegarder quand état stable, mode draft => discovery, structuration du drive + petit mot pour dire que ça documente l’API)
-
 <a name"first-you-discover"></a>
 # First you discover
 In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
@@ -25,7 +23,7 @@ Every member of your team are called Team members, and get their own copy of the
 
 Of course a drive can store requests but also other kind of containers:
 
-* scenario: a scenario is an ordered set of requests. It is very helpful to define a sequence of requests and play it again, and again, and again.
+* scenario: a scenario is an ordered set of requests. It is very helpful to define a sequence of requests and play it again, and again, and again (TODO link to the scenario page).
 * service: a service contains either scenarios or requests. The single supported order is by type, then by name.
 * project: a project contains either scenarios, services or requests. The single supported order is by type, then by name.
 
