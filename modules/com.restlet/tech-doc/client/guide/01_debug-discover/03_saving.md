@@ -16,6 +16,15 @@ At any time you can save the current and stable state into the drive.
 
 Let's elaborate about the notions of drive, and containers.
 
-A drive is the highest container of requests in Restlet Client.
-A drive can be local, in this case it is called "My drive".
-If you subscribed to a "Team" plan, you can share your own drive. In this case, you are
+A drive is the highest container of entities in Restlet Client.
+A drive can be local, in this case it is generally labelled "My drive".
+
+If you subscribed to a "Team" plan, you can share your own drive. In this case, you are intronised Team owner, and you own also the shared drive.
+Every member of your team are called Team members, and get their own copy of the shared drive.
+
+Of course a drive can store requests but also other kind of containers:
+* scenario: a scenario is an ordered set of requests.
+* service: a service contains either scenarios or requests. The single supported order is by type, then by name.
+* project: a project contains either scenarios, services or requests. The single supported order is by type, then by name.
+
+When you save a request from the testing perspective, you can choose an existing container, or create a new one.
