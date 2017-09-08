@@ -7,6 +7,8 @@ In a second part, we will describe the reponse block.
 The Requests perspective provides the "Send" button, right near the URL field.
 Let's keep it simple, just click on the button and sent the request will be. 
 
+=> perhaps a screenshot?
+
 But there is more to say about it.
 
 This button allows three actions:
@@ -28,7 +30,7 @@ When asked to follow redirections, the HTTP client automatically achieves the ne
 
 Restlet Client provides a dedicated area to display the response. This area maps the different response elements. The latter is summarized in the following diagram as a reminder.
 
-=> insert a diagram or screenshot with annotations
+=> insert a diagram or screenshot with numbered annotations
 
 ### Status code and message
 
