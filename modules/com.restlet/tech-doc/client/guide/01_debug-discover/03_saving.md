@@ -11,6 +11,8 @@ How can you achieve this? Just save it.
 
 At any time you can save the current and stable state into the drive.
 
+=> perhaps a simple but global workflow diagram
+
 ## Then you save into a drive
 
 Let's elaborate about the notions of drive, and containers.
@@ -31,3 +33,4 @@ Each entity has a name and a description, which may be sufficient to document yo
 
 When you save a request from the testing perspective, you can choose an existing container, or create a new one.
 
+=> certainsly make it more graphical.

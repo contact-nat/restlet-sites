@@ -1,5 +1,7 @@
 ## Introduction
 
+=> complete the introduction perhaps
+
 User can edit every part of the request:
 
  * method
@@ -7,7 +9,9 @@ User can edit every part of the request:
  * headers
  * body (according to the method the body part cannot be edited)
 
-The list of proposed methods can be extended via the settings. This usage is a little beyond the scope of this simple vademecum and will be described here.
+=> Insert graphic with numbered ticks
+
+The list of proposed methods can be extended via the settings. This usage is a little beyond the scope of this simple vademecum and will be described => here (TODO).
 
 The query parameters can be enter directly in the URL text field or in a simple tabular form.
 
