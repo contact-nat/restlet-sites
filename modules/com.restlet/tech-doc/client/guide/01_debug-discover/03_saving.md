@@ -1,5 +1,5 @@
 <a name"first-you-discover"></a>
-# First you discover
+## First you discover
 In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
 
 This state is persisted so that you can reload Client or go back and forth to the Scenarios perspective and still recover the request as it was.
@@ -11,7 +11,7 @@ How can you achieve this? Just save it.
 
 At any time you can save the current and stable state into the drive.
 
-# Then you save into a drive
+## Then you save into a drive
 
 Let's elaborate about the notions of drive, and containers.
 

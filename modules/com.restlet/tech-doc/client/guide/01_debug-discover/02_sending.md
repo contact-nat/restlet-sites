@@ -2,7 +2,7 @@ Once your request has been designed, it's time to send it to the server!
 Let's start by explaining how to send a request, and the available options.
 In a second part, we will describe the reponse block.
 
-# Send and redirect
+## Send and redirect
 
 The Requests perspective provides the "Send" button, right near the URL field.
 Let's keep it simple, just click on the button and sent the request will be. 
@@ -24,22 +24,22 @@ The default redirection mode is defined in the settings. By default, redirection
 
 When asked to follow redirections, the HTTP client automatically achieves the next step described by the response.
 
-# Response
+## Response
 
 Restlet Client provides a dedicated area to display the response. This area maps the different response elements. The latter is summarized in the following diagram as a reminder.
 
 => insert a diagram or screenshot with annotations
 
-## Status code and message
+### Status code and message
 
 The status code and message correspond to the status of the response. The status code is a normalized number. HTTP defines different families at this level: 2xx for success, 3xx for redirection, 4xx for client errors and 5xx for server errors.
 
-## Headers
+### Headers
 
 The list of HTTP headers of the response are available under two formats: the default one is the "Pretty" mode where all headers are listed in a tabular form with readable alignement of both names and values.
 The second mode is "raw" where all headers are displayed as they are received. This format is much more compact, and could be less readable.
 
-### Request edition helpers
+#### Request edition helpers
 
 At first sight, it looks surprising to talk about request edition in this section, but you deserve good surprises, right?
 
@@ -59,7 +59,7 @@ Cache-Control | If value is a "max-age" or a "s-max-age" cache control directive
 Allow | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated
 Access-Control-Allow-Methods | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated
 
-## Payload
+### Payload
 
 Response payload corresponds to the data received.
 In order to ease readability, all kinds of payloads can be displayed as-is (aka "Raw" mode), hex-encoded (aka "Hex" mode)
@@ -84,16 +84,16 @@ Json | yes | yes | yes | yes
 Html | yes | no | no | yes
 
 
-## Payloads type are configurable
+### Payloads type are configurable
 In "Settings/Appearance", you can also configure the link between a media-type, a formatter and some options (show line numbers, collapse/expand nodes by default).
 
 
-## Request edition helpers
+### Request edition helpers
 In pretty mode, when possible, the HTTP Urls are parsed and emphasized
 links dans le body pour rafraîchir l'URL de la requête courante.
 pour naviguer d'une requête à une autre
 
-## Additional data
+### Additional data
 
 * elapsed time in the top right
 * the length of the body in the bottom right
@@ -102,7 +102,7 @@ pour naviguer d'une requête à une autre
 
 
 
-## Some actions
+### Some actions
 
 * Copy 2 request: copies the response payload into the paylod of the request. If the request does not support payload (for example GET) then the method is updated also to POST.
 
@@ -110,7 +110,7 @@ pour naviguer d'une requête à une autre
 
 * Download: download the response payload on local drive.
 
-# Request previsualisation / response
+## Request previsualisation / response
 
 
 
