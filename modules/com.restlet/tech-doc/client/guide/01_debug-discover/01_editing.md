@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 User can edit every part of the request:
 
@@ -26,7 +26,7 @@ Please note that these contents are not persisted which means two things:
  * you will have to upload again the file after reloading the request .
  * you can't run such requests using the Maven Plugin,
 
-# Edition helpers
+## Edition helpers
 
 Completion is available for the header names, and for the values of the following headers:
 
