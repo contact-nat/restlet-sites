@@ -14,6 +14,9 @@ The history is a tab present in the Requests perspective available either on the
  
  => TODO show a screenshot.
 
+![global picture](images/discovery-global.png)
+
+
 ## Browsing the history
 
  => TODO show a screenshot with numbered annotations.
