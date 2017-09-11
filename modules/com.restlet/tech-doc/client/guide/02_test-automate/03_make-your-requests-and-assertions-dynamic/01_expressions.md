@@ -11,7 +11,7 @@ You can use them in all those places:
 Expressions allow you to:
 * [Reference environment variables by name](./environments)
 * [Reference other request elements by name](./reuse-request-or-response-parts)
-* [Transform your data](./methods)
+* [Manipulate your data](./methods)
 
 <a class="anchor" name="usage-example"></a>
 ## Usage example
