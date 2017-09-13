@@ -29,6 +29,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [JSON path](#json-path)
   * [Lower](#lower)
   * [MD5](#md5)
+  * [String](#string)
   * [Upper](#upper)
 
 <a class="anchor" name="data-creation"></a>
@@ -146,6 +147,32 @@ Result: f71dbe52628a3f83a77ab494817525c6
   </code>
 </pre>
 
+<a class="anchor" name="string"></a>
+### String
+
+Quotes its input.
+
+Arguments:
+* quote character: the character that should be used to quote the input.
+  * Options: `'` and `"`
+  * Default: `"`
+
+Arguments: none
+
+Example:
+<pre class="language-javascript">
+  <code class="language-javascript">
+Expression: ${"toto".string()}
+Result: "toto"
+
+Expression: ${"toto".string("\"")}
+Result: "toto"
+
+Expression: ${"toto".string("'")}
+Result: 'toto'
+  </code>
+</pre>
+
 <a class="anchor" name="upper"></a>
 ### Upper
 
@@ -160,5 +187,3 @@ Expression: ${"aBc".upper()}
 Result: ABC
   </code>
 </pre>
-
-où est-ce utilisé? déf de la requête + valeurs dans les assertions à base d’exemples
