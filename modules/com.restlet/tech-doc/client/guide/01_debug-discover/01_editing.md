@@ -38,6 +38,7 @@ The headers can be edited either as simple tabular form or as a raw block of tex
 ### Body
 
 The editor of the body part is a little bit more complex as it covers several cases and is at the same time still intuitive to use.
+
 It guides you to manually edit:
 
  * simple text plain payloads
@@ -48,7 +49,7 @@ The editor of the body part also helps you also to upload files from your drives
 Please note that these contents are not persisted which means two things:
 
  * you will have to upload again the file after reloading the request .
- * you can't run such requests using the Maven Plugin,
+ * you can't run such requests using the Maven Plugin.
 
 ## Edition helpers
 
@@ -68,6 +69,6 @@ The header "Content-type" is automatically set according to the format of curren
 The header "Authorization" has a dedicated helper which supports only the "BASIC" authentication theme for the moment. This helper allows you to simply enter your username and password. It hashes these value accordingly to the specification.
 
 When a request has been run, cf [Sending a request paragraph](./sending):
- * you can quickly add headers automatically set by the browser to the definition of the request. This is fine to mimic the browser behavior when using the maven plugin, for example.
- * the "Pretty", mode of the response body reader empasizes the links parsed from the body. When clicking on a link, the URL field is updated.
 
+ * you can quickly add headers automatically set by the browser to the definition of the request. This is fine to mimic the browser behavior when using the maven plugin for example.
+ * the "Pretty" mode of the response body reader empasizes the links parsed from the body. When clicking on a link, the URL field of the request editor is updated.
