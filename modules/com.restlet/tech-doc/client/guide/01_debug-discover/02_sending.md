@@ -5,15 +5,15 @@ In a second part, we will describe the reponse block.
 ## Send and redirect
 
 The Requests perspective provides the "Send" button, right near the URL field.
-Let's keep it simple, just click on the button and sent the request will be. 
+In order to keep things simple, just click on the button and sent the request will be. 
 
 => perhaps a screenshot?
 
-But there is more to say about it.
+However there is more to say about it, and this relates with what is called "redirections".
 
 This button allows three actions:
 
-* directly click on it, it sends the request in the default redirection mode
+* directly click on it, as mentionned above, the request is sent in the default redirection mode
 * select an option called "Follow redirects" and send the request
 * select an option called "Don't follow redirects" and send the request
 
