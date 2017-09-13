@@ -30,6 +30,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [Lower](#lower)
   * [MD5](#md5)
   * [String](#string)
+  * [Substring](#substring)
   * [Upper](#upper)
 
 <a class="anchor" name="data-creation"></a>
@@ -170,6 +171,33 @@ Result: "toto"
 
 Expression: ${"toto".string("'")}
 Result: 'toto'
+  </code>
+</pre>
+
+<a class="anchor" name="substring"></a>
+### Substring
+
+Returns a truncated input.
+
+Arguments:
+* start: position of the first character that should be extracted
+  * Default: 0
+* end: position of the first character that should be omitted
+  * Default: end of the input
+
+> Note: the index of the first character is 0
+
+Example:
+<pre class="language-javascript">
+  <code class="language-javascript">
+Expression:  ${"0123456".substring(1)}
+Result:      123456
+
+Expression:  ${"0123456".substring(1, 2)}
+Result:      1
+
+Expression:  ${"0123456".substring(0, 4)}
+Result:      0123
   </code>
 </pre>
 
