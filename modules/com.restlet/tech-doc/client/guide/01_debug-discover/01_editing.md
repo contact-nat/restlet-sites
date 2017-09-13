@@ -68,7 +68,7 @@ The header "Content-type" is automatically set according to the format of curren
 
 The header "Authorization" has a dedicated helper which supports only the "BASIC" authentication theme for the moment. This helper allows you to simply enter your username and password. It hashes these value accordingly to the specification.
 
-When a request has been run, cf [Sending a request paragraph](./sending):
+When a request has been run, cf [Send a request](./sending) paragraph:
 
  * you can quickly add headers automatically set by the browser to the definition of the request. This is fine to mimic the browser behavior when using the maven plugin for example.
  * the "Pretty" mode of the response body reader empasizes the links parsed from the body. When clicking on a link, the URL field of the request editor is updated.
