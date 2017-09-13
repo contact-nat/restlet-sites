@@ -26,6 +26,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [UUID](#uuid)
 * [Data transformation](#data-transformation)
   * [Base 64](#base-64)
+  * [HMAC](#hmac)
   * [JSON path](#json-path)
   * [Lower](#lower)
   * [MD5](#md5)
@@ -97,6 +98,29 @@ Example:
   <code class="language-javascript">
 Expression: ${"username:password".base64()}
 Result: dXNlcm5hbWU6cGFzc3dvcmQ=
+  </code>
+</pre>
+
+<a class="anchor" name="hmac"></a>
+### HMAC
+
+Creates a [Hash-based Message Authentication Code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code).
+
+Arguments:
+* cipher: the hash function
+  * Options: `SHA1`, `SHA224`, `SHA256`, `SHA384` or `SHA512`
+* key: the secret key
+* output: the output type
+  * Options: `Base64` or `Hex`
+
+Example:
+<pre class="language-javascript">
+  <code class="language-javascript">
+Expression:  ${"test".hmac("sha256", "secret", "Base64")}
+Result:      Aymga2LNFrM+tnkr6MYLFY2Jou46h2/Omogeu0iMCRQ=
+
+Expression:  ${"test".hmac("sha1", "secret", "Hex")}
+Result:      1aa349585ed7ecbd3b9c486a30067e395ca4b356
   </code>
 </pre>
 
