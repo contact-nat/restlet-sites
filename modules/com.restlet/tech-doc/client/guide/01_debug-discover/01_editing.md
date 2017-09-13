@@ -43,7 +43,7 @@ It guides you to manually edit:
 
  * simple text plain payloads
  * Json/XML/HTTP payloads with syntax coloration
- * Web forms or multipart form payloads [cf definition](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4)
+ * Web forms or multipart form payloads ([cf Web forms specification](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4))
 
 The editor of the body part also helps you also to upload files from your drives.
 Please note that these contents are not persisted which means two things:
