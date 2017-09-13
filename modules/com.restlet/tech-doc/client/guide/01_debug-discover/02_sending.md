@@ -9,26 +9,26 @@ In order to keep things simple, just click on the button and sent the request wi
 
 => perhaps a screenshot?
 
-However there is more to say about it, and this relates with what is called "redirections".
-
-This button allows three actions:
-
-* directly click on it, as mentionned above, the request is sent in the default redirection mode
-* select an option called "Follow redirects" and send the request
-* select an option called "Don't follow redirects" and send the request
+However there is more to say about it, and this relates with what is called "redirection".
 
 Redirection is a concept that covers a specific set of responses sent back by the server.
 Basically, such responses tell the client that a further step is required in order to achieve the request.
 The nature of the next step is described by the redirection response.
 You can refer to [the HTTP specification](https://tools.ietf.org/html/rfc7231#page-54) for more details about this topic.
 
-The default redirection mode is defined in the settings. By default, redirections are not followed, but it's up to you to change this behavior.
+The "Send" button allows three actions:
+
+* click on it, as mentionned above, then the request is sent in the default redirection mode
+* select an option called "Follow redirects" then the request is sent with this redirection mode
+* select an option called "Don't follow redirects" then the request is sent with this redirection mode
+
+The default redirection mode is defined in the settings. By default, redirections are not followed.
 
 When asked to follow redirections, the HTTP client automatically achieves the next step described by the response.
 
 ## Response
 
-Restlet Client provides a dedicated area to display the response. This area maps the different response elements. The latter is summarized in the following diagram as a reminder.
+Restlet Client provides a dedicated area to display the response. This area maps the different elements of a response.
 
 => insert a diagram or screenshot with numbered annotations
 
@@ -86,33 +86,50 @@ Json | yes | yes | yes | yes
 Html | yes | no | no | yes
 
 
-### Payloads type are configurable
+#### Configure types of payloads
+
 In "Settings/Appearance", you can also configure the link between a media-type, a formatter and some options (show line numbers, collapse/expand nodes by default).
 
+#### Additional data
 
-### Request edition helpers
-In pretty mode, when possible, the HTTP Urls are parsed and emphasized
-links dans le body pour rafraîchir l'URL de la requête courante.
-pour naviguer d'une requête à une autre
+* The body viewer shows the time taken by the request/response at the top right (labelled "elapsed time")
+* The body viewer shows also the length of the body in the bottom right
 
-### Additional data
+### Complete request headers
 
-* elapsed time in the top right
-* the length of the body in the bottom right
+It sounds like disturbing to add a topic about requests headers when documenting the response, but as you will see below the value is real.
 
-* Complete request headers > diff + links pour setter un header dans la requête
+As the requests are sent in fine by the browser using the XmlHttpRequest API, Restlet Client has to deal with some constraints imposed by the browser.
+More specifically, some headers are automatically to the request set up by the user.
 
+For example, when the browser has already recorded cookies related to the host of the requests, these cookies are automatically added.
 
+As such data can have impact on the behavior of the request, there is a real interest to see those headers. So, now, you get the point.
 
-### Some actions
+This section of the user interface displays the headers automatically added by the browser, which can only be known at the time the request is sent.
+That explains why such headers appear along the response elements.
 
-* Copy 2 request: copies the response payload into the paylod of the request. If the request does not support payload (for example GET) then the method is updated also to POST.
+#### Request edition helpers
+
+In pretty mode, when possible, the HTTP Urls are parsed and emphasized. When clicking on such links, the request is updated:
+
+ * the URI field of the current request is updated with the value of the link (note that relative links are computed against the current request's URL)
+ * the method of the current request is set to `GET`.
+
+This is quite useful if you want to browse your API just like you browse the Internet by following links on pages.
+Let's say you first request your API to get a contact. If the body contains links to the contact's address, you can quickly get the representation of the related address in two clicks:
+
+ * click on the link to refresh the current request
+ * send the new request
+
+### Additional actions
+
+* Copy 2 request: copies the response payload into the paylod of the request. If the request does not support payload (for example GET) then the method is automatically updated to `POST`.
 
 * Copy to clipboard the response body: copies the response paylod into the clipboard
 
 * Download: download the response payload on local drive.
 
-## Request previsualisation / response
+## Request previsualization / response
 
-
-
+You can previsualize the request you set up as raw text, and by the way get the whole response (if any) as raw text in the tab `HTTP` at the bottom of the Request perspective.
