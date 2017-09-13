@@ -30,6 +30,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [JSON path](#json-path)
   * [Lower](#lower)
   * [MD5](#md5)
+  * [Sha](#sha)
   * [String](#string)
   * [Substring](#substring)
   * [Upper](#upper)
@@ -172,6 +173,28 @@ Result: f71dbe52628a3f83a77ab494817525c6
   </code>
 </pre>
 
+<a class="anchor" name="sha"></a>
+### Sha
+
+Hashes its input.
+
+Arguments:
+* cipher: the hash function
+  * Options: `SHA1`, `SHA224`, `SHA256`, `SHA384` or `SHA512`
+* output: the output type
+  * Options: `Base64` or `Hex`
+
+Example:
+<pre class="language-javascript">
+  <code class="language-javascript">
+Expression: ${"toto".sha("SHA224", "Base64")}
+Result: IcBD7s1+hUI6ctrjwGKitb+g5rNc4/54jJtXpg==
+
+Expression: ${"toto".sha("SHA1", "Hex")}
+Result: 0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c
+  </code>
+</pre>
+
 <a class="anchor" name="string"></a>
 ### String
 
@@ -181,8 +204,6 @@ Arguments:
 * quote character: the character that should be used to quote the input.
   * Options: `'` and `"`
   * Default: `"`
-
-Arguments: none
 
 Example:
 <pre class="language-javascript">
