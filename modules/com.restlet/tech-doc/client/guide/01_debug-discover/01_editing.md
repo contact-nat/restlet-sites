@@ -66,7 +66,7 @@ Completion is available for the header names, and for the values of the followin
 
 The header "Content-type" is automatically set according to the format of current body editor. You can still override the preset value.
 
-The header "Authorization" has a dedicated helper which supports only the "BASIC" authentication theme for the moment. This helper allows you to simply enter your username and password. It hashes these value accordingly to the specification.
+The header "Authorization" has a dedicated helper which supports only the "BASIC" authentication theme for the moment. This helper allows you to simply enter your username and password. It hashes these values accordingly to the specification.
 
 When a request has been run, cf [Send a request](./sending) paragraph:
 
