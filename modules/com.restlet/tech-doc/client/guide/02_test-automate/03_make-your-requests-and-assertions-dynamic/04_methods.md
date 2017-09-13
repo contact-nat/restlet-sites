@@ -28,6 +28,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [Base 64](#base-64)
   * [HMAC](#hmac)
   * [JSON path](#json-path)
+  * [Length](#length)
   * [Lower](#lower)
   * [MD5](#md5)
   * [Sha](#sha)
@@ -139,6 +140,40 @@ Example:
   <code class="language-javascript">
 Expression: ${"{\"titi\": \"toto\"}".jsonPath("$.titi")}
 Result: toto
+  </code>
+</pre>
+
+<a class="anchor" name="length"></a>
+### Length
+
+Computes the length of its input:
+* the number of characters if the input is a string.
+* the number of items in a JSON array
+* the number of keys in an JSON object
+
+Arguments: none
+
+Example:
+<pre class="language-javascript">
+  <code class="language-javascript">
+Expression: ${"Star-wars API"."Get 2 planets"."response"."body"}
+Result: {
+  "count":61,
+  "results": [
+    {"name":"Alderaan" },
+    {"name":"Naboo" },
+    {"name":"Hoth" }
+  ]
+}
+
+Expression: ${"Star-wars API"."Get 2 planets"."response"."body".length()}
+Result: 2
+
+Expression: ${"Star-wars API"."Get 2 planets"."response"."body"."results".length()}
+Result: 3
+
+Expression: ${"Star-wars API"."Get 2 planets"."response"."body"."results"."0"."name".length()}
+Result: 8
   </code>
 </pre>
 
