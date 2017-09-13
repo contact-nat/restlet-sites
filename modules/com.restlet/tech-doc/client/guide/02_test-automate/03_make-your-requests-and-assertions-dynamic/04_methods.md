@@ -17,6 +17,19 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
 * If no environment variable matched, the request/scenario/service/project toto that is at root-level in your repository. See [how repository references work](./reuse-request-or-response-parts) for more details.
 * The constant `toto` in any other case.
 
+<a class="anchor" name="table-of-content"></a>
+## Table of content
+
+* [Data creation](#data-creation)
+  * [Random](#random)
+  * [Timestamp](#timestamp)
+  * [UUID](#uuid)
+* [Data transformation](#data-transformation)
+  * [Base 64](#base-64)
+  * [JSON path](#json-path)
+  * [Lower](#lower)
+  * [Upper](#upper)
+
 <a class="anchor" name="data-creation"></a>
 ## Data creation
 
