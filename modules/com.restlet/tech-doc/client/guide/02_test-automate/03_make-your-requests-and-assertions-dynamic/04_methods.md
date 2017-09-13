@@ -28,6 +28,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [Base 64](#base-64)
   * [JSON path](#json-path)
   * [Lower](#lower)
+  * [MD5](#md5)
   * [Upper](#upper)
 
 <a class="anchor" name="data-creation"></a>
@@ -126,6 +127,22 @@ Example:
   <code class="language-javascript">
 Expression: ${"AbC".lower()}
 Result: abc
+  </code>
+</pre>
+
+<a class="anchor" name="md5"></a>
+### MD5
+
+Calculates the MD5 hash of its input.
+
+Arguments: none
+
+Example:
+
+<pre class="language-javascript">
+  <code class="language-javascript">
+Expression: ${"toto".md5()}
+Result: f71dbe52628a3f83a77ab494817525c6
   </code>
 </pre>
 
