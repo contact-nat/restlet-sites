@@ -7,15 +7,35 @@ User can edit every part of the request:
  * method
  * URL (including query parameters)
  * headers
- * body (according to the method the body part cannot be edited)
+ * body
 
 => Insert graphic with numbered ticks
 
-The list of proposed methods can be extended via the settings. This usage is a little beyond the scope of this simple vademecum and will be described => here (TODO).
+As you can notice above, each part has a dedicated area with a specific and adapted edition tool. We won't describe each of them in an exhaustive manner, since most of them are quite simple to apprehend.
+We prefer to focus on some particularities.
 
-The query parameters can be enter directly in the URL text field or in a simple tabular form.
+### Method
 
-The headers can be edited either as simple tabular form or as a raw block of text. I the latter case, you have to comply with the [syntax of HTTP headers](https://tools.ietf.org/html/rfc7230#section-3.2).
+The list of proposed methods can be extended via the settings.
+
+=> screenshot
+
+You can add your own methods and indicate also if this method does not expect a request body. This allows to show or to hide the "Body" editor accordingly.
+
+The list of the most common HTTP methods are predefined, please notice that the "TRACE" method has not been added since it is not supported by the XmlHttpRequest implementation.
+
+### Query parameters
+
+The query parameters can be updated directly in the URL text field or the dedicated area which presents a simple tabular form.
+The right menu allows to indicate whether the name or value of the query parameters are already encoded and does not require to be encoded another time.
+
+=> screenshot
+
+### Headers
+
+The headers can be edited either as simple tabular form or as a raw block of text. In the latter case, you have to comply with the [syntax of HTTP headers](https://tools.ietf.org/html/rfc7230#section-3.2).
+
+### Body
 
 The editor of the body part is a little bit more complex as it covers several cases and is at the same time still intuitive to use.
 It guides you to manually edit:
@@ -32,6 +52,8 @@ Please note that these contents are not persisted which means two things:
 
 ## Edition helpers
 
+Here are listed some notable helpers provided by the request editor.
+
 Completion is available for the header names, and for the values of the following headers:
 
  * accept, accept-charset, accept-encoding, accept-language, accept-ranges
@@ -43,9 +65,9 @@ Completion is available for the header names, and for the values of the followin
 
 The header "Content-type" is automatically set according to the format of current body editor. You can still override the preset value.
 
-When a request has been run, cf "Sending a request" paragraph, you can directly add headers automatically set by the browser to the definition of the request.
-This is fine to mimic the browser behavior when using the maven plugin, for example.  
+The header "Authorization" has a dedicated helper which supports only the "BASIC" authentication theme for the moment. This helper allows you to simply enter your username and password. It hashes these value accordingly to the specification.
 
-When a request has been run, cf "Sending a request" paragraph, the "Pretty", mode of the response body reader empasizes the links parsed from the body.
-When clicking on a link, the URL field is updated.
+When a request has been run, cf [Sending a request paragraph](./sending):
+ * you can quickly add headers automatically set by the browser to the definition of the request. This is fine to mimic the browser behavior when using the maven plugin, for example.
+ * the "Pretty", mode of the response body reader empasizes the links parsed from the body. When clicking on a link, the URL field is updated.
 
