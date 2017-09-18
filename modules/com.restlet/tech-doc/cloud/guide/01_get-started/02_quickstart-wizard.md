@@ -1,5 +1,5 @@
 
-The Restlet Cloud Quickstart wizard launches automatically if your **Dashboard** is empty. To help you start from scratch, the Quickstart wizard will guide you through the creation of your first cells (Entity Store, API, and Connector). So don't worry about writer's block, APISpark will guide you through your first steps.
+The Restlet Cloud Quickstart wizard launches automatically if your **Dashboard** is empty. To help you start from scratch, the Quickstart wizard will guide you through the creation of your first cells (Entity Store, API, and Connector). So don't worry about writer's block, Restlet Cloud will guide you through your first steps.
 
 You can also launch the Quickstart wizard at any time from the **Dashboard** by clicking the Quickstart wizard icon in the upper right corner of your screen.
 
