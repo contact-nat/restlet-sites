@@ -5,7 +5,7 @@ The interactive assistants are designed to accompany you while you discover Rest
 
 Click on the tutorial title you want to start.
 
-![interactive tutorials list](images/iss-list.jpg "interactive tutorials list")
+![interactive tutorials list](images/iss-list.png "interactive tutorials list")
 
 Check each step as you complete the tutorial. This way you will be able to track your progress.
 

@@ -60,7 +60,7 @@ Here is an example configuration to setup with your domain registrar, for myapi.
 **TYPE** - Type of Resource Record e.g. *CNAME*  
 **VALUE** - Value of the Canonical Name or CNAME e.g. *restlet.net.*
 
-![DNS Aliasing](images/alias-binding.jpg "DNS Aliasing")
+![DNS Aliasing](images/alias-binding.png "DNS Aliasing")
 
 ### DNS delegation
 

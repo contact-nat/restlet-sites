@@ -38,7 +38,7 @@ Jump to the [Check your messages](/documentation/cloud/guide/create/test#check-m
 # <a class="anchor" name="02"></a>2. What is the difference between deploying & publishing my API?
 
 ## Deploying your API
-When you deploy a cell, APISpark generates source code, compiles and deploys it in the cloud so that it will be executed in the APISpark runtime environment. As long as you have not deployed your data stores and web APIs, they are not available to store data or receive HTTP requests.
+When you deploy a cell, Restlet Cloud generates source code, compiles and deploys it in the cloud so that it will be executed in the Restlet Cloud runtime environment. As long as you have not deployed your data stores and web APIs, they are not available to store data or receive HTTP requests.
 
 Jump to the [Cell deployment](/documentation/cloud/guide/explore/cell-deployment "Cell deployment") section of our online documentation for further information.
 
@@ -168,7 +168,7 @@ Paste them in POSTMAN to access your API.
 
 ## POST request
 
-Paste your API Endpoint URI followed by your resource name in POSTMAN e.g. https://myapi.apispark.net/v1/contacts.  
+Paste your API Endpoint URI followed by your resource name in POSTMAN e.g. https://myapi.restlet.net/v1/contacts.  
 Select the **POST** request from the drop-down menu.
 Make sure **raw** format and **JSON** language are selected.  
 Set **Content Type** Header to **application/json**.  
@@ -178,7 +178,7 @@ Enter your new entry in the input area underneath and click **Send**. The new en
 
 ## PUT request
 
-Paste your API Endpoint URI followed by your resource name and the entry you want to modify in POSTMAN e.g. https://myapi.apispark.net/v1/contacts/{contactid}.  
+Paste your API Endpoint URI followed by your resource name and the entry you want to modify in POSTMAN e.g. https://myapi.restlet.net/v1/contacts/{contactid}.  
 Select the **PUT** request from the drop-down menu.  
 Make sure **raw** format and **JSON** language are selected.  
 Set **Content Type** Header to **application/json**.  
@@ -333,7 +333,7 @@ You can now use your Entity Store.
 
 # <a class="anchor" name="14"></a>14. My csv file import failed
 
-APISpark allows you to import data stored in a csv file in your Entity Store from the data browser. This import will automatically fail after 25 errors. You will get an error message that invites you to navigate to the **Traces** of the **Messages** tab.
+Restlet Cloud allows you to import data stored in a csv file in your Entity Store from the data browser. This import will automatically fail after 25 errors. You will get an error message that invites you to navigate to the **Traces** of the **Messages** tab.
 
 ![Error message](images/error-message.jpg "Error message")
 
@@ -355,7 +355,7 @@ To have more information on your account, navigate to your account page: click o
 
 In the **My account** tab, you will find the email and the provider with which you created the current account.
 
-In this example, you created an account directly with APISpark and without any provider:
+In this example, you created an account directly with Restlet Cloud and without any provider:
 
 ![My account](images/my-auth0-account.jpg "My account")
 
