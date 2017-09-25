@@ -98,7 +98,7 @@ Arguments: none
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"username:password".base64()}
+Expression: ${&quot;username:password&quot;.base64()}
 Result: dXNlcm5hbWU6cGFzc3dvcmQ=
   </code>
 </pre>
@@ -118,10 +118,10 @@ Arguments:
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression:  ${"test".hmac("sha256", "secret", "Base64")}
+Expression:  ${&quot;test&quot;.hmac(&quot;sha256&quot;, &quot;secret&quot;, &quot;Base64&quot;)}
 Result:      Aymga2LNFrM+tnkr6MYLFY2Jou46h2/Omogeu0iMCRQ=
 
-Expression:  ${"test".hmac("sha1", "secret", "Hex")}
+Expression:  ${&quot;test&quot;.hmac(&quot;sha1&quot;, &quot;secret&quot;, &quot;Hex&quot;)}
 Result:      1aa349585ed7ecbd3b9c486a30067e395ca4b356
   </code>
 </pre>
@@ -138,7 +138,7 @@ Arguments:
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"{\"titi\": \"toto\"}".jsonPath("$.titi")}
+Expression: ${&quot;{\&quot;titi\&quot;: \&quot;toto\&quot;}&quot;.jsonPath(&quot;$.titi&quot;)}
 Result: toto
   </code>
 </pre>
@@ -156,23 +156,23 @@ Arguments: none
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"Star-wars API"."Get 2 planets"."response"."body"}
+Expression: ${&quot;Star-wars API&quot;.&quot;Get 2 planets&quot;.&quot;response&quot;.&quot;body&quot;}
 Result: {
-  "count":61,
-  "results": [
-    {"name":"Alderaan" },
-    {"name":"Naboo" },
-    {"name":"Hoth" }
+  &quot;count&quot;:61,
+  &quot;results&quot;: [
+    {&quot;name&quot;:&quot;Alderaan&quot; },
+    {&quot;name&quot;:&quot;Naboo&quot; },
+    {&quot;name&quot;:&quot;Hoth&quot; }
   ]
 }
 
-Expression: ${"Star-wars API"."Get 2 planets"."response"."body".length()}
+Expression: ${&quot;Star-wars API&quot;.&quot;Get 2 planets&quot;.&quot;response&quot;.&quot;body&quot;.length()}
 Result: 2
 
-Expression: ${"Star-wars API"."Get 2 planets"."response"."body"."results".length()}
+Expression: ${&quot;Star-wars API&quot;.&quot;Get 2 planets&quot;.&quot;response&quot;.&quot;body&quot;.&quot;results&quot;.length()}
 Result: 3
 
-Expression: ${"Star-wars API"."Get 2 planets"."response"."body"."results"."0"."name".length()}
+Expression: ${&quot;Star-wars API&quot;.&quot;Get 2 planets&quot;.&quot;response&quot;.&quot;body&quot;.&quot;results&quot;.&quot;0&quot;.&quot;name&quot;.length()}
 Result: 8
   </code>
 </pre>
@@ -187,7 +187,7 @@ Arguments: none
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"AbC".lower()}
+Expression: ${&quot;AbC&quot;.lower()}
 Result: abc
   </code>
 </pre>
@@ -203,7 +203,7 @@ Example:
 
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"toto".md5()}
+Expression: ${&quot;toto&quot;.md5()}
 Result: f71dbe52628a3f83a77ab494817525c6
   </code>
 </pre>
@@ -222,10 +222,10 @@ Arguments:
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"toto".sha("SHA224", "Base64")}
+Expression: ${&quot;toto&quot;.sha(&quot;SHA224&quot;, &quot;Base64&quot;)}
 Result: IcBD7s1+hUI6ctrjwGKitb+g5rNc4/54jJtXpg==
 
-Expression: ${"toto".sha("SHA1", "Hex")}
+Expression: ${&quot;toto&quot;.sha(&quot;SHA1&quot;, &quot;Hex&quot;)}
 Result: 0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c
   </code>
 </pre>
@@ -243,14 +243,14 @@ Arguments:
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"toto".string()}
-Result: "toto"
+Expression: ${&quot;toto&quot;.string()}
+Result: &quot;toto&quot;
 
-Expression: ${"toto".string("\"")}
-Result: "toto"
+Expression: ${&quot;toto&quot;.string(&quot;\&quot;&quot;)}
+Result: &quot;toto&quot;
 
-Expression: ${"toto".string("'")}
-Result: 'toto'
+Expression: ${&quot;toto&quot;.string(&quot;&apos;&quot;)}
+Result: &apos;toto&apos;
   </code>
 </pre>
 
@@ -270,13 +270,13 @@ Arguments:
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression:  ${"0123456".substring(1)}
+Expression:  ${&quot;0123456&quot;.substring(1)}
 Result:      123456
 
-Expression:  ${"0123456".substring(1, 2)}
+Expression:  ${&quot;0123456&quot;.substring(1, 2)}
 Result:      1
 
-Expression:  ${"0123456".substring(0, 4)}
+Expression:  ${&quot;0123456&quot;.substring(0, 4)}
 Result:      0123
   </code>
 </pre>
@@ -291,7 +291,7 @@ Arguments: none
 Example:
 <pre class="language-javascript">
   <code class="language-javascript">
-Expression: ${"aBc".upper()}
+Expression: ${&quot;aBc&quot;.upper()}
 Result: ABC
   </code>
 </pre>

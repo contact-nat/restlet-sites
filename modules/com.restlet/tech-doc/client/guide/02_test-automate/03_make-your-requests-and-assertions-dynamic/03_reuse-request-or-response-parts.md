@@ -15,17 +15,17 @@ If the response of my first request is:
 
 <pre class="language-json">
   <code class="language-json">
-  {
-    "id": "9e5d2284-94ad-11e7-bbbc-773611cab8f7",
-    "name": "Tatooine",
-    "rotation_period": "23",
-    "orbital_period": "304",
-    "diameter": "10465",
-    "climate": "arid",
-    "gravity": "1 standard",
-    "terrain": "desert",
-    "population": "200000",
-  }
+{
+  &quot;id&quot;: &quot;9e5d2284-94ad-11e7-bbbc-773611cab8f7&quot;,
+  &quot;name&quot;: &quot;Tatooine&quot;,
+  &quot;rotation_period&quot;: &quot;23&quot;,
+  &quot;orbital_period&quot;: &quot;304&quot;,
+  &quot;diameter&quot;: &quot;10465&quot;,
+  &quot;climate&quot;: &quot;arid&quot;,
+  &quot;gravity&quot;: &quot;1 standard&quot;,
+  &quot;terrain&quot;: &quot;desert&quot;,
+  &quot;population&quot;: &quot;200000&quot;,
+}
   </code>
 </pre>
 
@@ -37,28 +37,28 @@ Then I can test that my planet was created by making a GET on `https://my-star-w
 Requests are structured like this:
 <pre class="language-json">
   <code class="language-json">
-  {
-    {request name}: {string},
-    "request": {
-      "method"  : {string},
-      "uri"     : {string},
-      "headers" : {
-        {header name}           : {header value}
-        },
-      "query" : {
-        {query parameter name}  : {query parameter value}
+{
+  {request name}: {string},
+  &quot;request&quot;: {
+    &quot;method&quot;  : {string},
+    &quot;uri&quot;     : {string},
+    &quot;headers&quot; : {
+      {header name}           : {header value}
       },
-      "body"    : {string or object}
+    &quot;query&quot; : {
+      {query parameter name}  : {query parameter value}
     },
-    "response": {
-      "headers"   : {object},
-      "status"    : {
-        "message" : {string},
-        "code"    : {number}
-      }
-      "body"      : {string or object}
+    &quot;body&quot;    : {string or object}
+  },
+  &quot;response&quot;: {
+    &quot;headers&quot;   : {object},
+    &quot;status&quot;    : {
+      &quot;message&quot; : {string},
+      &quot;code&quot;    : {number}
     }
+    &quot;body&quot;      : {string or object}
   }
+}
   </code>
 </pre>
 

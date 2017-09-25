@@ -8,19 +8,19 @@ Assertions allow you to verify that a certain part of the response matches your 
 * Body length
 * Duration
 * Status message
-* JSON body: use this if the response returns a JSON body. You can then use [JSON path](#json-path) to verify a 
+* JSON body: use this if the response returns a JSON body. You can then use [JSON path](#json-path) to verify a
 specific sub-part of the response body.
-* XML body use this if the response returns an XML body. You can then use [Xpath](#xpath) to verify a specific 
+* XML body use this if the response returns an XML body. You can then use [Xpath](#xpath) to verify a specific
 sub-part of the response body.
-* Body content: use this if you want to assert something on the body, it will be considered as a simple string. 
+* Body content: use this if you want to assert something on the body, it will be considered as a simple string.
 
-Assertions are validated in real-time, meaning that they are re-evaluated when you run the request and when you 
-update them. 
+Assertions are validated in real-time, meaning that they are re-evaluated when you run the request and when you
+update them.
 
 ![assertions](./images/assertions.png)
 
 You can create dynamic assertions (that depend on the result of other requests) with [expressions](
-./work-with-your-data/expressions), for example you can test that the header `Content-type` of the response is equal 
+./work-with-your-data/expressions), for example you can test that the header `Content-type` of the response is equal
 to the header `Accept` of the request.
 
 Expressions unleash the full power of API testing!
@@ -49,42 +49,45 @@ As we will see below the current implementation in Restlet Client mostly follows
 
 This paragragh lists expressions and their result agains the following sample json file:
 
-<pre class="language-json"><code class="language-json">{
-  "store": {
-        "book": [
+<pre class="language-json">
+  <code class="language-json">
+{
+  &quot;store&quot;: {
+        &quot;book&quot;: [
             {
-                "category": "reference",
-                "author": "Nigel Rees",
-                "title": "Sayings of the Century",
-                "price": 8.95
+                &quot;category&quot;: &quot;reference&quot;,
+                &quot;author&quot;: &quot;Nigel Rees&quot;,
+                &quot;title&quot;: &quot;Sayings of the Century&quot;,
+                &quot;price&quot;: 8.95
             },
             {
-                "category": "fiction",
-                "author": "Evelyn Waugh",
-                "title": "Sword of Honour",
-                "price": 12.99
+                &quot;category&quot;: &quot;fiction&quot;,
+                &quot;author&quot;: &quot;Evelyn Waugh&quot;,
+                &quot;title&quot;: &quot;Sword of Honour&quot;,
+                &quot;price&quot;: 12.99
             },
             {
-                "category": "fiction",
-                "author": "Herman Melville",
-                "title": "Moby Dick",
-                "isbn": "0-553-21311-3",
-                "price": 8.99
+                &quot;category&quot;: &quot;fiction&quot;,
+                &quot;author&quot;: &quot;Herman Melville&quot;,
+                &quot;title&quot;: &quot;Moby Dick&quot;,
+                &quot;isbn&quot;: &quot;0-553-21311-3&quot;,
+                &quot;price&quot;: 8.99
             },
             {
-                "category": "fiction",
-                "author": "J. R. R. Tolkien",
-                "title": "The Lord of the Rings",
-                "isbn": "0-395-19395-8",
-                "price": 22.99
+                &quot;category&quot;: &quot;fiction&quot;,
+                &quot;author&quot;: &quot;J. R. R. Tolkien&quot;,
+                &quot;title&quot;: &quot;The Lord of the Rings&quot;,
+                &quot;isbn&quot;: &quot;0-395-19395-8&quot;,
+                &quot;price&quot;: 22.99
             }
         ],
-        "bicycle": {
-            "color": "red",
-            "price": 19.95
+        &quot;bicycle&quot;: {
+            &quot;color&quot;: &quot;red&quot;,
+            &quot;price&quot;: 19.95
         }
     }
-}</code>
+}
+  </code>
 </pre>
 
 
@@ -123,15 +126,18 @@ Here are some sample expressions and their result.
 
 The expression `$..book` is interpreted as an array of all "book" nodes so it returns an an array containing an array, since "book" node is an array:
 
-<pre class="language-json"><code class="language-json">[
+<pre class="language-json">
+  <code class="language-json">
+[
   [
-    { "category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95 },
-    { "category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99 },
-    { "category": "fiction", "author": "Herman Melville", "title": "Moby Dick", "isbn": "0-553-21311-3", "price": 8.99 },
-    { "category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99 }
+    { &quot;category&quot;: &quot;reference&quot;, &quot;author&quot;: &quot;Nigel Rees&quot;, &quot;title&quot;: &quot;Sayings of the Century&quot;, &quot;price&quot;: 8.95 },
+    { &quot;category&quot;: &quot;fiction&quot;, &quot;author&quot;: &quot;Evelyn Waugh&quot;, &quot;title&quot;: &quot;Sword of Honour&quot;, &quot;price&quot;: 12.99 },
+    { &quot;category&quot;: &quot;fiction&quot;, &quot;author&quot;: &quot;Herman Melville&quot;, &quot;title&quot;: &quot;Moby Dick&quot;, &quot;isbn&quot;: &quot;0-553-21311-3&quot;, &quot;price&quot;: 8.99 },
+    { &quot;category&quot;: &quot;fiction&quot;, &quot;author&quot;: &quot;J. R. R. Tolkien&quot;, &quot;title&quot;: &quot;The Lord of the Rings&quot;, &quot;isbn&quot;: &quot;0-395-19395-8&quot;, &quot;price&quot;: 22.99 }
   ]
 ]
-</code></pre>
+  </code>
+</pre>
 
 Then the following expressions are computed differently :
 
@@ -146,7 +152,8 @@ Then the following expressions are computed differently :
 <a class="anchor" name="xpath"></a>
 ## XPath
 
-For more information on the <a href="http://www.w3schools.com/xsl/xpath_syntax.asp" target="_blank">XPath syntax</a>, head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">official W3C specification</a>.
+For more information on the <a href="http://www.w3schools.com/xsl/xpath_syntax.asp" target="_blank">XPath syntax</a>,
+head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">official W3C specification</a>.
 
 You can also find an online XPath evaluator [here](https://www.freeformatter.com/xpath-tester.html "XPath online evaluator").
 
@@ -170,7 +177,8 @@ Here are a few tips to help you work with XML payloads:
 ### Sample expressions
 
 
-<pre class="language-xml"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="language-xml">
+  <code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;bookstore&gt;
   &lt;book category="cooking"&gt;
     &lt;title lang="en"&gt;Everyday Italian&lt;/title&gt;
@@ -216,7 +224,7 @@ Here are some sample expressions and their result.
 | //title | An array of all "title" nodes whatever their position is
 | //title/@lang | An array of all lang attributes of the "title" nodes
 | /bookstore/book/title/text() | An array of all text values of "title" nodes of all "book" nodes under the bookstore element
-| /bookstore/book[price>35]/title| The "title" nodes of all "book" nodes having price greater than 35 
+| /bookstore/book[price>35]/title| The "title" nodes of all "book" nodes having price greater than 35
 | //book[last()]/title | The "title" node of the last "book" node
 | //book[position() < 3] | The two first "book" nodes
 | //title[@lang]] | An array of all "title" nodes with an attribute "lang"
