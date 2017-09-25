@@ -16,13 +16,15 @@ We prefer to focus on some particularities.
 
 ### Method
 
-The list of proposed methods can be extended via the settings.
+By default, the field proposes to pick up one method among a list of the most common HTTP methods: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `PATCH`.
+
+You can extend this list via the `HTTP` section of the settings.
+You can add your own methods and indicate also if such methods expect or not a request body. This allows to show or to hide the "Body" editor accordingly.
 
 => screenshot
 
-You can add your own methods and indicate also if this method does not expect a request body. This allows to show or to hide the "Body" editor accordingly.
-
-The list of the most common HTTP methods are predefined, please notice that the "TRACE" method has not been added since it is not supported by the XmlHttpRequest implementation.
+> Please notice that the "TRACE" method has not been added since it does not work in the context of the Chrome browser.
+> The XmlHttpRequest implementation does not support this method.
 
 ### Query parameters
 
