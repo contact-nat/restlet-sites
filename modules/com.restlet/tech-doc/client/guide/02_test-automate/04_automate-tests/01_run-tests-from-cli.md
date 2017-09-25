@@ -57,47 +57,47 @@ Here is an example pom.xml, we will detail all the configurable options below.
 
 <pre class="language-xml">
   <code class="language-xml">
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
-  <groupId>com.example</groupId>
-  <artifactId>my-star-wars-api-test</artifactId>
-  <version>1.2.3</version>
+  &lt;groupId&gt;com.example&lt;/groupId&gt;
+  &lt;artifactId&gt;my-star-wars-api-test&lt;/artifactId&gt;
+  &lt;version&gt;1.2.3&lt;/version&gt;
 
-  <build>
-    <plugins>
-      <plugin>
-        <!-- The Restlet maven plugin -->
-        <groupId>com.restlet.client</groupId>
-        <artifactId>maven-plugin</artifactId>
-        <version>2.10.0</version>
-        <executions>
-          <execution>
-            <phase>test</phase>
-            <goals>
-              <goal>test</goal>
-            </goals>
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;!-- The Restlet maven plugin --&gt;
+        &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;2.10.0&lt;/version&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;phase&gt;test&lt;/phase&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;test&lt;/goal&gt;
+            &lt;/goals&gt;
 
-            <!-- The configuration goes there -->
-            <configuration>
-              <file>/path/to/json/configuration/file.json</file>
-              <licenseKey>${myLicenseKey}</licenseKey>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+            &lt;!-- The configuration goes there --&gt;
+            &lt;configuration&gt;
+              &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+              &lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
+            &lt;/configuration&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
 
-  <!-- The repository were the Restlet maven plugin is hosted -->
-  <pluginRepositories>
-    <pluginRepository>
-      <id>nexus-public</id>
-      <name>Nexus Release Repository</name>
-      <url>http://maven.restlet.com</url>
-    </pluginRepository>
-  </pluginRepositories>
-</project>
+  &lt;!-- The repository were the Restlet maven plugin is hosted --&gt;
+  &lt;pluginRepositories&gt;
+    &lt;pluginRepository&gt;
+      &lt;id&gt;nexus-public&lt;/id&gt;
+      &lt;name&gt;Nexus Release Repository&lt;/name&gt;
+      &lt;url&gt;http://maven.restlet.com&lt;/url&gt;
+    &lt;/pluginRepository&gt;
+  &lt;/pluginRepositories&gt;
+&lt;/project&gt;
   </code>
 </pre>
 
@@ -139,17 +139,17 @@ See the full configuration example below:
 
 <pre class="language-xml">
   <code class="language-xml">
-<configuration>
-    <file>/path/to/json/configuration/file.json</file>
-    <selectedEnvironment>QA</selectedEnvironment>
-    <licenseKey>${myLicenseKey}</licenseKey>
-    <stopOnFailure>true</stopOnFailure>
-    <httpClientTimeoutInMs>30000</httpClientTimeoutInMs>
-    <xhrEmulation>false</xhrEmulation>
-    <followRedirects>ALL</followRedirects>
-    <beforeTest>https://my-ci-api.com/api1/notifications</beforeTest>
-    <afterTest>https://my-ci-api.com/api1/notifications</afterTest>
-</configuration>
+&lt;configuration&gt;
+    &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+    &lt;selectedEnvironment&gt;QA&lt;/selectedEnvironment&gt;
+    &lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
+    &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
+    &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
+    &lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
+    &lt;followRedirects&gt;ALL&lt;/followRedirects&gt;
+    &lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
+    &lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
+&lt;/configuration&gt;
   </code>
 </pre>
 
@@ -165,17 +165,17 @@ This can be done by using the following configuration:
 
 <pre class="language-xml">
   <code class="language-xml">
-<configuration>
-    <file>test.json</file>
-    <selectedEnvironment>localhost</selectedEnvironment>
-    <variables>
-        <!-- The variable port's value will be overwritten to 13337 -->
-        <property>
-            <name>port</name>
-            <value>13337</value>
-        </property>
-    </variables>
-</configuration>
+&lt;configuration&gt;
+    &lt;file&gt;test.json&lt;/file&gt;
+    &lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
+    &lt;variables&gt;
+        &lt;!-- The variable port&apos;s value will be overwritten to 13337 --&gt;
+        &lt;property&gt;
+            &lt;name&gt;port&lt;/name&gt;
+            &lt;value&gt;13337&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;/variables&gt;
+&lt;/configuration&gt;
   </code>
 </pre>
 
@@ -202,12 +202,13 @@ for more information refer to the official
 The Maven plugin can reuse the Maven's installation proxy configuration, **defined in your settings.xml**, simply
 by using the following configuration:
 
-<pre class="language-markup"><code class="language-markup">
+<pre class="language-markup">
+  <code class="language-markup">
 &lt;configuration&gt;
   &lt;file&gt;/test.json&lt;/file&gt;
   &lt;useMavenProxies&gt;true&lt;/useMavenProxies&gt;
 &lt;/configuration&gt;
-</code>
+  </code>
 </pre>
 
 **Please note that for now, the nonProxyHosts attribute is not supported.**
@@ -267,14 +268,14 @@ Given the previous arguments, the maven plugin can be used:
 
 <pre>
   <code class="language-json">
-<!-- The URL you specified in the configuration in beforeTest/afterTest-->
+&lt;!-- The URL you specified in the configuration in beforeTest/afterTest--&gt;
 POST [url]
 Content-Type: application/json
 Body:
 {
-   "name": [test name],
-   "event": [BeforeTest|AfterTest],
-   "result": [Ok|Failure|Error] &Tab;&lt;- present only if event=afterTest
+   &quot;name&quot;: [test name],
+   &quot;event&quot;: [BeforeTest|AfterTest],
+   &quot;result&quot;: [Ok|Failure|Error] &amp;Tab;&amp;lt;- present only if event=afterTest
 }
   </code>
 </pre>
@@ -284,12 +285,12 @@ Body:
 
 <pre>
   <code class="language-json">
-<!-- The URL you specified in the configuration in begin/end -->
+&lt;!-- The URL you specified in the configuration in begin/end --&gt;
 POST [url]
 Content-Type: application/json
 Body:
 {
-   "event": [Begin|End]
+   &quot;event&quot;: [Begin|End]
 }
   </code>
 </pre>
