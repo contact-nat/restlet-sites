@@ -9,6 +9,7 @@ You can use them in all those places:
 * Assertions values
 
 Expressions allow you to:
+
 * [Reference environment variables by name](./environments)
 * [Reference other request elements by name](./reuse-request-or-response-parts)
 * [Manipulate your data](./methods)
