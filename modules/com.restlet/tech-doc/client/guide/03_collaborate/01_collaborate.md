@@ -42,7 +42,7 @@ As a team member, you can see to which teams you belong to in the repository vie
 
 ![TM Repository](images/TM_repository.png "Team member repository")
 
-The team owner shares projects with you but you can also share projects with the team.
+The team owner shares projects with you. And you can also share projects with the team.
 
 In your repository, click on a project's menu to use the *Share* action.
 
@@ -51,6 +51,10 @@ In your repository, click on a project's menu to use the *Share* action.
 Then, you'll have to set the project's visibility to the team you want.
 
 ![TM Set project visibility](images/TM_project_visibility.png "Set project visibility as team member")
+
+Note that, here, the sharing is about transferring the project to the team. 
+This implies you will lose the project's management, such as the delete action. 
+Indeed, it will be the team owner that will be able to manage the project.  
 
 
 # Editing a shared project
