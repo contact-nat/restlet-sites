@@ -50,3 +50,7 @@ When you have run a project/service/scenario in Restlet Client, you just need to
 If you don't want to print it, you can just export it in PDF format by changing the printer.
 
 ![Save as pdf](./images/save_as_pdf.png)
+
+The generated report will look like this:
+
+![Extension report](./images/extension_report.png)
