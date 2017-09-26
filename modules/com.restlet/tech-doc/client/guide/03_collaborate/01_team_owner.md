@@ -22,9 +22,7 @@ To add people to your team, search them by email. Then, they will be invited to 
 
 Now, let's share a project with your team. In your repository, click on a project's menu to use the *Share* action. 
 
-[//]: # (![Share a project](images/share_project.png "Share project"))
-
-<img src="images/share_project.png" width="48">
+<img src="images/share_project.png" width="50%">
 
 Then, you'll have to set the project's visibility to Team.
 
@@ -32,7 +30,7 @@ Then, you'll have to set the project's visibility to Team.
 
 Once a project is shared with your team members, it is displayed as green.
  
-![Shared project](images/shared_project.png "Shared project")
+<img src="images/shared_project.png" width="50%">
  
 From now on, your team members will see the shared project appear in their repositories, e.g.
 
