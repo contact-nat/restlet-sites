@@ -1,4 +1,4 @@
-# Managing your team
+# Managing your team and your shared projects
 
 As a Restlet user, you'll have one team assigned to your account. 
 You are a team owner. 
@@ -36,7 +36,7 @@ From now on, your team members will see your project appear in their repositorie
 
 ![Shared project as team member](images/shared_project_as_team_member.png "Shared project as team member")
 
-# As a team member, I want to share a project
+# As a team member, I want to add a project to a team I belong to
 
 As a team member, you can see to which teams you belong to in the repository view.
 
@@ -55,6 +55,11 @@ Then, you'll have to set the project's visibility to the team you want.
 Note that, here, the sharing is about transferring the project to the team. 
 This implies you will lose the project's management, such as the delete action. 
 Indeed, it will be the team owner that will be able to manage the project.  
+
+Once a project is shared, it is transferred to the team.
+
+![TM Transferred project](images/TM_transferred_project.png "Transferred project")
+
 
 
 # Editing a shared project
