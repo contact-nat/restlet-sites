@@ -36,11 +36,14 @@ From now on, your team members will see your project appear in their repositorie
 
 ![Shared project as team member](images/shared_project_as_team_member.png "Shared project as team member")
 
-# Contributing to teams
+# Sharing as a team member
 
-As a team member, you can share project as well with teams you belong to.
+As a team member, you see to which teams you belong to in the repository view.
 
-TODO
+![Shared project as team member](images/shared_project_as_team_member.png "Shared project as team member")
+
+
+
 
 # Editing a shared project
 
