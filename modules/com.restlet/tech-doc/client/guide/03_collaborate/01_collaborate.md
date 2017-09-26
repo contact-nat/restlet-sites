@@ -16,9 +16,18 @@ To add people to your team, search for them by email. Then, they will be invited
 
 ![New member in team](images/new_member_in_team.png "New member in team") 
 
-Now, let's share a project with your team. 
+Now, let's share a project with your team. In your repository, click on a project's menu to use the *Share* action. 
 
+![Share a project](images/share_project.png "Share project")
 
+Then, you'll have to set the project's visibility to Team.
+
+![Set project visibility](images/project_visibility.png "Set project visibility")
+
+Once a project is shared with your team members, it is displayed as green.
+ 
+![Shared project](images/shared_project.png "Shared project")
+ 
 
 # Contributing to other teams
 
