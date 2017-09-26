@@ -8,7 +8,7 @@ The team owner shares projects with you. Nonetheless you can also share projects
 
 In your repository, click on a project's menu to use the *Share* action.
 
-![TM Share a project](images/TM_share_project.png "Share a project as team member")
+<img src="images/TM_share_project.png" width="50%">
 
 Then, you'll have to set the project's visibility to the team you want.
 
@@ -20,7 +20,7 @@ Indeed, it will be the team owner that will be able to manage the project.
 
 Once a project is shared, it is transferred to the team.
 
-![TM Transferred project](images/TM_transferred_project.png "Transferred project from Team Member")
+<img src="images/TM_transferred_project.png" width="50%">
 
 From now on, the team owner will see the project appear and marked as a shared project.
 
