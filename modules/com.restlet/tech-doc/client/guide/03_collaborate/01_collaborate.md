@@ -42,7 +42,7 @@ As a team member, you can see to which teams you belong to in the repository vie
 
 ![TM Repository](images/TM_repository.png "Team member repository")
 
-The team owner shares projects with you. And you can also share projects with the team.
+The team owner shares projects with you. Nonetheless you can also share projects with the team.
 
 In your repository, click on a project's menu to use the *Share* action.
 
