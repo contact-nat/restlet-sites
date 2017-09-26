@@ -8,6 +8,8 @@ To access your team, open the Team menu from the profile drop-down menu in the h
 
 ![Open the team screen](images/access_team.png "Open the team screen")
 
+(Only you appear in the team)
+
 ![Initial team](images/team_empty.png "Initial team")
 
 To add people to your team, search for them by email. Then, they will be invited to join your team.
