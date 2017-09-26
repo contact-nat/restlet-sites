@@ -40,9 +40,17 @@ From now on, your team members will see your project appear in their repositorie
 
 As a team member, you can see to which teams you belong to in the repository view.
 
-![Team member](images/team_member.png "Team member")
+![TM Repository](images/TM_repository.png "Team member repository")
 
+The team owner shares projects with you but you can also share projects with the team.
 
+In your repository, click on a project's menu to use the *Share* action.
+
+![TM Share a project](images/TM_share_project.png "Share a project as team member")
+
+Then, you'll have to set the project's visibility to Team.
+
+![TM Set project visibility](images/TM_project_visibility.png "Set project visibility as team member")
 
 
 # Editing a shared project
