@@ -14,7 +14,7 @@ Then, you'll have to set the project's visibility to the team you want.
 
 ![TM Set project visibility](images/TM_project_visibility.png "Set project visibility as team member")
 
-Note that, here, the sharing is about transferring the project to the team. 
+> __Note:__ Here, the sharing is about transferring the project to the team. 
 This implies you will lose the project's management, such as the delete action. 
 Indeed, it will be the team owner that will be able to manage the project.  
 
