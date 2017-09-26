@@ -1,6 +1,6 @@
 # Editing a shared project
 
-Non concurrent edition is updated every 40seconds, on each members of the team.
+Non concurrent edition is updated every 40 seconds, on each members of the team.
 
 Concurrent edition is resolved by the principle: last edition wins.
 Corner cases: 
