@@ -58,8 +58,11 @@ Indeed, it will be the team owner that will be able to manage the project.
 
 Once a project is shared, it is transferred to the team.
 
-![TM Transferred project](images/TM_transferred_project.png "Transferred project")
+![TM Transferred project](images/TM_transferred_project.png "Transferred project from Team Member")
 
+From now on, the team owner will see the project appear and marked as a shared project.
+
+![TO Transferred project](images/TO_transferred_project.png "Transferred project for Team Owner")
 
 
 # Editing a shared project
