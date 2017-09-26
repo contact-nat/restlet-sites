@@ -5,9 +5,9 @@ A shared project can be edited at the same time by multiple team members. Two si
 - Concurrent editions. They are resolved by the principle `last-in-wins` (the last writer wins). 
 
 > __Note:__ The requests order is an information saved at the scenario level. 
-This is why, when re-ordering requests, a concurrent edition happens when at the same time, 
-another team member renames the scenario.
+This is why, when re-ordering requests of a scenario A, a concurrent edition happens when at the same time, 
+another team member renames the scenario A into B.
 
-> __Note:__ If there is an update of an entity while there is a deletion done on this very same entity, 
-then only the update is taken into account. No deletion happens.
+> __Note:__ If there is an update of an entity while there is a deletion done on this very same entity by another team member, 
+only the update is taken into account. No deletion happens.
 
