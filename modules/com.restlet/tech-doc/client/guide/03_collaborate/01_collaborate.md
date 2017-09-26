@@ -16,6 +16,8 @@ To add people to your team, search for them by email. Then, they will be invited
  
 ![Invite a user to join the team](images/search_and_invite_user.png "Invite user") 
 
+(A new member in your team)
+
 ![New member in team](images/new_member_in_team.png "New member in team") 
 
 Now, let's share a project with your team. In your repository, click on a project's menu to use the *Share* action. 
