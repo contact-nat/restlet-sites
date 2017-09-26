@@ -25,3 +25,5 @@ Once a project is shared, it is transferred to the team.
 From now on, the team owner will see the project appear and marked as a shared project.
 
 ![TO Transferred project](images/TO_transferred_project.png "Transferred project for Team Owner")
+
+**TODO naming constraints**

@@ -35,3 +35,5 @@ Once a project is shared with your team members, it is displayed as green.
 From now on, your team members will see the shared project appear in their repositories, e.g.
 
 ![Shared project as team member](images/shared_project_as_team_member.png "Shared project as team member")
+
+**TODO naming constraints**
