@@ -7,8 +7,13 @@ allows you to configure custom URLs that will get notified before or/and after a
 <a class="anchor" name="prerequisites"></a>
 ## Prerequisites
 
-The only things you will need are to install the latest Java JDK and Maven.
-<!-- Should we add pointers to how to do that here ? -->
+The only things you will need are to install the
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">
+latest Java JDK <i class="fa fa-external-link" aria-hidden="true"></i>
+</a>
+and <a href="http://maven.apache.org/" target="_blank">
+Maven <i class="fa fa-external-link" aria-hidden="true"></i>
+</a>.
 
 <a class="anchor" name="get-started-in-seconds"></a>
 ## Get started in seconds

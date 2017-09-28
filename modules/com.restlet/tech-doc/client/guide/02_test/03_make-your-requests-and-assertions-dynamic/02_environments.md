@@ -1,18 +1,24 @@
 An environment is a set of variables that you can use to parameterize your requests.
 
-<a class="anchor" name="example-use-case"></a>
-## Example use case
+<a class="anchor" name="example"></a>
+## Example
 
-If you want to test your API on different environments (production, staging...) environments will prove useful.
+If you want to test your API on different environments (production, staging...), Restlet Client's environments
+will prove useful.
 
 If my production environment is hosted on `perdu.com` and my staging environment is hosted on `staging.perdu.com`.
 
-I can create a request with the following URL: `https://${"host"}/api/my-resource`, create two environments `prod` and
-`staging`, add a variable named `host` in them with the appropriate value.
+I can:
 
-When I send the request, if the selected environment is `prod`, the evaluated URL will be `https://perdu
-.com/api/my-resource`. I the selected environment is `staging`, the evaluated URL will be
-`https://staging.perdu.com/api/my-resource`.
+* create a request with the following URL: `https://${"host"}/api/my-resource`
+* create two environments `prod` and `staging`
+* add a variable named `host` in them with the appropriate value
+
+When I send the request if the selected environment is:
+
+* `prod`: the evaluated URL will be `https://perdu
+.com/api/my-resource`
+* `staging`: the evaluated URL will be `https://staging.perdu.com/api/my-resource`.
 
 <a class="anchor" name="create-and-edit-an-environment"></a>
 ## Create and edit an environment

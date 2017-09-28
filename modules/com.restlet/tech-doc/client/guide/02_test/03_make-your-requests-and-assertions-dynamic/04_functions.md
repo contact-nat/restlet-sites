@@ -1,5 +1,5 @@
-Restlet Client allows you to manipulate data via methods. Methods can create new data or transform existing data.
-The methods that transform data apply on the value of the expression they finish.
+Restlet Client allows you to manipulate data via functions. Functions can create new data or transform existing data.
+The functions that transform data apply on the value of the expression they finish.
 
 <a class="anchor" name="usage-example"></a>
 ## Usage example
@@ -13,9 +13,10 @@ The method `jsonPath` parses the result of the expression `${"Star-wars API"."Ge
 ## Constants
 
 When writing an expression like `${"toto"}`, the expression will be evaluated as:
+
 * The value of the current environment's variable `toto` if there is one. See [how environment references work](./environments) for more details.
 * If no environment variable matched, the request/scenario/service/project toto that is at root-level in your repository. See [how repository references work](./reuse-request-or-response-parts) for more details.
-* The constant `toto` in any other case.
+* The string `toto` in any other case.
 
 <a class="anchor" name="table-of-content"></a>
 ## Table of content
@@ -45,6 +46,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
 Returns a random number in range `0 <= number < max`.
 
 Arguments:
+
 * max: defaults to 1000000000
 
 Example:
@@ -109,6 +111,7 @@ Result: dXNlcm5hbWU6cGFzc3dvcmQ=
 Creates a [Hash-based Message Authentication Code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code).
 
 Arguments:
+
 * cipher: the hash function
   * Options: `SHA1`, `SHA224`, `SHA256`, `SHA384` or `SHA512`
 * key: the secret key
@@ -133,6 +136,7 @@ Returns the element(s) extracted from the JSON input with the given JSON path `s
 See the [JSON path specification](http://goessner.net/articles/JsonPath/).
 
 Arguments:
+
 * selector: The JSON path selector that points to the part of the JSON to extract from the input.
 
 Example:
@@ -147,6 +151,7 @@ Result: toto
 ### Length
 
 Computes the length of its input:
+
 * the number of characters if the input is a string.
 * the number of items in a JSON array
 * the number of keys in an JSON object
@@ -214,6 +219,7 @@ Result: f71dbe52628a3f83a77ab494817525c6
 Hashes its input.
 
 Arguments:
+
 * cipher: the hash function
   * Options: `SHA1`, `SHA224`, `SHA256`, `SHA384` or `SHA512`
 * output: the output type
@@ -236,6 +242,7 @@ Result: 0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c
 Quotes its input.
 
 Arguments:
+
 * quote character: the character that should be used to quote the input.
   * Options: `'` and `"`
   * Default: `"`
@@ -260,6 +267,7 @@ Result: &apos;toto&apos;
 Returns a truncated input.
 
 Arguments:
+
 * start: position of the first character that should be extracted
   * Default: 0
 * end: position of the first character that should be omitted

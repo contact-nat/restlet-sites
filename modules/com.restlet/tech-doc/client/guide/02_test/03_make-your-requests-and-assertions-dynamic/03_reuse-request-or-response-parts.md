@@ -9,7 +9,11 @@ I am testing the CRUD operations for my resource `/planets`.
 I want to create a planet by POSTing on my `/planets`, then I want to verify
 that my planet was created and is available.
 
-I can create a scenario `Creation scenario` in my project `Star wars API` with a first request `Create planet` that POSTs the planet, then a second request `Verify planet existence` that will retrieve the id from the response of the first request to GET the created planet on `/planets/{planetId}`.
+I can create:
+
+* a scenario `Creation scenario` in project `Star wars API` with a request `Create planet` that POSTs the new planet
+* a second request `Verify planet existence` that will retrieve the new planet's id from the response of the first
+request to GET the created planet on `/planets/{planetId}`
 
 If the response of my first request is:
 
@@ -29,7 +33,9 @@ If the response of my first request is:
   </code>
 </pre>
 
-Then I can test that my planet was created by making a GET on `https://my-star-wars-api.com/planets/${"Star wars API"."Creation scenario"."Create planet"."response"."body"."id"}` and asserting the response code is 200 for example.
+Then I can test that my planet was created by making a GET on
+`https://my-star-wars-api.com/planets/${"Star wars API"."Creation scenario"."Create planet"."response"."body"."id"}`
+and asserting the response code is 200 for example.
 
 <a class="anchor" name="usable-elements"></a>
 ## Usable elements
@@ -64,13 +70,13 @@ Requests are structured like this:
 
 The response contains a JSON object representing the HTTP response to the last call of the request.
 
-You can query this object as you would a standard JavaScript object, with a dotted notation.
+You can query it in the same way you would query a standard JavaScript object, using a dotted notation.
 
 > __Note:__ all headers names are lowercased.
 
 > __Note:__ only the text bodies can be referenced.
 
-This means you can reference elements of the request `Get planets` in project `Star-wars API` like follows:
+This means you can reference elements of the request `Get planets` in project `Star-wars API` as follows:
 
 - Request URI: `${"Star-wars API"."Get planets"."request"."uri"}`
 - Response status code: `${"Star-wars API"."Get planets"."response"."status"."code"}`

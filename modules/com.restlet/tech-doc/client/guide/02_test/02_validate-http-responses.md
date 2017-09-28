@@ -10,7 +10,7 @@ Assertions allow you to verify that a certain part of the response matches your 
 * Status message
 * JSON body: use this if the response returns a JSON body. You can then use [JSON path](#json-path) to verify a
 specific sub-part of the response body.
-* XML body use this if the response returns an XML body. You can then use [Xpath](#xpath) to verify a specific
+* XML body: use this if the response returns an XML body. You can then use [Xpath](#xpath) to verify a specific
 sub-part of the response body.
 * Body content: use this if you want to assert something on the body, it will be considered as a simple string.
 
