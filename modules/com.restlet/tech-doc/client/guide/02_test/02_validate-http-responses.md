@@ -19,11 +19,9 @@ update them.
 
 ![assertions](./images/assertions.png)
 
-You can create dynamic assertions (that depend on the result of other requests) with [expressions](
+By the way, you can create dynamic assertions (that depend on the result of other requests) with [expressions](
 ./work-with-your-data/expressions), for example you can test that the header `Content-type` of the response is equal
-to the header `Accept` of the request.
-
-Expressions unleash the full power of API testing!
+to the header `Accept` of the request. Expressions unleash the full power of API testing!
 
 <a class="anchor" name="json-path"></a>
 ## JSON path

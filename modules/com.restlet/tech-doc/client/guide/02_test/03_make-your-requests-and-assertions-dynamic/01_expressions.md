@@ -20,18 +20,18 @@ Expressions allow you to:
 A request with URL `https://${"host"}` and an environment containing a variable `host: perdu.com` will be sent to
 `https://perdu.com`.
 
-<a class="anchor" name="how-do-i-know-what-the-sent-request-will-look-like"></a>
-## How do I know what the sent request will look like ?
+<a class="anchor" name="how-do-i-know-what-the-request-will-look-like-once-launched"></a>
+## How do I know what the request will look like once launched ?
 
-* In the `Requests` perspective: the evaluated request is displayed in the bottom-pane-tab named `HTTP`
+* In the `Requests` perspective: the evaluated request is displayed in the bottom-pane - tab `HTTP`
 * In the `Scenario` perspective: click on `Request preview` in the main pane
 
 <a class="anchor" name="how-should-i-craft-expressions"></a>
 ## How should I craft expressions ?
 
 We have got you covered of course. In every field where expressions are supported, you will find a button with the icon
- <i class="fa fa-magic" aria-hidden="true"></i>. Click on it to open the __Expression builder__. You can create your
- expressions from there in a few clicks and see the evaluated expression in real-time.
+<i class="fa fa-magic" aria-hidden="true"></i>. Click on it to open the __Expression builder__. You can create your
+expressions from there in a few clicks and see the evaluated expression in real-time.
 
 ![expression builder](./images/expression_builder.png)
 

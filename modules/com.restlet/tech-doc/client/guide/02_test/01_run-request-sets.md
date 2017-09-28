@@ -8,7 +8,7 @@ or directly from the repository tree in the `Scenarios` perspective. Just click 
 <a class="anchor" name="request-order"></a>
 ### Request order
 
-Especially if you are performing tests, you might want the requests to be sent in a specific order. If it is your case, 
+Especially if you are performing tests, you might want to send your requests in a specific order. If it is your case,
 then all you need to do is create a scenario. Requests in scenarios can be reordered to your wishes unlike projects and
 services which will run your requests in alphabetical order of their names.
 
