@@ -1,4 +1,4 @@
-<a name"first-you-discover"></a>
+<a class="anchor" name="first-you-discover"></a>
 ## First you discover
 In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
 
@@ -13,6 +13,7 @@ At any time you can save the current and stable state into the drive.
 
 => perhaps a simple but global workflow diagram
 
+<a class="anchor" name="then-you-save-into-a-drive"></a>
 ## Then you save into a drive
 
 Let's elaborate about the notions of drive, and containers.
@@ -33,4 +34,4 @@ Each entity has a name and a description, which may be sufficient to document yo
 
 When you save a request from the testing perspective, you can choose an existing container, or create a new one.
 
-=> certainsly make it more graphical.
+=> certainly make it more graphical.
