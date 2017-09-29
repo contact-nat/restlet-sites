@@ -18,8 +18,8 @@ Maven <i class="fa fa-external-link" aria-hidden="true"></i>
 <a class="anchor" name="get-started-in-seconds"></a>
 ## Get started in seconds
 
-If you want to run your tests quickly and don't need too much configuration, you can just open the project you want to
-test and click on the button `Download project` in the test automation box.
+The quickest way to launch tests from scratch is to include them inside a project. Then you can just open the project
+you want to test and click on the button `Download project` in the test automation box.
 
 ![Download project button](./images/download_project_button.png)
 
@@ -50,8 +50,8 @@ match the requests/scenarios etc... you want to run.
 
 ![Export your requests](./images/export_repository.png)
 
-Place the downloaded JSON in the same folder as the pom.xml and make sure to configure the pom.xml to
-use that JSON file (more information on that below).
+Place the downloaded JSON in the same folder as the pom.xml and make sure the pom.xml references that that JSON file
+(more information on that below).
 
 <a class="anchor" name="create-your-custom-test-configuration"></a>
 ### Create your custom test configuration
@@ -130,7 +130,7 @@ Here is the full list of available customization options.
 | **selectedEnvironment** | String | No | X | The name of the environment to be used (make sure it was exported to the JSON file). Learn more about environments [here](../environments)
 | **licenseKey** | String | Yes | X | A valid license key (see [Find your license key](#find-your-license-key))
 | **stopOnFailure** | boolean | No | false | Stops processing build if an error/failure occurs
-| **httpClientTimeoutInMs** | Integer | false | 60000 | Time before HTTP time-out in milliseconds
+| **httpClientTimeoutInMs** | Integer | No | 60000 | Time before HTTP time-out in milliseconds
 | **variables** | Properties | No | X | Custom variables see [Custom variables](#custom-variables)
 | **xhrEmulation** | boolean | No | true | Mimics the Chrome extension behaviour by adding the headers the browser automatically adds like accept-*
 | **followRedirects** | String | No | NONE | Indicates whether or not the Maven plugin should follow the redirections as it is possible through the Chrome extension settings in the browser. Possible values are *NONE* or *ALL*
@@ -163,10 +163,9 @@ See the full configuration example below:
 
 You can override an environment variable by adding a `variables` tag in the plugin's configuration.
 
-Let's imagine that the API port is not the same on the test environment as on the development environment,
-then it is possible to override the environment port variable to provide the right value: 13337.
-
-This can be done by using the following configuration:
+Let's say your API you must run your API on a different port on a specific machine. Even though the environment is set
+to `443` via an environment variable `host`, you will have to make it run on port on `1337`. You can do that simply by
+overriding the environment variable `port` as shown below.
 
 <pre class="language-xml">
   <code class="language-xml">
@@ -174,10 +173,10 @@ This can be done by using the following configuration:
     &lt;file&gt;test.json&lt;/file&gt;
     &lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
     &lt;variables&gt;
-        &lt;!-- The variable port&apos;s value will be overwritten to 13337 --&gt;
+        &lt;!-- The variable port&apos;s value will be overwritten to 1337 --&gt;
         &lt;property&gt;
             &lt;name&gt;port&lt;/name&gt;
-            &lt;value&gt;13337&lt;/value&gt;
+            &lt;value&gt;1337&lt;/value&gt;
         &lt;/property&gt;
     &lt;/variables&gt;
 &lt;/configuration&gt;
@@ -271,12 +270,14 @@ Given the previous arguments, the maven plugin can be used:
 <a class="anchor" name="before-after-test-notifications"></a>
 ### Before/After test notifications
 
+You can make the maven plugin send notifications to a URL of your choice before and/or after each test.
+If you configure the parameters `beforeTest` and `afterTest` in the pom (see [pom attributes section](#pom-attributes)),
+a `POST` request is sent to the URL you specified in the configuration at the beginning and end of each test.
+
+The request's body will look like this:
+
 <pre>
   <code class="language-json">
-&lt;!-- The URL you specified in the configuration in beforeTest/afterTest--&gt;
-POST [url]
-Content-Type: application/json
-Body:
 {
    &quot;name&quot;: [test name],
    &quot;event&quot;: [BeforeTest|AfterTest],
@@ -288,12 +289,14 @@ Body:
 <a class="anchor" name="begin-end-notifications"></a>
 ### Begin/End notifications
 
+You can make the maven plugin send notifications to a URL of your choice when it starts and ends.
+If you configure the parameters `before` and `after` in the pom (see [pom attributes section](#pom-attributes)),
+a `POST` request is sent to the URL you specified in the configuration when the plugin execution starts and ends.
+
+The request's body will look like this:
+
 <pre>
   <code class="language-json">
-&lt;!-- The URL you specified in the configuration in begin/end --&gt;
-POST [url]
-Content-Type: application/json
-Body:
 {
    &quot;event&quot;: [Begin|End]
 }

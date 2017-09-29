@@ -1,5 +1,5 @@
 When you run your tests, you sometimes want to preserve a trace of their results. That's why Restlet provides a few
-ways to generate printable test reports - in HTML of PDF.
+ways to generate printable test reports - in HTML or PDF.
 
 <a class="anchor" name="from-the-chrome-extension"></a>
 ## From the Chrome extension
