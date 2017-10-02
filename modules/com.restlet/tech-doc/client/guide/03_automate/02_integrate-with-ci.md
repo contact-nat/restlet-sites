@@ -13,7 +13,6 @@ a solution:
 
 |CI/CD solution|Maven integration level|Comments|
 |---|---|---|
-|Jenkins|★★★|Use the <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
 |Travis CI|★★★|Integrated solution|
 |Circle CI|★★★|Integrated solution|
 |Teamcity|★★★|Integrated solution|
@@ -23,6 +22,7 @@ a solution:
 |Semafore CI|★★★|Integrated solution|
 |Team Foundation Server|★★★|Integrated solution|
 |Shippable|★★★|Integrated solution|
+|Jenkins|★★☆|Use the <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
 |Wercker|★★☆|Via a docker image|
 |Drone IO|★★☆|Via a docker image|
 |CodeFresh|★★☆|Via a docker image|
