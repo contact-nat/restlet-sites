@@ -21,7 +21,7 @@ Maven <i class="fa fa-external-link" aria-hidden="true"></i>
 The quickest way to launch tests from scratch is to include them inside a project. Then you can just open the project
 you want to test and click on the button `Download project` in the test automation box.
 
-![Download project button](./images/download_project_button.png)
+![Download project button](./images/automation_box.png)
 
 You can now download the auto-generated pom and the project.
 
@@ -62,49 +62,49 @@ If you want to benefit from the webhooks and/or customize the tests run more, yo
 Here is an example pom.xml, we will detail all the configurable options below.
 
 <pre class="language-xml">
-  <code class="language-xml">
+<code class="language-xml">
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
-  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
-  &lt;groupId&gt;com.example&lt;/groupId&gt;
-  &lt;artifactId&gt;my-star-wars-api-test&lt;/artifactId&gt;
-  &lt;version&gt;1.2.3&lt;/version&gt;
+&lt;groupId&gt;com.example&lt;/groupId&gt;
+&lt;artifactId&gt;my-star-wars-api-test&lt;/artifactId&gt;
+&lt;version&gt;1.2.3&lt;/version&gt;
 
-  &lt;build&gt;
-    &lt;plugins&gt;
-      &lt;plugin&gt;
-        &lt;!-- The Restlet maven plugin --&gt;
-        &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
-        &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;2.10.0&lt;/version&gt;
-        &lt;executions&gt;
-          &lt;execution&gt;
-            &lt;phase&gt;test&lt;/phase&gt;
-            &lt;goals&gt;
-              &lt;goal&gt;test&lt;/goal&gt;
-            &lt;/goals&gt;
+&lt;build&gt;
+&lt;plugins&gt;
+&lt;plugin&gt;
+&lt;!-- The Restlet maven plugin --&gt;
+&lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
+&lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
+&lt;version&gt;2.10.0&lt;/version&gt;
+&lt;executions&gt;
+&lt;execution&gt;
+&lt;phase&gt;test&lt;/phase&gt;
+&lt;goals&gt;
+&lt;goal&gt;test&lt;/goal&gt;
+&lt;/goals&gt;
 
-            &lt;!-- The configuration goes there --&gt;
-            &lt;configuration&gt;
-              &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
-              &lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
-            &lt;/configuration&gt;
-          &lt;/execution&gt;
-        &lt;/executions&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-  &lt;/build&gt;
+&lt;!-- The configuration goes there --&gt;
+&lt;configuration&gt;
+&lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+&lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
+&lt;/configuration&gt;
+&lt;/execution&gt;
+&lt;/executions&gt;
+&lt;/plugin&gt;
+&lt;/plugins&gt;
+&lt;/build&gt;
 
-  &lt;!-- The repository were the Restlet maven plugin is hosted --&gt;
-  &lt;pluginRepositories&gt;
-    &lt;pluginRepository&gt;
-      &lt;id&gt;nexus-public&lt;/id&gt;
-      &lt;name&gt;Nexus Release Repository&lt;/name&gt;
-      &lt;url&gt;http://maven.restlet.com&lt;/url&gt;
-    &lt;/pluginRepository&gt;
-  &lt;/pluginRepositories&gt;
+&lt;!-- The repository were the Restlet maven plugin is hosted --&gt;
+&lt;pluginRepositories&gt;
+&lt;pluginRepository&gt;
+&lt;id&gt;nexus-public&lt;/id&gt;
+&lt;name&gt;Nexus Release Repository&lt;/name&gt;
+&lt;url&gt;http://maven.restlet.com&lt;/url&gt;
+&lt;/pluginRepository&gt;
+&lt;/pluginRepositories&gt;
 &lt;/project&gt;
-  </code>
+</code>
 </pre>
 
 <a class="anchor" name="pom-configuration"></a>
@@ -144,19 +144,19 @@ Here is the full list of available customization options.
 See the full configuration example below:
 
 <pre class="language-xml">
-  <code class="language-xml">
+<code class="language-xml">
 &lt;configuration&gt;
-    &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
-    &lt;selectedEnvironment&gt;QA&lt;/selectedEnvironment&gt;
-    &lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
-    &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
-    &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
-    &lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
-    &lt;followRedirects&gt;ALL&lt;/followRedirects&gt;
-    &lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
-    &lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
+&lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+&lt;selectedEnvironment&gt;QA&lt;/selectedEnvironment&gt;
+&lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
+&lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
+&lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
+&lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
+&lt;followRedirects&gt;ALL&lt;/followRedirects&gt;
+&lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
+&lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
 &lt;/configuration&gt;
-  </code>
+</code>
 </pre>
 
 <a class="anchor" name="override-environment-variables"></a>
@@ -169,19 +169,19 @@ to `443` via an environment variable `host`, you will have to make it run on por
 overriding the environment variable `port` as shown below.
 
 <pre class="language-xml">
-  <code class="language-xml">
+<code class="language-xml">
 &lt;configuration&gt;
-    &lt;file&gt;test.json&lt;/file&gt;
-    &lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
-    &lt;variables&gt;
-        &lt;!-- The variable port&apos;s value will be overwritten to 1337 --&gt;
-        &lt;property&gt;
-            &lt;name&gt;port&lt;/name&gt;
-            &lt;value&gt;1337&lt;/value&gt;
-        &lt;/property&gt;
-    &lt;/variables&gt;
+&lt;file&gt;test.json&lt;/file&gt;
+&lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
+&lt;variables&gt;
+&lt;!-- The variable port&apos;s value will be overwritten to 1337 --&gt;
+&lt;property&gt;
+&lt;name&gt;port&lt;/name&gt;
+&lt;value&gt;1337&lt;/value&gt;
+&lt;/property&gt;
+&lt;/variables&gt;
 &lt;/configuration&gt;
-  </code>
+</code>
 </pre>
 
 <a class="anchor" name="use-a-proxy"></a>
@@ -208,12 +208,12 @@ The Maven plugin can reuse the Maven's installation proxy configuration, **defin
 by using the following configuration:
 
 <pre class="language-markup">
-  <code class="language-markup">
+<code class="language-markup">
 &lt;configuration&gt;
-  &lt;file&gt;/test.json&lt;/file&gt;
-  &lt;useMavenProxies&gt;true&lt;/useMavenProxies&gt;
+&lt;file&gt;/test.json&lt;/file&gt;
+&lt;useMavenProxies&gt;true&lt;/useMavenProxies&gt;
 &lt;/configuration&gt;
-  </code>
+</code>
 </pre>
 
 **Please note that for now, the nonProxyHosts attribute is not supported.**
@@ -278,13 +278,13 @@ a `POST` request is sent to the URL you specified in the configuration at the be
 The request's body will look like this:
 
 <pre>
-  <code class="language-json">
+<code class="language-json">
 {
-   &quot;name&quot;: [test name],
-   &quot;event&quot;: [BeforeTest|AfterTest],
-   &quot;result&quot;: [Ok|Failure|Error] &amp;Tab;&amp;lt;- present only if event=afterTest
+&quot;name&quot;: [test name],
+&quot;event&quot;: [BeforeTest|AfterTest],
+&quot;result&quot;: [Ok|Failure|Error] &amp;Tab;&amp;lt;- present only if event=afterTest
 }
-  </code>
+</code>
 </pre>
 
 <a class="anchor" name="begin-end-notifications"></a>
@@ -297,9 +297,9 @@ a `POST` request is sent to the URL you specified in the configuration when the 
 The request's body will look like this:
 
 <pre>
-  <code class="language-json">
+<code class="language-json">
 {
-   &quot;event&quot;: [Begin|End]
+&quot;event&quot;: [Begin|End]
 }
-  </code>
+</code>
 </pre>
