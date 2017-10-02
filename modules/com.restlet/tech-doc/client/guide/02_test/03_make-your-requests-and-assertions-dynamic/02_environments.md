@@ -40,4 +40,7 @@ Example: add a variable `server` to your current environment with value `{"host"
 
 You can now create a request with a URL set to `https://${"server"."host"}:${"server"."port"}`, which will be evaluated to `https://perdu.com:456`.
 
-More on expressions [here](./going-further-with-expressions).
+<a class="anchor" name="going-further"></a>
+## Going further
+
+Expressions can do more, if you haven't read it yet, have a look at [this page](./expressions) to learn more.

@@ -82,3 +82,9 @@ This means you can reference elements of the request `Get planets` in project `S
 - Response status code: `${"Star-wars API"."Get planets"."response"."status"."code"}`
 - Response header `Content-type` value: `${"Star-wars API"."Get planets"."response"."headers"."Content-type"}`
 - Response body attribute `id`: `${"Star-wars API"."Get planets"."response"."body"."id"}`
+
+
+<a class="anchor" name="going-further"></a>
+## Going further
+
+Expressions can do more, if you haven't read it yet, have a look at [this page](./expressions) to learn more.

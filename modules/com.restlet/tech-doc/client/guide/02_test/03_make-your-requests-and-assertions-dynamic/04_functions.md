@@ -303,3 +303,8 @@ Expression: ${&quot;aBc&quot;.upper()}
 Result: ABC
   </code>
 </pre>
+
+<a class="anchor" name="going-further"></a>
+## Going further
+
+Expressions can do more, if you haven't read it yet, have a look at [this page](./expressions) to learn more.
