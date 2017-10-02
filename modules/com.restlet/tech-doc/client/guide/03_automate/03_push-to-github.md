@@ -39,3 +39,16 @@ it should be pushed.
 In the example above, my test file will be pushed to _git@github.com:restlet/star-wars-api.git_ on branch _1.2.17_ in
 the folder _src/main/resources_.
 
+> Note: We will warn you if the repository your are pushing to is public. Make sure there is no sensitive information
+in your project and environment before pushing anything in this case!
+
+<a class="anchor" name="push-your-project-to-github"></a>
+## Push your project to GitHub
+
+You are all set now, you just need to open your project and click on the GitHub button (that now says 'Push') to push
+your project to GitHub.
+
+![Push to GitHub](./images/push.png)
+
+A bubble will appear in the GitHub push button to notify you that you have changes on your project that have not been
+pushed to GitHub.

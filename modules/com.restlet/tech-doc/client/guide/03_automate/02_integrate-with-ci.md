@@ -11,7 +11,7 @@ Maven <i class="fa fa-external-link" aria-hidden="true"></i>
 Check in our CI/CD solution list to see if yours integrates well with Restlet Client or influence your choice of
 a solution:
 
-|CI/CD solution|Integration level|Comments|
+|CI/CD solution|Maven integration level|Comments|
 |---|---|---|
 |Jenkins|★★★|Use the <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
 |Travis CI|★★★|Integrated solution|
