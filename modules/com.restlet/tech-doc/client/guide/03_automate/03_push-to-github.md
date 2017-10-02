@@ -1,9 +1,8 @@
 As you have seen in the previous chapter, testing your API on CI with Restlet Client is pretty easy but you have
-probably noticed that we didn't talk in the previous chapters about an essential part of the CI build:
-the __source control__.
+probably noticed that we haven't covered yet an essential part of the CI build: the __source control__.
 
 Nobody wants to update the test files by hand in the source control. That's why we decided to integrate with the most
-widespread source control solution there is __GitHub__ so that you can get a fully integrated API testing workflow.
+widespread source control solution there is - __GitHub__ - so that you can get a fully integrated API testing workflow.
 
 Pushing your test files to GitHub is effortless with Restlet Client, you'll have to configure your account and project
 then pushing is only a click away.

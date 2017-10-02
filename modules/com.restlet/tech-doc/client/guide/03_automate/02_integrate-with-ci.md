@@ -47,10 +47,10 @@ using Restlet Client.
 Technically, there are two main ways to do so which we will explain and comment below. If you want more precise
 instructions on how to configure your CI builds, have a look at our tutorials on
 <!-- TODO: add the links to the tutorials -->
-<a href="" target="_blank">Travis CI<i class="fa fa-external-link" aria-hidden="true"></i></a>
+<a href="" target="_blank">Travis CI <i class="fa fa-external-link" aria-hidden="true"></i></a>
 and
 <!-- TODO: add the links to the tutorials -->
-<a href="" target="_blank">Circle CI<i class="fa fa-external-link" aria-hidden="true"></i></a>.
+<a href="" target="_blank">Circle CI <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 They should get you started in no time.
 
 <a class="anchor" name="basic-workflow-test-your-main-branch-once-a-day"></a>
@@ -61,7 +61,7 @@ They should get you started in no time.
 If you choose to test your API on a static environment, you can run the test on demand or schedule your job to run
 nightly. This solution is easy to implement and does the job but note that:
 
-* it only one test can run at a time
+* only one test can run at a time
 * the data in your API gets "polluted" when running a test and you must clean it before running another test or they
 won't run in the same conditions
 * anybody with access to that environment can request the API while the test is running, which can result in
