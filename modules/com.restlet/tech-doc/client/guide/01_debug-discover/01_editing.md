@@ -1,19 +1,12 @@
 <a class="anchor" name="introduction"></a>
 ## Introduction
 
-=> complete the introduction perhaps
+The request editor in Restlet Client allows you to update an HTTP request.
+Each part of the request is handled by a dedicated area and adapted edition tool. 
 
-User can edit every part of the request:
+The different parts are shown in the screenshot below.
 
-* method
-* URL (including query parameters)
-* headers
-* body
-
-=> Insert graphic with numbered ticks
-
-As you can notice above, each part has a dedicated area with a specific and adapted edition tool. We won't describe each of them in an exhaustive manner, since most of them are quite simple to apprehend.
-We prefer to focus on some particularities.
+=> TODO Insert graphic with numbered ticks
 
 <a class="anchor" name="method"></a>
 ### Method
@@ -22,9 +15,10 @@ The list of proposed methods can be extended via the settings.
 
 => screenshot
 
-You can add your own methods and indicate also if this method does not expect a request body. This allows to show or to hide the "Body" editor accordingly.
+You can add your own methods and indicate whether the method you define accepts a body or not. If you select a method without body in the request editor, the body won't be editable.
 
-The list of the most common HTTP methods are predefined, please notice that the "TRACE" method has not been added since it is not supported by the XmlHttpRequest implementation.
+The list of the most common HTTP methods are predefined.
+Please notice that the `TRACE` method has not been added since Client relies on the XmlHttpRequest API and that its implementation in Chrome does not support the `TRACE` method.
 
 <a class="anchor" name="query-parameters"></a>
 ### Query parameters

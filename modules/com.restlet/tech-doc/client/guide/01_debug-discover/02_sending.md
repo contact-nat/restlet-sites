@@ -52,11 +52,12 @@ At first sight, it looks surprising to talk about request edition in this sectio
 
 Let's say that you discover an API and send a request that creates an entity. By convention, the response contains the URL of the newly created entity (usually in a "Location" header). It's quite appealing to ìmmediately send the request that returns the content of the new entity and Restlet Client simply helps you to set up this request.
 
-When possible, the value of the header becomes a clickable spot which, once activated, triggers an action described in the next table.
+Restlet Client understands a list of response headers and provides useful actions when you click on them. 
+See the table below for a complete list of niceties.
 
 Response header | When clicking on the value link
 ----------------|--------------------------------
-Location | The URL of the current request is set with the header's value
+Location | The URL of the current request is replaced by the header's value
 x-xrds-location | The URL of the current request is set with the header's value
 Set-Cookie | A new header "Cookie" is added to the request with the header's value
 Etag | A new header "If-None-Match" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification</a> for more details)
@@ -113,10 +114,7 @@ More specifically, some headers are automatically to the request set up by the u
 
 For example, when the browser has already recorded cookies related to the host of the requests, these cookies are automatically added.
 
-As such data can have impact on the behavior of the request, there is a real interest to see those headers. So, now, you get the point.
-
-This section of the user interface displays the headers automatically added by the browser, which can only be known at the time the request is sent.
-That explains why such headers appear along the response elements.
+The section `Complete request headers` displays the headers automatically added by the browser, which can only be known at the time the request is sent.
 
 <a class="anchor" name="request-edition-helpers"></a>
 #### Request edition helpers
@@ -135,11 +133,11 @@ Let's say you first request your API to get a contact. If the body contains link
 <a class="anchor" name="additional-actions"></a>
 ### Additional actions
 
-* Copy 2 request: copies the response payload into the paylod of the request. If the request does not support payload (for example GET) then the method is automatically updated to `POST`.
+* Copy 2 request: copies the response payload into the payload of the request. If the request does not support payload (for example GET) then the method is automatically updated to `POST`.
 
-* Copy to clipboard the response body: copies the response paylod into the clipboard
+* Copy to clipboard the response body: copies the response payload into the clipboard; JSON or XML payloads are indented.
 
-* Download: download the response payload on local drive.
+* Download: downloads the response payload on local drive.
 
 <a class="anchor" name="request-previsualization-response"></a>
 ## Request previsualization / response
