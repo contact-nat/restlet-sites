@@ -1,4 +1,4 @@
-Restlet Client helps you to discover your APIs by defining requests and even recording them.
+Restlet Client helps you discover your APIs by defining requests and even recording them.
 Defining a single request manually is fine, defining the whole set of requests required by your API can be a boring and error prone task.
 In parallel, you may have already described your API using of the current standard, such as Swagger. Why not reusing this existing documentation?
 
@@ -51,7 +51,7 @@ requests | Each operation of each resource located inside the same section are g
 <a class="anchor" name="postman"></a>
 ### Postman
 
-We estimate that Postman and Client are both valuable tools that deserve your attention. We provide the ability to import Postman collections (V2.0) into Client mainly in order to help users of Postman to test Client with the data they are familiar with.
+We estimate that Postman and Client are both valuable tools that deserve your attention. We provide the ability to import Postman collections (V2.0) into Client mainly in order to help users of Postman test Client with the data they are familiar with.
 
 Restlet Client item | Comments
 --------------------|---------

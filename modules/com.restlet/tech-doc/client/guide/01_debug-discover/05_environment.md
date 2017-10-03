@@ -1,8 +1,8 @@
 In your application development workflow, you probably rely on different environments such as development, staging and production.
 
 Let's say that your API is deployed in staging and production environments and that you want to compare the behavior of both APIs with Restlet Client.
-It's highly probable that the APIs are located on a distinct host and port: for example `staging.acme.com` and `acme.com`.
-It sounds like a good idea to set up your requests using variables, doesn't it?
+The APIs probably run on different hosts and ports, for example `staging.acme.com` and `acme.com`.
+It would be better to create only one request and parameterize it to target the different environments wouldn't it ?
 
 Restlet Client provides a powerful feature to use variables in your requests through the environments.
-This topic is covered deeply [here](../test-automate/make-your-requests-and-assertions-dynamic/environments)
+This topic is covered deeply [here](../test/make-your-requests-and-assertions-dynamic/environments)

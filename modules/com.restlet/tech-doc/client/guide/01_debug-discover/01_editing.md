@@ -44,7 +44,7 @@ It guides you to manually edit:
 * Json/XML/HTTP payloads with syntax coloration
 * Web forms or multipart form payloads (<a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4" target="_blank">cf Web forms specification</a>)
 
-The editor of the body part also helps you also to upload files from your drives.
+The editor of the body part also helps you also upload files from your drives.
 Please note that these contents are not persisted which means two things:
 
 * you will have to upload again the file after reloading the request .
