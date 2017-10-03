@@ -49,5 +49,5 @@ your project to GitHub.
 
 ![Push to GitHub](./images/push.png)
 
-A bubble will appear in the GitHub push button to notify you that you have changes on your project that have not been
-pushed to GitHub.
+An indicator will light up in the *Push* button to notify you that you have changes in your project that have not
+been pushed to GitHub.
