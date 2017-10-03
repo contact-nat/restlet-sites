@@ -86,7 +86,7 @@ You are assured that the imported entities are exactly the same than the one exp
 <a class="anchor" name="import-policies"></a>
 ## Import policies
 
-You can choose between three different policies:
+When importing a Restlet Client repository, you can choose between three different policies:
 
 - **Update**
 Any element that does not exist in your drive - equality is checked by name - is imported. For elements that already exist, the newest is kept between the imported and the current one based on the date of last edition.  

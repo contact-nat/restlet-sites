@@ -4,16 +4,12 @@
 The request editor in Restlet Client allows you to update an HTTP request.
 Each part of the request is handled by a dedicated area and adapted edition tool. 
 
-The different parts are shown in the screenshot below.
-
-=> TODO Insert graphic with numbered ticks
-
 <a class="anchor" name="method"></a>
 ### Method
 
-The list of proposed methods can be extended via the settings.
+The list of proposed methods can be extended via the HTTP settings.
 
-=> screenshot
+![HTTP settings](restlet-client-method-settings.png)
 
 You can add your own methods and indicate whether the method you define accepts a body or not. If you select a method without body in the request editor, the body won't be editable.
 
@@ -26,7 +22,7 @@ Please notice that the `TRACE` method has not been added since Client relies on 
 The query parameters can be updated directly in the URL text field or the dedicated area which presents a simple tabular form.
 The right menu allows to indicate whether the name or value of the query parameters are already encoded and does not require to be encoded another time.
 
-=> screenshot
+![Query parameters](restlet-client-query-parameter)
 
 <a class="anchor" name="headers"></a>
 ### Headers
