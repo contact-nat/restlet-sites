@@ -26,9 +26,9 @@ to the header `Accept` of the request. Expressions unleash the full power of API
 <a class="anchor" name="json-path"></a>
 ## JSON path
 
-The reference documentation is located [here](http://goessner.net/articles/JsonPath/ "reference documentation of JSON Path").
+The reference documentation is located <a href="http://goessner.net/articles/JsonPath/" title="reference documentation of JSON Path" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 
-You can also find an online JSON Path evaluator [here](http://jsonpath.com/ "JSON Path online evaluator"). Please note that the underlying implementation may differ from the one used in Restlet Client, hence the results may differ.
+You can also find an online JSON Path evaluator <a href="http://jsonpath.com/" title="JSON Path online evaluator">here <i class="fa fa-external-link" aria-hidden="true"></i></a>. Please note that the underlying implementation may differ from the one used in Restlet Client, hence the results may differ.
 
 Here are a few hints to help you use JSON payloads:
 
@@ -150,10 +150,10 @@ Then the following expressions are computed differently :
 <a class="anchor" name="xpath"></a>
 ## XPath
 
-For more information on the <a href="http://www.w3schools.com/xsl/xpath_syntax.asp" target="_blank">XPath syntax</a>,
-head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">official W3C specification</a>.
+For more information on the <a href="http://www.w3schools.com/xsl/xpath_syntax.asp" target="_blank">XPath syntax <i class="fa fa-external-link" aria-hidden="true"></a>,
+head over to the <a href="https://www.w3.org/TR/xpath/" target="_blank">official W3C specification <i class="fa fa-external-link" aria-hidden="true"></a>.
 
-You can also find an online XPath evaluator [here](https://www.freeformatter.com/xpath-tester.html "XPath online evaluator").
+You can also find an online XPath evaluator <a href="https://www.freeformatter.com/xpath-tester.html" "title="XPath online evaluator">here <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 
 Note that XPath expressions have a directory-path-like syntax.
 

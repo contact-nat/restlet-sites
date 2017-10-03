@@ -1,7 +1,7 @@
 
 Restlet Client's sign up process is straightforward. It relies on social login to make signing up as simple as possible for you.
 
-To sign up, click on the **Sign in** button from the <a href="https://client.restlet.com/" target="_blank">Restlet Client page</a> of our website and pick a social provider to identify yourself with. Your account will automatically be created for you.
+To sign up, click on the **Sign in** button from the <a href="https://client.restlet.com/" target="_blank">Restlet Client page <i class="fa fa-external-link" aria-hidden="true"></i></a> of our website and pick a social provider to identify yourself with. Your account will automatically be created for you.
 
 # Sign in with your social provider account  
 

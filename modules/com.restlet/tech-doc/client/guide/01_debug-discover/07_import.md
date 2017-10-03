@@ -1,48 +1,52 @@
-Restlet Client helps you discover your APIs by defining requests and even recording them.
-Defining a single request manually is fine, defining the whole set of requests required by your API can be a boring and error prone task.
-In parallel, you may have already described your API using of the current standard, such as Swagger. Why not reusing this existing documentation?
+Restlet Client helps you discover your APIs by defining, saving and running requests. Editing requests by hand is fine to discover the tool and make your first steps in the product, but you probably have a complete API you would like to request and creating the requests for all its resources would be a fastidious, error-prone task. 
 
-It's of course quite important to make Restlet client a tool that really ease your everyday life.
-That's why we keep it open and able to import data from several formats.
+We want to make sure Restlet Client helps you in your everyday life and stays a modern and open tool. That's why we've made sure it can import different standard formats like Swagger - the reference in API documentation - and HAR. 
+
+This means that you can request any API that exposes its Swagger really easily and you can convert you browser's navigation history in ready-to-launch Restlet Client requests.
 
 We distinguish two kinds of data to import:
 
-* contracts of APIs
-* definition of requests
+* API contracts
+* request collections
 
 The rest of this section focuses on the specificities of each import.
 
 <a class="anchor" name="import-contracts-of-api"></a>
-## Import contracts of API
+## Import API contracts
 
-<a class="anchor" name="swagger-."></a>
+<a class="anchor" name="swagger-20"></a>
 ### Swagger 2.0
 
-The specification of the Swagger 2.0 format is available <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank">here</a>.
+The specification of the Swagger 2.0 format is available <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+
+
+Only JSON is supported at the moment, in case you only have a YAML document, you can easily 
+convert it to JSON before importing it in Restlet Client. Online converters flourish on the web, 
+you can use <a href="https://www.json2yaml.com/" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a> for example.
 
 Swagger 2.0 is available under two formats: JSON and YAML. Only the former format is supported right now.
 
-The whole Swagger description is imported into a new single root project. Here is a description of the items created at import.
+The whole Swagger description is imported into a new project. Here is a description of the items created at import.
 
 
-Restlet Client item | Comments
---------------------|---------
-root project | Single project, which name is given by the title of the Swagger documentation
-services | Each service relates to a "Path" of the Swagger  documentation
-requests | Every operation defined on resources gathered in the same path are located under the same service. Query parameters and headers are imported too.
-
+|Swagger item | Corresponding Restlet Client item | Comments
+|-------------|-----------------------------------|---------
+| API | Project | A project containing all the converted Swagger. Its name and description are the Swagger API title and description
+| Path | Service | Each path in Swagger is converted to a service. The service is named after the base path of the Swagger Path.
+| Operation | Request | All the operations of a Swagger path are converted to requests and located inside the service extracted from the said path. |
 
 <a class="anchor" name="restlet-studio"></a>
 ### Restlet Studio
 
-[Restlet Studio](https://studio.restlet.com) is one the tools of the Restlet Platform. In a nutshell, this online tool allows you to fully describe the contract of your API.
-Restlet Studio integrates very well with Restlet client using the `Try in Client` tool (described [here](../../studio/user-guide/platform/tryinclient)).
+<a href="https://studio.restlet.com" target="_blank">Restlet Studio <i class="fa fa-external-link" aria-hidden="true"></i></a> is one the tools of the Restlet Platform. In a nutshell, this online tool allows you to fully describe the contract of your API.
 
-Restlet Client item | Comments
---------------------|---------
-root project | Single project, which name is given by the name of the API in Restlet Studio.
-services | Each section of the Studio defines a new service.
-requests | Each operation of each resource located inside the same section are gathered under the same service. Path variables, query parameters and headers are imported too.
+We've implemented an integrated import from Restlet Studio - the leading API contract editor - to Restlet Client. You just have one button to click there to import your API in Restlet Client. You will find more information about this integration [here](../../studio/user-guide/platform/tryinclient).
+
+| Restlet Studio item | Corresponding Restlet Client item | Comments
+|---------------------|-----------------------------------|---------
+| API | root project | Single project, which name is given by the name of the API in Restlet Studio.
+| Section | services |
+| Operation | requests | Each operation of each resource located inside the same section are gathered under the same service. Path variables, query parameters and headers are imported too.
 
 
 <a class="anchor" name="import-definition-of-requests"></a>
@@ -51,27 +55,27 @@ requests | Each operation of each resource located inside the same section are g
 <a class="anchor" name="postman"></a>
 ### Postman
 
-We estimate that Postman and Client are both valuable tools that deserve your attention. We provide the ability to import Postman collections (V2.0) into Client mainly in order to help users of Postman test Client with the data they are familiar with.
+We estimate that Postman and Client are both valuable tools that deserve your attention. We provide the ability to import Postman collections (V2.0) into Client in order to help users of Postman test Client with the data they are familiar with.
 
-Restlet Client item | Comments
---------------------|---------
-root project | Single project, which name is given by the name of the root folder in the collection. A suffix is added in order to prevent name collision.
-services | As Client does not support infinite hierarchy of folders, as Postman does, subfolders are flattened as Client service.
-requests | Environment variables are imported too (the environment holds the name of the project), but they are valuated. When possible, some assertions are generated too after parsing the Postman scripts.
+| Postman item | Corresponding Restlet Client item | Comments
+|--------------|-----------------------------------|---------
+| root folder | root project | Single project, which name is given by the name of the root folder in the collection. A suffix is added in order to prevent name collisions.
+| sub folders | services | As POSTman supports infinite folder depth - which Restlet Client does not - subfolders are flattened.
+| requests | requests | Environment variables are imported too (the environment holds the name of the project), but they are valuated. When possible, some assertions are generated too after parsing the Postman scripts.
 
-You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-postman-always-rings-twice/" target="_blank">blog post</a> for more details about the import rules.
+You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-postman-always-rings-twice/" target="_blank">blog post <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details about the import rules.
 
-<a class="anchor" name="har"></a>
-### HAR
+<a class="anchor" name="har-12"></a>
+### HAR 1.2
 
-<a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR</a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) propose to export all interactions in this format.
-Requests are imported into a root scenario, which name is computed against the current date of import.
-The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an ordered sequence of HTTP requests/responses, so does a scenario in Restlet Client.
+<a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) support to export all interactions in this format.
+Requests are imported into a root scenario, which name is the date of the import - in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an __ordered__ sequence of HTTP requests/responses, so does a scenario in Restlet Client.
 
 <a class="anchor" name="systinet-hp-technology"></a>
 ### Systinet (HP technology)
 
-Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet</a> integration available.
+Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet <i class="fa fa-external-link" aria-hidden="true"></i></a> integration available.
 
 <a class="anchor" name="restlet-client-repository"></a>
 ### Restlet Client repository
@@ -85,10 +89,12 @@ You are assured that the imported entities are exactly the same than the one exp
 You can choose between three different policies:
 
 - **Update**
-Imports new requests and updates existing requests only if the import contains a newer version.
+Any element that does not exist in your drive - equality is checked by name - is imported. For elements that already exist, the newest is kept between the imported and the current one based on the date of last edition.  
 
-- **Override**
-Imports new requests and overrides all existing requests.
+- **Overwrite**
+Imports new elements and overwrites existing ones.
 
 - **Preserve**
-Imports new requests and never touches existing requests.
+Imports new elements and ignores existing ones.
+
+> Please note that none of these policies delete anything in your drive

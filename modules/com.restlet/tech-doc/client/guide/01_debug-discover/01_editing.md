@@ -31,7 +31,7 @@ The right menu allows to indicate whether the name or value of the query paramet
 <a class="anchor" name="headers"></a>
 ### Headers
 
-The headers can be edited either as simple tabular form or as a raw block of text. In the latter case, you have to comply with the <a href="https://tools.ietf.org/html/rfc7230#section-3.2" target="_blank">syntax of HTTP headers</a>.
+The headers can be edited either as simple tabular form or as a raw block of text. In the latter case, you have to comply with the <a href="https://tools.ietf.org/html/rfc7230#section-3.2" target="_blank">syntax of HTTP headers <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 
 <a class="anchor" name="body"></a>
 ### Body
@@ -42,7 +42,7 @@ It guides you to manually edit:
 
 * simple text plain payloads
 * Json/XML/HTTP payloads with syntax coloration
-* Web forms or multipart form payloads (<a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4" target="_blank">cf Web forms specification</a>)
+* Web forms or multipart form payloads (<a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4" target="_blank">cf Web forms specification <i class="fa fa-external-link" aria-hidden="true"></i></a>)
 
 The editor of the body part also helps you also upload files from your drives.
 Please note that these contents are not persisted which means two things:

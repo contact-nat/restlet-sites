@@ -1,11 +1,7 @@
-This whole section is about what we call "Discovery". It denotes a kind of activity where users that discover an API simply send requests and get responses.
+If you want to make sure your API lives up to your standards, you can create assertions. Assertions allow you to verify that the response received validates certain criteria and good news, they are super-simple to write!
 
-When can still get a little bit further and complete the use case. Let's say that you want to check some basic assumptions. For example, ensure that all requests to my API lasts less then a specific amount of milliseconds.
+You can for example assert that the response is received in less than 200ms if your SLA specifies it.
 
-Restlet Client covers this need using "assertions". Assertions are deeply described in [next part of the user guide](../test-automate/validate-http-responses).
+![assertions panel](images/restlet-client-assertions.png)
 
-Havind said that, it's worth telling you that when a request is run and loaded later from the history, assertions are recovered too.
-
-Assertions are available from the "Assertions" pane at the bottom of the "Requests" perspective page.
-
-=> add screenshot
+More information on assertions in the [dedicated page](../test-automate/validate-http-responses).
