@@ -38,9 +38,3 @@ expressions from there in a few clicks and see the evaluated expression in real-
 > Note: The expression will be added where you placed your cursor before clicking the magic wand icon
 <i class="fa fa-magic" aria-hidden="true"></i>. If the cursor was _inside_ an expression, the expression builder
 will open in edition mode and you can modify the said expression.
-
-<a class="anchor" name="going-further"></a>
-## Going further
-
-If UIs never excited you and you want to learn how to craft expressions by hand, you can have a look at the
-[full documentation](./going-further-with-expressions).
