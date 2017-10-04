@@ -21,21 +21,19 @@ Second step is to go to your <a href="https://travis-ci.org/profile" target="_bl
 profile page <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> on travis-ci.org, find your Github repository and switch it on:
 
-<p style="text-align: center;">
-  <img src="./images/travis_select_github_repo.png" alt="Switch GitHub project on in Travis">
-</p>
+![Switch GitHub project on in Travis](./images/travis_select_github_repo.png)
 
 The third and final step is to create a .travis.yml file for Travis configuration. Let’s start with a simple
 configuration:
 
 <pre class="language-yaml">
-<code class="language-yaml">
+  <code class="language-yaml">
 language: java
 jdk: oraclejdk8
 install: true # skipping the default Travis install step
 script:
 - mvn test
-</code>
+  </code>
 </pre>
 
 After pushing your .travis.yml file to your Github repository, you should see the build running on Travis-CI:
@@ -61,18 +59,18 @@ You can find your license key on the Restlet Client billing page. You’ll then 
 script and pass it to Maven:
 
 <pre class="language-yaml">
-<code class="language-yaml">
+  <code class="language-yaml">
 script:
 - mvn test -Dlicense_key=$LICENSE_KEY
-</code>
+  </code>
 </pre>
 
 This argument can then be used in your pom.xml configuration:
 
 <pre class="language-xml">
-<code class="language-xml">
+  <code class="language-xml">
 &lt;licenseKey&gt;${license_key}&lt;/licenseKey&gt;
-</code>
+  </code>
 </pre>
 
 See an example of <a href="https://github.com/antoine-richard/StarWarsApiTests/blob/master/.travis.yml" target="_blank">
