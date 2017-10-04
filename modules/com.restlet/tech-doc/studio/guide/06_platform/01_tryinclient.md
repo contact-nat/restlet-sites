@@ -9,6 +9,7 @@ You can either export:
 
 
 For both of these purposes, Restlet Studio includes a "Try in Client" button, both in the editor view, and published documentation.
+
 If you have not yet installed Restlet Client, you will be redirected to the chrome store to install it. Note that once you have a Restlet account, you automatically have access to all modules, including Restlet Client and Restlet Cloud, with the same account.
 
 ## Try an API in Restlet Client
@@ -32,8 +33,7 @@ Try in Restlet Client from published documentation:
 ![Try in Restlet Client from published documentation](images/tryoperationdoc.png "Try in Restlet Client from published documentation")
 
 
-## technical details 
-
+## Technical details
 
 | Restlet Studio item | Corresponding Restlet Client item | Comments
 |---------------------|-----------------------------------|---------
