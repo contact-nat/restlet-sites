@@ -13,8 +13,6 @@ The save action works like a `save as`:
 
 At any time you can save the current and stable state into the drive.
 
-=> perhaps a simple but global workflow diagram
-
 <a class="anchor" name="then-you-save-into-a-drive"></a>
 ## Then you save into a drive
 

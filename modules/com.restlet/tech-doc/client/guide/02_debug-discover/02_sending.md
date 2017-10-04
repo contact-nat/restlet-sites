@@ -8,8 +8,6 @@ In a second part, we will describe the reponse block.
 The Requests perspective provides the "Send" button, right near the URL field.
 In order to keep things simple, just click on the button and sent the request will be.
 
-=> perhaps a screenshot?
-
 However there is more to say about it, and this relates with what is called "redirection".
 
 Redirection is a concept that covers a specific set of responses sent back by the server.
