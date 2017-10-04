@@ -1,3 +1,6 @@
+
+![Travis CI](./images/travis_logo.png)
+
 This tutorial assumes you know how to launch Restlet Client tests from CLI. If you don't know, please have a look at
 [the documentation](../user-guide/automate/run-tests-from-cli) first.
 
@@ -78,6 +81,7 @@ See an example of <a href="https://github.com/antoine-richard/StarWarsApiTests/b
 </a> and <a href="https://github.com/antoine-richard/StarWarsApiTests/blob/master/pom.xml" target="_blank">
 pom.xml <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> files.
+
 Another valid option would be to store it as an
 <a href="https://docs.travis-ci.com/user/encryption-keys" target="_blank">
 encrypted string <i class="fa fa-external-link" aria-hidden="true"></i>
@@ -94,13 +98,17 @@ environment, does not break your API contract.
 
 ![Travis Cron](./images/travis_cron.png)
 
+![Travis report](./images/travis_report.png)
+
 Another approach is to fire your API tests after each successful deployment of your API. See Travis CI documentation on
 <a href="https://docs.travis-ci.com/user/customizing-the-build" target="_blank">
 how to customize the build <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> and
 <a href="https://docs.travis-ci.com/user/deployment/heroku/#Running-commands-before-and-after-deploy" target="_blank">
 run commands after deploying <i class="fa fa-external-link" aria-hidden="true"></i>
-</a>. It’s also good to know that you can trigger a Travis build
+</a>. 
+
+It’s also good to know that you can trigger a Travis build
 by <a href="https://docs.travis-ci.com/user/triggering-builds" target="_blank">
 calling the Travis API <i class="fa fa-external-link" aria-hidden="true"></i>
 </a>.
