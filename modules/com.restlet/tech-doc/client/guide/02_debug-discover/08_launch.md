@@ -37,7 +37,7 @@ To instruct Restlet Client to open a new request, your webpage must call the **w
 - **target**:String - id of Restlet Client extension. Can be obtained from Restlet Client indicator element. E.g.
 JSON.parse(document.getElementById(<id of  indicator element>).textContent).extensionId;
 - **targetTab**:String (optional) - the name of the tab where request should be opened. If not specified, new tab with Restlet Client will be opened for each *openRequest* message. If specified, Restlet Client will try to use previously opened tab with the same  name and will create it if such tab does not exist.
-- **payloadType**:String - the type of payload to load in Restlet Client. Possible values: *dhc* or *systinet*. Jump to [Restlet Client built-in documentation](../perform-requests/expressions/built-in-methods "Restlet Client built-in documentation") for more information.
+- **payloadType**:String - the type of payload to load in Restlet Client. Possible values: *dhc* or *systinet*.
 - **payload**:Object - payload information, specific to each payload type.
 
 Example:
