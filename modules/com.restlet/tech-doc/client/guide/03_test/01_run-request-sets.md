@@ -9,7 +9,7 @@ or directly from the repository tree in the `Scenarios` perspective. Just click 
 Among all kinds of request containers, the scenario is the one that deserves focus. 
 
 A scenario is an [ordered set of requests](#request-order) that allows to emulate a real-life usage of an API.
-Combined with [validation feature](#validation), it helps you ensure that the behavior is stable over time and complies with rules.
+Combined with [validation feature](validate-http-responses), it helps you ensure that the behavior is stable over time and complies with rules.
 
 The following diagram summarizes these characteristics. It presents a chain of two requests inside a scenario, where the URI of the second request depends on the other thanks to [expressions](./make-your-requests-and-assertions-dynamic/expressions).
 Both requests leverage assertions in order to check the related response. They also relies on [environment variables](./make-your-requests-and-assertions-dynamic/environments) in order to parameterize parts of their definition. 
