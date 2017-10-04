@@ -23,6 +23,11 @@ Then the request container is tagged as success if all its children were success
 Note that scenarios should be functionally atomic as unlike other containers, they will stop as soon as a child request 
 fails.
 
+<a class="anchor" name="fouchtra"></a>
+## Fouchtra
+
+![Kikou](images/scenario-annoted.png)
+
 <a class="anchor" name="manage-your-scenarios"></a>
 ## Manage your scenarios
 
