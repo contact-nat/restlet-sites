@@ -35,6 +35,8 @@ Try in Restlet Client from published documentation:
 
 ## Technical details
 
+The following table gives you details about the data imported into Restlet Client.
+
 | Restlet Studio item | Corresponding Restlet Client item | Comments
 |---------------------|-----------------------------------|---------
 | API | root project | Single project, which name is given by the name of the API in Restlet Studio.
@@ -42,4 +44,4 @@ Try in Restlet Client from published documentation:
 | Operation | requests | Each operation of each resource located inside the same section are gathered under the same service. Path variables, query parameters and headers are imported too.
 
 When you import another time an API from Studio, elements are matched thanks to their name so that the existing items in Client are overwritten (except the assertions, which are specific to Client), but no Client items are deleted.
-That is to say, if you rename an operation in Studio, the related request with the original name will be kept in Client.
+In other words, if you rename an operation in Studio, the related request with the original name will be kept in Client.
