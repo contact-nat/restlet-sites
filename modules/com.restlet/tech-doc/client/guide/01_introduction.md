@@ -9,25 +9,32 @@ Restlet Client helps you to __call any type of HTTP API__ (REST, hypermedia, SOA
 
 ![request editor](images/restlet-client-request-editor.png)
 
+<br/>
 
 Once the request has been set, Restlet Client lets you __inspect API responses__ thanks to the ability:
 
 * to pretty print different data formats,
 * to preview web assets like images or web pages,
-* to follow hyperlinks,
+* to navigate in your API through hyperlinks,
 * etc.
 
 ![inspect response](images/restlet-client-inspect-response.png)
 
-Then save, document, __organize__, and __share__ your API requests with your team!
+<br/>
+
+Then save, __organize__, document, and __share__ your API requests with your team!
 
 ![organize](images/restlet-client-organize.png)
 
+<br/>
+
 ## API testing
 
-With Restlet Client, you can create complex __scenarios__ that emulate __real-life usages__ of your API (combine multiple API requests, reuse data from previous responses, etc.)
+With Restlet Client, you can create complex __scenarios__ that emulate __real-life usage__ of your API (combine multiple API requests, reuse data from previous responses, etc.)
 
 ![scenario](images/restlet-client-scenario.png)
+
+<br/>
 
 Whether you want to __check__ that your API is behaving as specified, or you need to confirm how well third-party APIs are responding, Restlet Client lets you perform many sorts of __API response tests__ such as on the value of headers, parts of the body or response time among others.
 
