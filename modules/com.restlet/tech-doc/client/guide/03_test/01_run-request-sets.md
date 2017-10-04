@@ -4,7 +4,7 @@ or directly from the repository tree in the `Scenarios` perspective. Just click 
 
 
 <a class="anchor" name="overview-scenario"></a>
-### Global overview of a scenario
+## Global overview of a scenario
  
 Among all kinds of request containers, the scenario is the one that deserves focus. 
 
