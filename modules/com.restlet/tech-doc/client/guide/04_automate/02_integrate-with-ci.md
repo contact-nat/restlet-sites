@@ -13,23 +13,23 @@ a solution:
 
 |CI/CD solution|Maven integration level|Comments|
 |---|---|---|
-|Travis CI|★★★|Integrated solution|
-|Circle CI|★★★|Integrated solution|
-|Teamcity|★★★|Integrated solution|
-|Bamboo|★★★|Integrated solution|
-|Bitbucket Pipelines|★★★|Integrated solution|
-|Codeship|★★★|Integrated solution|
-|Semafore CI|★★★|Integrated solution|
-|Team Foundation Server|★★★|Integrated solution|
-|Shippable|★★★|Integrated solution|
-|Jenkins|★★☆|Use the <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
-|Wercker|★★☆|Via a docker image|
-|Drone IO|★★☆|Via a docker image|
-|CodeFresh|★★☆|Via a docker image|
-|Gitlab CI|★☆☆|Doable but low-level|
-|GoCD|★☆☆|Doable via custom configuration|
-|AppVeyor|☆☆☆|Not doable|
-|PHP CI|☆☆☆|Not doable|
+|Jenkins|★★★|Natively supported, optional <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">Maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
+|Travis CI|★★★|Natively supported|
+|CircleCI|★★★|Natively supported|
+|Teamcity|★★★|Natively supported|
+|Bamboo|★★★|Natively supported|
+|Bitbucket Pipelines|★★★|Natively supported|
+|Codeship|★★★|Natively supported|
+|Semafore CI|★★★|Natively supported|
+|Team Foundation Server|★★★|Natively supported|
+|Shippable|★★★|Natively supported|
+|Wercker|★★☆|Via a Docker image|
+|Drone IO|★★☆|Via a Docker image|
+|CodeFresh|★★☆|Via a Docker image|
+|Gitlab CI|★☆☆|Via low-level configuration|
+|GoCD|★☆☆|Via low-level configuration|
+|AppVeyor|☆☆☆|Not supported|
+|PHP CI|☆☆☆|Not supported|
 
 Other CI/CD solution may work, the list above is only the list we have in our radar. If you have another working
 solution please <a href="mailto:support@restlet.com?subject=Could%20you%20try%20this%20CI%2FCD%20solution%3F">contact us</a>
@@ -48,7 +48,7 @@ Technically, there are two main ways to do so which we will explain and comment 
 instructions on how to configure your CI builds, have a look at our tutorials on
 <!-- TODO: add the links to the tutorials -->
 <a href="" target="_blank">Travis CI <i class="fa fa-external-link" aria-hidden="true"></i></a>
-and
+and 
 <!-- TODO: add the links to the tutorials -->
 <a href="" target="_blank">Circle CI <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 They should get you started in no time.

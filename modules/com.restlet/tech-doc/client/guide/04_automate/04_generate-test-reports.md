@@ -1,8 +1,8 @@
-When you run your tests, you sometimes want to preserve a trace of their results. That's why Restlet provides a few
+When running your API tests, you may want to preserve a trace of their results. That's why Restlet provides a few
 ways to generate printable test reports - in HTML or PDF.
 
 <a class="anchor" name="from-the-chrome-extension"></a>
-## From the Chrome extension
+## From the Google Chrome Extension
 
 When you have run a project/service/scenario in Restlet Client, you just need to open it and click on the button
 `Print`.
@@ -18,7 +18,7 @@ The generated report will look like this:
 ![Extension report](./images/extension_report.png)
 
 <a class="anchor" name="from-cli"></a>
-## From CLI
+## From the Command Line Interface
 
 You can generate HTML reports directly from the command line using surefire with the following commands:
 
@@ -44,12 +44,20 @@ The generated output displays a summary of all the test results at the top follo
 ![Surefire details](./images/surefire_details.png)
 
 <a class="anchor" name="from-ci"></a>
-## From CI
+## From Continuous Integration platforms
 
-Our CLI tool generates JUnit-like XML files for each test. This means every reporting tool that integrates with this
-type of files can generate reports for your API tests too.
+Our CLI tool generates test reports in XML, in the standard JUnit / Surefire format. This means any CI tool (Bamboo, TeamCity, etc.) or quality reporting tool (SonarQube, Allure, etc.) that is compatible with this standard format can produce reports for your Restlet Client API tests.
 
-Here is an example with Jenkins but most CI tools should have similar capabilities.
+Here is what test reports will look like in Jenkins, but other CI platforms should have similar capabilities.
 
-<!-- TODO: dodelidoo -->
-> Let's rencarde with Antoine on that point
+Detailed view on a particular build:
+
+![Jenkins detailed](./images/ci_report_table.png)
+
+History of test results:
+
+![Jenkins overview](./images/ci_report_graph.png)
+
+History of test execution duration:
+
+![Jenkins overview](./images/ci_report_duration.png)
