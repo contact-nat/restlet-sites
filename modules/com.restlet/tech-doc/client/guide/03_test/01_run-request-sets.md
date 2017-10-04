@@ -2,8 +2,19 @@ Sending a request is good, but sometimes you will want to send several in one go
 Any request container (project, service, scenario) in your repository can be run either from its overview (right-pane)
 or directly from the repository tree in the `Scenarios` perspective. Just click on the play button!
 
-<a class="anchor" name="differences-between-scenarios-and-other-request-containers"></a>
-## Differences between scenarios and other request containers
+
+<a class="anchor" name="overview-scenario"></a>
+### Global overview of what is a scenario
+ 
+Among all kinds of request containers, the scenario is the one that deserves focus. 
+
+A scenario is an [ordered set of requests](#request-order) that allows to emulate a real-life usage of an API.
+Combined with [validation feature](#validation), it helps you validate that the behavior is stable over time and complies with rules.
+
+The following diagram summarizes these characteristics. It presents a chain of two requests inside a scenario, where the URI of the second request depends on the other thanks to [expressions](./make-your-requests-and-assertions-dynamic/expressions).
+Both requests leverage assertions in order to check the related response. They also relies on [environment variables](./make-your-requests-and-assertions-dynamic/environments) in order to parameterize parts of their definition. 
+
+![Scenario overview](images/scenario-annoted.png)
 
 <a class="anchor" name="request-order"></a>
 ### Request order
@@ -22,11 +33,6 @@ Then the request container is tagged as success if all its children were success
 
 Note that scenarios should be functionally atomic as unlike other containers, they will stop as soon as a child request 
 fails.
-
-<a class="anchor" name="fouchtra"></a>
-## Fouchtra
-
-![Kikou](images/scenario-annoted.png)
 
 <a class="anchor" name="manage-your-scenarios"></a>
 ## Manage your scenarios
