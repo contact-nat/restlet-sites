@@ -17,7 +17,7 @@ Try in Restlet Client from published documentation:
 ![Try in Restlet Client from published documentation](images/tryapidoc.png "Try in Restlet Client from published documentation")
 
 Clicking the Try in Restlet Client button will open Restlet Client, Restlet's API testing tool, in order to import the whole set of operations of the chosen API. You will then be able to set up complex scenarios that emulate real-life usages of your API.
-More details can be found [here](../../../client/user-guide/debug-discover/import).
+More details can be found [here](../../../client/user-guide/platform/tryinclient).
 
 If you have not yet installed Restlet Client, you will be taken to the chrome store to install it. Note that once you have a Restlet account, you automatically have access to all modules, including Restlet Client and Restlet Cloud, with the same account.
 
@@ -33,6 +33,6 @@ Try in Restlet Client from published documentation:
 ![Try in Restlet Client from published documentation](images/tryoperationdoc.png "Try in Restlet Client from published documentation")
 
 Clicking the Try in Restlet Client button will open Restlet Client, Restlet's API testing tool, with a ready-to-go request on the chosen API operation.
-More details can be found [here](../../../client/user-guide/debug-discover/import).
+More details can be found [here](../../../client/user-guide/debug-discover/platform/tryinclient).
 
 If you have not yet installed Restlet Client, you will be taken to the chrome store to install it. Note that once you have a Restlet account, you automatically have access to all modules, including Restlet Client and Restlet Cloud, with the same account.
