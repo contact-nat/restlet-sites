@@ -1,4 +1,5 @@
-You've discovered how to test you API with Restlet Client in the [previous tutorial](./test-web-api).
+This tutorial assumes you know how to launch Restlet Client tests from CLI. If you don't know, please have a look at
+[the documentation](../user-guide/automate/run-tests-from-cli) first.
 
 Now let's run our API tests on Travis CI! Travis CI is a popular tool helping development teams to continuously
 building and delivering apps with confidence. It’s free for open-source projects. Just login with your Github account
@@ -8,19 +9,21 @@ and you’re set.
 ## Running your scenarios on Travis CI
 
 First thing to do in order to run your scenario on Travis CI is to push it to a Github repository. Make sure you push
-the 2 files mentioned in the [previous tutorial](./test-web-api):
+the 2 test files:
 
 * the JSON file containing your scenario
 * the pom.xml configuration file
 
 > Note: Restlet Client now has a GitHub integration to help you push your tests files to GitHub in a whim.
-You can learn more about this feature [here](../guide/automate/push-to-github).
+You can learn more about this feature [here](../user-guide/automate/push-to-github).
 
 Second step is to go to your <a href="https://travis-ci.org/profile" target="_blank">
 profile page <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> on travis-ci.org, find your Github repository and switch it on:
 
-![Switch GitHub project on in Travis](./images/travis_select_github_repo.png)
+<p style="text-align: center;">
+  <img src="./images/travis_select_github_repo.png" alt="Switch GitHub project on in Travis">
+</p>
 
 The third and final step is to create a .travis.yml file for Travis configuration. Let’s start with a simple
 configuration:
@@ -103,6 +106,3 @@ run commands after deploying <i class="fa fa-external-link" aria-hidden="true"><
 by <a href="https://docs.travis-ci.com/user/triggering-builds" target="_blank">
 calling the Travis API <i class="fa fa-external-link" aria-hidden="true"></i>
 </a>.
-
-Interested in automating your API tests on Travis CI?
-[Start now with a free trial of the Restlet Platform!](https://restlet.com/pricing/)
