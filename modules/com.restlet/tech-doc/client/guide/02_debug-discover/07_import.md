@@ -38,7 +38,7 @@ The whole Swagger description is imported into a new project. Here is a descript
 <a class="anchor" name="restlet-studio"></a>
 ### Restlet Studio
 
-The full behavior is described [here](../platform/tryinclient).
+The full behavior is described [here](../../../studio/user-guide/platform/tryinclient).
 
 <a class="anchor" name="import-definition-of-requests"></a>
 ## Import definition  of requests
