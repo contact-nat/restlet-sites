@@ -46,7 +46,7 @@ The full behavior is described [here](../../../studio/user-guide/platform/tryinc
 <a class="anchor" name="postman"></a>
 ### Postman
 
-We estimate that Postman and Client are both valuable tools that deserve your attention. We provide the ability to import Postman collections (V2.0) into Client in order to help users of Postman test Client with the data they are familiar with.
+We estimate that Postman and Restlet Client are both valuable tools that deserve your attention. We provide the ability to import Postman collections (V2.0) into Restlet Client in order to help users of Postman try out Restlet Client with the data they are familiar with.
 
 | Postman item | Corresponding Restlet Client item | Comments
 |--------------|-----------------------------------|---------
@@ -61,7 +61,7 @@ You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-po
 
 <a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) support to export all interactions in this format.
 Requests are imported into a root scenario, which name is the date of the import - in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format <i class="fa fa-external-link" aria-hidden="true"></i></a>.
-The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an __ordered__ sequence of HTTP requests/responses, so does a scenario in Restlet Client.
+The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an __ordered__ sequence of HTTP requests/responses, so does a scenario in Restlet Client. Learn more in the dedicated tutorial: [Build an API test for your Web application](../../tutorials/test-web-api)
 
 <a class="anchor" name="systinet-hp-technology"></a>
 ### Systinet (HP technology)

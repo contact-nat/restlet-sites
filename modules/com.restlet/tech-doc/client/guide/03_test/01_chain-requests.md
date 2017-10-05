@@ -1,4 +1,4 @@
-Sending a single request is good, but as you move forward in your API testing journey, you will want to send a sequence of requests in one go. We've got you covered on that front.
+Sending a single request is good, but as you move forward in your API testing journey, you would probably want to send a sequence of requests in one go. We've got you covered on that front.
 Any request container (project, service, scenario) in your repository can be run in the `Scenarios` Tab (also called `Scenarios Perspective`). Just click on the play button!
 
 
@@ -42,7 +42,7 @@ to repository'. [Learn more](../debug-discover/history#save-requests-to-drive).
 
 * From HAR: click on `Import > Import HAR 1.2` and let the app guide you. HAR can be exported from Chrome DevTools 
 in the Network tab by right-clicking the history and selecting `Save as HAR with content` so you can play with your 
-API with Chrome then import the corresponding scenario in Restlet Client! Learn more in our dedicated tutorial: [Build an API test for your Web application](../../tutorials/test-web-api)
+API with Chrome then import the corresponding scenario in Restlet Client! Learn more in the dedicated tutorial: [Build an API test for your Web application](../../tutorials/test-web-api)
 
 * Add existing requests (into a container): if you have already saved API requests and want to create multiple scenarios from the same 
 requests, you can click on the contextual menu next to the scenario's name and select `Add existing requests`. You can
