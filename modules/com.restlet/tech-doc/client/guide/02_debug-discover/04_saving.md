@@ -39,7 +39,7 @@ Every member of your team are called Team members, and get their own copy of the
 
 Of course a drive can store requests but also other kind of containers:
 
-* scenario: a scenario is an ordered set of requests. It is very helpful to define a sequence of requests and play it again, and again, and again ([learn more about scenarios](../test/run-request-sets)). You can change the order at will in the scenario's overview. Just click on the arrows to move a request up or down.
+* scenario: a scenario is an ordered set of requests. It is very helpful to define a sequence of requests and play it again, and again, and again. [Learn more about scenarios](../test/chain-requests)). You can change the order at will in the scenario's overview. Just click on the arrows to move a request up or down.
 * service: a service contains either scenarios or requests. Children entities are ordered by type, then by name.
 * project: a project contains either scenarios, services or requests. Children entities are ordered by type, then by name.
 
