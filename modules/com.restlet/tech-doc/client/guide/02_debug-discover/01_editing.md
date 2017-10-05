@@ -16,7 +16,7 @@ The list of the most common HTTP methods are predefined.
 Please notice that the `TRACE` method has not been added since Client relies on the XmlHttpRequest API and that its implementation in Chrome does not support the `TRACE` method.
 
 <a class="anchor" name="url"></a>
-URL
+### URL
 
 ![URL](./images/restlet-client-url.png)
 
