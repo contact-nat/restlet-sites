@@ -86,9 +86,9 @@ Let's describe more deeply the "Pretty" mode.
 
 Payload type | syntax colorization | line numbers | expand/collapse nodes | urls are clickable
 -------------|---------------------|--------------|-----------------------|-------------------
-Xml | yes | yes | yes | yes
-Json | yes | yes | yes | yes
-Html | yes | no | no | yes
+XML | yes | yes | yes | yes
+JSON | yes | yes | yes | yes
+HTML | yes | no | no | yes
 
 
 <a class="anchor" name="configure-types-of-payloads"></a>
