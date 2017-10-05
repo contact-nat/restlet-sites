@@ -1,6 +1,3 @@
-<a class="anchor" name="introduction"></a>
-## Introduction
-
 Now that you have sent a few requests, you might want to remember exactly how the request or its response looked like. You can do exactly that with the history. The history is accessible from the left panel of the Requests perspective and shows last requests sent by URL. 
 
 Clicking on an item in the history loads it in the request panel, you can then edit it and send a modified version if you want.

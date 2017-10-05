@@ -1,5 +1,6 @@
-<a class="anchor" name="first-you-discover"></a>
-## First you discover
+<a class="anchor" name="discovering-apis"></a>
+## Discovering APIs
+
 In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
 
 This state is persisted so that you can reload Client or go back and forth to the Scenarios perspective and still recover the request as it was.
@@ -13,8 +14,8 @@ The save action works like a `save as`:
 
 At any time you can save the current and stable state into the drive.
 
-<a class="anchor" name="then-you-save-into-a-drive"></a>
-## Then you save into a drive
+<a class="anchor" name="organizing-your-drive"></a>
+## Organizing your drive
 
 Let's elaborate about the notions of drive, and containers.
 
