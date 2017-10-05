@@ -14,15 +14,21 @@ The rest of this section focuses on the specificities of each import.
 <a class="anchor" name="import-contracts-of-api"></a>
 ## Import API contracts
 
+<a class="anchor" name="restlet-studio"></a>
+### From Restlet Studio
+
+Restlet Studio is a module of the Restlet Platform that enable teams to design and document their API contract. Restlet Platform offers a built-in integration from Restlet Studio to Restlet Client in order to quickly interact with an API being built. The imported contract can also be very useful to bootstrap API tests from an existing contract.
+
+Learn more about this [Restlet Platform integration](../../../studio/user-guide/platform/tryinclient).
+
 <a class="anchor" name="swagger-20"></a>
 ### Swagger 2.0
 
 The specification of the Swagger 2.0 format is available <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 
-
 Only JSON is supported at the moment, in case you only have a YAML document, you can easily 
 convert it to JSON before importing it in Restlet Client. Online converters flourish on the web, 
-you can use <a href="https://www.json2yaml.com/" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a> for example.
+you can try <a href="https://www.json2yaml.com/" target="_blank">this one <i class="fa fa-external-link" aria-hidden="true"></i></a> for example.
 
 Swagger 2.0 is available under two formats: JSON and YAML. Only the former format is supported right now.
 
@@ -34,11 +40,6 @@ The whole Swagger description is imported into a new project. Here is a descript
 | API | Project | A project containing all the converted Swagger. Its name and description are the Swagger API title and description
 | Path | Service | Each path in Swagger is converted to a service. The service is named after the base path of the Swagger Path.
 | Operation | Request | All the operations of a Swagger path are converted to requests and located inside the service extracted from the said path. |
-
-<a class="anchor" name="restlet-studio"></a>
-### Restlet Studio
-
-The full behavior is described [here](../../../studio/user-guide/platform/tryinclient).
 
 <a class="anchor" name="import-definition-of-requests"></a>
 ## Import definition  of requests
