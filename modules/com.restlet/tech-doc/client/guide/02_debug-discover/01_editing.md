@@ -86,32 +86,3 @@ The header "Content-type" is automatically set according to the format selected 
 
 The header "Authorization" has a dedicated helper which supports the "BASIC" authentication scheme. This helper allows you to enter your username and password. It hashes these values accordingly to the specification.
 
-
-<a class="anchor" name="browser"></a>
-### Browser behavior
-
-The Chrome browser (XmlHttpRequest) sends additional headers to your API, if they are not provided, such as:
-
-* User-Agent
-* Accept, Accept-Encoding, Accept-Language
-* Cookie
-
-The headers actually sent are displayed in the ["complete request headers" part of the response](./sending#complete-request-headers).
-
-![Complete request headers](./images/restlet-client-complete-headers.png)
-
-You can click on the values here to define them as part of your request.
-
-If you're automating your API tests, we recommend to explicitly override headers that are relevant for your API, so that the behavior will be reproducible with our automation tool.
-
-
-<a class="anchor" name="cookies"></a>
-### Cookies
-
-Restlet Client benefits of the Chrome browser's Cookies management.
-
-If Chrome browser has stored a cookie related to a particular domain, this cookie will be added to the request you'll send with Restlet Client to that domain.
-
-If you don't want cookies to be added in a request, simply define a header Cookie with an empty value to override this behavior.
-
-![Cookie overrride](./images/restlet-client-cookie.png)

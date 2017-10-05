@@ -1,11 +1,11 @@
 Once your request has been designed, it's time to send it to the server!
 Let's start by explaining how to send a request, and the available options.
-In a second part, we will describe the reponse block.
+In a second part, we will describe the reponse inspection capabilities.
 
 <a class="anchor" name="send-and-redirect"></a>
 ## Send and redirect
 
-The Requests perspective provides the "Send" button, right near the URL field.
+In the Requests tab, you will find a "Send" button, right near the URL field.
 In order to keep things simple, just click on the button and sent the request will be.
 
 However there is more to say about it, and this relates with what is called "redirection".
@@ -23,14 +23,14 @@ The "Send" button allows three actions:
 
 The default redirection mode is defined in the settings. By default, redirections are not followed.
 
-When asked to follow redirections, the HTTP client automatically achieves the next step described by the response.
+When asked to follow redirections, Restlet Client automatically achieves the next step described by the response.
 
 <a class="anchor" name="response"></a>
-## Response
+## Inspect responses
 
 Restlet Client provides a dedicated area to display the response. This area maps the different elements of a response.
 
-=> insert a diagram or screenshot with numbered annotations
+![Response](./images/restlet-client-response.png)
 
 <a class="anchor" name="status-code-and-message"></a>
 ### Status code and message
@@ -48,7 +48,7 @@ The second mode is "raw" where all headers are displayed as they are received. T
 
 At first sight, it looks surprising to talk about request edition in this section, but you deserve good surprises, right?
 
-Let's say that you discover an API and send a request that creates an entity. By convention, the response contains the URL of the newly created entity (usually in a "Location" header). It's quite appealing to ìmmediately send the request that returns the content of the new entity and Restlet Client simply helps you set up this request.
+Let's say that you try out an API and send a request that creates an entity. By convention, the response contains the URL of the newly created entity (usually in a "Location" header). It's quite appealing to ìmmediately send the request that returns the content of the new entity and Restlet Client simply helps you set up this request.
 
 Restlet Client understands a list of response headers and provides useful actions when you click on them. 
 See the table below for a complete list of niceties.
@@ -66,17 +66,17 @@ Allow | Such headers contain a list of HTTP methods, each of them is clickable. 
 Access-Control-Allow-Methods | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated
 
 <a class="anchor" name="payload"></a>
-### Payload
+### Response payload
 
 Response payload corresponds to the data received.
-In order to ease readability, all kinds of payloads can be displayed as-is (aka "Raw" mode), hex-encoded (aka "Hex" mode)
+In order to ease readability, all kinds of payloads can be displayed as-is (aka "Raw" mode), hex-encoded (aka "Hex" mode).
 Some of payloads can be also formatted using syntax coloration and other options (aka "Pretty" mode) or in a "Preview" mode.
 
 Let's have a few words about these modes:
 
 * "Raw" means display the bytes of the payloads. Be careful, it may produce unwanted effects when applied on "binary" payloads
 * "Hex" displays each bytes of the payload in their hexadecimal representation
-* "Preview" fits very well with images, html payloads. The browser is asked to render the payload according to its media type. "Binary" files are not rendered.
+* "Preview" fits very well with images, HTML payloads, etc. The browser is asked to render the payload according to its media type. "Binary" files are not rendered.
 * "Pretty" supports syntax colorization and few others goodies, see below.
 
 The "Raw" and "Hex" modes are available for all kinds of payloads.
@@ -105,21 +105,43 @@ In "Settings/Appearance", you can also configure the link between a media-type, 
 <a class="anchor" name="complete-request-headers"></a>
 ### Complete request headers
 
-It sounds like disturbing to add a topic about requests headers when documenting the response, but as you will see below the value is real.
+This section shows the headers that are typically managed by the browser, and what values have been sent. With Restlet Client, you can benefit of letting the Browser manage these headers for you or you can choose to take control on it:
 
-As the requests are sent in fine by the browser using the XmlHttpRequest API, Restlet Client has to deal with some constraints imposed by the browser.
-More specifically, some headers are automatically to the request set up by the user.
+<a class="anchor" name="browser"></a>
+#### Browser behavior
 
-For example, when the browser has already recorded cookies related to the host of the requests, these cookies are automatically added.
+Chrome browser adds additional headers to your HTTP requests, if they are not provided, such as:
 
-The section `Complete request headers` displays the headers automatically added by the browser, which can only be known at the time the request is sent.
+* User-Agent
+* Accept, Accept-Encoding, Accept-Language
+* Cookie
+
+The headers actually sent are displayed in the "Complete request headers" part of the response:
+
+![Complete request headers](./images/restlet-client-complete-headers.png)
+
+You can click on the values here to define them as part of your request. You will be able to overwrite them if needed.
+
+If you're automating your API tests, we recommend to explicitly override headers that are relevant for your API, so that the behavior will be reproducible with our automation tool.
+
+<a class="anchor" name="cookies"></a>
+#### Cookies
+
+Restlet Client benefits of the Chrome browser's Cookies management.
+
+If Chrome browser has stored a cookie related to a particular domain, this cookie will be added to the request you'll send with Restlet Client to that domain.
+
+If you don't want cookies to be added in a request, simply define a header Cookie with an empty value to override this behavior.
+
+![Cookie overrride](./images/restlet-client-cookie.png)
+
 
 <a class="anchor" name="request-edition-helpers"></a>
-#### Request edition helpers
+### Request edition helpers
 
-In pretty mode, when possible, the HTTP Urls are parsed and emphasized. When clicking on such links, the request is updated:
+In pretty mode, when possible, the URLs are parsed and emphasized. When clicking on such links, the request is updated:
 
-* the URI field of the current request is updated with the value of the link (note that relative links are computed against the current request's URL)
+* the URL field of the current request is updated with the value of the link (note that relative links are computed against the current request's URL)
 * the method of the current request is set to `GET`.
 
 This is quite useful if you want to browse your API just like you browse the Internet by following links on pages.
@@ -140,4 +162,4 @@ Let's say you first request your API to get a contact. If the body contains link
 <a class="anchor" name="request-previsualization-response"></a>
 ## Request previsualization / response
 
-You can previsualize the request you set up as raw text, and by the way get the whole response (if any) as raw text in the tab `HTTP` at the bottom of the Request perspective.
+You can previsualize the request you set up as raw text, and by the way get the whole response (if any) as raw text in the tab `HTTP` at the bottom pane, in the Requests tab.
