@@ -1,8 +1,7 @@
 Now that you know how to test your API with Restlet Client, you probably wonder how you could automate the process.
 Restlet has got you covered, all your tests are exportable and runnable from CLI!
 
-Restlet Client allows you to use exported tests as an input for our Maven plugin which generates JUnit-like reports and
-allows you to configure custom URLs that will get notified before or/and after a test is completed.
+Restlet Client allows you to use exported tests as an input for our Maven plugin which generates standard JUnit/Surefire reports and allows you to configure custom URLs that will get notified before or/and after a test is completed.
 
 <a class="anchor" name="prerequisites"></a>
 ## Prerequisites

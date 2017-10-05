@@ -1,4 +1,4 @@
-You probably want to run your tests automatically on a CI environment. Good news, our CLI test runner integrates well
+You probably want to run your tests automatically on a Continuous Integration (CI) environment. Good news, our CLI test runner integrates well
 with most CI solutions, all you need is the
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">
 latest Java JDK <i class="fa fa-external-link" aria-hidden="true"></i>
@@ -35,7 +35,7 @@ Other CI/CD solution may work, the list above is only the list we have in our ra
 solution please <a href="mailto:support@restlet.com?subject=Could%20you%20try%20this%20CI%2FCD%20solution%3F">contact us</a>
 so we can update this page.
 
-## Tests workflow
+## CI workflow
 
 Your API tests should follow the following flow:
 
