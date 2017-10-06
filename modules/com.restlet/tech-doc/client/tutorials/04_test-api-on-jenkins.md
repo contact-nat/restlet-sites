@@ -70,6 +70,9 @@ API. The tests consist in:
 * __Deploying your API__ deploy your API so that you can run your API tests against it
 * __Run your API tests__ you can now run your tests against a deployed version of your API
 
+In our pipeline, the unit-testing and packaging will be done in stage _Build_, the deployment in stage _Deploy_ and the
+API tests in stage _Test_.
+
 <a class="anchor" name="setting-up-the-repository"></a>
 ## Setting up the repository
 
