@@ -60,7 +60,7 @@ Create the credentials as shown below:
 The most important part of your build is defining how your tests will be run. The main idea is to follow the workflow
 shown below.
 
-![CI General Schema](images/ci-general-schema.png)
+![CI General Schema](images/ci_general_schema.png)
 
 The idea is to pull your API code and your Restlet Client test file from source control then use them to fully test the
 API. The tests consist in:

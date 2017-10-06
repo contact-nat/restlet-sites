@@ -39,7 +39,7 @@ so we can update this page.
 
 Your API tests should follow the following flow:
 
-![Test flow](./images/ci-general-schema.png)
+![Test flow](images/ci_general_schema.png)
 
 You should build your API from the sources, then run unit tests, deploy it and finally run integration tests against it
 using Restlet Client.
