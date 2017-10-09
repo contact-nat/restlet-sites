@@ -35,6 +35,7 @@ Other CI/CD solution may work, the list above is only the list we have in our ra
 solution please <a href="mailto:support@restlet.com?subject=Could%20you%20try%20this%20CI%2FCD%20solution%3F">contact us</a>
 so we can update this page.
 
+<a class="anchor" name="ci-workflow"></a>
 ## CI workflow
 
 Your API tests should follow the following flow:

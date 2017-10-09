@@ -73,6 +73,8 @@ API. The tests consist in:
 In our pipeline, the unit-testing and packaging will be done in stage _Build_, the deployment in stage _Deploy_ and the
 API tests in stage _Test_.
 
+> Note: more information on how to configure your pipeline [in the doc](../user-guide/automate/integrate-with-ci#ci-workflow)
+
 <a class="anchor" name="setting-up-the-repository"></a>
 ## Setting up the repository
 
