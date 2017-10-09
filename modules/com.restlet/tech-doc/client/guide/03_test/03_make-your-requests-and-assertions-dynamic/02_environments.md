@@ -16,8 +16,7 @@ I can:
 
 When I send the request if the selected environment is:
 
-* `prod`: the evaluated URL will be `https://perdu
-.com/api/my-resource`
+* `prod`: the evaluated URL will be `https://perdu.com/api/my-resource`
 * `staging`: the evaluated URL will be `https://staging.perdu.com/api/my-resource`.
 
 <a class="anchor" name="create-and-edit-an-environment"></a>
