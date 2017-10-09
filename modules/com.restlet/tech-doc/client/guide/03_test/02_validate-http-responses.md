@@ -23,6 +23,20 @@ By the way, you can create dynamic assertions (that depend on the result of othe
 ./work-with-your-data/expressions), for example you can test that the header `Content-type` of the response is equal
 to the header `Accept` of the request. Expressions unleash the full power of API testing!
 
+Last but not least, an asssertion leverages an operator in order to compare a value to the expected one.
+Here is the list of currently available operators:
+
+* compare value: "Equals", "Does not equal", "Less than", "Less than or equal", "Greater than", "Greater than or equal"
+* check existence: "Exists", "Does not exists"
+* check inclusion: "Contains", "Does not contain"
+
+Here are some examples:
+
+* "Status code" equals 200
+* "Duration (ms)" less than 200
+* "Body content" exists
+* "JSON body" identified by $.id equals 12345
+
 <a class="anchor" name="json-path"></a>
 ## JSON path
 
