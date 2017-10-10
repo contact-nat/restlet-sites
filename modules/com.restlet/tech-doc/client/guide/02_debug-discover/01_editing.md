@@ -1,7 +1,12 @@
 <a class="anchor" name="introduction"></a>
 
 The request editor in Restlet Client allows you to define an HTTP request.
-Each part of the request is handled by a dedicated area in the editor. 
+Each part of the request is handled by a dedicated area in the editor:
+
+* [HTTP Method](#method) 
+* [URL](#url) 
+* [Headers](#headers) 
+* [Body](#body) 
 
 <a class="anchor" name="url"></a>
 ### URL
