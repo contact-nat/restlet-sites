@@ -8,8 +8,8 @@ Let's introduce the two main use cases that Restlet Client addresses.
 Restlet Client helps you to __call any type of HTTP API__ (REST, hypermedia, SOAP, OData...) with a powerful while easy to use __request editor__.
 
 
-<a class="image-popup-fit-width" href="/static/app/img/changeowner.png" title="Request editor">
-     <img src="/static/tech-doc/client/guide/images/restlet-client-request-editor.png" width="1280" height="800">
+<a class="image-popup-fit-width" href="/static/tech-doc/client/guide/images/restlet-client-request-editor.png" title="Request editor">
+     <img src="/static/tech-doc/client/guide/images/restlet-client-request-editor.png" width="800" height="1280">
 </a>
 
 <br/>
