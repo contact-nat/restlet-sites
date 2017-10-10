@@ -1,8 +1,9 @@
 This tutorial assumes you know how to launch Restlet Client tests from CLI. If you don't know, please have a look at
 [the documentation](../user-guide/automate/run-tests-from-cli) first.
 
-Now let's run our API tests on Jenkins!
-<!-- TODO: Jenkins description, let's explain we use Jenkins 2 and why ? -->
+Now let's run our API tests on Jenkins! Jenkins is a largely adopted open-source continuous integration and delivery
+platform. It is highly configurable, thus adapts well to any workflow. The community is huge and there is a multitude
+of plugins for all sorts of use cases. Jenkins comes for free and you can easily install it on your infrastructure.
 
 First thing to do in order to run your scenario on Jenkins is to push it to a Github repository. Make sure you push
 the 2 test files:
