@@ -48,7 +48,8 @@ The second mode is "raw" where all headers are displayed as they are received. T
 
 At first sight, it looks surprising to talk about request edition in this section, but you deserve good surprises, right?
 
-Let's say that you try out an API and send a request that creates an entity. By convention, the response contains the URL of the newly created entity (usually in a "Location" header). It's quite appealing to ìmmediately send the request that returns the content of the new entity and Restlet Client simply helps you set up this request.
+Let's say that you test an API and send a request that creates an entity. By convention, the response contains the URL of the newly created entity (usually in a "Location" header).
+It's quite appealing to ìmmediately requesting the state of this entity. That's where Restlet Client eases you life and helps you set up this request.
 
 Restlet Client understands a list of response headers and provides useful actions when you click on them. 
 See the table below for a complete list of niceties.

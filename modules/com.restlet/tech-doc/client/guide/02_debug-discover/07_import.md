@@ -6,8 +6,8 @@ This means that you can request any API that exposes its Swagger really easily a
 
 We distinguish two kinds of data to import:
 
-* API contracts
-* request collections
+* API contracts (["From Restlet Studio"](#restlet-studio), ["Swagger 2.0"](#swagger-20))
+* request collections (["Postman"](#postman), ["HAR 1.2"](#har-1.2), ["Restlet Client repository"](#restlet-client-repository), ["Systinet (HP technology)"](#systinet-hp-technology)  )
 
 The rest of this section focuses on the specificities of each import.
 
@@ -64,16 +64,16 @@ You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-po
 Requests are imported into a root scenario, which name is the date of the import - in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an __ordered__ sequence of HTTP requests/responses, so does a scenario in Restlet Client. Learn more in the dedicated tutorial: [Build an API test for your Web application](../../tutorials/test-web-api)
 
-<a class="anchor" name="systinet-hp-technology"></a>
-### Systinet (HP technology)
-
-Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet <i class="fa fa-external-link" aria-hidden="true"></i></a> integration available.
-
 <a class="anchor" name="restlet-client-repository"></a>
 ### Restlet Client repository
 
 You can export your own local repository into a JSON-based format file. Then import it into Client again.
 You are assured that the imported entities are exactly the same than the one exported.
+
+<a class="anchor" name="systinet-hp-technology"></a>
+### Systinet (HP technology)
+
+Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet <i class="fa fa-external-link" aria-hidden="true"></i></a> integration available.
 
 <a class="anchor" name="import-policies"></a>
 ## Import policies

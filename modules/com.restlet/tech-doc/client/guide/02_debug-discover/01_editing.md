@@ -3,18 +3,6 @@
 The request editor in Restlet Client allows you to define an HTTP request.
 Each part of the request is handled by a dedicated area in the editor. 
 
-<a class="anchor" name="method"></a>
-### HTTP Method
-
-![HTTP method](./images/restlet-client-method.png)
-
-The list of proposed methods can be extended via the HTTP settings. You can add your own methods and indicate whether the method you define accepts a body or not. If you select a method without body in the request editor, the body won't be editable.
-
-![HTTP settings](./images/restlet-client-method-settings.png)
-
-The list of the most common HTTP methods are predefined.
-Please notice that the `TRACE` method has not been added since Client relies on the XmlHttpRequest API and that its implementation in Chrome does not support the `TRACE` method.
-
 <a class="anchor" name="url"></a>
 ### URL
 
@@ -85,4 +73,16 @@ Auto-completion is available for the header names, and for the values of the fol
 The header "Content-type" is automatically set according to the format selected in the body editor. You can still override the preset value.
 
 The header "Authorization" has a dedicated helper which supports the "BASIC" authentication scheme. This helper allows you to enter your username and password. It hashes these values accordingly to the specification.
+
+<a class="anchor" name="method"></a>
+### HTTP Method
+
+![HTTP method](./images/restlet-client-method.png)
+
+The list of proposed methods can be extended via the HTTP settings. You can add your own methods and indicate whether the method you define accepts a body or not. If you select a method without body in the request editor, the body won't be editable.
+
+![HTTP settings](./images/restlet-client-method-settings.png)
+
+The list of the most common HTTP methods are predefined.
+Please notice that the `TRACE` method has not been added since Client relies on the XmlHttpRequest API and that its implementation in Chrome does not support the `TRACE` method.
 
