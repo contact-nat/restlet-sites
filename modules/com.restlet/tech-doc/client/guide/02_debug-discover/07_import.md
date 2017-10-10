@@ -7,7 +7,7 @@ This means that you can request any API that exposes its Swagger really easily a
 We distinguish two kinds of data to import:
 
 * API contracts (["From Restlet Studio"](#restlet-studio), ["Swagger 2.0"](#swagger-20))
-* request collections (["Postman"](#postman), ["HAR 1.2"](#har-1.2), ["Restlet Client repository"](#restlet-client-repository), ["Systinet (HP technology)"](#systinet-hp-technology)  )
+* request collections (["Postman"](#postman), ["HAR 1.2"](#har-12), ["Restlet Client repository"](#restlet-client-repository), ["Systinet (HP technology)"](#systinet-hp-technology)  )
 
 The rest of this section focuses on the specificities of each import.
 
