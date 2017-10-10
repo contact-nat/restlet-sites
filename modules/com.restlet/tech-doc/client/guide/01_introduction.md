@@ -9,7 +9,7 @@ Restlet Client helps you to __call any type of HTTP API__ (REST, hypermedia, SOA
 
 
 <a class="image-popup-fit-width" href="/static/tech-doc/client/guide/images/restlet-client-request-editor.png" title="Request editor">
-     <img src="/static/tech-doc/client/guide/images/restlet-client-request-editor.png" width="800" height="1280">
+     <img src="/static/tech-doc/client/guide/images/restlet-client-request-editor.png" width="562">
 </a>
 
 <br/>
