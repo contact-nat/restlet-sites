@@ -1,3 +1,7 @@
+![Jenkins](./images/jenkins_logo.png)
+
+<br/>
+
 This tutorial assumes you know how to launch Restlet Client tests from CLI. If you don't know, please have a look at
 [the documentation](../user-guide/automate/run-tests-from-cli) first.
 
