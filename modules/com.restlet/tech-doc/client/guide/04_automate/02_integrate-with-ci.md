@@ -40,6 +40,7 @@ so we can update this page.
 
 Your API tests should follow the following flow:
 
+<!-- IN SCREENSHOT: LOGO -->
 ![Test flow](images/ci_general_schema.png)
 
 You should build your API from the sources, then run unit tests, deploy it and finally run integration tests against it
@@ -52,6 +53,7 @@ They should get you started in no time.
 <a class="anchor" name="basic-workflow-test-your-main-branch-once-a-day"></a>
 ## Basic workflow: test your main branch once a day
 
+<!-- IN SCREENSHOT: LOGO -->
 ![Basic workflow](./images/ci_nightly.png)
 
 If you choose to test your API on a static environment, you can run the test on demand or schedule your job to run
@@ -76,6 +78,7 @@ Once the job exists, you should be able to run it on-demand too.
 <a class="anchor" name="advanced-workflow-check-your-api-is-ok-on-each-commit"></a>
 ## Advanced workflow: check your API is OK on each commit
 
+<!-- IN SCREENSHOT: LOGO -->
 ![Advanced workflow](./images/ci_branch.png)
 
 

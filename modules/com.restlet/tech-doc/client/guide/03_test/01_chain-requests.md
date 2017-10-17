@@ -2,7 +2,7 @@ Sending a single request is good, but as you move forward in your API testing jo
 Any request container (project, service, scenario) in your repository can be run in the `Scenarios` Tab (also called `Scenarios Perspective`). Just click on the play button!
 
 
-<a class="anchor" name="overview-scenario"></a>
+<a class="anchor" name="global-overview-of-a-scenario"></a>
 ## Global overview of a scenario
  
 Among all kinds of request containers, the scenario is the one that deserves focus. 
@@ -13,6 +13,7 @@ Combined with [validation feature](validate-http-responses), it helps you ensure
 The following diagram summarizes these characteristics. It presents a chain of two requests inside a scenario, where the URI of the second request depends on the other thanks to [expressions](./make-your-requests-and-assertions-dynamic/expressions).
 Both requests leverage assertions in order to check the related response. They also relies on [environment variables](./make-your-requests-and-assertions-dynamic/environments) in order to parameterize parts of their definition. 
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR | SP_RESPONSE | SP_ASSERTIONS -->
 ![Scenario overview](images/scenario-annoted.png)
 
 <a class="anchor" name="request-order"></a>

@@ -25,11 +25,12 @@ The default redirection mode is defined in the settings. By default, redirection
 
 When asked to follow redirections, Restlet Client automatically achieves the next step described by the response.
 
-<a class="anchor" name="response"></a>
+<a class="anchor" name="inspect-responses"></a>
 ## Inspect responses
 
 Restlet Client provides a dedicated area to display the response. This area maps the different elements of a response.
 
+<!-- IN SCREENSHOT: RP_RESPONSE -->
 ![Response](./images/restlet-client-response.png)
 
 <a class="anchor" name="status-code-and-message"></a>
@@ -49,7 +50,7 @@ The second mode is "raw" where all headers are displayed as they are received. T
 At first sight, it looks surprising to talk about request edition in this section, but you deserve good surprises, right?
 
 Let's say that you test an API and send a request that creates an entity. By convention, the response contains the URL of the newly created entity (usually in a "Location" header).
-It's quite appealing to ìmmediately requesting the state of this entity. That's where Restlet Client eases you life and helps you set up this request.
+It's quite appealing to immediately requesting the state of this entity. That's where Restlet Client eases you life and helps you set up this request.
 
 Restlet Client understands a list of response headers and provides useful actions when you click on them. 
 See the table below for a complete list of niceties.
@@ -66,7 +67,7 @@ Cache-Control | If value is a "max-age" or a "s-max-age" cache control directive
 Allow | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated
 Access-Control-Allow-Methods | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated
 
-<a class="anchor" name="payload"></a>
+<a class="anchor" name="response-payload"></a>
 ### Response payload
 
 Response payload corresponds to the data received.
@@ -108,7 +109,7 @@ In "Settings/Appearance", you can also configure the link between a media-type, 
 
 This section shows the headers that are typically managed by the browser, and what values have been sent. With Restlet Client, you can benefit of letting the Browser manage these headers for you or you can choose to take control on it:
 
-<a class="anchor" name="browser"></a>
+<a class="anchor" name="browser-behavior"></a>
 #### Browser behavior
 
 Chrome browser adds additional headers to your HTTP requests, if they are not provided, such as:
@@ -119,6 +120,7 @@ Chrome browser adds additional headers to your HTTP requests, if they are not pr
 
 The headers actually sent are displayed in the "Complete request headers" part of the response:
 
+<!-- IN SCREENSHOT: RP_RESPONSE -->
 ![Complete request headers](./images/restlet-client-complete-headers.png)
 
 You can click on the values here to define them as part of your request. You will be able to overwrite them if needed.
@@ -134,7 +136,8 @@ If Chrome browser has stored a cookie related to a particular domain, this cooki
 
 If you don't want cookies to be added in a request, simply define a header Cookie with an empty value to override this behavior.
 
-![Cookie overrride](./images/restlet-client-cookie.png)
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
+![Cookie override](./images/restlet-client-cookie.png)
 
 
 <a class="anchor" name="request-edition-helpers"></a>

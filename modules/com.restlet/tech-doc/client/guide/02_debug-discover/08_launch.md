@@ -6,6 +6,7 @@ Restlet Client allows you to insert a button in your website that will launch yo
 Note: Process might change due to Google legacy packaged apps policy. Packaged apps are not allowed to inject javascript into third-party pages (that’s what we are doing today with current legacy packaged app) and Google might force us to move to packaged app format.
 -->
 
+<a class="anchor" name="instruct-restlet-client-with-a-meta-tag"></a>
 ## Instruct Restlet Client with a meta tag
 
 Create an html page that contains a **meta tag** that will load Restlet Client script.
@@ -21,6 +22,7 @@ data-console-debug=&quot;true&quot;
 - **data-indicator-element-id** - optional, specifies the id of element Restlet Client will create to let the page know the availability of Restlet Client API. Default value is *dhcInfo*.
 - **data-console-debug** - optional parameter, if contains true, will print debug information into browser javascript console. Default value is *false*.
 
+<a class="anchor" name="call-window-postmessage-script"></a>
 ## Call window.postMessage script
 
 To instruct Restlet Client to open a new request, your webpage must call the **window.postMessage** script with the following message object (all properties are required):
@@ -84,6 +86,7 @@ Example:
 }
 </code></pre>
 
+<a class="anchor" name="use-case"></a>
 ## Use case
 
 Create a webpage that contains an input area pre-filled with your payload and a button to launch your request with Restlet Client in a new tab.

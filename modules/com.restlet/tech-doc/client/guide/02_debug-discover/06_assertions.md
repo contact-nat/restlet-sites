@@ -2,6 +2,7 @@ If you want to make sure your API lives up to your standards, you can create ass
 
 You can for example assert that the response is received in less than 200ms if your SLA specifies it.
 
+<!-- IN SCREENSHOT: SP_ASSERTIONS -->
 ![assertions panel](images/restlet-client-assertions.png)
 
 <br/>

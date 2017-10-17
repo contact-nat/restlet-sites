@@ -7,6 +7,7 @@ If this is the first time you open it, you are the only member of the team. And 
 To add people to your team, search them by email. Then, if they are not already a user of Restlet products,
 they will receive an invitation to join your team.
 
+<a class="anchor" name="sharing-projects"></a>
 # Sharing projects
  
 Now, let's share a project with your team. On the left menu of the application, click on a project's menu to use the **Share** action. 

@@ -24,6 +24,7 @@ When I send the request if the selected environment is:
 
 Environments are available at the top-right of your screen, the current environment's name is always displayed so you can verify it at a glance.
 
+<!-- IN SCREENSHOT: ENVIRONMENT_CHOOSER -->
 ![environments position on screen](./images/environments.png)
 
 You can use the <i class="fa fa-eye" aria-hidden="true"></i> button to view the current environment variables.

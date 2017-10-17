@@ -1,4 +1,4 @@
-
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Travis CI](./images/travis_logo.png)
 
 <br/>
@@ -26,6 +26,7 @@ Second step is to go to your <a href="https://travis-ci.org/profile" target="_bl
 profile page <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> on travis-ci.org, find your Github repository and switch it on:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Switch GitHub project on in Travis](./images/travis_select_github_repo.png)
 
 The third and final step is to create a .travis.yml file for Travis configuration. Let’s start with a simple
@@ -43,6 +44,7 @@ script:
 
 After pushing your .travis.yml file to your Github repository, you should see the build running on Travis-CI:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Travis build setup](./images/travis_build_setup.png)
 
 From now on, each time you push to your Github repository, a build will be triggered on Travis CI, and will run your
@@ -58,6 +60,7 @@ A simple way to securely manage your key is to add it as an environment variable
 Travis CI settings <i class="fa fa-external-link" aria-hidden="true"></i>
 </a>:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Travis Environment Variables](./images/travis_environment_variables.png)
 
 You can find your license key on the Restlet Client billing page. You’ll then be able to access your key in your build
@@ -98,8 +101,10 @@ schedule job executions <i class="fa fa-external-link" aria-hidden="true"></i>
 deployment. That way you’ll be ensuring that the latest version of your API, deployed each night on a staging
 environment, does not break your API contract.
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Travis Cron](./images/travis_cron.png)
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Travis report](./images/travis_report.png)
 
 Another approach is to fire your API tests after each successful deployment of your API. See Travis CI documentation on

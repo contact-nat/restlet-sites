@@ -33,6 +33,7 @@ We have got you covered of course. In every field where expressions are supporte
 <i class="fa fa-magic" aria-hidden="true"></i>. Click on it to open the __Expression builder__. You can create your
 expressions from there in a few clicks and see the evaluated expression in real-time.
 
+<!-- IN SCREENSHOT: MODAL_EXPRESSION_BUILDER -->
 ![expression builder](./images/expression_builder.png)
 
 > Note: The expression will be added where you placed your cursor before clicking the magic wand icon

@@ -11,17 +11,17 @@ We distinguish two kinds of data to import:
 
 The rest of this section focuses on the specificities of each import.
 
-<a class="anchor" name="import-contracts-of-api"></a>
+<a class="anchor" name="import-api-contracts"></a>
 ## Import API contracts
 
-<a class="anchor" name="restlet-studio"></a>
+<a class="anchor" name="from-restlet-studio"></a>
 ### From Restlet Studio
 
 Restlet Studio is a module of the Restlet Platform that enable teams to design and document their API contract. Restlet Platform offers a built-in integration from Restlet Studio to Restlet Client in order to quickly interact with an API being built. The imported contract can also be very useful to bootstrap API tests from an existing contract.
 
 Learn more about this [Restlet Platform integration](../../../studio/user-guide/platform/tryinclient).
 
-<a class="anchor" name="swagger-20"></a>
+<a class="anchor" name="swagger-2-0"></a>
 ### Swagger 2.0
 
 The specification of the Swagger 2.0 format is available <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a>.
@@ -57,7 +57,7 @@ We estimate that Postman and Restlet Client are both valuable tools that deserve
 
 You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-postman-always-rings-twice/" target="_blank">blog post <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details about the import rules.
 
-<a class="anchor" name="har-12"></a>
+<a class="anchor" name="har-1-2"></a>
 ### HAR 1.2
 
 <a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) support to export all interactions in this format.

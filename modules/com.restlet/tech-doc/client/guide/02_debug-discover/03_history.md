@@ -6,6 +6,7 @@ The history saves the requests and responses of all the requests sent in Restlet
 
 From within the history list, users can load the selected entry into the requested editor. Related response is loaded as well.
 
+<!-- IN SCREENSHOT: HEADER | RP_HISTORY_LEFT | RP_RESPONSE -->
 ![History](images/restlet-client-history.png)
 
 <a class="anchor" name="browsing-the-history"></a>
@@ -21,6 +22,7 @@ In addition, entries are grouped by URL which means that any successive requests
 
 You can save a set of requests into the drive, using the "Save to repository" feature.
 
+<!-- IN SCREENSHOT: RP_HISTORY_LEFT -->
 ![Save to repository](images/restlet-client-save-to-repo.png)
 
 Just select requests in your history, click the button and define where they should be stored.

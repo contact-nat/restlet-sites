@@ -19,10 +19,12 @@ Maven <i class="fa fa-external-link" aria-hidden="true"></i>
 The quickest way to launch tests from scratch is to include them inside a project. Then you can just open the project
 you want to test and click on the button `Download project` in the test automation box.
 
+<!-- IN SCREENSHOT: SP_CONTAINER -->
 ![Download project button](./images/automation_box.png)
 
 You can now download the auto-generated pom and the project.
 
+<!-- IN SCREENSHOT: MODAL_AUTOMATION -->
 ![Download the project and pom](./images/download_project_and_pom.png)
 
 Put them in the same folder, open a terminal in this folder and launch `mvn clean test -DlicenseKey=<your license key>`.
@@ -33,6 +35,7 @@ Put them in the same folder, open a terminal in this folder and launch `mvn clea
 You can find the license key in your account page if you have a team plan or belong to a team. If you want to try the
 feature without subscribing, you can start a free trial, it will give you 14 days to test it for free.
 
+<!-- IN SCREENSHOT: ACCOUNT_LICENSE -->
 ![License key location](./images/license_key_location.png)
 
 <a class="anchor" name="get-full-control-over-your-tests"></a>
@@ -47,6 +50,7 @@ export of your repository or a subset of it.
 If you want to run a specific set of requests in your test, you can use the export feature and check the boxes that
 match the requests/scenarios etc... you want to run.
 
+<!-- IN SCREENSHOT: SP_TREE -->
 ![Export your requests](./images/export_repository.png)
 
 Place the downloaded JSON in the same folder as the pom.xml and make sure the pom.xml references that that JSON file

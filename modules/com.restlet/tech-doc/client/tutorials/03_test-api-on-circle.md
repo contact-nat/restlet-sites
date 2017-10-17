@@ -1,3 +1,4 @@
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![CircleCI](./images/circle_logo.png)
 
 This tutorial assumes you know how to launch Restlet Client tests from CLI. If you don't know, please have a look at
@@ -7,7 +8,7 @@ Now let's run our API tests on CircleCI! CircleCI is a modern continuous integra
 projects to tackle both continuous testing and deployment easily. Your first execution container is given for free, so
 just login with your Github account and you’re set.
 
-<a class="anchor" name="running-your-scenarios-on-circle-ci"></a>
+<a class="anchor" name="running-your-scenarios-on-circleci"></a>
 ## Running your scenarios on CircleCI
 
 First thing to do in order to run your scenario on CircleCI is to push it to a Github repository. Make sure you push
@@ -16,6 +17,7 @@ the 2 test files:
 * the JSON file containing your scenario
 * the pom.xml configuration file
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Github Repo](./images/circle_github_repo.png)
 
 > Note: Restlet Client now has a GitHub integration to help you push your tests files to GitHub in a whim.
@@ -24,6 +26,7 @@ You can learn more about this feature [here](../user-guide/automate/push-to-gith
 Second step is to enable this project through the CircleCI console in the “Projects” tab. Select the Github user or
 organization the project belongs to and click on “Build project”:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Select Github Repo](./images/circle_select_github_repo.png)
 
 To use the defaults in CircleCI, nothing more is necessary. The platform will detect the project kind and execute
@@ -53,10 +56,12 @@ key is only for you and should not be published on a Github repository.
 A simple way to securely manage your key is to add it as an environment variable in the project settings within Circle
 CI:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Environment Variables](./images/circle_environment_variables.png)
 
 Simply add it using the “Add Variable” button:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![License key variable](./images/circle_license_key_variable.png)
 
 To use this environment variable, just update the command to start tests within the previous `circle.yml` file, as
@@ -88,7 +93,7 @@ circle.yml <i class="fa fa-external-link" aria-hidden="true"></i>
 pom.xml <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> files.
 
-<a class="anchor" name="automating-scenario-execution-in-circle-ci"></a>
+<a class="anchor" name="automating-scenario-execution-in-circleci"></a>
 ## Automating scenario execution in CircleCI
 
 As a team developing an Web API, we would like to run our API Tests each time the Web API project is built and
@@ -100,6 +105,7 @@ second one after each successful deployment.
 
 The following figure provides an overview of this approach:
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![Workflow](./images/circle_workflow.png)
 
 To trigger the execution of test scenarios after the Web API is successfully deployed,  we need to leverage the
@@ -122,5 +128,6 @@ deployment:
 This way, each time we’ll push a change, the API will be built, deployed and tested thanks to CircleCI and Restlet
 Client!
 
+<!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
 ![CircleCI report](./images/circle_report.png)
 

@@ -9,7 +9,7 @@ I can use the expression: `${"Star-wars API"."Get 10 planet names"."response"."b
 
 The method `jsonPath` parses the result of the expression `${"Star-wars API"."Get 10 planet names"."response"."body"}`.
 
-<a class="anchor" name="constant"></a>
+<a class="anchor" name="constants"></a>
 ## Constants
 
 When writing an expression like `${"toto"}`, the expression will be evaluated as:

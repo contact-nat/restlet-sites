@@ -17,6 +17,7 @@ account.
 Open Restlet Client and open your Account (to the right of the header bar). There, you’ll find a GitHub section in
 which you can link your account.
 
+<!-- IN SCREENSHOT: ACCOUNT_GITHUB -->
 ![Link your GitHub account](./images/link_github_account.png)
 
 We will never clone any of your repositories, and only ask GitHub for rights to write in your repositories, which is
@@ -28,11 +29,13 @@ the minimal possible scope required for the feature to work.
 Once your GitHub account is linked, you need to link your project to a GitHub repository. To do so, open the project
 you want to link and click on the button "link your repository" at the right of the screen.
 
+<!-- IN SCREENSHOT: SP_CONTAINER -->
 ![Link project button](./images/automation_box.png)
 
 You can choose the GitHub repository where you want to push your project test file and select the branch and path where
 it should be pushed.
 
+<!-- IN SCREENSHOT: MODAL_GITHUB_PROJECT -->
 ![Link project](./images/link_project.png)
 
 In the example above, my test file will be pushed to _git@github.com:restlet/star-wars-api.git_ on branch _1.2.17_ in
@@ -47,6 +50,7 @@ in your project and environment before pushing anything in this case!
 You are all set now, you just need to open your project and click on the GitHub button (that now says 'Push') to push
 your project to GitHub.
 
+<!-- IN SCREENSHOT: MODAL_GITHUB_PUSH -->
 ![Push to GitHub](./images/push.png)
 
 An indicator will light up in the *Push* button to notify you that you have changes in your project that have not

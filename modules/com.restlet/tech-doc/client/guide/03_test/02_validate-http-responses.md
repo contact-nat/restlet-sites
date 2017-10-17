@@ -17,6 +17,7 @@ sub-part of the response body.
 Assertions are validated in real-time, meaning that they are re-evaluated when you run the request and when you
 update them.
 
+<!-- IN SCREENSHOT: RP_ASSERTIONS -->
 ![assertions](./images/assertions.png)
 
 By the way, you can create dynamic assertions (that depend on the result of other requests) with [expressions](
@@ -57,7 +58,7 @@ Here are a few hints to help you use JSON payloads:
 As we will see below the current implementation in Restlet Client mostly follows the reference, but differs on few points.
 
 <a class="anchor" name="sample-json-path-expressions"></a>
-### Sample expressions
+### Sample JSON path expressions
 
 This paragragh lists expressions and their result agains the following sample json file:
 
@@ -122,11 +123,11 @@ Here are some sample expressions and their result.
 | $..category | An array of all values of the "category" nodes (i.e. `["reference","fiction","fiction","fiction"]`)
 | $..category[(@.length-1)] | The value of the last "category" node
 
-<a class="anchor" name="when-restlet-client-differs-from-the-reference-json-path"></a>
-### When Restlet Client differs from the reference
+<a class="anchor" name="when-restlet-client-differs-from-the-json-path-reference"></a>
+### When Restlet Client differs from the JSON path reference
 
 <a class="anchor" name="the-star-operator"></a>
-#### The "*" operator
+#### The star operator
 
 | Expression | Reference | Restlet Client
 | ---------- | --------- | --------------
@@ -134,7 +135,7 @@ Here are some sample expressions and their result.
 
 
 <a class="anchor" name="the-double-dot-operator"></a>
-#### The ".." operator
+#### The double dot operator
 
 The expression `$..book` is interpreted as an array of all "book" nodes so it returns an an array containing an array, since "book" node is an array:
 
@@ -186,7 +187,7 @@ Here are a few tips to help you work with XML payloads:
 - ```//``` selects nodes in the document from the current node that match the selection no matter where they are.
 
 <a class="anchor" name="sample-xpath-expressions"></a>
-### Sample expressions
+### Sample XPath expressions
 
 
 <pre class="language-xml">
@@ -244,11 +245,11 @@ Here are some sample expressions and their result.
 | count(//title) | The number of all "title" nodes  (i.e.: `4`)
 
 
-<a class="anchor" name="when-restlet-client-differs-from-the-reference-xpath"></a>
-### When Restlet Client differs from the reference
+<a class="anchor" name="when-restlet-client-differs-from-the-xpath-reference"></a>
+### When Restlet Client differs from the XPath reference
 
-<a class="anchor" name="list-with-single-element"></a>
-#### List with single element
+<a class="anchor" name="lists-with-single-element"></a>
+#### Lists with single element
 
 This expression computes the value of the title node of the first book: `//book[last()]/title/text()`.
 

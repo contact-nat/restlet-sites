@@ -1,4 +1,3 @@
-<a class="anchor" name="introduction"></a>
 
 The request editor in Restlet Client allows you to define an HTTP request.
 Each part of the request is handled by a dedicated area in the editor:
@@ -11,6 +10,7 @@ Each part of the request is handled by a dedicated area in the editor:
 <a class="anchor" name="url"></a>
 ### URL
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![URL](./images/restlet-client-url.png)
 
 The URL is composed of:
@@ -25,11 +25,13 @@ The URL is composed of:
 The query parameters can be updated directly in the URL text field or the dedicated area which presents a simple tabular form.
 The menu on the right allows to indicate whether the name or value of the query parameters are already encoded and does not require to be encoded another time.
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![Query parameters](./images/restlet-client-query-parameter.png)
 
 <a class="anchor" name="headers"></a>
 ### Headers
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![Headers](./images/restlet-client-headers.png)
 
 The headers can be edited either as simple tabular form or as a raw block of text. In the latter case, you have to comply with the <a href="https://tools.ietf.org/html/rfc7230#section-3.2" target="_blank">syntax of HTTP headers <i class="fa fa-external-link" aria-hidden="true"></i></a>.
@@ -46,8 +48,10 @@ It guides you to manually edit:
 * Web forms or multipart form payloads (<a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4" target="_blank">cf Web forms specification <i class="fa fa-external-link" aria-hidden="true"></i></a>)
 
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![Text body](./images/restlet-client-body-text.png)
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![Form body](./images/restlet-client-body-multipart.png)
 
 The editor of the request body also helps you also upload files from your drives.
@@ -73,19 +77,22 @@ Auto-completion is available for the header names, and for the values of the fol
 * Transfer-Encoding
 
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![Autocomplete headers](./images/restlet-client-headers-autocomplete.png)
 
 The header "Content-type" is automatically set according to the format selected in the body editor. You can still override the preset value.
 
 The header "Authorization" has a dedicated helper which supports the "BASIC" authentication scheme. This helper allows you to enter your username and password. It hashes these values accordingly to the specification.
 
-<a class="anchor" name="method"></a>
+<a class="anchor" name="http-method"></a>
 ### HTTP Method
 
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
 ![HTTP method](./images/restlet-client-method.png)
 
 The list of proposed methods can be extended via the HTTP settings. You can add your own methods and indicate whether the method you define accepts a body or not. If you select a method without body in the request editor, the body won't be editable.
 
+<!-- IN SCREENSHOT: SETTINGS_HTTP -->
 ![HTTP settings](./images/restlet-client-method-settings.png)
 
 The list of the most common HTTP methods are predefined.
