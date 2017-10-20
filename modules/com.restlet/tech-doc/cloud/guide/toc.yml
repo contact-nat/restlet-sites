@@ -1,0 +1,345 @@
+toc:
+- dir: 01_get-started
+  id: get-started
+  items:
+  - file: 01_sign-in.md
+    id: sign-in
+    link_url: /01_get-started/01_sign-in.md
+    long-title: Sign-in to Restlet Cloud
+    title: Sign-in
+    url: /get-started/sign-in
+  - file: 02_quickstart-wizard.md
+    id: quickstart-wizard
+    link_url: /01_get-started/02_quickstart-wizard.md
+    long-title: Use Restlet Cloud's Quickstart wizard
+    title: Quickstart wizard
+    url: /get-started/quickstart-wizard
+  - file: 03_discover-dashboard.md
+    id: discover-dashboard
+    link_url: /01_get-started/03_discover-dashboard.md
+    long-title: Discover Restlet Cloud's Dashboard
+    title: Discover the Dashboard
+    url: /get-started/discover-dashboard
+  - file: 04_interactive-assistants.md
+    id: interactive-assistants
+    link_url: /01_get-started/04_interactive-assistants.md
+    long-title: Use interactive assistants
+    title: Interactive assistants
+    url: /get-started/interactive-assistants
+  - file: 05_free-trial.md
+    id: free-trial
+    link_url: /01_get-started/05_free-trial.md
+    long-title: Restlet Cloud Free Trial
+    title: Try it for FREE
+    url: /get-started/free-trial
+  - file: 06_account-info.md
+    id: account-info
+    link_url: /01_get-started/06_account-info.md
+    long-title: Access your account information
+    title: Access account info
+    url: /get-started/account-info
+  long-title: Get started with Restlet Cloud
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/01_get-started
+  targetpath: /get-started
+  title: Get started
+- dir: 02_explore
+  id: explore
+  items:
+  - file: 01_overview.md
+    id: overview
+    link_url: /02_explore/01_overview.md
+    long-title: Overview
+    title: Overview
+    url: /explore/overview
+  - file: 02_cell-lifecycle.md
+    id: cell-lifecycle
+    link_url: /02_explore/02_cell-lifecycle.md
+    long-title: Discover Restlet Cloud cell lifecycle
+    title: Cell lifecycle
+    url: /explore/cell-lifecycle
+  - file: 03_cell-deployment.md
+    id: cell-deployment
+    link_url: /02_explore/03_cell-deployment.md
+    long-title: Understand the cell deployment process
+    title: Cell deployment
+    url: /explore/cell-deployment
+  - file: 04_versioning.md
+    id: versioning
+    link_url: /02_explore/04_versioning.md
+    long-title: Restlet Cloud cell version management
+    title: Versioning
+    url: /explore/versioning
+  - file: 05_revisions.md
+    id: revisions
+    link_url: /02_explore/05_revisions.md
+    long-title: Restlet Cloud cell revision management
+    title: Revisions
+    url: /explore/revisions
+  long-title: Explore Restlet Cloud concepts and basics
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/02_explore
+  targetpath: /explore
+  title: Explore Restlet Cloud concepts
+- dir: 03_create
+  id: create
+  items:
+  - file: 01_overview.md
+    id: overview
+    link_url: /03_create/01_overview.md
+    long-title: Overview
+    title: Overview
+    url: /create/overview
+  - dir: 02_edit
+    id: edit
+    items:
+    - file: 01_general.md
+      id: general
+      link_url: /03_create/02_edit/01_general.md
+      long-title: Your web API's general information
+      title: General information
+      url: /create/edit/general
+    - file: 02_endpoints.md
+      id: endpoints
+      link_url: /03_create/02_edit/02_endpoints.md
+      long-title: Your API Endpoints
+      title: Endpoints
+      url: /create/edit/endpoints
+    - file: 03_resources.md
+      id: resources
+      link_url: /03_create/02_edit/03_resources.md
+      long-title: Your API Resources
+      title: Resources
+      url: /create/edit/resources
+    - file: 04_representations.md
+      id: representations
+      link_url: /03_create/02_edit/04_representations.md
+      long-title: Your API Representations
+      title: Representations
+      url: /create/edit/representations
+    long-title: Edit your local web API
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/03_create/02_edit
+    targetpath: /create/edit
+    title: Edit a local web API
+  - file: 03_sync-api-store.md
+    id: sync-api-store
+    link_url: /03_create/03_sync-api-store.md
+    long-title: Update your API structure
+    title: Update API structure
+    url: /create/sync-api-store
+  - file: 04_test.md
+    id: test
+    link_url: /03_create/04_test.md
+    long-title: Test your web API
+    title: Test a web API
+    url: /create/test
+  long-title: Create complete web APIs
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/03_create
+  targetpath: /create
+  title: Create web APIs
+- dir: 04_publish
+  id: publish
+  items:
+  - file: 01_overview.md
+    id: overview
+    link_url: /04_publish/01_overview.md
+    long-title: Overview
+    title: Overview
+    url: /publish/overview
+  - dir: 02_secure
+    id: secure
+    items:
+    - file: 01_user-groups.md
+      id: user-groups
+      link_url: /04_publish/02_secure/01_user-groups.md
+      long-title: Manage groups and members
+      title: User groups
+      url: /publish/secure/user-groups
+    - file: 02_runtime-permissions.md
+      id: runtime-permissions
+      link_url: /04_publish/02_secure/02_runtime-permissions.md
+      long-title: Configure runtime access for groups
+      title: Runtime permissions
+      url: /publish/secure/runtime-permissions
+    - file: 03_firewall-settings.md
+      id: firewall-settings
+      link_url: /04_publish/02_secure/03_firewall-settings.md
+      long-title: Determine firewall settings
+      title: Firewall settings
+      url: /publish/secure/firewall-settings
+    long-title: Secure a web API
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/04_publish/02_secure
+    targetpath: /publish/secure
+    title: Secure a web API
+  - dir: 03_publish
+    id: publish
+    items:
+    - file: 01_invocation.md
+      id: invocation
+      link_url: /04_publish/03_publish/01_invocation.md
+      long-title: Invoke public and private APIs
+      title: Invoke an API
+      url: /publish/publish/invocation
+    - file: 02_client-sdk.md
+      id: client-sdk
+      link_url: /04_publish/03_publish/02_client-sdk.md
+      long-title: Download custom client SDKs
+      title: Client SDKs
+      url: /publish/publish/client-sdk
+    - file: 03_server-skeleton.md
+      id: server-skeleton
+      link_url: /04_publish/03_publish/03_server-skeleton.md
+      long-title: Download server skeletons
+      title: Server skeletons
+      url: /publish/publish/server-skeleton
+    - file: 04_documentation.md
+      id: documentation
+      link_url: /04_publish/03_publish/04_documentation.md
+      long-title: Document your web API to facilitate its consumption
+      title: Documentation
+      url: /publish/publish/documentation
+    - file: 05_api-definition.md
+      id: api-definition
+      link_url: /04_publish/03_publish/05_api-definition.md
+      long-title: Standard API definition and integration with third party applications
+      title: API definition
+      url: /publish/publish/api-definition
+    long-title: Publish a web API
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/04_publish/03_publish
+    targetpath: /publish/publish
+    title: Publish a web API
+  - dir: 04_manage
+    id: manage
+    items:
+    - file: 01_analytics.md
+      id: analytics
+      link_url: /04_publish/04_manage/01_analytics.md
+      long-title: Access your web API consumption Analytics
+      title: Analytics
+      url: /publish/manage/analytics
+    - file: 02_community-management.md
+      id: community-management
+      link_url: /04_publish/04_manage/02_community-management.md
+      long-title: Keep your community informed
+      title: Community management
+      url: /publish/manage/community-management
+    long-title: Manage a web API
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/04_publish/04_manage
+    targetpath: /publish/manage
+    title: Manage a web API
+  long-title: Secure, publish and manage web APIs
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/04_publish
+  targetpath: /publish
+  title: Publish and consume
+- dir: 05_store
+  id: store
+  items:
+  - file: 01_overview.md
+    id: overview
+    link_url: /05_store/01_overview.md
+    long-title: Overview
+    title: Overview
+    url: /store/overview
+  - dir: 02_entity-stores
+    id: entity-stores
+    items:
+    - file: 01_model-data.md
+      id: model-data
+      link_url: /05_store/02_entity-stores/01_model-data.md
+      long-title: Model your Entity Store data
+      title: Model data
+      url: /store/entity-stores/model-data
+    - file: 02_deploy.md
+      id: deploy
+      link_url: /05_store/02_entity-stores/02_deploy.md
+      long-title: Deploy your Entity Store
+      title: Deploy
+      url: /store/entity-stores/deploy
+    - file: 03_edit-data.md
+      id: edit-data
+      link_url: /05_store/02_entity-stores/03_edit-data.md
+      long-title: Edit, back up and restore your Entity Store data
+      title: Edit & backup data
+      url: /store/entity-stores/edit-data
+    long-title: Entity Stores
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/05_store/02_entity-stores
+    targetpath: /store/entity-stores
+    title: Entity Stores
+  - file: 03_file-stores.md
+    id: file-stores
+    link_url: /05_store/03_file-stores.md
+    long-title: Store static files in local File Stores
+    title: File Stores
+    url: /store/file-stores
+  - dir: 04_wrappers
+    id: wrappers
+    items:
+    - file: 01_overview.md
+      id: overview
+      link_url: /05_store/04_wrappers/01_overview.md
+      long-title: Overview
+      title: Overview
+      url: /store/wrappers/overview
+    - file: 02_google-sheets.md
+      id: google-sheets
+      link_url: /05_store/04_wrappers/02_google-sheets.md
+      long-title: Google Sheets Wrapper
+      title: Google Sheets Wrapper
+      url: /store/wrappers/google-sheets
+    - file: 03_sql.md
+      id: sql
+      link_url: /05_store/04_wrappers/03_sql.md
+      long-title: SQL Wrapper
+      title: SQL Wrapper
+      url: /store/wrappers/sql
+    - file: 04_github.md
+      id: github
+      link_url: /05_store/04_wrappers/04_github.md
+      long-title: GitHub Wrapper
+      title: GitHub Wrapper
+      url: /store/wrappers/github
+    long-title: Wrappers (externally stored data)
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/05_store/04_wrappers
+    targetpath: /store/wrappers
+    title: Wrappers
+  long-title: Store data for APIs in Restlet Cloud Data Stores
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/05_store
+  targetpath: /store
+  title: Store data
+- dir: 06_manage
+  id: manage
+  items:
+  - file: 01_connectors.md
+    id: connectors
+    link_url: /06_manage/01_connectors.md
+    long-title: Manage your web API via Restlet Cloud Connectors
+    title: Use Connectors
+    url: /manage/connectors
+  - file: 02_remote-agent.md
+    id: remote-agent
+    link_url: /06_manage/02_remote-agent.md
+    long-title: Configure and install your remote agent
+    title: Configure the remote agent
+    url: /manage/remote-agent
+  long-title: Manage existing web APIs with Restlet Cloud Connectors
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/06_manage
+  targetpath: /manage
+  title: Manage web APIs
+- dir: 07_share
+  id: share
+  items:
+  - file: 01_add-members.md
+    id: add-members
+    link_url: /07_share/01_add-members.md
+    long-title: Add members to your team
+    title: Add team members
+    url: /share/add-members
+  - file: 02_sharing-settings.md
+    id: sharing-settings
+    link_url: /07_share/02_sharing-settings.md
+    long-title: Change your Sharing settings
+    title: Change sharing settings
+    url: /share/sharing-settings
+  long-title: Share your cells
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/cloud/guide/07_share
+  targetpath: /share
+  title: Share cells
+

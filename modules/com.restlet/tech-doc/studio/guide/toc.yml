@@ -1,0 +1,170 @@
+toc:
+- dir: 01_basics
+  id: basics
+  items:
+  - file: 01_introduction.md
+    id: introduction
+    link_url: /01_basics/01_introduction.md
+    long-title: Introduction
+    title: Introduction
+    url: /basics/introduction
+  - file: 02_create.md
+    id: create
+    link_url: /01_basics/02_create.md
+    long-title: Creating a new API
+    title: Creating a new API
+    url: /basics/create
+  - file: 03_import.md
+    id: import
+    link_url: /01_basics/03_import.md
+    long-title: Importing a Swagger or RAML definition
+    title: Importing a Swagger or RAML definition
+    url: /basics/import
+  - file: 04_collaborate.md
+    id: collaborate
+    link_url: /01_basics/04_collaborate.md
+    long-title: Collaborating with your team
+    title: Collaborating with your team
+    url: /basics/collaborate
+  long-title: Basics
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/studio/guide/01_basics
+  targetpath: /basics
+  title: Basics
+- dir: 02_editor
+  id: editor
+  items:
+  - file: 01_introduction.md
+    id: introduction
+    link_url: /02_editor/01_introduction.md
+    long-title: Introduction to API design
+    title: Introduction to API design
+    url: /editor/introduction
+  - file: 02_security.md
+    id: security
+    link_url: /02_editor/02_security.md
+    long-title: Defining your API security
+    title: Defining your API security
+    url: /editor/security
+  - file: 03_markdown.md
+    id: markdown
+    link_url: /02_editor/03_markdown.md
+    long-title: Using markdown
+    title: Using markdown
+    url: /editor/markdown
+  - file: 04_exports.md
+    id: exports
+    link_url: /02_editor/04_exports.md
+    long-title: Working with OAS (Swagger) and RAML
+    title: Working with OAS (Swagger) and RAML
+    url: /editor/exports
+  - file: 05_tips.md
+    id: tips
+    link_url: /02_editor/05_tips.md
+    long-title: Tips & tricks
+    title: Tips & tricks
+    url: /editor/tips
+  long-title: Using the editor
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/studio/guide/02_editor
+  targetpath: /editor
+  title: Using the editor
+- dir: 03_documentation
+  id: documentation
+  items:
+  - file: 01_introduction.md
+    id: introduction
+    link_url: /03_documentation/01_introduction.md
+    long-title: Introduction
+    title: Introduction
+    url: /documentation/introduction
+  - file: 02_publish.md
+    id: publish
+    link_url: /03_documentation/02_publish.md
+    long-title: Publish your documentation
+    title: Publish your documentation
+    url: /documentation/publish
+  - file: 03_visibility.md
+    id: visibility
+    link_url: /03_documentation/03_visibility.md
+    long-title: Documentation visibility and password
+    title: Documentation visibility and password
+    url: /documentation/visibility
+  long-title: Publishing documentation
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/studio/guide/03_documentation
+  targetpath: /documentation
+  title: Publishing documentation
+- dir: 04_mock
+  id: mock
+  items:
+  - file: 01_intro.md
+    id: intro
+    link_url: /04_mock/01_intro.md
+    long-title: Introduction to API mocks
+    title: Introduction to API mocks
+    url: /mock/intro
+  - file: 02_setup.md
+    id: setup
+    link_url: /04_mock/02_setup.md
+    long-title: API mock setup
+    title: API mock setup
+    url: /mock/setup
+  - file: 03_usage.md
+    id: usage
+    link_url: /04_mock/03_usage.md
+    long-title: How to use API mocks
+    title: How to use API mocks
+    url: /mock/usage
+  long-title: Mocking your API
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/studio/guide/04_mock
+  targetpath: /mock
+  title: Mocking your API
+- dir: 05_generate
+  id: generate
+  items:
+  - file: 01_introduction.md
+    id: introduction
+    link_url: /05_generate/01_introduction.md
+    long-title: Introduction to code generation
+    title: Introduction to code generation
+    url: /generate/introduction
+  - file: 02_skeletons.md
+    id: skeletons
+    link_url: /05_generate/02_skeletons.md
+    long-title: Server skeletons
+    title: Server skeletons
+    url: /generate/skeletons
+  - file: 03_clientsdks.md
+    id: clientsdks
+    link_url: /05_generate/03_clientsdks.md
+    long-title: Client SDKs
+    title: Client SDKs
+    url: /generate/clientsdks
+  long-title: Generating client and server code
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/studio/guide/05_generate
+  targetpath: /generate
+  title: Generating code
+- dir: 06_platform
+  id: platform
+  items:
+  - file: 01_tryinclient.md
+    id: tryinclient
+    link_url: /06_platform/01_tryinclient.md
+    long-title: Try in Restlet Client
+    title: Try in Restlet Client
+    url: /platform/tryinclient
+  - file: 02_switchapps.md
+    id: switchapps
+    link_url: /06_platform/02_switchapps.md
+    long-title: Switching between Restlet applications
+    title: Switching between Restlet applications
+    url: /platform/switchapps
+  - file: 03_about.md
+    id: about
+    link_url: /06_platform/03_about.md
+    long-title: About Restlet Client and Restlet Cloud
+    title: About Restlet Client and Restlet Cloud
+    url: /platform/about
+  long-title: Restlet platform
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/studio/guide/06_platform
+  targetpath: /platform
+  title: Restlet platform
+

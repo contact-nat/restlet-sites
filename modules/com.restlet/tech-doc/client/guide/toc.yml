@@ -1,0 +1,194 @@
+toc:
+- file: 01_introduction.md
+  id: introduction
+  link_url: /01_introduction.md
+  long-title: What Restlet Client does
+  title: Introduction
+  url: /introduction
+- dir: 02_debug-discover
+  id: debug-discover
+  items:
+  - file: 01_editing.md
+    id: editing
+    link_url: /02_debug-discover/01_editing.md
+    long-title: Create and edit requests
+    title: Editing requests
+    url: /debug-discover/editing
+  - file: 02_sending.md
+    id: sending
+    link_url: /02_debug-discover/02_sending.md
+    long-title: Send requests and inspect responses
+    title: Sending requests
+    url: /debug-discover/sending
+  - file: 03_history.md
+    id: history
+    link_url: /02_debug-discover/03_history.md
+    long-title: Browsing the history
+    title: History
+    url: /debug-discover/history
+  - file: 04_saving.md
+    id: saving
+    link_url: /02_debug-discover/04_saving.md
+    long-title: Saving requests
+    title: Saving requests
+    url: /debug-discover/saving
+  - file: 05_environment.md
+    id: environment
+    link_url: /02_debug-discover/05_environment.md
+    long-title: Use environment variables
+    title: Use environment variables
+    url: /debug-discover/environment
+  - file: 06_assertions.md
+    id: assertions
+    link_url: /02_debug-discover/06_assertions.md
+    long-title: Ensure a request/response complies to rules
+    title: Validate responses
+    url: /debug-discover/assertions
+  - file: 07_import.md
+    id: import
+    link_url: /02_debug-discover/07_import.md
+    long-title: Importing requests
+    title: Importing requests
+    url: /debug-discover/import
+  - file: 08_launch.md
+    id: launch
+    link_url: /02_debug-discover/08_launch.md
+    long-title: Open Restlet Client from any website
+    title: Open Restlet Client from any website
+    url: /debug-discover/launch
+  long-title: Debug and Discover with Restlet Client
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/client/guide/02_debug-discover
+  targetpath: /debug-discover
+  title: Debug and Discover
+- dir: 03_test
+  id: test
+  items:
+  - file: 01_chain-requests.md
+    id: chain-requests
+    link_url: /03_test/01_chain-requests.md
+    long-title: Chaining requests execution
+    title: Chaining requests execution
+    url: /test/chain-requests
+  - file: 02_validate-http-responses.md
+    id: validate-http-responses
+    link_url: /03_test/02_validate-http-responses.md
+    long-title: Validate the HTTP response with Restlet Client
+    title: Validate HTTP responses
+    url: /test/validate-http-responses
+  - dir: 03_make-your-requests-and-assertions-dynamic
+    id: make-your-requests-and-assertions-dynamic
+    items:
+    - file: 01_expressions.md
+      id: expressions
+      link_url: /03_test/03_make-your-requests-and-assertions-dynamic/01_expressions.md
+      long-title: Write expressions with Restlet Client
+      title: Expressions
+      url: /test/make-your-requests-and-assertions-dynamic/expressions
+    - file: 02_environments.md
+      id: environments
+      link_url: /03_test/03_make-your-requests-and-assertions-dynamic/02_environments.md
+      long-title: Execute your request in a specific environment
+      title: Environments
+      url: /test/make-your-requests-and-assertions-dynamic/environments
+    - file: 03_reuse-request-or-response-parts.md
+      id: reuse-request-or-response-parts
+      link_url: /03_test/03_make-your-requests-and-assertions-dynamic/03_reuse-request-or-response-parts.md
+      long-title: Re-use request or response parts
+      title: Re-use request or response parts
+      url: /test/make-your-requests-and-assertions-dynamic/reuse-request-or-response-parts
+    - file: 04_functions.md
+      id: functions
+      link_url: /03_test/03_make-your-requests-and-assertions-dynamic/04_functions.md
+      long-title: Transform your data
+      title: Transform your data
+      url: /test/make-your-requests-and-assertions-dynamic/functions
+    long-title: make your requests and assertions dynamic
+    sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/client/guide/03_test/03_make-your-requests-and-assertions-dynamic
+    targetpath: /test/make-your-requests-and-assertions-dynamic
+    title: Make your tests dynamic
+  long-title: Test your API with Restlet Client
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/client/guide/03_test
+  targetpath: /test
+  title: Test your API
+- dir: 04_automate
+  id: automate
+  items:
+  - file: 01_run-tests-from-cli.md
+    id: run-tests-from-cli
+    link_url: /04_automate/01_run-tests-from-cli.md
+    long-title: Run your tests from your command line
+    title: Run your tests from CLI
+    url: /automate/run-tests-from-cli
+  - file: 02_integrate-with-ci.md
+    id: integrate-with-ci
+    link_url: /04_automate/02_integrate-with-ci.md
+    long-title: Continuous API testing within your CI pipeline
+    title: Continuous API testing
+    url: /automate/integrate-with-ci
+  - file: 03_push-to-github.md
+    id: push-to-github
+    link_url: /04_automate/03_push-to-github.md
+    long-title: Push your tests to GitHub
+    title: Push your tests to GitHub
+    url: /automate/push-to-github
+  - file: 04_generate-test-reports.md
+    id: generate-test-reports
+    link_url: /04_automate/04_generate-test-reports.md
+    long-title: Generate test reports
+    title: Generate test reports
+    url: /automate/generate-test-reports
+  long-title: Automate your API tests with Restlet Client
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/client/guide/04_automate
+  targetpath: /automate
+  title: Automate your API tests
+- dir: 05_collaborate
+  id: collaborate
+  items:
+  - file: 01_team_owner.md
+    id: team_owner
+    link_url: /05_collaborate/01_team_owner.md
+    long-title: Managing your team
+    title: Sharing projects with your team
+    url: /collaborate/team_owner
+  - file: 02_team_member.md
+    id: team_member
+    link_url: /05_collaborate/02_team_member.md
+    long-title: Adding a project to a team I belong to
+    title: Adding a project to a team I belong to
+    url: /collaborate/team_member
+  - file: 03_project_edition.md
+    id: project_edition
+    link_url: /05_collaborate/03_project_edition.md
+    long-title: Editing a shared project
+    title: Editing a shared project
+    url: /collaborate/project_edition
+  long-title: Work as a team
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/client/guide/05_collaborate
+  targetpath: /collaborate
+  title: Work as a team
+- dir: 06_platform
+  id: platform
+  items:
+  - file: 01_tryinclient.md
+    id: tryinclient
+    link_url: /06_platform/01_tryinclient.md
+    long-title: Try out an API from Restlet Studio in Restlet Client
+    title: Try out a Restlet Studio API
+    url: /platform/tryinclient
+  - file: 02_switchapps.md
+    id: switchapps
+    link_url: /06_platform/02_switchapps.md
+    long-title: Switching between Restlet applications
+    title: Switching between Restlet applications
+    url: /platform/switchapps
+  - file: 03_about.md
+    id: about
+    link_url: /06_platform/03_about.md
+    long-title: About Restlet Studio and Restlet Cloud
+    title: About Restlet Studio and Restlet Cloud
+    url: /platform/about
+  long-title: Restlet Platform
+  sourcepath: /home/thboileau/forge/web/modules/com.restlet/tech-doc/client/guide/06_platform
+  targetpath: /platform
+  title: Restlet Platform
+

@@ -1,0 +1,8 @@
+toc:
+- file: 01_create-client-test-project.md
+  id: create-client-test-project
+  link_url: /01_create-client-test-project.md
+  long-title: Automatically create a Restlet Client test project for your API
+  title: Automatically create a Restlet Client test project for your API
+  url: /create-client-test-project
+
