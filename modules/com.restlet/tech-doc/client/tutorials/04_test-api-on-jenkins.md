@@ -88,10 +88,10 @@ API tests in stage _Test_.
 ## Setting up the repository
 
 Now that Jenkins can run your tests, let's prepare our tests. We will need a
-<a href="https://github.com/restlet/tutorials-resources/blob/master/src/test/resources/contacts_api_tests.json" target="_blank">
+<a href="https://github.com/restlet/tutorials-resources/blob/master/ci/src/test/resources/contacts_api_tests.json" target="_blank">
 JSON file <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> - generated from Restlet Client - describing our tests and a
-<a href="https://github.com/restlet/tutorials-resources/blob/master/pom.xml" target="_blank">
+<a href="https://github.com/restlet/tutorials-resources/blob/master/ci/pom.xml" target="_blank">
 pom.xml <i class="fa fa-external-link" aria-hidden="true"></i>
 </a> configuring them.
 
