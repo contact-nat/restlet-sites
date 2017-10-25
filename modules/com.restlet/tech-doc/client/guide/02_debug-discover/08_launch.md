@@ -1,11 +1,5 @@
 Restlet Client allows you to insert a button in your website that will launch your request directly in Restlet Client.
 
->**Note:** This process might change due to Google legacy packaged apps policy.
-
-<!--
-Note: Process might change due to Google legacy packaged apps policy. Packaged apps are not allowed to inject javascript into third-party pages (that’s what we are doing today with current legacy packaged app) and Google might force us to move to packaged app format.
--->
-
 <a class="anchor" name="instruct-restlet-client-with-a-meta-tag"></a>
 ## Instruct Restlet Client with a meta tag
 
