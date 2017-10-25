@@ -2,6 +2,11 @@ Sending a single request is good, but as you move forward in your API testing jo
 Any request container (project, service, scenario) in your repository can be run in the `Scenarios` Tab (also called `Scenarios Perspective`). Just click on the play button!
 
 
+<!-- IN SCREENSHOT: HEADER | SP_TREE | SP_CONTAINER -->
+![Scenario perspective](images/scenario-perspective.png)
+
+> The `Scenarios Perspective` has been designed to help with API tests creation and execution. Additionally to the ability to run any request container, this perspective offers an auto-save mechanism. Any change will automatically be saved and shared with your team.
+
 <a class="anchor" name="global-overview-of-a-scenario"></a>
 ## Global overview of a scenario
  

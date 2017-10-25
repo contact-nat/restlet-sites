@@ -16,12 +16,12 @@ a solution:
 |Jenkins|★★★|Natively supported, optional <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">Maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
 |Travis CI|★★★|Natively supported|
 |CircleCI|★★★|Natively supported|
+|Codeship|★★★|Natively supported|
+|Team Foundation Server|★★★|Natively supported|
 |Teamcity|★★★|Natively supported|
 |Bamboo|★★★|Natively supported|
 |Bitbucket Pipelines|★★★|Natively supported|
-|Codeship|★★★|Natively supported|
 |Semafore CI|★★★|Natively supported|
-|Team Foundation Server|★★★|Natively supported|
 |Shippable|★★★|Natively supported|
 |Wercker|★★☆|Via a Docker image|
 |Drone IO|★★☆|Via a Docker image|
