@@ -121,7 +121,7 @@ The license key has also been parameterized. It is very important, for security 
 to a GitHub repository. As both the POM file and the Jenkinsfile are on our public GitHub repository, we must
 parameterize the build and inject the license key here via Jenkins credentials.
 
-The variable API_KEY is a bit trickier. It is one of the variables from our Restlet Client environment - in the JSON
+The variable `API_KEY` is a bit trickier. It is one of the variables from our Restlet Client environment - in the JSON
 test file. It has been overwritten manually here because it contains sensitive information that we did not want to
 push to GitHub. This mean you can have environments with a valid value here to run the tests in Restlet Client and
 a _safe_ environment without sensitive information in it for CI where you manually add the sensitive data.
