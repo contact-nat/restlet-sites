@@ -51,7 +51,7 @@ Whether you use this class to run your Web API or not, you must create it to run
 
 ### Using maven
 
-You can use the following pom.xml to get the dependencies required for the Introspector. The pom is available [here](http://maven.restlet.com/org/restlet/jse/org.restlet.ext.apispark/2.3.1/org.restlet.ext.apispark-2.3.1.pom).
+You can use the following pom.xml to get the dependencies required for the Introspector. The pom is available [here](http://maven.restlet.com/org/restlet/jse/org.restlet.ext.apispark/2.4-M1/org.restlet.ext.apispark-2.4-M1.pom).
 
 * In a terminal, run : "mvn install"
 (* To use it in eclipse, run in your terminal : "mvn eclipse:eclipse")
@@ -64,7 +64,7 @@ You can use the following pom.xml to get the dependencies required for the Intro
 &Tab;&lt;parent&gt;
 &Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
 &Tab;&Tab;&lt;artifactId&gt;org.restlet.parent&lt;/artifactId&gt;
-&Tab;&Tab;&lt;version&gt;2.3.1&lt;/version&gt;
+&Tab;&Tab;&lt;version&gt;2.4-M1&lt;/version&gt;
 &Tab;&lt;/parent&gt;
 
 &Tab;&lt;artifactId&gt;org.restlet.ext.apispark&lt;/artifactId&gt;
@@ -111,13 +111,13 @@ You can use the following pom.xml to get the dependencies required for the Intro
 &Tab;&Tab;&lt;dependency&gt;
 &Tab;&Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
 &Tab;&Tab;&Tab;&lt;artifactId&gt;org.restlet&lt;/artifactId&gt;
-&Tab;&Tab;&Tab;&lt;version&gt;2.3.1&lt;/version&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;2.4-M1&lt;/version&gt;
 
 &Tab;&Tab;&lt;/dependency&gt;
 &Tab;&Tab;&lt;dependency&gt;
 &Tab;&Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
 &Tab;&Tab;&Tab;&lt;artifactId&gt;org.restlet.ext.jackson&lt;/artifactId&gt;
-&Tab;&Tab;&Tab;&lt;version&gt;2.3.1&lt;/version&gt;
+&Tab;&Tab;&Tab;&lt;version&gt;2.4-M1&lt;/version&gt;
 
 &Tab;&Tab;&lt;/dependency&gt;
 &Tab;&lt;/dependencies&gt;

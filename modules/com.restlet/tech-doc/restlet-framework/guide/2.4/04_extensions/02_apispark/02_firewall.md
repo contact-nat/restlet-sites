@@ -11,7 +11,7 @@ Add the following dependency in your pom.xml :
 <pre class="language-markup"><code class="language-markup">&lt;dependency&gt;
 &Tab;&Tab;&lt;groupId&gt;org.restlet.jse&lt;/groupId&gt;
 &Tab;&Tab;&lt;artifactId&gt;org.restlet.ext.apispark&lt;/artifactId&gt;
-&Tab;&Tab;&lt;version&gt;2.3.4&lt;/version&gt;
+&Tab;&Tab;&lt;version&gt;2.4-M1&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre>
 

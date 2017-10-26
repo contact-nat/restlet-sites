@@ -21,7 +21,7 @@ Add org.restlet.ext.swagger.jar (provided in the "lib" directory of
 [restlet framework](http://restlet.com/downloads/current#release=testing&edition=jse&distribution=zip
 "download restlet framework")) to your classpath.
 
-Make sure you are using the version 2.3 of Restlet and java 1.7.
+Make sure you are using the version 2.4 of Restlet and java 1.8+.
 
 ## Configuration
 

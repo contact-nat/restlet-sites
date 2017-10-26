@@ -1,4 +1,4 @@
-# Version 2.3
+# Version 2.4
 
 Restlet Framework is the most widely used open source solution for Java developers who want to create and use APIs.
 

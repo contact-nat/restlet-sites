@@ -24,7 +24,7 @@ resource that says "hello, world" and run it.
 ## What do I need?
 
 We assume that you have a development environment set up and
-operational, and that you already have installed the Java 1.5 (or
+operational, and that you already have installed the Java 1.8 (or
 higher). In case you haven't downloaded the Restlet Framework yet,
 select one of the available distributions of the [Restlet Framework
 ${restlet-version-minor}](http://restlet.com/downloads/current). Make sure you
