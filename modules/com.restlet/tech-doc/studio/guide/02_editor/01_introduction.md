@@ -23,13 +23,13 @@ There are three key concepts used when designing an API:
 
 * **Resources** are elements your consumers will interact with through your API. Resources are uniquely identified by a path, which combined with the API's endpoint provides a unique address for a resource on the web. For example, *Calendars* is the name of a resource that corresponds to a list of calendars, and its path is */calendars*.
 * **Operations** are the actions that can be performed on your resources. The most common operations are GET (read), POST (create), PUT (update) and DELETE. For example, *List all Calendars* is the name of an operation that uses the *GET* method on the *Calendars* resource.
-* **Representations** are descriptions of the actual data that is exchanged over the network. For example, *Calendar* is the name of a representation which will describe all the properties of a Calendar, such as its name, owner, and a reference to the events that belong to it. The *List all Calendars* operation returns a list of *Calendar* representations.
+* **Data types** are descriptions of the actual data that is exchanged over the network. For example, *Calendar* is the name of a data type which will describe all the properties of a Calendar, such as its name, owner, and a reference to the events that belong to it. The *List all Calendars* operation returns a list of *Calendar* data types.
 
 There are other elements that make up an API that are also very useful:
 
 * **Endpoints** are the main entry point for your API on the web. An endpoint is composed of a scheme such as *HTTPS*, and a host such as www.calendar-api.com.
 * **Text blocks** can be used to freely enter any text (including markdown) which can be positioned anywhere in your API design. Use text blocks to explain transversal topics like authentication and error handling.
-* **Sections** are used to meaningfully group together resources and representations. Use these to make your API design clearer and more developer friendly. You can drag and drop elements into sections in the left panel, and you can also reorder sections among each other.
+* **Sections** are used to meaningfully group together resources and data types. Use these to make your API design clearer and more developer friendly. You can drag and drop elements into sections in the left panel, and you can also reorder sections among each other.
 
 In **Restlet Studio**, you'll be able to create these elements from the **+** menu in the left panel.
 
