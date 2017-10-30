@@ -65,7 +65,7 @@ To get started, add the following parts to your API's pom.xml file:
 
 &lt;properties&gt;
     &lt;!-- The version of restlet framework you'll use --&gt;
-    &lt;restlet.version&gt;2.4-M1&lt;/restlet.version&gt;
+    &lt;restlet.version&gt;2.4-M2&lt;/restlet.version&gt;
 &lt;/properties&gt;
 
 &lt;dependencies&gt;
