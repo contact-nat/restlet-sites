@@ -23,7 +23,7 @@ the 2 test files:
 You can learn more about this feature [here](../user-guide/automate/push-to-github).
 
 Second step is to go to your <a href="https://travis-ci.org/profile" target="_blank">
-profile page <i class="fa fa-external-link" aria-hidden="true"></i>
+profile page <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> on travis-ci.org, find your Github repository and switch it on:
 
 <!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
@@ -57,7 +57,7 @@ Test scenario automation through Maven is a paying feature, so you’ll be asked
 key is private to you and should not be published on a Github repository.
 A simple way to securely manage your key is to add it as an environment variable in
 <a href="https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings" target="_blank">
-Travis CI settings <i class="fa fa-external-link" aria-hidden="true"></i>
+Travis CI settings <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>:
 
 <!-- IN SCREENSHOT: NOTHING_IMPORTANT -->
@@ -82,21 +82,21 @@ This argument can then be used in your pom.xml configuration:
 </pre>
 
 See an example of <a href="https://github.com/antoine-richard/StarWarsApiTests/blob/master/.travis.yml" target="_blank">
-.travis.yml <i class="fa fa-external-link" aria-hidden="true"></i>
+.travis.yml <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> and <a href="https://github.com/antoine-richard/StarWarsApiTests/blob/master/pom.xml" target="_blank">
-pom.xml <i class="fa fa-external-link" aria-hidden="true"></i>
+pom.xml <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> files.
 
 Another valid option would be to store it as an
 <a href="https://docs.travis-ci.com/user/encryption-keys" target="_blank">
-encrypted string <i class="fa fa-external-link" aria-hidden="true"></i>
+encrypted string <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> in your `.travis.yml` file.
 
 <a class="anchor" name="automating-scenario-execution-in-travis-ci"></a>
 ## Automating scenario execution in Travis CI
 
 Travis CI offers the ability to <a href="https://docs.travis-ci.com/user/cron-jobs/" target="_blank">
-schedule job executions <i class="fa fa-external-link" aria-hidden="true"></i>
+schedule job executions <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>. It can be very practical if your team is doing nightly
 deployment. That way you’ll be ensuring that the latest version of your API, deployed each night on a staging
 environment, does not break your API contract.
@@ -109,13 +109,13 @@ environment, does not break your API contract.
 
 Another approach is to fire your API tests after each successful deployment of your API. See Travis CI documentation on
 <a href="https://docs.travis-ci.com/user/customizing-the-build" target="_blank">
-how to customize the build <i class="fa fa-external-link" aria-hidden="true"></i>
+how to customize the build <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> and
 <a href="https://docs.travis-ci.com/user/deployment/heroku/#Running-commands-before-and-after-deploy" target="_blank">
-run commands after deploying <i class="fa fa-external-link" aria-hidden="true"></i>
+run commands after deploying <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>. 
 
 It’s also good to know that you can trigger a Travis build
 by <a href="https://docs.travis-ci.com/user/triggering-builds" target="_blank">
-calling the Travis API <i class="fa fa-external-link" aria-hidden="true"></i>
+calling the Travis API <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>.

@@ -13,7 +13,7 @@ However there is more to say about it, and this relates with what is called "red
 Redirection is a concept that covers a specific set of responses sent back by the server.
 Basically, such responses tell the client that a further step is required in order to achieve the request.
 The nature of the next step is described by the redirection response.
-You can refer to <a href="https://tools.ietf.org/html/rfc7231#page-54" target="_blank">the HTTP specification <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details about this topic.
+You can refer to <a href="https://tools.ietf.org/html/rfc7231#page-54" target="_blank">the HTTP specification <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> for more details about this topic.
 
 The "Send" button allows three actions:
 
@@ -60,9 +60,9 @@ Response header | When clicking on the value link
 Location | The URL of the current request is replaced by the header's value
 x-xrds-location | The URL of the current request is set with the header's value
 Set-Cookie | A new header "Cookie" is added to the request with the header's value
-Etag | A new header "If-None-Match" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details)
-Last-Modified | A new header "If-Modified-Since" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details)
-Expires | A new header "If-Modified-Since" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details)
+Etag | A new header "If-None-Match" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> for more details)
+Last-Modified | A new header "If-Modified-Since" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> for more details)
+Expires | A new header "If-Modified-Since" is added to the request with the header's value (see <a href="https://tools.ietf.org/html/rfc7232" target="_blank">conditional request specification <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> for more details)
 Cache-Control | If value is a "max-age" or a "s-max-age" cache control directive then a new header "Cache-Control" is added to the request with value "max-age=0"
 Allow | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated
 Access-Control-Allow-Methods | Such headers contain a list of HTTP methods, each of them is clickable. Once clicked, the method of the current request is updated

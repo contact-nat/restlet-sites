@@ -24,11 +24,11 @@ Learn more about this [Restlet Platform integration](../../../studio/user-guide/
 <a class="anchor" name="swagger-2-0"></a>
 ### Swagger 2.0
 
-The specification of the Swagger 2.0 format is available <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank">here <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+The specification of the Swagger 2.0 format is available <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank">here <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 
 Only JSON is supported at the moment, in case you only have a YAML document, you can easily 
 convert it to JSON before importing it in Restlet Client. Online converters flourish on the web, 
-you can try <a href="https://www.json2yaml.com/" target="_blank">this one <i class="fa fa-external-link" aria-hidden="true"></i></a> for example.
+you can try <a href="https://www.json2yaml.com/" target="_blank">this one <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> for example.
 
 Swagger 2.0 is available under two formats: JSON and YAML. Only the former format is supported right now.
 
@@ -55,13 +55,13 @@ We estimate that Postman and Restlet Client are both valuable tools that deserve
 | sub folders | services | As POSTman supports infinite folder depth - which Restlet Client does not - subfolders are flattened.
 | requests | requests | Environment variables are imported too (the environment holds the name of the project), but they are valuated. When possible, some assertions are generated too after parsing the Postman scripts.
 
-You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-postman-always-rings-twice/" target="_blank">blog post <i class="fa fa-external-link" aria-hidden="true"></i></a> for more details about the import rules.
+You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-postman-always-rings-twice/" target="_blank">blog post <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> for more details about the import rules.
 
 <a class="anchor" name="har-1-2"></a>
 ### HAR 1.2
 
-<a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) support to export all interactions in this format.
-Requests are imported into a root scenario, which name is the date of the import - in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+<a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) support to export all interactions in this format.
+Requests are imported into a root scenario, which name is the date of the import - in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an __ordered__ sequence of HTTP requests/responses, so does a scenario in Restlet Client. Learn more in the dedicated tutorial: [Build an API test for your Web application](../../tutorials/test-web-api)
 
 <a class="anchor" name="restlet-client-repository"></a>
@@ -73,7 +73,7 @@ You are assured that the imported entities are exactly the same than the one exp
 <a class="anchor" name="systinet-hp-technology"></a>
 ### Systinet (HP technology)
 
-Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet <i class="fa fa-external-link" aria-hidden="true"></i></a> integration available.
+Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> integration available.
 
 <a class="anchor" name="import-policies"></a>
 ## Import policies

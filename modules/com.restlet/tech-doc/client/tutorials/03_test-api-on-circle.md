@@ -88,9 +88,9 @@ The `license_key` property can then be used in your pom.xml:
 
 See an example of
 <a href="https://github.com/antoine-richard/restlet-client-circleci/blob/master/circle.yml" target="_blank">
-circle.yml <i class="fa fa-external-link" aria-hidden="true"></i>
+circle.yml <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> and <a href="https://github.com/antoine-richard/restlet-client-circleci/blob/master/pom.xml" target="_blank">
-pom.xml <i class="fa fa-external-link" aria-hidden="true"></i>
+pom.xml <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> files.
 
 <a class="anchor" name="automating-scenario-execution-in-circleci"></a>

@@ -7,10 +7,10 @@ Restlet Client allows you to use exported tests as an input for our Maven plugin
 
 The only things you will need are to install the
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">
-latest Java JDK <i class="fa fa-external-link" aria-hidden="true"></i>
+latest Java JDK <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>
 and <a href="http://maven.apache.org/" target="_blank">
-Maven <i class="fa fa-external-link" aria-hidden="true"></i>
+Maven <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>.
 
 <a class="anchor" name="get-started-in-seconds"></a>

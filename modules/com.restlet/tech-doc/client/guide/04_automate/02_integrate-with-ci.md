@@ -1,11 +1,11 @@
 You probably want to run your tests automatically on a Continuous Integration (CI) environment. Good news, our CLI test runner integrates well
 with most CI solutions, all you need is the
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">
-latest Java JDK <i class="fa fa-external-link" aria-hidden="true"></i>
+latest Java JDK <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a>
 and
 <a href="http://maven.apache.org/" target="_blank">
-Maven <i class="fa fa-external-link" aria-hidden="true"></i>
+Maven <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i>
 </a> installed on your CI machine.
 
 Check in our CI/CD solution list to see if yours integrates well with Restlet Client or influence your choice of
@@ -13,7 +13,7 @@ a solution:
 
 |CI/CD solution|Maven integration level|Comments|
 |---|---|---|
-|Jenkins|★★★|Natively supported, optional <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">Maven integration plugin <i class="fa fa-external-link" aria-hidden="true"></i></a>|
+|Jenkins|★★★|Natively supported, optional <a href="https://plugins.jenkins.io/maven-plugin" target="_blank">Maven integration plugin <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>|
 |Travis CI|★★★|Natively supported|
 |CircleCI|★★★|Natively supported|
 |Codeship|★★★|Natively supported|
@@ -47,7 +47,7 @@ You should build your API from the sources, then run unit tests, deploy it and f
 using Restlet Client.
 
 Technically, there are two main ways to do so which we will explain and comment below. If you want more precise
-instructions on how to configure your CI builds, have a look at our tutorials on <a href="" target="_blank">Travis CI <i class="fa fa-external-link" aria-hidden="true"></i></a> and <a href="" target="_blank">CircleCI <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+instructions on how to configure your CI builds, have a look at our tutorials on <a href="" target="_blank">Travis CI <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> and <a href="" target="_blank">CircleCI <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 They should get you started in no time.
 
 <a class="anchor" name="basic-workflow-test-your-main-branch-once-a-day"></a>
