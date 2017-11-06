@@ -103,7 +103,6 @@ JSON | APPLICATION\_JSON | org.json.JSONArray, org.json.JSONObject, org.json.JSO
 RDF | TEXT\_RDF\_N3, TEXT\_RDF\_NTRIPLES, APPLICATION\_RDF\_TURTLE,APPLICATION\_ALL\_XML | org.restlet.ext.rdf.Graph
 WADL | APPLICATION\_WADL | org.restlet.ext.wadl.ApplicationInfo
 XML | APPLICATION\_ALL\_XML, APPLICATION\_XML, TEXT\_XML | org.w3c.dom.Document, org.restlet.ext.xml.DomRepresentation, org.restlet.ext.xml.SaxRepresentation
-XStream | APPLICATION\_ALL\_XML, APPLICATION\_XML, TEXT\_XML, APPLICATION\_JSON | (requires Jettison dependency) java.lang.Object, org.restlet.ext.xstream.XStreamRepresentation
 
 ## Conversion from objects to representations
 
@@ -122,8 +121,6 @@ JAXB | object supporting JAXB annotations, org.restlet.ext.JaxbRepresentation | 
 JiBX | JiBX bound object, org.restlet.ext.JibxRepresentation | APPLICATION\_ALL\_XML, APPLICATION\_XML, TEXT\_XML
 JSON | org.json.JSONArray, org.json.JSONObject, org.json.JSONTokener | APPLICATION\_JSON
 RDF | org.restlet.ext.rdf.Graph | TEXT\_RDF\_N3, TEXT\_RDF\_NTRIPLES, APPLICATION\_RDF\_TURTLE, APPLICATION\_ALL\_XML
-ROME | com.sun.syndication..fedd.synd.SyndFeed | org.restlet.ext.rome.SyndFeedRepresentation
 Velocity | org.apache.velocity.Template | any
 WADL | org.restlet.ext.wadl.ApplicationInfo | APPLICATION\_WADL
 XML | org.w3c.dom.Document, org.restlet.ext.xml.DomRepresentation, org.restlet.ext.xml.SaxRepresentation | APPLICATION\_ALL\_XML, APPLICATION\_XML, TEXT\_XML
-XStream | an object | APPLICATION\_ALL\_XML, APPLICATION\_XML, TEXT\_XML, APPLICATION\_JSON

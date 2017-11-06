@@ -284,6 +284,7 @@ Web build file  -  Copyright 2005-2014 Restlet
     <echo file="${temp}/owr/tech-doc/restlet-studio/guide/index.md" append="true">${studio.guide.revision.date}</echo>
     <generate-guide version="2.2" />
     <generate-guide version="2.3" />
+    <generate-guide version="2.4" />
     <replaceregexp match="javadocs://(.\..)/(.*)" replace="/technical-resources/restlet-framework/javadocs/\1/\2" byline="true">
       <fileset dir="${temp}/owr" includes="**/*" />
     </replaceregexp>

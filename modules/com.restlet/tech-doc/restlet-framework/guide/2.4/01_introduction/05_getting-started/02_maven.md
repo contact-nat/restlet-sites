@@ -124,21 +124,18 @@ artifactId | Description
 [org.restlet.ext.odata](guide:///extensions/odata/overview "odata")|Integration with OData services.
 [org.restlet.ext.openid](../../extensions/openid "openid")|Support for OpenID authentication.
 [org.restlet.ext.osgi](../../extensions/osgi "osgi")|Support for the OSGi specification.
+[org.restlet.ext.platform](../../extensions/platform/overview "platform")|Integration with Restlet Cloud, PaaS for web API for extended features.
+[org.restlet.ext.raml](../../extensions/raml "raml")|Integration with RAML.
 [org.restlet.ext.rdf](../../extensions/rdf "rdf")|Support for the RDF parsing and generation.
-[org.restlet.ext.rome](../../extensions/rome "rome")|Support for syndicated representations via the ROME library.
-[org.restlet.ext.sdc](../../extensions/sdc "sdc")|Integration with Google Secure Data Connector on the cloud side.
 [org.restlet.ext.servlet](../../extensions/servlet "servlet")|Integration with Servlet API.
 [org.restlet.ext.simple](../../extensions/simple "simple")|Integration with Simple framework.
-[org.restlet.ext.sip](../../extensions/sip "sip")|Support for Session Initiation Protocol (SIP).
 [org.restlet.ext.slf4j](../../extensions/slf4j "slf4j")|Support for the SLF4J logging bridge.
 [org.restlet.ext.spring](guide:///extensions/spring/overview "spring")|Integration with Spring Framework.
 [org.restlet.ext.swagger](../../extensions/swagger "swagger")|Integration with Swagger.
 [org.restlet.ext.thymeleaf](../../extensions/thymeleaf "thymeleaf")|Integration with Thymeleaf.
 [org.restlet.ext.velocity](../../extensions/velocity "velocity")|Integration with Apache Velocity.
 [org.restlet.ext.wadl](../../extensions/wadl "wadl")|Support for the WADL specification.
-[org.restlet.ext.xdb](guide:///extensions/xdb/overview "xdb")|Integration within OracleJVM via the Oracle XML DB feature.
 [org.restlet.ext.xml](../../extensions/xml "xml")|Support for the XML documents.
-[org.restlet.ext.xstream](../../extensions/xstream "xstream")|Integration with XStream.
 org.restlet.test | Test module
 
 # Sample dependencies declaration

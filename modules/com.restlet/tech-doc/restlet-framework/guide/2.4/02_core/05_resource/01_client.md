@@ -27,8 +27,7 @@ subclasses or on the client side to consume it:
 In this case, automatic conversion is handled for you. By default, the
 Restlet Engine support Java object serialization (binary or XML), but
 for more interoperable representations, we suggest to add our [Jackson
-extension](../../extensions/jackson "Jackson extension") or [XStream
-extension](../../extensions/xstream "XStream extension") to
+extension](../../extensions/jackson "Jackson extension") to
 your classpath in order to get clean XML or JSON representations.
 
 # Leveraging annotations
