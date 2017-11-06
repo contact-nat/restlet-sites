@@ -1,23 +1,34 @@
-<a class="anchor" name="discovering-apis"></a>
-## Discovering APIs
+<a class="anchor" name="save-or-save-as"></a>
+## Save or Save as
 
-In the discovery mode, any update erases the previous one. There is no history, only one state is kept: the last one.
+Two actions help you to save requests inside a drive: `Save` and `Save as`.
 
-This state is persisted so that you can reload Client or go back and forth to the Scenarios perspective and still recover the request as it was.
+The latter opens a dialog box for you to define where to save the request. You will be able to save it into an existing project, as a step of a scenario, etc.
 
-This state is updated either manually by the user when playing with the request edition form or when loading a request from the history or the drive.
+If you are modifying a request that has already been saved, you'll be proposed a quick `Save` option by default.
 
-The save action works like a `save as`:
 
-* the first time, it saves the request with the name you must provide
-* the next time, you can either perform a `save as` by specifying a name that doesn't already exist in the target location or update the request by selecting it
+<a class="anchor" name="copy-as-curl"></a>
+## Copy as cUrl
 
-At any time you can save the current and stable state into the drive.
+A `Copy as cUrl` option is available in the dropdown menu of the save button. Click it to export your request in the standard [cURL](https://curl.haxx.se/) syntax.
+
+
+<a class="anchor" name="draft"></a>
+## Start a new draft request
+
+To start a creating a new request from scratch, Click on the  `New draft request` button: 
+
+<!-- IN SCREENSHOT: REQUEST_EDITOR -->
+![URL](./images/restlet-client-new-draft.png "Request editor - new draft")
+
+You will get a blank request editor to craft your request from scratch. Use the `Save` / `Save as` button to save your request in your drive at will.
+
 
 <a class="anchor" name="organizing-your-drive"></a>
 ## Organizing your drive
 
-Let's elaborate about the notions of drive, and containers.
+Let's elaborate about the notions of drive, and request containers.
 
 
 <a class="anchor" name="drive"></a>
