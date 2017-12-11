@@ -7,4 +7,4 @@ You can for example assert that the response is received in less than 200ms if y
 
 <br/>
 
-You'll find a in-depth documentation on assertions in the [dedicated page](../test-automate/validate-http-responses).
+You'll find a in-depth documentation on assertions in the [dedicated page](../test/validate-http-responses/assertions).
