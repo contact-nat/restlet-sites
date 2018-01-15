@@ -14,3 +14,12 @@ Now, let's share a project with your team. On the left menu of the application, 
 Then, you set the project's **access to Team**. Once a project is shared with your team members, it is displayed in green.
  
 From now on, your [team members](./team_member) will see the _shared project_ appear in their left menu, as a new entry under your name.
+
+<a class="anchor" name="limitations-and-best-practises"></a>
+# Limitations and best practices
+ 
+From now on, the current implementation works well with small-size projects.
+
+In  other words, it's better to have a limited number of items by shared projects, and to care of the size of the request's payloads.
+
+We encourage you to split projects in order they contain up to 1000 items, including requests, scenarios and services.
