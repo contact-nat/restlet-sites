@@ -17,9 +17,8 @@ From now on, your [team members](./team_member) will see the _shared project_ ap
 
 <a class="anchor" name="limitations-and-best-practises"></a>
 # Limitations and best practices
- 
-From now on, the current implementation works well with small-size projects.
 
-In  other words, it's better to have a limited number of items by shared projects, and to care of the size of the request's payloads.
+We suggest avoiding very large projects. Small or medium-sized projects provide more flexibility, a better control and great performance.
 
-We encourage you to split projects in order they contain up to 1000 items, including requests, scenarios and services.
+We recommend having up to 500 requests by project. You can create as many projects as you need.
+
