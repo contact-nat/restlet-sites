@@ -76,7 +76,7 @@ The length operators are:
 The length is computed as follows:
 
 * On strings: it returns the number of characters in the string
-* On JSON arrays: it returns the number of elements in the array
+* On JSON or XML arrays: it returns the number of elements in the array
 * On JSON objects: it returns the number of keys in the object
 * On null, numbers, booleans: N/A - an error will be displayed
 * On multi-valued headers: it returns the number of values for the header
@@ -102,6 +102,8 @@ JSON array or comma-separated values.
 * On JSON objects: it checks that the element contains all of the given keys.
   * `{ "age": 41, "lightSaberColor": "red", "forcePower": "3000" }` contains `"age","lightSaberColor"`
   * `{ "age": 41, "lightSaberColor": "red", "forcePower": "3000" }` contains `[ "forcePower" ]`
+* On arrays of XML nodes: it checks that the element contains all of the given nodes listed as an array of nodes.
+  * `[<title lang="en">Harry Potter</title>, <title lang="en">XQuery Kick Start</title>, <title lang="en">Learning XML</title>]` contains `[<title lang="en">Harry Potter</title>, <title lang="en">Learning XML</title>]`
 * On null, numbers and booleans: N/A - an error will be displayed
 
 <a class="anchor" name="regular-expression-matching"></a>
