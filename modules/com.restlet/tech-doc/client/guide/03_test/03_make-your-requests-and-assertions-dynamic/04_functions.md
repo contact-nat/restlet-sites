@@ -29,6 +29,7 @@ When writing an expression like `${"toto"}`, the expression will be evaluated as
   * [Base 64](#base-64)
   * [HMAC](#hmac)
   * [JSON path](#json-path)
+  * [XPath](./#xpath)
   * [Length](#length)
   * [Lower](#lower)
   * [MD5](#md5)
@@ -144,6 +145,24 @@ Example:
   <code class="language-javascript">
 Expression: ${&quot;{\&quot;titi\&quot;: \&quot;toto\&quot;}&quot;.jsonPath(&quot;$.titi&quot;)}
 Result: toto
+  </code>
+</pre>
+
+<a class="anchor" name="xpath"></a>
+### Xpath
+
+Returns the element(s) extracted from the XML input with the given XPath `selector`.
+See the [XPath specification](https://www.w3.org/TR/xpath/).
+
+Arguments:
+
+* selector: The XPath selector that points to the part of the XML to extract from the input.
+
+Example:
+<pre class="languagejavascript">
+  <code class="language-javascript">
+Expression: ${&quot;&lt;title lang="en" /&gt;&quot;.xPath(&quot;//title/@lang&quot;)}
+Result: [lang="en"]
   </code>
 </pre>
 
