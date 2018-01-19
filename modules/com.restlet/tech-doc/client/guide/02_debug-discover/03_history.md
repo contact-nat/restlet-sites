@@ -27,6 +27,6 @@ You can save a set of requests into the drive, using the "Save to repository" fe
 
 Just select requests in your history, click the button and define where they should be stored.
 
-You can put them in your drive or a shared drive if you [belong to a team](./collaborating)), in an existing request container or create a new one. 
+You can put them in your drive or a shared drive if you [belong to a team](../collaborate/team_owner)), in an existing request container or create a new one. 
 
 __Tip:__ If you want to preserve the execution order of your requests, save them as a [scenario](../test/chain-requests).
