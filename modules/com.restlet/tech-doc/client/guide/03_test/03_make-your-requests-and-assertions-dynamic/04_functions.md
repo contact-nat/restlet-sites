@@ -134,7 +134,7 @@ Result:      1aa349585ed7ecbd3b9c486a30067e395ca4b356
 ### JSON path
 
 Returns the element(s) extracted from the JSON input with the given JSON path `selector`.
-See the [JSON path specification](http://goessner.net/articles/JsonPath/).
+See the [JSON path documentation](../validate-http-responses/json-path).
 
 Arguments:
 
@@ -152,7 +152,7 @@ Result: toto
 ### Xpath
 
 Returns the element(s) extracted from the XML input with the given XPath `selector`.
-See the [XPath specification](https://www.w3.org/TR/xpath/).
+See the [XPath documentation](../validate-http-responses/xpath).
 
 Arguments:
 

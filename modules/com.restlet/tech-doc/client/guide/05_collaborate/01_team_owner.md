@@ -20,5 +20,5 @@ From now on, your [team members](./team_member) will see the _shared project_ ap
 
 We suggest avoiding very large projects. Small or medium-sized projects provide more flexibility, a better control and great performance.
 
-We recommend having up to 500 requests by project. You can create as many projects as you need.
+We recommend having up to 250 requests by project. You can create as many projects as you need.
 
