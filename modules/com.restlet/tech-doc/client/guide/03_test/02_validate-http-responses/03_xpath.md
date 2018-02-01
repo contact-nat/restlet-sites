@@ -76,16 +76,3 @@ Here are some sample expressions and their result.
 | //title[@lang]] | An array of all "title" nodes with an attribute "lang"
 | name(//*[1]) | The name of the first element in the document (i.e.: `bookstore`)
 | count(//title) | The number of all "title" nodes  (i.e.: `4`)
-
-
-<a class="anchor" name="when-restlet-client-differs-from-the-reference"></a>
-### When Restlet Client differs from the reference
-
-<a class="anchor" name="lists-with-single-element"></a>
-#### Lists with single element
-
-This expression computes the value of the title node of the first book: `//book[last()]/title/text()`.
-
-You expect it to return only a string value: `Learning XML`.
-
-Unfortunately, at this time of writing, it returns an array containing a single value: `[Learning XML]`.
