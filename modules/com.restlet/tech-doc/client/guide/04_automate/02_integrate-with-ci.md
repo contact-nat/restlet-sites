@@ -47,7 +47,7 @@ You should build your API from the sources, then run unit tests, deploy it and f
 using Restlet Client.
 
 Technically, there are two main ways to do so which we will explain and comment below. If you want more precise
-instructions on how to configure your CI builds, have a look at our tutorials on <a href="" target="_blank">Travis CI <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> and <a href="" target="_blank">CircleCI <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
+instructions on how to configure your CI builds, have a look at our tutorials on [Travis CI](../../tutorials/test-api-on-travis), [CircleCI](../../tutorials/test-api-on-circle) and [Jenkins](../../tutorials/test-api-on-jenkins).
 They should get you started in no time.
 
 <a class="anchor" name="basic-workflow-test-your-main-branch-once-a-day"></a>

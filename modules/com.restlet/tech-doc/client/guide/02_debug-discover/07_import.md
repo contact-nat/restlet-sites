@@ -60,7 +60,7 @@ You can refer to this <a href="http://restlet.com/company/blog/2017/08/09/the-po
 <a class="anchor" name="har-1-2"></a>
 ### HAR 1.2
 
-<a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. [Major Web browsers](https://toolbox.googleapps.com/apps/har_analyzer/) support to export all interactions in this format.
+<a href="http://www.softwareishard.com/blog/har-12-spec/" target="_blank">HAR <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> is a JSON-based format able to describe HTTP requests and responses. <a href="https://toolbox.googleapps.com/apps/har_analyzer/" target="_blank">Major Web browsers <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> support to export all interactions in this format.
 Requests are imported into a root scenario, which name is the date of the import - in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 The main reason to use a scenario, and not a project as the other kind of import, is that a HAR log is an __ordered__ sequence of HTTP requests/responses, so does a scenario in Restlet Client. Learn more in the dedicated tutorial: [Build an API test for your Web application](../../tutorials/test-web-api)
 

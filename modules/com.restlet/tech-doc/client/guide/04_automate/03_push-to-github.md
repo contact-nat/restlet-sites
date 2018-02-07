@@ -38,7 +38,7 @@ it should be pushed.
 <!-- IN SCREENSHOT: MODAL_GITHUB_PROJECT -->
 ![Link project](./images/link_project.png)
 
-In the example above, my test file will be pushed to _git@github.com:restlet/star-wars-api.git_ on branch _1.2.17_ in
+In the example above, my test file will be pushed to `git@github.com:restlet/star-wars-api.git` on branch _1.2.17_ in
 the folder _src/main/resources_.
 
 > Note: We will warn you if the repository your are pushing to is public. Make sure there is no sensitive information

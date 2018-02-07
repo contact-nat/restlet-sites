@@ -11,7 +11,7 @@ If you are modifying a request that has already been saved, you'll be proposed a
 <a class="anchor" name="copy-as-curl"></a>
 ## Copy as cUrl
 
-A `Copy as cUrl` option is available in the dropdown menu of the save button. Click it to export your request in the standard [cURL](https://curl.haxx.se/) syntax.
+A `Copy as cUrl` option is available in the dropdown menu of the save button. Click it to export your request in the standard <a href="https://curl.haxx.se/" target="_blank">cURL <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> syntax.
 
 
 <a class="anchor" name="draft"></a>

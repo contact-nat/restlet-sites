@@ -109,7 +109,7 @@ Result: dXNlcm5hbWU6cGFzc3dvcmQ=
 <a class="anchor" name="hmac"></a>
 ### HMAC
 
-Creates a [Hash-based Message Authentication Code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code).
+Creates a <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code" target="_blank">Hash-based Message Authentication Code <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 
 Arguments:
 

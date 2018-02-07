@@ -66,45 +66,45 @@ Here is an example pom.xml, we will detail all the configurable options below.
 <pre class="language-xml">
 <code class="language-xml">
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
-&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
-&lt;groupId&gt;com.example&lt;/groupId&gt;
-&lt;artifactId&gt;my-star-wars-api-test&lt;/artifactId&gt;
-&lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;my-star-wars-api-test&lt;/artifactId&gt;
+    &lt;version&gt;1.2.3&lt;/version&gt;
 
-&lt;build&gt;
-&lt;plugins&gt;
-&lt;plugin&gt;
-&lt;!-- The Restlet maven plugin --&gt;
-&lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
-&lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
-&lt;version&gt;2.14.0&lt;/version&gt;
-&lt;executions&gt;
-&lt;execution&gt;
-&lt;phase&gt;test&lt;/phase&gt;
-&lt;goals&gt;
-&lt;goal&gt;test&lt;/goal&gt;
-&lt;/goals&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;!-- The Restlet maven plugin --&gt;
+                &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.14.0&lt;/version&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;phase&gt;test&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;test&lt;/goal&gt;
+                        &lt;/goals&gt;
 
-&lt;!-- The configuration goes there --&gt;
-&lt;configuration&gt;
-&lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
-&lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
-&lt;/configuration&gt;
-&lt;/execution&gt;
-&lt;/executions&gt;
-&lt;/plugin&gt;
-&lt;/plugins&gt;
-&lt;/build&gt;
+                        &lt;!-- The configuration goes there --&gt;
+                        &lt;configuration&gt;
+                            &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+                            &lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
 
-&lt;!-- The repository were the Restlet maven plugin is hosted --&gt;
-&lt;pluginRepositories&gt;
-&lt;pluginRepository&gt;
-&lt;id&gt;nexus-public&lt;/id&gt;
-&lt;name&gt;Nexus Release Repository&lt;/name&gt;
-&lt;url&gt;http://maven.restlet.com&lt;/url&gt;
-&lt;/pluginRepository&gt;
-&lt;/pluginRepositories&gt;
+    &lt;!-- The repository were the Restlet maven plugin is hosted --&gt;
+    &lt;pluginRepositories&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;nexus-public&lt;/id&gt;
+            &lt;name&gt;Nexus Release Repository&lt;/name&gt;
+            &lt;url&gt;http://maven.restlet.com&lt;/url&gt;
+        &lt;/pluginRepository&gt;
+    &lt;/pluginRepositories&gt;
 &lt;/project&gt;
 </code>
 </pre>
@@ -130,11 +130,11 @@ Here is the full list of available customization options.
 | Name | Type | Mandatory | Default | Description
 | ---- | ---- | --------- | ------- | -----------
 | **file** | File | Yes | X | File path pointing to the Restlet Client export file from the pom's location
-| **selectedEnvironment** | String | No | X | The name of the environment to be used (make sure it was exported to the JSON file). Learn more about environments [here](../environments)
+| **selectedEnvironment** | String | No | X | The name of the environment to be used (make sure it was exported to the JSON file). Learn more about environments [here](../test/make-your-requests-and-assertions-dynamic/environments)
 | **licenseKey** | String | Yes | X | A valid license key (see [Find your license key](#find-your-license-key))
 | **stopOnFailure** | boolean | No | false | Stops processing build if an error/failure occurs
 | **httpClientTimeoutInMs** | Integer | No | 60000 | Time before HTTP time-out in milliseconds
-| **variables** | Properties | No | X | Custom variables see [Custom variables](#custom-variables)
+| **variables** | Properties | No | X | Custom variables see [Custom variables](#override-environment-variables)
 | **xhrEmulation** | boolean | No | true | Mimics the Chrome extension behaviour by adding the headers the browser automatically adds like accept-*
 | **followRedirects** | String | No | NONE | Indicates whether or not the Maven plugin should follow the redirections as it is possible through the Chrome extension settings in the browser. Possible values are *NONE* or *ALL*
 | **beforeTest** | URL | No | X | URL where to send a notification before a test starts
@@ -148,15 +148,15 @@ See the full configuration example below:
 <pre class="language-xml">
 <code class="language-xml">
 &lt;configuration&gt;
-&lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
-&lt;selectedEnvironment&gt;QA&lt;/selectedEnvironment&gt;
-&lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
-&lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
-&lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
-&lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
-&lt;followRedirects&gt;ALL&lt;/followRedirects&gt;
-&lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
-&lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
+    &lt;file&gt;/path/to/json/configuration/file.json&lt;/file&gt;
+    &lt;selectedEnvironment&gt;QA&lt;/selectedEnvironment&gt;
+    &lt;licenseKey&gt;${myLicenseKey}&lt;/licenseKey&gt;
+    &lt;stopOnFailure&gt;true&lt;/stopOnFailure&gt;
+    &lt;httpClientTimeoutInMs&gt;30000&lt;/httpClientTimeoutInMs&gt;
+    &lt;xhrEmulation&gt;false&lt;/xhrEmulation&gt;
+    &lt;followRedirects&gt;ALL&lt;/followRedirects&gt;
+    &lt;beforeTest&gt;https://my-ci-api.com/api1/notifications&lt;/beforeTest&gt;
+    &lt;afterTest&gt;https://my-ci-api.com/api1/notifications&lt;/afterTest&gt;
 &lt;/configuration&gt;
 </code>
 </pre>
@@ -173,15 +173,15 @@ overriding the environment variable `port` as shown below.
 <pre class="language-xml">
 <code class="language-xml">
 &lt;configuration&gt;
-&lt;file&gt;test.json&lt;/file&gt;
-&lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
-&lt;variables&gt;
-&lt;!-- The variable port&apos;s value will be overwritten to 1337 --&gt;
-&lt;property&gt;
-&lt;name&gt;port&lt;/name&gt;
-&lt;value&gt;1337&lt;/value&gt;
-&lt;/property&gt;
-&lt;/variables&gt;
+    &lt;file&gt;test.json&lt;/file&gt;
+    &lt;selectedEnvironment&gt;localhost&lt;/selectedEnvironment&gt;
+    &lt;variables&gt;
+        &lt;!-- The variable port&apos;s value will be overwritten to 1337 --&gt;
+        &lt;property&gt;
+            &lt;name&gt;port&lt;/name&gt;
+            &lt;value&gt;1337&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;/variables&gt;
 &lt;/configuration&gt;
 </code>
 </pre>
@@ -201,7 +201,7 @@ If the proxy is configured system-wide on the test computer, then just launch th
 
 Please note that this argument is available **on recent Windows systems and on Gnome 2.x systems**,
 for more information refer to the official
-[Oracle documentation](https://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html).
+<a href="https://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html" target="_blank">Oracle documentation <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 
 <a class="anchor" name="use-the-maven-proxy-configuration"></a>
 #### Use the maven proxy configuration
@@ -212,23 +212,21 @@ by using the following configuration:
 <pre class="language-markup">
 <code class="language-markup">
 &lt;configuration&gt;
-&lt;file&gt;/test.json&lt;/file&gt;
-&lt;useMavenProxies&gt;true&lt;/useMavenProxies&gt;
+    &lt;file&gt;/test.json&lt;/file&gt;
+    &lt;useMavenProxies&gt;true&lt;/useMavenProxies&gt;
 &lt;/configuration&gt;
 </code>
 </pre>
 
 **Please note that for now, the nonProxyHosts attribute is not supported.**
 
-More information about Maven proxy configuration can be found on the dedicated
-[documentation](https://maven.apache.org/guides/mini/guide-proxies.html).
+More information about Maven proxy configuration can be found on the dedicated <a href="https://maven.apache.org/guides/mini/guide-proxies.html" target="_blank">documentation <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 
 <a class="anchor" name="jvm-proxy-configuration"></a>
 #### JVM proxy configuration
 
 The proxy configuration can also be configured at runtime using the standard JVM arguments.
-For the official documentation on JVM networking arguments, please refer to
-[Oracle Networking Properties](https://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html).
+For the official documentation on JVM networking arguments, please refer to <a href="https://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html" target="_blank">Oracle Networking Properties <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a>.
 
 Beware that JVM proxy configuration will be applied to *all* the JVM which will impact all the requests performed even
 by other Maven plugins and/or targets.
@@ -282,9 +280,9 @@ The request's body will look like this:
 <pre>
 <code class="language-json">
 {
-&quot;name&quot;: [test name],
-&quot;event&quot;: [BeforeTest|AfterTest],
-&quot;result&quot;: [Ok|Failure|Error] &amp;Tab;&amp;lt;- present only if event=afterTest
+  &quot;name&quot;: [test name],
+  &quot;event&quot;: [BeforeTest|AfterTest],
+  &quot;result&quot;: [Ok|Failure|Error] &amp;Tab;&amp;lt;- present only if event=afterTest
 }
 </code>
 </pre>
@@ -301,7 +299,7 @@ The request's body will look like this:
 <pre>
 <code class="language-json">
 {
-&quot;event&quot;: [Begin|End]
+  &quot;event&quot;: [Begin|End]
 }
 </code>
 </pre>
