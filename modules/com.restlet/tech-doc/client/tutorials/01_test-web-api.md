@@ -1,7 +1,7 @@
 <a class="anchor" name="introduction"></a>
 # Introduction
 
-In this tutorial, we will see how to build an API test from an existing web application. We simply need a browser and Restlet Client. The [HAR file format](https://en.wikipedia.org/wiki/.har) will be used as a bridge between the two.
+In this tutorial, we will see how to build an API test from an existing web application. We simply need a browser and Restlet Client. The <a href="https://en.wikipedia.org/wiki/.har" target="_blank">HAR file format <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> will be used as a bridge between the two.
 
 A web app is usually composed of a frontend and a backend. The backend exposes a REST API which is used by the frontend to consume data. 
 
@@ -73,7 +73,7 @@ A good starting point is to check the response status code (for example we usual
 <!-- IN SCREENSHOT: SP_RESPONSE | SP_ASSERTIONS -->
 ![Add assertions](images/01_assertions.png "Add assertions")
 
-You can then go further by creating assertions on response headers and body. Head over to the user guide to [learn more about assertions](https://restlet.com/documentation/client/user-guide/perform-requests/assertions/overview).
+You can then go further by creating assertions on response headers and body. Head over to the user guide to [learn more about assertions](../user-guide/test/validate-http-responses/assertions).
 
 
 
