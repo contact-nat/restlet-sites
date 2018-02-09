@@ -70,11 +70,6 @@ The main reason to use a scenario, and not a project as the other kind of import
 You can export your own local repository into a JSON-based format file. Then import it into Client again.
 You are assured that the imported entities are exactly the same than the one exported.
 
-<a class="anchor" name="systinet-hp-technology"></a>
-### Systinet (HP technology)
-
-Restlet Client makes an <a href="https://hpln.hp.com/group/systinet?utm_source=Restlet Client" target="_blank">HP Systinet <i class="fa fa-external-link" style="font-size: 12px" aria-hidden="true"></i></a> integration available.
-
 <a class="anchor" name="import-policies"></a>
 ## Import policies
 
