@@ -2,6 +2,7 @@
 
 1. [How can I share my API documentation?](#01 "How can I share my API documentation?")
 2. [How do I allow third-party cookies in my browser ?](#02 "How do I allow third-party cookies in my browser ?")
+3. [Why can't I see my GitHub organisation when setting up my GitHub repository ?](#03 "Why can't I see my GitHub organisation when setting up my GitHub repository ?")
 
 
 # <a class="anchor" name="01"></a>1. How can I share my API documentation?
@@ -79,3 +80,6 @@ Third party cookies should be enabled in your browser because we rely on a third
 
 4. Select `Don't block cookies` under `Cookies` section
 
+# <a class="anchor" name="03"></a>3. Why can't I see my GitHub organisation when setting up my GitHub repository ? 
+
+It may be because your organisation does not allow Restlet to access its resources. To allow Restlet application, you can follow [this GitHub tutorial](https://help.github.com/articles/approving-oauth-apps-for-your-organization/).
