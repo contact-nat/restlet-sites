@@ -16,6 +16,7 @@
 14. [My csv file import failed](#14 "My csv file import failed")
 15. [I cannot find my cells anymore](#15 "I cannot find my cells anymore")
 16. [What happens when I downgrade my Plan?](#16 "What happens when I downgrade my Plan?")
+17. [How do I allow third-party cookies in my browser ?](#17 "How do I allow third-party cookies in my browser ?")
 
 
 # <a class="anchor" name="01"></a>1. I wonder if my cell is deployed
@@ -414,3 +415,69 @@ As you downgrade to a lower Plan, you will no longer access specific features de
 * You will no longer benefit from premium support.
 
 [Back to list](#list "Back to list of frequently asked questions")
+
+# <a class="anchor" name="17"></a>17. How do I allow third-party cookies in my browser ? 
+
+Third party cookies should be enabled in your browser because we rely on a third-party provider (Auth0) for our security and user account management
+
+## Chrome
+
+1. Click the menu icon in the upper right side of the browser window.
+
+2. Click `Settings`.
+
+3. Click `Advanced` at the bottom of the page.
+
+4. Click `Content settings...`
+
+5. Click `Cookies`
+
+6. Uncheck `Block third-party cookies`
+
+## Firefox
+
+1. Click the menu icon.
+
+2. Open the Options window.
+
+    * For Windows users, click `Options`.
+    * For Mac OS users, click `Preferences...``
+
+3. Click the `Privacy & Security` panel.
+
+4. In the `History` section, select `Firefox will: Remember history`.
+
+## Safari
+
+1. Click `Safari` in the menu bar.
+
+2. Click `Preferences...`
+
+3. Click the `Privacy panel`.
+
+4. Uncheck `Prevent cross-site tracking`
+
+## Internet Explorer
+
+1. Click the cog/tools menu icon in the upper right of the window.
+
+2. Click `Internet Options`.
+
+3. Click the `Privacy` tab.
+
+4. Click `Advanced`.
+
+5. Check `Accept` under `Third-party cookies` section
+
+6. Click `OK`
+
+## Microsoft Edge
+
+1. Click the menu icon in the upper right side of the browser window.
+
+2. Click `Settings`
+
+3. Click `View Advanced Settings`
+
+4. Select `Don't block cookies` under `Cookies` section
+
