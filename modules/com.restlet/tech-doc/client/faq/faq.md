@@ -36,8 +36,8 @@ Third party cookies should be enabled in your browser because we rely on a third
 
 2. Open the Options window.
 
-    * For Windows users, click `Options`.
-    * For Mac OS users, click `Preferences...`
+* For Windows users, click `Options`. 
+* For Mac OS users, click `Preferences...`
 
 3. Click the `Privacy & Security` panel.
 
