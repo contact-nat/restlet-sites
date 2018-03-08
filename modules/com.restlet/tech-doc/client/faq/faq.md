@@ -19,6 +19,16 @@ Third party cookies should be enabled in your browser because we rely on a third
 
 1. Click the menu icon in the upper right side of the browser window.
 
+2. Click `Settings`.
+
+3. Click `Advanced` at the bottom of the page.
+
+4. Click `Content settings...`
+
+5. Click `Cookies`
+
+6. Uncheck `Block third-party cookies`
+
 # <a class="anchor" name="03"></a>3. Why can't I see my GitHub organisation when setting up my GitHub repository ? 
 
 It may be because your organisation does not allow Restlet to access its resources. To allow Restlet application, you can follow [this GitHub tutorial](https://help.github.com/articles/approving-oauth-apps-for-your-organization/).
