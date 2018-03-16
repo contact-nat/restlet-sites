@@ -32,8 +32,7 @@ Put them in the same folder, open a terminal in this folder and launch `mvn clea
 <a class="anchor" name="find-your-license-key"></a>
 ### Find your license key
 
-You can find the license key in your account page if you have a team plan or belong to a team. If you want to try the
-feature without subscribing, you can start a free trial, it will give you 14 days to test it for free.
+You can find the license key in your account page if you have or belong to a team.
 
 <!-- IN SCREENSHOT: ACCOUNT_LICENSE -->
 ![License key location](./images/license_key_location.png)

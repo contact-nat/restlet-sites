@@ -1,4 +1,4 @@
-Restlet Cloud allows you to share your cells with members of your team (if you subscribed to a Team or Scale [plan](/documentation/cloud/guide/get-started/subscribe "plans")).  
+Restlet Cloud allows you to share your cells with members of your team.
 You can define your [Sharing settings](/documentation/cloud/guide/share/sharing-settings "Sharing settings") from the Settings page.
 
 # View your teams
@@ -24,7 +24,7 @@ In the **Add users to your team** field, enter the email address of a user you w
 
 ![Add user to team](images/add-user-to-team.jpg "Add user to team")
 
->**Note:** At the bottom of the window, you can see the number of members you added to your team and the number of members you are allowed according to the plan you subscribed to (Here 3/5). If you need to add more members, click **Upgrade**.
+>**Note:** At the bottom of the window, you can see the number of members you added to your team and the number of members you are allowed according to the plan you subscribed to (Here 3/5).
 
 # Add a member to a cell
 

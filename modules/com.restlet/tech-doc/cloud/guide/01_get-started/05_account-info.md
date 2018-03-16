@@ -22,41 +22,13 @@ This section provides information about your profile and the social network acco
 The **Tokens** section lists the tokens linked to your account.
 You will not need to use these tokens for now. You can simply sign in to Restlet Cloud with your social provider account.  
 
-## Plan
-
-You can downgrade or upgrade plan directly from your **Account** page.  
-
- * **My plan**:
-- name of plan / price per month,
-- **Change plan** link.
-- Capacity linked to the plan you subscribed to
-
-
-Click on the **Change plan** link.  
-From the **Pricing** page, click on the appropriate **Downgrade** or **Upgrade** button and follow the confirmation messages.
-
-## Billing information
-
-You can change or delete your credit card details if necessary.
-
-* **Card**:
-- partially hidden credit card number and type of card,
-- **Delete card** link.
-* **Expiration date**: credit card expiration date in month/year format
-
-If you need to change the credit card you saved in your billing details, click on the **Delete card** link and enter your new credit card details.
-
-# Pricing tab
-
-From this tab, you can select the plan that best suits you. You may upgrade or downgrade your plan according to your needs.
-
 # Team tab
 
 ![Team tab](images/team-tab.jpg "Team tab")
 
-Restlet Cloud allows you to share your APIs with members of your team (if you subscribed to a Team or Scale plan).
+Restlet Cloud allows you to share your APIs with members of your team.
 
->**Note:** At the bottom of the window, you can see the number of members you added to your team and the number of members you are allowed according to the plan you subscribed to e.g. 2/5. If you need to add more members, click **Upgrade**.
+>**Note:** At the bottom of the window, you can see the number of members you added to your team and the number of members you are allowed according to the plan you subscribed to e.g. 2/5.
 
 # Domains tab
 
