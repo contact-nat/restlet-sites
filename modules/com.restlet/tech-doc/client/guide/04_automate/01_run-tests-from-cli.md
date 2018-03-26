@@ -77,7 +77,7 @@ Here is an example pom.xml, we will detail all the configurable options below.
                 &lt;!-- The Restlet maven plugin --&gt;
                 &lt;groupId&gt;com.restlet.client&lt;/groupId&gt;
                 &lt;artifactId&gt;maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;2.16.0&lt;/version&gt;
+                &lt;version&gt;2.17.0&lt;/version&gt;
                 &lt;executions&gt;
                     &lt;execution&gt;
                         &lt;phase&gt;test&lt;/phase&gt;
